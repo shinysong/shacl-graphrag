@@ -1,0 +1,74 @@
+# Secrets & local env
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+.ipynb_checkpoints/
+
+# Node / frontend tooling (if added later)
+node_modules/
+.npm/
+.next/
+dist-ssr/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local data & experiment artifacts
+data/
+datasets/
+raw/
+processed/
+kb/
+knowledgebase/
+yago/
+snapshots/
+exports/
+results/
+runs/
+logs/
+*.log
+*.tmp
+*.bak
+
+# Large graph / dump files
+*.dump
+*.ttl.gz
+*.nt.gz
+*.nq.gz
+*.rdf.gz
+*.owl.gz
+*.graphml
+*.csv.gz
+
+# Cloud / infra local state
+.terraform/
+*.tfstate
+*.tfstate.*
+.aws/
