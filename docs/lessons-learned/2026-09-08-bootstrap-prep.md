@@ -4,7 +4,7 @@
 
 AWS EC2·Terraform·GraphDB/Neo4j는 아직 없고, 서버가 뜨면 한 번에 올릴 초기 세팅이 필요했다. LLM은 OpenRouter로 통일할 예정. Codex/Orca 같은 코딩 에이전트는 후보만 둠.
 
-## What happened
+## Incident
 
 - 저장소에 `scripts/bootstrap.sh` 체인(시스템 패키지 → venv → 디렉터리·`.env` → verify)을 넣었다.
 - GraphDB/Neo4j/Terraform/에이전트 설치는 의도적으로 **제외**하고 `docs/setup/roadmap.md`에 미룸.

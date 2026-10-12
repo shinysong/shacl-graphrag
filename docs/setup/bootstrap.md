@@ -11,7 +11,7 @@ chmod +x scripts/*.sh scripts/lib/*.sh
 ./scripts/bootstrap.sh
 ```
 
-## 하는 일
+## 부트스트랩 구성 단계
 
 | Step | Script | 내용 |
 | --- | --- | --- |

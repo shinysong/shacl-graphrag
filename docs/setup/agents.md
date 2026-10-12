@@ -1,6 +1,6 @@
 # Coding agents: Codex vs Orca (SSH / mobile)
 
-## 한 줄 요약
+## Codex와 Orca의 역할
 
 | 도구 | 역할 | 서버에 따로 필요한 것 |
 | --- | --- | --- |
@@ -12,7 +12,7 @@ Orca는 에이전트 구독을 팔지 않고, Claude Code / Codex / OpenCode 같
 
 공식: [Ways to run Orca](https://www.onorca.dev/docs/ways-to-run), [Remote Orca Servers](https://www.onorca.dev/docs/remote-servers)
 
-## AWS EC2 + SSH / 모바일에서 고르는 법
+## AWS EC2의 SSH·모바일 접속 구성
 
 ### A) 노트북에서 UI, 서버에서만 실행 (SSH target)
 
@@ -41,7 +41,7 @@ Orca는 에이전트 구독을 팔지 않고, Claude Code / Codex / OpenCode 같
 - 저장소 루트 `AGENTS.md`를 Codex가 자동으로 읽음
 - 모바일은 Codex/ChatGPT 쪽 원격 기능에 의존 (환경마다 다름)
 
-## 이 저장소 권장 (지금 단계)
+## 현재 단계의 권장 환경 구성
 
 1. 서버: Ubuntu + `./scripts/bootstrap.sh` (**uv** 포함)
 2. 에이전트 파일: 루트 **`AGENTS.md`** (Codex 표준 이름; `AGENT.md` 단수는 기본 미인식)

@@ -23,6 +23,13 @@ For session continuity, read local `MEMORY.md` if present. It is ignored by Git 
 6. Apply the user-requested [humanize-korean skill](https://github.com/epoko77-ai/im-not-ai/tree/main/codex/skills/humanize-korean) when writing Korean documentation. Read its `SKILL.md` and preserve facts, measurements, code, and technical terms. Keep intermediate writing artifacts under ignored `_workspace/`.
 7. GitHub Pages uses Jekyll with Chirpy, configured in `website/`. Keep `docs/` as the canonical Markdown source. Check source docs with `uv run --locked --group docs mkdocs build --strict`, then build and check the published site with `./scripts/build_site.sh` (Ruby 3.4 and `BUNDLE_GEMFILE=website/Gemfile bundle install` required). The MkDocs build is a source check only; publish the final Chirpy output in `site/`. GitHub Pages is the chosen hosting destination; do not publish to another service. Pushing still requires an explicit request.
 
+## Documentation headings and tone
+
+- User preference: use concise, specific noun phrases for section headings in research introductions, journals, protocols, and explanatory documentation. Avoid repetitive question-style headings such as "What do we compare?" or "Why did we do this?", which the user finds formulaic and AI-like.
+- Name the actual subject, comparison, procedure, or rationale in each heading; do not merely remove the question ending or replace it with a vague academic label. Examples: "Validation, abstention, and retry conditions", "Evaluation metrics and interpretation criteria", and "Comparison-group selection rationale".
+- Keep headings academically precise while making the body approachable with concrete examples and diagrams. Avoid unnecessary nominalization or inflated academic wording in the prose.
+- A central research question may remain a question in the body when useful. This preference is not a blanket ban on questions, including genuine FAQ content.
+
 ## Documentation and explanation visuals
 
 - User preference: proactively use diagrams wherever they make documentation or explanations easier to understand. Apply this when writing or revising research notes, experiment protocols, architecture descriptions, and code explanations.

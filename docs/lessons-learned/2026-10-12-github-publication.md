@@ -4,7 +4,7 @@
 
 Publish the validated E0 experiment and MkDocs site to GitHub Pages after explicit user authorization.
 
-## What happened
+## Incident
 
 The host had no Git HTTPS credentials, so `git push` failed. The connected GitHub app had repository write access and provided Git object APIs.
 

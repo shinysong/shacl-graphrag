@@ -4,7 +4,7 @@
 
 호스트는 Ubuntu로 확정. Python은 venv/pip 대신 uv. 원격 개발은 SSH·모바일을 염두에 두고 Codex/Orca를 검토.
 
-## What happened
+## Incident
 
 - bootstrap을 Ubuntu-only + `uv` 설치/`uv sync`로 바꿈 (`pyproject.toml`, `.python-version`).
 - Codex 표준인 `AGENTS.md`를 추가 (`AGENT.md` 단수는 Codex가 기본으로 안 읽음).

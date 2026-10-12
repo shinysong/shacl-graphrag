@@ -4,7 +4,7 @@
 
 The first published MkDocs site passed content and build checks but did not receive browser visual review. The user rejected its appearance and selected Chirpy.
 
-## What happened
+## Incident
 
 HTTP success and working links did not establish that the visual result met the user's expectations. Chirpy uses Jekyll, so applying the selected theme also required a different publication build.
 

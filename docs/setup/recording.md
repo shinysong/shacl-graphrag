@@ -2,7 +2,7 @@
 
 실험 명세와 일지의 원본은 Markdown이다. GitHub에서 파일을 읽거나 Chirpy 테마로 만든 사이트에서 탐색할 수 있다. GitHub Pages는 정적 파일을 게시하므로 실험 실행은 EC2에서 하고 공개할 기록을 저장소에 반영한다. [GitHub Pages 설명](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)
 
-## 실험 한 번을 기록하는 순서
+## 실험 실행과 기록 절차
 
 1. [명세](../experiments/specification.md)의 조건과 기대값을 확인한다. 조건을 바꾸면 변경 이유를 일지에 적는다.
 2. `uv run --locked python scripts/run_validation_experiment.py`를 실행한다. 재실행도 새 run으로 저장한다.

@@ -4,7 +4,7 @@
 
 기존 `docs/README.md`를 유지하면서 사이트 첫 페이지로 `docs/index.md`를 추가했다.
 
-## What happened
+## Incident
 
 MkDocs가 같은 경로에 두 첫 페이지를 발견해 경고를 냈고 `mkdocs build --strict`가 실패했다.
 

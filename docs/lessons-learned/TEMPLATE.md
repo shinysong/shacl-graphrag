@@ -4,7 +4,7 @@
 
 무엇을 하려다 무엇을 만났는지.
 
-## What happened
+## Incident
 
 사실만.
 
