@@ -39,9 +39,27 @@ SHACL·OWL 제약을 GraphRAG의 검색–검증–생성 루프에 **런타임 
 | 주 그래프 DB | GraphDB Free (검증·추론 내장, EC2 자체 호스팅) |
 | 비교군 | Neo4j Community (LPG, EC2 자체 호스팅) |
 | 배치 비교 | Amazon Neptune Serverless (후반 한정) |
-| LLM | API 호출 (자체 서빙·GPU 미사용) |
+| OS | Ubuntu 22.04 / 24.04 |
+| Python | **uv** (`pyproject.toml` → `.venv`) |
+| LLM | OpenRouter API (자체 서빙·GPU 미사용) |
+| IaC (예정) | Terraform (`infra/terraform/`) |
 
 지식베이스는 공개 라이선스(CC BY) 데이터만 사용합니다.
+
+## 빠른 시작 (호스트 부트스트랩)
+
+AWS EC2 **Ubuntu**에서 clone 후:
+
+```bash
+chmod +x scripts/*.sh scripts/lib/*.sh
+./scripts/bootstrap.sh
+```
+
+- OpenRouter 키는 `.env.example` → `.env`에 채웁니다.
+- GraphDB / Neo4j / Terraform / Codex·Orca 설치는 **아직 포함하지 않습니다.**
+- 부트스트랩: [docs/setup/bootstrap.md](docs/setup/bootstrap.md)
+- 에이전트(Codex/Orca): [docs/setup/agents.md](docs/setup/agents.md) · 루트 [`AGENTS.md`](AGENTS.md)
+- 시행착오: [docs/lessons-learned/](docs/lessons-learned/)
 
 ## 예상 결과물
 
