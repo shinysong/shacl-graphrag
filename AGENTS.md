@@ -25,6 +25,8 @@ For session continuity, read local `MEMORY.md` if present. It is ignored by Git 
 
 ## Documentation headings and tone
 
+- Use reader-facing stage names "사전 점검" and "1단계" through "4단계" instead of E0–E4. Preserve existing run IDs, fixture paths, archived results and machine-readable experiment identifiers. R0/G0/G1/G2 identify comparison conditions, not stages.
+
 - User preference: use concise, specific noun phrases for section headings in research introductions, journals, protocols, and explanatory documentation. Avoid repetitive question-style headings such as "What do we compare?" or "Why did we do this?", which the user finds formulaic and AI-like.
 - Name the actual subject, comparison, procedure, or rationale in each heading; do not merely remove the question ending or replace it with a vague academic label. Examples: "Validation, abstention, and retry conditions", "Evaluation metrics and interpretation criteria", and "Comparison-group selection rationale".
 - Keep headings academically precise while making the body approachable with concrete examples and diagrams. Avoid unnecessary nominalization or inflated academic wording in the prose.

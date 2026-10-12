@@ -102,7 +102,7 @@ def run_case(case, directory):
 def markdown(record, public=True):
     metrics = record["metrics"]
     lines = [
-        f"# {record['run_id']}", "", "E0 합성 RDF 검증 실행 기록. GraphRAG 성능 비교 결과가 아니다.", "",
+        f"# {record['run_id']}", "", "사전 점검 · 합성 RDF 검증 실행 기록. GraphRAG 성능 비교 결과가 아니다.", "",
         f"- 상태: {record['status']}",
         f"- 시작 시각 UTC: {record['started_at']}",
         f"- Git commit: `{record['git_commit']}`",

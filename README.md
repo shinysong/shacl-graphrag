@@ -16,7 +16,7 @@ SHACL·OWL 제약을 GraphRAG의 검색–검증–생성 루프에 **런타임 
 
 ## 주요 기능 (예정)
 
-현재 호스트 부트스트랩과 합성 RDF의 SHACL 검증 실험(E0)을 실행할 수 있습니다. 아래 GraphRAG 기능은 후속 구현 범위입니다.
+현재 호스트 부트스트랩과 합성 RDF의 SHACL 검증 실험(사전 점검)을 실행할 수 있습니다. 아래 GraphRAG 기능은 후속 구현 범위입니다.
 
 - Ontology Constraint Validation (SHACL·OWL)
 - GraphRAG Pipeline (검색–검증–생성 루프)
