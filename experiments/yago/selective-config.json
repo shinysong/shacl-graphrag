@@ -1,0 +1,38 @@
+{
+  "protocol_version": "0.4",
+  "experiment": "yago-selective-pilot",
+  "description": "Question-relevant gating and missing-evidence repair; exploratory same-cohort follow-up",
+  "seed": 20261012,
+  "conditions": [
+    "G0",
+    "G1",
+    "G2",
+    "U2",
+    "S1",
+    "S2",
+    "C2"
+  ],
+  "max_retries": 2,
+  "max_llm_calls": 220,
+  "max_completion_tokens": 240,
+  "max_prompt_chars": 12000,
+  "max_cost_usd": 1.0,
+  "provider_max_price_per_million": {
+    "prompt": 0.2,
+    "completion": 0.8
+  },
+  "temperature": 0,
+  "repeat_count": 1,
+  "inference": "none",
+  "variants": [
+    "clean",
+    "missing_label",
+    "missing_relation",
+    "missing_target_type",
+    "duplicate_relation",
+    "wrong_class",
+    "wrong_datatype",
+    "wrong_place",
+    "source_missing_relation"
+  ]
+}

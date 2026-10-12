@@ -6,6 +6,10 @@
 
 <!-- RUNS -->
 
+- [20261012T123009Z-yago-selective-abb7e636](20261012T123009Z-yago-selective-abb7e636.md) — completed, pilot
+
+- [20261012T122943Z-yago-selective-dad1f7f7](20261012T122943Z-yago-selective-dad1f7f7.md) — completed, development
+
 - [20261012T120139Z-yago-2af3a4ef](20261012T120139Z-yago-2af3a4ef.md) — validated, pilot
 
 - [20261012T120020Z-yago-8dab226c](20261012T120020Z-yago-8dab226c.md) — completed, development

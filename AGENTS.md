@@ -7,6 +7,7 @@ For session continuity, read local `MEMORY.md` if present. It is ignored by Git 
 ## Dataset and experiment scope
 
 - GLEIF Golden Copy is the first dataset, replacing the earlier YAGO-first plan. Preserve same-release LEI/RR/REPEX files, source hashes and reporting exceptions. YAGO 4.6 is the second bounded pilot; keep its original SHACL bytes unchanged and retain CC BY 4.0 attribution.
+- YAGO selective follow-up (protocol 0.4) keeps the same source/shapes and distinguishes question-relevant violations from missing evidence. Keep source absence separate from retrieval omission. S1/S2/C2 use a predeclared birthPlace contract, not a learned general-purpose policy. Report wrong answers and unnecessary abstentions together; this reuses the pilot cohort and is exploratory.
 - User authorized a complete bounded pilot without routine clarification. Use conservative recorded budgets. Keep source corruption separate from retrieval omissions; never repair from evaluation gold. Preserve unsuccessful runs.
 - Distinguish the 24-case pilot from representative benchmarks, free-form Text2SPARQL, full vector RAG and graph-engine comparisons.
 

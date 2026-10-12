@@ -127,3 +127,5 @@ BUNDLE_GEMFILE=website/Gemfile bundle install
 GLEIF 데이터와 파생 부분집합은 [원본 CC0 이용 조건](https://www.gleif.org/en/meta/lei-data-terms-of-use/)을 따릅니다.
 
 YAGO 파일럿: `uv run --locked python scripts/run_yago_pilot.py` (`.env` 필요). 배포 원본과 라이선스는 [YAGO 4.6](https://yago-knowledge.org/downloads/yago-4-6), 표본 출처는 [NOTICE](experiments/yago/NOTICE.md)를 따릅니다.
+
+질의 관련성 후속 실험은 `uv run --locked python scripts/run_yago_selective.py`로 실행합니다. 비교 조건과 원천 누락 처리 기준은 [명세 0.4](docs/experiments/specification.md)를 따릅니다.
