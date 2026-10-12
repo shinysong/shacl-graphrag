@@ -1,6 +1,6 @@
 # Setup roadmap (초기 이후)
 
-부트스트랩(`scripts/bootstrap.sh`) 다음에 올 작업. 합성 RDF 검증 실험 E0와 기록용 문서 사이트부터 시작한다. 데이터와 GraphRAG의 진행 순서는 [실험 명세](../experiments/specification.md)에 둔다. 아래 DB와 Terraform 구성은 아직 구현하지 않았다.
+부트스트랩(`scripts/bootstrap.sh`) 다음에 올 작업. 합성 RDF 사전 점검과 문서 사이트에 이어 GLEIF 파일럿을 진행한다. 데이터와 GraphRAG의 진행 순서는 [실험 명세](../experiments/specification.md)에 둔다. 아래 DB와 Terraform 구성은 아직 구현하지 않았다.
 
 ## 1. Terraform (AWS)
 
@@ -13,7 +13,7 @@
 - IAM (최소 권한, MFA는 콘솔/계정 정책)
 - (후반) Neptune Serverless — 검증 계층 배치 비교용, 단기간만
 
-서버가 생기기 전에는 Terraform apply를 하지 않습니다.
+서버가 생기기 전에는 Terraform apply를 하지 않는다.
 
 ## 2. 그래프 DB
 
@@ -43,4 +43,4 @@
 
 ## 5. 데이터
 
-YAGO 4.6 슬라이스 다운로드·적재 스크립트는 KB 라이선스·용량 확인 후 `scripts/`에 추가.
+`scripts/download_gleif.py`는 동일 배포 시점의 Golden Copy CSV 3종을 내려받고 해시를 기록한다. `scripts/prepare_gleif.py`는 전체 행 수를 확인하고 법인·모회사·보고 예외가 보존된 작은 표본을 만든다. `scripts/run_gleif_pilot.py`는 RDFLib·pySHACL·OpenRouter로 파일럿을 실행한다. YAGO는 후속 일반화 실험 후보이며 현재 데이터셋은 GLEIF다.

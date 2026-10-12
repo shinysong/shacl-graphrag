@@ -1,0 +1,18 @@
+{
+  "protocol_version": "0.2",
+  "experiment": "gleif-pilot",
+  "description": "Exploratory single-snapshot, direct-parent QA pilot; no held-out generalization claim",
+  "seed": 20261012,
+  "conditions": ["R0", "G0", "G1", "G2", "U2", "P1"],
+  "parent_variants": ["clean", "missing_name", "missing_relation", "invalid_lei", "wrong_parent"],
+  "exception_variants": ["clean", "missing_exception", "invalid_reason"],
+  "max_retries": 2,
+  "max_llm_calls": 160,
+  "max_completion_tokens": 240,
+  "max_prompt_chars": 12000,
+  "max_cost_usd": 1.0,
+  "provider_max_price_per_million": {"prompt": 0.2, "completion": 0.8},
+  "temperature": 0,
+  "repeat_count": 1,
+  "inference": "none"
+}

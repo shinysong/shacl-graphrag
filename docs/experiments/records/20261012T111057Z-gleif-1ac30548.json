@@ -1,0 +1,385 @@
+{
+  "run_id": "20261012T111057Z-gleif-1ac30548",
+  "experiment": "gleif-pilot",
+  "protocol_version": "0.2",
+  "started_at": "2026-10-12T11:10:57.588407+00:00",
+  "status": "completed",
+  "split": "development",
+  "validate_only": true,
+  "git_commit": "45cd06443ebcd966a71393a6f8cad36929ba4544",
+  "working_tree_dirty": true,
+  "sha256": {
+    "scripts/run_gleif_pilot.py": "a754c389f7b6701a6854c9358b2e4ccf50aaf4a607c56bcb81abe7e2cd3b1fc9",
+    "scripts/prepare_gleif.py": "086bac3ed24a6f8efb705471b1cd3fcea71d9527335fba8c86589d4a8ffac000",
+    "scripts/download_gleif.py": "dd65b3de489846627ba630736b42b1a27c8758c10f9c41b9defa36d201899340",
+    "experiments/gleif/shapes.ttl": "cc3661a1e8f3100e7d0eafa441ef4d7d57b50fc7c893695816f1e1ef4b228cf8",
+    "experiments/gleif/config.json": "cb04097d01431a4b473a748605bd124cb738253761825832241ed53f0c5fc03d",
+    "experiments/gleif/prompt.txt": "ec48840314345b44561da1cc5f2c629de735af11cdc3800831c3d175bc588fb4",
+    "docs/experiments/specification.md": "906b72487a3bc317ef516570691be40acf376b8efe5952d0dc9024cd20d9735d",
+    "uv.lock": "b29fc8a715c3f6e37b6528e28f0e1bf517b97cd9afd2beda3dfe36a22635edc0"
+  },
+  "dataset_sha256": "abaa350bd7eaa37b3babd3bfd3051ab8ffbd98f3361e4427719676f7891da0b8",
+  "source_manifest": {
+    "publish_date": "2026-10-12 08:00:00",
+    "retrieved_at": "2026-10-12T11:04:48.966484+00:00",
+    "metadata_url": "https://goldencopy.gleif.org/api/v2/golden-copies/publishes",
+    "license": "CC0",
+    "license_url": "https://www.gleif.org/en/meta/lei-data-terms-of-use/",
+    "files": {
+      "lei2": {
+        "type": "lei2",
+        "format": "csv",
+        "record_count": 3458852,
+        "size": 503809882,
+        "size_human_readable": "480.47 MB",
+        "delta_type": "GoldenCopy",
+        "url": "https://goldencopy.gleif.org/storage/golden-copy-files/2026/10/12/1287560/20261012-0800-gleif-goldencopy-lei2-golden-copy.csv.zip",
+        "cdf_version": "LEI_3.1",
+        "path": "data/gleif/20261012T080000/lei2.csv.zip",
+        "sha256": "fa989a882cf05fb854ae14693de7fe3f1ea1b60ab7d81270246dc21360f24db2"
+      },
+      "rr": {
+        "type": "rr",
+        "format": "csv",
+        "record_count": 490833,
+        "size": 24474305,
+        "size_human_readable": "23.34 MB",
+        "delta_type": "GoldenCopy",
+        "url": "https://goldencopy.gleif.org/storage/golden-copy-files/2026/10/12/1287602/20261012-0800-gleif-goldencopy-rr-golden-copy.csv.zip",
+        "cdf_version": "RR_2.1",
+        "path": "data/gleif/20261012T080000/rr.csv.zip",
+        "sha256": "e2edd8e761a60b3dd67dd7cca67cf52c55292c28fd2b0edd69107c9715f4c775"
+      },
+      "repex": {
+        "type": "repex",
+        "format": "csv",
+        "record_count": 6411075,
+        "size": 62143277,
+        "size_human_readable": "59.26 MB",
+        "delta_type": "GoldenCopy",
+        "url": "https://goldencopy.gleif.org/storage/golden-copy-files/2026/10/12/1287650/20261012-0800-gleif-goldencopy-repex-golden-copy.csv.zip",
+        "cdf_version": "REPEX_2.1",
+        "path": "data/gleif/20261012T080000/repex.csv.zip",
+        "sha256": "fca6dd1fd0530d611ee0b54d9fb88976fb1c4f56ef6412a069751b59019f96c8"
+      }
+    }
+  },
+  "python": "3.12.3",
+  "packages": {
+    "rdflib": "7.6.0",
+    "pyshacl": "0.40.1",
+    "httpx": "0.28.1"
+  },
+  "config": {
+    "protocol_version": "0.2",
+    "experiment": "gleif-pilot",
+    "description": "Exploratory single-snapshot, direct-parent QA pilot; no held-out generalization claim",
+    "seed": 20261012,
+    "conditions": [
+      "R0",
+      "G0",
+      "G1",
+      "G2",
+      "U2",
+      "P1"
+    ],
+    "parent_variants": [
+      "clean",
+      "missing_name",
+      "missing_relation",
+      "invalid_lei",
+      "wrong_parent"
+    ],
+    "exception_variants": [
+      "clean",
+      "missing_exception",
+      "invalid_reason"
+    ],
+    "max_retries": 2,
+    "max_llm_calls": 160,
+    "max_completion_tokens": 240,
+    "max_prompt_chars": 12000,
+    "max_cost_usd": 1.0,
+    "provider_max_price_per_million": {
+      "prompt": 0.2,
+      "completion": 0.8
+    },
+    "temperature": 0,
+    "repeat_count": 1,
+    "inference": "none"
+  },
+  "cases": [
+    {
+      "id": "01ERPZV3DOLNXY2MLB90-clean",
+      "subject": "01ERPZV3DOLNXY2MLB90",
+      "variant": "clean",
+      "kind": "parent",
+      "expected_conforms": true,
+      "conforms": true,
+      "python_conforms": true,
+      "issues": [],
+      "validation_ms": 2.716433024033904,
+      "first_sha256": "765aa3dbfad8c4834d6d5854c9167b8fbaa72bef283f2cbc6430b94fd47fbdc5",
+      "gold": {
+        "kind": "parent",
+        "value": "Q774KI4AW80FHFW33O61"
+      }
+    },
+    {
+      "id": "01ERPZV3DOLNXY2MLB90-missing_name",
+      "subject": "01ERPZV3DOLNXY2MLB90",
+      "variant": "missing_name",
+      "kind": "parent",
+      "expected_conforms": false,
+      "conforms": false,
+      "python_conforms": false,
+      "issues": [
+        [
+          "https://rdf.gleif.org/L1/L-01ERPZV3DOLNXY2MLB90",
+          "https://example.org/gleif-pilot/legalName",
+          "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        ]
+      ],
+      "validation_ms": 2.6653349632397294,
+      "first_sha256": "742f1af91e839270ece9dfaad8e12c7e72a65cbed42b357f5eb91f869759192f",
+      "gold": {
+        "kind": "parent",
+        "value": "Q774KI4AW80FHFW33O61"
+      }
+    },
+    {
+      "id": "01ERPZV3DOLNXY2MLB90-missing_relation",
+      "subject": "01ERPZV3DOLNXY2MLB90",
+      "variant": "missing_relation",
+      "kind": "parent",
+      "expected_conforms": false,
+      "conforms": false,
+      "python_conforms": false,
+      "issues": [
+        [
+          "https://rdf.gleif.org/L1/L-01ERPZV3DOLNXY2MLB90",
+          "",
+          "http://www.w3.org/ns/shacl#XoneConstraintComponent"
+        ]
+      ],
+      "validation_ms": 2.3783709621056914,
+      "first_sha256": "12aa8eeaa5a32ed02f6dae88883712eefc1c1530bdb2ab5ee32f3b8a0b179d16",
+      "gold": {
+        "kind": "parent",
+        "value": "Q774KI4AW80FHFW33O61"
+      }
+    },
+    {
+      "id": "01ERPZV3DOLNXY2MLB90-invalid_lei",
+      "subject": "01ERPZV3DOLNXY2MLB90",
+      "variant": "invalid_lei",
+      "kind": "parent",
+      "expected_conforms": false,
+      "conforms": false,
+      "python_conforms": false,
+      "issues": [
+        [
+          "https://rdf.gleif.org/L1/L-Q774KI4AW80FHFW33O61",
+          "https://example.org/gleif-pilot/lei",
+          "http://www.w3.org/ns/shacl#PatternConstraintComponent"
+        ]
+      ],
+      "validation_ms": 2.4493118980899453,
+      "first_sha256": "26207d19ebfd906e9d7bc5679fd75cd625fec4f0712641c13b99eb763ca3aec0",
+      "gold": {
+        "kind": "parent",
+        "value": "Q774KI4AW80FHFW33O61"
+      }
+    },
+    {
+      "id": "01ERPZV3DOLNXY2MLB90-wrong_parent",
+      "subject": "01ERPZV3DOLNXY2MLB90",
+      "variant": "wrong_parent",
+      "kind": "parent",
+      "expected_conforms": true,
+      "conforms": true,
+      "python_conforms": true,
+      "issues": [],
+      "validation_ms": 2.0015269983559847,
+      "first_sha256": "b547e6ab9e9a2d4e9998c4c6bb43a8ec0aac14a42c7b6c185229e9ea6de4c7ee",
+      "gold": {
+        "kind": "parent",
+        "value": "Q774KI4AW80FHFW33O61"
+      }
+    },
+    {
+      "id": "00EHHQ2ZHDCFXJCPCL46-clean",
+      "subject": "00EHHQ2ZHDCFXJCPCL46",
+      "variant": "clean",
+      "kind": "exception",
+      "expected_conforms": true,
+      "conforms": true,
+      "python_conforms": true,
+      "issues": [],
+      "validation_ms": 1.895406050607562,
+      "first_sha256": "fe1962cca38837c915b752fea5a4e5338fbc34707733311f333b4040f5695827",
+      "gold": {
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      }
+    },
+    {
+      "id": "00EHHQ2ZHDCFXJCPCL46-missing_exception",
+      "subject": "00EHHQ2ZHDCFXJCPCL46",
+      "variant": "missing_exception",
+      "kind": "exception",
+      "expected_conforms": false,
+      "conforms": false,
+      "python_conforms": false,
+      "issues": [
+        [
+          "https://rdf.gleif.org/L1/L-00EHHQ2ZHDCFXJCPCL46",
+          "",
+          "http://www.w3.org/ns/shacl#XoneConstraintComponent"
+        ]
+      ],
+      "validation_ms": 2.110714092850685,
+      "first_sha256": "533bcc439b5f39a0e1e8ca45129894e50018e1d7a5667aa45a7a2bf8fd53821e",
+      "gold": {
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      }
+    },
+    {
+      "id": "00EHHQ2ZHDCFXJCPCL46-invalid_reason",
+      "subject": "00EHHQ2ZHDCFXJCPCL46",
+      "variant": "invalid_reason",
+      "kind": "exception",
+      "expected_conforms": false,
+      "conforms": false,
+      "python_conforms": false,
+      "issues": [
+        [
+          "https://rdf.gleif.org/L1/L-00EHHQ2ZHDCFXJCPCL46",
+          "https://example.org/gleif-pilot/exceptionReason",
+          "http://www.w3.org/ns/shacl#InConstraintComponent"
+        ]
+      ],
+      "validation_ms": 2.6863469975069165,
+      "first_sha256": "c22bc531788d6755b6f2112f159a6a2a997a323f91fd3dec8c97d0ecbf58d092",
+      "gold": {
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      }
+    }
+  ],
+  "rows": [],
+  "functional_matches": 8,
+  "python_shacl_matches": 8,
+  "metrics": {
+    "R0": {
+      "total": 0,
+      "answered": 0,
+      "correct": 0,
+      "accuracy_all": null,
+      "accuracy_answered": null,
+      "abstained": 0,
+      "errors": 0,
+      "supported_answers": 0,
+      "retrieval_calls": 0,
+      "retrieved_triples": 0,
+      "validation_ms": 0,
+      "llm_calls": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "cost_usd_reported": 0,
+      "mean_total_ms": null
+    },
+    "G0": {
+      "total": 0,
+      "answered": 0,
+      "correct": 0,
+      "accuracy_all": null,
+      "accuracy_answered": null,
+      "abstained": 0,
+      "errors": 0,
+      "supported_answers": 0,
+      "retrieval_calls": 0,
+      "retrieved_triples": 0,
+      "validation_ms": 0,
+      "llm_calls": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "cost_usd_reported": 0,
+      "mean_total_ms": null
+    },
+    "G1": {
+      "total": 0,
+      "answered": 0,
+      "correct": 0,
+      "accuracy_all": null,
+      "accuracy_answered": null,
+      "abstained": 0,
+      "errors": 0,
+      "supported_answers": 0,
+      "retrieval_calls": 0,
+      "retrieved_triples": 0,
+      "validation_ms": 0,
+      "llm_calls": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "cost_usd_reported": 0,
+      "mean_total_ms": null
+    },
+    "G2": {
+      "total": 0,
+      "answered": 0,
+      "correct": 0,
+      "accuracy_all": null,
+      "accuracy_answered": null,
+      "abstained": 0,
+      "errors": 0,
+      "supported_answers": 0,
+      "retrieval_calls": 0,
+      "retrieved_triples": 0,
+      "validation_ms": 0,
+      "llm_calls": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "cost_usd_reported": 0,
+      "mean_total_ms": null
+    },
+    "U2": {
+      "total": 0,
+      "answered": 0,
+      "correct": 0,
+      "accuracy_all": null,
+      "accuracy_answered": null,
+      "abstained": 0,
+      "errors": 0,
+      "supported_answers": 0,
+      "retrieval_calls": 0,
+      "retrieved_triples": 0,
+      "validation_ms": 0,
+      "llm_calls": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "cost_usd_reported": 0,
+      "mean_total_ms": null
+    },
+    "P1": {
+      "total": 0,
+      "answered": 0,
+      "correct": 0,
+      "accuracy_all": null,
+      "accuracy_answered": null,
+      "abstained": 0,
+      "errors": 0,
+      "supported_answers": 0,
+      "retrieval_calls": 0,
+      "retrieved_triples": 0,
+      "validation_ms": 0,
+      "llm_calls": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "cost_usd_reported": 0,
+      "mean_total_ms": null
+    }
+  },
+  "finished_at": "2026-10-12T11:10:57.709902+00:00"
+}

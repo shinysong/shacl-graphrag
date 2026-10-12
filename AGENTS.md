@@ -1,8 +1,14 @@
 # Agent instructions (Codex, Orca-hosted agents, Cursor, etc.)
 
-This repo is **bootstrap-first**: host setup scripts and docs exist; pipeline application code is still thin.
+This repo now includes a small GLEIF batch → RDF → SHACL → OpenRouter QA pilot, alongside host bootstrap scripts. It is not yet a production GraphRAG system.
 
 For session continuity, read local `MEMORY.md` if present. It is ignored by Git and must not be included in the public documentation site.
+
+## Dataset and experiment scope
+
+- GLEIF Golden Copy is the first dataset, replacing the earlier YAGO-first plan. Preserve same-release LEI/RR/REPEX files, source hashes and reporting exceptions. YAGO is a future generalization candidate.
+- User authorized a complete bounded pilot without routine clarification. Use conservative recorded budgets. Keep source corruption separate from retrieval omissions; never repair from evaluation gold. Preserve unsuccessful runs.
+- Distinguish the 24-case pilot from representative benchmarks, free-form Text2SPARQL, full vector RAG and graph-engine comparisons.
 
 ## Stack decisions (do not casually reverse)
 

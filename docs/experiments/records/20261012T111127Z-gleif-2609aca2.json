@@ -1,0 +1,2510 @@
+{
+  "run_id": "20261012T111127Z-gleif-2609aca2",
+  "experiment": "gleif-pilot",
+  "protocol_version": "0.2",
+  "started_at": "2026-10-12T11:11:27.662004+00:00",
+  "status": "completed",
+  "split": "development",
+  "validate_only": false,
+  "git_commit": "45cd06443ebcd966a71393a6f8cad36929ba4544",
+  "working_tree_dirty": true,
+  "sha256": {
+    "scripts/run_gleif_pilot.py": "a754c389f7b6701a6854c9358b2e4ccf50aaf4a607c56bcb81abe7e2cd3b1fc9",
+    "scripts/prepare_gleif.py": "9a8c45fadef6b1b69bb7cdf0cf25704d42ed17b2f28745ee4ef2cbbc5b11116d",
+    "scripts/download_gleif.py": "dd65b3de489846627ba630736b42b1a27c8758c10f9c41b9defa36d201899340",
+    "experiments/gleif/shapes.ttl": "cc3661a1e8f3100e7d0eafa441ef4d7d57b50fc7c893695816f1e1ef4b228cf8",
+    "experiments/gleif/config.json": "cb04097d01431a4b473a748605bd124cb738253761825832241ed53f0c5fc03d",
+    "experiments/gleif/prompt.txt": "ec48840314345b44561da1cc5f2c629de735af11cdc3800831c3d175bc588fb4",
+    "docs/experiments/specification.md": "906b72487a3bc317ef516570691be40acf376b8efe5952d0dc9024cd20d9735d",
+    "uv.lock": "b29fc8a715c3f6e37b6528e28f0e1bf517b97cd9afd2beda3dfe36a22635edc0"
+  },
+  "dataset_sha256": "7b041b68ba219c579d0d3f169fe889bf455728d908b5c6e647eee94fc63a8169",
+  "source_manifest": {
+    "publish_date": "2026-10-12 08:00:00",
+    "retrieved_at": "2026-10-12T11:04:48.966484+00:00",
+    "metadata_url": "https://goldencopy.gleif.org/api/v2/golden-copies/publishes",
+    "license": "CC0",
+    "license_url": "https://www.gleif.org/en/meta/lei-data-terms-of-use/",
+    "files": {
+      "lei2": {
+        "type": "lei2",
+        "format": "csv",
+        "record_count": 3458852,
+        "size": 503809882,
+        "size_human_readable": "480.47 MB",
+        "delta_type": "GoldenCopy",
+        "url": "https://goldencopy.gleif.org/storage/golden-copy-files/2026/10/12/1287560/20261012-0800-gleif-goldencopy-lei2-golden-copy.csv.zip",
+        "cdf_version": "LEI_3.1",
+        "path": "data/gleif/20261012T080000/lei2.csv.zip",
+        "sha256": "fa989a882cf05fb854ae14693de7fe3f1ea1b60ab7d81270246dc21360f24db2"
+      },
+      "rr": {
+        "type": "rr",
+        "format": "csv",
+        "record_count": 490833,
+        "size": 24474305,
+        "size_human_readable": "23.34 MB",
+        "delta_type": "GoldenCopy",
+        "url": "https://goldencopy.gleif.org/storage/golden-copy-files/2026/10/12/1287602/20261012-0800-gleif-goldencopy-rr-golden-copy.csv.zip",
+        "cdf_version": "RR_2.1",
+        "path": "data/gleif/20261012T080000/rr.csv.zip",
+        "sha256": "e2edd8e761a60b3dd67dd7cca67cf52c55292c28fd2b0edd69107c9715f4c775"
+      },
+      "repex": {
+        "type": "repex",
+        "format": "csv",
+        "record_count": 6411075,
+        "size": 62143277,
+        "size_human_readable": "59.26 MB",
+        "delta_type": "GoldenCopy",
+        "url": "https://goldencopy.gleif.org/storage/golden-copy-files/2026/10/12/1287650/20261012-0800-gleif-goldencopy-repex-golden-copy.csv.zip",
+        "cdf_version": "REPEX_2.1",
+        "path": "data/gleif/20261012T080000/repex.csv.zip",
+        "sha256": "fca6dd1fd0530d611ee0b54d9fb88976fb1c4f56ef6412a069751b59019f96c8"
+      }
+    }
+  },
+  "python": "3.12.3",
+  "packages": {
+    "rdflib": "7.6.0",
+    "pyshacl": "0.40.1",
+    "httpx": "0.28.1"
+  },
+  "config": {
+    "protocol_version": "0.2",
+    "experiment": "gleif-pilot",
+    "description": "Exploratory single-snapshot, direct-parent QA pilot; no held-out generalization claim",
+    "seed": 20261012,
+    "conditions": [
+      "R0",
+      "G0",
+      "G1",
+      "G2",
+      "U2",
+      "P1"
+    ],
+    "parent_variants": [
+      "clean",
+      "missing_name",
+      "missing_relation",
+      "invalid_lei",
+      "wrong_parent"
+    ],
+    "exception_variants": [
+      "clean",
+      "missing_exception",
+      "invalid_reason"
+    ],
+    "max_retries": 2,
+    "max_llm_calls": 160,
+    "max_completion_tokens": 240,
+    "max_prompt_chars": 12000,
+    "max_cost_usd": 1.0,
+    "provider_max_price_per_million": {
+      "prompt": 0.2,
+      "completion": 0.8
+    },
+    "temperature": 0,
+    "repeat_count": 1,
+    "inference": "none"
+  },
+  "cases": [
+    {
+      "id": "01ERPZV3DOLNXY2MLB90-clean",
+      "subject": "01ERPZV3DOLNXY2MLB90",
+      "variant": "clean",
+      "kind": "parent",
+      "expected_conforms": true,
+      "conforms": true,
+      "python_conforms": true,
+      "issues": [],
+      "validation_ms": 2.6639550924301147,
+      "first_sha256": "765aa3dbfad8c4834d6d5854c9167b8fbaa72bef283f2cbc6430b94fd47fbdc5",
+      "gold": {
+        "kind": "parent",
+        "value": "Q774KI4AW80FHFW33O61"
+      }
+    },
+    {
+      "id": "01ERPZV3DOLNXY2MLB90-missing_name",
+      "subject": "01ERPZV3DOLNXY2MLB90",
+      "variant": "missing_name",
+      "kind": "parent",
+      "expected_conforms": false,
+      "conforms": false,
+      "python_conforms": false,
+      "issues": [
+        [
+          "https://rdf.gleif.org/L1/L-01ERPZV3DOLNXY2MLB90",
+          "https://example.org/gleif-pilot/legalName",
+          "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        ]
+      ],
+      "validation_ms": 2.5904549984261394,
+      "first_sha256": "742f1af91e839270ece9dfaad8e12c7e72a65cbed42b357f5eb91f869759192f",
+      "gold": {
+        "kind": "parent",
+        "value": "Q774KI4AW80FHFW33O61"
+      }
+    },
+    {
+      "id": "01ERPZV3DOLNXY2MLB90-missing_relation",
+      "subject": "01ERPZV3DOLNXY2MLB90",
+      "variant": "missing_relation",
+      "kind": "parent",
+      "expected_conforms": false,
+      "conforms": false,
+      "python_conforms": false,
+      "issues": [
+        [
+          "https://rdf.gleif.org/L1/L-01ERPZV3DOLNXY2MLB90",
+          "",
+          "http://www.w3.org/ns/shacl#XoneConstraintComponent"
+        ]
+      ],
+      "validation_ms": 2.304670982994139,
+      "first_sha256": "12aa8eeaa5a32ed02f6dae88883712eefc1c1530bdb2ab5ee32f3b8a0b179d16",
+      "gold": {
+        "kind": "parent",
+        "value": "Q774KI4AW80FHFW33O61"
+      }
+    },
+    {
+      "id": "01ERPZV3DOLNXY2MLB90-invalid_lei",
+      "subject": "01ERPZV3DOLNXY2MLB90",
+      "variant": "invalid_lei",
+      "kind": "parent",
+      "expected_conforms": false,
+      "conforms": false,
+      "python_conforms": false,
+      "issues": [
+        [
+          "https://rdf.gleif.org/L1/L-Q774KI4AW80FHFW33O61",
+          "https://example.org/gleif-pilot/lei",
+          "http://www.w3.org/ns/shacl#PatternConstraintComponent"
+        ]
+      ],
+      "validation_ms": 2.533487044274807,
+      "first_sha256": "26207d19ebfd906e9d7bc5679fd75cd625fec4f0712641c13b99eb763ca3aec0",
+      "gold": {
+        "kind": "parent",
+        "value": "Q774KI4AW80FHFW33O61"
+      }
+    },
+    {
+      "id": "01ERPZV3DOLNXY2MLB90-wrong_parent",
+      "subject": "01ERPZV3DOLNXY2MLB90",
+      "variant": "wrong_parent",
+      "kind": "parent",
+      "expected_conforms": true,
+      "conforms": true,
+      "python_conforms": true,
+      "issues": [],
+      "validation_ms": 1.957954023964703,
+      "first_sha256": "b547e6ab9e9a2d4e9998c4c6bb43a8ec0aac14a42c7b6c185229e9ea6de4c7ee",
+      "gold": {
+        "kind": "parent",
+        "value": "Q774KI4AW80FHFW33O61"
+      }
+    },
+    {
+      "id": "00EHHQ2ZHDCFXJCPCL46-clean",
+      "subject": "00EHHQ2ZHDCFXJCPCL46",
+      "variant": "clean",
+      "kind": "exception",
+      "expected_conforms": true,
+      "conforms": true,
+      "python_conforms": true,
+      "issues": [],
+      "validation_ms": 1.8500799778848886,
+      "first_sha256": "fe1962cca38837c915b752fea5a4e5338fbc34707733311f333b4040f5695827",
+      "gold": {
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      }
+    },
+    {
+      "id": "00EHHQ2ZHDCFXJCPCL46-missing_exception",
+      "subject": "00EHHQ2ZHDCFXJCPCL46",
+      "variant": "missing_exception",
+      "kind": "exception",
+      "expected_conforms": false,
+      "conforms": false,
+      "python_conforms": false,
+      "issues": [
+        [
+          "https://rdf.gleif.org/L1/L-00EHHQ2ZHDCFXJCPCL46",
+          "",
+          "http://www.w3.org/ns/shacl#XoneConstraintComponent"
+        ]
+      ],
+      "validation_ms": 2.009826945140958,
+      "first_sha256": "533bcc439b5f39a0e1e8ca45129894e50018e1d7a5667aa45a7a2bf8fd53821e",
+      "gold": {
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      }
+    },
+    {
+      "id": "00EHHQ2ZHDCFXJCPCL46-invalid_reason",
+      "subject": "00EHHQ2ZHDCFXJCPCL46",
+      "variant": "invalid_reason",
+      "kind": "exception",
+      "expected_conforms": false,
+      "conforms": false,
+      "python_conforms": false,
+      "issues": [
+        [
+          "https://rdf.gleif.org/L1/L-00EHHQ2ZHDCFXJCPCL46",
+          "https://example.org/gleif-pilot/exceptionReason",
+          "http://www.w3.org/ns/shacl#InConstraintComponent"
+        ]
+      ],
+      "validation_ms": 2.703979960642755,
+      "first_sha256": "c22bc531788d6755b6f2112f159a6a2a997a323f91fd3dec8c97d0ecbf58d092",
+      "gold": {
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      }
+    }
+  ],
+  "rows": [
+    {
+      "case_id": "00EHHQ2ZHDCFXJCPCL46-missing_exception",
+      "variant": "missing_exception",
+      "condition": "G1",
+      "status": "completed",
+      "first_sha256": "533bcc439b5f39a0e1e8ca45129894e50018e1d7a5667aa45a7a2bf8fd53821e",
+      "retrieval_calls": 1,
+      "retrieved_triples": 4,
+      "validation_ms": 2.353760995902121,
+      "final_sha256": "533bcc439b5f39a0e1e8ca45129894e50018e1d7a5667aa45a7a2bf8fd53821e",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 3.412802005186677
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-invalid_lei",
+      "variant": "invalid_lei",
+      "condition": "G2",
+      "status": "completed",
+      "first_sha256": "26207d19ebfd906e9d7bc5679fd75cd625fec4f0712641c13b99eb763ca3aec0",
+      "retrieval_calls": 2,
+      "retrieved_triples": 16,
+      "validation_ms": 5.133589031174779,
+      "final_sha256": "26207d19ebfd906e9d7bc5679fd75cd625fec4f0712641c13b99eb763ca3aec0",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 7.554508047178388
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-missing_name",
+      "variant": "missing_name",
+      "condition": "P1",
+      "status": "completed",
+      "first_sha256": "742f1af91e839270ece9dfaad8e12c7e72a65cbed42b357f5eb91f869759192f",
+      "retrieval_calls": 1,
+      "retrieved_triples": 7,
+      "validation_ms": 0.054514966905117035,
+      "final_sha256": "742f1af91e839270ece9dfaad8e12c7e72a65cbed42b357f5eb91f869759192f",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 0.7966849952936172
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-missing_relation",
+      "variant": "missing_relation",
+      "condition": "U2",
+      "status": "completed",
+      "first_sha256": "12aa8eeaa5a32ed02f6dae88883712eefc1c1530bdb2ab5ee32f3b8a0b179d16",
+      "retrieval_calls": 2,
+      "retrieved_triples": 12,
+      "validation_ms": 0.0,
+      "final_sha256": "765aa3dbfad8c4834d6d5854c9167b8fbaa72bef283f2cbc6430b94fd47fbdc5",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803488-me6nTOjPiz7CJo8dJZp0",
+        "usage": {
+          "prompt_tokens": 711,
+          "completion_tokens": 34,
+          "total_tokens": 745,
+          "cost": 0.00012705,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00012705,
+            "upstream_inference_prompt_cost": 0.00010665,
+            "upstream_inference_completions_cost": 2.04e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1937.2454599943012,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "Q774KI4AW80FHFW33O61",
+        "evidence_ids": [
+          "E003",
+          "E008"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1945.2466210350394
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-wrong_parent",
+      "variant": "wrong_parent",
+      "condition": "U2",
+      "status": "completed",
+      "first_sha256": "b547e6ab9e9a2d4e9998c4c6bb43a8ec0aac14a42c7b6c185229e9ea6de4c7ee",
+      "retrieval_calls": 2,
+      "retrieved_triples": 16,
+      "validation_ms": 0.0,
+      "final_sha256": "b547e6ab9e9a2d4e9998c4c6bb43a8ec0aac14a42c7b6c185229e9ea6de4c7ee",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803489-GBSR1FFQrashRgRBbKLO",
+        "usage": {
+          "prompt_tokens": 727,
+          "completion_tokens": 35,
+          "total_tokens": 762,
+          "cost": 0.00013005,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00013005,
+            "upstream_inference_prompt_cost": 0.00010905,
+            "upstream_inference_completions_cost": 2.1e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1898.0148490518332,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "00EHHQ2ZHDCFXJCPCL46",
+        "evidence_ids": [
+          "E006",
+          "E003"
+        ]
+      },
+      "correct": false,
+      "supported": true,
+      "total_ms": 1907.6127230655402
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-missing_relation",
+      "variant": "missing_relation",
+      "condition": "G2",
+      "status": "completed",
+      "first_sha256": "12aa8eeaa5a32ed02f6dae88883712eefc1c1530bdb2ab5ee32f3b8a0b179d16",
+      "retrieval_calls": 2,
+      "retrieved_triples": 12,
+      "validation_ms": 4.482861026190221,
+      "final_sha256": "765aa3dbfad8c4834d6d5854c9167b8fbaa72bef283f2cbc6430b94fd47fbdc5",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803491-0RrZ9npifla1zSe9LQFB",
+        "usage": {
+          "prompt_tokens": 711,
+          "completion_tokens": 34,
+          "total_tokens": 745,
+          "cost": 0.00012705,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00012705,
+            "upstream_inference_prompt_cost": 0.00010665,
+            "upstream_inference_completions_cost": 2.04e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1608.5545759415254,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "Q774KI4AW80FHFW33O61",
+        "evidence_ids": [
+          "E003",
+          "E008"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1615.2196649927646
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-missing_relation",
+      "variant": "missing_relation",
+      "condition": "R0",
+      "status": "completed",
+      "first_sha256": "12aa8eeaa5a32ed02f6dae88883712eefc1c1530bdb2ab5ee32f3b8a0b179d16",
+      "retrieval_calls": 1,
+      "retrieved_triples": 4,
+      "validation_ms": 0.0,
+      "final_sha256": "12aa8eeaa5a32ed02f6dae88883712eefc1c1530bdb2ab5ee32f3b8a0b179d16",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803493-63RQAATjSiWZqNulOyaD",
+        "usage": {
+          "prompt_tokens": 408,
+          "completion_tokens": 20,
+          "total_tokens": 428,
+          "cost": 7.32e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 7.32e-05,
+            "upstream_inference_prompt_cost": 6.12e-05,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1608.761529903859,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1609.9972580559552
+    },
+    {
+      "case_id": "00EHHQ2ZHDCFXJCPCL46-invalid_reason",
+      "variant": "invalid_reason",
+      "condition": "G1",
+      "status": "completed",
+      "first_sha256": "c22bc531788d6755b6f2112f159a6a2a997a323f91fd3dec8c97d0ecbf58d092",
+      "retrieval_calls": 1,
+      "retrieved_triples": 5,
+      "validation_ms": 2.93995498213917,
+      "final_sha256": "c22bc531788d6755b6f2112f159a6a2a997a323f91fd3dec8c97d0ecbf58d092",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 4.275218001566827
+    },
+    {
+      "case_id": "00EHHQ2ZHDCFXJCPCL46-clean",
+      "variant": "clean",
+      "condition": "G0",
+      "status": "completed",
+      "first_sha256": "fe1962cca38837c915b752fea5a4e5338fbc34707733311f333b4040f5695827",
+      "retrieval_calls": 1,
+      "retrieved_triples": 5,
+      "validation_ms": 0.0,
+      "final_sha256": "fe1962cca38837c915b752fea5a4e5338fbc34707733311f333b4040f5695827",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803495-qsfgT9ql6ehh3Y1RlUsb",
+        "usage": {
+          "prompt_tokens": 528,
+          "completion_tokens": 20,
+          "total_tokens": 548,
+          "cost": 9.12e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.12e-05,
+            "upstream_inference_prompt_cost": 7.92e-05,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1521.3925909483805,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1522.5352949928492
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-clean",
+      "variant": "clean",
+      "condition": "G0",
+      "status": "completed",
+      "first_sha256": "765aa3dbfad8c4834d6d5854c9167b8fbaa72bef283f2cbc6430b94fd47fbdc5",
+      "retrieval_calls": 1,
+      "retrieved_triples": 8,
+      "validation_ms": 0.0,
+      "final_sha256": "765aa3dbfad8c4834d6d5854c9167b8fbaa72bef283f2cbc6430b94fd47fbdc5",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803496-0OUd7vISZzIYa1E5PDsK",
+        "usage": {
+          "prompt_tokens": 711,
+          "completion_tokens": 34,
+          "total_tokens": 745,
+          "cost": 0.00012705,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00012705,
+            "upstream_inference_prompt_cost": 0.00010665,
+            "upstream_inference_completions_cost": 2.04e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1579.1097859619185,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "Q774KI4AW80FHFW33O61",
+        "evidence_ids": [
+          "E003",
+          "E008"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1580.6913169799373
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-clean",
+      "variant": "clean",
+      "condition": "P1",
+      "status": "completed",
+      "first_sha256": "765aa3dbfad8c4834d6d5854c9167b8fbaa72bef283f2cbc6430b94fd47fbdc5",
+      "retrieval_calls": 1,
+      "retrieved_triples": 8,
+      "validation_ms": 0.09863101877272129,
+      "final_sha256": "765aa3dbfad8c4834d6d5854c9167b8fbaa72bef283f2cbc6430b94fd47fbdc5",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803498-ED6ITMD2NnKzqtmtkvH7",
+        "usage": {
+          "prompt_tokens": 711,
+          "completion_tokens": 34,
+          "total_tokens": 745,
+          "cost": 0.00012705,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00012705,
+            "upstream_inference_prompt_cost": 0.00010665,
+            "upstream_inference_completions_cost": 2.04e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1699.7862110147253,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "Q774KI4AW80FHFW33O61",
+        "evidence_ids": [
+          "E003",
+          "E008"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1701.63853908889
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-wrong_parent",
+      "variant": "wrong_parent",
+      "condition": "R0",
+      "status": "completed",
+      "first_sha256": "b547e6ab9e9a2d4e9998c4c6bb43a8ec0aac14a42c7b6c185229e9ea6de4c7ee",
+      "retrieval_calls": 1,
+      "retrieved_triples": 8,
+      "validation_ms": 0.0,
+      "final_sha256": "b547e6ab9e9a2d4e9998c4c6bb43a8ec0aac14a42c7b6c185229e9ea6de4c7ee",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803499-T93t4n9zIOJL2PmdWKvI",
+        "usage": {
+          "prompt_tokens": 596,
+          "completion_tokens": 35,
+          "total_tokens": 631,
+          "cost": 0.0001104,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001104,
+            "upstream_inference_prompt_cost": 8.94e-05,
+            "upstream_inference_completions_cost": 2.1e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1867.6828240277246,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "00EHHQ2ZHDCFXJCPCL46",
+        "evidence_ids": [
+          "E006",
+          "E003"
+        ]
+      },
+      "correct": false,
+      "supported": true,
+      "total_ms": 1869.2560329800472
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-missing_name",
+      "variant": "missing_name",
+      "condition": "G0",
+      "status": "completed",
+      "first_sha256": "742f1af91e839270ece9dfaad8e12c7e72a65cbed42b357f5eb91f869759192f",
+      "retrieval_calls": 1,
+      "retrieved_triples": 7,
+      "validation_ms": 0.0,
+      "final_sha256": "742f1af91e839270ece9dfaad8e12c7e72a65cbed42b357f5eb91f869759192f",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803501-7B3et3pNY0f1NNDJIgJf",
+        "usage": {
+          "prompt_tokens": 656,
+          "completion_tokens": 34,
+          "total_tokens": 690,
+          "cost": 0.0001188,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001188,
+            "upstream_inference_prompt_cost": 9.84e-05,
+            "upstream_inference_completions_cost": 2.04e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1803.7333780666813,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "Q774KI4AW80FHFW33O61",
+        "evidence_ids": [
+          "E003",
+          "E007"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1805.2386910421774
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-missing_relation",
+      "variant": "missing_relation",
+      "condition": "G0",
+      "status": "completed",
+      "first_sha256": "12aa8eeaa5a32ed02f6dae88883712eefc1c1530bdb2ab5ee32f3b8a0b179d16",
+      "retrieval_calls": 1,
+      "retrieved_triples": 4,
+      "validation_ms": 0.0,
+      "final_sha256": "12aa8eeaa5a32ed02f6dae88883712eefc1c1530bdb2ab5ee32f3b8a0b179d16",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803503-gwm9cea4IatcFjFOSU6w",
+        "usage": {
+          "prompt_tokens": 479,
+          "completion_tokens": 20,
+          "total_tokens": 499,
+          "cost": 8.385e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 8.385e-05,
+            "upstream_inference_prompt_cost": 7.185e-05,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1440.2735600015149,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1441.4113250095397
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-missing_name",
+      "variant": "missing_name",
+      "condition": "R0",
+      "status": "completed",
+      "first_sha256": "742f1af91e839270ece9dfaad8e12c7e72a65cbed42b357f5eb91f869759192f",
+      "retrieval_calls": 1,
+      "retrieved_triples": 7,
+      "validation_ms": 0.0,
+      "final_sha256": "742f1af91e839270ece9dfaad8e12c7e72a65cbed42b357f5eb91f869759192f",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803504-0MdK3QH4mq5EO0aZoUwa",
+        "usage": {
+          "prompt_tokens": 538,
+          "completion_tokens": 34,
+          "total_tokens": 572,
+          "cost": 0.0001011,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001011,
+            "upstream_inference_prompt_cost": 8.07e-05,
+            "upstream_inference_completions_cost": 2.04e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1753.6865610163659,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "Q774KI4AW80FHFW33O61",
+        "evidence_ids": [
+          "E003",
+          "E007"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1755.1130499923602
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-invalid_lei",
+      "variant": "invalid_lei",
+      "condition": "U2",
+      "status": "completed",
+      "first_sha256": "26207d19ebfd906e9d7bc5679fd75cd625fec4f0712641c13b99eb763ca3aec0",
+      "retrieval_calls": 2,
+      "retrieved_triples": 16,
+      "validation_ms": 0.0,
+      "final_sha256": "26207d19ebfd906e9d7bc5679fd75cd625fec4f0712641c13b99eb763ca3aec0",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803506-pxX5lKeX4Iy7CMqJqviD",
+        "usage": {
+          "prompt_tokens": 704,
+          "completion_tokens": 27,
+          "total_tokens": 731,
+          "cost": 0.0001218,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001218,
+            "upstream_inference_prompt_cost": 0.0001056,
+            "upstream_inference_completions_cost": 1.62e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1122.9251039912924,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "INVALID-LEI",
+        "evidence_ids": [
+          "E003",
+          "E008"
+        ]
+      },
+      "correct": false,
+      "supported": true,
+      "total_ms": 1131.033062003553
+    },
+    {
+      "case_id": "00EHHQ2ZHDCFXJCPCL46-clean",
+      "variant": "clean",
+      "condition": "R0",
+      "status": "completed",
+      "first_sha256": "fe1962cca38837c915b752fea5a4e5338fbc34707733311f333b4040f5695827",
+      "retrieval_calls": 1,
+      "retrieved_triples": 5,
+      "validation_ms": 0.0,
+      "final_sha256": "fe1962cca38837c915b752fea5a4e5338fbc34707733311f333b4040f5695827",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803507-qB2hlmZcLWfkgC9i4vAq",
+        "usage": {
+          "prompt_tokens": 444,
+          "completion_tokens": 25,
+          "total_tokens": 469,
+          "cost": 8.16e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 8.16e-05,
+            "upstream_inference_prompt_cost": 6.66e-05,
+            "upstream_inference_completions_cost": 1.5e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1904.6317000174895,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING",
+        "evidence_ids": [
+          "E003"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1905.9623710345477
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-missing_name",
+      "variant": "missing_name",
+      "condition": "G2",
+      "status": "completed",
+      "first_sha256": "742f1af91e839270ece9dfaad8e12c7e72a65cbed42b357f5eb91f869759192f",
+      "retrieval_calls": 2,
+      "retrieved_triples": 15,
+      "validation_ms": 4.697156953625381,
+      "final_sha256": "765aa3dbfad8c4834d6d5854c9167b8fbaa72bef283f2cbc6430b94fd47fbdc5",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803509-Qd4DlCrp2hO6L1Yr5Zhd",
+        "usage": {
+          "prompt_tokens": 711,
+          "completion_tokens": 34,
+          "total_tokens": 745,
+          "cost": 0.00012705,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00012705,
+            "upstream_inference_prompt_cost": 0.00010665,
+            "upstream_inference_completions_cost": 2.04e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1209.1518569504842,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "Q774KI4AW80FHFW33O61",
+        "evidence_ids": [
+          "E003",
+          "E008"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1216.1674280650914
+    },
+    {
+      "case_id": "00EHHQ2ZHDCFXJCPCL46-invalid_reason",
+      "variant": "invalid_reason",
+      "condition": "P1",
+      "status": "completed",
+      "first_sha256": "c22bc531788d6755b6f2112f159a6a2a997a323f91fd3dec8c97d0ecbf58d092",
+      "retrieval_calls": 1,
+      "retrieved_triples": 5,
+      "validation_ms": 0.08803990203887224,
+      "final_sha256": "c22bc531788d6755b6f2112f159a6a2a997a323f91fd3dec8c97d0ecbf58d092",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 0.8358879713341594
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-wrong_parent",
+      "variant": "wrong_parent",
+      "condition": "P1",
+      "status": "completed",
+      "first_sha256": "b547e6ab9e9a2d4e9998c4c6bb43a8ec0aac14a42c7b6c185229e9ea6de4c7ee",
+      "retrieval_calls": 1,
+      "retrieved_triples": 8,
+      "validation_ms": 0.08701707702130079,
+      "final_sha256": "b547e6ab9e9a2d4e9998c4c6bb43a8ec0aac14a42c7b6c185229e9ea6de4c7ee",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803510-CcNyMhn4WBErNTxIBnS5",
+        "usage": {
+          "prompt_tokens": 727,
+          "completion_tokens": 35,
+          "total_tokens": 762,
+          "cost": 0.00013005,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00013005,
+            "upstream_inference_prompt_cost": 0.00010905,
+            "upstream_inference_completions_cost": 2.1e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1555.958597920835,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "00EHHQ2ZHDCFXJCPCL46",
+        "evidence_ids": [
+          "E006",
+          "E003"
+        ]
+      },
+      "correct": false,
+      "supported": true,
+      "total_ms": 1557.5356570770964
+    },
+    {
+      "case_id": "00EHHQ2ZHDCFXJCPCL46-clean",
+      "variant": "clean",
+      "condition": "U2",
+      "status": "completed",
+      "first_sha256": "fe1962cca38837c915b752fea5a4e5338fbc34707733311f333b4040f5695827",
+      "retrieval_calls": 2,
+      "retrieved_triples": 10,
+      "validation_ms": 0.0,
+      "final_sha256": "fe1962cca38837c915b752fea5a4e5338fbc34707733311f333b4040f5695827",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803512-uBdgBFVONiyPj5eLAfh6",
+        "usage": {
+          "prompt_tokens": 528,
+          "completion_tokens": 20,
+          "total_tokens": 548,
+          "cost": 9.12e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.12e-05,
+            "upstream_inference_prompt_cost": 7.92e-05,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1507.8143499558792,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1514.6585279144347
+    },
+    {
+      "case_id": "00EHHQ2ZHDCFXJCPCL46-clean",
+      "variant": "clean",
+      "condition": "G1",
+      "status": "completed",
+      "first_sha256": "fe1962cca38837c915b752fea5a4e5338fbc34707733311f333b4040f5695827",
+      "retrieval_calls": 1,
+      "retrieved_triples": 5,
+      "validation_ms": 2.1247799741104245,
+      "final_sha256": "fe1962cca38837c915b752fea5a4e5338fbc34707733311f333b4040f5695827",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803514-qK3mRjyPYzymfmcuCiZK",
+        "usage": {
+          "prompt_tokens": 528,
+          "completion_tokens": 20,
+          "total_tokens": 548,
+          "cost": 9.12e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.12e-05,
+            "upstream_inference_prompt_cost": 7.92e-05,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1494.235132005997,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1497.6610019803047
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-invalid_lei",
+      "variant": "invalid_lei",
+      "condition": "R0",
+      "status": "completed",
+      "first_sha256": "26207d19ebfd906e9d7bc5679fd75cd625fec4f0712641c13b99eb763ca3aec0",
+      "retrieval_calls": 1,
+      "retrieved_triples": 8,
+      "validation_ms": 0.0,
+      "final_sha256": "26207d19ebfd906e9d7bc5679fd75cd625fec4f0712641c13b99eb763ca3aec0",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803515-vQQZMsbemGlYgcfcmTwL",
+        "usage": {
+          "prompt_tokens": 573,
+          "completion_tokens": 27,
+          "total_tokens": 600,
+          "cost": 0.00010215,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00010215,
+            "upstream_inference_prompt_cost": 8.595e-05,
+            "upstream_inference_completions_cost": 1.62e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1208.080996060744,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "INVALID-LEI",
+        "evidence_ids": [
+          "E003",
+          "E008"
+        ]
+      },
+      "correct": false,
+      "supported": true,
+      "total_ms": 1209.6574020106345
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-invalid_lei",
+      "variant": "invalid_lei",
+      "condition": "G0",
+      "status": "completed",
+      "first_sha256": "26207d19ebfd906e9d7bc5679fd75cd625fec4f0712641c13b99eb763ca3aec0",
+      "retrieval_calls": 1,
+      "retrieved_triples": 8,
+      "validation_ms": 0.0,
+      "final_sha256": "26207d19ebfd906e9d7bc5679fd75cd625fec4f0712641c13b99eb763ca3aec0",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803516-C8xgZJNCihBtlsKx2KTo",
+        "usage": {
+          "prompt_tokens": 704,
+          "completion_tokens": 27,
+          "total_tokens": 731,
+          "cost": 0.0001218,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001218,
+            "upstream_inference_prompt_cost": 0.0001056,
+            "upstream_inference_completions_cost": 1.62e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1446.501661092043,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "INVALID-LEI",
+        "evidence_ids": [
+          "E003",
+          "E008"
+        ]
+      },
+      "correct": false,
+      "supported": true,
+      "total_ms": 1448.2614899752662
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-missing_name",
+      "variant": "missing_name",
+      "condition": "G1",
+      "status": "completed",
+      "first_sha256": "742f1af91e839270ece9dfaad8e12c7e72a65cbed42b357f5eb91f869759192f",
+      "retrieval_calls": 1,
+      "retrieved_triples": 7,
+      "validation_ms": 2.5716969976201653,
+      "final_sha256": "742f1af91e839270ece9dfaad8e12c7e72a65cbed42b357f5eb91f869759192f",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 3.864692058414221
+    },
+    {
+      "case_id": "00EHHQ2ZHDCFXJCPCL46-missing_exception",
+      "variant": "missing_exception",
+      "condition": "R0",
+      "status": "completed",
+      "first_sha256": "533bcc439b5f39a0e1e8ca45129894e50018e1d7a5667aa45a7a2bf8fd53821e",
+      "retrieval_calls": 1,
+      "retrieved_triples": 4,
+      "validation_ms": 0.0,
+      "final_sha256": "533bcc439b5f39a0e1e8ca45129894e50018e1d7a5667aa45a7a2bf8fd53821e",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803518-dldfnr4jI5zYJ3lOSRUj",
+        "usage": {
+          "prompt_tokens": 407,
+          "completion_tokens": 20,
+          "total_tokens": 427,
+          "cost": 7.305e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 7.305e-05,
+            "upstream_inference_prompt_cost": 6.105e-05,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1482.528336928226,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1483.8058940367773
+    },
+    {
+      "case_id": "00EHHQ2ZHDCFXJCPCL46-invalid_reason",
+      "variant": "invalid_reason",
+      "condition": "G0",
+      "status": "completed",
+      "first_sha256": "c22bc531788d6755b6f2112f159a6a2a997a323f91fd3dec8c97d0ecbf58d092",
+      "retrieval_calls": 1,
+      "retrieved_triples": 5,
+      "validation_ms": 0.0,
+      "final_sha256": "c22bc531788d6755b6f2112f159a6a2a997a323f91fd3dec8c97d0ecbf58d092",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803519-7dhLqfRD8dE8MpISKoOd",
+        "usage": {
+          "prompt_tokens": 526,
+          "completion_tokens": 20,
+          "total_tokens": 546,
+          "cost": 9.09e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.09e-05,
+            "upstream_inference_prompt_cost": 7.89e-05,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1680.0614530220628,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1681.2973479973152
+    },
+    {
+      "case_id": "00EHHQ2ZHDCFXJCPCL46-missing_exception",
+      "variant": "missing_exception",
+      "condition": "P1",
+      "status": "completed",
+      "first_sha256": "533bcc439b5f39a0e1e8ca45129894e50018e1d7a5667aa45a7a2bf8fd53821e",
+      "retrieval_calls": 1,
+      "retrieved_triples": 4,
+      "validation_ms": 0.08614291436970234,
+      "final_sha256": "533bcc439b5f39a0e1e8ca45129894e50018e1d7a5667aa45a7a2bf8fd53821e",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 0.7636920781806111
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-missing_relation",
+      "variant": "missing_relation",
+      "condition": "P1",
+      "status": "completed",
+      "first_sha256": "12aa8eeaa5a32ed02f6dae88883712eefc1c1530bdb2ab5ee32f3b8a0b179d16",
+      "retrieval_calls": 1,
+      "retrieved_triples": 4,
+      "validation_ms": 0.05722604691982269,
+      "final_sha256": "12aa8eeaa5a32ed02f6dae88883712eefc1c1530bdb2ab5ee32f3b8a0b179d16",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 0.6614990998059511
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-invalid_lei",
+      "variant": "invalid_lei",
+      "condition": "P1",
+      "status": "completed",
+      "first_sha256": "26207d19ebfd906e9d7bc5679fd75cd625fec4f0712641c13b99eb763ca3aec0",
+      "retrieval_calls": 1,
+      "retrieved_triples": 8,
+      "validation_ms": 0.23559504188597202,
+      "final_sha256": "26207d19ebfd906e9d7bc5679fd75cd625fec4f0712641c13b99eb763ca3aec0",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1.082514994777739
+    },
+    {
+      "case_id": "00EHHQ2ZHDCFXJCPCL46-missing_exception",
+      "variant": "missing_exception",
+      "condition": "G0",
+      "status": "completed",
+      "first_sha256": "533bcc439b5f39a0e1e8ca45129894e50018e1d7a5667aa45a7a2bf8fd53821e",
+      "retrieval_calls": 1,
+      "retrieved_triples": 4,
+      "validation_ms": 0.0,
+      "final_sha256": "533bcc439b5f39a0e1e8ca45129894e50018e1d7a5667aa45a7a2bf8fd53821e",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803521-keU2ROdIvQyy876jzP2n",
+        "usage": {
+          "prompt_tokens": 478,
+          "completion_tokens": 20,
+          "total_tokens": 498,
+          "cost": 8.37e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 8.37e-05,
+            "upstream_inference_prompt_cost": 7.17e-05,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1653.6213849904016,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1654.7471869271249
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-wrong_parent",
+      "variant": "wrong_parent",
+      "condition": "G2",
+      "status": "completed",
+      "first_sha256": "b547e6ab9e9a2d4e9998c4c6bb43a8ec0aac14a42c7b6c185229e9ea6de4c7ee",
+      "retrieval_calls": 1,
+      "retrieved_triples": 8,
+      "validation_ms": 2.2257990203797817,
+      "final_sha256": "b547e6ab9e9a2d4e9998c4c6bb43a8ec0aac14a42c7b6c185229e9ea6de4c7ee",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803523-SlcWUW6gdStEGx7Y9OAz",
+        "usage": {
+          "prompt_tokens": 727,
+          "completion_tokens": 35,
+          "total_tokens": 762,
+          "cost": 0.00013005,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00013005,
+            "upstream_inference_prompt_cost": 0.00010905,
+            "upstream_inference_completions_cost": 2.1e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1940.6684670830145,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "00EHHQ2ZHDCFXJCPCL46",
+        "evidence_ids": [
+          "E006",
+          "E003"
+        ]
+      },
+      "correct": false,
+      "supported": true,
+      "total_ms": 1944.4394070887938
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-invalid_lei",
+      "variant": "invalid_lei",
+      "condition": "G1",
+      "status": "completed",
+      "first_sha256": "26207d19ebfd906e9d7bc5679fd75cd625fec4f0712641c13b99eb763ca3aec0",
+      "retrieval_calls": 1,
+      "retrieved_triples": 8,
+      "validation_ms": 2.5766680482774973,
+      "final_sha256": "26207d19ebfd906e9d7bc5679fd75cd625fec4f0712641c13b99eb763ca3aec0",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 3.89291497413069
+    },
+    {
+      "case_id": "00EHHQ2ZHDCFXJCPCL46-missing_exception",
+      "variant": "missing_exception",
+      "condition": "U2",
+      "status": "completed",
+      "first_sha256": "533bcc439b5f39a0e1e8ca45129894e50018e1d7a5667aa45a7a2bf8fd53821e",
+      "retrieval_calls": 2,
+      "retrieved_triples": 9,
+      "validation_ms": 0.0,
+      "final_sha256": "fe1962cca38837c915b752fea5a4e5338fbc34707733311f333b4040f5695827",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803524-ZItcztTm5prHSjULKdxC",
+        "usage": {
+          "prompt_tokens": 528,
+          "completion_tokens": 20,
+          "total_tokens": 548,
+          "cost": 9.12e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.12e-05,
+            "upstream_inference_prompt_cost": 7.92e-05,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1435.7539709890261,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1442.6974289817736
+    },
+    {
+      "case_id": "00EHHQ2ZHDCFXJCPCL46-invalid_reason",
+      "variant": "invalid_reason",
+      "condition": "R0",
+      "status": "completed",
+      "first_sha256": "c22bc531788d6755b6f2112f159a6a2a997a323f91fd3dec8c97d0ecbf58d092",
+      "retrieval_calls": 1,
+      "retrieved_triples": 5,
+      "validation_ms": 0.0,
+      "final_sha256": "c22bc531788d6755b6f2112f159a6a2a997a323f91fd3dec8c97d0ecbf58d092",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803526-OY5s3Like8pCpErkA3pR",
+        "usage": {
+          "prompt_tokens": 442,
+          "completion_tokens": 20,
+          "total_tokens": 462,
+          "cost": 7.83e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 7.83e-05,
+            "upstream_inference_prompt_cost": 6.63e-05,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1538.9638060005382,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1540.1992839761078
+    },
+    {
+      "case_id": "00EHHQ2ZHDCFXJCPCL46-missing_exception",
+      "variant": "missing_exception",
+      "condition": "G2",
+      "status": "completed",
+      "first_sha256": "533bcc439b5f39a0e1e8ca45129894e50018e1d7a5667aa45a7a2bf8fd53821e",
+      "retrieval_calls": 2,
+      "retrieved_triples": 9,
+      "validation_ms": 4.586618044413626,
+      "final_sha256": "fe1962cca38837c915b752fea5a4e5338fbc34707733311f333b4040f5695827",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803527-rtaMwR8Y94QtKKA2843e",
+        "usage": {
+          "prompt_tokens": 528,
+          "completion_tokens": 20,
+          "total_tokens": 548,
+          "cost": 9.12e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.12e-05,
+            "upstream_inference_prompt_cost": 7.92e-05,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1676.5361540019512,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1683.0897550098598
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-missing_name",
+      "variant": "missing_name",
+      "condition": "U2",
+      "status": "completed",
+      "first_sha256": "742f1af91e839270ece9dfaad8e12c7e72a65cbed42b357f5eb91f869759192f",
+      "retrieval_calls": 2,
+      "retrieved_triples": 15,
+      "validation_ms": 0.0,
+      "final_sha256": "765aa3dbfad8c4834d6d5854c9167b8fbaa72bef283f2cbc6430b94fd47fbdc5",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803529-kkaJhdpb0RqcNfG5UufQ",
+        "usage": {
+          "prompt_tokens": 711,
+          "completion_tokens": 34,
+          "total_tokens": 745,
+          "cost": 0.00012705,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00012705,
+            "upstream_inference_prompt_cost": 0.00010665,
+            "upstream_inference_completions_cost": 2.04e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1538.900031009689,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "Q774KI4AW80FHFW33O61",
+        "evidence_ids": [
+          "E003",
+          "E008"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1547.2639470826834
+    },
+    {
+      "case_id": "00EHHQ2ZHDCFXJCPCL46-invalid_reason",
+      "variant": "invalid_reason",
+      "condition": "G2",
+      "status": "completed",
+      "first_sha256": "c22bc531788d6755b6f2112f159a6a2a997a323f91fd3dec8c97d0ecbf58d092",
+      "retrieval_calls": 2,
+      "retrieved_triples": 10,
+      "validation_ms": 6.609718897379935,
+      "final_sha256": "c22bc531788d6755b6f2112f159a6a2a997a323f91fd3dec8c97d0ecbf58d092",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 8.98696098010987
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-wrong_parent",
+      "variant": "wrong_parent",
+      "condition": "G0",
+      "status": "completed",
+      "first_sha256": "b547e6ab9e9a2d4e9998c4c6bb43a8ec0aac14a42c7b6c185229e9ea6de4c7ee",
+      "retrieval_calls": 1,
+      "retrieved_triples": 8,
+      "validation_ms": 0.0,
+      "final_sha256": "b547e6ab9e9a2d4e9998c4c6bb43a8ec0aac14a42c7b6c185229e9ea6de4c7ee",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803531-CZltFXnwEPMp3hacUZQY",
+        "usage": {
+          "prompt_tokens": 727,
+          "completion_tokens": 35,
+          "total_tokens": 762,
+          "cost": 0.00013005,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00013005,
+            "upstream_inference_prompt_cost": 0.00010905,
+            "upstream_inference_completions_cost": 2.1e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1860.2834569755942,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "00EHHQ2ZHDCFXJCPCL46",
+        "evidence_ids": [
+          "E006",
+          "E003"
+        ]
+      },
+      "correct": false,
+      "supported": true,
+      "total_ms": 1861.7610370274633
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-missing_relation",
+      "variant": "missing_relation",
+      "condition": "G1",
+      "status": "completed",
+      "first_sha256": "12aa8eeaa5a32ed02f6dae88883712eefc1c1530bdb2ab5ee32f3b8a0b179d16",
+      "retrieval_calls": 1,
+      "retrieved_triples": 4,
+      "validation_ms": 2.4800190003588796,
+      "final_sha256": "12aa8eeaa5a32ed02f6dae88883712eefc1c1530bdb2ab5ee32f3b8a0b179d16",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 3.430671989917755
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-clean",
+      "variant": "clean",
+      "condition": "U2",
+      "status": "completed",
+      "first_sha256": "765aa3dbfad8c4834d6d5854c9167b8fbaa72bef283f2cbc6430b94fd47fbdc5",
+      "retrieval_calls": 2,
+      "retrieved_triples": 16,
+      "validation_ms": 0.0,
+      "final_sha256": "765aa3dbfad8c4834d6d5854c9167b8fbaa72bef283f2cbc6430b94fd47fbdc5",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803533-J3eDIskjSpUlk0Ye49Fl",
+        "usage": {
+          "prompt_tokens": 711,
+          "completion_tokens": 34,
+          "total_tokens": 745,
+          "cost": 0.00012705,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00012705,
+            "upstream_inference_prompt_cost": 0.00010665,
+            "upstream_inference_completions_cost": 2.04e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1741.2402720656246,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "Q774KI4AW80FHFW33O61",
+        "evidence_ids": [
+          "E003",
+          "E008"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1749.2355869617313
+    },
+    {
+      "case_id": "00EHHQ2ZHDCFXJCPCL46-clean",
+      "variant": "clean",
+      "condition": "G2",
+      "status": "completed",
+      "first_sha256": "fe1962cca38837c915b752fea5a4e5338fbc34707733311f333b4040f5695827",
+      "retrieval_calls": 1,
+      "retrieved_triples": 5,
+      "validation_ms": 2.1564309718087316,
+      "final_sha256": "fe1962cca38837c915b752fea5a4e5338fbc34707733311f333b4040f5695827",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803534-LhaYHZZhnpIibdY6kjsh",
+        "usage": {
+          "prompt_tokens": 528,
+          "completion_tokens": 20,
+          "total_tokens": 548,
+          "cost": 9.12e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.12e-05,
+            "upstream_inference_prompt_cost": 7.92e-05,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1643.7323240097612,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1647.1377189736813
+    },
+    {
+      "case_id": "00EHHQ2ZHDCFXJCPCL46-clean",
+      "variant": "clean",
+      "condition": "P1",
+      "status": "completed",
+      "first_sha256": "fe1962cca38837c915b752fea5a4e5338fbc34707733311f333b4040f5695827",
+      "retrieval_calls": 1,
+      "retrieved_triples": 5,
+      "validation_ms": 0.09312096517533064,
+      "final_sha256": "fe1962cca38837c915b752fea5a4e5338fbc34707733311f333b4040f5695827",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803536-9PyNzjlLQftW9qsJEwZo",
+        "usage": {
+          "prompt_tokens": 528,
+          "completion_tokens": 20,
+          "total_tokens": 548,
+          "cost": 9.12e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.12e-05,
+            "upstream_inference_prompt_cost": 7.92e-05,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1503.5546909784898,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1504.9097340088338
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-clean",
+      "variant": "clean",
+      "condition": "G1",
+      "status": "completed",
+      "first_sha256": "765aa3dbfad8c4834d6d5854c9167b8fbaa72bef283f2cbc6430b94fd47fbdc5",
+      "retrieval_calls": 1,
+      "retrieved_triples": 8,
+      "validation_ms": 2.235212945379317,
+      "final_sha256": "765aa3dbfad8c4834d6d5854c9167b8fbaa72bef283f2cbc6430b94fd47fbdc5",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803537-T2Mps81OpnKmR1hDjtiw",
+        "usage": {
+          "prompt_tokens": 711,
+          "completion_tokens": 34,
+          "total_tokens": 745,
+          "cost": 0.00012705,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00012705,
+            "upstream_inference_prompt_cost": 0.00010665,
+            "upstream_inference_completions_cost": 2.04e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1477.708030026406,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "Q774KI4AW80FHFW33O61",
+        "evidence_ids": [
+          "E003",
+          "E008"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1481.477325083688
+    },
+    {
+      "case_id": "00EHHQ2ZHDCFXJCPCL46-invalid_reason",
+      "variant": "invalid_reason",
+      "condition": "U2",
+      "status": "completed",
+      "first_sha256": "c22bc531788d6755b6f2112f159a6a2a997a323f91fd3dec8c97d0ecbf58d092",
+      "retrieval_calls": 2,
+      "retrieved_triples": 10,
+      "validation_ms": 0.0,
+      "final_sha256": "c22bc531788d6755b6f2112f159a6a2a997a323f91fd3dec8c97d0ecbf58d092",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803539-MV0k6lJ4dPJbublDkhlr",
+        "usage": {
+          "prompt_tokens": 526,
+          "completion_tokens": 20,
+          "total_tokens": 546,
+          "cost": 9.09e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.09e-05,
+            "upstream_inference_prompt_cost": 7.89e-05,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1790.9282949985936,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1798.0558109702542
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-clean",
+      "variant": "clean",
+      "condition": "G2",
+      "status": "completed",
+      "first_sha256": "765aa3dbfad8c4834d6d5854c9167b8fbaa72bef283f2cbc6430b94fd47fbdc5",
+      "retrieval_calls": 1,
+      "retrieved_triples": 8,
+      "validation_ms": 2.2166629787534475,
+      "final_sha256": "765aa3dbfad8c4834d6d5854c9167b8fbaa72bef283f2cbc6430b94fd47fbdc5",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803541-HbO13s9gIPNC7UwZKx0J",
+        "usage": {
+          "prompt_tokens": 711,
+          "completion_tokens": 34,
+          "total_tokens": 745,
+          "cost": 0.00012705,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00012705,
+            "upstream_inference_prompt_cost": 0.00010665,
+            "upstream_inference_completions_cost": 2.04e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1487.833023071289,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "Q774KI4AW80FHFW33O61",
+        "evidence_ids": [
+          "E003",
+          "E008"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1491.5985270636156
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-clean",
+      "variant": "clean",
+      "condition": "R0",
+      "status": "completed",
+      "first_sha256": "765aa3dbfad8c4834d6d5854c9167b8fbaa72bef283f2cbc6430b94fd47fbdc5",
+      "retrieval_calls": 1,
+      "retrieved_triples": 8,
+      "validation_ms": 0.0,
+      "final_sha256": "765aa3dbfad8c4834d6d5854c9167b8fbaa72bef283f2cbc6430b94fd47fbdc5",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803542-79ZcBRi704jweguLeYPg",
+        "usage": {
+          "prompt_tokens": 580,
+          "completion_tokens": 34,
+          "total_tokens": 614,
+          "cost": 0.0001074,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001074,
+            "upstream_inference_prompt_cost": 8.7e-05,
+            "upstream_inference_completions_cost": 2.04e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1407.8885540366173,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "Q774KI4AW80FHFW33O61",
+        "evidence_ids": [
+          "E003",
+          "E008"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1409.69702496659
+    },
+    {
+      "case_id": "01ERPZV3DOLNXY2MLB90-wrong_parent",
+      "variant": "wrong_parent",
+      "condition": "G1",
+      "status": "completed",
+      "first_sha256": "b547e6ab9e9a2d4e9998c4c6bb43a8ec0aac14a42c7b6c185229e9ea6de4c7ee",
+      "retrieval_calls": 1,
+      "retrieved_triples": 8,
+      "validation_ms": 2.280118060298264,
+      "final_sha256": "b547e6ab9e9a2d4e9998c4c6bb43a8ec0aac14a42c7b6c185229e9ea6de4c7ee",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791803544-9IQ3tANEpWoPskrwmGJR",
+        "usage": {
+          "prompt_tokens": 727,
+          "completion_tokens": 35,
+          "total_tokens": 762,
+          "cost": 0.00013005,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00013005,
+            "upstream_inference_prompt_cost": 0.00010905,
+            "upstream_inference_completions_cost": 2.1e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1373.9187739556655,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "00EHHQ2ZHDCFXJCPCL46",
+        "evidence_ids": [
+          "E006",
+          "E003"
+        ]
+      },
+      "correct": false,
+      "supported": true,
+      "total_ms": 1377.7986820787191
+    }
+  ],
+  "functional_matches": 8,
+  "python_shacl_matches": 8,
+  "requested_model": "openai/gpt-4o-mini",
+  "budget": {
+    "calls_attempted": 36,
+    "reserved_upper_usd": 0.0356118,
+    "cost_usd_reported": 0.003871050000000001,
+    "missing_cost_responses": 0
+  },
+  "metrics": {
+    "R0": {
+      "total": 8,
+      "answered": 5,
+      "correct": 3,
+      "accuracy_all": 0.375,
+      "accuracy_answered": 0.6,
+      "abstained": 3,
+      "errors": 0,
+      "supported_answers": 5,
+      "retrieval_calls": 8,
+      "retrieved_triples": 49,
+      "validation_ms": 0.0,
+      "llm_calls": 8,
+      "prompt_tokens": 3988,
+      "completion_tokens": 215,
+      "cost_usd_reported": 0.0007272,
+      "mean_total_ms": 1597.9610396316275
+    },
+    "G0": {
+      "total": 8,
+      "answered": 4,
+      "correct": 2,
+      "accuracy_all": 0.25,
+      "accuracy_answered": 0.5,
+      "abstained": 4,
+      "errors": 0,
+      "supported_answers": 4,
+      "retrieval_calls": 8,
+      "retrieved_triples": 49,
+      "validation_ms": 0.0,
+      "llm_calls": 8,
+      "prompt_tokens": 4809,
+      "completion_tokens": 210,
+      "cost_usd_reported": 0.00084735,
+      "mean_total_ms": 1624.4929612439591
+    },
+    "G1": {
+      "total": 8,
+      "answered": 2,
+      "correct": 1,
+      "accuracy_all": 0.125,
+      "accuracy_answered": 0.5,
+      "abstained": 6,
+      "errors": 0,
+      "supported_answers": 2,
+      "retrieval_calls": 8,
+      "retrieved_triples": 49,
+      "validation_ms": 19.56221100408584,
+      "llm_calls": 3,
+      "prompt_tokens": 1966,
+      "completion_tokens": 89,
+      "cost_usd_reported": 0.00034829999999999996,
+      "mean_total_ms": 546.976663521491
+    },
+    "G2": {
+      "total": 8,
+      "answered": 4,
+      "correct": 3,
+      "accuracy_all": 0.375,
+      "accuracy_answered": 0.75,
+      "abstained": 4,
+      "errors": 0,
+      "supported_answers": 4,
+      "retrieval_calls": 13,
+      "retrieved_triples": 83,
+      "validation_ms": 32.1088369237259,
+      "llm_calls": 6,
+      "prompt_tokens": 3916,
+      "completion_tokens": 177,
+      "cost_usd_reported": 0.0006935999999999999,
+      "mean_total_ms": 1201.7742462776368
+    },
+    "U2": {
+      "total": 8,
+      "answered": 5,
+      "correct": 3,
+      "accuracy_all": 0.375,
+      "accuracy_answered": 0.6,
+      "abstained": 3,
+      "errors": 0,
+      "supported_answers": 5,
+      "retrieval_calls": 16,
+      "retrieved_triples": 104,
+      "validation_ms": 0.0,
+      "llm_calls": 8,
+      "prompt_tokens": 5146,
+      "completion_tokens": 224,
+      "cost_usd_reported": 0.0009063,
+      "mean_total_ms": 1629.4754635018762
+    },
+    "P1": {
+      "total": 8,
+      "answered": 2,
+      "correct": 1,
+      "accuracy_all": 0.125,
+      "accuracy_answered": 0.5,
+      "abstained": 6,
+      "errors": 0,
+      "supported_answers": 2,
+      "retrieval_calls": 8,
+      "retrieved_triples": 49,
+      "validation_ms": 0.800287933088839,
+      "llm_calls": 3,
+      "prompt_tokens": 1966,
+      "completion_tokens": 89,
+      "cost_usd_reported": 0.00034829999999999996,
+      "mean_total_ms": 596.0280261642765
+    }
+  },
+  "finished_at": "2026-10-12T11:12:25.551195+00:00"
+}

@@ -12,19 +12,21 @@ SHACL·OWL 제약을 GraphRAG의 검색–검증–생성 루프에 **런타임 
 기존 GraphRAG 연구는 온톨로지를 검색 범위 축소나 사후 필터에 쓰는 경우가 많습니다.  
 스키마 수준의 논리 제약과 검증 계층이 없으면 잘못된 근거로 답변이 나와도 위반을 판정하기 어렵습니다.
 
-본 프로젝트는 ‘그래프 구조의 효과’와 ‘스키마 제약의 효과’를 분리 측정할 수 있도록 제약 검증이 내장된 공개 지식베이스(YAGO 4.6)를 기반으로 데이터셋·검증 루프·비교 실험까지 한 사이클을 완결합니다.
+첫 데이터셋은 GLEIF의 법인·회계연결 모회사·보고 예외 데이터입니다. 같은 검색 근거를 검증 없이 사용할 때와 검사 후 보류하거나 다시 검색할 때를 비교합니다. SHACL이 잡지 못하는 사실 오류와 정상 근거의 과도한 차단도 함께 측정합니다.
 
-## 주요 기능 (예정)
+## 구현 범위
 
-현재 호스트 부트스트랩과 합성 RDF의 SHACL 검증 실험(사전 점검)을 실행할 수 있습니다. 아래 GraphRAG 기능은 후속 구현 범위입니다.
+합성 RDF 사전 점검을 실행할 수 있습니다. GLEIF 배치 수집과 부분집합 추출, RDF 변환을 거쳐 SHACL 검증·OpenRouter 구조화 답변·정답 채점까지 실행할 수 있습니다.
 
-- Ontology Constraint Validation (SHACL·OWL)
-- GraphRAG Pipeline (검색–검증–생성 루프)
-- Text-to-SPARQL
+- RDFLib 고정 질의로 근거 검색, pySHACL 또는 동등한 Python 규칙으로 검사
+- 검증 후 보류·제한 재검색, 무조건 재조회 비교군
+- 원본·입력 해시·질의·근거·보고서·LLM 사용량과 실패 기록
+
+Text-to-SPARQL, OWL 추론, 독립적인 벡터 검색 RAG, GraphDB·Neo4j·Neptune 비교는 후속 범위입니다.
 
 ## 수행 범위
 
-1. 공개 지식베이스(YAGO 4.6) 슬라이스 추출 및 그래프 DB 적재
+1. GLEIF 동일 시점 배치 3종 수집과 관계·보고 예외를 보존한 부분집합 추출
 2. SHACL·OWL 검증 로직 구현, 제약 위반 주입 프로토콜 및 채점 도구
 3. Text-to-SPARQL 및 검증 루프 파이프라인 프로토타입
 4. 조건별 비교 실험
@@ -46,7 +48,7 @@ SHACL·OWL 제약을 GraphRAG의 검색–검증–생성 루프에 **런타임 
 | LLM | OpenRouter API (자체 서빙·GPU 미사용) |
 | IaC (예정) | Terraform (`infra/terraform/`) |
 
-지식베이스는 공개 라이선스(CC BY) 데이터만 사용합니다.
+GLEIF 데이터는 CC0 이용 조건을 따릅니다. YAGO는 이번 파일럿에서 사용하지 않으며 후속 일반화 실험 후보입니다.
 
 ## 빠른 시작 (호스트 부트스트랩)
 
@@ -75,6 +77,9 @@ chmod +x scripts/*.sh scripts/lib/*.sh
 uv sync --locked
 uv run --locked python scripts/run_validation_experiment.py
 
+# 공개된 작은 GLEIF 입력으로 실제 LLM 파일럿 (.env 필요)
+uv run --locked python scripts/run_gleif_pilot.py experiments/gleif/dataset.json
+
 # 문서 원본 검사
 uv sync --locked --group docs
 uv run --locked --group docs mkdocs build --strict
@@ -85,7 +90,7 @@ BUNDLE_GEMFILE=website/Gemfile bundle install
 ```
 
 실행 기록은 `docs/experiments/records/`, 입력 사본과 상세 보고서는 `runs/`에 남습니다.
-공개 문서용 기록 없이 점검하려면 실행기에 `--local-only`를 붙입니다.
+합성 데이터 실행기의 `--local-only`는 공개 기록 생성을 생략합니다. GLEIF 실행기는 기본적으로 `runs/`에만 저장하며 검토 후 공개용 기록을 내보냅니다. 전체 배치 재수집과 파일럿의 범위는 실험 명세를 따릅니다.
 재현에 필요한 `uv.lock`도 코드·명세와 함께 버전 관리합니다.
 
 ## 예상 결과물
@@ -117,4 +122,4 @@ BUNDLE_GEMFILE=website/Gemfile bundle install
 ## 라이선스
 
 코드·문서 라이선스는 저장소 공개 시점에 확정합니다.  
-데이터셋은 원본 지식베이스(YAGO 등) 라이선스를 따릅니다.
+GLEIF 데이터와 파생 부분집합은 [원본 CC0 이용 조건](https://www.gleif.org/en/meta/lei-data-terms-of-use/)을 따릅니다.
