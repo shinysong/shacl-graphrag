@@ -6,6 +6,16 @@
 
 <!-- RUNS -->
 
+- [20261012T120139Z-yago-2af3a4ef](20261012T120139Z-yago-2af3a4ef.md) — validated, pilot
+
+- [20261012T120020Z-yago-8dab226c](20261012T120020Z-yago-8dab226c.md) — completed, development
+
+- [20261012T115954Z-yago-7c6ab413](20261012T115954Z-yago-7c6ab413.md) — completed, development
+
+- [20261012T115923Z-yago-b7f30599](20261012T115923Z-yago-b7f30599.md) — functional_mismatch, development
+
+- [20261012T115545Z-yago-8219f568](20261012T115545Z-yago-8219f568.md) — functional_mismatch, development
+
 - [20261012T111331Z-gleif-c4fa23cb](20261012T111331Z-gleif-c4fa23cb.md) — completed, pilot
 
 - [20261012T111127Z-gleif-2609aca2](20261012T111127Z-gleif-2609aca2.md) — completed, development

@@ -185,7 +185,7 @@ def answer_support(answer, graph, subject):
 
 
 class Gateway:
-    def __init__(self, config, directory):
+    def __init__(self, config, directory, *, prompt_path=None, answer_kinds=("parent", "exception")):
         env = dotenv_values(ROOT / '.env')
         key = env.get('OPENROUTER_API_KEY')
         if not key or key.startswith('your_'):
@@ -197,7 +197,8 @@ class Gateway:
         self.client = httpx.Client(timeout=60, headers={'Authorization': 'Bearer ' + key})
         self.config, self.directory = config, directory
         self.calls, self.reserved, self.actual, self.missing_cost = 0, 0.0, 0.0, 0
-        self.prompt = (FIX / 'prompt.txt').read_text()
+        self.prompt = (prompt_path or FIX / 'prompt.txt').read_text()
+        self.answer_kinds = set(answer_kinds)
 
     def generate(self, question, evidence, path):
         config = self.config
@@ -238,7 +239,7 @@ class Gateway:
             raise ValueError('InvalidAnswerSchema')
         if not all(isinstance(x, str) for x in answer['evidence_ids']):
             raise ValueError('InvalidCitations')
-        if answer['status'] == 'answer' and (answer.get('kind') not in {'parent', 'exception'} or not isinstance(answer.get('value'), str)):
+        if answer['status'] == 'answer' and (answer.get('kind') not in self.answer_kinds or not isinstance(answer.get('value'), str)):
             raise ValueError('InvalidAnswerValue')
         return answer, {'model': raw.get('model'), 'provider': raw.get('provider'),
                         'generation_id': raw.get('id'), 'usage': usage, 'llm_ms': elapsed,

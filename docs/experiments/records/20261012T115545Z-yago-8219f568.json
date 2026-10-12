@@ -1,0 +1,293 @@
+{
+  "run_id": "20261012T115545Z-yago-8219f568",
+  "experiment": "yago-native-pilot",
+  "protocol_version": "0.3",
+  "started_at": "2026-10-12T11:55:45.113452+00:00",
+  "status": "functional_mismatch",
+  "split": "development",
+  "validate_only": true,
+  "config": {
+    "protocol_version": "0.3",
+    "experiment": "yago-native-pilot",
+    "description": "Official YAGO 4.6 tiny and unmodified full SHACL schema; exploratory fixed-query pilot",
+    "seed": 20261012,
+    "conditions": [
+      "R0",
+      "G0",
+      "G1",
+      "G2",
+      "U2",
+      "P1"
+    ],
+    "max_retries": 2,
+    "max_llm_calls": 160,
+    "max_completion_tokens": 240,
+    "max_prompt_chars": 12000,
+    "max_cost_usd": 1.0,
+    "provider_max_price_per_million": {
+      "prompt": 0.2,
+      "completion": 0.8
+    },
+    "temperature": 0,
+    "repeat_count": 1,
+    "inference": "none",
+    "variants": [
+      "clean",
+      "missing_label",
+      "missing_relation",
+      "missing_target_type",
+      "duplicate_relation",
+      "wrong_class",
+      "wrong_datatype",
+      "wrong_place"
+    ]
+  },
+  "source_manifest": {
+    "source": {
+      "dataset": "YAGO 4.6 official tiny distribution",
+      "retrieved_at": "2026-10-12T11:48:37.282617+00:00",
+      "release_index": "https://yago-knowledge.org/data/yago4.6/",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "YAGO team, Télécom Paris. YAGO 4.6: A Logically Consistent Subset of Wikidata (2026).",
+      "files": {
+        "schema": {
+          "url": "https://yago-knowledge.org/data/yago4.6/yago-4.6-schema.zip",
+          "size": 19471,
+          "sha256": "01a4f4fd80a04ce38375163993644e8370da3b6761b3e8cc703be97cc5a3d07a",
+          "headers": {},
+          "member": "yago-schema.ttl",
+          "turtle_sha256": "b3f185f27c21e0e2b561dc92f7f9e3d54ccd6f4acac01e9ae97c2d42ef3b636f"
+        },
+        "tiny": {
+          "url": "https://yago-knowledge.org/data/yago4.6/yago-4.6-tiny.zip",
+          "size": 91188862,
+          "sha256": "0cb8805ea3d555b3c0487891498cf9042962b0e96caca701e83926c4418a0f81",
+          "headers": {
+            "Last-Modified": "Mon, 03 Aug 2026 03:06:13 GMT",
+            "ETag": "\"6a7005a5-56f6e7e\"",
+            "Content-Length": "91188862"
+          },
+          "member": "yago-tiny.ttl",
+          "turtle_sha256": "7951772a1ec318785233211f0653b0e2659ba49e8b5d3998abd0941c5f515993"
+        }
+      }
+    },
+    "selection": "First four eligible subjects in official tiny birthPlace discovery order; first development, three pilot; no representative sampling claim.",
+    "cohort": [
+      {
+        "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+        "place": "http://yago-knowledge.org/resource/Amsterdam",
+        "birth_date": "\"1852-07-18\"^^<http://www.w3.org/2001/XMLSchema#date>",
+        "name": "Anthony Sweijs",
+        "split": "development"
+      },
+      {
+        "subject": "http://yago-knowledge.org/resource/Abu_Nuwas",
+        "place": "http://yago-knowledge.org/resource/Ahvaz",
+        "birth_date": "\"0762\"^^<http://www.w3.org/2001/XMLSchema#gYear>",
+        "name": "Abu Nuwas",
+        "split": "pilot"
+      },
+      {
+        "subject": "http://yago-knowledge.org/resource/Annette_Salmeen",
+        "place": "http://yago-knowledge.org/resource/Ann_Arbor_Michigan",
+        "birth_date": "\"1974-12-07\"^^<http://www.w3.org/2001/XMLSchema#date>",
+        "name": "Annette Salmeen",
+        "split": "pilot"
+      },
+      {
+        "subject": "http://yago-knowledge.org/resource/Anne_Hutchinson",
+        "place": "http://yago-knowledge.org/resource/Alford_Lincolnshire",
+        "birth_date": "\"1591\"^^<http://www.w3.org/2001/XMLSchema#gYear>",
+        "name": "Anne Hutchinson",
+        "split": "pilot"
+      }
+    ],
+    "data_triples": 38,
+    "taxonomy_triples": 195,
+    "schema_triples": 5536,
+    "schema_node_shapes": 55,
+    "sha256": {
+      "data.ttl": "cbd8777492a91ddc67268466dae769628919dff35b851f51c047165ce967ed8d",
+      "taxonomy.ttl": "7850c4c0d80d18bfc9ef7b6564a275726f1796748788d119f77ee271278e7d09",
+      "schema.ttl": "b3f185f27c21e0e2b561dc92f7f9e3d54ccd6f4acac01e9ae97c2d42ef3b636f"
+    }
+  },
+  "sha256": {
+    "scripts/run_yago_pilot.py": "6ab83b4dc1403dd098a37aa6c83eea8c4b046aadfd443da10b6f006935e8330e",
+    "scripts/prepare_yago.py": "2fea30989954418e76d451b0ebdc8b58a4e7aacab3ad059365a0fa8ce4e6ba03",
+    "scripts/download_yago.py": "38b190ef6d89a0ff51801b61c2ed253f6f387004d23aa68f9fc6d464b8031cd9",
+    "scripts/run_gleif_pilot.py": "5fe64ee05b240b6afa42f0e80f8909389c6aae5ec1dae2094c2b0b031a05e4cb",
+    "docs/experiments/specification.md": "52e24541cba2e759fd46cb40d081752f06aafa78784b3388298934ad09fe94ef",
+    "uv.lock": "b29fc8a715c3f6e37b6528e28f0e1bf517b97cd9afd2beda3dfe36a22635edc0",
+    "experiments/yago/NOTICE.md": "3fcf7721c0ed398275e6a8a255debf436fb19c84b25d53834a8377d2fd467693",
+    "experiments/yago/config.json": "75f5dcd4503cf431c68041dfe82780e5ba638e1f2ffaa7c0240b47e46b0fff67",
+    "experiments/yago/data.ttl": "cbd8777492a91ddc67268466dae769628919dff35b851f51c047165ce967ed8d",
+    "experiments/yago/manifest.json": "02cb5714ea158683053e9011d402bae7ddf891f49d1a28e1c164edb2187a2d88",
+    "experiments/yago/prompt.txt": "2cc7ff7e1370d590d0235d53aab81cb4ee9b1ca79a5d24a66de4d582572bb408",
+    "experiments/yago/schema.ttl": "b3f185f27c21e0e2b561dc92f7f9e3d54ccd6f4acac01e9ae97c2d42ef3b636f",
+    "experiments/yago/taxonomy.ttl": "7850c4c0d80d18bfc9ef7b6564a275726f1796748788d119f77ee271278e7d09"
+  },
+  "python": "3.12.3",
+  "packages": {
+    "rdflib": "7.6.0",
+    "pyshacl": "0.40.1",
+    "httpx": "0.28.1"
+  },
+  "git_commit": "fea41f6b52bb9fbdc8c352d678fb5ad89f4fdd3b",
+  "working_tree_dirty": true,
+  "cases": [
+    {
+      "id": "Anthony_Sweijs-clean",
+      "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+      "variant": "clean",
+      "gold": {
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam"
+      },
+      "expected_conforms": true,
+      "conforms": true,
+      "python_conforms": true,
+      "issues": [],
+      "validation_ms": 77.16894394252449,
+      "first_sha256": "7cbc7db3e797d008addfae053d67aaa00ca5d1f8f8de72fdd0cf343a06b8b1e0"
+    },
+    {
+      "id": "Anthony_Sweijs-missing_label",
+      "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+      "variant": "missing_label",
+      "gold": {
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam"
+      },
+      "expected_conforms": false,
+      "conforms": false,
+      "python_conforms": false,
+      "issues": [
+        [
+          "http://yago-knowledge.org/resource/Anthony_Sweijs",
+          "http://www.w3.org/2000/01/rdf-schema#label",
+          "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          ""
+        ]
+      ],
+      "validation_ms": 76.10394502989948,
+      "first_sha256": "5cf63740770c9a9c1c07807b288d61769b12c2c7b2c0b61f8bcc2aafde18ea92"
+    },
+    {
+      "id": "Anthony_Sweijs-missing_relation",
+      "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+      "variant": "missing_relation",
+      "gold": {
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam"
+      },
+      "expected_conforms": true,
+      "conforms": true,
+      "python_conforms": true,
+      "issues": [],
+      "validation_ms": 62.6046690158546,
+      "first_sha256": "cc531971c8cb3d8acc5632c07b43f1a3795ef1d5b4c4faebc57391317be4830d"
+    },
+    {
+      "id": "Anthony_Sweijs-missing_target_type",
+      "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+      "variant": "missing_target_type",
+      "gold": {
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam"
+      },
+      "expected_conforms": false,
+      "conforms": false,
+      "python_conforms": false,
+      "issues": [
+        [
+          "http://yago-knowledge.org/resource/Anthony_Sweijs",
+          "http://schema.org/birthPlace",
+          "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "http://yago-knowledge.org/resource/Amsterdam"
+        ]
+      ],
+      "validation_ms": 63.061120104976,
+      "first_sha256": "cd75b3aac45277d95864c20557959a6da92ce2326554b80f07bcbee828ed0907"
+    },
+    {
+      "id": "Anthony_Sweijs-duplicate_relation",
+      "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+      "variant": "duplicate_relation",
+      "gold": {
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam"
+      },
+      "expected_conforms": false,
+      "conforms": false,
+      "python_conforms": false,
+      "issues": [
+        [
+          "http://yago-knowledge.org/resource/Anthony_Sweijs",
+          "http://schema.org/birthPlace",
+          "http://www.w3.org/ns/shacl#MaxCountConstraintComponent",
+          ""
+        ]
+      ],
+      "validation_ms": 84.12936294917017,
+      "first_sha256": "8c40cb7b9700499fbbcefcf3d3f44c85c4e2aecf8dec9539b1f5d200549c30eb"
+    },
+    {
+      "id": "Anthony_Sweijs-wrong_class",
+      "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+      "variant": "wrong_class",
+      "gold": {
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam"
+      },
+      "expected_conforms": false,
+      "conforms": false,
+      "python_conforms": false,
+      "issues": [
+        [
+          "http://yago-knowledge.org/resource/Anthony_Sweijs",
+          "http://schema.org/birthPlace",
+          "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "http://yago-knowledge.org/resource/Abu_Nuwas"
+        ]
+      ],
+      "validation_ms": 68.43333097640425,
+      "first_sha256": "689675fda9ca6b78c006ab25828a6fd4eba8efe3e2e22d7fe3ab235c8c0ffd59"
+    },
+    {
+      "id": "Anthony_Sweijs-wrong_datatype",
+      "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+      "variant": "wrong_datatype",
+      "gold": {
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam"
+      },
+      "expected_conforms": false,
+      "conforms": true,
+      "python_conforms": false,
+      "issues": [],
+      "validation_ms": 75.85342298261821,
+      "first_sha256": "a12c573177a972e858d1415a2d3f8c5bf9a4c582b55ae995383c6186f8c0e07b"
+    },
+    {
+      "id": "Anthony_Sweijs-wrong_place",
+      "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+      "variant": "wrong_place",
+      "gold": {
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam"
+      },
+      "expected_conforms": true,
+      "conforms": true,
+      "python_conforms": true,
+      "issues": [],
+      "validation_ms": 98.37828297168016,
+      "first_sha256": "dc6f95a22fade32a42d68b9d8975b2f7150575ade13ec4edeaf289a098c0903d"
+    }
+  ],
+  "rows": [],
+  "functional_matches": 7,
+  "python_shacl_matches": 7
+}

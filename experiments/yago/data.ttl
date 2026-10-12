@@ -1,0 +1,51 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix yago: <http://yago-knowledge.org/resource/> .
+
+yago:Abu_Nuwas a yago:Poet ;
+    rdfs:label "Abu Nuwas"@en ;
+    schema1:birthDate "0762"^^xsd:gYear ;
+    schema1:birthPlace yago:Ahvaz .
+
+yago:Anne_Hutchinson a yago:Preacher,
+        yago:Theologian ;
+    rdfs:label "Anne Hutchinson"@en ;
+    schema1:birthDate "1591"^^xsd:gYear ;
+    schema1:birthPlace yago:Alford_Lincolnshire .
+
+yago:Annette_Salmeen a yago:Biochemist,
+        yago:University_Teacher ;
+    rdfs:label "Annette Salmeen"@en ;
+    schema1:birthDate "1974-12-07"^^xsd:date ;
+    schema1:birthPlace yago:Ann_Arbor_Michigan .
+
+yago:Anthony_Sweijs a yago:Sport_shooter ;
+    rdfs:label "Anthony Sweijs"@en ;
+    schema1:birthDate "1852-07-18"^^xsd:date ;
+    schema1:birthPlace yago:Amsterdam .
+
+yago:Ahvaz a yago:Big_City_Q1549591,
+        yago:City_Of_Iran ;
+    rdfs:label "Ahvaz"@en .
+
+yago:Alford_Lincolnshire a yago:Civil_parish,
+        yago:Town ;
+    rdfs:label "Alford, Lincolnshire"@en .
+
+yago:Amsterdam a yago:Big_City_Q1549591,
+        yago:Cadastral_Populated_Place_In_The_Netherlands,
+        yago:Cycling_City,
+        yago:Largest_City,
+        yago:National_Capital,
+        yago:Place_With_Town_Rights_And_Privileges,
+        yago:Port_City_Q2264924 ;
+    rdfs:label "Amsterdam"@en,
+        "Amsterdam"@mul .
+
+yago:Ann_Arbor_Michigan a yago:Big_City_Q1549591,
+        yago:City_In_The_United_States,
+        yago:County_seat ;
+    rdfs:label "Ann Arbor, Michigan"@en,
+        "Ann Arbor"@mul .
+

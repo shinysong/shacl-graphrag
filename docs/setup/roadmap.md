@@ -43,4 +43,4 @@
 
 ## 5. 데이터
 
-`scripts/download_gleif.py`는 동일 배포 시점의 Golden Copy CSV 3종을 내려받고 해시를 기록한다. `scripts/prepare_gleif.py`는 전체 행 수를 확인하고 법인·모회사·보고 예외가 보존된 작은 표본을 만든다. `scripts/run_gleif_pilot.py`는 RDFLib·pySHACL·OpenRouter로 파일럿을 실행한다. YAGO는 후속 일반화 실험 후보이며 현재 데이터셋은 GLEIF다.
+`scripts/download_gleif.py`는 동일 배포 시점의 Golden Copy CSV 3종을 내려받고 해시를 기록한다. `scripts/prepare_gleif.py`는 전체 행 수를 확인하고 법인·모회사·보고 예외가 보존된 작은 표본을 만든다. `scripts/run_gleif_pilot.py`는 RDFLib·pySHACL·OpenRouter로 파일럿을 실행한다. YAGO 4.6도 원본 SHACL과 출생지 질의로 작은 후속 파일럿을 실행했다. 결과와 한계는 [YAGO 연구 일지](../journal/2026-10-12-yago-pilot.md)에 기록한다.

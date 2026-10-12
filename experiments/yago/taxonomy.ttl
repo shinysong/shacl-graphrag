@@ -1,0 +1,286 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://schema.org/> .
+@prefix yago: <http://yago-knowledge.org/resource/> .
+
+schema1:AdministrativeArea a rdfs:Class ;
+    rdfs:subClassOf yago:LocalOrganization .
+
+schema1:City a rdfs:Class ;
+    rdfs:subClassOf schema1:AdministrativeArea .
+
+schema1:Country a rdfs:Class ;
+    rdfs:subClassOf schema1:AdministrativeArea .
+
+schema1:Organization a rdfs:Class ;
+    rdfs:subClassOf schema1:Thing .
+
+schema1:Person a rdfs:Class ;
+    rdfs:subClassOf schema1:Thing .
+
+schema1:Place a rdfs:Class ;
+    rdfs:subClassOf schema1:Thing .
+
+schema1:Thing a rdfs:Class .
+
+yago:Administrative_Territorial_Entity_Of_A_Single_Country a rdfs:Class ;
+    rdfs:subClassOf schema1:AdministrativeArea .
+
+yago:Administrative_divisions_of_Iran a rdfs:Class ;
+    rdfs:subClassOf yago:Administrative_Territorial_Entity_Of_A_Single_Country .
+
+yago:Administrative_geography_of_the_United_Kingdom a rdfs:Class ;
+    rdfs:subClassOf yago:Administrative_Territorial_Entity_Of_A_Single_Country .
+
+yago:Advisory_board a rdfs:Class ;
+    rdfs:subClassOf yago:Panel .
+
+yago:Artist a rdfs:Class ;
+    rdfs:subClassOf yago:Creator .
+
+yago:Author a rdfs:Class ;
+    rdfs:subClassOf yago:Creator .
+
+yago:Big_City_Q1549591 a rdfs:Class ;
+    rdfs:subClassOf schema1:City .
+
+yago:Biochemist a rdfs:Class ;
+    rdfs:subClassOf yago:Biologist,
+        yago:Chemist,
+        yago:Interdisciplinary_Scientist .
+
+yago:Biologist a rdfs:Class ;
+    rdfs:subClassOf yago:Scientist .
+
+yago:Business_And_Administration_Professionals a rdfs:Class ;
+    rdfs:subClassOf yago:Intellectual_And_Scientific_Professionals .
+
+yago:Businessperson a rdfs:Class ;
+    rdfs:subClassOf yago:Business_And_Administration_Professionals .
+
+yago:Cadastral_Populated_Place_In_The_Netherlands a rdfs:Class ;
+    rdfs:subClassOf yago:Dwelling_Place .
+
+yago:Cadre a rdfs:Class ;
+    rdfs:subClassOf yago:Businessperson .
+
+yago:Capital_city a rdfs:Class ;
+    rdfs:subClassOf schema1:City .
+
+yago:Chemist a rdfs:Class ;
+    rdfs:subClassOf yago:Physical_Scientist .
+
+yago:City_In_The_United_States a rdfs:Class ;
+    rdfs:subClassOf schema1:City,
+        yago:Municipality_In_The_United_States,
+        yago:United_States_urban_area .
+
+yago:City_Of_Iran a rdfs:Class ;
+    rdfs:subClassOf schema1:City,
+        yago:Administrative_divisions_of_Iran .
+
+yago:Civil_parish a rdfs:Class ;
+    rdfs:subClassOf yago:Parish_administrative_division,
+        yago:Subdivisions_of_England .
+
+yago:Committee a rdfs:Class ;
+    rdfs:subClassOf yago:Deliberative_assembly .
+
+yago:Council a rdfs:Class ;
+    rdfs:subClassOf yago:Vorstand .
+
+yago:Council_of_state a rdfs:Class ;
+    rdfs:subClassOf yago:Advisory_board,
+        yago:Council,
+        yago:Government_organization .
+
+yago:County_seat a rdfs:Class ;
+    rdfs:subClassOf schema1:AdministrativeArea .
+
+yago:Creator a rdfs:Class ;
+    rdfs:subClassOf schema1:Person .
+
+yago:Cycling_City a rdfs:Class ;
+    rdfs:subClassOf schema1:City .
+
+yago:Deliberative_assembly a rdfs:Class ;
+    rdfs:subClassOf schema1:Organization .
+
+yago:Dwelling_Place a rdfs:Class ;
+    rdfs:subClassOf schema1:AdministrativeArea,
+        yago:HumanMadeGeographicalEntity .
+
+yago:Educator a rdfs:Class ;
+    rdfs:subClassOf yago:Teaching_Professionals .
+
+yago:Employee a rdfs:Class ;
+    rdfs:subClassOf yago:Worker .
+
+yago:Executive_government a rdfs:Class ;
+    rdfs:subClassOf yago:Council_of_state,
+        yago:Organ_Of_State,
+        yago:Political_organisation .
+
+yago:Government_organization a rdfs:Class ;
+    rdfs:subClassOf yago:Public_Institution_Q1549152 .
+
+yago:HumanMadeGeographicalEntity a rdfs:Class ;
+    rdfs:subClassOf schema1:Place .
+
+yago:Humanities_Scholar a rdfs:Class ;
+    rdfs:subClassOf yago:Scientist .
+
+yago:Intellectual_And_Scientific_Professionals a rdfs:Class ;
+    rdfs:subClassOf yago:Professional .
+
+yago:Interdisciplinary_Scientist a rdfs:Class ;
+    rdfs:subClassOf yago:Scientist .
+
+yago:Largest_City a rdfs:Class ;
+    rdfs:subClassOf schema1:City .
+
+yago:LocalOrganization a rdfs:Class ;
+    rdfs:subClassOf schema1:Organization,
+        schema1:Place .
+
+yago:Maritime_Settlement a rdfs:Class ;
+    rdfs:subClassOf schema1:AdministrativeArea .
+
+yago:Municipal_corporation a rdfs:Class ;
+    rdfs:subClassOf yago:Executive_government .
+
+yago:Municipality a rdfs:Class ;
+    rdfs:subClassOf yago:Government_organization,
+        yago:Political_Territorial_Entity .
+
+yago:Municipality_In_The_United_States a rdfs:Class ;
+    rdfs:subClassOf yago:Municipal_corporation,
+        yago:Municipality,
+        yago:Political_divisions_of_the_United_States .
+
+yago:National_Capital a rdfs:Class ;
+    rdfs:subClassOf yago:Capital_city .
+
+yago:Orator a rdfs:Class ;
+    rdfs:subClassOf yago:Speaker .
+
+yago:Organ_Of_State a rdfs:Class ;
+    rdfs:subClassOf schema1:Organization .
+
+yago:Panel a rdfs:Class ;
+    rdfs:subClassOf yago:Committee .
+
+yago:Parish_administrative_division a rdfs:Class ;
+    rdfs:subClassOf yago:Political_Territorial_Entity .
+
+yago:Penman_Q108762424 a rdfs:Class ;
+    rdfs:subClassOf yago:Creator .
+
+yago:Person_With_An_Activity a rdfs:Class ;
+    rdfs:subClassOf schema1:Person .
+
+yago:Physical_And_Earth_Science_Professionals a rdfs:Class ;
+    rdfs:subClassOf yago:Science_And_Engineering_Professionals .
+
+yago:Physical_Scientist a rdfs:Class ;
+    rdfs:subClassOf yago:Physical_And_Earth_Science_Professionals,
+        yago:Scientist .
+
+yago:Place_With_Town_Rights_And_Privileges a rdfs:Class ;
+    rdfs:subClassOf schema1:AdministrativeArea .
+
+yago:Poet a rdfs:Class ;
+    rdfs:subClassOf yago:Writer .
+
+yago:Political_Territorial_Entity a rdfs:Class ;
+    rdfs:subClassOf schema1:AdministrativeArea .
+
+yago:Political_divisions_of_the_United_States a rdfs:Class ;
+    rdfs:subClassOf yago:Administrative_Territorial_Entity_Of_A_Single_Country .
+
+yago:Political_organisation a rdfs:Class ;
+    rdfs:subClassOf schema1:Organization .
+
+yago:Port_City_Q2264924 a rdfs:Class ;
+    rdfs:subClassOf schema1:City,
+        yago:Maritime_Settlement .
+
+yago:Preacher a rdfs:Class ;
+    rdfs:subClassOf yago:Orator .
+
+yago:Professional a rdfs:Class ;
+    rdfs:subClassOf yago:Worker .
+
+yago:Public_Institution_Q1549152 a rdfs:Class ;
+    rdfs:subClassOf schema1:Organization .
+
+yago:Scholar a rdfs:Class ;
+    rdfs:subClassOf schema1:Person .
+
+yago:School_Staff a rdfs:Class ;
+    rdfs:subClassOf yago:Cadre,
+        yago:Employee .
+
+yago:Science_And_Engineering_Professionals a rdfs:Class ;
+    rdfs:subClassOf yago:Intellectual_And_Scientific_Professionals .
+
+yago:Scientist a rdfs:Class ;
+    rdfs:subClassOf yago:Scholar .
+
+yago:Shooter_Q109648129 a rdfs:Class ;
+    rdfs:subClassOf yago:User .
+
+yago:Speaker a rdfs:Class ;
+    rdfs:subClassOf yago:White-collar_worker .
+
+yago:Sport_shooter a rdfs:Class ;
+    rdfs:subClassOf yago:Shooter_Q109648129 .
+
+yago:Statistical_area_United_States a rdfs:Class ;
+    rdfs:subClassOf schema1:Country .
+
+yago:Subdivisions_of_England a rdfs:Class ;
+    rdfs:subClassOf yago:Administrative_geography_of_the_United_Kingdom .
+
+yago:Teacher a rdfs:Class ;
+    rdfs:subClassOf yago:Educator,
+        yago:School_Staff .
+
+yago:Teaching_Professionals a rdfs:Class ;
+    rdfs:subClassOf yago:Intellectual_And_Scientific_Professionals .
+
+yago:Theologian a rdfs:Class ;
+    rdfs:subClassOf yago:Humanities_Scholar .
+
+yago:Town a rdfs:Class ;
+    rdfs:subClassOf yago:Urban_Settlement .
+
+yago:United_States_urban_area a rdfs:Class ;
+    rdfs:subClassOf yago:Statistical_area_United_States,
+        yago:Urban_area .
+
+yago:University_Teacher a rdfs:Class ;
+    rdfs:subClassOf yago:Teacher .
+
+yago:Urban_Settlement a rdfs:Class ;
+    rdfs:subClassOf yago:Urban_area .
+
+yago:Urban_area a rdfs:Class ;
+    rdfs:subClassOf schema1:AdministrativeArea .
+
+yago:User a rdfs:Class ;
+    rdfs:subClassOf schema1:Person .
+
+yago:Vorstand a rdfs:Class ;
+    rdfs:subClassOf schema1:Organization .
+
+yago:White-collar_worker a rdfs:Class ;
+    rdfs:subClassOf yago:Employee .
+
+yago:Worker a rdfs:Class ;
+    rdfs:subClassOf yago:Person_With_An_Activity .
+
+yago:Writer a rdfs:Class ;
+    rdfs:subClassOf yago:Artist,
+        yago:Author,
+        yago:Penman_Q108762424 .
+

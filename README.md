@@ -14,6 +14,8 @@ SHACL·OWL 제약을 GraphRAG의 검색–검증–생성 루프에 **런타임 
 
 첫 데이터셋은 GLEIF의 법인·회계연결 모회사·보고 예외 데이터입니다. 같은 검색 근거를 검증 없이 사용할 때와 검사 후 보류하거나 다시 검색할 때를 비교합니다. SHACL이 잡지 못하는 사실 오류와 정상 근거의 과도한 차단도 함께 측정합니다.
 
+YAGO 4.6도 같은 비교 조건으로 실행합니다. 원본 SHACL을 수정하지 않고 출생지 질의에서 제약의 탐지 범위와 재검색 효과를 확인합니다.
+
 ## 구현 범위
 
 합성 RDF 사전 점검을 실행할 수 있습니다. GLEIF 배치 수집과 부분집합 추출, RDF 변환을 거쳐 SHACL 검증·OpenRouter 구조화 답변·정답 채점까지 실행할 수 있습니다.
@@ -48,7 +50,7 @@ Text-to-SPARQL, OWL 추론, 독립적인 벡터 검색 RAG, GraphDB·Neo4j·Nept
 | LLM | OpenRouter API (자체 서빙·GPU 미사용) |
 | IaC (예정) | Terraform (`infra/terraform/`) |
 
-GLEIF 데이터는 CC0 이용 조건을 따릅니다. YAGO는 이번 파일럿에서 사용하지 않으며 후속 일반화 실험 후보입니다.
+GLEIF 데이터는 CC0 이용 조건을 따릅니다. YAGO 4.6 후속 파일럿은 원본 SHACL과 tiny 부분집합을 사용하며 CC BY 4.0 출처를 표시합니다.
 
 ## 빠른 시작 (호스트 부트스트랩)
 
@@ -123,3 +125,5 @@ BUNDLE_GEMFILE=website/Gemfile bundle install
 
 코드·문서 라이선스는 저장소 공개 시점에 확정합니다.  
 GLEIF 데이터와 파생 부분집합은 [원본 CC0 이용 조건](https://www.gleif.org/en/meta/lei-data-terms-of-use/)을 따릅니다.
+
+YAGO 파일럿: `uv run --locked python scripts/run_yago_pilot.py` (`.env` 필요). 배포 원본과 라이선스는 [YAGO 4.6](https://yago-knowledge.org/downloads/yago-4-6), 표본 출처는 [NOTICE](experiments/yago/NOTICE.md)를 따릅니다.

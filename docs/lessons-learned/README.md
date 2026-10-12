@@ -13,6 +13,8 @@
 
 ## 기록
 
+- [2026-10-12 YAGO 중첩 제약과 검증 범위](2026-10-12-yago-focus.md)
+
 - [2026-10-12 MkDocs 첫 페이지 충돌](2026-10-12-mkdocs-index.md)
 - [2026-09-08 uv와 Ubuntu](2026-09-08-uv-ubuntu-agents.md)
 - [2026-09-08 부트스트랩 범위](2026-09-08-bootstrap-prep.md)

@@ -1,0 +1,2496 @@
+{
+  "run_id": "20261012T120020Z-yago-8dab226c",
+  "experiment": "yago-native-pilot",
+  "protocol_version": "0.3",
+  "started_at": "2026-10-12T12:00:20.047961+00:00",
+  "status": "completed",
+  "split": "development",
+  "validate_only": false,
+  "config": {
+    "protocol_version": "0.3",
+    "experiment": "yago-native-pilot",
+    "description": "Official YAGO 4.6 tiny and unmodified full SHACL schema; exploratory fixed-query pilot",
+    "seed": 20261012,
+    "conditions": [
+      "R0",
+      "G0",
+      "G1",
+      "G2",
+      "U2",
+      "P1"
+    ],
+    "max_retries": 2,
+    "max_llm_calls": 160,
+    "max_completion_tokens": 240,
+    "max_prompt_chars": 12000,
+    "max_cost_usd": 1.0,
+    "provider_max_price_per_million": {
+      "prompt": 0.2,
+      "completion": 0.8
+    },
+    "temperature": 0,
+    "repeat_count": 1,
+    "inference": "none",
+    "variants": [
+      "clean",
+      "missing_label",
+      "missing_relation",
+      "missing_target_type",
+      "duplicate_relation",
+      "wrong_class",
+      "wrong_datatype",
+      "wrong_place"
+    ]
+  },
+  "source_manifest": {
+    "source": {
+      "dataset": "YAGO 4.6 official tiny distribution",
+      "retrieved_at": "2026-10-12T11:48:37.282617+00:00",
+      "release_index": "https://yago-knowledge.org/data/yago4.6/",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "YAGO team, Télécom Paris. YAGO 4.6: A Logically Consistent Subset of Wikidata (2026).",
+      "files": {
+        "schema": {
+          "url": "https://yago-knowledge.org/data/yago4.6/yago-4.6-schema.zip",
+          "size": 19471,
+          "sha256": "01a4f4fd80a04ce38375163993644e8370da3b6761b3e8cc703be97cc5a3d07a",
+          "headers": {},
+          "member": "yago-schema.ttl",
+          "turtle_sha256": "b3f185f27c21e0e2b561dc92f7f9e3d54ccd6f4acac01e9ae97c2d42ef3b636f"
+        },
+        "tiny": {
+          "url": "https://yago-knowledge.org/data/yago4.6/yago-4.6-tiny.zip",
+          "size": 91188862,
+          "sha256": "0cb8805ea3d555b3c0487891498cf9042962b0e96caca701e83926c4418a0f81",
+          "headers": {
+            "Last-Modified": "Mon, 03 Aug 2026 03:06:13 GMT",
+            "ETag": "\"6a7005a5-56f6e7e\"",
+            "Content-Length": "91188862"
+          },
+          "member": "yago-tiny.ttl",
+          "turtle_sha256": "7951772a1ec318785233211f0653b0e2659ba49e8b5d3998abd0941c5f515993"
+        }
+      }
+    },
+    "selection": "First four eligible subjects in official tiny birthPlace discovery order; first development, three pilot; no representative sampling claim.",
+    "cohort": [
+      {
+        "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+        "place": "http://yago-knowledge.org/resource/Amsterdam",
+        "birth_date": "\"1852-07-18\"^^<http://www.w3.org/2001/XMLSchema#date>",
+        "name": "Anthony Sweijs",
+        "split": "development"
+      },
+      {
+        "subject": "http://yago-knowledge.org/resource/Abu_Nuwas",
+        "place": "http://yago-knowledge.org/resource/Ahvaz",
+        "birth_date": "\"0762\"^^<http://www.w3.org/2001/XMLSchema#gYear>",
+        "name": "Abu Nuwas",
+        "split": "pilot"
+      },
+      {
+        "subject": "http://yago-knowledge.org/resource/Annette_Salmeen",
+        "place": "http://yago-knowledge.org/resource/Ann_Arbor_Michigan",
+        "birth_date": "\"1974-12-07\"^^<http://www.w3.org/2001/XMLSchema#date>",
+        "name": "Annette Salmeen",
+        "split": "pilot"
+      },
+      {
+        "subject": "http://yago-knowledge.org/resource/Anne_Hutchinson",
+        "place": "http://yago-knowledge.org/resource/Alford_Lincolnshire",
+        "birth_date": "\"1591\"^^<http://www.w3.org/2001/XMLSchema#gYear>",
+        "name": "Anne Hutchinson",
+        "split": "pilot"
+      }
+    ],
+    "data_triples": 38,
+    "taxonomy_triples": 195,
+    "schema_triples": 5536,
+    "schema_node_shapes": 55,
+    "sha256": {
+      "data.ttl": "cbd8777492a91ddc67268466dae769628919dff35b851f51c047165ce967ed8d",
+      "taxonomy.ttl": "7850c4c0d80d18bfc9ef7b6564a275726f1796748788d119f77ee271278e7d09",
+      "schema.ttl": "b3f185f27c21e0e2b561dc92f7f9e3d54ccd6f4acac01e9ae97c2d42ef3b636f"
+    }
+  },
+  "sha256": {
+    "scripts/run_yago_pilot.py": "7da9ddbeb3e7c4d00bdef9b308659c05e606838a2965db46ee99fc6b22fbdd65",
+    "scripts/prepare_yago.py": "22b9283f9ceb95c0083f4bd9426e30cb612f7f791b7ebe5931a9664c26e6584b",
+    "scripts/download_yago.py": "38b190ef6d89a0ff51801b61c2ed253f6f387004d23aa68f9fc6d464b8031cd9",
+    "scripts/run_gleif_pilot.py": "5fe64ee05b240b6afa42f0e80f8909389c6aae5ec1dae2094c2b0b031a05e4cb",
+    "docs/experiments/specification.md": "32bbf85ba12e53e9171ca19c0645dd11759cf9e712f60e65ba4a1312df4cda8a",
+    "uv.lock": "b29fc8a715c3f6e37b6528e28f0e1bf517b97cd9afd2beda3dfe36a22635edc0",
+    "experiments/yago/NOTICE.md": "3fcf7721c0ed398275e6a8a255debf436fb19c84b25d53834a8377d2fd467693",
+    "experiments/yago/config.json": "75f5dcd4503cf431c68041dfe82780e5ba638e1f2ffaa7c0240b47e46b0fff67",
+    "experiments/yago/data.ttl": "cbd8777492a91ddc67268466dae769628919dff35b851f51c047165ce967ed8d",
+    "experiments/yago/manifest.json": "02cb5714ea158683053e9011d402bae7ddf891f49d1a28e1c164edb2187a2d88",
+    "experiments/yago/prompt.txt": "2cc7ff7e1370d590d0235d53aab81cb4ee9b1ca79a5d24a66de4d582572bb408",
+    "experiments/yago/schema.ttl": "b3f185f27c21e0e2b561dc92f7f9e3d54ccd6f4acac01e9ae97c2d42ef3b636f",
+    "experiments/yago/taxonomy.ttl": "7850c4c0d80d18bfc9ef7b6564a275726f1796748788d119f77ee271278e7d09"
+  },
+  "python": "3.12.3",
+  "packages": {
+    "rdflib": "7.6.0",
+    "pyshacl": "0.40.1",
+    "httpx": "0.28.1"
+  },
+  "git_commit": "fea41f6b52bb9fbdc8c352d678fb5ad89f4fdd3b",
+  "working_tree_dirty": true,
+  "cases": [
+    {
+      "id": "Anthony_Sweijs-clean",
+      "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+      "variant": "clean",
+      "gold": {
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam"
+      },
+      "expected_conforms": true,
+      "conforms": true,
+      "python_conforms": true,
+      "issues": [],
+      "validation_ms": 139.94624197948724,
+      "first_sha256": "7cbc7db3e797d008addfae053d67aaa00ca5d1f8f8de72fdd0cf343a06b8b1e0"
+    },
+    {
+      "id": "Anthony_Sweijs-missing_label",
+      "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+      "variant": "missing_label",
+      "gold": {
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam"
+      },
+      "expected_conforms": false,
+      "conforms": false,
+      "python_conforms": false,
+      "issues": [
+        [
+          "http://yago-knowledge.org/resource/Anthony_Sweijs",
+          "http://www.w3.org/2000/01/rdf-schema#label",
+          "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          ""
+        ]
+      ],
+      "validation_ms": 138.4783029789105,
+      "first_sha256": "5cf63740770c9a9c1c07807b288d61769b12c2c7b2c0b61f8bcc2aafde18ea92"
+    },
+    {
+      "id": "Anthony_Sweijs-missing_relation",
+      "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+      "variant": "missing_relation",
+      "gold": {
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam"
+      },
+      "expected_conforms": true,
+      "conforms": true,
+      "python_conforms": true,
+      "issues": [],
+      "validation_ms": 127.48670903965831,
+      "first_sha256": "cc531971c8cb3d8acc5632c07b43f1a3795ef1d5b4c4faebc57391317be4830d"
+    },
+    {
+      "id": "Anthony_Sweijs-missing_target_type",
+      "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+      "variant": "missing_target_type",
+      "gold": {
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam"
+      },
+      "expected_conforms": false,
+      "conforms": false,
+      "python_conforms": false,
+      "issues": [
+        [
+          "http://yago-knowledge.org/resource/Anthony_Sweijs",
+          "http://schema.org/birthPlace",
+          "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "http://yago-knowledge.org/resource/Amsterdam"
+        ]
+      ],
+      "validation_ms": 128.41872894205153,
+      "first_sha256": "cd75b3aac45277d95864c20557959a6da92ce2326554b80f07bcbee828ed0907"
+    },
+    {
+      "id": "Anthony_Sweijs-duplicate_relation",
+      "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+      "variant": "duplicate_relation",
+      "gold": {
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam"
+      },
+      "expected_conforms": false,
+      "conforms": false,
+      "python_conforms": false,
+      "issues": [
+        [
+          "http://yago-knowledge.org/resource/Anthony_Sweijs",
+          "http://schema.org/birthPlace",
+          "http://www.w3.org/ns/shacl#MaxCountConstraintComponent",
+          ""
+        ]
+      ],
+      "validation_ms": 147.9430750478059,
+      "first_sha256": "8c40cb7b9700499fbbcefcf3d3f44c85c4e2aecf8dec9539b1f5d200549c30eb"
+    },
+    {
+      "id": "Anthony_Sweijs-wrong_class",
+      "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+      "variant": "wrong_class",
+      "gold": {
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam"
+      },
+      "expected_conforms": false,
+      "conforms": false,
+      "python_conforms": false,
+      "issues": [
+        [
+          "http://yago-knowledge.org/resource/Anthony_Sweijs",
+          "http://schema.org/birthPlace",
+          "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "http://yago-knowledge.org/resource/Abu_Nuwas"
+        ]
+      ],
+      "validation_ms": 156.52643295470625,
+      "first_sha256": "689675fda9ca6b78c006ab25828a6fd4eba8efe3e2e22d7fe3ab235c8c0ffd59"
+    },
+    {
+      "id": "Anthony_Sweijs-wrong_datatype",
+      "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+      "variant": "wrong_datatype",
+      "gold": {
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam"
+      },
+      "expected_conforms": false,
+      "conforms": false,
+      "python_conforms": false,
+      "issues": [
+        [
+          "http://yago-knowledge.org/resource/Anthony_Sweijs",
+          "http://schema.org/birthDate",
+          "http://www.w3.org/ns/shacl#OrConstraintComponent",
+          "1852-07-18"
+        ]
+      ],
+      "validation_ms": 138.49316898267716,
+      "first_sha256": "a12c573177a972e858d1415a2d3f8c5bf9a4c582b55ae995383c6186f8c0e07b"
+    },
+    {
+      "id": "Anthony_Sweijs-wrong_place",
+      "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+      "variant": "wrong_place",
+      "gold": {
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam"
+      },
+      "expected_conforms": true,
+      "conforms": true,
+      "python_conforms": true,
+      "issues": [],
+      "validation_ms": 137.71661708597094,
+      "first_sha256": "dc6f95a22fade32a42d68b9d8975b2f7150575ade13ec4edeaf289a098c0903d"
+    }
+  ],
+  "rows": [
+    {
+      "case_id": "Anthony_Sweijs-wrong_datatype",
+      "variant": "wrong_datatype",
+      "condition": "G1",
+      "status": "completed",
+      "first_sha256": "a12c573177a972e858d1415a2d3f8c5bf9a4c582b55ae995383c6186f8c0e07b",
+      "retrieval_calls": 1,
+      "retrieved_triples": 13,
+      "validation_ms": 137.92094693053514,
+      "final_sha256": "a12c573177a972e858d1415a2d3f8c5bf9a4c582b55ae995383c6186f8c0e07b",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 151.4209209708497
+    },
+    {
+      "case_id": "Anthony_Sweijs-missing_target_type",
+      "variant": "missing_target_type",
+      "condition": "G2",
+      "status": "completed",
+      "first_sha256": "cd75b3aac45277d95864c20557959a6da92ce2326554b80f07bcbee828ed0907",
+      "retrieval_calls": 2,
+      "retrieved_triples": 19,
+      "validation_ms": 265.354037983343,
+      "final_sha256": "7cbc7db3e797d008addfae053d67aaa00ca5d1f8f8de72fdd0cf343a06b8b1e0",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806422-BLdCrWdf49PxH4YJqzMd",
+        "usage": {
+          "prompt_tokens": 873,
+          "completion_tokens": 31,
+          "total_tokens": 904,
+          "cost": 0.00014955,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00014955,
+            "upstream_inference_prompt_cost": 0.00013095,
+            "upstream_inference_completions_cost": 1.86e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1766.253840061836,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam",
+        "evidence_ids": [
+          "E011"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 2058.6845750221983
+    },
+    {
+      "case_id": "Anthony_Sweijs-missing_label",
+      "variant": "missing_label",
+      "condition": "P1",
+      "status": "completed",
+      "first_sha256": "5cf63740770c9a9c1c07807b288d61769b12c2c7b2c0b61f8bcc2aafde18ea92",
+      "retrieval_calls": 1,
+      "retrieved_triples": 12,
+      "validation_ms": 0.46688399743288755,
+      "final_sha256": "5cf63740770c9a9c1c07807b288d61769b12c2c7b2c0b61f8bcc2aafde18ea92",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1.5406920574605465
+    },
+    {
+      "case_id": "Anthony_Sweijs-missing_relation",
+      "variant": "missing_relation",
+      "condition": "U2",
+      "status": "completed",
+      "first_sha256": "cc531971c8cb3d8acc5632c07b43f1a3795ef1d5b4c4faebc57391317be4830d",
+      "retrieval_calls": 2,
+      "retrieved_triples": 16,
+      "validation_ms": 0.0,
+      "final_sha256": "7cbc7db3e797d008addfae053d67aaa00ca5d1f8f8de72fdd0cf343a06b8b1e0",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806423-Td6wVXBsVlxf5qFLxnr2",
+        "usage": {
+          "prompt_tokens": 873,
+          "completion_tokens": 31,
+          "total_tokens": 904,
+          "cost": 0.00014955,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00014955,
+            "upstream_inference_prompt_cost": 0.00013095,
+            "upstream_inference_completions_cost": 1.86e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1570.097248069942,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam",
+        "evidence_ids": [
+          "E011"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1584.82819609344
+    },
+    {
+      "case_id": "Anthony_Sweijs-duplicate_relation",
+      "variant": "duplicate_relation",
+      "condition": "U2",
+      "status": "completed",
+      "first_sha256": "8c40cb7b9700499fbbcefcf3d3f44c85c4e2aecf8dec9539b1f5d200549c30eb",
+      "retrieval_calls": 2,
+      "retrieved_triples": 34,
+      "validation_ms": 0.0,
+      "final_sha256": "8c40cb7b9700499fbbcefcf3d3f44c85c4e2aecf8dec9539b1f5d200549c30eb",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806425-6u8OpD8i7xCeBZhhMKcq",
+        "usage": {
+          "prompt_tokens": 1070,
+          "completion_tokens": 20,
+          "total_tokens": 1090,
+          "cost": 0.0001725,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001725,
+            "upstream_inference_prompt_cost": 0.0001605,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1737.346259993501,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1754.573283949867
+    },
+    {
+      "case_id": "Anthony_Sweijs-missing_relation",
+      "variant": "missing_relation",
+      "condition": "G2",
+      "status": "completed",
+      "first_sha256": "cc531971c8cb3d8acc5632c07b43f1a3795ef1d5b4c4faebc57391317be4830d",
+      "retrieval_calls": 1,
+      "retrieved_triples": 3,
+      "validation_ms": 128.18099604919553,
+      "final_sha256": "cc531971c8cb3d8acc5632c07b43f1a3795ef1d5b4c4faebc57391317be4830d",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806427-euOMDnSWiVts8fs7grYN",
+        "usage": {
+          "prompt_tokens": 357,
+          "completion_tokens": 20,
+          "total_tokens": 377,
+          "cost": 6.555e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.555e-05,
+            "upstream_inference_prompt_cost": 5.355e-05,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 2383.26183706522,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 2524.7923920396715
+    },
+    {
+      "case_id": "Anthony_Sweijs-missing_relation",
+      "variant": "missing_relation",
+      "condition": "R0",
+      "status": "completed",
+      "first_sha256": "cc531971c8cb3d8acc5632c07b43f1a3795ef1d5b4c4faebc57391317be4830d",
+      "retrieval_calls": 1,
+      "retrieved_triples": 3,
+      "validation_ms": 0.0,
+      "final_sha256": "cc531971c8cb3d8acc5632c07b43f1a3795ef1d5b4c4faebc57391317be4830d",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806429-7qHKsIxmbsMWquR4Ou2j",
+        "usage": {
+          "prompt_tokens": 309,
+          "completion_tokens": 20,
+          "total_tokens": 329,
+          "cost": 5.835e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 5.835e-05,
+            "upstream_inference_prompt_cost": 4.635e-05,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1490.0808349484578,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1491.2236959207803
+    },
+    {
+      "case_id": "Anthony_Sweijs-wrong_place",
+      "variant": "wrong_place",
+      "condition": "G1",
+      "status": "completed",
+      "first_sha256": "dc6f95a22fade32a42d68b9d8975b2f7150575ade13ec4edeaf289a098c0903d",
+      "retrieval_calls": 1,
+      "retrieved_triples": 7,
+      "validation_ms": 172.20418201759458,
+      "final_sha256": "dc6f95a22fade32a42d68b9d8975b2f7150575ade13ec4edeaf289a098c0903d",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806431-gbAb9uJiHrNTJWgrE1ca",
+        "usage": {
+          "prompt_tokens": 554,
+          "completion_tokens": 32,
+          "total_tokens": 586,
+          "cost": 0.0001023,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001023,
+            "upstream_inference_prompt_cost": 8.31e-05,
+            "upstream_inference_completions_cost": 1.92e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1424.9357549706474,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Ahvaz",
+        "evidence_ids": [
+          "E005"
+        ]
+      },
+      "correct": false,
+      "supported": true,
+      "total_ms": 1610.9622470103204
+    },
+    {
+      "case_id": "Anthony_Sweijs-wrong_class",
+      "variant": "wrong_class",
+      "condition": "G0",
+      "status": "completed",
+      "first_sha256": "689675fda9ca6b78c006ab25828a6fd4eba8efe3e2e22d7fe3ab235c8c0ffd59",
+      "retrieval_calls": 1,
+      "retrieved_triples": 6,
+      "validation_ms": 0.0,
+      "final_sha256": "689675fda9ca6b78c006ab25828a6fd4eba8efe3e2e22d7fe3ab235c8c0ffd59",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806432-qYlNb6tKUTWpR7vogDiE",
+        "usage": {
+          "prompt_tokens": 504,
+          "completion_tokens": 35,
+          "total_tokens": 539,
+          "cost": 9.66e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.66e-05,
+            "upstream_inference_prompt_cost": 7.56e-05,
+            "upstream_inference_completions_cost": 2.1e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 2039.8364050779492,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Abu_Nuwas",
+        "evidence_ids": [
+          "E004"
+        ]
+      },
+      "correct": false,
+      "supported": true,
+      "total_ms": 2041.3994049886242
+    },
+    {
+      "case_id": "Anthony_Sweijs-clean",
+      "variant": "clean",
+      "condition": "G0",
+      "status": "completed",
+      "first_sha256": "7cbc7db3e797d008addfae053d67aaa00ca5d1f8f8de72fdd0cf343a06b8b1e0",
+      "retrieval_calls": 1,
+      "retrieved_triples": 13,
+      "validation_ms": 0.0,
+      "final_sha256": "7cbc7db3e797d008addfae053d67aaa00ca5d1f8f8de72fdd0cf343a06b8b1e0",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806434-20e6CVdOm1xX647dcM43",
+        "usage": {
+          "prompt_tokens": 873,
+          "completion_tokens": 31,
+          "total_tokens": 904,
+          "cost": 0.00014955,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00014955,
+            "upstream_inference_prompt_cost": 0.00013095,
+            "upstream_inference_completions_cost": 1.86e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1918.9041599165648,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam",
+        "evidence_ids": [
+          "E011"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1920.7031489349902
+    },
+    {
+      "case_id": "Anthony_Sweijs-clean",
+      "variant": "clean",
+      "condition": "P1",
+      "status": "completed",
+      "first_sha256": "7cbc7db3e797d008addfae053d67aaa00ca5d1f8f8de72fdd0cf343a06b8b1e0",
+      "retrieval_calls": 1,
+      "retrieved_triples": 13,
+      "validation_ms": 0.5409700097516179,
+      "final_sha256": "7cbc7db3e797d008addfae053d67aaa00ca5d1f8f8de72fdd0cf343a06b8b1e0",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806436-ItqPrGHW91U0wO5kG7yT",
+        "usage": {
+          "prompt_tokens": 873,
+          "completion_tokens": 31,
+          "total_tokens": 904,
+          "cost": 0.00014955,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00014955,
+            "upstream_inference_prompt_cost": 0.00013095,
+            "upstream_inference_completions_cost": 1.86e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1893.0503490846604,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam",
+        "evidence_ids": [
+          "E011"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1895.4266250366345
+    },
+    {
+      "case_id": "Anthony_Sweijs-duplicate_relation",
+      "variant": "duplicate_relation",
+      "condition": "R0",
+      "status": "completed",
+      "first_sha256": "8c40cb7b9700499fbbcefcf3d3f44c85c4e2aecf8dec9539b1f5d200549c30eb",
+      "retrieval_calls": 1,
+      "retrieved_triples": 17,
+      "validation_ms": 0.0,
+      "final_sha256": "8c40cb7b9700499fbbcefcf3d3f44c85c4e2aecf8dec9539b1f5d200549c30eb",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806438-E71vEQHPjlmxbf4RPgqC",
+        "usage": {
+          "prompt_tokens": 748,
+          "completion_tokens": 20,
+          "total_tokens": 768,
+          "cost": 0.0001242,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001242,
+            "upstream_inference_prompt_cost": 0.0001122,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1721.2043639738113,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1723.1752489460632
+    },
+    {
+      "case_id": "Anthony_Sweijs-missing_label",
+      "variant": "missing_label",
+      "condition": "G0",
+      "status": "completed",
+      "first_sha256": "5cf63740770c9a9c1c07807b288d61769b12c2c7b2c0b61f8bcc2aafde18ea92",
+      "retrieval_calls": 1,
+      "retrieved_triples": 12,
+      "validation_ms": 0.0,
+      "final_sha256": "5cf63740770c9a9c1c07807b288d61769b12c2c7b2c0b61f8bcc2aafde18ea92",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806440-n9sDVx0uEOTLez0RbZ4T",
+        "usage": {
+          "prompt_tokens": 829,
+          "completion_tokens": 31,
+          "total_tokens": 860,
+          "cost": 0.00014295,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00014295,
+            "upstream_inference_prompt_cost": 0.00012435,
+            "upstream_inference_completions_cost": 1.86e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1577.6178400265053,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam",
+        "evidence_ids": [
+          "E011"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1579.411001992412
+    },
+    {
+      "case_id": "Anthony_Sweijs-missing_relation",
+      "variant": "missing_relation",
+      "condition": "G0",
+      "status": "completed",
+      "first_sha256": "cc531971c8cb3d8acc5632c07b43f1a3795ef1d5b4c4faebc57391317be4830d",
+      "retrieval_calls": 1,
+      "retrieved_triples": 3,
+      "validation_ms": 0.0,
+      "final_sha256": "cc531971c8cb3d8acc5632c07b43f1a3795ef1d5b4c4faebc57391317be4830d",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806441-8I6B9UkFE8ngcEFlLEQR",
+        "usage": {
+          "prompt_tokens": 357,
+          "completion_tokens": 20,
+          "total_tokens": 377,
+          "cost": 6.555e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.555e-05,
+            "upstream_inference_prompt_cost": 5.355e-05,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1613.580018049106,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1614.9692049948499
+    },
+    {
+      "case_id": "Anthony_Sweijs-missing_label",
+      "variant": "missing_label",
+      "condition": "R0",
+      "status": "completed",
+      "first_sha256": "5cf63740770c9a9c1c07807b288d61769b12c2c7b2c0b61f8bcc2aafde18ea92",
+      "retrieval_calls": 1,
+      "retrieved_triples": 12,
+      "validation_ms": 0.0,
+      "final_sha256": "5cf63740770c9a9c1c07807b288d61769b12c2c7b2c0b61f8bcc2aafde18ea92",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806443-jrHVFX5ATLwZcmKija7D",
+        "usage": {
+          "prompt_tokens": 595,
+          "completion_tokens": 31,
+          "total_tokens": 626,
+          "cost": 0.00010785,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00010785,
+            "upstream_inference_prompt_cost": 8.925e-05,
+            "upstream_inference_completions_cost": 1.86e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1564.72569599282,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam",
+        "evidence_ids": [
+          "E011"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1566.5427079657093
+    },
+    {
+      "case_id": "Anthony_Sweijs-missing_target_type",
+      "variant": "missing_target_type",
+      "condition": "U2",
+      "status": "completed",
+      "first_sha256": "cd75b3aac45277d95864c20557959a6da92ce2326554b80f07bcbee828ed0907",
+      "retrieval_calls": 2,
+      "retrieved_triples": 19,
+      "validation_ms": 0.0,
+      "final_sha256": "7cbc7db3e797d008addfae053d67aaa00ca5d1f8f8de72fdd0cf343a06b8b1e0",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806445-JFUtROJtuR5u2mLiqVY2",
+        "usage": {
+          "prompt_tokens": 873,
+          "completion_tokens": 31,
+          "total_tokens": 904,
+          "cost": 0.00014955,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00014955,
+            "upstream_inference_prompt_cost": 0.00013095,
+            "upstream_inference_completions_cost": 1.86e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1761.668986058794,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam",
+        "evidence_ids": [
+          "E011"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1776.8260830780491
+    },
+    {
+      "case_id": "Anthony_Sweijs-wrong_class",
+      "variant": "wrong_class",
+      "condition": "R0",
+      "status": "completed",
+      "first_sha256": "689675fda9ca6b78c006ab25828a6fd4eba8efe3e2e22d7fe3ab235c8c0ffd59",
+      "retrieval_calls": 1,
+      "retrieved_triples": 6,
+      "validation_ms": 0.0,
+      "final_sha256": "689675fda9ca6b78c006ab25828a6fd4eba8efe3e2e22d7fe3ab235c8c0ffd59",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806446-TKMhv04u3meSYaGIilGo",
+        "usage": {
+          "prompt_tokens": 408,
+          "completion_tokens": 35,
+          "total_tokens": 443,
+          "cost": 8.22e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 8.22e-05,
+            "upstream_inference_prompt_cost": 6.12e-05,
+            "upstream_inference_completions_cost": 2.1e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1669.2969809519127,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Abu_Nuwas",
+        "evidence_ids": [
+          "E004"
+        ]
+      },
+      "correct": false,
+      "supported": true,
+      "total_ms": 1671.0667700972408
+    },
+    {
+      "case_id": "Anthony_Sweijs-missing_label",
+      "variant": "missing_label",
+      "condition": "G2",
+      "status": "completed",
+      "first_sha256": "5cf63740770c9a9c1c07807b288d61769b12c2c7b2c0b61f8bcc2aafde18ea92",
+      "retrieval_calls": 2,
+      "retrieved_triples": 25,
+      "validation_ms": 277.05301297828555,
+      "final_sha256": "7cbc7db3e797d008addfae053d67aaa00ca5d1f8f8de72fdd0cf343a06b8b1e0",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806448-ZYJD2uHhqAfEJvGPx9Vk",
+        "usage": {
+          "prompt_tokens": 873,
+          "completion_tokens": 31,
+          "total_tokens": 904,
+          "cost": 0.00014955,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00014955,
+            "upstream_inference_prompt_cost": 0.00013095,
+            "upstream_inference_completions_cost": 1.86e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 2214.052737923339,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam",
+        "evidence_ids": [
+          "E011"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 2517.9993129568174
+    },
+    {
+      "case_id": "Anthony_Sweijs-wrong_place",
+      "variant": "wrong_place",
+      "condition": "P1",
+      "status": "completed",
+      "first_sha256": "dc6f95a22fade32a42d68b9d8975b2f7150575ade13ec4edeaf289a098c0903d",
+      "retrieval_calls": 1,
+      "retrieved_triples": 7,
+      "validation_ms": 0.3134579164907336,
+      "final_sha256": "dc6f95a22fade32a42d68b9d8975b2f7150575ade13ec4edeaf289a098c0903d",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806450-qPt9SVIYBaTgde10wgwM",
+        "usage": {
+          "prompt_tokens": 554,
+          "completion_tokens": 32,
+          "total_tokens": 586,
+          "cost": 0.0001023,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001023,
+            "upstream_inference_prompt_cost": 8.31e-05,
+            "upstream_inference_completions_cost": 1.92e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1555.2557110786438,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Ahvaz",
+        "evidence_ids": [
+          "E005"
+        ]
+      },
+      "correct": false,
+      "supported": true,
+      "total_ms": 1557.087859022431
+    },
+    {
+      "case_id": "Anthony_Sweijs-duplicate_relation",
+      "variant": "duplicate_relation",
+      "condition": "P1",
+      "status": "completed",
+      "first_sha256": "8c40cb7b9700499fbbcefcf3d3f44c85c4e2aecf8dec9539b1f5d200549c30eb",
+      "retrieval_calls": 1,
+      "retrieved_triples": 17,
+      "validation_ms": 0.48640009481459856,
+      "final_sha256": "8c40cb7b9700499fbbcefcf3d3f44c85c4e2aecf8dec9539b1f5d200549c30eb",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1.8125319620594382
+    },
+    {
+      "case_id": "Anthony_Sweijs-wrong_class",
+      "variant": "wrong_class",
+      "condition": "U2",
+      "status": "completed",
+      "first_sha256": "689675fda9ca6b78c006ab25828a6fd4eba8efe3e2e22d7fe3ab235c8c0ffd59",
+      "retrieval_calls": 2,
+      "retrieved_triples": 12,
+      "validation_ms": 0.0,
+      "final_sha256": "689675fda9ca6b78c006ab25828a6fd4eba8efe3e2e22d7fe3ab235c8c0ffd59",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806452-pziKd7aGse80rUM4amyj",
+        "usage": {
+          "prompt_tokens": 504,
+          "completion_tokens": 35,
+          "total_tokens": 539,
+          "cost": 9.66e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.66e-05,
+            "upstream_inference_prompt_cost": 7.56e-05,
+            "upstream_inference_completions_cost": 2.1e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1549.493451952003,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Abu_Nuwas",
+        "evidence_ids": [
+          "E004"
+        ]
+      },
+      "correct": false,
+      "supported": true,
+      "total_ms": 1562.1745160315186
+    },
+    {
+      "case_id": "Anthony_Sweijs-wrong_class",
+      "variant": "wrong_class",
+      "condition": "G1",
+      "status": "completed",
+      "first_sha256": "689675fda9ca6b78c006ab25828a6fd4eba8efe3e2e22d7fe3ab235c8c0ffd59",
+      "retrieval_calls": 1,
+      "retrieved_triples": 6,
+      "validation_ms": 131.14134990610182,
+      "final_sha256": "689675fda9ca6b78c006ab25828a6fd4eba8efe3e2e22d7fe3ab235c8c0ffd59",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 144.46338894777
+    },
+    {
+      "case_id": "Anthony_Sweijs-missing_target_type",
+      "variant": "missing_target_type",
+      "condition": "R0",
+      "status": "completed",
+      "first_sha256": "cd75b3aac45277d95864c20557959a6da92ce2326554b80f07bcbee828ed0907",
+      "retrieval_calls": 1,
+      "retrieved_triples": 6,
+      "validation_ms": 0.0,
+      "final_sha256": "cd75b3aac45277d95864c20557959a6da92ce2326554b80f07bcbee828ed0907",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806454-vu6dTh5NU5eQ0ZNXWoyQ",
+        "usage": {
+          "prompt_tokens": 385,
+          "completion_tokens": 31,
+          "total_tokens": 416,
+          "cost": 7.635e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 7.635e-05,
+            "upstream_inference_prompt_cost": 5.775e-05,
+            "upstream_inference_completions_cost": 1.86e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1545.4867649823427,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam",
+        "evidence_ids": [
+          "E004"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1546.935128979385
+    },
+    {
+      "case_id": "Anthony_Sweijs-missing_target_type",
+      "variant": "missing_target_type",
+      "condition": "G0",
+      "status": "completed",
+      "first_sha256": "cd75b3aac45277d95864c20557959a6da92ce2326554b80f07bcbee828ed0907",
+      "retrieval_calls": 1,
+      "retrieved_triples": 6,
+      "validation_ms": 0.0,
+      "final_sha256": "cd75b3aac45277d95864c20557959a6da92ce2326554b80f07bcbee828ed0907",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806455-1eWQrYU7RzDDlcw198Oe",
+        "usage": {
+          "prompt_tokens": 475,
+          "completion_tokens": 31,
+          "total_tokens": 506,
+          "cost": 8.985e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 8.985e-05,
+            "upstream_inference_prompt_cost": 7.125e-05,
+            "upstream_inference_completions_cost": 1.86e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 2138.6079270159826,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam",
+        "evidence_ids": [
+          "E004"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 2140.14735003002
+    },
+    {
+      "case_id": "Anthony_Sweijs-missing_label",
+      "variant": "missing_label",
+      "condition": "G1",
+      "status": "completed",
+      "first_sha256": "5cf63740770c9a9c1c07807b288d61769b12c2c7b2c0b61f8bcc2aafde18ea92",
+      "retrieval_calls": 1,
+      "retrieved_triples": 12,
+      "validation_ms": 139.77653789334,
+      "final_sha256": "5cf63740770c9a9c1c07807b288d61769b12c2c7b2c0b61f8bcc2aafde18ea92",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 153.36919797118753
+    },
+    {
+      "case_id": "Anthony_Sweijs-wrong_datatype",
+      "variant": "wrong_datatype",
+      "condition": "R0",
+      "status": "completed",
+      "first_sha256": "a12c573177a972e858d1415a2d3f8c5bf9a4c582b55ae995383c6186f8c0e07b",
+      "retrieval_calls": 1,
+      "retrieved_triples": 13,
+      "validation_ms": 0.0,
+      "final_sha256": "a12c573177a972e858d1415a2d3f8c5bf9a4c582b55ae995383c6186f8c0e07b",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806458-xuKfgV4tYP4Bj5jb6ipH",
+        "usage": {
+          "prompt_tokens": 622,
+          "completion_tokens": 31,
+          "total_tokens": 653,
+          "cost": 0.0001119,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001119,
+            "upstream_inference_prompt_cost": 9.33e-05,
+            "upstream_inference_completions_cost": 1.86e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 2513.819564017467,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam",
+        "evidence_ids": [
+          "E011"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 2515.6307290308177
+    },
+    {
+      "case_id": "Anthony_Sweijs-wrong_place",
+      "variant": "wrong_place",
+      "condition": "G0",
+      "status": "completed",
+      "first_sha256": "dc6f95a22fade32a42d68b9d8975b2f7150575ade13ec4edeaf289a098c0903d",
+      "retrieval_calls": 1,
+      "retrieved_triples": 7,
+      "validation_ms": 0.0,
+      "final_sha256": "dc6f95a22fade32a42d68b9d8975b2f7150575ade13ec4edeaf289a098c0903d",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806460-V56fKGdT4qPNOgtIDQWj",
+        "usage": {
+          "prompt_tokens": 554,
+          "completion_tokens": 32,
+          "total_tokens": 586,
+          "cost": 0.0001023,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001023,
+            "upstream_inference_prompt_cost": 8.31e-05,
+            "upstream_inference_completions_cost": 1.92e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1883.6396689293906,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Ahvaz",
+        "evidence_ids": [
+          "E005"
+        ]
+      },
+      "correct": false,
+      "supported": true,
+      "total_ms": 1885.163575061597
+    },
+    {
+      "case_id": "Anthony_Sweijs-wrong_datatype",
+      "variant": "wrong_datatype",
+      "condition": "P1",
+      "status": "completed",
+      "first_sha256": "a12c573177a972e858d1415a2d3f8c5bf9a4c582b55ae995383c6186f8c0e07b",
+      "retrieval_calls": 1,
+      "retrieved_triples": 13,
+      "validation_ms": 0.7103250827640295,
+      "final_sha256": "a12c573177a972e858d1415a2d3f8c5bf9a4c582b55ae995383c6186f8c0e07b",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1.874806941486895
+    },
+    {
+      "case_id": "Anthony_Sweijs-missing_relation",
+      "variant": "missing_relation",
+      "condition": "P1",
+      "status": "completed",
+      "first_sha256": "cc531971c8cb3d8acc5632c07b43f1a3795ef1d5b4c4faebc57391317be4830d",
+      "retrieval_calls": 1,
+      "retrieved_triples": 3,
+      "validation_ms": 0.112387933768332,
+      "final_sha256": "cc531971c8cb3d8acc5632c07b43f1a3795ef1d5b4c4faebc57391317be4830d",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806462-QD5Wi9OayDBRj0zc7QVo",
+        "usage": {
+          "prompt_tokens": 357,
+          "completion_tokens": 20,
+          "total_tokens": 377,
+          "cost": 6.555e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.555e-05,
+            "upstream_inference_prompt_cost": 5.355e-05,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1344.3411509506404,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1345.5455950461328
+    },
+    {
+      "case_id": "Anthony_Sweijs-missing_target_type",
+      "variant": "missing_target_type",
+      "condition": "P1",
+      "status": "completed",
+      "first_sha256": "cd75b3aac45277d95864c20557959a6da92ce2326554b80f07bcbee828ed0907",
+      "retrieval_calls": 1,
+      "retrieved_triples": 6,
+      "validation_ms": 0.13905006926506758,
+      "final_sha256": "cd75b3aac45277d95864c20557959a6da92ce2326554b80f07bcbee828ed0907",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1.024617929942906
+    },
+    {
+      "case_id": "Anthony_Sweijs-wrong_datatype",
+      "variant": "wrong_datatype",
+      "condition": "G0",
+      "status": "completed",
+      "first_sha256": "a12c573177a972e858d1415a2d3f8c5bf9a4c582b55ae995383c6186f8c0e07b",
+      "retrieval_calls": 1,
+      "retrieved_triples": 13,
+      "validation_ms": 0.0,
+      "final_sha256": "a12c573177a972e858d1415a2d3f8c5bf9a4c582b55ae995383c6186f8c0e07b",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806463-H3kNyALYfojKQbdns9Dd",
+        "usage": {
+          "prompt_tokens": 873,
+          "completion_tokens": 31,
+          "total_tokens": 904,
+          "cost": 0.00014955,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00014955,
+            "upstream_inference_prompt_cost": 0.00013095,
+            "upstream_inference_completions_cost": 1.86e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1601.0735329473391,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam",
+        "evidence_ids": [
+          "E011"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1602.8916399227455
+    },
+    {
+      "case_id": "Anthony_Sweijs-duplicate_relation",
+      "variant": "duplicate_relation",
+      "condition": "G2",
+      "status": "completed",
+      "first_sha256": "8c40cb7b9700499fbbcefcf3d3f44c85c4e2aecf8dec9539b1f5d200549c30eb",
+      "retrieval_calls": 2,
+      "retrieved_triples": 34,
+      "validation_ms": 294.45906390901655,
+      "final_sha256": "8c40cb7b9700499fbbcefcf3d3f44c85c4e2aecf8dec9539b1f5d200549c30eb",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 321.1561059579253
+    },
+    {
+      "case_id": "Anthony_Sweijs-missing_target_type",
+      "variant": "missing_target_type",
+      "condition": "G1",
+      "status": "completed",
+      "first_sha256": "cd75b3aac45277d95864c20557959a6da92ce2326554b80f07bcbee828ed0907",
+      "retrieval_calls": 1,
+      "retrieved_triples": 6,
+      "validation_ms": 127.01822409871966,
+      "final_sha256": "cd75b3aac45277d95864c20557959a6da92ce2326554b80f07bcbee828ed0907",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 140.16064896713942
+    },
+    {
+      "case_id": "Anthony_Sweijs-wrong_datatype",
+      "variant": "wrong_datatype",
+      "condition": "U2",
+      "status": "completed",
+      "first_sha256": "a12c573177a972e858d1415a2d3f8c5bf9a4c582b55ae995383c6186f8c0e07b",
+      "retrieval_calls": 2,
+      "retrieved_triples": 26,
+      "validation_ms": 0.0,
+      "final_sha256": "a12c573177a972e858d1415a2d3f8c5bf9a4c582b55ae995383c6186f8c0e07b",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806465-DaTg0tpvJH5ZL5QxOrpr",
+        "usage": {
+          "prompt_tokens": 873,
+          "completion_tokens": 31,
+          "total_tokens": 904,
+          "cost": 0.00014955,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00014955,
+            "upstream_inference_prompt_cost": 0.00013095,
+            "upstream_inference_completions_cost": 1.86e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1658.209522953257,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam",
+        "evidence_ids": [
+          "E011"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1673.6570899374783
+    },
+    {
+      "case_id": "Anthony_Sweijs-wrong_place",
+      "variant": "wrong_place",
+      "condition": "R0",
+      "status": "completed",
+      "first_sha256": "dc6f95a22fade32a42d68b9d8975b2f7150575ade13ec4edeaf289a098c0903d",
+      "retrieval_calls": 1,
+      "retrieved_triples": 7,
+      "validation_ms": 0.0,
+      "final_sha256": "dc6f95a22fade32a42d68b9d8975b2f7150575ade13ec4edeaf289a098c0903d",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806467-ZHbbRhhyLpeeIiwq90gP",
+        "usage": {
+          "prompt_tokens": 435,
+          "completion_tokens": 32,
+          "total_tokens": 467,
+          "cost": 8.445e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 8.445e-05,
+            "upstream_inference_prompt_cost": 6.525e-05,
+            "upstream_inference_completions_cost": 1.92e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1507.4630950111896,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Ahvaz",
+        "evidence_ids": [
+          "E005"
+        ]
+      },
+      "correct": false,
+      "supported": true,
+      "total_ms": 1508.9740669354796
+    },
+    {
+      "case_id": "Anthony_Sweijs-wrong_datatype",
+      "variant": "wrong_datatype",
+      "condition": "G2",
+      "status": "completed",
+      "first_sha256": "a12c573177a972e858d1415a2d3f8c5bf9a4c582b55ae995383c6186f8c0e07b",
+      "retrieval_calls": 2,
+      "retrieved_triples": 26,
+      "validation_ms": 313.1908600917086,
+      "final_sha256": "a12c573177a972e858d1415a2d3f8c5bf9a4c582b55ae995383c6186f8c0e07b",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 339.76917702239007
+    },
+    {
+      "case_id": "Anthony_Sweijs-missing_label",
+      "variant": "missing_label",
+      "condition": "U2",
+      "status": "completed",
+      "first_sha256": "5cf63740770c9a9c1c07807b288d61769b12c2c7b2c0b61f8bcc2aafde18ea92",
+      "retrieval_calls": 2,
+      "retrieved_triples": 25,
+      "validation_ms": 0.0,
+      "final_sha256": "7cbc7db3e797d008addfae053d67aaa00ca5d1f8f8de72fdd0cf343a06b8b1e0",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806469-hffi76KBZfKpQFJwdboD",
+        "usage": {
+          "prompt_tokens": 873,
+          "completion_tokens": 31,
+          "total_tokens": 904,
+          "cost": 0.00014955,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00014955,
+            "upstream_inference_prompt_cost": 0.00013095,
+            "upstream_inference_completions_cost": 1.86e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1678.3754210919142,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam",
+        "evidence_ids": [
+          "E011"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1694.0362909808755
+    },
+    {
+      "case_id": "Anthony_Sweijs-wrong_place",
+      "variant": "wrong_place",
+      "condition": "G2",
+      "status": "completed",
+      "first_sha256": "dc6f95a22fade32a42d68b9d8975b2f7150575ade13ec4edeaf289a098c0903d",
+      "retrieval_calls": 1,
+      "retrieved_triples": 7,
+      "validation_ms": 137.6336329849437,
+      "final_sha256": "dc6f95a22fade32a42d68b9d8975b2f7150575ade13ec4edeaf289a098c0903d",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806471-8mgs4ZZPHQe1IOjU4h4m",
+        "usage": {
+          "prompt_tokens": 554,
+          "completion_tokens": 32,
+          "total_tokens": 586,
+          "cost": 0.0001023,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001023,
+            "upstream_inference_prompt_cost": 8.31e-05,
+            "upstream_inference_completions_cost": 1.92e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1462.8437550272793,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Ahvaz",
+        "evidence_ids": [
+          "E005"
+        ]
+      },
+      "correct": false,
+      "supported": true,
+      "total_ms": 1614.4070159643888
+    },
+    {
+      "case_id": "Anthony_Sweijs-duplicate_relation",
+      "variant": "duplicate_relation",
+      "condition": "G0",
+      "status": "completed",
+      "first_sha256": "8c40cb7b9700499fbbcefcf3d3f44c85c4e2aecf8dec9539b1f5d200549c30eb",
+      "retrieval_calls": 1,
+      "retrieved_triples": 17,
+      "validation_ms": 0.0,
+      "final_sha256": "8c40cb7b9700499fbbcefcf3d3f44c85c4e2aecf8dec9539b1f5d200549c30eb",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806472-EIcP7HhbrAJZ7ajBiLg9",
+        "usage": {
+          "prompt_tokens": 1070,
+          "completion_tokens": 20,
+          "total_tokens": 1090,
+          "cost": 9.57e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1024,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.57e-05,
+            "upstream_inference_prompt_cost": 8.37e-05,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1869.2274059867486,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1871.1866210214794
+    },
+    {
+      "case_id": "Anthony_Sweijs-missing_relation",
+      "variant": "missing_relation",
+      "condition": "G1",
+      "status": "completed",
+      "first_sha256": "cc531971c8cb3d8acc5632c07b43f1a3795ef1d5b4c4faebc57391317be4830d",
+      "retrieval_calls": 1,
+      "retrieved_triples": 3,
+      "validation_ms": 127.09904997609556,
+      "final_sha256": "cc531971c8cb3d8acc5632c07b43f1a3795ef1d5b4c4faebc57391317be4830d",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806474-zW3xiqlugWIu4sNhEZ3C",
+        "usage": {
+          "prompt_tokens": 357,
+          "completion_tokens": 20,
+          "total_tokens": 377,
+          "cost": 6.555e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.555e-05,
+            "upstream_inference_prompt_cost": 5.355e-05,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1192.647795076482,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1333.2762300269678
+    },
+    {
+      "case_id": "Anthony_Sweijs-clean",
+      "variant": "clean",
+      "condition": "U2",
+      "status": "completed",
+      "first_sha256": "7cbc7db3e797d008addfae053d67aaa00ca5d1f8f8de72fdd0cf343a06b8b1e0",
+      "retrieval_calls": 2,
+      "retrieved_triples": 26,
+      "validation_ms": 0.0,
+      "final_sha256": "7cbc7db3e797d008addfae053d67aaa00ca5d1f8f8de72fdd0cf343a06b8b1e0",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806476-VP8zNUIVh67EYB3oT0Nh",
+        "usage": {
+          "prompt_tokens": 873,
+          "completion_tokens": 31,
+          "total_tokens": 904,
+          "cost": 0.00014955,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00014955,
+            "upstream_inference_prompt_cost": 0.00013095,
+            "upstream_inference_completions_cost": 1.86e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1866.7533620027825,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam",
+        "evidence_ids": [
+          "E011"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1882.6951830415055
+    },
+    {
+      "case_id": "Anthony_Sweijs-wrong_class",
+      "variant": "wrong_class",
+      "condition": "G2",
+      "status": "completed",
+      "first_sha256": "689675fda9ca6b78c006ab25828a6fd4eba8efe3e2e22d7fe3ab235c8c0ffd59",
+      "retrieval_calls": 2,
+      "retrieved_triples": 12,
+      "validation_ms": 261.05622213799506,
+      "final_sha256": "689675fda9ca6b78c006ab25828a6fd4eba8efe3e2e22d7fe3ab235c8c0ffd59",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 287.1145630488172
+    },
+    {
+      "case_id": "Anthony_Sweijs-wrong_class",
+      "variant": "wrong_class",
+      "condition": "P1",
+      "status": "completed",
+      "first_sha256": "689675fda9ca6b78c006ab25828a6fd4eba8efe3e2e22d7fe3ab235c8c0ffd59",
+      "retrieval_calls": 1,
+      "retrieved_triples": 6,
+      "validation_ms": 0.25159306824207306,
+      "final_sha256": "689675fda9ca6b78c006ab25828a6fd4eba8efe3e2e22d7fe3ab235c8c0ffd59",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 1.0873769642785192
+    },
+    {
+      "case_id": "Anthony_Sweijs-clean",
+      "variant": "clean",
+      "condition": "G1",
+      "status": "completed",
+      "first_sha256": "7cbc7db3e797d008addfae053d67aaa00ca5d1f8f8de72fdd0cf343a06b8b1e0",
+      "retrieval_calls": 1,
+      "retrieved_triples": 13,
+      "validation_ms": 138.01557198166847,
+      "final_sha256": "7cbc7db3e797d008addfae053d67aaa00ca5d1f8f8de72fdd0cf343a06b8b1e0",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806478-IjQ6UE23Fd3pi1mB8GwG",
+        "usage": {
+          "prompt_tokens": 873,
+          "completion_tokens": 31,
+          "total_tokens": 904,
+          "cost": 0.00014955,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00014955,
+            "upstream_inference_prompt_cost": 0.00013095,
+            "upstream_inference_completions_cost": 1.86e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1545.7103069638833,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam",
+        "evidence_ids": [
+          "E011"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1697.7162349503487
+    },
+    {
+      "case_id": "Anthony_Sweijs-wrong_place",
+      "variant": "wrong_place",
+      "condition": "U2",
+      "status": "completed",
+      "first_sha256": "dc6f95a22fade32a42d68b9d8975b2f7150575ade13ec4edeaf289a098c0903d",
+      "retrieval_calls": 2,
+      "retrieved_triples": 14,
+      "validation_ms": 0.0,
+      "final_sha256": "dc6f95a22fade32a42d68b9d8975b2f7150575ade13ec4edeaf289a098c0903d",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806479-W3riYAXwrZp5x4MHR6xZ",
+        "usage": {
+          "prompt_tokens": 554,
+          "completion_tokens": 32,
+          "total_tokens": 586,
+          "cost": 0.0001023,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001023,
+            "upstream_inference_prompt_cost": 8.31e-05,
+            "upstream_inference_completions_cost": 1.92e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 2007.9552420647815,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Ahvaz",
+        "evidence_ids": [
+          "E005"
+        ]
+      },
+      "correct": false,
+      "supported": true,
+      "total_ms": 2021.1991609539837
+    },
+    {
+      "case_id": "Anthony_Sweijs-clean",
+      "variant": "clean",
+      "condition": "G2",
+      "status": "completed",
+      "first_sha256": "7cbc7db3e797d008addfae053d67aaa00ca5d1f8f8de72fdd0cf343a06b8b1e0",
+      "retrieval_calls": 1,
+      "retrieved_triples": 13,
+      "validation_ms": 137.05996400676668,
+      "final_sha256": "7cbc7db3e797d008addfae053d67aaa00ca5d1f8f8de72fdd0cf343a06b8b1e0",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806482-ehArLzATYthyG5JeUytn",
+        "usage": {
+          "prompt_tokens": 873,
+          "completion_tokens": 31,
+          "total_tokens": 904,
+          "cost": 0.00014955,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00014955,
+            "upstream_inference_prompt_cost": 0.00013095,
+            "upstream_inference_completions_cost": 1.86e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1522.4159470526502,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam",
+        "evidence_ids": [
+          "E011"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1673.3957539545372
+    },
+    {
+      "case_id": "Anthony_Sweijs-clean",
+      "variant": "clean",
+      "condition": "R0",
+      "status": "completed",
+      "first_sha256": "7cbc7db3e797d008addfae053d67aaa00ca5d1f8f8de72fdd0cf343a06b8b1e0",
+      "retrieval_calls": 1,
+      "retrieved_triples": 13,
+      "validation_ms": 0.0,
+      "final_sha256": "7cbc7db3e797d008addfae053d67aaa00ca5d1f8f8de72fdd0cf343a06b8b1e0",
+      "llm": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "generation_id": "gen-1791806483-BB0UnbG2lmk9kz5uIYTO",
+        "usage": {
+          "prompt_tokens": 622,
+          "completion_tokens": 31,
+          "total_tokens": 653,
+          "cost": 0.0001119,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001119,
+            "upstream_inference_prompt_cost": 9.33e-05,
+            "upstream_inference_completions_cost": 1.86e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "llm_ms": 1505.1980919670314,
+        "finish_reason": "stop"
+      },
+      "answer": {
+        "status": "answer",
+        "kind": "birthPlace",
+        "value": "http://yago-knowledge.org/resource/Amsterdam",
+        "evidence_ids": [
+          "E011"
+        ]
+      },
+      "correct": true,
+      "supported": true,
+      "total_ms": 1507.039781077765
+    },
+    {
+      "case_id": "Anthony_Sweijs-duplicate_relation",
+      "variant": "duplicate_relation",
+      "condition": "G1",
+      "status": "completed",
+      "first_sha256": "8c40cb7b9700499fbbcefcf3d3f44c85c4e2aecf8dec9539b1f5d200549c30eb",
+      "retrieval_calls": 1,
+      "retrieved_triples": 17,
+      "validation_ms": 184.09153097309172,
+      "final_sha256": "8c40cb7b9700499fbbcefcf3d3f44c85c4e2aecf8dec9539b1f5d200549c30eb",
+      "abstention_reason": "validation",
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null,
+        "evidence_ids": []
+      },
+      "correct": false,
+      "supported": false,
+      "total_ms": 197.83176493365318
+    }
+  ],
+  "functional_matches": 8,
+  "python_shacl_matches": 8,
+  "requested_model": "openai/gpt-4o-mini",
+  "budget": {
+    "calls_attempted": 35,
+    "reserved_upper_usd": 0.036888599999999994,
+    "cost_usd_reported": 0.004019699999999999,
+    "missing_cost_responses": 0
+  },
+  "metrics": {
+    "R0": {
+      "total": 8,
+      "answered": 6,
+      "correct": 4,
+      "accuracy_all": 0.5,
+      "accuracy_answered": 0.6666666666666666,
+      "abstained": 2,
+      "errors": 0,
+      "supported_answers": 6,
+      "retrieval_calls": 8,
+      "retrieved_triples": 77,
+      "validation_ms": 0.0,
+      "llm_calls": 8,
+      "prompt_tokens": 4124,
+      "completion_tokens": 231,
+      "cost_usd_reported": 0.0007572,
+      "mean_total_ms": 1691.323516119155
+    },
+    "G0": {
+      "total": 8,
+      "answered": 6,
+      "correct": 4,
+      "accuracy_all": 0.5,
+      "accuracy_answered": 0.6666666666666666,
+      "abstained": 2,
+      "errors": 0,
+      "supported_answers": 6,
+      "retrieval_calls": 8,
+      "retrieved_triples": 77,
+      "validation_ms": 0.0,
+      "llm_calls": 8,
+      "prompt_tokens": 5535,
+      "completion_tokens": 231,
+      "cost_usd_reported": 0.00089205,
+      "mean_total_ms": 1831.9839933683397
+    },
+    "G1": {
+      "total": 8,
+      "answered": 2,
+      "correct": 1,
+      "accuracy_all": 0.125,
+      "accuracy_answered": 0.5,
+      "abstained": 6,
+      "errors": 0,
+      "supported_answers": 2,
+      "retrieval_calls": 8,
+      "retrieved_triples": 77,
+      "validation_ms": 1157.267393777147,
+      "llm_calls": 3,
+      "prompt_tokens": 1784,
+      "completion_tokens": 83,
+      "cost_usd_reported": 0.0003174,
+      "mean_total_ms": 678.6500792222796
+    },
+    "G2": {
+      "total": 8,
+      "answered": 4,
+      "correct": 3,
+      "accuracy_all": 0.375,
+      "accuracy_answered": 0.75,
+      "abstained": 4,
+      "errors": 0,
+      "supported_answers": 4,
+      "retrieval_calls": 13,
+      "retrieved_triples": 139,
+      "validation_ms": 1813.9877901412547,
+      "llm_calls": 5,
+      "prompt_tokens": 3530,
+      "completion_tokens": 145,
+      "cost_usd_reported": 0.0006165,
+      "mean_total_ms": 1417.1648619958432
+    },
+    "U2": {
+      "total": 8,
+      "answered": 7,
+      "correct": 5,
+      "accuracy_all": 0.625,
+      "accuracy_answered": 0.7142857142857143,
+      "abstained": 1,
+      "errors": 0,
+      "supported_answers": 7,
+      "retrieval_calls": 16,
+      "retrieved_triples": 172,
+      "validation_ms": 0.0,
+      "llm_calls": 8,
+      "prompt_tokens": 6493,
+      "completion_tokens": 242,
+      "cost_usd_reported": 0.00111915,
+      "mean_total_ms": 1743.7487255083397
+    },
+    "P1": {
+      "total": 8,
+      "answered": 2,
+      "correct": 1,
+      "accuracy_all": 0.125,
+      "accuracy_answered": 0.5,
+      "abstained": 6,
+      "errors": 0,
+      "supported_answers": 2,
+      "retrieval_calls": 8,
+      "retrieved_triples": 77,
+      "validation_ms": 3.02106817252934,
+      "llm_calls": 3,
+      "prompt_tokens": 1784,
+      "completion_tokens": 83,
+      "cost_usd_reported": 0.0003174,
+      "mean_total_ms": 600.6750131200533
+    }
+  },
+  "finished_at": "2026-10-12T12:01:25.265715+00:00"
+}

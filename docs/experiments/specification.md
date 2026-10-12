@@ -1,8 +1,8 @@
 # SHACL 검증 루프 실험 명세
 
-이 실험은 그래프 검색에 SHACL 검증을 더했을 때 잘못된 근거를 얼마나 걸러내는지, 그 대가로 시간과 비용이 얼마나 늘어나는지 확인한다. 합성 RDF 사전 점검에 이어 GLEIF Golden Copy로 작은 실제 데이터 파일럿을 진행한다. 첫 데이터셋은 GLEIF로 변경했으며 YAGO는 후속 일반화 실험 후보로 남긴다.
+이 실험은 그래프 검색에 SHACL 검증을 더했을 때 잘못된 근거를 얼마나 걸러내는지, 그 대가로 시간과 비용이 얼마나 늘어나는지 확인한다. 합성 RDF 사전 점검에 이어 GLEIF Golden Copy로 작은 실제 데이터 파일럿을 진행한다. GLEIF에 이어 YAGO 4.6의 원본 SHACL로 후속 파일럿을 진행한다.
 
-명세 버전은 0.2이며 작성일은 2026-10-12이다. 조건이나 채점 기준을 바꾸면 버전을 올리고 연구 일지에 이유를 남긴다. 실행 결과를 본 뒤 기준을 바꾼 경우에는 탐색 실험으로 표시한다.
+현재 명세 버전은 0.3이며 작성일은 2026-10-12이다. 조건이나 채점 기준을 바꾸면 버전을 올리고 연구 일지에 이유를 남긴다. 실행 결과를 본 뒤 기준을 바꾼 경우에는 탐색 실험으로 표시한다.
 
 ## 연구 질문
 
@@ -123,3 +123,35 @@ run에는 UTC 시각, Git commit과 미커밋 변경 여부, 코드·데이터·
 ## 참고
 
 [pySHACL 문서](https://github.com/RDFLib/pySHACL)는 검증 결과 그래프와 추론 옵션의 사용법을 설명한다. 실험의 해석과 다음 결정은 [연구 일지](../journal/index.md)에 별도로 남긴다.
+
+## YAGO 원본 SHACL 후속 파일럿 — 명세 0.3
+
+GLEIF 명세 0.2와 측정값은 유지하고 YAGO 4.6을 두 번째 파일럿으로 추가한다. [공식 배포](https://yago-knowledge.org/downloads/yago-4-6)의 schema와 tiny 파일을 고정하며 CC BY 4.0 출처를 표시한다. 전체 YAGO 사실을 적재한 실험은 아니다.
+
+원본 schema.ttl은 바이트를 변경하지 않는다. 전체 55개 NodeShape와 5,536개 트리플을 pySHACL에 전달하고 전체 검사를 수행한 뒤 질의 인물과 근거의 출생지 노드에 해당하는 최상위 결과만 추린다. pySHACL의 focus_nodes 옵션은 중첩된 리터럴 검사를 누락시켜 사용하지 않는다. shape 선택을 강제로 지정하지 않고 원본의 클래스 타깃을 사용한다. 원본 하위 클래스 경로와 그 경로가 뜻하는 클래스 선언을 별도 taxonomy.ttl로 제공한다. OWL 추론, rdfs:range에 의한 대상 타입 보정은 하지 않는다. 재검색도 사례별 원천만 읽는다.
+
+공식 tiny 파일의 birthPlace 등장 순서에서 출생지·생년월일·이름·타입 경로가 있는 첫 네 인물을 선정한다. 첫 인물은 개발용, 나머지 세 인물은 파일럿에 사용한다. 대상 인물만 분리하며 연결 장소나 교란 대상으로 사용한 노드의 완전한 분리를 주장하지 않는다. 생년월일은 질문의 정답이 아니지만 원본 Person shape가 검사하는 주변 근거로 포함한다.
+
+| 사례 | 변형 위치 | 원본 SHACL 기대값 |
+| --- | --- | --- |
+| clean | 원본 유지 | 통과 |
+| missing_label | 검색에서 인물 이름 제외 | minCount 위반 |
+| missing_relation | 검색에서 출생지 관계 제외 | 통과: birthPlace에 minCount 없음 |
+| missing_target_type | 검색에서 출생지 노드 타입 제외 | class 위반 |
+| duplicate_relation | 사례별 원천에 두 번째 정상 장소 추가 | maxCount 위반 |
+| wrong_class | 사례별 원천의 출생지를 다른 Person으로 교체 | class 위반 |
+| wrong_datatype | 사례별 원천의 생년월일을 xsd:string으로 교체 | or 자료형 위반 |
+| wrong_place | 사례별 원천의 출생지를 다른 정상 Place로 교체 | 통과: 사실 오류는 별도 정답으로 확인 |
+
+총 24개 사례에 R0/G0/G1/G2/U2/P1을 적용한다. R0는 같은 근거의 텍스트 표현이며 벡터 검색 비교가 아니다. P1은 이 부분집합에 등장하는 제약의 Python 구현이며 전체 YAGO 스키마를 구현한 검사기는 아니다. 원본과의 판정 일치를 사례별로 기록한다. G2는 위반이 있을 때만 최대 두 번 재검색한다. 따라서 제약을 통과하는 missing_relation은 재검색하지 않는다. U2는 위반과 관계없이 전체 근거를 한 번 다시 조회한다.
+
+질문에는 인물 URI가 주어지며 고정 CONSTRUCT 질의를 사용한다. 답은 출생지 URI와 인용 ID로 제한하고 원본 부분집합의 값과 정확 일치로 채점한다. GLEIF와 모델·temperature·예산·조건의 큰 구조는 맞추지만 질문·원천 제약·prompt가 다르므로 두 데이터셋의 정답률 차이를 데이터셋 우열로 해석하지 않는다. 사례당 1회 실행하며 대표성·유의성을 주장하지 않는다.
+
+LLM은 기존 OpenRouter 설정을 사용한다. 실행당 최대 160회, 예산 1 USD, 출력 240 tokens, temperature 0, seed 20261012의 조건 순서를 사용한다. 모델·제공자·토큰·비용과 오류를 저장한다. 정답은 생성과 재검색에 전달하지 않는다. 조건별 시간은 공유된 첫 검색과 배치 전처리를 제외한다.
+
+```bash
+uv run --locked python scripts/download_yago.py
+uv run --locked python scripts/prepare_yago.py
+uv run --locked python scripts/run_yago_pilot.py --split development --validate-only
+uv run --locked python scripts/run_yago_pilot.py
+```
