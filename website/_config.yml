@@ -1,0 +1,74 @@
+theme: jekyll-theme-chirpy
+lang: ko-KR
+timezone: Etc/UTC
+title: SHACL GraphRAG
+tagline: 실험하고, 검증하고, 기록합니다.
+description: SHACL 검증과 GraphRAG 연구의 실험 명세, 실행 기록과 연구 일지
+url: https://shinysong.github.io
+baseurl: /shacl-graphrag
+github:
+  username: shinysong
+social:
+  name: SHACL GraphRAG Lab
+  links:
+    - https://github.com/shinysong/shacl-graphrag
+avatar: /assets/img/lab-mark.svg
+theme_mode:
+toc: true
+future: true
+paginate: 8
+comments:
+  provider:
+analytics: {}
+assets:
+  self_host:
+    enabled: false
+pwa:
+  enabled: false
+  cache:
+    enabled: false
+collections:
+  tabs:
+    output: true
+    sort_by: order
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: false
+      toc: true
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      toc: true
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    block:
+      line_numbers: true
+sass:
+  style: compressed
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  ignore:
+    envs: [development]
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/

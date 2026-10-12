@@ -3,16 +3,16 @@
 온톨로지 제약 기반 검증 루프 GraphRAG
 
 Graph User Group (GUG) 커뮤니티 프로젝트입니다.  
-SHACL·OWL 제약을 GraphRAG의 검색–검증–생성 루프에 **런타임 구성요소**로 통합하고, 온톨로지 도입 효과를 정량적으로 비교·공개하는 것을 목표로 합니다.
+SHACL·OWL 제약을 GraphRAG의 검색–검증–생성 루프에 **런타임 구성요소**로 통합하고 온톨로지 도입 효과를 정량적으로 비교·공개하는 것을 목표로 합니다.
 
 공개 저장소: [github.com/shinysong/shacl-graphrag](https://github.com/shinysong/shacl-graphrag)
 
 ## 배경
 
 기존 GraphRAG 연구는 온톨로지를 검색 범위 축소나 사후 필터에 쓰는 경우가 많습니다.  
-스키마 수준의 논리 제약과 검증 계층이 없으면, 잘못된 근거로 답변이 나와도 위반을 판정하기 어렵습니다.
+스키마 수준의 논리 제약과 검증 계층이 없으면 잘못된 근거로 답변이 나와도 위반을 판정하기 어렵습니다.
 
-본 프로젝트는 ‘그래프 구조의 효과’와 ‘스키마 제약의 효과’를 분리 측정할 수 있도록, 제약 검증이 내장된 공개 지식베이스(YAGO 4.6)를 기반으로 데이터셋·검증 루프·비교 실험까지 한 사이클을 완결합니다.
+본 프로젝트는 ‘그래프 구조의 효과’와 ‘스키마 제약의 효과’를 분리 측정할 수 있도록 제약 검증이 내장된 공개 지식베이스(YAGO 4.6)를 기반으로 데이터셋·검증 루프·비교 실험까지 한 사이클을 완결합니다.
 
 ## 주요 기능 (예정)
 
@@ -67,7 +67,7 @@ chmod +x scripts/*.sh scripts/lib/*.sh
 
 [Lab 홈](docs/index.md)에서 [실험 명세](docs/experiments/specification.md),
 [실행 기록](docs/experiments/records/index.md), [연구 일지](docs/journal/index.md)를 읽을 수 있습니다.
-문서 원본은 Markdown이며 GitHub Pages용 빌드와 배포 workflow를 포함합니다.
+문서 원본은 Markdown이며 Jekyll의 Chirpy 테마로 GitHub Pages에 게시합니다.
 공개 설정과 미리보기는 [기록 운영 방법](docs/setup/recording.md)을 따릅니다.
 
 ```bash
@@ -75,9 +75,13 @@ chmod +x scripts/*.sh scripts/lib/*.sh
 uv sync --locked
 uv run --locked python scripts/run_validation_experiment.py
 
-# 문서 사이트 빌드
+# 문서 원본 검사
 uv sync --locked --group docs
 uv run --locked --group docs mkdocs build --strict
+
+# Chirpy 사이트 빌드 (Ruby 3.4 필요)
+BUNDLE_GEMFILE=website/Gemfile bundle install
+./scripts/build_site.sh
 ```
 
 실행 기록은 `docs/experiments/records/`, 입력 사본과 상세 보고서는 `runs/`에 남습니다.

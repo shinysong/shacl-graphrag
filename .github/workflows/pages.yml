@@ -26,6 +26,12 @@ jobs:
       - run: uv run --locked python -m unittest discover -s tests
       - run: uv run --locked python scripts/run_validation_experiment.py --local-only
       - run: uv run --locked --group docs mkdocs build --strict
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4'
+          bundler-cache: true
+          working-directory: website
+      - run: ./scripts/build_site.sh
       - uses: actions/upload-pages-artifact@v3
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/cursor/add-readme-gitignore'
         with:

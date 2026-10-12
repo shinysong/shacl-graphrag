@@ -21,7 +21,7 @@ For session continuity, read local `MEMORY.md` if present. It is ignored by Git 
 4. Keep README / setup docs accurate when you change bootstrap behavior.
 5. For experiments, keep the protocol in `docs/experiments/specification.md`, run summaries in `docs/experiments/records/`, and interpretation/decisions in `docs/journal/`. Preserve failed runs; never present synthetic E0 results as GraphRAG benchmarks.
 6. Apply the user-requested [humanize-korean skill](https://github.com/epoko77-ai/im-not-ai/tree/main/codex/skills/humanize-korean) when writing Korean documentation. Read its `SKILL.md` and preserve facts, measurements, code, and technical terms. Keep intermediate writing artifacts under ignored `_workspace/`.
-7. Build docs with `uv run --locked --group docs mkdocs build --strict`. GitHub Pages is the chosen hosting destination; do not publish to another service. Pushing still requires an explicit request.
+7. GitHub Pages uses Jekyll with Chirpy, configured in `website/`. Keep `docs/` as the canonical Markdown source. Check source docs with `uv run --locked --group docs mkdocs build --strict`, then build and check the published site with `./scripts/build_site.sh` (Ruby 3.4 and `BUNDLE_GEMFILE=website/Gemfile bundle install` required). The MkDocs build is a source check only; publish the final Chirpy output in `site/`. GitHub Pages is the chosen hosting destination; do not publish to another service. Pushing still requires an explicit request.
 
 ## Coding agents on this host
 
