@@ -78,6 +78,7 @@ def prepare():
         body = rewrite_links(text[title_match.end():].lstrip(), source)
         url = page_url(source)
         metadata = dict(title=title, layout='page', permalink=url, toc=True, render_with_liquid=False)
+        metadata['mermaid'] = bool(re.search(r'^```mermaid\s*$', body, re.M))
         dated = re.match(r'(\d{4}-\d{2}-\d{2})-(.+)\.md$', source.name)
         if relative in TABS:
             name, icon, order = TABS[relative]

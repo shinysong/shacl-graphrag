@@ -23,6 +23,13 @@ For session continuity, read local `MEMORY.md` if present. It is ignored by Git 
 6. Apply the user-requested [humanize-korean skill](https://github.com/epoko77-ai/im-not-ai/tree/main/codex/skills/humanize-korean) when writing Korean documentation. Read its `SKILL.md` and preserve facts, measurements, code, and technical terms. Keep intermediate writing artifacts under ignored `_workspace/`.
 7. GitHub Pages uses Jekyll with Chirpy, configured in `website/`. Keep `docs/` as the canonical Markdown source. Check source docs with `uv run --locked --group docs mkdocs build --strict`, then build and check the published site with `./scripts/build_site.sh` (Ruby 3.4 and `BUNDLE_GEMFILE=website/Gemfile bundle install` required). The MkDocs build is a source check only; publish the final Chirpy output in `site/`. GitHub Pages is the chosen hosting destination; do not publish to another service. Pushing still requires an explicit request.
 
+## Documentation and explanation visuals
+
+- User preference: proactively use diagrams wherever they make documentation or explanations easier to understand. Apply this when writing or revising research notes, experiment protocols, architecture descriptions, and code explanations.
+- Prefer Mermaid for process, sequence, state, and relationship diagrams; SVG for precise reusable illustrations; function/call-flow diagrams for execution paths; and ASCII art for compact text-only explanations or terminal output. Choose the format that best communicates the content.
+- Make inputs, outputs, branches, dependencies, and validation/repair loops explicit when relevant. Pair diagrams with concise explanatory text and preserve facts, measurements, and the distinction between implemented behavior and planned work.
+- Keep diagram sources editable in the repository. For published diagrams, verify actual rendering in Chirpy, mobile readability, and light/dark contrast; provide a text fallback when needed.
+
 ## Coding agents on this host
 
 - **Codex** reads this `AGENTS.md` (standard name). Optional overrides: `AGENTS.override.md`.
