@@ -1,0 +1,13 @@
+@prefix ex: <https://example.org/lab/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:PersonShape a sh:NodeShape ;
+    sh:targetClass ex:Person ;
+    sh:property ex:NameShape, ex:BirthDateShape, ex:BirthPlaceShape .
+ex:NameShape a sh:PropertyShape ;
+    sh:path ex:name ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string .
+ex:BirthDateShape a sh:PropertyShape ;
+    sh:path ex:birthDate ; sh:datatype xsd:date .
+ex:BirthPlaceShape a sh:PropertyShape ;
+    sh:path ex:bornIn ; sh:class ex:Place .

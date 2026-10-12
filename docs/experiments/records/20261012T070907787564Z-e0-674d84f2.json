@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "experiment": "E0",
+  "run_id": "20261012T070907787564Z-e0-674d84f2",
+  "started_at": "2026-10-12T07:09:07.787564+00:00",
+  "status": "passed",
+  "command": "uv run --locked python scripts/run_validation_experiment.py",
+  "git_commit": "95cf805c54fa070a5cad42af59b361e832139f79",
+  "working_tree_dirty": true,
+  "python": "3.12.3",
+  "os": "Linux",
+  "architecture": "aarch64",
+  "packages": {
+    "Jinja2": "3.1.6",
+    "Markdown": "3.11",
+    "MarkupSafe": "3.0.4",
+    "PyYAML": "6.0.3",
+    "annotated-types": "0.8.0",
+    "anyio": "4.15.1",
+    "certifi": "2026.7.22",
+    "click": "8.5.0",
+    "ghp-import": "2.1.0",
+    "h11": "0.16.0",
+    "html5rdf": "1.2.1",
+    "httpcore": "1.0.9",
+    "httpcore2": "2.13.1",
+    "httpx": "0.28.1",
+    "httpx2": "2.13.1",
+    "idna": "3.20",
+    "jiter": "0.17.0",
+    "mergedeep": "1.3.4",
+    "mkdocs": "1.6.1",
+    "mkdocs-get-deps": "0.2.2",
+    "numpy": "2.5.4",
+    "openai": "3.29.0",
+    "owlrl": "7.6.2",
+    "packaging": "26.3",
+    "pandas": "3.0.6",
+    "pathspec": "1.1.1",
+    "platformdirs": "4.13.0",
+    "prettytable": "3.18.0",
+    "pydantic": "2.14.1",
+    "pydantic_core": "2.50.1",
+    "pyparsing": "3.3.3",
+    "pyshacl": "0.40.1",
+    "python-dateutil": "2.9.0.post0",
+    "python-dotenv": "1.2.4",
+    "pyyaml_env_tag": "1.1",
+    "rdflib": "7.6.0",
+    "ruff": "0.17.0",
+    "six": "1.17.0",
+    "sniffio": "1.3.1",
+    "tqdm": "4.70.1",
+    "truststore": "0.10.4",
+    "typing-inspection": "0.4.4",
+    "typing_extensions": "4.16.0",
+    "watchdog": "6.0.0",
+    "wcwidth": "0.9.2"
+  },
+  "settings": {
+    "inference": "none",
+    "abort_on_first": false,
+    "llm_calls": 0
+  },
+  "sha256": {
+    "scripts/run_validation_experiment.py": "b55460e346f54781b93b3d4bf951a6eb0c9eb37387111cc8b5d8d102c55ea0da",
+    "experiments/e0/data.ttl": "c2762008de98ce4317805b96381c6dcd66b47eb6e91e65284dba44a29a547dcd",
+    "experiments/e0/shapes.ttl": "858eee05f3587c075c2c58b6e9c14d5614c42f75deff954a9cab9d0cbb12d614",
+    "experiments/e0/cases.json": "a615e61081b99937db19cb181eb3f25368263138624f22beedd0a20a6f89870b",
+    "docs/experiments/specification.md": "366ffc084604f6d5e6e85671401562da7e5048b52a1c8e48293db914d1765250",
+    "pyproject.toml": "18af676de1c07964bedff4c739dd8831f2af0c613e00fccf7f16216ea2650721",
+    "uv.lock": "b29fc8a715c3f6e37b6528e28f0e1bf517b97cd9afd2beda3dfe36a22635edc0",
+    ".python-version": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d"
+  },
+  "cases": [
+    {
+      "id": "clean",
+      "expected": [],
+      "status": "completed",
+      "conforms": true,
+      "actual": [],
+      "validation_ms": 1.23,
+      "matches_expected": true
+    },
+    {
+      "id": "optional_absent",
+      "expected": [],
+      "status": "completed",
+      "conforms": true,
+      "actual": [],
+      "validation_ms": 2.052,
+      "matches_expected": true
+    },
+    {
+      "id": "missing_name",
+      "expected": [
+        [
+          "https://example.org/lab/Alice",
+          "https://example.org/lab/name",
+          "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        ]
+      ],
+      "status": "completed",
+      "conforms": false,
+      "actual": [
+        [
+          "https://example.org/lab/Alice",
+          "https://example.org/lab/name",
+          "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        ]
+      ],
+      "validation_ms": 1.19,
+      "matches_expected": true
+    },
+    {
+      "id": "duplicate_name",
+      "expected": [
+        [
+          "https://example.org/lab/Alice",
+          "https://example.org/lab/name",
+          "http://www.w3.org/ns/shacl#MaxCountConstraintComponent"
+        ]
+      ],
+      "status": "completed",
+      "conforms": false,
+      "actual": [
+        [
+          "https://example.org/lab/Alice",
+          "https://example.org/lab/name",
+          "http://www.w3.org/ns/shacl#MaxCountConstraintComponent"
+        ]
+      ],
+      "validation_ms": 1.15,
+      "matches_expected": true
+    },
+    {
+      "id": "wrong_datatype",
+      "expected": [
+        [
+          "https://example.org/lab/Alice",
+          "https://example.org/lab/birthDate",
+          "http://www.w3.org/ns/shacl#DatatypeConstraintComponent"
+        ]
+      ],
+      "status": "completed",
+      "conforms": false,
+      "actual": [
+        [
+          "https://example.org/lab/Alice",
+          "https://example.org/lab/birthDate",
+          "http://www.w3.org/ns/shacl#DatatypeConstraintComponent"
+        ]
+      ],
+      "validation_ms": 1.149,
+      "matches_expected": true
+    },
+    {
+      "id": "wrong_class",
+      "expected": [
+        [
+          "https://example.org/lab/Alice",
+          "https://example.org/lab/bornIn",
+          "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+        ]
+      ],
+      "status": "completed",
+      "conforms": false,
+      "actual": [
+        [
+          "https://example.org/lab/Alice",
+          "https://example.org/lab/bornIn",
+          "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+        ]
+      ],
+      "validation_ms": 1.148,
+      "matches_expected": true
+    }
+  ],
+  "metrics": {
+    "tp": 4,
+    "tn": 2,
+    "fp": 0,
+    "fn": 0,
+    "errors": 0,
+    "exact": 6,
+    "total": 6,
+    "recall": 1.0,
+    "false_positive_rate": 0.0,
+    "error_rate": 0.0
+  },
+  "finished_at": "2026-10-12T07:09:07.857715+00:00"
+}

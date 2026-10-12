@@ -16,6 +16,8 @@ SHACL·OWL 제약을 GraphRAG의 검색–검증–생성 루프에 **런타임 
 
 ## 주요 기능 (예정)
 
+현재 호스트 부트스트랩과 합성 RDF의 SHACL 검증 실험(E0)을 실행할 수 있습니다. 아래 GraphRAG 기능은 후속 구현 범위입니다.
+
 - Ontology Constraint Validation (SHACL·OWL)
 - GraphRAG Pipeline (검색–검증–생성 루프)
 - Text-to-SPARQL
@@ -60,6 +62,27 @@ chmod +x scripts/*.sh scripts/lib/*.sh
 - 부트스트랩: [docs/setup/bootstrap.md](docs/setup/bootstrap.md)
 - 에이전트(Codex/Orca): [docs/setup/agents.md](docs/setup/agents.md) · 루트 [`AGENTS.md`](AGENTS.md)
 - 시행착오: [docs/lessons-learned/](docs/lessons-learned/)
+
+## 실험과 연구 기록
+
+[Lab 홈](docs/index.md)에서 [실험 명세](docs/experiments/specification.md),
+[실행 기록](docs/experiments/records/index.md), [연구 일지](docs/journal/index.md)를 읽을 수 있습니다.
+문서 원본은 Markdown이며 GitHub Pages용 빌드와 배포 workflow를 포함합니다.
+공개 설정과 미리보기는 [기록 운영 방법](docs/setup/recording.md)을 따릅니다.
+
+```bash
+# 합성 데이터로 SHACL 검증과 채점 실행, 결과 기록
+uv sync --locked
+uv run --locked python scripts/run_validation_experiment.py
+
+# 문서 사이트 빌드
+uv sync --locked --group docs
+uv run --locked --group docs mkdocs build --strict
+```
+
+실행 기록은 `docs/experiments/records/`, 입력 사본과 상세 보고서는 `runs/`에 남습니다.
+공개 문서용 기록 없이 점검하려면 실행기에 `--local-only`를 붙입니다.
+재현에 필요한 `uv.lock`도 코드·명세와 함께 버전 관리합니다.
 
 ## 예상 결과물
 

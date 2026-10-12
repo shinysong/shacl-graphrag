@@ -1,0 +1,46 @@
+name: Pages
+
+on:
+  pull_request:
+  push:
+    branches: [cursor/add-readme-gitignore]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v7
+        with:
+          version: "0.13.0"
+          enable-cache: true
+      - run: uv sync --locked --group docs
+      - run: uv run --locked python -m unittest discover -s tests
+      - run: uv run --locked python scripts/run_validation_experiment.py --local-only
+      - run: uv run --locked --group docs mkdocs build --strict
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/cursor/add-readme-gitignore'
+        with:
+          path: site
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/cursor/add-readme-gitignore'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - uses: actions/deploy-pages@v4
+        id: deployment

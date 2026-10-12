@@ -1,0 +1,8 @@
+@prefix ex: <https://example.org/lab/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Alice a ex:Person ;
+    ex:name "Alice" ;
+    ex:birthDate "2000-01-01"^^xsd:date ;
+    ex:bornIn ex:Paris .
+ex:Paris a ex:Place .

@@ -1,6 +1,6 @@
 # Setup roadmap (초기 이후)
 
-부트스트랩(`scripts/bootstrap.sh`) 다음에 올 작업. **지금 저장소에는 자리만 둠.**
+부트스트랩(`scripts/bootstrap.sh`) 다음에 올 작업. 합성 RDF 검증 실험 E0와 기록용 문서 사이트부터 시작한다. 데이터와 GraphRAG의 진행 순서는 [실험 명세](../experiments/specification.md)에 둔다. 아래 DB와 Terraform 구성은 아직 구현하지 않았다.
 
 ## 1. Terraform (AWS)
 

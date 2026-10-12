@@ -1,0 +1,8 @@
+[
+  {"id": "clean", "remove": "", "add": "", "expected": []},
+  {"id": "optional_absent", "remove": "ex:Alice ex:birthDate \"2000-01-01\"^^xsd:date .", "add": "", "expected": []},
+  {"id": "missing_name", "remove": "ex:Alice ex:name \"Alice\" .", "add": "", "expected": [["https://example.org/lab/Alice", "https://example.org/lab/name", "http://www.w3.org/ns/shacl#MinCountConstraintComponent"]]},
+  {"id": "duplicate_name", "remove": "", "add": "ex:Alice ex:name \"Alicia\" .", "expected": [["https://example.org/lab/Alice", "https://example.org/lab/name", "http://www.w3.org/ns/shacl#MaxCountConstraintComponent"]]},
+  {"id": "wrong_datatype", "remove": "ex:Alice ex:birthDate \"2000-01-01\"^^xsd:date .", "add": "ex:Alice ex:birthDate \"unknown\" .", "expected": [["https://example.org/lab/Alice", "https://example.org/lab/birthDate", "http://www.w3.org/ns/shacl#DatatypeConstraintComponent"]]},
+  {"id": "wrong_class", "remove": "ex:Alice ex:bornIn ex:Paris .", "add": "ex:Alice ex:bornIn ex:Alice .", "expected": [["https://example.org/lab/Alice", "https://example.org/lab/bornIn", "http://www.w3.org/ns/shacl#ClassConstraintComponent"]]}
+]
