@@ -26,6 +26,8 @@ For session continuity, read local `MEMORY.md` if present. It is ignored by Git 
 
 ## Stack decisions (do not casually reverse)
 
+- Ontology research now includes a bounded offline OWL-RL reasoning study, beyond SHACL validation. JSON rules and OWL-RL receive identical ontology semantics; asserted lookup is an ablation. Keep positive-rule closure membership, graph-wide disjoint-class witnesses, external truth and LLM hallucination separate. Vocabulary renaming is not real-domain transfer. Preserve the 2026-10-13 one-day 105-request authorization and default 100-request cap; do not extend the exception to later days.
+
 - **Host OS:** Ubuntu 22.04 / 24.04 on AWS EC2
 - **Python:** manage with **uv** only (`uv sync`, `uv run`). Do not introduce plain `pip`/`venv` workflows.
 - **Experimental LLM gateway:** **OpenRouter** via `.env` (`OPENROUTER_*`). Research operations and code work use the current Codex session and native subagents, not OpenRouter. No local GPU serving.

@@ -17,6 +17,8 @@ SHACL·OWL 제약을 GraphRAG의 검색–검증–생성 루프에 **런타임 
 
 ## 구현 범위
 
+[개념 통합과 명시적 추론](docs/experiments/records/20261013-ontology-reasoning.md)에서는 SHACL 검사와 별도로 합성 64개 그래프·640개 질의를 세 비교군으로 실행했습니다. JSON·Python과 RDF·OWL-RL은 같은 공리에서 같은 답을 도출했습니다. 온톨로지 의미 모델의 효과와 RDF 도구만의 효과를 구분하며, LLM 환각 감소를 측정한 실행은 아닙니다.
+
 GLEIF 개발 12개 기업·72개 사례와 별도 평가 30개 기업·180개 사례를 여섯 조건으로 세 번씩 실행했습니다. Jev의 별도 개발 216개 결과와 실제 Neo4j/Cypher 근거 대조도 기록했습니다. 코드 규칙과 SHACL의 별도 평가 결과는 같았으며 전체 GraphRAG나 엔진 성능의 우열을 입증한 것은 아닙니다.
 
 [확대 실행 결과와 실제 사례](docs/journal/2026-10-13-expanded-comparison.md)

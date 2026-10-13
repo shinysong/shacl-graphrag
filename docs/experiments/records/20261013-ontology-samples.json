@@ -1,0 +1,1693 @@
+[
+  {
+    "case": {
+      "id": "g052",
+      "schema": [
+        [
+          "urn:ontology-study:ancestor",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "http://www.w3.org/2002/07/owl#TransitiveProperty"
+        ],
+        [
+          "urn:ontology-study:ancestor",
+          "http://www.w3.org/2002/07/owl#inverseOf",
+          "urn:ontology-study:descendant"
+        ],
+        [
+          "urn:ontology-study:directParent",
+          "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "urn:ontology-study:ancestor"
+        ],
+        [
+          "urn:ontology-study:g052:c00",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g052:c01"
+        ],
+        [
+          "urn:ontology-study:g052:c01",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g052:c02"
+        ],
+        [
+          "urn:ontology-study:g052:c02",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g052:c03"
+        ],
+        [
+          "urn:ontology-study:g052:c03",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g052:c04"
+        ],
+        [
+          "urn:ontology-study:g052:c04",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g052:c05"
+        ],
+        [
+          "urn:ontology-study:g052:c05",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g052:c06"
+        ],
+        [
+          "urn:ontology-study:g052:c06",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g052:c07"
+        ],
+        [
+          "urn:ontology-study:g052:c07",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g052:c08"
+        ],
+        [
+          "urn:ontology-study:g052:c08",
+          "http://www.w3.org/2002/07/owl#disjointWith",
+          "urn:ontology-study:Forbidden"
+        ],
+        [
+          "urn:ontology-study:g052:listA",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+          "urn:ontology-study:suppliedBy"
+        ],
+        [
+          "urn:ontology-study:g052:listA",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+          "urn:ontology-study:g052:listB"
+        ],
+        [
+          "urn:ontology-study:g052:listB",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+          "urn:ontology-study:locatedIn"
+        ],
+        [
+          "urn:ontology-study:g052:listB",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+        ],
+        [
+          "urn:ontology-study:manufacturing:provider",
+          "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "urn:ontology-study:suppliedBy"
+        ],
+        [
+          "urn:ontology-study:manufacturing:region",
+          "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "urn:ontology-study:locatedIn"
+        ],
+        [
+          "urn:ontology-study:manufacturing:sourceClass",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g052:c00"
+        ],
+        [
+          "urn:ontology-study:manufacturing:sourceLink",
+          "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "urn:ontology-study:directParent"
+        ],
+        [
+          "urn:ontology-study:supplyCountry",
+          "http://www.w3.org/2002/07/owl#propertyChainAxiom",
+          "urn:ontology-study:g052:listA"
+        ]
+      ],
+      "facts": [
+        [
+          "urn:ontology-study:g052:e000",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "urn:ontology-study:manufacturing:sourceClass"
+        ],
+        [
+          "urn:ontology-study:g052:e000",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g052:e001"
+        ],
+        [
+          "urn:ontology-study:g052:e001",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g052:e002"
+        ],
+        [
+          "urn:ontology-study:g052:e002",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g052:e003"
+        ],
+        [
+          "urn:ontology-study:g052:e003",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g052:e004"
+        ],
+        [
+          "urn:ontology-study:g052:e004",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g052:e005"
+        ],
+        [
+          "urn:ontology-study:g052:e005",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g052:e006"
+        ],
+        [
+          "urn:ontology-study:g052:e006",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g052:e007"
+        ],
+        [
+          "urn:ontology-study:g052:e007",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g052:e008"
+        ],
+        [
+          "urn:ontology-study:g052:e500",
+          "urn:ontology-study:manufacturing:provider",
+          "urn:ontology-study:g052:e501"
+        ],
+        [
+          "urn:ontology-study:g052:e501",
+          "urn:ontology-study:manufacturing:region",
+          "urn:ontology-study:g052:e502"
+        ]
+      ],
+      "queries": [
+        {
+          "id": "g052:q00",
+          "triple": [
+            "urn:ontology-study:g052:e000",
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+            "urn:ontology-study:g052:c08"
+          ]
+        },
+        {
+          "id": "g052:q01",
+          "triple": [
+            "urn:ontology-study:g052:e000",
+            "urn:ontology-study:ancestor",
+            "urn:ontology-study:g052:e008"
+          ]
+        },
+        {
+          "id": "g052:q02",
+          "triple": [
+            "urn:ontology-study:g052:e008",
+            "urn:ontology-study:descendant",
+            "urn:ontology-study:g052:e000"
+          ]
+        },
+        {
+          "id": "g052:q03",
+          "triple": [
+            "urn:ontology-study:g052:e000",
+            "urn:ontology-study:directParent",
+            "urn:ontology-study:g052:e008"
+          ]
+        },
+        {
+          "id": "g052:q04",
+          "triple": [
+            "urn:ontology-study:g052:e008",
+            "urn:ontology-study:ancestor",
+            "urn:ontology-study:g052:e000"
+          ]
+        },
+        {
+          "id": "g052:q05",
+          "triple": [
+            "urn:ontology-study:g052:e000",
+            "urn:ontology-study:descendant",
+            "urn:ontology-study:g052:e008"
+          ]
+        },
+        {
+          "id": "g052:q06",
+          "triple": [
+            "urn:ontology-study:g052:e000",
+            "urn:ontology-study:manufacturing:sourceLink",
+            "urn:ontology-study:g052:e001"
+          ]
+        },
+        {
+          "id": "g052:q07",
+          "triple": [
+            "urn:ontology-study:g052:e900",
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+            "urn:ontology-study:g052:c08"
+          ]
+        },
+        {
+          "id": "g052:q08",
+          "triple": [
+            "urn:ontology-study:g052:e500",
+            "urn:ontology-study:supplyCountry",
+            "urn:ontology-study:g052:e502"
+          ]
+        },
+        {
+          "id": "g052:q09",
+          "triple": [
+            "urn:ontology-study:g052:e502",
+            "urn:ontology-study:supplyCountry",
+            "urn:ontology-study:g052:e500"
+          ]
+        }
+      ]
+    },
+    "query_id": "g052:q08",
+    "query": [
+      "urn:ontology-study:g052:e500",
+      "urn:ontology-study:supplyCountry",
+      "urn:ontology-study:g052:e502"
+    ],
+    "evaluation": {
+      "membership": "entailed",
+      "conflict": false,
+      "query_kind": "property_chain",
+      "depth": 8,
+      "fanout": 1,
+      "mapped": true,
+      "domain": "manufacturing"
+    },
+    "actual_rows": [
+      {
+        "id": "g052:q08:asserted",
+        "case_id": "g052",
+        "query_id": "g052:q08",
+        "arm": "asserted",
+        "status": "ok",
+        "query": [
+          "urn:ontology-study:g052:e500",
+          "urn:ontology-study:supplyCountry",
+          "urn:ontology-study:g052:e502"
+        ],
+        "prediction": {
+          "membership": "unknown",
+          "entailed_query_triples": [],
+          "conflict": false,
+          "conflict_details": [],
+          "owlrl_diagnostics": [],
+          "proof": []
+        },
+        "scores": {
+          "membership_agreement": false,
+          "conflict_agreement": true
+        },
+        "factors": {
+          "membership": "entailed",
+          "conflict": false,
+          "query_kind": "property_chain",
+          "depth": 8,
+          "fanout": 1,
+          "mapped": true,
+          "domain": "manufacturing"
+        },
+        "closure_artifact": "g052-asserted.nt",
+        "closure_ms_shared": 0.5589689972111955,
+        "closure_triple_count": 32
+      },
+      {
+        "id": "g052:q08:json_rules",
+        "case_id": "g052",
+        "query_id": "g052:q08",
+        "arm": "json_rules",
+        "status": "ok",
+        "query": [
+          "urn:ontology-study:g052:e500",
+          "urn:ontology-study:supplyCountry",
+          "urn:ontology-study:g052:e502"
+        ],
+        "prediction": {
+          "membership": "entailed",
+          "entailed_query_triples": [
+            [
+              "urn:ontology-study:g052:e500",
+              "urn:ontology-study:supplyCountry",
+              "urn:ontology-study:g052:e502"
+            ]
+          ],
+          "conflict": false,
+          "conflict_details": [],
+          "owlrl_diagnostics": [],
+          "proof": [
+            {
+              "triple": [
+                "urn:ontology-study:g052:e500",
+                "urn:ontology-study:manufacturing:provider",
+                "urn:ontology-study:g052:e501"
+              ],
+              "rule": "asserted",
+              "premises": []
+            },
+            {
+              "triple": [
+                "urn:ontology-study:g052:e500",
+                "urn:ontology-study:suppliedBy",
+                "urn:ontology-study:g052:e501"
+              ],
+              "rule": "subproperty",
+              "premises": [
+                [
+                  "urn:ontology-study:g052:e500",
+                  "urn:ontology-study:manufacturing:provider",
+                  "urn:ontology-study:g052:e501"
+                ],
+                [
+                  "urn:ontology-study:manufacturing:provider",
+                  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+                  "urn:ontology-study:suppliedBy"
+                ]
+              ]
+            },
+            {
+              "triple": [
+                "urn:ontology-study:g052:e500",
+                "urn:ontology-study:supplyCountry",
+                "urn:ontology-study:g052:e502"
+              ],
+              "rule": "property_chain",
+              "premises": [
+                [
+                  "urn:ontology-study:g052:e500",
+                  "urn:ontology-study:suppliedBy",
+                  "urn:ontology-study:g052:e501"
+                ],
+                [
+                  "urn:ontology-study:g052:e501",
+                  "urn:ontology-study:locatedIn",
+                  "urn:ontology-study:g052:e502"
+                ],
+                [
+                  "urn:ontology-study:supplyCountry",
+                  "http://www.w3.org/2002/07/owl#propertyChainAxiom",
+                  "urn:ontology-study:g052:listA"
+                ],
+                [
+                  "urn:ontology-study:g052:listA",
+                  "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+                  "urn:ontology-study:suppliedBy"
+                ],
+                [
+                  "urn:ontology-study:g052:listA",
+                  "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+                  "urn:ontology-study:g052:listB"
+                ],
+                [
+                  "urn:ontology-study:g052:listB",
+                  "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+                  "urn:ontology-study:locatedIn"
+                ],
+                [
+                  "urn:ontology-study:g052:listB",
+                  "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+                  "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+                ]
+              ]
+            },
+            {
+              "triple": [
+                "urn:ontology-study:g052:e501",
+                "urn:ontology-study:locatedIn",
+                "urn:ontology-study:g052:e502"
+              ],
+              "rule": "subproperty",
+              "premises": [
+                [
+                  "urn:ontology-study:g052:e501",
+                  "urn:ontology-study:manufacturing:region",
+                  "urn:ontology-study:g052:e502"
+                ],
+                [
+                  "urn:ontology-study:manufacturing:region",
+                  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+                  "urn:ontology-study:locatedIn"
+                ]
+              ]
+            },
+            {
+              "triple": [
+                "urn:ontology-study:g052:e501",
+                "urn:ontology-study:manufacturing:region",
+                "urn:ontology-study:g052:e502"
+              ],
+              "rule": "asserted",
+              "premises": []
+            },
+            {
+              "triple": [
+                "urn:ontology-study:g052:listA",
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+                "urn:ontology-study:suppliedBy"
+              ],
+              "rule": "asserted",
+              "premises": []
+            },
+            {
+              "triple": [
+                "urn:ontology-study:g052:listA",
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+                "urn:ontology-study:g052:listB"
+              ],
+              "rule": "asserted",
+              "premises": []
+            },
+            {
+              "triple": [
+                "urn:ontology-study:g052:listB",
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+                "urn:ontology-study:locatedIn"
+              ],
+              "rule": "asserted",
+              "premises": []
+            },
+            {
+              "triple": [
+                "urn:ontology-study:g052:listB",
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+              ],
+              "rule": "asserted",
+              "premises": []
+            },
+            {
+              "triple": [
+                "urn:ontology-study:manufacturing:provider",
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+                "urn:ontology-study:suppliedBy"
+              ],
+              "rule": "asserted",
+              "premises": []
+            },
+            {
+              "triple": [
+                "urn:ontology-study:manufacturing:region",
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+                "urn:ontology-study:locatedIn"
+              ],
+              "rule": "asserted",
+              "premises": []
+            },
+            {
+              "triple": [
+                "urn:ontology-study:supplyCountry",
+                "http://www.w3.org/2002/07/owl#propertyChainAxiom",
+                "urn:ontology-study:g052:listA"
+              ],
+              "rule": "asserted",
+              "premises": []
+            }
+          ]
+        },
+        "scores": {
+          "membership_agreement": true,
+          "conflict_agreement": true
+        },
+        "factors": {
+          "membership": "entailed",
+          "conflict": false,
+          "query_kind": "property_chain",
+          "depth": 8,
+          "fanout": 1,
+          "mapped": true,
+          "domain": "manufacturing"
+        },
+        "closure_artifact": "g052-json_rules.nt",
+        "closure_ms_shared": 2.4752199969952926,
+        "closure_triple_count": 124
+      },
+      {
+        "id": "g052:q08:owlrl",
+        "case_id": "g052",
+        "query_id": "g052:q08",
+        "arm": "owlrl",
+        "status": "ok",
+        "query": [
+          "urn:ontology-study:g052:e500",
+          "urn:ontology-study:supplyCountry",
+          "urn:ontology-study:g052:e502"
+        ],
+        "prediction": {
+          "membership": "entailed",
+          "entailed_query_triples": [
+            [
+              "urn:ontology-study:g052:e500",
+              "urn:ontology-study:supplyCountry",
+              "urn:ontology-study:g052:e502"
+            ]
+          ],
+          "conflict": false,
+          "conflict_details": [],
+          "owlrl_diagnostics": [],
+          "proof": []
+        },
+        "scores": {
+          "membership_agreement": true,
+          "conflict_agreement": true
+        },
+        "factors": {
+          "membership": "entailed",
+          "conflict": false,
+          "query_kind": "property_chain",
+          "depth": 8,
+          "fanout": 1,
+          "mapped": true,
+          "domain": "manufacturing"
+        },
+        "closure_artifact": "g052-owlrl.nt",
+        "closure_ms_shared": 140.76219900744036,
+        "closure_triple_count": 309
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "g048",
+      "schema": [
+        [
+          "urn:ontology-study:ancestor",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "http://www.w3.org/2002/07/owl#TransitiveProperty"
+        ],
+        [
+          "urn:ontology-study:ancestor",
+          "http://www.w3.org/2002/07/owl#inverseOf",
+          "urn:ontology-study:descendant"
+        ],
+        [
+          "urn:ontology-study:directParent",
+          "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "urn:ontology-study:ancestor"
+        ],
+        [
+          "urn:ontology-study:g048:c00",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g048:c01"
+        ],
+        [
+          "urn:ontology-study:g048:c01",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g048:c02"
+        ],
+        [
+          "urn:ontology-study:g048:c02",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g048:c03"
+        ],
+        [
+          "urn:ontology-study:g048:c03",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g048:c04"
+        ],
+        [
+          "urn:ontology-study:g048:c04",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g048:c05"
+        ],
+        [
+          "urn:ontology-study:g048:c05",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g048:c06"
+        ],
+        [
+          "urn:ontology-study:g048:c06",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g048:c07"
+        ],
+        [
+          "urn:ontology-study:g048:c07",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g048:c08"
+        ],
+        [
+          "urn:ontology-study:g048:c08",
+          "http://www.w3.org/2002/07/owl#disjointWith",
+          "urn:ontology-study:Forbidden"
+        ],
+        [
+          "urn:ontology-study:g048:listA",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+          "urn:ontology-study:suppliedBy"
+        ],
+        [
+          "urn:ontology-study:g048:listA",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+          "urn:ontology-study:g048:listB"
+        ],
+        [
+          "urn:ontology-study:g048:listB",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+          "urn:ontology-study:locatedIn"
+        ],
+        [
+          "urn:ontology-study:g048:listB",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+        ],
+        [
+          "urn:ontology-study:supplyCountry",
+          "http://www.w3.org/2002/07/owl#propertyChainAxiom",
+          "urn:ontology-study:g048:listA"
+        ]
+      ],
+      "facts": [
+        [
+          "urn:ontology-study:g048:e000",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "urn:ontology-study:manufacturing:sourceClass"
+        ],
+        [
+          "urn:ontology-study:g048:e000",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g048:e001"
+        ],
+        [
+          "urn:ontology-study:g048:e001",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g048:e002"
+        ],
+        [
+          "urn:ontology-study:g048:e002",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g048:e003"
+        ],
+        [
+          "urn:ontology-study:g048:e003",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g048:e004"
+        ],
+        [
+          "urn:ontology-study:g048:e004",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g048:e005"
+        ],
+        [
+          "urn:ontology-study:g048:e005",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g048:e006"
+        ],
+        [
+          "urn:ontology-study:g048:e006",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g048:e007"
+        ],
+        [
+          "urn:ontology-study:g048:e007",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g048:e008"
+        ],
+        [
+          "urn:ontology-study:g048:e500",
+          "urn:ontology-study:manufacturing:provider",
+          "urn:ontology-study:g048:e501"
+        ],
+        [
+          "urn:ontology-study:g048:e501",
+          "urn:ontology-study:manufacturing:region",
+          "urn:ontology-study:g048:e502"
+        ]
+      ],
+      "queries": [
+        {
+          "id": "g048:q00",
+          "triple": [
+            "urn:ontology-study:g048:e000",
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+            "urn:ontology-study:g048:c08"
+          ]
+        },
+        {
+          "id": "g048:q01",
+          "triple": [
+            "urn:ontology-study:g048:e000",
+            "urn:ontology-study:ancestor",
+            "urn:ontology-study:g048:e008"
+          ]
+        },
+        {
+          "id": "g048:q02",
+          "triple": [
+            "urn:ontology-study:g048:e008",
+            "urn:ontology-study:descendant",
+            "urn:ontology-study:g048:e000"
+          ]
+        },
+        {
+          "id": "g048:q03",
+          "triple": [
+            "urn:ontology-study:g048:e000",
+            "urn:ontology-study:directParent",
+            "urn:ontology-study:g048:e008"
+          ]
+        },
+        {
+          "id": "g048:q04",
+          "triple": [
+            "urn:ontology-study:g048:e008",
+            "urn:ontology-study:ancestor",
+            "urn:ontology-study:g048:e000"
+          ]
+        },
+        {
+          "id": "g048:q05",
+          "triple": [
+            "urn:ontology-study:g048:e000",
+            "urn:ontology-study:descendant",
+            "urn:ontology-study:g048:e008"
+          ]
+        },
+        {
+          "id": "g048:q06",
+          "triple": [
+            "urn:ontology-study:g048:e000",
+            "urn:ontology-study:manufacturing:sourceLink",
+            "urn:ontology-study:g048:e001"
+          ]
+        },
+        {
+          "id": "g048:q07",
+          "triple": [
+            "urn:ontology-study:g048:e900",
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+            "urn:ontology-study:g048:c08"
+          ]
+        },
+        {
+          "id": "g048:q08",
+          "triple": [
+            "urn:ontology-study:g048:e500",
+            "urn:ontology-study:supplyCountry",
+            "urn:ontology-study:g048:e502"
+          ]
+        },
+        {
+          "id": "g048:q09",
+          "triple": [
+            "urn:ontology-study:g048:e502",
+            "urn:ontology-study:supplyCountry",
+            "urn:ontology-study:g048:e500"
+          ]
+        }
+      ]
+    },
+    "query_id": "g048:q08",
+    "query": [
+      "urn:ontology-study:g048:e500",
+      "urn:ontology-study:supplyCountry",
+      "urn:ontology-study:g048:e502"
+    ],
+    "evaluation": {
+      "membership": "unknown",
+      "conflict": false,
+      "query_kind": "property_chain",
+      "depth": 8,
+      "fanout": 1,
+      "mapped": false,
+      "domain": "manufacturing"
+    },
+    "actual_rows": [
+      {
+        "id": "g048:q08:asserted",
+        "case_id": "g048",
+        "query_id": "g048:q08",
+        "arm": "asserted",
+        "status": "ok",
+        "query": [
+          "urn:ontology-study:g048:e500",
+          "urn:ontology-study:supplyCountry",
+          "urn:ontology-study:g048:e502"
+        ],
+        "prediction": {
+          "membership": "unknown",
+          "entailed_query_triples": [],
+          "conflict": false,
+          "conflict_details": [],
+          "owlrl_diagnostics": [],
+          "proof": []
+        },
+        "scores": {
+          "membership_agreement": true,
+          "conflict_agreement": true
+        },
+        "factors": {
+          "membership": "unknown",
+          "conflict": false,
+          "query_kind": "property_chain",
+          "depth": 8,
+          "fanout": 1,
+          "mapped": false,
+          "domain": "manufacturing"
+        },
+        "closure_artifact": "g048-asserted.nt",
+        "closure_ms_shared": 0.4670750058721751,
+        "closure_triple_count": 28
+      },
+      {
+        "id": "g048:q08:json_rules",
+        "case_id": "g048",
+        "query_id": "g048:q08",
+        "arm": "json_rules",
+        "status": "ok",
+        "query": [
+          "urn:ontology-study:g048:e500",
+          "urn:ontology-study:supplyCountry",
+          "urn:ontology-study:g048:e502"
+        ],
+        "prediction": {
+          "membership": "unknown",
+          "entailed_query_triples": [],
+          "conflict": false,
+          "conflict_details": [],
+          "owlrl_diagnostics": [],
+          "proof": []
+        },
+        "scores": {
+          "membership_agreement": true,
+          "conflict_agreement": true
+        },
+        "factors": {
+          "membership": "unknown",
+          "conflict": false,
+          "query_kind": "property_chain",
+          "depth": 8,
+          "fanout": 1,
+          "mapped": false,
+          "domain": "manufacturing"
+        },
+        "closure_artifact": "g048-json_rules.nt",
+        "closure_ms_shared": 0.5167789931874722,
+        "closure_triple_count": 28
+      },
+      {
+        "id": "g048:q08:owlrl",
+        "case_id": "g048",
+        "query_id": "g048:q08",
+        "arm": "owlrl",
+        "status": "ok",
+        "query": [
+          "urn:ontology-study:g048:e500",
+          "urn:ontology-study:supplyCountry",
+          "urn:ontology-study:g048:e502"
+        ],
+        "prediction": {
+          "membership": "unknown",
+          "entailed_query_triples": [],
+          "conflict": false,
+          "conflict_details": [],
+          "owlrl_diagnostics": [],
+          "proof": []
+        },
+        "scores": {
+          "membership_agreement": true,
+          "conflict_agreement": true
+        },
+        "factors": {
+          "membership": "unknown",
+          "conflict": false,
+          "query_kind": "property_chain",
+          "depth": 8,
+          "fanout": 1,
+          "mapped": false,
+          "domain": "manufacturing"
+        },
+        "closure_artifact": "g048-owlrl.nt",
+        "closure_ms_shared": 55.98494400328491,
+        "closure_triple_count": 204
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "g052",
+      "schema": [
+        [
+          "urn:ontology-study:ancestor",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "http://www.w3.org/2002/07/owl#TransitiveProperty"
+        ],
+        [
+          "urn:ontology-study:ancestor",
+          "http://www.w3.org/2002/07/owl#inverseOf",
+          "urn:ontology-study:descendant"
+        ],
+        [
+          "urn:ontology-study:directParent",
+          "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "urn:ontology-study:ancestor"
+        ],
+        [
+          "urn:ontology-study:g052:c00",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g052:c01"
+        ],
+        [
+          "urn:ontology-study:g052:c01",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g052:c02"
+        ],
+        [
+          "urn:ontology-study:g052:c02",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g052:c03"
+        ],
+        [
+          "urn:ontology-study:g052:c03",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g052:c04"
+        ],
+        [
+          "urn:ontology-study:g052:c04",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g052:c05"
+        ],
+        [
+          "urn:ontology-study:g052:c05",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g052:c06"
+        ],
+        [
+          "urn:ontology-study:g052:c06",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g052:c07"
+        ],
+        [
+          "urn:ontology-study:g052:c07",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g052:c08"
+        ],
+        [
+          "urn:ontology-study:g052:c08",
+          "http://www.w3.org/2002/07/owl#disjointWith",
+          "urn:ontology-study:Forbidden"
+        ],
+        [
+          "urn:ontology-study:g052:listA",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+          "urn:ontology-study:suppliedBy"
+        ],
+        [
+          "urn:ontology-study:g052:listA",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+          "urn:ontology-study:g052:listB"
+        ],
+        [
+          "urn:ontology-study:g052:listB",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+          "urn:ontology-study:locatedIn"
+        ],
+        [
+          "urn:ontology-study:g052:listB",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+        ],
+        [
+          "urn:ontology-study:manufacturing:provider",
+          "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "urn:ontology-study:suppliedBy"
+        ],
+        [
+          "urn:ontology-study:manufacturing:region",
+          "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "urn:ontology-study:locatedIn"
+        ],
+        [
+          "urn:ontology-study:manufacturing:sourceClass",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g052:c00"
+        ],
+        [
+          "urn:ontology-study:manufacturing:sourceLink",
+          "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "urn:ontology-study:directParent"
+        ],
+        [
+          "urn:ontology-study:supplyCountry",
+          "http://www.w3.org/2002/07/owl#propertyChainAxiom",
+          "urn:ontology-study:g052:listA"
+        ]
+      ],
+      "facts": [
+        [
+          "urn:ontology-study:g052:e000",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "urn:ontology-study:manufacturing:sourceClass"
+        ],
+        [
+          "urn:ontology-study:g052:e000",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g052:e001"
+        ],
+        [
+          "urn:ontology-study:g052:e001",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g052:e002"
+        ],
+        [
+          "urn:ontology-study:g052:e002",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g052:e003"
+        ],
+        [
+          "urn:ontology-study:g052:e003",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g052:e004"
+        ],
+        [
+          "urn:ontology-study:g052:e004",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g052:e005"
+        ],
+        [
+          "urn:ontology-study:g052:e005",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g052:e006"
+        ],
+        [
+          "urn:ontology-study:g052:e006",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g052:e007"
+        ],
+        [
+          "urn:ontology-study:g052:e007",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g052:e008"
+        ],
+        [
+          "urn:ontology-study:g052:e500",
+          "urn:ontology-study:manufacturing:provider",
+          "urn:ontology-study:g052:e501"
+        ],
+        [
+          "urn:ontology-study:g052:e501",
+          "urn:ontology-study:manufacturing:region",
+          "urn:ontology-study:g052:e502"
+        ]
+      ],
+      "queries": [
+        {
+          "id": "g052:q00",
+          "triple": [
+            "urn:ontology-study:g052:e000",
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+            "urn:ontology-study:g052:c08"
+          ]
+        },
+        {
+          "id": "g052:q01",
+          "triple": [
+            "urn:ontology-study:g052:e000",
+            "urn:ontology-study:ancestor",
+            "urn:ontology-study:g052:e008"
+          ]
+        },
+        {
+          "id": "g052:q02",
+          "triple": [
+            "urn:ontology-study:g052:e008",
+            "urn:ontology-study:descendant",
+            "urn:ontology-study:g052:e000"
+          ]
+        },
+        {
+          "id": "g052:q03",
+          "triple": [
+            "urn:ontology-study:g052:e000",
+            "urn:ontology-study:directParent",
+            "urn:ontology-study:g052:e008"
+          ]
+        },
+        {
+          "id": "g052:q04",
+          "triple": [
+            "urn:ontology-study:g052:e008",
+            "urn:ontology-study:ancestor",
+            "urn:ontology-study:g052:e000"
+          ]
+        },
+        {
+          "id": "g052:q05",
+          "triple": [
+            "urn:ontology-study:g052:e000",
+            "urn:ontology-study:descendant",
+            "urn:ontology-study:g052:e008"
+          ]
+        },
+        {
+          "id": "g052:q06",
+          "triple": [
+            "urn:ontology-study:g052:e000",
+            "urn:ontology-study:manufacturing:sourceLink",
+            "urn:ontology-study:g052:e001"
+          ]
+        },
+        {
+          "id": "g052:q07",
+          "triple": [
+            "urn:ontology-study:g052:e900",
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+            "urn:ontology-study:g052:c08"
+          ]
+        },
+        {
+          "id": "g052:q08",
+          "triple": [
+            "urn:ontology-study:g052:e500",
+            "urn:ontology-study:supplyCountry",
+            "urn:ontology-study:g052:e502"
+          ]
+        },
+        {
+          "id": "g052:q09",
+          "triple": [
+            "urn:ontology-study:g052:e502",
+            "urn:ontology-study:supplyCountry",
+            "urn:ontology-study:g052:e500"
+          ]
+        }
+      ]
+    },
+    "query_id": "g052:q03",
+    "query": [
+      "urn:ontology-study:g052:e000",
+      "urn:ontology-study:directParent",
+      "urn:ontology-study:g052:e008"
+    ],
+    "evaluation": {
+      "membership": "unknown",
+      "conflict": false,
+      "query_kind": "direct",
+      "depth": 8,
+      "fanout": 1,
+      "mapped": true,
+      "domain": "manufacturing"
+    },
+    "actual_rows": [
+      {
+        "id": "g052:q03:asserted",
+        "case_id": "g052",
+        "query_id": "g052:q03",
+        "arm": "asserted",
+        "status": "ok",
+        "query": [
+          "urn:ontology-study:g052:e000",
+          "urn:ontology-study:directParent",
+          "urn:ontology-study:g052:e008"
+        ],
+        "prediction": {
+          "membership": "unknown",
+          "entailed_query_triples": [],
+          "conflict": false,
+          "conflict_details": [],
+          "owlrl_diagnostics": [],
+          "proof": []
+        },
+        "scores": {
+          "membership_agreement": true,
+          "conflict_agreement": true
+        },
+        "factors": {
+          "membership": "unknown",
+          "conflict": false,
+          "query_kind": "direct",
+          "depth": 8,
+          "fanout": 1,
+          "mapped": true,
+          "domain": "manufacturing"
+        },
+        "closure_artifact": "g052-asserted.nt",
+        "closure_ms_shared": 0.5589689972111955,
+        "closure_triple_count": 32
+      },
+      {
+        "id": "g052:q03:json_rules",
+        "case_id": "g052",
+        "query_id": "g052:q03",
+        "arm": "json_rules",
+        "status": "ok",
+        "query": [
+          "urn:ontology-study:g052:e000",
+          "urn:ontology-study:directParent",
+          "urn:ontology-study:g052:e008"
+        ],
+        "prediction": {
+          "membership": "unknown",
+          "entailed_query_triples": [],
+          "conflict": false,
+          "conflict_details": [],
+          "owlrl_diagnostics": [],
+          "proof": []
+        },
+        "scores": {
+          "membership_agreement": true,
+          "conflict_agreement": true
+        },
+        "factors": {
+          "membership": "unknown",
+          "conflict": false,
+          "query_kind": "direct",
+          "depth": 8,
+          "fanout": 1,
+          "mapped": true,
+          "domain": "manufacturing"
+        },
+        "closure_artifact": "g052-json_rules.nt",
+        "closure_ms_shared": 2.4752199969952926,
+        "closure_triple_count": 124
+      },
+      {
+        "id": "g052:q03:owlrl",
+        "case_id": "g052",
+        "query_id": "g052:q03",
+        "arm": "owlrl",
+        "status": "ok",
+        "query": [
+          "urn:ontology-study:g052:e000",
+          "urn:ontology-study:directParent",
+          "urn:ontology-study:g052:e008"
+        ],
+        "prediction": {
+          "membership": "unknown",
+          "entailed_query_triples": [],
+          "conflict": false,
+          "conflict_details": [],
+          "owlrl_diagnostics": [],
+          "proof": []
+        },
+        "scores": {
+          "membership_agreement": true,
+          "conflict_agreement": true
+        },
+        "factors": {
+          "membership": "unknown",
+          "conflict": false,
+          "query_kind": "direct",
+          "depth": 8,
+          "fanout": 1,
+          "mapped": true,
+          "domain": "manufacturing"
+        },
+        "closure_artifact": "g052-owlrl.nt",
+        "closure_ms_shared": 140.76219900744036,
+        "closure_triple_count": 309
+      }
+    ]
+  },
+  {
+    "case": {
+      "id": "g053",
+      "schema": [
+        [
+          "urn:ontology-study:ancestor",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "http://www.w3.org/2002/07/owl#TransitiveProperty"
+        ],
+        [
+          "urn:ontology-study:ancestor",
+          "http://www.w3.org/2002/07/owl#inverseOf",
+          "urn:ontology-study:descendant"
+        ],
+        [
+          "urn:ontology-study:directParent",
+          "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "urn:ontology-study:ancestor"
+        ],
+        [
+          "urn:ontology-study:g053:c00",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g053:c01"
+        ],
+        [
+          "urn:ontology-study:g053:c01",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g053:c02"
+        ],
+        [
+          "urn:ontology-study:g053:c02",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g053:c03"
+        ],
+        [
+          "urn:ontology-study:g053:c03",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g053:c04"
+        ],
+        [
+          "urn:ontology-study:g053:c04",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g053:c05"
+        ],
+        [
+          "urn:ontology-study:g053:c05",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g053:c06"
+        ],
+        [
+          "urn:ontology-study:g053:c06",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g053:c07"
+        ],
+        [
+          "urn:ontology-study:g053:c07",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g053:c08"
+        ],
+        [
+          "urn:ontology-study:g053:c08",
+          "http://www.w3.org/2002/07/owl#disjointWith",
+          "urn:ontology-study:Forbidden"
+        ],
+        [
+          "urn:ontology-study:g053:listA",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+          "urn:ontology-study:suppliedBy"
+        ],
+        [
+          "urn:ontology-study:g053:listA",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+          "urn:ontology-study:g053:listB"
+        ],
+        [
+          "urn:ontology-study:g053:listB",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+          "urn:ontology-study:locatedIn"
+        ],
+        [
+          "urn:ontology-study:g053:listB",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+        ],
+        [
+          "urn:ontology-study:manufacturing:provider",
+          "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "urn:ontology-study:suppliedBy"
+        ],
+        [
+          "urn:ontology-study:manufacturing:region",
+          "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "urn:ontology-study:locatedIn"
+        ],
+        [
+          "urn:ontology-study:manufacturing:sourceClass",
+          "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "urn:ontology-study:g053:c00"
+        ],
+        [
+          "urn:ontology-study:manufacturing:sourceLink",
+          "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+          "urn:ontology-study:directParent"
+        ],
+        [
+          "urn:ontology-study:supplyCountry",
+          "http://www.w3.org/2002/07/owl#propertyChainAxiom",
+          "urn:ontology-study:g053:listA"
+        ]
+      ],
+      "facts": [
+        [
+          "urn:ontology-study:g053:e000",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "urn:ontology-study:manufacturing:sourceClass"
+        ],
+        [
+          "urn:ontology-study:g053:e000",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g053:e001"
+        ],
+        [
+          "urn:ontology-study:g053:e001",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g053:e002"
+        ],
+        [
+          "urn:ontology-study:g053:e002",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g053:e003"
+        ],
+        [
+          "urn:ontology-study:g053:e003",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g053:e004"
+        ],
+        [
+          "urn:ontology-study:g053:e004",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g053:e005"
+        ],
+        [
+          "urn:ontology-study:g053:e005",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g053:e006"
+        ],
+        [
+          "urn:ontology-study:g053:e006",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g053:e007"
+        ],
+        [
+          "urn:ontology-study:g053:e007",
+          "urn:ontology-study:manufacturing:sourceLink",
+          "urn:ontology-study:g053:e008"
+        ],
+        [
+          "urn:ontology-study:g053:e500",
+          "urn:ontology-study:manufacturing:provider",
+          "urn:ontology-study:g053:e501"
+        ],
+        [
+          "urn:ontology-study:g053:e501",
+          "urn:ontology-study:manufacturing:region",
+          "urn:ontology-study:g053:e502"
+        ],
+        [
+          "urn:ontology-study:g053:e700",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "urn:ontology-study:Forbidden"
+        ],
+        [
+          "urn:ontology-study:g053:e700",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "urn:ontology-study:g053:c00"
+        ]
+      ],
+      "queries": [
+        {
+          "id": "g053:q00",
+          "triple": [
+            "urn:ontology-study:g053:e000",
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+            "urn:ontology-study:g053:c08"
+          ]
+        },
+        {
+          "id": "g053:q01",
+          "triple": [
+            "urn:ontology-study:g053:e000",
+            "urn:ontology-study:ancestor",
+            "urn:ontology-study:g053:e008"
+          ]
+        },
+        {
+          "id": "g053:q02",
+          "triple": [
+            "urn:ontology-study:g053:e008",
+            "urn:ontology-study:descendant",
+            "urn:ontology-study:g053:e000"
+          ]
+        },
+        {
+          "id": "g053:q03",
+          "triple": [
+            "urn:ontology-study:g053:e000",
+            "urn:ontology-study:directParent",
+            "urn:ontology-study:g053:e008"
+          ]
+        },
+        {
+          "id": "g053:q04",
+          "triple": [
+            "urn:ontology-study:g053:e008",
+            "urn:ontology-study:ancestor",
+            "urn:ontology-study:g053:e000"
+          ]
+        },
+        {
+          "id": "g053:q05",
+          "triple": [
+            "urn:ontology-study:g053:e000",
+            "urn:ontology-study:descendant",
+            "urn:ontology-study:g053:e008"
+          ]
+        },
+        {
+          "id": "g053:q06",
+          "triple": [
+            "urn:ontology-study:g053:e000",
+            "urn:ontology-study:manufacturing:sourceLink",
+            "urn:ontology-study:g053:e001"
+          ]
+        },
+        {
+          "id": "g053:q07",
+          "triple": [
+            "urn:ontology-study:g053:e900",
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+            "urn:ontology-study:g053:c08"
+          ]
+        },
+        {
+          "id": "g053:q08",
+          "triple": [
+            "urn:ontology-study:g053:e500",
+            "urn:ontology-study:supplyCountry",
+            "urn:ontology-study:g053:e502"
+          ]
+        },
+        {
+          "id": "g053:q09",
+          "triple": [
+            "urn:ontology-study:g053:e502",
+            "urn:ontology-study:supplyCountry",
+            "urn:ontology-study:g053:e500"
+          ]
+        }
+      ]
+    },
+    "query_id": "g053:q07",
+    "query": [
+      "urn:ontology-study:g053:e900",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "urn:ontology-study:g053:c08"
+    ],
+    "evaluation": {
+      "membership": "unknown",
+      "conflict": true,
+      "query_kind": "unrelated",
+      "depth": 8,
+      "fanout": 1,
+      "mapped": true,
+      "domain": "manufacturing"
+    },
+    "actual_rows": [
+      {
+        "id": "g053:q07:asserted",
+        "case_id": "g053",
+        "query_id": "g053:q07",
+        "arm": "asserted",
+        "status": "ok",
+        "query": [
+          "urn:ontology-study:g053:e900",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "urn:ontology-study:g053:c08"
+        ],
+        "prediction": {
+          "membership": "unknown",
+          "entailed_query_triples": [],
+          "conflict": false,
+          "conflict_details": [],
+          "owlrl_diagnostics": [],
+          "proof": []
+        },
+        "scores": {
+          "membership_agreement": true,
+          "conflict_agreement": false
+        },
+        "factors": {
+          "membership": "unknown",
+          "conflict": true,
+          "query_kind": "unrelated",
+          "depth": 8,
+          "fanout": 1,
+          "mapped": true,
+          "domain": "manufacturing"
+        },
+        "closure_artifact": "g053-asserted.nt",
+        "closure_ms_shared": 0.6234690081328154,
+        "closure_triple_count": 34
+      },
+      {
+        "id": "g053:q07:json_rules",
+        "case_id": "g053",
+        "query_id": "g053:q07",
+        "arm": "json_rules",
+        "status": "ok",
+        "query": [
+          "urn:ontology-study:g053:e900",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "urn:ontology-study:g053:c08"
+        ],
+        "prediction": {
+          "membership": "unknown",
+          "entailed_query_triples": [],
+          "conflict": true,
+          "conflict_details": [
+            {
+              "entity": "urn:ontology-study:g053:e700",
+              "classes": [
+                "urn:ontology-study:g053:c08",
+                "urn:ontology-study:Forbidden"
+              ]
+            }
+          ],
+          "owlrl_diagnostics": [],
+          "proof": []
+        },
+        "scores": {
+          "membership_agreement": true,
+          "conflict_agreement": true
+        },
+        "factors": {
+          "membership": "unknown",
+          "conflict": true,
+          "query_kind": "unrelated",
+          "depth": 8,
+          "fanout": 1,
+          "mapped": true,
+          "domain": "manufacturing"
+        },
+        "closure_artifact": "g053-json_rules.nt",
+        "closure_ms_shared": 2.5623870023991913,
+        "closure_triple_count": 134
+      },
+      {
+        "id": "g053:q07:owlrl",
+        "case_id": "g053",
+        "query_id": "g053:q07",
+        "arm": "owlrl",
+        "status": "ok",
+        "query": [
+          "urn:ontology-study:g053:e900",
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "urn:ontology-study:g053:c08"
+        ],
+        "prediction": {
+          "membership": "unknown",
+          "entailed_query_triples": [],
+          "conflict": true,
+          "conflict_details": [
+            {
+              "entity": "urn:ontology-study:g053:e700",
+              "classes": [
+                "urn:ontology-study:g053:c08",
+                "urn:ontology-study:Forbidden"
+              ]
+            }
+          ],
+          "owlrl_diagnostics": [
+            "Disjoint classes urn:ontology-study:g053:c08 and urn:ontology-study:Forbidden have a common individual urn:ontology-study:g053:e700"
+          ],
+          "proof": []
+        },
+        "scores": {
+          "membership_agreement": true,
+          "conflict_agreement": true
+        },
+        "factors": {
+          "membership": "unknown",
+          "conflict": true,
+          "query_kind": "unrelated",
+          "depth": 8,
+          "fanout": 1,
+          "mapped": true,
+          "domain": "manufacturing"
+        },
+        "closure_artifact": "g053-owlrl.nt",
+        "closure_ms_shared": 145.75514101306908,
+        "closure_triple_count": 322
+      }
+    ]
+  }
+]
