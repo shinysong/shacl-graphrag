@@ -1,0 +1,3284 @@
+{
+  "scope": "Observed GLEIF development with injected corruptions; not held-out benchmark",
+  "deterministic_run": "20261013T075145Z-gleif-comparison-648a2ddf",
+  "model_run": "20261013T075333Z-gleif-comparison-7b979a6a",
+  "deterministic_summary": {
+    "code": {
+      "total": 72,
+      "correct": 42,
+      "wrong": 6,
+      "abstained": 24,
+      "errors": 0,
+      "unnecessary_abstentions": 0,
+      "source_answerable": 42,
+      "extra_retrievals": 30
+    },
+    "none": {
+      "total": 72,
+      "correct": 30,
+      "wrong": 18,
+      "abstained": 24,
+      "errors": 0,
+      "unnecessary_abstentions": 12,
+      "source_answerable": 42,
+      "extra_retrievals": 0
+    },
+    "refresh": {
+      "total": 72,
+      "correct": 42,
+      "wrong": 18,
+      "abstained": 12,
+      "errors": 0,
+      "unnecessary_abstentions": 0,
+      "source_answerable": 42,
+      "extra_retrievals": 72
+    },
+    "shacl": {
+      "total": 72,
+      "correct": 42,
+      "wrong": 6,
+      "abstained": 24,
+      "errors": 0,
+      "unnecessary_abstentions": 0,
+      "source_answerable": 42,
+      "extra_retrievals": 30
+    }
+  },
+  "matched_12_case_summary": {
+    "code": {
+      "total": 12,
+      "correct": 7,
+      "wrong": 1,
+      "abstained": 4,
+      "errors": 0,
+      "unnecessary_abstentions": 0,
+      "source_answerable": 7,
+      "extra_retrievals": 5
+    },
+    "none": {
+      "total": 12,
+      "correct": 5,
+      "wrong": 3,
+      "abstained": 4,
+      "errors": 0,
+      "unnecessary_abstentions": 2,
+      "source_answerable": 7,
+      "extra_retrievals": 0
+    },
+    "refresh": {
+      "total": 12,
+      "correct": 7,
+      "wrong": 3,
+      "abstained": 2,
+      "errors": 0,
+      "unnecessary_abstentions": 0,
+      "source_answerable": 7,
+      "extra_retrievals": 12
+    },
+    "shacl": {
+      "total": 12,
+      "correct": 7,
+      "wrong": 1,
+      "abstained": 4,
+      "errors": 0,
+      "unnecessary_abstentions": 0,
+      "source_answerable": 7,
+      "extra_retrievals": 5
+    }
+  },
+  "model_summary": {
+    "llm": {
+      "total": 12,
+      "correct": 3,
+      "wrong": 1,
+      "abstained": 8,
+      "errors": 0,
+      "unnecessary_abstentions": 4,
+      "source_answerable": 7,
+      "extra_retrievals": 0
+    }
+  },
+  "budget": {
+    "calls": 12,
+    "reserved_usd": 0.014284400000000001,
+    "reported_usd": 0.0019455,
+    "missing_cost": 0
+  },
+  "cases": [
+    {
+      "case": {
+        "case_id": "213800KDRZ6YFEH3Y618-clean",
+        "variant": "clean",
+        "kind": "parent",
+        "gold": {
+          "kind": "parent",
+          "value": "213800A357TKB2TD9U78"
+        },
+        "source_answerable": true,
+        "representation_equal": true,
+        "initial_preparation_ms": 28.68876800130238
+      },
+      "first_evidence": [
+        {
+          "id": "F001",
+          "s": "https://rdf.gleif.org/L1/L-213800A357TKB2TD9U78",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F002",
+          "s": "https://rdf.gleif.org/L1/L-213800A357TKB2TD9U78",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "CLS HOLDINGS PLC",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F003",
+          "s": "https://rdf.gleif.org/L1/L-213800A357TKB2TD9U78",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "213800A357TKB2TD9U78",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F004",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F005",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/QuerySubject",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F006",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "https://example.org/gleif-pilot/directParent",
+          "o": "https://rdf.gleif.org/L1/L-213800A357TKB2TD9U78",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F007",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "PIERRE VALETTE",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F008",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "213800KDRZ6YFEH3Y618",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        }
+      ],
+      "results": [
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "213800A357TKB2TD9U78"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 0.449017999926582,
+          "final_evidence_sha256": "841cf20ebab860f2261f6dc13aac0c5a48d1325d785a3d444db9c5b5a1dcc520",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-clean",
+          "condition": "none",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "213800A357TKB2TD9U78"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 0.4591789984260686,
+          "final_evidence_sha256": "841cf20ebab860f2261f6dc13aac0c5a48d1325d785a3d444db9c5b5a1dcc520",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-clean",
+          "condition": "code",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "213800A357TKB2TD9U78"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {
+                "raw_conforms": true,
+                "issues": [],
+                "validation_ms": 3.1918729982862715
+              }
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 3.899011997418711,
+          "final_evidence_sha256": "841cf20ebab860f2261f6dc13aac0c5a48d1325d785a3d444db9c5b5a1dcc520",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-clean",
+          "condition": "shacl",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "213800A357TKB2TD9U78"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 1,
+          "judge_calls": 0,
+          "runtime_ms": 7.132259001082275,
+          "final_evidence_sha256": "841cf20ebab860f2261f6dc13aac0c5a48d1325d785a3d444db9c5b5a1dcc520",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-clean",
+          "condition": "refresh",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "213800A357TKB2TD9U78"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {
+                "response": {
+                  "status": "answer",
+                  "kind": "judgement",
+                  "value": "pass",
+                  "checks": {
+                    "cardinality": "pass",
+                    "parent_type": "pass",
+                    "exception_reason": "not_applicable"
+                  },
+                  "evidence_ids": [
+                    "F006"
+                  ]
+                },
+                "llm": {
+                  "model": "openai/gpt-4o-mini",
+                  "provider": "Azure",
+                  "generation_id": "gen-1791878013-qkL1ey5tn5smUhh1kEQQ",
+                  "usage": {
+                    "prompt_tokens": 1066,
+                    "completion_tokens": 42,
+                    "total_tokens": 1108,
+                    "cost": 0.0001851,
+                    "is_byok": false,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 0,
+                      "cache_write_tokens": 0,
+                      "audio_tokens": 0,
+                      "video_tokens": 0
+                    },
+                    "cost_details": {
+                      "upstream_inference_cost": 0.0001851,
+                      "upstream_inference_prompt_cost": 0.0001599,
+                      "upstream_inference_completions_cost": 2.52e-05
+                    },
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 0,
+                      "image_tokens": 0,
+                      "audio_tokens": 0
+                    }
+                  },
+                  "llm_ms": 1943.3518539990473,
+                  "finish_reason": "stop"
+                }
+              }
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 1,
+          "runtime_ms": 1944.7876820013335,
+          "final_evidence_sha256": "841cf20ebab860f2261f6dc13aac0c5a48d1325d785a3d444db9c5b5a1dcc520",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-clean",
+          "condition": "llm",
+          "source_answerable": true
+        }
+      ]
+    },
+    {
+      "case": {
+        "case_id": "213800KDRZ6YFEH3Y618-irrelevant_name_missing",
+        "variant": "irrelevant_name_missing",
+        "kind": "parent",
+        "gold": {
+          "kind": "parent",
+          "value": "213800A357TKB2TD9U78"
+        },
+        "source_answerable": true,
+        "representation_equal": true,
+        "initial_preparation_ms": 7.24818000162486
+      },
+      "first_evidence": [
+        {
+          "id": "F001",
+          "s": "https://rdf.gleif.org/L1/L-213800A357TKB2TD9U78",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F002",
+          "s": "https://rdf.gleif.org/L1/L-213800A357TKB2TD9U78",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "CLS HOLDINGS PLC",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F003",
+          "s": "https://rdf.gleif.org/L1/L-213800A357TKB2TD9U78",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "213800A357TKB2TD9U78",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F004",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F005",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/QuerySubject",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F006",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "https://example.org/gleif-pilot/directParent",
+          "o": "https://rdf.gleif.org/L1/L-213800A357TKB2TD9U78",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F007",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "213800KDRZ6YFEH3Y618",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        }
+      ],
+      "results": [
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "213800A357TKB2TD9U78"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 0.5569589993683621,
+          "final_evidence_sha256": "632217665ed27e5b06cbf7111e20c3b0cea8ac6d91ae6f2c664576b830cb8b34",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-irrelevant_name_missing",
+          "condition": "none",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "213800A357TKB2TD9U78"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 0.4653229989344254,
+          "final_evidence_sha256": "632217665ed27e5b06cbf7111e20c3b0cea8ac6d91ae6f2c664576b830cb8b34",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-irrelevant_name_missing",
+          "condition": "code",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "213800A357TKB2TD9U78"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {
+                "raw_conforms": true,
+                "issues": [],
+                "validation_ms": 1.6140410007210448
+              }
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 2.302390999830095,
+          "final_evidence_sha256": "632217665ed27e5b06cbf7111e20c3b0cea8ac6d91ae6f2c664576b830cb8b34",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-irrelevant_name_missing",
+          "condition": "shacl",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "213800A357TKB2TD9U78"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 1,
+          "judge_calls": 0,
+          "runtime_ms": 6.965713000681717,
+          "final_evidence_sha256": "841cf20ebab860f2261f6dc13aac0c5a48d1325d785a3d444db9c5b5a1dcc520",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-irrelevant_name_missing",
+          "condition": "refresh",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "213800A357TKB2TD9U78"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {
+                "response": {
+                  "status": "answer",
+                  "kind": "judgement",
+                  "value": "pass",
+                  "checks": {
+                    "cardinality": "pass",
+                    "parent_type": "pass",
+                    "exception_reason": "not_applicable"
+                  },
+                  "evidence_ids": [
+                    "F006"
+                  ]
+                },
+                "llm": {
+                  "model": "openai/gpt-4o-mini",
+                  "provider": "Azure",
+                  "generation_id": "gen-1791878015-q8AMYNb9dpT6PhyshPtk",
+                  "usage": {
+                    "prompt_tokens": 988,
+                    "completion_tokens": 42,
+                    "total_tokens": 1030,
+                    "cost": 0.0001734,
+                    "is_byok": false,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 0,
+                      "cache_write_tokens": 0,
+                      "audio_tokens": 0,
+                      "video_tokens": 0
+                    },
+                    "cost_details": {
+                      "upstream_inference_cost": 0.0001734,
+                      "upstream_inference_prompt_cost": 0.0001482,
+                      "upstream_inference_completions_cost": 2.52e-05
+                    },
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 0,
+                      "image_tokens": 0,
+                      "audio_tokens": 0
+                    }
+                  },
+                  "llm_ms": 1811.181304998172,
+                  "finish_reason": "stop"
+                }
+              }
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 1,
+          "runtime_ms": 1812.5021800005925,
+          "final_evidence_sha256": "632217665ed27e5b06cbf7111e20c3b0cea8ac6d91ae6f2c664576b830cb8b34",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-irrelevant_name_missing",
+          "condition": "llm",
+          "source_answerable": true
+        }
+      ]
+    },
+    {
+      "case": {
+        "case_id": "213800KDRZ6YFEH3Y618-retrieval_relation_missing",
+        "variant": "retrieval_relation_missing",
+        "kind": "parent",
+        "gold": {
+          "kind": "parent",
+          "value": "213800A357TKB2TD9U78"
+        },
+        "source_answerable": true,
+        "representation_equal": true,
+        "initial_preparation_ms": 6.969703998038312
+      },
+      "first_evidence": [
+        {
+          "id": "F001",
+          "s": "https://rdf.gleif.org/L1/L-213800A357TKB2TD9U78",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F002",
+          "s": "https://rdf.gleif.org/L1/L-213800A357TKB2TD9U78",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "CLS HOLDINGS PLC",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F003",
+          "s": "https://rdf.gleif.org/L1/L-213800A357TKB2TD9U78",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "213800A357TKB2TD9U78",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F004",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F005",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/QuerySubject",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F006",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "PIERRE VALETTE",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F007",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "213800KDRZ6YFEH3Y618",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        }
+      ],
+      "results": [
+        {
+          "status": "ok",
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 0.3997729982074816,
+          "final_evidence_sha256": "d4ab53a1af2a4392f17fa1144f831a4f48a45923cea36f0a4841b06c47e27c30",
+          "correct": false,
+          "wrong": false,
+          "unnecessary_abstention": true,
+          "case_id": "213800KDRZ6YFEH3Y618-retrieval_relation_missing",
+          "condition": "none",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "213800A357TKB2TD9U78"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unknown",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "pass",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 1,
+          "judge_calls": 0,
+          "runtime_ms": 6.965873999433825,
+          "final_evidence_sha256": "841cf20ebab860f2261f6dc13aac0c5a48d1325d785a3d444db9c5b5a1dcc520",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-retrieval_relation_missing",
+          "condition": "code",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "213800A357TKB2TD9U78"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unknown",
+              "detail": {
+                "raw_conforms": true,
+                "issues": [],
+                "validation_ms": 1.6409060008300003
+              }
+            },
+            {
+              "attempt": 1,
+              "judgement": "pass",
+              "detail": {
+                "raw_conforms": true,
+                "issues": [],
+                "validation_ms": 1.5492779966734815
+              }
+            }
+          ],
+          "extra_retrievals": 1,
+          "judge_calls": 0,
+          "runtime_ms": 10.634220001520589,
+          "final_evidence_sha256": "841cf20ebab860f2261f6dc13aac0c5a48d1325d785a3d444db9c5b5a1dcc520",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-retrieval_relation_missing",
+          "condition": "shacl",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "213800A357TKB2TD9U78"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 1,
+          "judge_calls": 0,
+          "runtime_ms": 6.985880998399807,
+          "final_evidence_sha256": "841cf20ebab860f2261f6dc13aac0c5a48d1325d785a3d444db9c5b5a1dcc520",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-retrieval_relation_missing",
+          "condition": "refresh",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "fail",
+              "detail": {
+                "response": {
+                  "status": "answer",
+                  "kind": "judgement",
+                  "value": "fail",
+                  "checks": {
+                    "cardinality": "fail",
+                    "parent_type": "pass",
+                    "exception_reason": "not_applicable"
+                  },
+                  "evidence_ids": [
+                    "F001",
+                    "F002",
+                    "F003",
+                    "F004",
+                    "F005",
+                    "F006",
+                    "F007"
+                  ]
+                },
+                "llm": {
+                  "model": "openai/gpt-4o-mini",
+                  "provider": "Azure",
+                  "generation_id": "gen-1791878017-kfkyKZ3Xea4P7Ohsc67t",
+                  "usage": {
+                    "prompt_tokens": 972,
+                    "completion_tokens": 60,
+                    "total_tokens": 1032,
+                    "cost": 0.0001818,
+                    "is_byok": false,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 0,
+                      "cache_write_tokens": 0,
+                      "audio_tokens": 0,
+                      "video_tokens": 0
+                    },
+                    "cost_details": {
+                      "upstream_inference_cost": 0.0001818,
+                      "upstream_inference_prompt_cost": 0.0001458,
+                      "upstream_inference_completions_cost": 3.6e-05
+                    },
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 0,
+                      "image_tokens": 0,
+                      "audio_tokens": 0
+                    }
+                  },
+                  "llm_ms": 1756.8026189983357,
+                  "finish_reason": "stop"
+                }
+              }
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 1,
+          "runtime_ms": 1758.171466000931,
+          "final_evidence_sha256": "d4ab53a1af2a4392f17fa1144f831a4f48a45923cea36f0a4841b06c47e27c30",
+          "correct": false,
+          "wrong": false,
+          "unnecessary_abstention": true,
+          "case_id": "213800KDRZ6YFEH3Y618-retrieval_relation_missing",
+          "condition": "llm",
+          "source_answerable": true
+        }
+      ]
+    },
+    {
+      "case": {
+        "case_id": "213800KDRZ6YFEH3Y618-retrieval_type_missing",
+        "variant": "retrieval_type_missing",
+        "kind": "parent",
+        "gold": {
+          "kind": "parent",
+          "value": "213800A357TKB2TD9U78"
+        },
+        "source_answerable": true,
+        "representation_equal": true,
+        "initial_preparation_ms": 7.125665000785375
+      },
+      "first_evidence": [
+        {
+          "id": "F001",
+          "s": "https://rdf.gleif.org/L1/L-213800A357TKB2TD9U78",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "CLS HOLDINGS PLC",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F002",
+          "s": "https://rdf.gleif.org/L1/L-213800A357TKB2TD9U78",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "213800A357TKB2TD9U78",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F003",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F004",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/QuerySubject",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F005",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "https://example.org/gleif-pilot/directParent",
+          "o": "https://rdf.gleif.org/L1/L-213800A357TKB2TD9U78",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F006",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "PIERRE VALETTE",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F007",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "213800KDRZ6YFEH3Y618",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        }
+      ],
+      "results": [
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "213800A357TKB2TD9U78"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 1.2056199993821792,
+          "final_evidence_sha256": "46aecc1a66b3680bbfd838e176b2466a16c88912e3a8d1e1fbe973825e61b820",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-retrieval_type_missing",
+          "condition": "none",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "213800A357TKB2TD9U78"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unknown",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "pass",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 1,
+          "judge_calls": 0,
+          "runtime_ms": 15.533069999946747,
+          "final_evidence_sha256": "841cf20ebab860f2261f6dc13aac0c5a48d1325d785a3d444db9c5b5a1dcc520",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-retrieval_type_missing",
+          "condition": "code",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "213800A357TKB2TD9U78"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unknown",
+              "detail": {
+                "raw_conforms": false,
+                "issues": [
+                  [
+                    "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+                    "https://example.org/gleif-pilot/directParent",
+                    "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+                  ]
+                ],
+                "validation_ms": 1.9759099996008445
+              }
+            },
+            {
+              "attempt": 1,
+              "judgement": "pass",
+              "detail": {
+                "raw_conforms": true,
+                "issues": [],
+                "validation_ms": 1.5321550017688423
+              }
+            }
+          ],
+          "extra_retrievals": 1,
+          "judge_calls": 0,
+          "runtime_ms": 11.477754000225104,
+          "final_evidence_sha256": "841cf20ebab860f2261f6dc13aac0c5a48d1325d785a3d444db9c5b5a1dcc520",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-retrieval_type_missing",
+          "condition": "shacl",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "213800A357TKB2TD9U78"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 1,
+          "judge_calls": 0,
+          "runtime_ms": 7.06897000054596,
+          "final_evidence_sha256": "841cf20ebab860f2261f6dc13aac0c5a48d1325d785a3d444db9c5b5a1dcc520",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-retrieval_type_missing",
+          "condition": "refresh",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "213800A357TKB2TD9U78"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {
+                "response": {
+                  "status": "answer",
+                  "kind": "judgement",
+                  "value": "pass",
+                  "checks": {
+                    "cardinality": "pass",
+                    "parent_type": "pass",
+                    "exception_reason": "not_applicable"
+                  },
+                  "evidence_ids": [
+                    "F005",
+                    "F003",
+                    "F002"
+                  ]
+                },
+                "llm": {
+                  "model": "openai/gpt-4o-mini",
+                  "provider": "Azure",
+                  "generation_id": "gen-1791878018-HlbKxyGx6lNJsWn3NOqb",
+                  "usage": {
+                    "prompt_tokens": 974,
+                    "completion_tokens": 48,
+                    "total_tokens": 1022,
+                    "cost": 0.0001749,
+                    "is_byok": false,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 0,
+                      "cache_write_tokens": 0,
+                      "audio_tokens": 0,
+                      "video_tokens": 0
+                    },
+                    "cost_details": {
+                      "upstream_inference_cost": 0.0001749,
+                      "upstream_inference_prompt_cost": 0.0001461,
+                      "upstream_inference_completions_cost": 2.88e-05
+                    },
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 0,
+                      "image_tokens": 0,
+                      "audio_tokens": 0
+                    }
+                  },
+                  "llm_ms": 2319.2070959994453,
+                  "finish_reason": "stop"
+                }
+              }
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 1,
+          "runtime_ms": 2320.6436569998914,
+          "final_evidence_sha256": "46aecc1a66b3680bbfd838e176b2466a16c88912e3a8d1e1fbe973825e61b820",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-retrieval_type_missing",
+          "condition": "llm",
+          "source_answerable": true
+        }
+      ]
+    },
+    {
+      "case": {
+        "case_id": "213800KDRZ6YFEH3Y618-source_relation_missing",
+        "variant": "source_relation_missing",
+        "kind": "parent",
+        "gold": {
+          "kind": "parent",
+          "value": "213800A357TKB2TD9U78"
+        },
+        "source_answerable": false,
+        "representation_equal": true,
+        "initial_preparation_ms": 5.947631998424185
+      },
+      "first_evidence": [
+        {
+          "id": "F001",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F002",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/QuerySubject",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F003",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "PIERRE VALETTE",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F004",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "213800KDRZ6YFEH3Y618",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        }
+      ],
+      "results": [
+        {
+          "status": "ok",
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 0.36831699981121346,
+          "final_evidence_sha256": "d39273a4745d07f45699099542b102a8278f8bb380fbeda63c7c7f1023d391b0",
+          "correct": false,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-source_relation_missing",
+          "condition": "none",
+          "source_answerable": false
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unknown",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "unknown",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 1,
+          "judge_calls": 0,
+          "runtime_ms": 6.159227999887662,
+          "final_evidence_sha256": "d39273a4745d07f45699099542b102a8278f8bb380fbeda63c7c7f1023d391b0",
+          "correct": false,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-source_relation_missing",
+          "condition": "code",
+          "source_answerable": false
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unknown",
+              "detail": {
+                "raw_conforms": true,
+                "issues": [],
+                "validation_ms": 1.6616749999229796
+              }
+            },
+            {
+              "attempt": 1,
+              "judgement": "unknown",
+              "detail": {
+                "raw_conforms": true,
+                "issues": [],
+                "validation_ms": 1.7961940029636025
+              }
+            }
+          ],
+          "extra_retrievals": 1,
+          "judge_calls": 0,
+          "runtime_ms": 9.563534000335494,
+          "final_evidence_sha256": "d39273a4745d07f45699099542b102a8278f8bb380fbeda63c7c7f1023d391b0",
+          "correct": false,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-source_relation_missing",
+          "condition": "shacl",
+          "source_answerable": false
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 1,
+          "judge_calls": 0,
+          "runtime_ms": 5.629226998280501,
+          "final_evidence_sha256": "d39273a4745d07f45699099542b102a8278f8bb380fbeda63c7c7f1023d391b0",
+          "correct": false,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-source_relation_missing",
+          "condition": "refresh",
+          "source_answerable": false
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "fail",
+              "detail": {
+                "response": {
+                  "status": "answer",
+                  "kind": "judgement",
+                  "value": "fail",
+                  "checks": {
+                    "cardinality": "pass",
+                    "parent_type": "fail",
+                    "exception_reason": "not_applicable"
+                  },
+                  "evidence_ids": [
+                    "F001",
+                    "F002",
+                    "F003",
+                    "F004"
+                  ]
+                },
+                "llm": {
+                  "model": "openai/gpt-4o-mini",
+                  "provider": "Azure",
+                  "generation_id": "gen-1791878021-1s4QlfByTXghHwRJkOSz",
+                  "usage": {
+                    "prompt_tokens": 723,
+                    "completion_tokens": 51,
+                    "total_tokens": 774,
+                    "cost": 0.00013905,
+                    "is_byok": false,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 0,
+                      "cache_write_tokens": 0,
+                      "audio_tokens": 0,
+                      "video_tokens": 0
+                    },
+                    "cost_details": {
+                      "upstream_inference_cost": 0.00013905,
+                      "upstream_inference_prompt_cost": 0.00010845,
+                      "upstream_inference_completions_cost": 3.06e-05
+                    },
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 0,
+                      "image_tokens": 0,
+                      "audio_tokens": 0
+                    }
+                  },
+                  "llm_ms": 1994.8249170010968,
+                  "finish_reason": "stop"
+                }
+              }
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 1,
+          "runtime_ms": 1996.1633439997968,
+          "final_evidence_sha256": "d39273a4745d07f45699099542b102a8278f8bb380fbeda63c7c7f1023d391b0",
+          "correct": false,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-source_relation_missing",
+          "condition": "llm",
+          "source_answerable": false
+        }
+      ]
+    },
+    {
+      "case": {
+        "case_id": "213800KDRZ6YFEH3Y618-wrong_class",
+        "variant": "wrong_class",
+        "kind": "parent",
+        "gold": {
+          "kind": "parent",
+          "value": "213800A357TKB2TD9U78"
+        },
+        "source_answerable": false,
+        "representation_equal": true,
+        "initial_preparation_ms": 7.279261000803672
+      },
+      "first_evidence": [
+        {
+          "id": "F001",
+          "s": "https://rdf.gleif.org/L1/L-097900BJMS0000222551",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Person",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F002",
+          "s": "https://rdf.gleif.org/L1/L-097900BJMS0000222551",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "INVESTORSKÁ OBCHODNÁ, akciová spoločnosť",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F003",
+          "s": "https://rdf.gleif.org/L1/L-097900BJMS0000222551",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "097900BJMS0000222551",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F004",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F005",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/QuerySubject",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F006",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "https://example.org/gleif-pilot/directParent",
+          "o": "https://rdf.gleif.org/L1/L-097900BJMS0000222551",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F007",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "PIERRE VALETTE",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F008",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "213800KDRZ6YFEH3Y618",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        }
+      ],
+      "results": [
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "097900BJMS0000222551"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 0.591205000091577,
+          "final_evidence_sha256": "07ec1e1f48c06d8aa09044794757a4e7b7bdf53a723f643d0cf562ce1ce181d3",
+          "correct": false,
+          "wrong": true,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-wrong_class",
+          "condition": "none",
+          "source_answerable": false
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "fail",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 0.4398140008561313,
+          "final_evidence_sha256": "07ec1e1f48c06d8aa09044794757a4e7b7bdf53a723f643d0cf562ce1ce181d3",
+          "correct": false,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-wrong_class",
+          "condition": "code",
+          "source_answerable": false
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "fail",
+              "detail": {
+                "raw_conforms": false,
+                "issues": [
+                  [
+                    "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+                    "https://example.org/gleif-pilot/directParent",
+                    "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+                  ]
+                ],
+                "validation_ms": 1.8108999975083862
+              }
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 2.879487001337111,
+          "final_evidence_sha256": "07ec1e1f48c06d8aa09044794757a4e7b7bdf53a723f643d0cf562ce1ce181d3",
+          "correct": false,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-wrong_class",
+          "condition": "shacl",
+          "source_answerable": false
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "097900BJMS0000222551"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 1,
+          "judge_calls": 0,
+          "runtime_ms": 6.9554750007227995,
+          "final_evidence_sha256": "07ec1e1f48c06d8aa09044794757a4e7b7bdf53a723f643d0cf562ce1ce181d3",
+          "correct": false,
+          "wrong": true,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-wrong_class",
+          "condition": "refresh",
+          "source_answerable": false
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "fail",
+              "detail": {
+                "response": {
+                  "status": "answer",
+                  "kind": "judgement",
+                  "value": "fail",
+                  "checks": {
+                    "cardinality": "fail",
+                    "parent_type": "pass",
+                    "exception_reason": "not_applicable"
+                  },
+                  "evidence_ids": [
+                    "F001",
+                    "F004",
+                    "F006"
+                  ]
+                },
+                "llm": {
+                  "model": "openai/gpt-4o-mini",
+                  "provider": "Azure",
+                  "generation_id": "gen-1791878023-tQKeBohqu4wyocCANtiJ",
+                  "usage": {
+                    "prompt_tokens": 1063,
+                    "completion_tokens": 48,
+                    "total_tokens": 1111,
+                    "cost": 0.00018825,
+                    "is_byok": false,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 0,
+                      "cache_write_tokens": 0,
+                      "audio_tokens": 0,
+                      "video_tokens": 0
+                    },
+                    "cost_details": {
+                      "upstream_inference_cost": 0.00018825,
+                      "upstream_inference_prompt_cost": 0.00015945,
+                      "upstream_inference_completions_cost": 2.88e-05
+                    },
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 0,
+                      "image_tokens": 0,
+                      "audio_tokens": 0
+                    }
+                  },
+                  "llm_ms": 1866.0307879981701,
+                  "finish_reason": "stop"
+                }
+              }
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 1,
+          "runtime_ms": 1867.418608002481,
+          "final_evidence_sha256": "07ec1e1f48c06d8aa09044794757a4e7b7bdf53a723f643d0cf562ce1ce181d3",
+          "correct": false,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-wrong_class",
+          "condition": "llm",
+          "source_answerable": false
+        }
+      ]
+    },
+    {
+      "case": {
+        "case_id": "213800KDRZ6YFEH3Y618-wrong_parent",
+        "variant": "wrong_parent",
+        "kind": "parent",
+        "gold": {
+          "kind": "parent",
+          "value": "213800A357TKB2TD9U78"
+        },
+        "source_answerable": false,
+        "representation_equal": true,
+        "initial_preparation_ms": 8.093617998383706
+      },
+      "first_evidence": [
+        {
+          "id": "F001",
+          "s": "https://rdf.gleif.org/L1/L-097900BJMS0000222551",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F002",
+          "s": "https://rdf.gleif.org/L1/L-097900BJMS0000222551",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "INVESTORSKÁ OBCHODNÁ, akciová spoločnosť",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F003",
+          "s": "https://rdf.gleif.org/L1/L-097900BJMS0000222551",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "097900BJMS0000222551",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F004",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F005",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/QuerySubject",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F006",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "https://example.org/gleif-pilot/directParent",
+          "o": "https://rdf.gleif.org/L1/L-097900BJMS0000222551",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F007",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "PIERRE VALETTE",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F008",
+          "s": "https://rdf.gleif.org/L1/L-213800KDRZ6YFEH3Y618",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "213800KDRZ6YFEH3Y618",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        }
+      ],
+      "results": [
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "097900BJMS0000222551"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 0.45182199755799957,
+          "final_evidence_sha256": "17a28194f0663d232abf2c2fb9bd1b2fa59e1a40acfa730ef10d86265ca46705",
+          "correct": false,
+          "wrong": true,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-wrong_parent",
+          "condition": "none",
+          "source_answerable": false
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "097900BJMS0000222551"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 0.4804989985132124,
+          "final_evidence_sha256": "17a28194f0663d232abf2c2fb9bd1b2fa59e1a40acfa730ef10d86265ca46705",
+          "correct": false,
+          "wrong": true,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-wrong_parent",
+          "condition": "code",
+          "source_answerable": false
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "097900BJMS0000222551"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {
+                "raw_conforms": true,
+                "issues": [],
+                "validation_ms": 1.5446690013050102
+              }
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 2.2398059991246555,
+          "final_evidence_sha256": "17a28194f0663d232abf2c2fb9bd1b2fa59e1a40acfa730ef10d86265ca46705",
+          "correct": false,
+          "wrong": true,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-wrong_parent",
+          "condition": "shacl",
+          "source_answerable": false
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "097900BJMS0000222551"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 1,
+          "judge_calls": 0,
+          "runtime_ms": 6.9543690005957615,
+          "final_evidence_sha256": "17a28194f0663d232abf2c2fb9bd1b2fa59e1a40acfa730ef10d86265ca46705",
+          "correct": false,
+          "wrong": true,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-wrong_parent",
+          "condition": "refresh",
+          "source_answerable": false
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "097900BJMS0000222551"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {
+                "response": {
+                  "status": "answer",
+                  "kind": "judgement",
+                  "value": "pass",
+                  "checks": {
+                    "cardinality": "pass",
+                    "parent_type": "pass",
+                    "exception_reason": "not_applicable"
+                  },
+                  "evidence_ids": [
+                    "F006"
+                  ]
+                },
+                "llm": {
+                  "model": "openai/gpt-4o-mini",
+                  "provider": "Azure",
+                  "generation_id": "gen-1791878025-QSZTSUaoHXwYHupTdxZw",
+                  "usage": {
+                    "prompt_tokens": 1063,
+                    "completion_tokens": 42,
+                    "total_tokens": 1105,
+                    "cost": 0.00018465,
+                    "is_byok": false,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 0,
+                      "cache_write_tokens": 0,
+                      "audio_tokens": 0,
+                      "video_tokens": 0
+                    },
+                    "cost_details": {
+                      "upstream_inference_cost": 0.00018465,
+                      "upstream_inference_prompt_cost": 0.00015945,
+                      "upstream_inference_completions_cost": 2.52e-05
+                    },
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 0,
+                      "image_tokens": 0,
+                      "audio_tokens": 0
+                    }
+                  },
+                  "llm_ms": 1698.9362169988453,
+                  "finish_reason": "stop"
+                }
+              }
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 1,
+          "runtime_ms": 1700.2844760027074,
+          "final_evidence_sha256": "17a28194f0663d232abf2c2fb9bd1b2fa59e1a40acfa730ef10d86265ca46705",
+          "correct": false,
+          "wrong": true,
+          "unnecessary_abstention": false,
+          "case_id": "213800KDRZ6YFEH3Y618-wrong_parent",
+          "condition": "llm",
+          "source_answerable": false
+        }
+      ]
+    },
+    {
+      "case": {
+        "case_id": "1595B882DM2S0WNRLT42-clean",
+        "variant": "clean",
+        "kind": "exception",
+        "gold": {
+          "kind": "exception",
+          "value": "NATURAL_PERSONS"
+        },
+        "source_answerable": true,
+        "representation_equal": true,
+        "initial_preparation_ms": 15.579802999127423
+      },
+      "first_evidence": [
+        {
+          "id": "F001",
+          "s": "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F002",
+          "s": "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/QuerySubject",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F003",
+          "s": "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+          "p": "https://example.org/gleif-pilot/exceptionReason",
+          "o": "NATURAL_PERSONS",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F004",
+          "s": "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "Nørager Holding af 2015 ApS",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F005",
+          "s": "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "1595B882DM2S0WNRLT42",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        }
+      ],
+      "results": [
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "exception",
+            "value": "NATURAL_PERSONS"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 0.5238769990683068,
+          "final_evidence_sha256": "491cb58b2da2885d9f2f2a07c1397d327cbf52d6dee6722ce328706988f3a4a1",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "1595B882DM2S0WNRLT42-clean",
+          "condition": "none",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "exception",
+            "value": "NATURAL_PERSONS"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 0.4352169999037869,
+          "final_evidence_sha256": "491cb58b2da2885d9f2f2a07c1397d327cbf52d6dee6722ce328706988f3a4a1",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "1595B882DM2S0WNRLT42-clean",
+          "condition": "code",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "exception",
+            "value": "NATURAL_PERSONS"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {
+                "raw_conforms": true,
+                "issues": [],
+                "validation_ms": 1.5173650026554242
+              }
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 2.2253930001170374,
+          "final_evidence_sha256": "491cb58b2da2885d9f2f2a07c1397d327cbf52d6dee6722ce328706988f3a4a1",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "1595B882DM2S0WNRLT42-clean",
+          "condition": "shacl",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "exception",
+            "value": "NATURAL_PERSONS"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 1,
+          "judge_calls": 0,
+          "runtime_ms": 5.847602998983348,
+          "final_evidence_sha256": "491cb58b2da2885d9f2f2a07c1397d327cbf52d6dee6722ce328706988f3a4a1",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "1595B882DM2S0WNRLT42-clean",
+          "condition": "refresh",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "fail",
+              "detail": {
+                "response": {
+                  "status": "answer",
+                  "kind": "judgement",
+                  "value": "fail",
+                  "checks": {
+                    "cardinality": "fail",
+                    "parent_type": "pass",
+                    "exception_reason": "pass"
+                  },
+                  "evidence_ids": [
+                    "F001",
+                    "F002",
+                    "F003",
+                    "F004",
+                    "F005"
+                  ]
+                },
+                "llm": {
+                  "model": "openai/gpt-4o-mini",
+                  "provider": "Azure",
+                  "generation_id": "gen-1791878026-DonEDhU9Goh1CBrgeNUr",
+                  "usage": {
+                    "prompt_tokens": 805,
+                    "completion_tokens": 52,
+                    "total_tokens": 857,
+                    "cost": 0.00015195,
+                    "is_byok": false,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 0,
+                      "cache_write_tokens": 0,
+                      "audio_tokens": 0,
+                      "video_tokens": 0
+                    },
+                    "cost_details": {
+                      "upstream_inference_cost": 0.00015195,
+                      "upstream_inference_prompt_cost": 0.00012075,
+                      "upstream_inference_completions_cost": 3.12e-05
+                    },
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 0,
+                      "image_tokens": 0,
+                      "audio_tokens": 0
+                    }
+                  },
+                  "llm_ms": 1836.9153829989955,
+                  "finish_reason": "stop"
+                }
+              }
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 1,
+          "runtime_ms": 1838.117131999752,
+          "final_evidence_sha256": "491cb58b2da2885d9f2f2a07c1397d327cbf52d6dee6722ce328706988f3a4a1",
+          "correct": false,
+          "wrong": false,
+          "unnecessary_abstention": true,
+          "case_id": "1595B882DM2S0WNRLT42-clean",
+          "condition": "llm",
+          "source_answerable": true
+        }
+      ]
+    },
+    {
+      "case": {
+        "case_id": "1595B882DM2S0WNRLT42-irrelevant_name_missing",
+        "variant": "irrelevant_name_missing",
+        "kind": "exception",
+        "gold": {
+          "kind": "exception",
+          "value": "NATURAL_PERSONS"
+        },
+        "source_answerable": true,
+        "representation_equal": true,
+        "initial_preparation_ms": 5.975003998173634
+      },
+      "first_evidence": [
+        {
+          "id": "F001",
+          "s": "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F002",
+          "s": "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/QuerySubject",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F003",
+          "s": "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+          "p": "https://example.org/gleif-pilot/exceptionReason",
+          "o": "NATURAL_PERSONS",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F004",
+          "s": "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "1595B882DM2S0WNRLT42",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        }
+      ],
+      "results": [
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "exception",
+            "value": "NATURAL_PERSONS"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 0.34304300061194226,
+          "final_evidence_sha256": "983ac61df3fd933054029997b59bb257337e99e6d25ec2baf095912e5c480833",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "1595B882DM2S0WNRLT42-irrelevant_name_missing",
+          "condition": "none",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "exception",
+            "value": "NATURAL_PERSONS"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 0.402117999328766,
+          "final_evidence_sha256": "983ac61df3fd933054029997b59bb257337e99e6d25ec2baf095912e5c480833",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "1595B882DM2S0WNRLT42-irrelevant_name_missing",
+          "condition": "code",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "exception",
+            "value": "NATURAL_PERSONS"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {
+                "raw_conforms": true,
+                "issues": [],
+                "validation_ms": 1.6663610003888607
+              }
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 2.3003879978205077,
+          "final_evidence_sha256": "983ac61df3fd933054029997b59bb257337e99e6d25ec2baf095912e5c480833",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "1595B882DM2S0WNRLT42-irrelevant_name_missing",
+          "condition": "shacl",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "exception",
+            "value": "NATURAL_PERSONS"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 1,
+          "judge_calls": 0,
+          "runtime_ms": 5.762540000432637,
+          "final_evidence_sha256": "491cb58b2da2885d9f2f2a07c1397d327cbf52d6dee6722ce328706988f3a4a1",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "1595B882DM2S0WNRLT42-irrelevant_name_missing",
+          "condition": "refresh",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "fail",
+              "detail": {
+                "response": {
+                  "status": "answer",
+                  "kind": "judgement",
+                  "value": "fail",
+                  "checks": {
+                    "cardinality": "fail",
+                    "parent_type": "pass",
+                    "exception_reason": "pass"
+                  },
+                  "evidence_ids": [
+                    "F001",
+                    "F002",
+                    "F003",
+                    "F004"
+                  ]
+                },
+                "llm": {
+                  "model": "openai/gpt-4o-mini",
+                  "provider": "Azure",
+                  "generation_id": "gen-1791878028-pQuMVr18SL1a6k5pRdzc",
+                  "usage": {
+                    "prompt_tokens": 723,
+                    "completion_tokens": 49,
+                    "total_tokens": 772,
+                    "cost": 0.00013785,
+                    "is_byok": false,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 0,
+                      "cache_write_tokens": 0,
+                      "audio_tokens": 0,
+                      "video_tokens": 0
+                    },
+                    "cost_details": {
+                      "upstream_inference_cost": 0.00013785,
+                      "upstream_inference_prompt_cost": 0.00010845,
+                      "upstream_inference_completions_cost": 2.94e-05
+                    },
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 0,
+                      "image_tokens": 0,
+                      "audio_tokens": 0
+                    }
+                  },
+                  "llm_ms": 1899.4261359985103,
+                  "finish_reason": "stop"
+                }
+              }
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 1,
+          "runtime_ms": 1900.6698639968818,
+          "final_evidence_sha256": "983ac61df3fd933054029997b59bb257337e99e6d25ec2baf095912e5c480833",
+          "correct": false,
+          "wrong": false,
+          "unnecessary_abstention": true,
+          "case_id": "1595B882DM2S0WNRLT42-irrelevant_name_missing",
+          "condition": "llm",
+          "source_answerable": true
+        }
+      ]
+    },
+    {
+      "case": {
+        "case_id": "1595B882DM2S0WNRLT42-retrieval_exception_missing",
+        "variant": "retrieval_exception_missing",
+        "kind": "exception",
+        "gold": {
+          "kind": "exception",
+          "value": "NATURAL_PERSONS"
+        },
+        "source_answerable": true,
+        "representation_equal": true,
+        "initial_preparation_ms": 6.134416002169019
+      },
+      "first_evidence": [
+        {
+          "id": "F001",
+          "s": "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F002",
+          "s": "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/QuerySubject",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F003",
+          "s": "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "Nørager Holding af 2015 ApS",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F004",
+          "s": "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "1595B882DM2S0WNRLT42",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        }
+      ],
+      "results": [
+        {
+          "status": "ok",
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 0.3534179995767772,
+          "final_evidence_sha256": "a6a08e461508920a3e6520d8e1fbcb8b52bfc517b1056a739ac1d555c8802b36",
+          "correct": false,
+          "wrong": false,
+          "unnecessary_abstention": true,
+          "case_id": "1595B882DM2S0WNRLT42-retrieval_exception_missing",
+          "condition": "none",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "exception",
+            "value": "NATURAL_PERSONS"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unknown",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "pass",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 1,
+          "judge_calls": 0,
+          "runtime_ms": 5.8695740008261055,
+          "final_evidence_sha256": "491cb58b2da2885d9f2f2a07c1397d327cbf52d6dee6722ce328706988f3a4a1",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "1595B882DM2S0WNRLT42-retrieval_exception_missing",
+          "condition": "code",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "exception",
+            "value": "NATURAL_PERSONS"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unknown",
+              "detail": {
+                "raw_conforms": true,
+                "issues": [],
+                "validation_ms": 1.615147997654276
+              }
+            },
+            {
+              "attempt": 1,
+              "judgement": "pass",
+              "detail": {
+                "raw_conforms": true,
+                "issues": [],
+                "validation_ms": 1.5356190015154425
+              }
+            }
+          ],
+          "extra_retrievals": 1,
+          "judge_calls": 0,
+          "runtime_ms": 10.105700999702094,
+          "final_evidence_sha256": "491cb58b2da2885d9f2f2a07c1397d327cbf52d6dee6722ce328706988f3a4a1",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "1595B882DM2S0WNRLT42-retrieval_exception_missing",
+          "condition": "shacl",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "exception",
+            "value": "NATURAL_PERSONS"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 1,
+          "judge_calls": 0,
+          "runtime_ms": 5.8631680003600195,
+          "final_evidence_sha256": "491cb58b2da2885d9f2f2a07c1397d327cbf52d6dee6722ce328706988f3a4a1",
+          "correct": true,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "1595B882DM2S0WNRLT42-retrieval_exception_missing",
+          "condition": "refresh",
+          "source_answerable": true
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "fail",
+              "detail": {
+                "response": {
+                  "status": "answer",
+                  "kind": "judgement",
+                  "value": "fail",
+                  "checks": {
+                    "cardinality": "pass",
+                    "parent_type": "pass",
+                    "exception_reason": "fail"
+                  },
+                  "evidence_ids": [
+                    "F001",
+                    "F002",
+                    "F003",
+                    "F004"
+                  ]
+                },
+                "llm": {
+                  "model": "openai/gpt-4o-mini",
+                  "provider": "Azure",
+                  "generation_id": "gen-1791878030-L3IIe4gNcigPeNWl0RIP",
+                  "usage": {
+                    "prompt_tokens": 727,
+                    "completion_tokens": 49,
+                    "total_tokens": 776,
+                    "cost": 0.00013845,
+                    "is_byok": false,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 0,
+                      "cache_write_tokens": 0,
+                      "audio_tokens": 0,
+                      "video_tokens": 0
+                    },
+                    "cost_details": {
+                      "upstream_inference_cost": 0.00013845,
+                      "upstream_inference_prompt_cost": 0.00010905,
+                      "upstream_inference_completions_cost": 2.94e-05
+                    },
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 0,
+                      "image_tokens": 0,
+                      "audio_tokens": 0
+                    }
+                  },
+                  "llm_ms": 2071.746116002032,
+                  "finish_reason": "stop"
+                }
+              }
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 1,
+          "runtime_ms": 2072.898702001112,
+          "final_evidence_sha256": "a6a08e461508920a3e6520d8e1fbcb8b52bfc517b1056a739ac1d555c8802b36",
+          "correct": false,
+          "wrong": false,
+          "unnecessary_abstention": true,
+          "case_id": "1595B882DM2S0WNRLT42-retrieval_exception_missing",
+          "condition": "llm",
+          "source_answerable": true
+        }
+      ]
+    },
+    {
+      "case": {
+        "case_id": "1595B882DM2S0WNRLT42-source_exception_missing",
+        "variant": "source_exception_missing",
+        "kind": "exception",
+        "gold": {
+          "kind": "exception",
+          "value": "NATURAL_PERSONS"
+        },
+        "source_answerable": false,
+        "representation_equal": true,
+        "initial_preparation_ms": 6.749676998879295
+      },
+      "first_evidence": [
+        {
+          "id": "F001",
+          "s": "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F002",
+          "s": "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/QuerySubject",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F003",
+          "s": "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "Nørager Holding af 2015 ApS",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F004",
+          "s": "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "1595B882DM2S0WNRLT42",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        }
+      ],
+      "results": [
+        {
+          "status": "ok",
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 0.5067040001449641,
+          "final_evidence_sha256": "a6a08e461508920a3e6520d8e1fbcb8b52bfc517b1056a739ac1d555c8802b36",
+          "correct": false,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "1595B882DM2S0WNRLT42-source_exception_missing",
+          "condition": "none",
+          "source_answerable": false
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unknown",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "unknown",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 1,
+          "judge_calls": 0,
+          "runtime_ms": 5.640200000925688,
+          "final_evidence_sha256": "a6a08e461508920a3e6520d8e1fbcb8b52bfc517b1056a739ac1d555c8802b36",
+          "correct": false,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "1595B882DM2S0WNRLT42-source_exception_missing",
+          "condition": "code",
+          "source_answerable": false
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unknown",
+              "detail": {
+                "raw_conforms": true,
+                "issues": [],
+                "validation_ms": 1.753630000166595
+              }
+            },
+            {
+              "attempt": 1,
+              "judgement": "unknown",
+              "detail": {
+                "raw_conforms": true,
+                "issues": [],
+                "validation_ms": 1.633372998185223
+              }
+            }
+          ],
+          "extra_retrievals": 1,
+          "judge_calls": 0,
+          "runtime_ms": 10.25182500234223,
+          "final_evidence_sha256": "a6a08e461508920a3e6520d8e1fbcb8b52bfc517b1056a739ac1d555c8802b36",
+          "correct": false,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "1595B882DM2S0WNRLT42-source_exception_missing",
+          "condition": "shacl",
+          "source_answerable": false
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 1,
+          "judge_calls": 0,
+          "runtime_ms": 5.641349998768419,
+          "final_evidence_sha256": "a6a08e461508920a3e6520d8e1fbcb8b52bfc517b1056a739ac1d555c8802b36",
+          "correct": false,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "1595B882DM2S0WNRLT42-source_exception_missing",
+          "condition": "refresh",
+          "source_answerable": false
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "fail",
+              "detail": {
+                "response": {
+                  "status": "answer",
+                  "kind": "judgement",
+                  "value": "fail",
+                  "checks": {
+                    "cardinality": "pass",
+                    "parent_type": "pass",
+                    "exception_reason": "fail"
+                  },
+                  "evidence_ids": [
+                    "F001",
+                    "F002",
+                    "F003",
+                    "F004"
+                  ]
+                },
+                "llm": {
+                  "model": "openai/gpt-4o-mini",
+                  "provider": "Azure",
+                  "generation_id": "gen-1791878032-02hD7jYPmRYkx6AX2Q8r",
+                  "usage": {
+                    "prompt_tokens": 727,
+                    "completion_tokens": 49,
+                    "total_tokens": 776,
+                    "cost": 0.00013845,
+                    "is_byok": false,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 0,
+                      "cache_write_tokens": 0,
+                      "audio_tokens": 0,
+                      "video_tokens": 0
+                    },
+                    "cost_details": {
+                      "upstream_inference_cost": 0.00013845,
+                      "upstream_inference_prompt_cost": 0.00010905,
+                      "upstream_inference_completions_cost": 2.94e-05
+                    },
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 0,
+                      "image_tokens": 0,
+                      "audio_tokens": 0
+                    }
+                  },
+                  "llm_ms": 1951.896498001588,
+                  "finish_reason": "stop"
+                }
+              }
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 1,
+          "runtime_ms": 1953.0960529991717,
+          "final_evidence_sha256": "a6a08e461508920a3e6520d8e1fbcb8b52bfc517b1056a739ac1d555c8802b36",
+          "correct": false,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "1595B882DM2S0WNRLT42-source_exception_missing",
+          "condition": "llm",
+          "source_answerable": false
+        }
+      ]
+    },
+    {
+      "case": {
+        "case_id": "1595B882DM2S0WNRLT42-invalid_reason",
+        "variant": "invalid_reason",
+        "kind": "exception",
+        "gold": {
+          "kind": "exception",
+          "value": "NATURAL_PERSONS"
+        },
+        "source_answerable": false,
+        "representation_equal": true,
+        "initial_preparation_ms": 6.118858000263572
+      },
+      "first_evidence": [
+        {
+          "id": "F001",
+          "s": "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F002",
+          "s": "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/QuerySubject",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F003",
+          "s": "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+          "p": "https://example.org/gleif-pilot/exceptionReason",
+          "o": "UNDEFINED_REASON",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F004",
+          "s": "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "Nørager Holding af 2015 ApS",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F005",
+          "s": "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "1595B882DM2S0WNRLT42",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        }
+      ],
+      "results": [
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "exception",
+            "value": "UNDEFINED_REASON"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 0.35543700141715817,
+          "final_evidence_sha256": "3a19969b0cf3a3e6173e21d621cff648373d2308b87591009958d8ba8ea04549",
+          "correct": false,
+          "wrong": true,
+          "unnecessary_abstention": false,
+          "case_id": "1595B882DM2S0WNRLT42-invalid_reason",
+          "condition": "none",
+          "source_answerable": false
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "fail",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 0.4100759979337454,
+          "final_evidence_sha256": "3a19969b0cf3a3e6173e21d621cff648373d2308b87591009958d8ba8ea04549",
+          "correct": false,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "1595B882DM2S0WNRLT42-invalid_reason",
+          "condition": "code",
+          "source_answerable": false
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "fail",
+              "detail": {
+                "raw_conforms": false,
+                "issues": [
+                  [
+                    "https://rdf.gleif.org/L1/L-1595B882DM2S0WNRLT42",
+                    "https://example.org/gleif-pilot/exceptionReason",
+                    "http://www.w3.org/ns/shacl#InConstraintComponent"
+                  ]
+                ],
+                "validation_ms": 2.3324150024564005
+              }
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 0,
+          "runtime_ms": 3.6958740020054393,
+          "final_evidence_sha256": "3a19969b0cf3a3e6173e21d621cff648373d2308b87591009958d8ba8ea04549",
+          "correct": false,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "1595B882DM2S0WNRLT42-invalid_reason",
+          "condition": "shacl",
+          "source_answerable": false
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "answer",
+            "kind": "exception",
+            "value": "UNDEFINED_REASON"
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ],
+          "extra_retrievals": 1,
+          "judge_calls": 0,
+          "runtime_ms": 5.929508999543032,
+          "final_evidence_sha256": "3a19969b0cf3a3e6173e21d621cff648373d2308b87591009958d8ba8ea04549",
+          "correct": false,
+          "wrong": true,
+          "unnecessary_abstention": false,
+          "case_id": "1595B882DM2S0WNRLT42-invalid_reason",
+          "condition": "refresh",
+          "source_answerable": false
+        },
+        {
+          "status": "ok",
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "fail",
+              "detail": {
+                "response": {
+                  "status": "answer",
+                  "kind": "judgement",
+                  "value": "fail",
+                  "checks": {
+                    "cardinality": "fail",
+                    "parent_type": "pass",
+                    "exception_reason": "fail"
+                  },
+                  "evidence_ids": [
+                    "F001",
+                    "F002",
+                    "F003",
+                    "F004",
+                    "F005"
+                  ]
+                },
+                "llm": {
+                  "model": "openai/gpt-4o-mini",
+                  "provider": "Azure",
+                  "generation_id": "gen-1791878034-GXxxye2mHl9xMDbYCZ8O",
+                  "usage": {
+                    "prompt_tokens": 803,
+                    "completion_tokens": 52,
+                    "total_tokens": 855,
+                    "cost": 0.00015165,
+                    "is_byok": false,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 0,
+                      "cache_write_tokens": 0,
+                      "audio_tokens": 0,
+                      "video_tokens": 0
+                    },
+                    "cost_details": {
+                      "upstream_inference_cost": 0.00015165,
+                      "upstream_inference_prompt_cost": 0.00012045,
+                      "upstream_inference_completions_cost": 3.12e-05
+                    },
+                    "completion_tokens_details": {
+                      "reasoning_tokens": 0,
+                      "image_tokens": 0,
+                      "audio_tokens": 0
+                    }
+                  },
+                  "llm_ms": 2001.6226900006586,
+                  "finish_reason": "stop"
+                }
+              }
+            }
+          ],
+          "extra_retrievals": 0,
+          "judge_calls": 1,
+          "runtime_ms": 2002.8432599974622,
+          "final_evidence_sha256": "3a19969b0cf3a3e6173e21d621cff648373d2308b87591009958d8ba8ea04549",
+          "correct": false,
+          "wrong": false,
+          "unnecessary_abstention": false,
+          "case_id": "1595B882DM2S0WNRLT42-invalid_reason",
+          "condition": "llm",
+          "source_answerable": false
+        }
+      ]
+    }
+  ],
+  "source_manifest": {
+    "publish_date": "2026-10-12 08:00:00",
+    "retrieved_at": "2026-10-12T11:04:48.966484+00:00",
+    "metadata_url": "https://goldencopy.gleif.org/api/v2/golden-copies/publishes",
+    "license": "CC0",
+    "license_url": "https://www.gleif.org/en/meta/lei-data-terms-of-use/",
+    "files": {
+      "lei2": {
+        "type": "lei2",
+        "format": "csv",
+        "record_count": 3458852,
+        "size": 503809882,
+        "size_human_readable": "480.47 MB",
+        "delta_type": "GoldenCopy",
+        "url": "https://goldencopy.gleif.org/storage/golden-copy-files/2026/10/12/1287560/20261012-0800-gleif-goldencopy-lei2-golden-copy.csv.zip",
+        "cdf_version": "LEI_3.1",
+        "path": "data/gleif/20261012T080000/lei2.csv.zip",
+        "sha256": "fa989a882cf05fb854ae14693de7fe3f1ea1b60ab7d81270246dc21360f24db2"
+      },
+      "rr": {
+        "type": "rr",
+        "format": "csv",
+        "record_count": 490833,
+        "size": 24474305,
+        "size_human_readable": "23.34 MB",
+        "delta_type": "GoldenCopy",
+        "url": "https://goldencopy.gleif.org/storage/golden-copy-files/2026/10/12/1287602/20261012-0800-gleif-goldencopy-rr-golden-copy.csv.zip",
+        "cdf_version": "RR_2.1",
+        "path": "data/gleif/20261012T080000/rr.csv.zip",
+        "sha256": "e2edd8e761a60b3dd67dd7cca67cf52c55292c28fd2b0edd69107c9715f4c775"
+      },
+      "repex": {
+        "type": "repex",
+        "format": "csv",
+        "record_count": 6411075,
+        "size": 62143277,
+        "size_human_readable": "59.26 MB",
+        "delta_type": "GoldenCopy",
+        "url": "https://goldencopy.gleif.org/storage/golden-copy-files/2026/10/12/1287650/20261012-0800-gleif-goldencopy-repex-golden-copy.csv.zip",
+        "cdf_version": "REPEX_2.1",
+        "path": "data/gleif/20261012T080000/repex.csv.zip",
+        "sha256": "fca6dd1fd0530d611ee0b54d9fb88976fb1c4f56ef6412a069751b59019f96c8"
+      }
+    }
+  },
+  "input_hashes": {
+    "deterministic": {
+      "scripts/run_gleif_comparison.py": "3134ce5a565e11ba90ac43f939a84e9f0acaae83446a3e8bedbb3db201027ba0",
+      "scripts/run_gleif_pilot.py": "5fe64ee05b240b6afa42f0e80f8909389c6aae5ec1dae2094c2b0b031a05e4cb",
+      "scripts/prepare_gleif_comparison.py": "fb5074974d8e34631b92805acb81a4e18e08e3ec8348489bf2b579fa6998de42",
+      "experiments/comparison/config.json": "8f11bf4f560ef19c41eeac5ca2f8a483de7c97a6968b411353f4b9df63cf402f",
+      "experiments/comparison/shapes.ttl": "c83ab7215386cfc36712004e99a6717870b7ea84c67e6bd1c4a124875887290e",
+      "experiments/comparison/judge-prompt.txt": "cb32ae049369e360afe9525937ef76f887334a2e051de2e59a786fd06b419165",
+      "uv.lock": "b29fc8a715c3f6e37b6528e28f0e1bf517b97cd9afd2beda3dfe36a22635edc0"
+    },
+    "model": {
+      "scripts/run_gleif_comparison.py": "3134ce5a565e11ba90ac43f939a84e9f0acaae83446a3e8bedbb3db201027ba0",
+      "scripts/run_gleif_pilot.py": "5fe64ee05b240b6afa42f0e80f8909389c6aae5ec1dae2094c2b0b031a05e4cb",
+      "scripts/prepare_gleif_comparison.py": "fb5074974d8e34631b92805acb81a4e18e08e3ec8348489bf2b579fa6998de42",
+      "experiments/comparison/config.json": "8f11bf4f560ef19c41eeac5ca2f8a483de7c97a6968b411353f4b9df63cf402f",
+      "experiments/comparison/shapes.ttl": "c83ab7215386cfc36712004e99a6717870b7ea84c67e6bd1c4a124875887290e",
+      "experiments/comparison/judge-prompt.txt": "cb32ae049369e360afe9525937ef76f887334a2e051de2e59a786fd06b419165",
+      "uv.lock": "b29fc8a715c3f6e37b6528e28f0e1bf517b97cd9afd2beda3dfe36a22635edc0"
+    }
+  },
+  "dataset_sha256": "f20c1a4af9889a6e3e18dbeb9258bf6272791c83b285db1bdbf39af5dc8cefa4"
+}

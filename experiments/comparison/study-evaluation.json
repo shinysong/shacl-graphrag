@@ -1,0 +1,49 @@
+{
+  "protocol_version": "0.5-study1",
+  "scope": "GLEIF held-out convenience cohort, 30 entities / 180 perturbation cases; exploratory",
+  "conditions": [
+    "none",
+    "code",
+    "shacl",
+    "refresh",
+    "llm",
+    "hybrid"
+  ],
+  "parent_variants": [
+    "clean",
+    "irrelevant_name_missing",
+    "retrieval_relation_missing",
+    "retrieval_type_missing",
+    "source_relation_missing",
+    "wrong_class",
+    "wrong_parent"
+  ],
+  "exception_variants": [
+    "clean",
+    "irrelevant_name_missing",
+    "retrieval_exception_missing",
+    "source_exception_missing",
+    "invalid_reason"
+  ],
+  "max_retries": 1,
+  "repeat_count": 3,
+  "max_llm_calls": 2160,
+  "max_cost_usd": 3.0,
+  "max_completion_tokens": 240,
+  "max_prompt_chars": 12000,
+  "provider_max_price_per_million": {
+    "prompt": 0.2,
+    "completion": 0.8
+  },
+  "temperature": 0,
+  "inference": "none",
+  "model": "openai/gpt-4o-mini",
+  "stage": "evaluation",
+  "prompt_path": "experiments/comparison/judge-prompt-v3.txt",
+  "evidence_format": "structured",
+  "campaign_ledger_path": "_workspace/expanded-study/campaign-budget.json",
+  "seed": 20261013,
+  "max_parallel_calls": 4,
+  "frozen": true,
+  "expected_dataset_sha256": "80287eb72534824da52659b93f3d1f2f11313f6b073fbf763265e21f41a66426"
+}

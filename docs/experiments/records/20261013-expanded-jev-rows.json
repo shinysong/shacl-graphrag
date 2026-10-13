@@ -1,0 +1,7005 @@
+{
+  "run_id": "20261013T093602Z-jev-dev-full-61aa4797",
+  "stage": "development",
+  "status": "completed",
+  "dataset_sha256": "f20c1a4af9889a6e3e18dbeb9258bf6272791c83b285db1bdbf39af5dc8cefa4",
+  "source_manifest": {
+    "publish_date": "2026-10-12 08:00:00",
+    "retrieved_at": "2026-10-12T11:04:48.966484+00:00",
+    "metadata_url": "https://goldencopy.gleif.org/api/v2/golden-copies/publishes",
+    "license": "CC0",
+    "license_url": "https://www.gleif.org/en/meta/lei-data-terms-of-use/",
+    "files": {
+      "lei2": {
+        "type": "lei2",
+        "format": "csv",
+        "record_count": 3458852,
+        "size": 503809882,
+        "size_human_readable": "480.47 MB",
+        "delta_type": "GoldenCopy",
+        "url": "https://goldencopy.gleif.org/storage/golden-copy-files/2026/10/12/1287560/20261012-0800-gleif-goldencopy-lei2-golden-copy.csv.zip",
+        "cdf_version": "LEI_3.1",
+        "path": "data/gleif/20261012T080000/lei2.csv.zip",
+        "sha256": "fa989a882cf05fb854ae14693de7fe3f1ea1b60ab7d81270246dc21360f24db2"
+      },
+      "rr": {
+        "type": "rr",
+        "format": "csv",
+        "record_count": 490833,
+        "size": 24474305,
+        "size_human_readable": "23.34 MB",
+        "delta_type": "GoldenCopy",
+        "url": "https://goldencopy.gleif.org/storage/golden-copy-files/2026/10/12/1287602/20261012-0800-gleif-goldencopy-rr-golden-copy.csv.zip",
+        "cdf_version": "RR_2.1",
+        "path": "data/gleif/20261012T080000/rr.csv.zip",
+        "sha256": "e2edd8e761a60b3dd67dd7cca67cf52c55292c28fd2b0edd69107c9715f4c775"
+      },
+      "repex": {
+        "type": "repex",
+        "format": "csv",
+        "record_count": 6411075,
+        "size": 62143277,
+        "size_human_readable": "59.26 MB",
+        "delta_type": "GoldenCopy",
+        "url": "https://goldencopy.gleif.org/storage/golden-copy-files/2026/10/12/1287650/20261012-0800-gleif-goldencopy-repex-golden-copy.csv.zip",
+        "cdf_version": "REPEX_2.1",
+        "path": "data/gleif/20261012T080000/repex.csv.zip",
+        "sha256": "fca6dd1fd0530d611ee0b54d9fb88976fb1c4f56ef6412a069751b59019f96c8"
+      }
+    }
+  },
+  "budget": {
+    "calls": 306,
+    "reserved_usd": 0.6120000000000004,
+    "reported_usd": 0.025372998,
+    "missing_cost": 0
+  },
+  "summary": {
+    "jev": {
+      "total": 216,
+      "correct": 126,
+      "wrong": 18,
+      "abstained": 72,
+      "errors": 0,
+      "unnecessary_abstentions": 0,
+      "source_answerable": 126,
+      "extra_retrievals": 90,
+      "accuracy_all": 0.5833333333333334
+    }
+  },
+  "cases": [
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-clean",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "variant": "clean",
+      "gold": {
+        "kind": "parent",
+        "value": "213800A357TKB2TD9U78"
+      },
+      "source_answerable": true,
+      "source_sha256": "b8d8ff7528aefbe4a4aa539839cdc67805acddf3d5c757cf692b565571220985"
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-irrelevant_name_missing",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "variant": "irrelevant_name_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "213800A357TKB2TD9U78"
+      },
+      "source_answerable": true,
+      "source_sha256": "b8d8ff7528aefbe4a4aa539839cdc67805acddf3d5c757cf692b565571220985"
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-retrieval_relation_missing",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "variant": "retrieval_relation_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "213800A357TKB2TD9U78"
+      },
+      "source_answerable": true,
+      "source_sha256": "b8d8ff7528aefbe4a4aa539839cdc67805acddf3d5c757cf692b565571220985"
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-retrieval_type_missing",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "variant": "retrieval_type_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "213800A357TKB2TD9U78"
+      },
+      "source_answerable": true,
+      "source_sha256": "b8d8ff7528aefbe4a4aa539839cdc67805acddf3d5c757cf692b565571220985"
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-source_relation_missing",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "variant": "source_relation_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "213800A357TKB2TD9U78"
+      },
+      "source_answerable": false,
+      "source_sha256": "ca256981d3de007fb028ee57e7322b864441885fa7129b1b96dcfc2ec74ff1dc"
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-wrong_class",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "variant": "wrong_class",
+      "gold": {
+        "kind": "parent",
+        "value": "213800A357TKB2TD9U78"
+      },
+      "source_answerable": false,
+      "source_sha256": "a7e6d0e4c6e3e19fe0b882c9b87d81dc1e22889f557228585ebf73a70004a5e8"
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-wrong_parent",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "variant": "wrong_parent",
+      "gold": {
+        "kind": "parent",
+        "value": "213800A357TKB2TD9U78"
+      },
+      "source_answerable": false,
+      "source_sha256": "310be0c83596922347aeb4074a0fc9181c6e6879d8eeadb5bf961987233366fd"
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-clean",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "variant": "clean",
+      "gold": {
+        "kind": "parent",
+        "value": "213800I5L3K7AT7A4R20"
+      },
+      "source_answerable": true,
+      "source_sha256": "8ab6e1095903f1c37ebe04b9b0171a75e5bc4336363206a6dbb5fe786528ca22"
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-irrelevant_name_missing",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "variant": "irrelevant_name_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "213800I5L3K7AT7A4R20"
+      },
+      "source_answerable": true,
+      "source_sha256": "8ab6e1095903f1c37ebe04b9b0171a75e5bc4336363206a6dbb5fe786528ca22"
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-retrieval_relation_missing",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "variant": "retrieval_relation_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "213800I5L3K7AT7A4R20"
+      },
+      "source_answerable": true,
+      "source_sha256": "8ab6e1095903f1c37ebe04b9b0171a75e5bc4336363206a6dbb5fe786528ca22"
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-retrieval_type_missing",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "variant": "retrieval_type_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "213800I5L3K7AT7A4R20"
+      },
+      "source_answerable": true,
+      "source_sha256": "8ab6e1095903f1c37ebe04b9b0171a75e5bc4336363206a6dbb5fe786528ca22"
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-source_relation_missing",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "variant": "source_relation_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "213800I5L3K7AT7A4R20"
+      },
+      "source_answerable": false,
+      "source_sha256": "ebeccceab8b4bbae147a97761515e3457c4f9bda5797a73dadff2314e6cde9c1"
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-wrong_class",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "variant": "wrong_class",
+      "gold": {
+        "kind": "parent",
+        "value": "213800I5L3K7AT7A4R20"
+      },
+      "source_answerable": false,
+      "source_sha256": "16f7721b76f4b96ef05add5cf07dbe233322362b5ccb0c8b70f3dd981f8fab5c"
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-wrong_parent",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "variant": "wrong_parent",
+      "gold": {
+        "kind": "parent",
+        "value": "213800I5L3K7AT7A4R20"
+      },
+      "source_answerable": false,
+      "source_sha256": "4c53f227141d70784dcf47fe79e7232a443969cbcb853135f5e927e1c5253760"
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-clean",
+      "entity": "213800CY7UK7DYGWPL83",
+      "variant": "clean",
+      "gold": {
+        "kind": "parent",
+        "value": "984500BDB0DE6F1AF647"
+      },
+      "source_answerable": true,
+      "source_sha256": "d27e82464e3c6095e2cb58f741354b89d727ac229a605c4dda15374a540fe33a"
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-irrelevant_name_missing",
+      "entity": "213800CY7UK7DYGWPL83",
+      "variant": "irrelevant_name_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "984500BDB0DE6F1AF647"
+      },
+      "source_answerable": true,
+      "source_sha256": "d27e82464e3c6095e2cb58f741354b89d727ac229a605c4dda15374a540fe33a"
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-retrieval_relation_missing",
+      "entity": "213800CY7UK7DYGWPL83",
+      "variant": "retrieval_relation_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "984500BDB0DE6F1AF647"
+      },
+      "source_answerable": true,
+      "source_sha256": "d27e82464e3c6095e2cb58f741354b89d727ac229a605c4dda15374a540fe33a"
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-retrieval_type_missing",
+      "entity": "213800CY7UK7DYGWPL83",
+      "variant": "retrieval_type_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "984500BDB0DE6F1AF647"
+      },
+      "source_answerable": true,
+      "source_sha256": "d27e82464e3c6095e2cb58f741354b89d727ac229a605c4dda15374a540fe33a"
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-source_relation_missing",
+      "entity": "213800CY7UK7DYGWPL83",
+      "variant": "source_relation_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "984500BDB0DE6F1AF647"
+      },
+      "source_answerable": false,
+      "source_sha256": "e86b2df95c4c5ac0a315528e29b2e16cdb0a2b5e3bd13b19fce1d0133631f399"
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-wrong_class",
+      "entity": "213800CY7UK7DYGWPL83",
+      "variant": "wrong_class",
+      "gold": {
+        "kind": "parent",
+        "value": "984500BDB0DE6F1AF647"
+      },
+      "source_answerable": false,
+      "source_sha256": "5c8f354454e22eae857883afe8d44d7774ec05086e7da61debb3e6a9b7f0f39a"
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-wrong_parent",
+      "entity": "213800CY7UK7DYGWPL83",
+      "variant": "wrong_parent",
+      "gold": {
+        "kind": "parent",
+        "value": "984500BDB0DE6F1AF647"
+      },
+      "source_answerable": false,
+      "source_sha256": "7f21a840d52eddcb66b58bf2e7b212020eff019b4ff3ab808d6020bc5766be20"
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-clean",
+      "entity": "2138008B64Z8G7M5YU77",
+      "variant": "clean",
+      "gold": {
+        "kind": "parent",
+        "value": "KGCEPHLVVKVRZYO1T647"
+      },
+      "source_answerable": true,
+      "source_sha256": "08ba19b14694a4e8d09bc87d033725be9b11c68e4e94487f145ee26f041bb269"
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-irrelevant_name_missing",
+      "entity": "2138008B64Z8G7M5YU77",
+      "variant": "irrelevant_name_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "KGCEPHLVVKVRZYO1T647"
+      },
+      "source_answerable": true,
+      "source_sha256": "08ba19b14694a4e8d09bc87d033725be9b11c68e4e94487f145ee26f041bb269"
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-retrieval_relation_missing",
+      "entity": "2138008B64Z8G7M5YU77",
+      "variant": "retrieval_relation_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "KGCEPHLVVKVRZYO1T647"
+      },
+      "source_answerable": true,
+      "source_sha256": "08ba19b14694a4e8d09bc87d033725be9b11c68e4e94487f145ee26f041bb269"
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-retrieval_type_missing",
+      "entity": "2138008B64Z8G7M5YU77",
+      "variant": "retrieval_type_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "KGCEPHLVVKVRZYO1T647"
+      },
+      "source_answerable": true,
+      "source_sha256": "08ba19b14694a4e8d09bc87d033725be9b11c68e4e94487f145ee26f041bb269"
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-source_relation_missing",
+      "entity": "2138008B64Z8G7M5YU77",
+      "variant": "source_relation_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "KGCEPHLVVKVRZYO1T647"
+      },
+      "source_answerable": false,
+      "source_sha256": "950417a19f8a23ed5e5c014895ae3bca3ca96fc0fe43e6d4ce234e3bc0616b08"
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-wrong_class",
+      "entity": "2138008B64Z8G7M5YU77",
+      "variant": "wrong_class",
+      "gold": {
+        "kind": "parent",
+        "value": "KGCEPHLVVKVRZYO1T647"
+      },
+      "source_answerable": false,
+      "source_sha256": "47708f9e8f49d14d7ba5b9fb476ff424c6850c82f34b05a0fc704bdc47371a87"
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-wrong_parent",
+      "entity": "2138008B64Z8G7M5YU77",
+      "variant": "wrong_parent",
+      "gold": {
+        "kind": "parent",
+        "value": "KGCEPHLVVKVRZYO1T647"
+      },
+      "source_answerable": false,
+      "source_sha256": "140297009c80f30ddbc51e0b60cb797053ff988b716a14b083ca549ca07a9251"
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-clean",
+      "entity": "213800O3V1CRPPJBHE72",
+      "variant": "clean",
+      "gold": {
+        "kind": "parent",
+        "value": "213800UPS1QEE4TD3T45"
+      },
+      "source_answerable": true,
+      "source_sha256": "48a3b57349b8551357665a3aaaed7b40be076e5a664acb79dccaad44ba297d13"
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-irrelevant_name_missing",
+      "entity": "213800O3V1CRPPJBHE72",
+      "variant": "irrelevant_name_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "213800UPS1QEE4TD3T45"
+      },
+      "source_answerable": true,
+      "source_sha256": "48a3b57349b8551357665a3aaaed7b40be076e5a664acb79dccaad44ba297d13"
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-retrieval_relation_missing",
+      "entity": "213800O3V1CRPPJBHE72",
+      "variant": "retrieval_relation_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "213800UPS1QEE4TD3T45"
+      },
+      "source_answerable": true,
+      "source_sha256": "48a3b57349b8551357665a3aaaed7b40be076e5a664acb79dccaad44ba297d13"
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-retrieval_type_missing",
+      "entity": "213800O3V1CRPPJBHE72",
+      "variant": "retrieval_type_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "213800UPS1QEE4TD3T45"
+      },
+      "source_answerable": true,
+      "source_sha256": "48a3b57349b8551357665a3aaaed7b40be076e5a664acb79dccaad44ba297d13"
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-source_relation_missing",
+      "entity": "213800O3V1CRPPJBHE72",
+      "variant": "source_relation_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "213800UPS1QEE4TD3T45"
+      },
+      "source_answerable": false,
+      "source_sha256": "0b8b1479a5b73b72b8f1d6d6b3da4bc44a4c675d276d3fb1ffdbce0231e6d252"
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-wrong_class",
+      "entity": "213800O3V1CRPPJBHE72",
+      "variant": "wrong_class",
+      "gold": {
+        "kind": "parent",
+        "value": "213800UPS1QEE4TD3T45"
+      },
+      "source_answerable": false,
+      "source_sha256": "630dfe75ec8f4922492cb3150ba5547b78211cdf55729784805d53d08a5665a3"
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-wrong_parent",
+      "entity": "213800O3V1CRPPJBHE72",
+      "variant": "wrong_parent",
+      "gold": {
+        "kind": "parent",
+        "value": "213800UPS1QEE4TD3T45"
+      },
+      "source_answerable": false,
+      "source_sha256": "b57bcb6886c9a02ea8c5504fe29bd8b5b3af249e4835167d45b2649b1c8d8369"
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-clean",
+      "entity": "213800NEQZZSSJB6N265",
+      "variant": "clean",
+      "gold": {
+        "kind": "parent",
+        "value": "984500B398CEA8AC9530"
+      },
+      "source_answerable": true,
+      "source_sha256": "b60bc15455016d3bd82a2bca1e6b63c73ff933f030bf6e01ba5de279b75f29cb"
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-irrelevant_name_missing",
+      "entity": "213800NEQZZSSJB6N265",
+      "variant": "irrelevant_name_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "984500B398CEA8AC9530"
+      },
+      "source_answerable": true,
+      "source_sha256": "b60bc15455016d3bd82a2bca1e6b63c73ff933f030bf6e01ba5de279b75f29cb"
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-retrieval_relation_missing",
+      "entity": "213800NEQZZSSJB6N265",
+      "variant": "retrieval_relation_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "984500B398CEA8AC9530"
+      },
+      "source_answerable": true,
+      "source_sha256": "b60bc15455016d3bd82a2bca1e6b63c73ff933f030bf6e01ba5de279b75f29cb"
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-retrieval_type_missing",
+      "entity": "213800NEQZZSSJB6N265",
+      "variant": "retrieval_type_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "984500B398CEA8AC9530"
+      },
+      "source_answerable": true,
+      "source_sha256": "b60bc15455016d3bd82a2bca1e6b63c73ff933f030bf6e01ba5de279b75f29cb"
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-source_relation_missing",
+      "entity": "213800NEQZZSSJB6N265",
+      "variant": "source_relation_missing",
+      "gold": {
+        "kind": "parent",
+        "value": "984500B398CEA8AC9530"
+      },
+      "source_answerable": false,
+      "source_sha256": "78b58d70dc79e00581f1d24181c22f75ec8714c94b7b231741bbe98684a69383"
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-wrong_class",
+      "entity": "213800NEQZZSSJB6N265",
+      "variant": "wrong_class",
+      "gold": {
+        "kind": "parent",
+        "value": "984500B398CEA8AC9530"
+      },
+      "source_answerable": false,
+      "source_sha256": "f9f3f9c474f446ef1b134537cc64cb7525fb117c74f4bbe16026a83df04f905a"
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-wrong_parent",
+      "entity": "213800NEQZZSSJB6N265",
+      "variant": "wrong_parent",
+      "gold": {
+        "kind": "parent",
+        "value": "984500B398CEA8AC9530"
+      },
+      "source_answerable": false,
+      "source_sha256": "2c886aaf7dba2e5161d9334d9a1fc9f4665b722ce3018ae92d4c2e6995994571"
+    },
+    {
+      "case_id": "1595B882DM2S0WNRLT42-clean",
+      "entity": "1595B882DM2S0WNRLT42",
+      "variant": "clean",
+      "gold": {
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "source_answerable": true,
+      "source_sha256": "606916a729876184efc6a132c271d6ce8031bce7c62f02c2583335021e8e9cb9"
+    },
+    {
+      "case_id": "1595B882DM2S0WNRLT42-irrelevant_name_missing",
+      "entity": "1595B882DM2S0WNRLT42",
+      "variant": "irrelevant_name_missing",
+      "gold": {
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "source_answerable": true,
+      "source_sha256": "606916a729876184efc6a132c271d6ce8031bce7c62f02c2583335021e8e9cb9"
+    },
+    {
+      "case_id": "1595B882DM2S0WNRLT42-retrieval_exception_missing",
+      "entity": "1595B882DM2S0WNRLT42",
+      "variant": "retrieval_exception_missing",
+      "gold": {
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "source_answerable": true,
+      "source_sha256": "606916a729876184efc6a132c271d6ce8031bce7c62f02c2583335021e8e9cb9"
+    },
+    {
+      "case_id": "1595B882DM2S0WNRLT42-source_exception_missing",
+      "entity": "1595B882DM2S0WNRLT42",
+      "variant": "source_exception_missing",
+      "gold": {
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "source_answerable": false,
+      "source_sha256": "3352dfcf21ee902d32463468ae49a27b2850bb860122402c86fbf79e5fbc21e8"
+    },
+    {
+      "case_id": "1595B882DM2S0WNRLT42-invalid_reason",
+      "entity": "1595B882DM2S0WNRLT42",
+      "variant": "invalid_reason",
+      "gold": {
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "source_answerable": false,
+      "source_sha256": "c3ee5c28788d14893a9cf8448481576f0ef5ad11efe5a56d2fb3d50c78493f4f"
+    },
+    {
+      "case_id": "15958I1JYL2YQGVOUO90-clean",
+      "entity": "15958I1JYL2YQGVOUO90",
+      "variant": "clean",
+      "gold": {
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "source_answerable": true,
+      "source_sha256": "1f207983212a4b5adce7c4ee3cfbb8ed488c1a612a0fcd65974269e9d7231d27"
+    },
+    {
+      "case_id": "15958I1JYL2YQGVOUO90-irrelevant_name_missing",
+      "entity": "15958I1JYL2YQGVOUO90",
+      "variant": "irrelevant_name_missing",
+      "gold": {
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "source_answerable": true,
+      "source_sha256": "1f207983212a4b5adce7c4ee3cfbb8ed488c1a612a0fcd65974269e9d7231d27"
+    },
+    {
+      "case_id": "15958I1JYL2YQGVOUO90-retrieval_exception_missing",
+      "entity": "15958I1JYL2YQGVOUO90",
+      "variant": "retrieval_exception_missing",
+      "gold": {
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "source_answerable": true,
+      "source_sha256": "1f207983212a4b5adce7c4ee3cfbb8ed488c1a612a0fcd65974269e9d7231d27"
+    },
+    {
+      "case_id": "15958I1JYL2YQGVOUO90-source_exception_missing",
+      "entity": "15958I1JYL2YQGVOUO90",
+      "variant": "source_exception_missing",
+      "gold": {
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "source_answerable": false,
+      "source_sha256": "c4245d210a9b61df3c2f1ad24cdaec0cf635973a64cbe56ad70ce453d60d5c4c"
+    },
+    {
+      "case_id": "15958I1JYL2YQGVOUO90-invalid_reason",
+      "entity": "15958I1JYL2YQGVOUO90",
+      "variant": "invalid_reason",
+      "gold": {
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "source_answerable": false,
+      "source_sha256": "f7a703da0ef39e9d7c4d4a2135f536a6f7335307f12a7f215e6a3ed0078cb949"
+    },
+    {
+      "case_id": "097900CAKA0000129470-clean",
+      "entity": "097900CAKA0000129470",
+      "variant": "clean",
+      "gold": {
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "source_answerable": true,
+      "source_sha256": "ca639af82ee742e45018d54241d800c4a052b2af404451977afe737ac415a2de"
+    },
+    {
+      "case_id": "097900CAKA0000129470-irrelevant_name_missing",
+      "entity": "097900CAKA0000129470",
+      "variant": "irrelevant_name_missing",
+      "gold": {
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "source_answerable": true,
+      "source_sha256": "ca639af82ee742e45018d54241d800c4a052b2af404451977afe737ac415a2de"
+    },
+    {
+      "case_id": "097900CAKA0000129470-retrieval_exception_missing",
+      "entity": "097900CAKA0000129470",
+      "variant": "retrieval_exception_missing",
+      "gold": {
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "source_answerable": true,
+      "source_sha256": "ca639af82ee742e45018d54241d800c4a052b2af404451977afe737ac415a2de"
+    },
+    {
+      "case_id": "097900CAKA0000129470-source_exception_missing",
+      "entity": "097900CAKA0000129470",
+      "variant": "source_exception_missing",
+      "gold": {
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "source_answerable": false,
+      "source_sha256": "65c185499df76975528258f1a3f3514cceed0dc162477bc5186410455a3f6ba6"
+    },
+    {
+      "case_id": "097900CAKA0000129470-invalid_reason",
+      "entity": "097900CAKA0000129470",
+      "variant": "invalid_reason",
+      "gold": {
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "source_answerable": false,
+      "source_sha256": "e8ee91eb3032575b90d905ffed7376927172310dd2214af20bdb3ce35f77b449"
+    },
+    {
+      "case_id": "097900BJMS0000222551-clean",
+      "entity": "097900BJMS0000222551",
+      "variant": "clean",
+      "gold": {
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "source_answerable": true,
+      "source_sha256": "2fc9627595ea522f22301167e0aab6b8483058b4b0a20fe71c0f8b87688005a0"
+    },
+    {
+      "case_id": "097900BJMS0000222551-irrelevant_name_missing",
+      "entity": "097900BJMS0000222551",
+      "variant": "irrelevant_name_missing",
+      "gold": {
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "source_answerable": true,
+      "source_sha256": "2fc9627595ea522f22301167e0aab6b8483058b4b0a20fe71c0f8b87688005a0"
+    },
+    {
+      "case_id": "097900BJMS0000222551-retrieval_exception_missing",
+      "entity": "097900BJMS0000222551",
+      "variant": "retrieval_exception_missing",
+      "gold": {
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "source_answerable": true,
+      "source_sha256": "2fc9627595ea522f22301167e0aab6b8483058b4b0a20fe71c0f8b87688005a0"
+    },
+    {
+      "case_id": "097900BJMS0000222551-source_exception_missing",
+      "entity": "097900BJMS0000222551",
+      "variant": "source_exception_missing",
+      "gold": {
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "source_answerable": false,
+      "source_sha256": "ea34b44c20cf828b346f34ee9183f5a461cea257680068037505d2454cc18227"
+    },
+    {
+      "case_id": "097900BJMS0000222551-invalid_reason",
+      "entity": "097900BJMS0000222551",
+      "variant": "invalid_reason",
+      "gold": {
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "source_answerable": false,
+      "source_sha256": "56799bb2f6c57f0f2b8250ccc19cdec9a4941670e663b90f0e4d29916f72d2e6"
+    },
+    {
+      "case_id": "1595JWFJN3YVDLUA8W40-clean",
+      "entity": "1595JWFJN3YVDLUA8W40",
+      "variant": "clean",
+      "gold": {
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "source_answerable": true,
+      "source_sha256": "a389c7f9cb8d8ebd966cafe0d0c82dcd588cc9d795eab9cc66441bb0cb057bf8"
+    },
+    {
+      "case_id": "1595JWFJN3YVDLUA8W40-irrelevant_name_missing",
+      "entity": "1595JWFJN3YVDLUA8W40",
+      "variant": "irrelevant_name_missing",
+      "gold": {
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "source_answerable": true,
+      "source_sha256": "a389c7f9cb8d8ebd966cafe0d0c82dcd588cc9d795eab9cc66441bb0cb057bf8"
+    },
+    {
+      "case_id": "1595JWFJN3YVDLUA8W40-retrieval_exception_missing",
+      "entity": "1595JWFJN3YVDLUA8W40",
+      "variant": "retrieval_exception_missing",
+      "gold": {
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "source_answerable": true,
+      "source_sha256": "a389c7f9cb8d8ebd966cafe0d0c82dcd588cc9d795eab9cc66441bb0cb057bf8"
+    },
+    {
+      "case_id": "1595JWFJN3YVDLUA8W40-source_exception_missing",
+      "entity": "1595JWFJN3YVDLUA8W40",
+      "variant": "source_exception_missing",
+      "gold": {
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "source_answerable": false,
+      "source_sha256": "798102815ad7e943dd8ab87f4125170518b8dc29c65ccd404a1a95ed8bfe7ca7"
+    },
+    {
+      "case_id": "1595JWFJN3YVDLUA8W40-invalid_reason",
+      "entity": "1595JWFJN3YVDLUA8W40",
+      "variant": "invalid_reason",
+      "gold": {
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "source_answerable": false,
+      "source_sha256": "21d0a869cf6649a20095ffea019d04260a788366fb87385a4371ad0ebd4bdc1c"
+    },
+    {
+      "case_id": "1595NKVJYRKJHS82SR27-clean",
+      "entity": "1595NKVJYRKJHS82SR27",
+      "variant": "clean",
+      "gold": {
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "source_answerable": true,
+      "source_sha256": "3104a1d1e7df16a818882ac7a1a00a0016c615dfa76ce0365826d75833d330fd"
+    },
+    {
+      "case_id": "1595NKVJYRKJHS82SR27-irrelevant_name_missing",
+      "entity": "1595NKVJYRKJHS82SR27",
+      "variant": "irrelevant_name_missing",
+      "gold": {
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "source_answerable": true,
+      "source_sha256": "3104a1d1e7df16a818882ac7a1a00a0016c615dfa76ce0365826d75833d330fd"
+    },
+    {
+      "case_id": "1595NKVJYRKJHS82SR27-retrieval_exception_missing",
+      "entity": "1595NKVJYRKJHS82SR27",
+      "variant": "retrieval_exception_missing",
+      "gold": {
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "source_answerable": true,
+      "source_sha256": "3104a1d1e7df16a818882ac7a1a00a0016c615dfa76ce0365826d75833d330fd"
+    },
+    {
+      "case_id": "1595NKVJYRKJHS82SR27-source_exception_missing",
+      "entity": "1595NKVJYRKJHS82SR27",
+      "variant": "source_exception_missing",
+      "gold": {
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "source_answerable": false,
+      "source_sha256": "becf0b6ff7ef4900120fd311c32d3520f6a0000bc91f67ff035abde6553b9c0e"
+    },
+    {
+      "case_id": "1595NKVJYRKJHS82SR27-invalid_reason",
+      "entity": "1595NKVJYRKJHS82SR27",
+      "variant": "invalid_reason",
+      "gold": {
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "source_answerable": false,
+      "source_sha256": "408866a3e7f415afaf3403e02fadabc2f6395e49961ba525dcb76850a0951b2b"
+    }
+  ],
+  "rows": [
+    {
+      "case_id": "213800O3V1CRPPJBHE72-clean",
+      "entity": "213800O3V1CRPPJBHE72",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800UPS1QEE4TD3T45"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.002,
+        "reported_usd": 9.6012e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595B882DM2S0WNRLT42-clean",
+      "entity": "1595B882DM2S0WNRLT42",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.002,
+        "reported_usd": 7.8792e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "15958I1JYL2YQGVOUO90-clean",
+      "entity": "15958I1JYL2YQGVOUO90",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.002,
+        "reported_usd": 7.862399999999998e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-source_relation_missing",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.004,
+        "reported_usd": 0.00014061599999999998,
+        "missing_cost": 0
+      },
+      "variant": "source_relation_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "097900CAKA0000129470-clean",
+      "entity": "097900CAKA0000129470",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.002,
+        "reported_usd": 7.916999999999999e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-irrelevant_name_missing",
+      "entity": "2138008B64Z8G7M5YU77",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "KGCEPHLVVKVRZYO1T647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.002,
+        "reported_usd": 9.172799999999996e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-irrelevant_name_missing",
+      "entity": "213800CY7UK7DYGWPL83",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500BDB0DE6F1AF647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.002,
+        "reported_usd": 9.197999999999997e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-irrelevant_name_missing",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800A357TKB2TD9U78"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.286199999999998e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-wrong_parent",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "097900BJMS0000222551"
+      },
+      "correct": false,
+      "wrong": true,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.773400000000004e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_parent",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-retrieval_relation_missing",
+      "entity": "2138008B64Z8G7M5YU77",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "KGCEPHLVVKVRZYO1T647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001808939999999999,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_relation_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-clean",
+      "entity": "213800CY7UK7DYGWPL83",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500BDB0DE6F1AF647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.6348e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "097900CAKA0000129470-retrieval_exception_missing",
+      "entity": "097900CAKA0000129470",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014972999999999983,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_exception_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595B882DM2S0WNRLT42-invalid_reason",
+      "entity": "1595B882DM2S0WNRLT42",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.862400000000001e-05,
+        "missing_cost": 0
+      },
+      "variant": "invalid_reason",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-wrong_parent",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "097900BJMS0000222551"
+      },
+      "correct": false,
+      "wrong": true,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.748200000000008e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_parent",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-source_relation_missing",
+      "entity": "213800NEQZZSSJB6N265",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00013944000000000022,
+        "missing_cost": 0
+      },
+      "variant": "source_relation_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "1595JWFJN3YVDLUA8W40-retrieval_exception_missing",
+      "entity": "1595JWFJN3YVDLUA8W40",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014838599999999992,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_exception_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595B882DM2S0WNRLT42-source_exception_missing",
+      "entity": "1595B882DM2S0WNRLT42",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014053200000000007,
+        "missing_cost": 0
+      },
+      "variant": "source_exception_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "097900CAKA0000129470-irrelevant_name_missing",
+      "entity": "097900CAKA0000129470",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.467600000000008e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-retrieval_type_missing",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800I5L3K7AT7A4R20"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001843379999999996,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_type_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-retrieval_type_missing",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800I5L3K7AT7A4R20"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001843379999999996,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_type_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595JWFJN3YVDLUA8W40-source_exception_missing",
+      "entity": "1595JWFJN3YVDLUA8W40",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00013994400000000035,
+        "missing_cost": 0
+      },
+      "variant": "source_exception_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-source_relation_missing",
+      "entity": "213800O3V1CRPPJBHE72",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001396920000000003,
+        "missing_cost": 0
+      },
+      "variant": "source_relation_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "15958I1JYL2YQGVOUO90-irrelevant_name_missing",
+      "entity": "15958I1JYL2YQGVOUO90",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.434e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-wrong_parent",
+      "entity": "213800NEQZZSSJB6N265",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "097900BJMS0000222551"
+      },
+      "correct": false,
+      "wrong": true,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.706200000000019e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_parent",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595B882DM2S0WNRLT42-irrelevant_name_missing",
+      "entity": "1595B882DM2S0WNRLT42",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.434e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-irrelevant_name_missing",
+      "entity": "2138008B64Z8G7M5YU77",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "KGCEPHLVVKVRZYO1T647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.172800000000012e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-wrong_class",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.773399999999993e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_class",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-retrieval_relation_missing",
+      "entity": "213800O3V1CRPPJBHE72",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800UPS1QEE4TD3T45"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001795500000000001,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_relation_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595NKVJYRKJHS82SR27-clean",
+      "entity": "1595NKVJYRKJHS82SR27",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.820400000000012e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595JWFJN3YVDLUA8W40-irrelevant_name_missing",
+      "entity": "1595JWFJN3YVDLUA8W40",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.400399999999991e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-retrieval_type_missing",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800I5L3K7AT7A4R20"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001843379999999996,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_type_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-retrieval_relation_missing",
+      "entity": "213800NEQZZSSJB6N265",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500B398CEA8AC9530"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001804319999999999,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_relation_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-retrieval_type_missing",
+      "entity": "213800CY7UK7DYGWPL83",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500BDB0DE6F1AF647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00018265800000000004,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_type_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-retrieval_type_missing",
+      "entity": "2138008B64Z8G7M5YU77",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "KGCEPHLVVKVRZYO1T647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001834139999999998,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_type_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-source_relation_missing",
+      "entity": "213800CY7UK7DYGWPL83",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00013986000000000033,
+        "missing_cost": 0
+      },
+      "variant": "source_relation_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-wrong_parent",
+      "entity": "213800O3V1CRPPJBHE72",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "097900BJMS0000222551"
+      },
+      "correct": false,
+      "wrong": true,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.718799999999979e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_parent",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-source_relation_missing",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014061599999999966,
+        "missing_cost": 0
+      },
+      "variant": "source_relation_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-source_relation_missing",
+      "entity": "213800NEQZZSSJB6N265",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00013943999999999936,
+        "missing_cost": 0
+      },
+      "variant": "source_relation_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "1595JWFJN3YVDLUA8W40-irrelevant_name_missing",
+      "entity": "1595JWFJN3YVDLUA8W40",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.400399999999991e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595B882DM2S0WNRLT42-irrelevant_name_missing",
+      "entity": "1595B882DM2S0WNRLT42",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.434e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-clean",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800A357TKB2TD9U78"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.710399999999977e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-clean",
+      "entity": "2138008B64Z8G7M5YU77",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "KGCEPHLVVKVRZYO1T647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.655800000000006e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-irrelevant_name_missing",
+      "entity": "213800O3V1CRPPJBHE72",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800UPS1QEE4TD3T45"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.172800000000012e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "097900BJMS0000222551-clean",
+      "entity": "097900BJMS0000222551",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.950600000000002e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-clean",
+      "entity": "213800CY7UK7DYGWPL83",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500BDB0DE6F1AF647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.001999999999999988,
+        "reported_usd": 9.634799999999957e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "097900BJMS0000222551-invalid_reason",
+      "entity": "097900BJMS0000222551",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.933799999999998e-05,
+        "missing_cost": 0
+      },
+      "variant": "invalid_reason",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-wrong_class",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.74820000000003e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_class",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-retrieval_relation_missing",
+      "entity": "213800CY7UK7DYGWPL83",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500BDB0DE6F1AF647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00018009600000000025,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_relation_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-clean",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800I5L3K7AT7A4R20"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.727199999999981e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-wrong_parent",
+      "entity": "213800O3V1CRPPJBHE72",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "097900BJMS0000222551"
+      },
+      "correct": false,
+      "wrong": true,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.718799999999979e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_parent",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595B882DM2S0WNRLT42-retrieval_exception_missing",
+      "entity": "1595B882DM2S0WNRLT42",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014905800000000052,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_exception_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595B882DM2S0WNRLT42-retrieval_exception_missing",
+      "entity": "1595B882DM2S0WNRLT42",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014905800000000052,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_exception_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-retrieval_relation_missing",
+      "entity": "2138008B64Z8G7M5YU77",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "KGCEPHLVVKVRZYO1T647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00018089400000000002,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_relation_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-clean",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800I5L3K7AT7A4R20"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.727199999999981e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "097900CAKA0000129470-invalid_reason",
+      "entity": "097900CAKA0000129470",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.900199999999989e-05,
+        "missing_cost": 0
+      },
+      "variant": "invalid_reason",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-wrong_class",
+      "entity": "2138008B64Z8G7M5YU77",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.861600000000015e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_class",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "1595NKVJYRKJHS82SR27-clean",
+      "entity": "1595NKVJYRKJHS82SR27",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.820400000000012e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595JWFJN3YVDLUA8W40-source_exception_missing",
+      "entity": "1595JWFJN3YVDLUA8W40",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00013994399999999949,
+        "missing_cost": 0
+      },
+      "variant": "source_exception_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-clean",
+      "entity": "213800O3V1CRPPJBHE72",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800UPS1QEE4TD3T45"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.601200000000035e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-source_relation_missing",
+      "entity": "2138008B64Z8G7M5YU77",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001422960000000001,
+        "missing_cost": 0
+      },
+      "variant": "source_relation_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "097900CAKA0000129470-source_exception_missing",
+      "entity": "097900CAKA0000129470",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001411199999999998,
+        "missing_cost": 0
+      },
+      "variant": "source_exception_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-wrong_parent",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "097900BJMS0000222551"
+      },
+      "correct": false,
+      "wrong": true,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.773400000000036e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_parent",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-retrieval_relation_missing",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800A357TKB2TD9U78"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00018139800000000015,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_relation_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "097900CAKA0000129470-irrelevant_name_missing",
+      "entity": "097900CAKA0000129470",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.467600000000008e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-clean",
+      "entity": "213800NEQZZSSJB6N265",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500B398CEA8AC9530"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.651599999999962e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595NKVJYRKJHS82SR27-invalid_reason",
+      "entity": "1595NKVJYRKJHS82SR27",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.803600000000008e-05,
+        "missing_cost": 0
+      },
+      "variant": "invalid_reason",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-wrong_class",
+      "entity": "213800O3V1CRPPJBHE72",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.718799999999979e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_class",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-retrieval_type_missing",
+      "entity": "213800O3V1CRPPJBHE72",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800UPS1QEE4TD3T45"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00018207000000000032,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_type_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-retrieval_relation_missing",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800I5L3K7AT7A4R20"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00018165000000000021,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_relation_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-irrelevant_name_missing",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800I5L3K7AT7A4R20"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.298800000000045e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-source_relation_missing",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014019599999999868,
+        "missing_cost": 0
+      },
+      "variant": "source_relation_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-irrelevant_name_missing",
+      "entity": "213800CY7UK7DYGWPL83",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500BDB0DE6F1AF647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.198000000000019e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-retrieval_type_missing",
+      "entity": "2138008B64Z8G7M5YU77",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "KGCEPHLVVKVRZYO1T647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001834139999999998,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_type_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-clean",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800I5L3K7AT7A4R20"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.727200000000068e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595JWFJN3YVDLUA8W40-clean",
+      "entity": "1595JWFJN3YVDLUA8W40",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.841400000000061e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "097900BJMS0000222551-retrieval_exception_missing",
+      "entity": "097900BJMS0000222551",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00015040200000000087,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_exception_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "097900BJMS0000222551-irrelevant_name_missing",
+      "entity": "097900BJMS0000222551",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.467599999999922e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-source_relation_missing",
+      "entity": "2138008B64Z8G7M5YU77",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001422960000000001,
+        "missing_cost": 0
+      },
+      "variant": "source_relation_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "1595B882DM2S0WNRLT42-clean",
+      "entity": "1595B882DM2S0WNRLT42",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.87919999999994e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "097900BJMS0000222551-retrieval_exception_missing",
+      "entity": "097900BJMS0000222551",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00015040200000000087,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_exception_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-retrieval_relation_missing",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800I5L3K7AT7A4R20"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00018165000000000021,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_relation_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-retrieval_relation_missing",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800I5L3K7AT7A4R20"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00018165000000000021,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_relation_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595NKVJYRKJHS82SR27-irrelevant_name_missing",
+      "entity": "1595NKVJYRKJHS82SR27",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.400400000000078e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-retrieval_relation_missing",
+      "entity": "213800NEQZZSSJB6N265",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500B398CEA8AC9530"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00018043199999999947,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_relation_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-irrelevant_name_missing",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800A357TKB2TD9U78"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.286200000000085e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595NKVJYRKJHS82SR27-invalid_reason",
+      "entity": "1595NKVJYRKJHS82SR27",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.803600000000008e-05,
+        "missing_cost": 0
+      },
+      "variant": "invalid_reason",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-wrong_parent",
+      "entity": "213800CY7UK7DYGWPL83",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "097900BJMS0000222551"
+      },
+      "correct": false,
+      "wrong": true,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.727200000000068e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_parent",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595JWFJN3YVDLUA8W40-invalid_reason",
+      "entity": "1595JWFJN3YVDLUA8W40",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.824600000000057e-05,
+        "missing_cost": 0
+      },
+      "variant": "invalid_reason",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-clean",
+      "entity": "213800CY7UK7DYGWPL83",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500BDB0DE6F1AF647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.001999999999999974,
+        "reported_usd": 9.634799999999957e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-retrieval_type_missing",
+      "entity": "2138008B64Z8G7M5YU77",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "KGCEPHLVVKVRZYO1T647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001834139999999998,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_type_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-clean",
+      "entity": "2138008B64Z8G7M5YU77",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "KGCEPHLVVKVRZYO1T647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.655800000000006e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-retrieval_relation_missing",
+      "entity": "213800NEQZZSSJB6N265",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500B398CEA8AC9530"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00018043199999999947,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_relation_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "15958I1JYL2YQGVOUO90-retrieval_exception_missing",
+      "entity": "15958I1JYL2YQGVOUO90",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001487219999999987,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_exception_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-wrong_parent",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "097900BJMS0000222551"
+      },
+      "correct": false,
+      "wrong": true,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.748199999999943e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_parent",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-wrong_class",
+      "entity": "213800O3V1CRPPJBHE72",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.718799999999979e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_class",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-wrong_parent",
+      "entity": "2138008B64Z8G7M5YU77",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "097900BJMS0000222551"
+      },
+      "correct": false,
+      "wrong": true,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.861599999999929e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_parent",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "097900CAKA0000129470-source_exception_missing",
+      "entity": "097900CAKA0000129470",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014112000000000152,
+        "missing_cost": 0
+      },
+      "variant": "source_exception_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-wrong_class",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.773400000000036e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_class",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "1595B882DM2S0WNRLT42-invalid_reason",
+      "entity": "1595B882DM2S0WNRLT42",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.862399999999936e-05,
+        "missing_cost": 0
+      },
+      "variant": "invalid_reason",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-wrong_parent",
+      "entity": "213800NEQZZSSJB6N265",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "097900BJMS0000222551"
+      },
+      "correct": false,
+      "wrong": true,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.706200000000019e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_parent",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-retrieval_type_missing",
+      "entity": "213800O3V1CRPPJBHE72",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800UPS1QEE4TD3T45"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00018206999999999945,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_type_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-irrelevant_name_missing",
+      "entity": "2138008B64Z8G7M5YU77",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "KGCEPHLVVKVRZYO1T647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.172799999999925e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-retrieval_relation_missing",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800A357TKB2TD9U78"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00018139800000000102,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_relation_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-source_relation_missing",
+      "entity": "213800O3V1CRPPJBHE72",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001396920000000003,
+        "missing_cost": 0
+      },
+      "variant": "source_relation_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-wrong_class",
+      "entity": "213800CY7UK7DYGWPL83",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.727200000000068e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_class",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "097900CAKA0000129470-retrieval_exception_missing",
+      "entity": "097900CAKA0000129470",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001497300000000007,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_exception_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595B882DM2S0WNRLT42-retrieval_exception_missing",
+      "entity": "1595B882DM2S0WNRLT42",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001490579999999988,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_exception_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595NKVJYRKJHS82SR27-retrieval_exception_missing",
+      "entity": "1595NKVJYRKJHS82SR27",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014796599999999938,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_exception_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-irrelevant_name_missing",
+      "entity": "213800NEQZZSSJB6N265",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500B398CEA8AC9530"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.235800000000072e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "097900BJMS0000222551-retrieval_exception_missing",
+      "entity": "097900BJMS0000222551",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00015040200000000087,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_exception_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-retrieval_relation_missing",
+      "entity": "213800O3V1CRPPJBHE72",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800UPS1QEE4TD3T45"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001795499999999988,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_relation_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-clean",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800A357TKB2TD9U78"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.710400000000063e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-retrieval_type_missing",
+      "entity": "213800NEQZZSSJB6N265",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500B398CEA8AC9530"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00018299399999999882,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_type_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "097900CAKA0000129470-invalid_reason",
+      "entity": "097900CAKA0000129470",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.900199999999989e-05,
+        "missing_cost": 0
+      },
+      "variant": "invalid_reason",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-wrong_class",
+      "entity": "2138008B64Z8G7M5YU77",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.861599999999929e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_class",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "1595B882DM2S0WNRLT42-irrelevant_name_missing",
+      "entity": "1595B882DM2S0WNRLT42",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.433999999999913e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-irrelevant_name_missing",
+      "entity": "213800O3V1CRPPJBHE72",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800UPS1QEE4TD3T45"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.172799999999925e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-retrieval_relation_missing",
+      "entity": "2138008B64Z8G7M5YU77",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "KGCEPHLVVKVRZYO1T647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001808940000000009,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_relation_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-irrelevant_name_missing",
+      "entity": "213800O3V1CRPPJBHE72",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800UPS1QEE4TD3T45"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.172799999999925e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "097900BJMS0000222551-irrelevant_name_missing",
+      "entity": "097900BJMS0000222551",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.467599999999922e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-wrong_parent",
+      "entity": "2138008B64Z8G7M5YU77",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "097900BJMS0000222551"
+      },
+      "correct": false,
+      "wrong": true,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.861599999999929e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_parent",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "15958I1JYL2YQGVOUO90-irrelevant_name_missing",
+      "entity": "15958I1JYL2YQGVOUO90",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.433999999999913e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595B882DM2S0WNRLT42-source_exception_missing",
+      "entity": "1595B882DM2S0WNRLT42",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014053199999999877,
+        "missing_cost": 0
+      },
+      "variant": "source_exception_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-source_relation_missing",
+      "entity": "213800O3V1CRPPJBHE72",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001396920000000003,
+        "missing_cost": 0
+      },
+      "variant": "source_relation_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "1595NKVJYRKJHS82SR27-source_exception_missing",
+      "entity": "1595NKVJYRKJHS82SR27",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001395239999999985,
+        "missing_cost": 0
+      },
+      "variant": "source_exception_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-wrong_parent",
+      "entity": "213800O3V1CRPPJBHE72",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "097900BJMS0000222551"
+      },
+      "correct": false,
+      "wrong": true,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.718799999999979e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_parent",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595JWFJN3YVDLUA8W40-clean",
+      "entity": "1595JWFJN3YVDLUA8W40",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.841400000000061e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-retrieval_relation_missing",
+      "entity": "213800O3V1CRPPJBHE72",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800UPS1QEE4TD3T45"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001795499999999988,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_relation_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595NKVJYRKJHS82SR27-irrelevant_name_missing",
+      "entity": "1595NKVJYRKJHS82SR27",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.400400000000078e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "097900CAKA0000129470-retrieval_exception_missing",
+      "entity": "097900CAKA0000129470",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001497300000000007,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_exception_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595B882DM2S0WNRLT42-clean",
+      "entity": "1595B882DM2S0WNRLT42",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.87919999999994e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595JWFJN3YVDLUA8W40-source_exception_missing",
+      "entity": "1595JWFJN3YVDLUA8W40",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00013994400000000122,
+        "missing_cost": 0
+      },
+      "variant": "source_exception_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "1595NKVJYRKJHS82SR27-source_exception_missing",
+      "entity": "1595NKVJYRKJHS82SR27",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00013952400000000198,
+        "missing_cost": 0
+      },
+      "variant": "source_exception_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-source_relation_missing",
+      "entity": "213800CY7UK7DYGWPL83",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001398599999999986,
+        "missing_cost": 0
+      },
+      "variant": "source_relation_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-retrieval_type_missing",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800A357TKB2TD9U78"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00018408599999999997,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_type_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-source_relation_missing",
+      "entity": "2138008B64Z8G7M5YU77",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001422960000000001,
+        "missing_cost": 0
+      },
+      "variant": "source_relation_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "1595JWFJN3YVDLUA8W40-invalid_reason",
+      "entity": "1595JWFJN3YVDLUA8W40",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.824600000000057e-05,
+        "missing_cost": 0
+      },
+      "variant": "invalid_reason",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-wrong_class",
+      "entity": "213800NEQZZSSJB6N265",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.706199999999846e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_class",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-retrieval_type_missing",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800A357TKB2TD9U78"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00018408599999999997,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_type_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-wrong_class",
+      "entity": "213800CY7UK7DYGWPL83",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.727199999999894e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_class",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-retrieval_relation_missing",
+      "entity": "213800CY7UK7DYGWPL83",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500BDB0DE6F1AF647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00018009600000000112,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_relation_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-retrieval_type_missing",
+      "entity": "213800O3V1CRPPJBHE72",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800UPS1QEE4TD3T45"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00018206999999999945,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_type_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-retrieval_type_missing",
+      "entity": "213800CY7UK7DYGWPL83",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500BDB0DE6F1AF647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00018265799999999874,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_type_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595NKVJYRKJHS82SR27-irrelevant_name_missing",
+      "entity": "1595NKVJYRKJHS82SR27",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.400399999999904e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595JWFJN3YVDLUA8W40-retrieval_exception_missing",
+      "entity": "1595JWFJN3YVDLUA8W40",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014838600000000035,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_exception_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-irrelevant_name_missing",
+      "entity": "213800NEQZZSSJB6N265",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500B398CEA8AC9530"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.235800000000072e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-retrieval_relation_missing",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800A357TKB2TD9U78"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00018139799999999928,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_relation_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595B882DM2S0WNRLT42-source_exception_missing",
+      "entity": "1595B882DM2S0WNRLT42",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014053199999999877,
+        "missing_cost": 0
+      },
+      "variant": "source_exception_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-wrong_class",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.748199999999943e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_class",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "1595JWFJN3YVDLUA8W40-retrieval_exception_missing",
+      "entity": "1595JWFJN3YVDLUA8W40",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014838600000000035,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_exception_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595B882DM2S0WNRLT42-invalid_reason",
+      "entity": "1595B882DM2S0WNRLT42",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.862399999999936e-05,
+        "missing_cost": 0
+      },
+      "variant": "invalid_reason",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "097900CAKA0000129470-invalid_reason",
+      "entity": "097900CAKA0000129470",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.900200000000163e-05,
+        "missing_cost": 0
+      },
+      "variant": "invalid_reason",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-wrong_class",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.773399999999863e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_class",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-retrieval_type_missing",
+      "entity": "213800NEQZZSSJB6N265",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500B398CEA8AC9530"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001829940000000023,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_type_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "097900BJMS0000222551-invalid_reason",
+      "entity": "097900BJMS0000222551",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.933800000000171e-05,
+        "missing_cost": 0
+      },
+      "variant": "invalid_reason",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "15958I1JYL2YQGVOUO90-invalid_reason",
+      "entity": "15958I1JYL2YQGVOUO90",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.845600000000105e-05,
+        "missing_cost": 0
+      },
+      "variant": "invalid_reason",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "1595JWFJN3YVDLUA8W40-irrelevant_name_missing",
+      "entity": "1595JWFJN3YVDLUA8W40",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.400399999999904e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595JWFJN3YVDLUA8W40-invalid_reason",
+      "entity": "1595JWFJN3YVDLUA8W40",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.824600000000057e-05,
+        "missing_cost": 0
+      },
+      "variant": "invalid_reason",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-clean",
+      "entity": "213800NEQZZSSJB6N265",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500B398CEA8AC9530"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.651600000000135e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-wrong_class",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.748199999999943e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_class",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-clean",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800A357TKB2TD9U78"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.710400000000063e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-wrong_class",
+      "entity": "2138008B64Z8G7M5YU77",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.861599999999929e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_class",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-wrong_parent",
+      "entity": "213800CY7UK7DYGWPL83",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "097900BJMS0000222551"
+      },
+      "correct": false,
+      "wrong": true,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.727199999999894e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_parent",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "097900BJMS0000222551-irrelevant_name_missing",
+      "entity": "097900BJMS0000222551",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.467599999999922e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595NKVJYRKJHS82SR27-invalid_reason",
+      "entity": "1595NKVJYRKJHS82SR27",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.803600000000008e-05,
+        "missing_cost": 0
+      },
+      "variant": "invalid_reason",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-irrelevant_name_missing",
+      "entity": "213800NEQZZSSJB6N265",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500B398CEA8AC9530"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.235800000000072e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "097900CAKA0000129470-source_exception_missing",
+      "entity": "097900CAKA0000129470",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014112000000000152,
+        "missing_cost": 0
+      },
+      "variant": "source_exception_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "1595NKVJYRKJHS82SR27-retrieval_exception_missing",
+      "entity": "1595NKVJYRKJHS82SR27",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014796599999999938,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_exception_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "15958I1JYL2YQGVOUO90-clean",
+      "entity": "15958I1JYL2YQGVOUO90",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.862399999999936e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "15958I1JYL2YQGVOUO90-source_exception_missing",
+      "entity": "15958I1JYL2YQGVOUO90",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014019600000000215,
+        "missing_cost": 0
+      },
+      "variant": "source_exception_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-wrong_class",
+      "entity": "213800NEQZZSSJB6N265",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.706199999999846e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_class",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-clean",
+      "entity": "213800O3V1CRPPJBHE72",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800UPS1QEE4TD3T45"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.601199999999949e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "097900BJMS0000222551-source_exception_missing",
+      "entity": "097900BJMS0000222551",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001417920000000017,
+        "missing_cost": 0
+      },
+      "variant": "source_exception_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "1595NKVJYRKJHS82SR27-retrieval_exception_missing",
+      "entity": "1595NKVJYRKJHS82SR27",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014796599999999938,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_exception_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800O3V1CRPPJBHE72-wrong_class",
+      "entity": "213800O3V1CRPPJBHE72",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.718800000000152e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_class",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "1595NKVJYRKJHS82SR27-source_exception_missing",
+      "entity": "1595NKVJYRKJHS82SR27",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.003999999999999948,
+        "reported_usd": 0.00013952400000000198,
+        "missing_cost": 0
+      },
+      "variant": "source_exception_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "15958I1JYL2YQGVOUO90-invalid_reason",
+      "entity": "15958I1JYL2YQGVOUO90",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.845600000000105e-05,
+        "missing_cost": 0
+      },
+      "variant": "invalid_reason",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "15958I1JYL2YQGVOUO90-retrieval_exception_missing",
+      "entity": "15958I1JYL2YQGVOUO90",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014872200000000044,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_exception_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-irrelevant_name_missing",
+      "entity": "213800CY7UK7DYGWPL83",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500BDB0DE6F1AF647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.197999999999845e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-wrong_class",
+      "entity": "213800CY7UK7DYGWPL83",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.727199999999894e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_class",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "097900BJMS0000222551-clean",
+      "entity": "097900BJMS0000222551",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.950600000000002e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "097900BJMS0000222551-clean",
+      "entity": "097900BJMS0000222551",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.950600000000002e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-source_relation_missing",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014019600000000215,
+        "missing_cost": 0
+      },
+      "variant": "source_relation_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-retrieval_type_missing",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800A357TKB2TD9U78"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00018408599999999997,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_type_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-wrong_parent",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "097900BJMS0000222551"
+      },
+      "correct": false,
+      "wrong": true,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.748199999999943e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_parent",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-wrong_parent",
+      "entity": "213800NEQZZSSJB6N265",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "097900BJMS0000222551"
+      },
+      "correct": false,
+      "wrong": true,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.706199999999846e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_parent",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-retrieval_type_missing",
+      "entity": "213800NEQZZSSJB6N265",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500B398CEA8AC9530"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001829940000000023,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_type_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-retrieval_type_missing",
+      "entity": "213800CY7UK7DYGWPL83",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500BDB0DE6F1AF647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00018265799999999874,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_type_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-source_relation_missing",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014019600000000215,
+        "missing_cost": 0
+      },
+      "variant": "source_relation_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "15958I1JYL2YQGVOUO90-invalid_reason",
+      "entity": "15958I1JYL2YQGVOUO90",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.845600000000105e-05,
+        "missing_cost": 0
+      },
+      "variant": "invalid_reason",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-clean",
+      "entity": "2138008B64Z8G7M5YU77",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "KGCEPHLVVKVRZYO1T647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.655800000000006e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-irrelevant_name_missing",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800I5L3K7AT7A4R20"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.298799999999871e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "15958I1JYL2YQGVOUO90-clean",
+      "entity": "15958I1JYL2YQGVOUO90",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.862399999999936e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "15958I1JYL2YQGVOUO90-irrelevant_name_missing",
+      "entity": "15958I1JYL2YQGVOUO90",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.433999999999913e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595JWFJN3YVDLUA8W40-clean",
+      "entity": "1595JWFJN3YVDLUA8W40",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.841399999999887e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "1595NKVJYRKJHS82SR27-clean",
+      "entity": "1595NKVJYRKJHS82SR27",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.820399999999839e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-source_relation_missing",
+      "entity": "213800CY7UK7DYGWPL83",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001398599999999986,
+        "missing_cost": 0
+      },
+      "variant": "source_relation_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-irrelevant_name_missing",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800A357TKB2TD9U78"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.286199999999911e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-wrong_parent",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "097900BJMS0000222551"
+      },
+      "correct": false,
+      "wrong": true,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.773399999999863e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_parent",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "15958I1JYL2YQGVOUO90-source_exception_missing",
+      "entity": "15958I1JYL2YQGVOUO90",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014019600000000215,
+        "missing_cost": 0
+      },
+      "variant": "source_exception_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-wrong_parent",
+      "entity": "213800CY7UK7DYGWPL83",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "097900BJMS0000222551"
+      },
+      "correct": false,
+      "wrong": true,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.727199999999894e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_parent",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "097900BJMS0000222551-invalid_reason",
+      "entity": "097900BJMS0000222551",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.933800000000171e-05,
+        "missing_cost": 0
+      },
+      "variant": "invalid_reason",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "213800KDRZ6YFEH3Y618-source_relation_missing",
+      "entity": "213800KDRZ6YFEH3Y618",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014061600000000313,
+        "missing_cost": 0
+      },
+      "variant": "source_relation_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "15958I1JYL2YQGVOUO90-source_exception_missing",
+      "entity": "15958I1JYL2YQGVOUO90",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014019600000000215,
+        "missing_cost": 0
+      },
+      "variant": "source_exception_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "097900BJMS0000222551-source_exception_missing",
+      "entity": "097900BJMS0000222551",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001417920000000017,
+        "missing_cost": 0
+      },
+      "variant": "source_exception_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "097900CAKA0000129470-clean",
+      "entity": "097900CAKA0000129470",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.916999999999993e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "097900CAKA0000129470-irrelevant_name_missing",
+      "entity": "097900CAKA0000129470",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.467599999999922e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-clean",
+      "entity": "213800NEQZZSSJB6N265",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500B398CEA8AC9530"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.651600000000135e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "2138008ZXWJ4KGGBV289-irrelevant_name_missing",
+      "entity": "2138008ZXWJ4KGGBV289",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "213800I5L3K7AT7A4R20"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.298799999999871e-05,
+        "missing_cost": 0
+      },
+      "variant": "irrelevant_name_missing",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-wrong_class",
+      "entity": "213800NEQZZSSJB6N265",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.706199999999846e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_class",
+      "judgements": [
+        "fail"
+      ]
+    },
+    {
+      "case_id": "2138008B64Z8G7M5YU77-wrong_parent",
+      "entity": "2138008B64Z8G7M5YU77",
+      "repeat": 2,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "097900BJMS0000222551"
+      },
+      "correct": false,
+      "wrong": true,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 9.861599999999929e-05,
+        "missing_cost": 0
+      },
+      "variant": "wrong_parent",
+      "judgements": [
+        "pass"
+      ]
+    },
+    {
+      "case_id": "097900BJMS0000222551-source_exception_missing",
+      "entity": "097900BJMS0000222551",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.0001417920000000017,
+        "missing_cost": 0
+      },
+      "variant": "source_exception_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "15958I1JYL2YQGVOUO90-retrieval_exception_missing",
+      "entity": "15958I1JYL2YQGVOUO90",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NATURAL_PERSONS"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00014872200000000044,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_exception_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800CY7UK7DYGWPL83-retrieval_relation_missing",
+      "entity": "213800CY7UK7DYGWPL83",
+      "repeat": 1,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "parent",
+        "value": "984500BDB0DE6F1AF647"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00018009600000000112,
+        "missing_cost": 0
+      },
+      "variant": "retrieval_relation_missing",
+      "judgements": [
+        "unknown",
+        "pass"
+      ]
+    },
+    {
+      "case_id": "213800NEQZZSSJB6N265-source_relation_missing",
+      "entity": "213800NEQZZSSJB6N265",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "abstain",
+        "kind": null,
+        "value": null
+      },
+      "correct": false,
+      "wrong": false,
+      "source_answerable": false,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 1,
+      "cost": {
+        "calls": 2,
+        "reserved_usd": 0.0040000000000000036,
+        "reported_usd": 0.00013943999999999762,
+        "missing_cost": 0
+      },
+      "variant": "source_relation_missing",
+      "judgements": [
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "case_id": "097900CAKA0000129470-clean",
+      "entity": "097900CAKA0000129470",
+      "repeat": 0,
+      "condition": "jev",
+      "status": "ok",
+      "error_type": null,
+      "answer": {
+        "status": "answer",
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "correct": true,
+      "wrong": false,
+      "source_answerable": true,
+      "unnecessary_abstention": false,
+      "extra_retrievals": 0,
+      "cost": {
+        "calls": 1,
+        "reserved_usd": 0.0020000000000000018,
+        "reported_usd": 7.916999999999993e-05,
+        "missing_cost": 0
+      },
+      "variant": "clean",
+      "judgements": [
+        "pass"
+      ]
+    }
+  ],
+  "normalization_note": "Successful rows export error_type=null; historical Jev rows retained stale NotExecuted in raw record. Status/outcomes/traces/costs are unchanged."
+}

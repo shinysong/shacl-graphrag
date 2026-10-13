@@ -1,0 +1,12 @@
+@prefix ex: <https://example.org/gleif-pilot/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+# Separate question contract; not the old pilot's Entity/legalName shape.
+ex:ParentQuestion a sh:NodeShape ; sh:targetClass ex:QuerySubject ;
+ sh:property [ sh:path ex:directParent ; sh:maxCount 1 ; sh:class ex:Entity ] ;
+ sh:property [ sh:path ex:exceptionReason ; sh:maxCount 1 ;
+  sh:in ("NO_LEI" "NATURAL_PERSONS" "NON_CONSOLIDATING" "NO_KNOWN_PERSON" "NON_PUBLIC") ] ;
+ sh:not [ sh:and (
+  [ sh:property [ sh:path ex:directParent ; sh:minCount 1 ] ]
+  [ sh:property [ sh:path ex:exceptionReason ; sh:minCount 1 ] ]
+ ) ] .
+# No minCount: completeness is a separately recorded three-state policy.

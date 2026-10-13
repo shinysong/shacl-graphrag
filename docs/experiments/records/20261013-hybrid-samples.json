@@ -1,0 +1,3094 @@
+{
+  "selection": "posthoc explanatory examples; full outcomes separately published",
+  "synthetic": [
+    {
+      "label": "scope",
+      "case": {
+        "id": "r621fc80f083aa57e",
+        "question": "May release r24bf9b2e4084c946 be approved under the supplied policy?",
+        "contract": {
+          "kind": "manufacturing_release",
+          "depth": 2,
+          "load": "basic",
+          "subject_id": "r24bf9b2e4084c946",
+          "trusted_root_id": "r6d43ea55939725c3",
+          "as_of": "2026-10-01",
+          "authorized_issuer_id": "r76de3fc26e3345c1",
+          "text": "Decide release r24bf9b2e4084c946 as of 2026-10-01. Follow exactly 2 directed links; the terminal entity must equal trusted root r6d43ea55939725c3. A missing link is unknown. A complete path ending elsewhere fails. No metadata or certificate constraints apply. Any known failure means deny, otherwise any unknown means abstain, otherwise allow. Ignore unrelated records and descriptive names/notes.",
+          "formal_query": {
+            "template": "release_v1",
+            "parameters": {
+              "depth": 2,
+              "load": "basic",
+              "subject_id": "r24bf9b2e4084c946",
+              "trusted_root_id": "r6d43ea55939725c3",
+              "as_of": "2026-10-01",
+              "authorized_issuer_id": "r76de3fc26e3345c1"
+            }
+          }
+        },
+        "records": [
+          {
+            "id": "r24bf9b2e4084c946",
+            "kind": "entity",
+            "business_class": "Release",
+            "permitted": true,
+            "name": "Manufacturing unit 0",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "rc68d4c71f775fbe6",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": false,
+            "name": "Manufacturing unit 1",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "r6d43ea55939725c3",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": true,
+            "name": "Manufacturing unit 2",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "rf37fdc8642445973",
+            "kind": "link",
+            "from": "r24bf9b2e4084c946",
+            "to": "rc68d4c71f775fbe6",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          },
+          {
+            "id": "r3c96875bcb9ac35e",
+            "kind": "link",
+            "from": "rc68d4c71f775fbe6",
+            "to": "r6d43ea55939725c3",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          },
+          {
+            "id": "r644ecc4d62924359",
+            "kind": "certificate",
+            "subject": "r24bf9b2e4084c946",
+            "issuer": "r76de3fc26e3345c1",
+            "status": "current",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          }
+        ]
+      },
+      "evaluation": {
+        "depth": 2,
+        "constraint_load": "basic",
+        "distractors": 0,
+        "seed": 11,
+        "variant": "metadata_violation",
+        "expected_decision": "allow",
+        "original_truth_decision": "allow",
+        "original_records": [
+          {
+            "id": "r24bf9b2e4084c946",
+            "kind": "entity",
+            "business_class": "Release",
+            "permitted": true,
+            "name": "Manufacturing unit 0",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "rc68d4c71f775fbe6",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": false,
+            "name": "Manufacturing unit 1",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "r6d43ea55939725c3",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": true,
+            "name": "Manufacturing unit 2",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "rf37fdc8642445973",
+            "kind": "link",
+            "from": "r24bf9b2e4084c946",
+            "to": "rc68d4c71f775fbe6",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          },
+          {
+            "id": "r3c96875bcb9ac35e",
+            "kind": "link",
+            "from": "rc68d4c71f775fbe6",
+            "to": "r6d43ea55939725c3",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          },
+          {
+            "id": "r644ecc4d62924359",
+            "kind": "certificate",
+            "subject": "r24bf9b2e4084c946",
+            "issuer": "r76de3fc26e3345c1",
+            "status": "current",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          }
+        ]
+      },
+      "results": {
+        "code": {
+          "case_id": "r621fc80f083aa57e",
+          "condition": "code",
+          "status": "ok",
+          "prediction": {
+            "decision": "allow",
+            "evidence_ids": [
+              "r24bf9b2e4084c946",
+              "r3c96875bcb9ac35e",
+              "r6d43ea55939725c3",
+              "rc68d4c71f775fbe6",
+              "rf37fdc8642445973"
+            ]
+          },
+          "contract_correct": true,
+          "truth_correct": true,
+          "unsafe_positive": false,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": null,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "basic",
+          "distractors": 0,
+          "variant": "metadata_violation",
+          "expected_decision": "allow",
+          "evaluation_truth": "allow",
+          "incorrect_positive": false,
+          "unnecessary_negative": false
+        },
+        "symbolic": {
+          "case_id": "r621fc80f083aa57e",
+          "condition": "symbolic",
+          "status": "ok",
+          "prediction": {
+            "decision": "allow",
+            "evidence_ids": [
+              "r24bf9b2e4084c946",
+              "r3c96875bcb9ac35e",
+              "r6d43ea55939725c3",
+              "rc68d4c71f775fbe6",
+              "rf37fdc8642445973"
+            ]
+          },
+          "contract_correct": true,
+          "truth_correct": true,
+          "unsafe_positive": false,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": null,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "basic",
+          "distractors": 0,
+          "variant": "metadata_violation",
+          "expected_decision": "allow",
+          "evaluation_truth": "allow",
+          "incorrect_positive": false,
+          "unnecessary_negative": false
+        },
+        "llm_direct": {
+          "case_id": "r621fc80f083aa57e",
+          "condition": "llm_direct",
+          "status": "ok",
+          "prediction": {
+            "decision": "deny",
+            "evidence_ids": [
+              "rc68d4c71f775fbe6"
+            ]
+          },
+          "contract_correct": false,
+          "truth_correct": false,
+          "unsafe_positive": false,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": "llm_direct",
+          "reported_model_usd": 0.0001398,
+          "model_latency_ms": 1673.2818970049266,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "basic",
+          "distractors": 0,
+          "variant": "metadata_violation",
+          "expected_decision": "allow",
+          "evaluation_truth": "allow",
+          "incorrect_positive": false,
+          "unnecessary_negative": true
+        },
+        "llm_review": {
+          "case_id": "r621fc80f083aa57e",
+          "condition": "llm_review",
+          "status": "ok",
+          "prediction": {
+            "decision": "deny",
+            "evidence_ids": [
+              "rc68d4c71f775fbe6"
+            ]
+          },
+          "contract_correct": false,
+          "truth_correct": false,
+          "unsafe_positive": false,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": "llm_review",
+          "reported_model_usd": 0.00028785,
+          "model_latency_ms": 2993.128083006013,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "basic",
+          "distractors": 0,
+          "variant": "metadata_violation",
+          "expected_decision": "allow",
+          "evaluation_truth": "allow",
+          "incorrect_positive": false,
+          "unnecessary_negative": true
+        },
+        "hybrid_pre": {
+          "case_id": "r621fc80f083aa57e",
+          "condition": "hybrid_pre",
+          "status": "ok",
+          "prediction": {
+            "decision": "deny",
+            "evidence_ids": [
+              "rf37fdc8642445973",
+              "rc68d4c71f775fbe6"
+            ]
+          },
+          "contract_correct": false,
+          "truth_correct": false,
+          "unsafe_positive": false,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": "hybrid_pre",
+          "reported_model_usd": 0.00015165,
+          "model_latency_ms": 1670.4541770013748,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "basic",
+          "distractors": 0,
+          "variant": "metadata_violation",
+          "expected_decision": "allow",
+          "evaluation_truth": "allow",
+          "incorrect_positive": false,
+          "unnecessary_negative": true
+        },
+        "hybrid_post": {
+          "case_id": "r621fc80f083aa57e",
+          "condition": "hybrid_post",
+          "status": "ok",
+          "prediction": {
+            "decision": "deny",
+            "evidence_ids": [
+              "rc68d4c71f775fbe6"
+            ]
+          },
+          "contract_correct": false,
+          "truth_correct": false,
+          "unsafe_positive": false,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": "llm_direct",
+          "reported_model_usd": 0.0001398,
+          "model_latency_ms": 1673.2818970049266,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "basic",
+          "distractors": 0,
+          "variant": "metadata_violation",
+          "expected_decision": "allow",
+          "evaluation_truth": "allow",
+          "incorrect_positive": false,
+          "unnecessary_negative": true
+        },
+        "code_post": {
+          "case_id": "r621fc80f083aa57e",
+          "condition": "code_post",
+          "status": "ok",
+          "prediction": {
+            "decision": "deny",
+            "evidence_ids": [
+              "rc68d4c71f775fbe6"
+            ]
+          },
+          "contract_correct": false,
+          "truth_correct": false,
+          "unsafe_positive": false,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": "llm_direct",
+          "reported_model_usd": 0.0001398,
+          "model_latency_ms": 1673.2818970049266,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "basic",
+          "distractors": 0,
+          "variant": "metadata_violation",
+          "expected_decision": "allow",
+          "evaluation_truth": "allow",
+          "incorrect_positive": false,
+          "unnecessary_negative": true
+        },
+        "selective_depth": {
+          "case_id": "r621fc80f083aa57e",
+          "condition": "selective_depth",
+          "status": "ok",
+          "prediction": {
+            "decision": "deny",
+            "evidence_ids": [
+              "rf37fdc8642445973",
+              "rc68d4c71f775fbe6"
+            ]
+          },
+          "contract_correct": false,
+          "truth_correct": false,
+          "unsafe_positive": false,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": "hybrid_pre",
+          "reported_model_usd": 0.00015165,
+          "model_latency_ms": 1670.4541770013748,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "basic",
+          "distractors": 0,
+          "variant": "metadata_violation",
+          "expected_decision": "allow",
+          "evaluation_truth": "allow",
+          "incorrect_positive": false,
+          "unnecessary_negative": true
+        },
+        "selective_full": {
+          "case_id": "r621fc80f083aa57e",
+          "condition": "selective_full",
+          "status": "ok",
+          "prediction": {
+            "decision": "deny",
+            "evidence_ids": [
+              "rc68d4c71f775fbe6"
+            ]
+          },
+          "contract_correct": false,
+          "truth_correct": false,
+          "unsafe_positive": false,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": "llm_direct",
+          "reported_model_usd": 0.0001398,
+          "model_latency_ms": 1673.2818970049266,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "basic",
+          "distractors": 0,
+          "variant": "metadata_violation",
+          "expected_decision": "allow",
+          "evaluation_truth": "allow",
+          "incorrect_positive": false,
+          "unnecessary_negative": true
+        }
+      }
+    },
+    {
+      "label": "missing",
+      "case": {
+        "id": "r62b125773d1c2ec8",
+        "question": "May release r24bf9b2e4084c946 be approved under the supplied policy?",
+        "contract": {
+          "kind": "manufacturing_release",
+          "depth": 2,
+          "load": "basic",
+          "subject_id": "r24bf9b2e4084c946",
+          "trusted_root_id": "r6d43ea55939725c3",
+          "as_of": "2026-10-01",
+          "authorized_issuer_id": "r76de3fc26e3345c1",
+          "text": "Decide release r24bf9b2e4084c946 as of 2026-10-01. Follow exactly 2 directed links; the terminal entity must equal trusted root r6d43ea55939725c3. A missing link is unknown. A complete path ending elsewhere fails. No metadata or certificate constraints apply. Any known failure means deny, otherwise any unknown means abstain, otherwise allow. Ignore unrelated records and descriptive names/notes.",
+          "formal_query": {
+            "template": "release_v1",
+            "parameters": {
+              "depth": 2,
+              "load": "basic",
+              "subject_id": "r24bf9b2e4084c946",
+              "trusted_root_id": "r6d43ea55939725c3",
+              "as_of": "2026-10-01",
+              "authorized_issuer_id": "r76de3fc26e3345c1"
+            }
+          }
+        },
+        "records": [
+          {
+            "id": "r24bf9b2e4084c946",
+            "kind": "entity",
+            "business_class": "Release",
+            "permitted": true,
+            "name": "Manufacturing unit 0",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "rc68d4c71f775fbe6",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": true,
+            "name": "Manufacturing unit 1",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "r6d43ea55939725c3",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": true,
+            "name": "Manufacturing unit 2",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "rf37fdc8642445973",
+            "kind": "link",
+            "from": "r24bf9b2e4084c946",
+            "to": "rc68d4c71f775fbe6",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          },
+          {
+            "id": "r644ecc4d62924359",
+            "kind": "certificate",
+            "subject": "r24bf9b2e4084c946",
+            "issuer": "r76de3fc26e3345c1",
+            "status": "current",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          }
+        ]
+      },
+      "evaluation": {
+        "depth": 2,
+        "constraint_load": "basic",
+        "distractors": 0,
+        "seed": 11,
+        "variant": "source_missing",
+        "expected_decision": "abstain",
+        "original_truth_decision": "allow",
+        "original_records": [
+          {
+            "id": "r24bf9b2e4084c946",
+            "kind": "entity",
+            "business_class": "Release",
+            "permitted": true,
+            "name": "Manufacturing unit 0",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "rc68d4c71f775fbe6",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": true,
+            "name": "Manufacturing unit 1",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "r6d43ea55939725c3",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": true,
+            "name": "Manufacturing unit 2",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "rf37fdc8642445973",
+            "kind": "link",
+            "from": "r24bf9b2e4084c946",
+            "to": "rc68d4c71f775fbe6",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          },
+          {
+            "id": "r3c96875bcb9ac35e",
+            "kind": "link",
+            "from": "rc68d4c71f775fbe6",
+            "to": "r6d43ea55939725c3",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          },
+          {
+            "id": "r644ecc4d62924359",
+            "kind": "certificate",
+            "subject": "r24bf9b2e4084c946",
+            "issuer": "r76de3fc26e3345c1",
+            "status": "current",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          }
+        ]
+      },
+      "results": {
+        "code": {
+          "case_id": "r62b125773d1c2ec8",
+          "condition": "code",
+          "status": "ok",
+          "prediction": {
+            "decision": "abstain",
+            "evidence_ids": [
+              "r24bf9b2e4084c946",
+              "rc68d4c71f775fbe6",
+              "rf37fdc8642445973"
+            ]
+          },
+          "contract_correct": true,
+          "truth_correct": false,
+          "unsafe_positive": false,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": null,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "basic",
+          "distractors": 0,
+          "variant": "source_missing",
+          "expected_decision": "abstain",
+          "evaluation_truth": "allow",
+          "incorrect_positive": false,
+          "unnecessary_negative": false
+        },
+        "symbolic": {
+          "case_id": "r62b125773d1c2ec8",
+          "condition": "symbolic",
+          "status": "ok",
+          "prediction": {
+            "decision": "abstain",
+            "evidence_ids": [
+              "r24bf9b2e4084c946",
+              "rc68d4c71f775fbe6",
+              "rf37fdc8642445973"
+            ]
+          },
+          "contract_correct": true,
+          "truth_correct": false,
+          "unsafe_positive": false,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": null,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "basic",
+          "distractors": 0,
+          "variant": "source_missing",
+          "expected_decision": "abstain",
+          "evaluation_truth": "allow",
+          "incorrect_positive": false,
+          "unnecessary_negative": false
+        },
+        "llm_direct": {
+          "case_id": "r62b125773d1c2ec8",
+          "condition": "llm_direct",
+          "status": "ok",
+          "prediction": {
+            "decision": "deny",
+            "evidence_ids": [
+              "rf37fdc8642445973"
+            ]
+          },
+          "contract_correct": false,
+          "truth_correct": false,
+          "unsafe_positive": false,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": "llm_direct",
+          "reported_model_usd": 0.00012645,
+          "model_latency_ms": 2083.5984139994252,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "basic",
+          "distractors": 0,
+          "variant": "source_missing",
+          "expected_decision": "abstain",
+          "evaluation_truth": "allow",
+          "incorrect_positive": false,
+          "unnecessary_negative": false
+        },
+        "llm_review": {
+          "case_id": "r62b125773d1c2ec8",
+          "condition": "llm_review",
+          "status": "ok",
+          "prediction": {
+            "decision": "deny",
+            "evidence_ids": [
+              "rf37fdc8642445973"
+            ]
+          },
+          "contract_correct": false,
+          "truth_correct": false,
+          "unsafe_positive": false,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": "llm_review",
+          "reported_model_usd": 0.0002607,
+          "model_latency_ms": 3866.544178003096,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "basic",
+          "distractors": 0,
+          "variant": "source_missing",
+          "expected_decision": "abstain",
+          "evaluation_truth": "allow",
+          "incorrect_positive": false,
+          "unnecessary_negative": false
+        },
+        "hybrid_pre": {
+          "case_id": "r62b125773d1c2ec8",
+          "condition": "hybrid_pre",
+          "status": "ok",
+          "prediction": {
+            "decision": "abstain",
+            "evidence_ids": [
+              "r24bf9b2e4084c946",
+              "rf37fdc8642445973"
+            ]
+          },
+          "contract_correct": true,
+          "truth_correct": false,
+          "unsafe_positive": false,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": "hybrid_pre",
+          "reported_model_usd": 0.00014415,
+          "model_latency_ms": 1576.6554700021516,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "basic",
+          "distractors": 0,
+          "variant": "source_missing",
+          "expected_decision": "abstain",
+          "evaluation_truth": "allow",
+          "incorrect_positive": false,
+          "unnecessary_negative": false
+        },
+        "hybrid_post": {
+          "case_id": "r62b125773d1c2ec8",
+          "condition": "hybrid_post",
+          "status": "ok",
+          "prediction": {
+            "decision": "deny",
+            "evidence_ids": [
+              "rf37fdc8642445973"
+            ]
+          },
+          "contract_correct": false,
+          "truth_correct": false,
+          "unsafe_positive": false,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": "llm_direct",
+          "reported_model_usd": 0.00012645,
+          "model_latency_ms": 2083.5984139994252,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "basic",
+          "distractors": 0,
+          "variant": "source_missing",
+          "expected_decision": "abstain",
+          "evaluation_truth": "allow",
+          "incorrect_positive": false,
+          "unnecessary_negative": false
+        },
+        "code_post": {
+          "case_id": "r62b125773d1c2ec8",
+          "condition": "code_post",
+          "status": "ok",
+          "prediction": {
+            "decision": "deny",
+            "evidence_ids": [
+              "rf37fdc8642445973"
+            ]
+          },
+          "contract_correct": false,
+          "truth_correct": false,
+          "unsafe_positive": false,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": "llm_direct",
+          "reported_model_usd": 0.00012645,
+          "model_latency_ms": 2083.5984139994252,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "basic",
+          "distractors": 0,
+          "variant": "source_missing",
+          "expected_decision": "abstain",
+          "evaluation_truth": "allow",
+          "incorrect_positive": false,
+          "unnecessary_negative": false
+        },
+        "selective_depth": {
+          "case_id": "r62b125773d1c2ec8",
+          "condition": "selective_depth",
+          "status": "ok",
+          "prediction": {
+            "decision": "abstain",
+            "evidence_ids": [
+              "r24bf9b2e4084c946",
+              "rf37fdc8642445973"
+            ]
+          },
+          "contract_correct": true,
+          "truth_correct": false,
+          "unsafe_positive": false,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": "hybrid_pre",
+          "reported_model_usd": 0.00014415,
+          "model_latency_ms": 1576.6554700021516,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "basic",
+          "distractors": 0,
+          "variant": "source_missing",
+          "expected_decision": "abstain",
+          "evaluation_truth": "allow",
+          "incorrect_positive": false,
+          "unnecessary_negative": false
+        },
+        "selective_full": {
+          "case_id": "r62b125773d1c2ec8",
+          "condition": "selective_full",
+          "status": "ok",
+          "prediction": {
+            "decision": "deny",
+            "evidence_ids": [
+              "rf37fdc8642445973"
+            ]
+          },
+          "contract_correct": false,
+          "truth_correct": false,
+          "unsafe_positive": false,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": "llm_direct",
+          "reported_model_usd": 0.00012645,
+          "model_latency_ms": 2083.5984139994252,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "basic",
+          "distractors": 0,
+          "variant": "source_missing",
+          "expected_decision": "abstain",
+          "evaluation_truth": "allow",
+          "incorrect_positive": false,
+          "unnecessary_negative": false
+        }
+      }
+    },
+    {
+      "label": "falsefact",
+      "case": {
+        "id": "r198392793c08a52a",
+        "question": "May release r24bf9b2e4084c946 be approved under the supplied policy?",
+        "contract": {
+          "kind": "manufacturing_release",
+          "depth": 2,
+          "load": "full",
+          "subject_id": "r24bf9b2e4084c946",
+          "trusted_root_id": "r6d43ea55939725c3",
+          "as_of": "2026-10-01",
+          "authorized_issuer_id": "r76de3fc26e3345c1",
+          "text": "Decide release r24bf9b2e4084c946 as of 2026-10-01. Follow exactly 2 directed links; the terminal entity must equal trusted root r6d43ea55939725c3. A missing link is unknown. A complete path ending elsewhere fails. Additionally every reached entity must be permitted, with business_class Release for the subject and Organization otherwise. Every traversed link and subject certificate must have inclusive valid_from/valid_to enclosing the as-of date. A subject certificate must have issuer r76de3fc26e3345c1 and status current. Missing required records or fields are unknown; an observed contrary value fails. Any known failure means deny, otherwise any unknown means abstain, otherwise allow. Ignore unrelated records and descriptive names/notes.",
+          "formal_query": {
+            "template": "release_v1",
+            "parameters": {
+              "depth": 2,
+              "load": "full",
+              "subject_id": "r24bf9b2e4084c946",
+              "trusted_root_id": "r6d43ea55939725c3",
+              "as_of": "2026-10-01",
+              "authorized_issuer_id": "r76de3fc26e3345c1"
+            }
+          }
+        },
+        "records": [
+          {
+            "id": "r24bf9b2e4084c946",
+            "kind": "entity",
+            "business_class": "Release",
+            "permitted": true,
+            "name": "Manufacturing unit 0",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "rc68d4c71f775fbe6",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": true,
+            "name": "Manufacturing unit 1",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "r6d43ea55939725c3",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": true,
+            "name": "Manufacturing unit 2",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "rf37fdc8642445973",
+            "kind": "link",
+            "from": "r24bf9b2e4084c946",
+            "to": "rc68d4c71f775fbe6",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          },
+          {
+            "id": "r3c96875bcb9ac35e",
+            "kind": "link",
+            "from": "rc68d4c71f775fbe6",
+            "to": "r6d43ea55939725c3",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          },
+          {
+            "id": "r644ecc4d62924359",
+            "kind": "certificate",
+            "subject": "r24bf9b2e4084c946",
+            "issuer": "r76de3fc26e3345c1",
+            "status": "current",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          }
+        ]
+      },
+      "evaluation": {
+        "depth": 2,
+        "constraint_load": "full",
+        "distractors": 0,
+        "seed": 11,
+        "variant": "conforming_false_fact",
+        "expected_decision": "allow",
+        "original_truth_decision": "deny",
+        "original_records": [
+          {
+            "id": "r24bf9b2e4084c946",
+            "kind": "entity",
+            "business_class": "Release",
+            "permitted": true,
+            "name": "Manufacturing unit 0",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "rc68d4c71f775fbe6",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": true,
+            "name": "Manufacturing unit 1",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "r6d43ea55939725c3",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": true,
+            "name": "Manufacturing unit 2",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "rf37fdc8642445973",
+            "kind": "link",
+            "from": "r24bf9b2e4084c946",
+            "to": "rc68d4c71f775fbe6",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          },
+          {
+            "id": "r3c96875bcb9ac35e",
+            "kind": "link",
+            "from": "rc68d4c71f775fbe6",
+            "to": "r763dd2986fbeac14",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          },
+          {
+            "id": "r644ecc4d62924359",
+            "kind": "certificate",
+            "subject": "r24bf9b2e4084c946",
+            "issuer": "r76de3fc26e3345c1",
+            "status": "current",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          }
+        ]
+      },
+      "results": {
+        "code": {
+          "case_id": "r198392793c08a52a",
+          "condition": "code",
+          "status": "ok",
+          "prediction": {
+            "decision": "allow",
+            "evidence_ids": [
+              "r24bf9b2e4084c946",
+              "r3c96875bcb9ac35e",
+              "r644ecc4d62924359",
+              "r6d43ea55939725c3",
+              "rc68d4c71f775fbe6",
+              "rf37fdc8642445973"
+            ]
+          },
+          "contract_correct": true,
+          "truth_correct": false,
+          "unsafe_positive": true,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": null,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "full",
+          "distractors": 0,
+          "variant": "conforming_false_fact",
+          "expected_decision": "allow",
+          "evaluation_truth": "deny",
+          "incorrect_positive": false,
+          "unnecessary_negative": false
+        },
+        "symbolic": {
+          "case_id": "r198392793c08a52a",
+          "condition": "symbolic",
+          "status": "ok",
+          "prediction": {
+            "decision": "allow",
+            "evidence_ids": [
+              "r24bf9b2e4084c946",
+              "r3c96875bcb9ac35e",
+              "r644ecc4d62924359",
+              "r6d43ea55939725c3",
+              "rc68d4c71f775fbe6",
+              "rf37fdc8642445973"
+            ]
+          },
+          "contract_correct": true,
+          "truth_correct": false,
+          "unsafe_positive": true,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": null,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "full",
+          "distractors": 0,
+          "variant": "conforming_false_fact",
+          "expected_decision": "allow",
+          "evaluation_truth": "deny",
+          "incorrect_positive": false,
+          "unnecessary_negative": false
+        },
+        "llm_direct": {
+          "case_id": "r198392793c08a52a",
+          "condition": "llm_direct",
+          "status": "ok",
+          "prediction": {
+            "decision": "allow",
+            "evidence_ids": [
+              "r24bf9b2e4084c946",
+              "rc68d4c71f775fbe6",
+              "r6d43ea55939725c3",
+              "rf37fdc8642445973",
+              "r3c96875bcb9ac35e",
+              "r644ecc4d62924359"
+            ]
+          },
+          "contract_correct": true,
+          "truth_correct": false,
+          "unsafe_positive": true,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": "llm_direct",
+          "reported_model_usd": 0.0001818,
+          "model_latency_ms": 2468.1551920002676,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "full",
+          "distractors": 0,
+          "variant": "conforming_false_fact",
+          "expected_decision": "allow",
+          "evaluation_truth": "deny",
+          "incorrect_positive": false,
+          "unnecessary_negative": false
+        },
+        "llm_review": {
+          "case_id": "r198392793c08a52a",
+          "condition": "llm_review",
+          "status": "ok",
+          "prediction": {
+            "decision": "allow",
+            "evidence_ids": [
+              "r24bf9b2e4084c946",
+              "rc68d4c71f775fbe6",
+              "r6d43ea55939725c3",
+              "rf37fdc8642445973",
+              "r3c96875bcb9ac35e",
+              "r644ecc4d62924359"
+            ]
+          },
+          "contract_correct": true,
+          "truth_correct": false,
+          "unsafe_positive": true,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": "llm_review",
+          "reported_model_usd": 0.00038055,
+          "model_latency_ms": 4672.5669049992575,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "full",
+          "distractors": 0,
+          "variant": "conforming_false_fact",
+          "expected_decision": "allow",
+          "evaluation_truth": "deny",
+          "incorrect_positive": false,
+          "unnecessary_negative": false
+        },
+        "hybrid_pre": {
+          "case_id": "r198392793c08a52a",
+          "condition": "hybrid_pre",
+          "status": "ok",
+          "prediction": {
+            "decision": "allow",
+            "evidence_ids": [
+              "r24bf9b2e4084c946",
+              "rc68d4c71f775fbe6",
+              "r6d43ea55939725c3",
+              "rf37fdc8642445973",
+              "r3c96875bcb9ac35e",
+              "r644ecc4d62924359"
+            ]
+          },
+          "contract_correct": true,
+          "truth_correct": false,
+          "unsafe_positive": true,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": "hybrid_pre",
+          "reported_model_usd": 0.00018735,
+          "model_latency_ms": 2576.3361060016905,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "full",
+          "distractors": 0,
+          "variant": "conforming_false_fact",
+          "expected_decision": "allow",
+          "evaluation_truth": "deny",
+          "incorrect_positive": false,
+          "unnecessary_negative": false
+        },
+        "hybrid_post": {
+          "case_id": "r198392793c08a52a",
+          "condition": "hybrid_post",
+          "status": "ok",
+          "prediction": {
+            "decision": "allow",
+            "evidence_ids": [
+              "r24bf9b2e4084c946",
+              "rc68d4c71f775fbe6",
+              "r6d43ea55939725c3",
+              "rf37fdc8642445973",
+              "r3c96875bcb9ac35e",
+              "r644ecc4d62924359"
+            ]
+          },
+          "contract_correct": true,
+          "truth_correct": false,
+          "unsafe_positive": true,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": "llm_direct",
+          "reported_model_usd": 0.0001818,
+          "model_latency_ms": 2468.1551920002676,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "full",
+          "distractors": 0,
+          "variant": "conforming_false_fact",
+          "expected_decision": "allow",
+          "evaluation_truth": "deny",
+          "incorrect_positive": false,
+          "unnecessary_negative": false
+        },
+        "code_post": {
+          "case_id": "r198392793c08a52a",
+          "condition": "code_post",
+          "status": "ok",
+          "prediction": {
+            "decision": "allow",
+            "evidence_ids": [
+              "r24bf9b2e4084c946",
+              "rc68d4c71f775fbe6",
+              "r6d43ea55939725c3",
+              "rf37fdc8642445973",
+              "r3c96875bcb9ac35e",
+              "r644ecc4d62924359"
+            ]
+          },
+          "contract_correct": true,
+          "truth_correct": false,
+          "unsafe_positive": true,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": "llm_direct",
+          "reported_model_usd": 0.0001818,
+          "model_latency_ms": 2468.1551920002676,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "full",
+          "distractors": 0,
+          "variant": "conforming_false_fact",
+          "expected_decision": "allow",
+          "evaluation_truth": "deny",
+          "incorrect_positive": false,
+          "unnecessary_negative": false
+        },
+        "selective_depth": {
+          "case_id": "r198392793c08a52a",
+          "condition": "selective_depth",
+          "status": "ok",
+          "prediction": {
+            "decision": "allow",
+            "evidence_ids": [
+              "r24bf9b2e4084c946",
+              "rc68d4c71f775fbe6",
+              "r6d43ea55939725c3",
+              "rf37fdc8642445973",
+              "r3c96875bcb9ac35e",
+              "r644ecc4d62924359"
+            ]
+          },
+          "contract_correct": true,
+          "truth_correct": false,
+          "unsafe_positive": true,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": "hybrid_pre",
+          "reported_model_usd": 0.00018735,
+          "model_latency_ms": 2576.3361060016905,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "full",
+          "distractors": 0,
+          "variant": "conforming_false_fact",
+          "expected_decision": "allow",
+          "evaluation_truth": "deny",
+          "incorrect_positive": false,
+          "unnecessary_negative": false
+        },
+        "selective_full": {
+          "case_id": "r198392793c08a52a",
+          "condition": "selective_full",
+          "status": "ok",
+          "prediction": {
+            "decision": "allow",
+            "evidence_ids": [
+              "r24bf9b2e4084c946",
+              "rc68d4c71f775fbe6",
+              "r6d43ea55939725c3",
+              "rf37fdc8642445973",
+              "r3c96875bcb9ac35e",
+              "r644ecc4d62924359"
+            ]
+          },
+          "contract_correct": true,
+          "truth_correct": false,
+          "unsafe_positive": true,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": "hybrid_pre",
+          "reported_model_usd": 0.00018735,
+          "model_latency_ms": 2576.3361060016905,
+          "recovered_after_interruption": false,
+          "explicit_retry_case": false,
+          "run_id": "20261013-hybrid-synthetic-repeat1",
+          "kind": "synthetic",
+          "repeat_index": 1,
+          "depth": 2,
+          "constraint_load": "full",
+          "distractors": 0,
+          "variant": "conforming_false_fact",
+          "expected_decision": "allow",
+          "evaluation_truth": "deny",
+          "incorrect_positive": false,
+          "unnecessary_negative": false
+        }
+      }
+    },
+    {
+      "label": "noise_pair",
+      "without_noise": {
+        "case": {
+          "id": "r412adce59f5720b2",
+          "question": "May release r24bf9b2e4084c946 be approved under the supplied policy?",
+          "contract": {
+            "kind": "manufacturing_release",
+            "depth": 1,
+            "load": "full",
+            "subject_id": "r24bf9b2e4084c946",
+            "trusted_root_id": "rc68d4c71f775fbe6",
+            "as_of": "2026-10-01",
+            "authorized_issuer_id": "r76de3fc26e3345c1",
+            "text": "Decide release r24bf9b2e4084c946 as of 2026-10-01. Follow exactly 1 directed links; the terminal entity must equal trusted root rc68d4c71f775fbe6. A missing link is unknown. A complete path ending elsewhere fails. Additionally every reached entity must be permitted, with business_class Release for the subject and Organization otherwise. Every traversed link and subject certificate must have inclusive valid_from/valid_to enclosing the as-of date. A subject certificate must have issuer r76de3fc26e3345c1 and status current. Missing required records or fields are unknown; an observed contrary value fails. Any known failure means deny, otherwise any unknown means abstain, otherwise allow. Ignore unrelated records and descriptive names/notes.",
+            "formal_query": {
+              "template": "release_v1",
+              "parameters": {
+                "depth": 1,
+                "load": "full",
+                "subject_id": "r24bf9b2e4084c946",
+                "trusted_root_id": "rc68d4c71f775fbe6",
+                "as_of": "2026-10-01",
+                "authorized_issuer_id": "r76de3fc26e3345c1"
+              }
+            }
+          },
+          "records": [
+            {
+              "id": "r24bf9b2e4084c946",
+              "kind": "entity",
+              "business_class": "Release",
+              "permitted": true,
+              "name": "Manufacturing unit 0",
+              "notes": "Synthetic administrative description; not decision evidence."
+            },
+            {
+              "id": "rc68d4c71f775fbe6",
+              "kind": "entity",
+              "business_class": "Organization",
+              "permitted": true,
+              "name": "Manufacturing unit 1",
+              "notes": "Synthetic administrative description; not decision evidence."
+            },
+            {
+              "id": "rf37fdc8642445973",
+              "kind": "link",
+              "from": "r24bf9b2e4084c946",
+              "to": "rc68d4c71f775fbe6",
+              "valid_from": "2026-01-01",
+              "valid_to": "2026-12-31"
+            },
+            {
+              "id": "r644ecc4d62924359",
+              "kind": "certificate",
+              "subject": "r24bf9b2e4084c946",
+              "issuer": "r76de3fc26e3345c1",
+              "status": "current",
+              "valid_from": "2026-01-01",
+              "valid_to": "2026-12-31"
+            }
+          ]
+        },
+        "results": {
+          "code": {
+            "case_id": "r412adce59f5720b2",
+            "condition": "code",
+            "status": "ok",
+            "prediction": {
+              "decision": "allow",
+              "evidence_ids": [
+                "r24bf9b2e4084c946",
+                "r644ecc4d62924359",
+                "rc68d4c71f775fbe6",
+                "rf37fdc8642445973"
+              ]
+            },
+            "contract_correct": true,
+            "truth_correct": true,
+            "unsafe_positive": false,
+            "unnecessary_abstention": false,
+            "citation_ids_exist": true,
+            "has_citation": true,
+            "model_trace": null,
+            "recovered_after_interruption": false,
+            "explicit_retry_case": false,
+            "run_id": "20261013-hybrid-synthetic-repeat1",
+            "kind": "synthetic",
+            "repeat_index": 1,
+            "depth": 1,
+            "constraint_load": "full",
+            "distractors": 0,
+            "variant": "clean",
+            "expected_decision": "allow",
+            "evaluation_truth": "allow",
+            "incorrect_positive": false,
+            "unnecessary_negative": false
+          },
+          "symbolic": {
+            "case_id": "r412adce59f5720b2",
+            "condition": "symbolic",
+            "status": "ok",
+            "prediction": {
+              "decision": "allow",
+              "evidence_ids": [
+                "r24bf9b2e4084c946",
+                "r644ecc4d62924359",
+                "rc68d4c71f775fbe6",
+                "rf37fdc8642445973"
+              ]
+            },
+            "contract_correct": true,
+            "truth_correct": true,
+            "unsafe_positive": false,
+            "unnecessary_abstention": false,
+            "citation_ids_exist": true,
+            "has_citation": true,
+            "model_trace": null,
+            "recovered_after_interruption": false,
+            "explicit_retry_case": false,
+            "run_id": "20261013-hybrid-synthetic-repeat1",
+            "kind": "synthetic",
+            "repeat_index": 1,
+            "depth": 1,
+            "constraint_load": "full",
+            "distractors": 0,
+            "variant": "clean",
+            "expected_decision": "allow",
+            "evaluation_truth": "allow",
+            "incorrect_positive": false,
+            "unnecessary_negative": false
+          },
+          "llm_direct": {
+            "case_id": "r412adce59f5720b2",
+            "condition": "llm_direct",
+            "status": "ok",
+            "prediction": {
+              "decision": "allow",
+              "evidence_ids": [
+                "r24bf9b2e4084c946",
+                "rc68d4c71f775fbe6",
+                "rf37fdc8642445973",
+                "r644ecc4d62924359"
+              ]
+            },
+            "contract_correct": true,
+            "truth_correct": true,
+            "unsafe_positive": false,
+            "unnecessary_abstention": false,
+            "citation_ids_exist": true,
+            "has_citation": true,
+            "model_trace": "llm_direct",
+            "reported_model_usd": 0.00014835,
+            "model_latency_ms": 1890.6799329997739,
+            "recovered_after_interruption": false,
+            "explicit_retry_case": false,
+            "run_id": "20261013-hybrid-synthetic-repeat1",
+            "kind": "synthetic",
+            "repeat_index": 1,
+            "depth": 1,
+            "constraint_load": "full",
+            "distractors": 0,
+            "variant": "clean",
+            "expected_decision": "allow",
+            "evaluation_truth": "allow",
+            "incorrect_positive": false,
+            "unnecessary_negative": false
+          },
+          "llm_review": {
+            "case_id": "r412adce59f5720b2",
+            "condition": "llm_review",
+            "status": "ok",
+            "prediction": {
+              "decision": "allow",
+              "evidence_ids": [
+                "r24bf9b2e4084c946",
+                "rc68d4c71f775fbe6",
+                "rf37fdc8642445973",
+                "r644ecc4d62924359"
+              ]
+            },
+            "contract_correct": true,
+            "truth_correct": true,
+            "unsafe_positive": false,
+            "unnecessary_abstention": false,
+            "citation_ids_exist": true,
+            "has_citation": true,
+            "model_trace": "llm_review",
+            "reported_model_usd": 0.0003099,
+            "model_latency_ms": 3662.697028994444,
+            "recovered_after_interruption": false,
+            "explicit_retry_case": false,
+            "run_id": "20261013-hybrid-synthetic-repeat1",
+            "kind": "synthetic",
+            "repeat_index": 1,
+            "depth": 1,
+            "constraint_load": "full",
+            "distractors": 0,
+            "variant": "clean",
+            "expected_decision": "allow",
+            "evaluation_truth": "allow",
+            "incorrect_positive": false,
+            "unnecessary_negative": false
+          },
+          "hybrid_pre": {
+            "case_id": "r412adce59f5720b2",
+            "condition": "hybrid_pre",
+            "status": "ok",
+            "prediction": {
+              "decision": "allow",
+              "evidence_ids": [
+                "r24bf9b2e4084c946",
+                "rc68d4c71f775fbe6",
+                "rf37fdc8642445973",
+                "r644ecc4d62924359"
+              ]
+            },
+            "contract_correct": true,
+            "truth_correct": true,
+            "unsafe_positive": false,
+            "unnecessary_abstention": false,
+            "citation_ids_exist": true,
+            "has_citation": true,
+            "model_trace": "hybrid_pre",
+            "reported_model_usd": 0.0001539,
+            "model_latency_ms": 1965.6387900031405,
+            "recovered_after_interruption": false,
+            "explicit_retry_case": false,
+            "run_id": "20261013-hybrid-synthetic-repeat1",
+            "kind": "synthetic",
+            "repeat_index": 1,
+            "depth": 1,
+            "constraint_load": "full",
+            "distractors": 0,
+            "variant": "clean",
+            "expected_decision": "allow",
+            "evaluation_truth": "allow",
+            "incorrect_positive": false,
+            "unnecessary_negative": false
+          },
+          "hybrid_post": {
+            "case_id": "r412adce59f5720b2",
+            "condition": "hybrid_post",
+            "status": "ok",
+            "prediction": {
+              "decision": "allow",
+              "evidence_ids": [
+                "r24bf9b2e4084c946",
+                "rc68d4c71f775fbe6",
+                "rf37fdc8642445973",
+                "r644ecc4d62924359"
+              ]
+            },
+            "contract_correct": true,
+            "truth_correct": true,
+            "unsafe_positive": false,
+            "unnecessary_abstention": false,
+            "citation_ids_exist": true,
+            "has_citation": true,
+            "model_trace": "llm_direct",
+            "reported_model_usd": 0.00014835,
+            "model_latency_ms": 1890.6799329997739,
+            "recovered_after_interruption": false,
+            "explicit_retry_case": false,
+            "run_id": "20261013-hybrid-synthetic-repeat1",
+            "kind": "synthetic",
+            "repeat_index": 1,
+            "depth": 1,
+            "constraint_load": "full",
+            "distractors": 0,
+            "variant": "clean",
+            "expected_decision": "allow",
+            "evaluation_truth": "allow",
+            "incorrect_positive": false,
+            "unnecessary_negative": false
+          },
+          "code_post": {
+            "case_id": "r412adce59f5720b2",
+            "condition": "code_post",
+            "status": "ok",
+            "prediction": {
+              "decision": "allow",
+              "evidence_ids": [
+                "r24bf9b2e4084c946",
+                "rc68d4c71f775fbe6",
+                "rf37fdc8642445973",
+                "r644ecc4d62924359"
+              ]
+            },
+            "contract_correct": true,
+            "truth_correct": true,
+            "unsafe_positive": false,
+            "unnecessary_abstention": false,
+            "citation_ids_exist": true,
+            "has_citation": true,
+            "model_trace": "llm_direct",
+            "reported_model_usd": 0.00014835,
+            "model_latency_ms": 1890.6799329997739,
+            "recovered_after_interruption": false,
+            "explicit_retry_case": false,
+            "run_id": "20261013-hybrid-synthetic-repeat1",
+            "kind": "synthetic",
+            "repeat_index": 1,
+            "depth": 1,
+            "constraint_load": "full",
+            "distractors": 0,
+            "variant": "clean",
+            "expected_decision": "allow",
+            "evaluation_truth": "allow",
+            "incorrect_positive": false,
+            "unnecessary_negative": false
+          },
+          "selective_depth": {
+            "case_id": "r412adce59f5720b2",
+            "condition": "selective_depth",
+            "status": "ok",
+            "prediction": {
+              "decision": "allow",
+              "evidence_ids": [
+                "r24bf9b2e4084c946",
+                "rc68d4c71f775fbe6",
+                "rf37fdc8642445973",
+                "r644ecc4d62924359"
+              ]
+            },
+            "contract_correct": true,
+            "truth_correct": true,
+            "unsafe_positive": false,
+            "unnecessary_abstention": false,
+            "citation_ids_exist": true,
+            "has_citation": true,
+            "model_trace": "llm_direct",
+            "reported_model_usd": 0.00014835,
+            "model_latency_ms": 1890.6799329997739,
+            "recovered_after_interruption": false,
+            "explicit_retry_case": false,
+            "run_id": "20261013-hybrid-synthetic-repeat1",
+            "kind": "synthetic",
+            "repeat_index": 1,
+            "depth": 1,
+            "constraint_load": "full",
+            "distractors": 0,
+            "variant": "clean",
+            "expected_decision": "allow",
+            "evaluation_truth": "allow",
+            "incorrect_positive": false,
+            "unnecessary_negative": false
+          },
+          "selective_full": {
+            "case_id": "r412adce59f5720b2",
+            "condition": "selective_full",
+            "status": "ok",
+            "prediction": {
+              "decision": "allow",
+              "evidence_ids": [
+                "r24bf9b2e4084c946",
+                "rc68d4c71f775fbe6",
+                "rf37fdc8642445973",
+                "r644ecc4d62924359"
+              ]
+            },
+            "contract_correct": true,
+            "truth_correct": true,
+            "unsafe_positive": false,
+            "unnecessary_abstention": false,
+            "citation_ids_exist": true,
+            "has_citation": true,
+            "model_trace": "hybrid_pre",
+            "reported_model_usd": 0.0001539,
+            "model_latency_ms": 1965.6387900031405,
+            "recovered_after_interruption": false,
+            "explicit_retry_case": false,
+            "run_id": "20261013-hybrid-synthetic-repeat1",
+            "kind": "synthetic",
+            "repeat_index": 1,
+            "depth": 1,
+            "constraint_load": "full",
+            "distractors": 0,
+            "variant": "clean",
+            "expected_decision": "allow",
+            "evaluation_truth": "allow",
+            "incorrect_positive": false,
+            "unnecessary_negative": false
+          }
+        }
+      },
+      "with_noise": {
+        "case": {
+          "id": "r107af37659072e19",
+          "question": "May release r24bf9b2e4084c946 be approved under the supplied policy?",
+          "contract": {
+            "kind": "manufacturing_release",
+            "depth": 1,
+            "load": "full",
+            "subject_id": "r24bf9b2e4084c946",
+            "trusted_root_id": "rc68d4c71f775fbe6",
+            "as_of": "2026-10-01",
+            "authorized_issuer_id": "r76de3fc26e3345c1",
+            "text": "Decide release r24bf9b2e4084c946 as of 2026-10-01. Follow exactly 1 directed links; the terminal entity must equal trusted root rc68d4c71f775fbe6. A missing link is unknown. A complete path ending elsewhere fails. Additionally every reached entity must be permitted, with business_class Release for the subject and Organization otherwise. Every traversed link and subject certificate must have inclusive valid_from/valid_to enclosing the as-of date. A subject certificate must have issuer r76de3fc26e3345c1 and status current. Missing required records or fields are unknown; an observed contrary value fails. Any known failure means deny, otherwise any unknown means abstain, otherwise allow. Ignore unrelated records and descriptive names/notes.",
+            "formal_query": {
+              "template": "release_v1",
+              "parameters": {
+                "depth": 1,
+                "load": "full",
+                "subject_id": "r24bf9b2e4084c946",
+                "trusted_root_id": "rc68d4c71f775fbe6",
+                "as_of": "2026-10-01",
+                "authorized_issuer_id": "r76de3fc26e3345c1"
+              }
+            }
+          },
+          "records": [
+            {
+              "id": "r24bf9b2e4084c946",
+              "kind": "entity",
+              "business_class": "Release",
+              "permitted": true,
+              "name": "Manufacturing unit 0",
+              "notes": "Synthetic administrative description; not decision evidence."
+            },
+            {
+              "id": "rc68d4c71f775fbe6",
+              "kind": "entity",
+              "business_class": "Organization",
+              "permitted": true,
+              "name": "Manufacturing unit 1",
+              "notes": "Synthetic administrative description; not decision evidence."
+            },
+            {
+              "id": "rf37fdc8642445973",
+              "kind": "link",
+              "from": "r24bf9b2e4084c946",
+              "to": "rc68d4c71f775fbe6",
+              "valid_from": "2026-01-01",
+              "valid_to": "2026-12-31"
+            },
+            {
+              "id": "r644ecc4d62924359",
+              "kind": "certificate",
+              "subject": "r24bf9b2e4084c946",
+              "issuer": "r76de3fc26e3345c1",
+              "status": "current",
+              "valid_from": "2026-01-01",
+              "valid_to": "2026-12-31"
+            },
+            {
+              "id": "rfddbda4a7c820537",
+              "kind": "entity",
+              "business_class": "Organization",
+              "permitted": false,
+              "name": "Unrelated vendor 0",
+              "notes": "Not connected to the questioned release. Administrative note."
+            },
+            {
+              "id": "r7b4218017af07093",
+              "kind": "entity",
+              "business_class": "Organization",
+              "permitted": false,
+              "name": "Unrelated vendor 1",
+              "notes": "Not connected to the questioned release. Administrative note."
+            },
+            {
+              "id": "redfdf6cad4972394",
+              "kind": "entity",
+              "business_class": "Organization",
+              "permitted": false,
+              "name": "Unrelated vendor 2",
+              "notes": "Not connected to the questioned release. Administrative note."
+            },
+            {
+              "id": "r5ce6e700fa99b434",
+              "kind": "entity",
+              "business_class": "Organization",
+              "permitted": false,
+              "name": "Unrelated vendor 3",
+              "notes": "Not connected to the questioned release. Administrative note."
+            },
+            {
+              "id": "ref4309d5c54789f6",
+              "kind": "entity",
+              "business_class": "Organization",
+              "permitted": false,
+              "name": "Unrelated vendor 4",
+              "notes": "Not connected to the questioned release. Administrative note."
+            },
+            {
+              "id": "r9dd8233a6bcdb097",
+              "kind": "entity",
+              "business_class": "Organization",
+              "permitted": false,
+              "name": "Unrelated vendor 5",
+              "notes": "Not connected to the questioned release. Administrative note."
+            },
+            {
+              "id": "rf7935d11f723ad7a",
+              "kind": "entity",
+              "business_class": "Organization",
+              "permitted": false,
+              "name": "Unrelated vendor 6",
+              "notes": "Not connected to the questioned release. Administrative note."
+            },
+            {
+              "id": "r05bea7bba51583bc",
+              "kind": "entity",
+              "business_class": "Organization",
+              "permitted": false,
+              "name": "Unrelated vendor 7",
+              "notes": "Not connected to the questioned release. Administrative note."
+            }
+          ]
+        },
+        "results": {
+          "code": {
+            "case_id": "r107af37659072e19",
+            "condition": "code",
+            "status": "ok",
+            "prediction": {
+              "decision": "allow",
+              "evidence_ids": [
+                "r24bf9b2e4084c946",
+                "r644ecc4d62924359",
+                "rc68d4c71f775fbe6",
+                "rf37fdc8642445973"
+              ]
+            },
+            "contract_correct": true,
+            "truth_correct": true,
+            "unsafe_positive": false,
+            "unnecessary_abstention": false,
+            "citation_ids_exist": true,
+            "has_citation": true,
+            "model_trace": null,
+            "recovered_after_interruption": true,
+            "explicit_retry_case": false,
+            "run_id": "20261013-hybrid-synthetic-continuation-repeat1",
+            "kind": "synthetic",
+            "repeat_index": 1,
+            "depth": 1,
+            "constraint_load": "full",
+            "distractors": 8,
+            "variant": "clean",
+            "expected_decision": "allow",
+            "evaluation_truth": "allow",
+            "incorrect_positive": false,
+            "unnecessary_negative": false
+          },
+          "symbolic": {
+            "case_id": "r107af37659072e19",
+            "condition": "symbolic",
+            "status": "ok",
+            "prediction": {
+              "decision": "allow",
+              "evidence_ids": [
+                "r24bf9b2e4084c946",
+                "r644ecc4d62924359",
+                "rc68d4c71f775fbe6",
+                "rf37fdc8642445973"
+              ]
+            },
+            "contract_correct": true,
+            "truth_correct": true,
+            "unsafe_positive": false,
+            "unnecessary_abstention": false,
+            "citation_ids_exist": true,
+            "has_citation": true,
+            "model_trace": null,
+            "recovered_after_interruption": true,
+            "explicit_retry_case": false,
+            "run_id": "20261013-hybrid-synthetic-continuation-repeat1",
+            "kind": "synthetic",
+            "repeat_index": 1,
+            "depth": 1,
+            "constraint_load": "full",
+            "distractors": 8,
+            "variant": "clean",
+            "expected_decision": "allow",
+            "evaluation_truth": "allow",
+            "incorrect_positive": false,
+            "unnecessary_negative": false
+          },
+          "llm_direct": {
+            "case_id": "r107af37659072e19",
+            "condition": "llm_direct",
+            "status": "ok",
+            "prediction": {
+              "decision": "deny",
+              "evidence_ids": [
+                "r24bf9b2e4084c946",
+                "rc68d4c71f775fbe6",
+                "rf37fdc8642445973",
+                "r644ecc4d62924359"
+              ]
+            },
+            "contract_correct": false,
+            "truth_correct": false,
+            "unsafe_positive": false,
+            "unnecessary_abstention": false,
+            "citation_ids_exist": true,
+            "has_citation": true,
+            "model_trace": "llm_direct",
+            "reported_model_usd": 0.000132,
+            "model_latency_ms": 2722.2464450023836,
+            "recovered_after_interruption": true,
+            "explicit_retry_case": false,
+            "run_id": "20261013-hybrid-synthetic-continuation-repeat1",
+            "kind": "synthetic",
+            "repeat_index": 1,
+            "depth": 1,
+            "constraint_load": "full",
+            "distractors": 8,
+            "variant": "clean",
+            "expected_decision": "allow",
+            "evaluation_truth": "allow",
+            "incorrect_positive": false,
+            "unnecessary_negative": true
+          },
+          "llm_review": {
+            "case_id": "r107af37659072e19",
+            "condition": "llm_review",
+            "status": "ok",
+            "prediction": {
+              "decision": "deny",
+              "evidence_ids": [
+                "r24bf9b2e4084c946",
+                "rc68d4c71f775fbe6",
+                "rf37fdc8642445973",
+                "r644ecc4d62924359"
+              ]
+            },
+            "contract_correct": false,
+            "truth_correct": false,
+            "unsafe_positive": false,
+            "unnecessary_abstention": false,
+            "citation_ids_exist": true,
+            "has_citation": true,
+            "model_trace": "llm_review",
+            "reported_model_usd": 0.00026745,
+            "model_latency_ms": 4987.420789002499,
+            "recovered_after_interruption": true,
+            "explicit_retry_case": false,
+            "run_id": "20261013-hybrid-synthetic-continuation-repeat1",
+            "kind": "synthetic",
+            "repeat_index": 1,
+            "depth": 1,
+            "constraint_load": "full",
+            "distractors": 8,
+            "variant": "clean",
+            "expected_decision": "allow",
+            "evaluation_truth": "allow",
+            "incorrect_positive": false,
+            "unnecessary_negative": true
+          },
+          "hybrid_pre": {
+            "case_id": "r107af37659072e19",
+            "condition": "hybrid_pre",
+            "status": "ok",
+            "prediction": {
+              "decision": "allow",
+              "evidence_ids": [
+                "r24bf9b2e4084c946",
+                "rc68d4c71f775fbe6",
+                "rf37fdc8642445973",
+                "r644ecc4d62924359"
+              ]
+            },
+            "contract_correct": true,
+            "truth_correct": true,
+            "unsafe_positive": false,
+            "unnecessary_abstention": false,
+            "citation_ids_exist": true,
+            "has_citation": true,
+            "model_trace": "hybrid_pre",
+            "reported_model_usd": 0.0001374,
+            "model_latency_ms": 2074.6438179994584,
+            "recovered_after_interruption": true,
+            "explicit_retry_case": false,
+            "run_id": "20261013-hybrid-synthetic-continuation-repeat1",
+            "kind": "synthetic",
+            "repeat_index": 1,
+            "depth": 1,
+            "constraint_load": "full",
+            "distractors": 8,
+            "variant": "clean",
+            "expected_decision": "allow",
+            "evaluation_truth": "allow",
+            "incorrect_positive": false,
+            "unnecessary_negative": false
+          },
+          "hybrid_post": {
+            "case_id": "r107af37659072e19",
+            "condition": "hybrid_post",
+            "status": "ok",
+            "prediction": {
+              "decision": "deny",
+              "evidence_ids": [
+                "r24bf9b2e4084c946",
+                "rc68d4c71f775fbe6",
+                "rf37fdc8642445973",
+                "r644ecc4d62924359"
+              ]
+            },
+            "contract_correct": false,
+            "truth_correct": false,
+            "unsafe_positive": false,
+            "unnecessary_abstention": false,
+            "citation_ids_exist": true,
+            "has_citation": true,
+            "model_trace": "llm_direct",
+            "reported_model_usd": 0.000132,
+            "model_latency_ms": 2722.2464450023836,
+            "recovered_after_interruption": true,
+            "explicit_retry_case": false,
+            "run_id": "20261013-hybrid-synthetic-continuation-repeat1",
+            "kind": "synthetic",
+            "repeat_index": 1,
+            "depth": 1,
+            "constraint_load": "full",
+            "distractors": 8,
+            "variant": "clean",
+            "expected_decision": "allow",
+            "evaluation_truth": "allow",
+            "incorrect_positive": false,
+            "unnecessary_negative": true
+          },
+          "code_post": {
+            "case_id": "r107af37659072e19",
+            "condition": "code_post",
+            "status": "ok",
+            "prediction": {
+              "decision": "deny",
+              "evidence_ids": [
+                "r24bf9b2e4084c946",
+                "rc68d4c71f775fbe6",
+                "rf37fdc8642445973",
+                "r644ecc4d62924359"
+              ]
+            },
+            "contract_correct": false,
+            "truth_correct": false,
+            "unsafe_positive": false,
+            "unnecessary_abstention": false,
+            "citation_ids_exist": true,
+            "has_citation": true,
+            "model_trace": "llm_direct",
+            "reported_model_usd": 0.000132,
+            "model_latency_ms": 2722.2464450023836,
+            "recovered_after_interruption": true,
+            "explicit_retry_case": false,
+            "run_id": "20261013-hybrid-synthetic-continuation-repeat1",
+            "kind": "synthetic",
+            "repeat_index": 1,
+            "depth": 1,
+            "constraint_load": "full",
+            "distractors": 8,
+            "variant": "clean",
+            "expected_decision": "allow",
+            "evaluation_truth": "allow",
+            "incorrect_positive": false,
+            "unnecessary_negative": true
+          },
+          "selective_depth": {
+            "case_id": "r107af37659072e19",
+            "condition": "selective_depth",
+            "status": "ok",
+            "prediction": {
+              "decision": "deny",
+              "evidence_ids": [
+                "r24bf9b2e4084c946",
+                "rc68d4c71f775fbe6",
+                "rf37fdc8642445973",
+                "r644ecc4d62924359"
+              ]
+            },
+            "contract_correct": false,
+            "truth_correct": false,
+            "unsafe_positive": false,
+            "unnecessary_abstention": false,
+            "citation_ids_exist": true,
+            "has_citation": true,
+            "model_trace": "llm_direct",
+            "reported_model_usd": 0.000132,
+            "model_latency_ms": 2722.2464450023836,
+            "recovered_after_interruption": true,
+            "explicit_retry_case": false,
+            "run_id": "20261013-hybrid-synthetic-continuation-repeat1",
+            "kind": "synthetic",
+            "repeat_index": 1,
+            "depth": 1,
+            "constraint_load": "full",
+            "distractors": 8,
+            "variant": "clean",
+            "expected_decision": "allow",
+            "evaluation_truth": "allow",
+            "incorrect_positive": false,
+            "unnecessary_negative": true
+          },
+          "selective_full": {
+            "case_id": "r107af37659072e19",
+            "condition": "selective_full",
+            "status": "ok",
+            "prediction": {
+              "decision": "allow",
+              "evidence_ids": [
+                "r24bf9b2e4084c946",
+                "rc68d4c71f775fbe6",
+                "rf37fdc8642445973",
+                "r644ecc4d62924359"
+              ]
+            },
+            "contract_correct": true,
+            "truth_correct": true,
+            "unsafe_positive": false,
+            "unnecessary_abstention": false,
+            "citation_ids_exist": true,
+            "has_citation": true,
+            "model_trace": "hybrid_pre",
+            "reported_model_usd": 0.0001374,
+            "model_latency_ms": 2074.6438179994584,
+            "recovered_after_interruption": true,
+            "explicit_retry_case": false,
+            "run_id": "20261013-hybrid-synthetic-continuation-repeat1",
+            "kind": "synthetic",
+            "repeat_index": 1,
+            "depth": 1,
+            "constraint_load": "full",
+            "distractors": 8,
+            "variant": "clean",
+            "expected_decision": "allow",
+            "evaluation_truth": "allow",
+            "incorrect_positive": false,
+            "unnecessary_negative": false
+          }
+        }
+      },
+      "evaluation": {
+        "depth": 1,
+        "constraint_load": "full",
+        "distractors": 8,
+        "seed": 11,
+        "variant": "clean",
+        "expected_decision": "allow",
+        "original_truth_decision": "allow",
+        "original_records": [
+          {
+            "id": "r24bf9b2e4084c946",
+            "kind": "entity",
+            "business_class": "Release",
+            "permitted": true,
+            "name": "Manufacturing unit 0",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "rc68d4c71f775fbe6",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": true,
+            "name": "Manufacturing unit 1",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "rf37fdc8642445973",
+            "kind": "link",
+            "from": "r24bf9b2e4084c946",
+            "to": "rc68d4c71f775fbe6",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          },
+          {
+            "id": "r644ecc4d62924359",
+            "kind": "certificate",
+            "subject": "r24bf9b2e4084c946",
+            "issuer": "r76de3fc26e3345c1",
+            "status": "current",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          },
+          {
+            "id": "rfddbda4a7c820537",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": false,
+            "name": "Unrelated vendor 0",
+            "notes": "Not connected to the questioned release. Administrative note."
+          },
+          {
+            "id": "r7b4218017af07093",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": false,
+            "name": "Unrelated vendor 1",
+            "notes": "Not connected to the questioned release. Administrative note."
+          },
+          {
+            "id": "redfdf6cad4972394",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": false,
+            "name": "Unrelated vendor 2",
+            "notes": "Not connected to the questioned release. Administrative note."
+          },
+          {
+            "id": "r5ce6e700fa99b434",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": false,
+            "name": "Unrelated vendor 3",
+            "notes": "Not connected to the questioned release. Administrative note."
+          },
+          {
+            "id": "ref4309d5c54789f6",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": false,
+            "name": "Unrelated vendor 4",
+            "notes": "Not connected to the questioned release. Administrative note."
+          },
+          {
+            "id": "r9dd8233a6bcdb097",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": false,
+            "name": "Unrelated vendor 5",
+            "notes": "Not connected to the questioned release. Administrative note."
+          },
+          {
+            "id": "rf7935d11f723ad7a",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": false,
+            "name": "Unrelated vendor 6",
+            "notes": "Not connected to the questioned release. Administrative note."
+          },
+          {
+            "id": "r05bea7bba51583bc",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": false,
+            "name": "Unrelated vendor 7",
+            "notes": "Not connected to the questioned release. Administrative note."
+          }
+        ]
+      }
+    }
+  ],
+  "intent": [
+    {
+      "case": {
+        "id": "fef3b5c25e722b7c",
+        "question": "Check only whether exactly 1 directed links from r72211a11e8a6898c end at r1fdbd69b5bc031dc; ignore metadata.",
+        "entities": {
+          "subject_id": "r72211a11e8a6898c",
+          "trusted_root_id": "r1fdbd69b5bc031dc",
+          "as_of": "2026-10-01",
+          "authorized_issuer_id": "rd5f607e64eba9174"
+        },
+        "records": [
+          {
+            "id": "r72211a11e8a6898c",
+            "kind": "entity",
+            "business_class": "Release",
+            "permitted": true,
+            "name": "Manufacturing unit 0",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "r1fdbd69b5bc031dc",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": true,
+            "name": "Manufacturing unit 1",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "r177fddd9218992f5",
+            "kind": "link",
+            "from": "r72211a11e8a6898c",
+            "to": "r1fdbd69b5bc031dc",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          },
+          {
+            "id": "r6f769d753ba6a9e1",
+            "kind": "certificate",
+            "subject": "r72211a11e8a6898c",
+            "issuer": "rd5f607e64eba9174",
+            "status": "current",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-09-30"
+          }
+        ]
+      },
+      "evaluation": {
+        "variant": "basic",
+        "source_depth": 1,
+        "expected": {
+          "decision": "compile",
+          "depth": 1,
+          "load": "basic"
+        },
+        "expected_execution": "allow"
+      },
+      "results": [
+        {
+          "case_id": "fef3b5c25e722b7c",
+          "repeat": 1,
+          "status": "not_executed",
+          "expected": {
+            "variant": "basic",
+            "source_depth": 1,
+            "expected": {
+              "decision": "compile",
+              "depth": 1,
+              "load": "basic"
+            },
+            "expected_execution": "allow"
+          }
+        },
+        {
+          "case_id": "fef3b5c25e722b7c",
+          "repeat": 2,
+          "status": "not_executed",
+          "expected": {
+            "variant": "basic",
+            "source_depth": 1,
+            "expected": {
+              "decision": "compile",
+              "depth": 1,
+              "load": "basic"
+            },
+            "expected_execution": "allow"
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "2707d7cd1c64d31e",
+        "question": "Require exactly 1 directed links from r72211a11e8a6898c to r1fdbd69b5bc031dc. Also require: all reached entities must have permitted=true and class Release for r72211a11e8a6898c and Organization otherwise; all traversed links and the subject certificate must have inclusive validity enclosing 2026-10-01; a subject certificate must have issuer rd5f607e64eba9174 and status current.",
+        "entities": {
+          "subject_id": "r72211a11e8a6898c",
+          "trusted_root_id": "r1fdbd69b5bc031dc",
+          "as_of": "2026-10-01",
+          "authorized_issuer_id": "rd5f607e64eba9174"
+        },
+        "records": [
+          {
+            "id": "r72211a11e8a6898c",
+            "kind": "entity",
+            "business_class": "Release",
+            "permitted": true,
+            "name": "Manufacturing unit 0",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "r1fdbd69b5bc031dc",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": true,
+            "name": "Manufacturing unit 1",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "r177fddd9218992f5",
+            "kind": "link",
+            "from": "r72211a11e8a6898c",
+            "to": "r1fdbd69b5bc031dc",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          },
+          {
+            "id": "r6f769d753ba6a9e1",
+            "kind": "certificate",
+            "subject": "r72211a11e8a6898c",
+            "issuer": "rd5f607e64eba9174",
+            "status": "current",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-09-30"
+          }
+        ]
+      },
+      "evaluation": {
+        "variant": "full",
+        "source_depth": 1,
+        "expected": {
+          "decision": "compile",
+          "depth": 1,
+          "load": "full"
+        },
+        "expected_execution": "deny"
+      },
+      "results": [
+        {
+          "case_id": "2707d7cd1c64d31e",
+          "repeat": 1,
+          "status": "not_executed",
+          "expected": {
+            "variant": "full",
+            "source_depth": 1,
+            "expected": {
+              "decision": "compile",
+              "depth": 1,
+              "load": "full"
+            },
+            "expected_execution": "deny"
+          }
+        },
+        {
+          "case_id": "2707d7cd1c64d31e",
+          "repeat": 2,
+          "status": "not_executed",
+          "expected": {
+            "variant": "full",
+            "source_depth": 1,
+            "expected": {
+              "decision": "compile",
+              "depth": 1,
+              "load": "full"
+            },
+            "expected_execution": "deny"
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "5e5218109e9d5679",
+        "question": "Check whether r72211a11e8a6898c reaches r1fdbd69b5bc031dc in at most 1 directed links. Ignore metadata.",
+        "entities": {
+          "subject_id": "r72211a11e8a6898c",
+          "trusted_root_id": "r1fdbd69b5bc031dc",
+          "as_of": "2026-10-01",
+          "authorized_issuer_id": "rd5f607e64eba9174"
+        },
+        "records": [
+          {
+            "id": "r72211a11e8a6898c",
+            "kind": "entity",
+            "business_class": "Release",
+            "permitted": true,
+            "name": "Manufacturing unit 0",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "r1fdbd69b5bc031dc",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": true,
+            "name": "Manufacturing unit 1",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "r177fddd9218992f5",
+            "kind": "link",
+            "from": "r72211a11e8a6898c",
+            "to": "r1fdbd69b5bc031dc",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          },
+          {
+            "id": "r6f769d753ba6a9e1",
+            "kind": "certificate",
+            "subject": "r72211a11e8a6898c",
+            "issuer": "rd5f607e64eba9174",
+            "status": "current",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-09-30"
+          }
+        ]
+      },
+      "evaluation": {
+        "variant": "unsupported",
+        "source_depth": 1,
+        "expected": {
+          "decision": "abstain",
+          "depth": null,
+          "load": null
+        },
+        "expected_execution": null
+      },
+      "results": [
+        {
+          "case_id": "5e5218109e9d5679",
+          "repeat": 1,
+          "status": "not_executed",
+          "expected": {
+            "variant": "unsupported",
+            "source_depth": 1,
+            "expected": {
+              "decision": "abstain",
+              "depth": null,
+              "load": null
+            },
+            "expected_execution": null
+          }
+        },
+        {
+          "case_id": "5e5218109e9d5679",
+          "repeat": 2,
+          "status": "not_executed",
+          "expected": {
+            "variant": "unsupported",
+            "source_depth": 1,
+            "expected": {
+              "decision": "abstain",
+              "depth": null,
+              "load": null
+            },
+            "expected_execution": null
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "0904bc04a02fe625",
+        "question": "Check the complete release policy including all reached entities must have permitted=true and class Release for r72211a11e8a6898c and Organization otherwise; all traversed links and the subject certificate must have inclusive validity enclosing 2026-10-01; a subject certificate must have issuer rd5f607e64eba9174 and status current, and connection from r72211a11e8a6898c to r1fdbd69b5bc031dc.",
+        "entities": {
+          "subject_id": "r72211a11e8a6898c",
+          "trusted_root_id": "r1fdbd69b5bc031dc",
+          "as_of": "2026-10-01",
+          "authorized_issuer_id": "rd5f607e64eba9174"
+        },
+        "records": [
+          {
+            "id": "r72211a11e8a6898c",
+            "kind": "entity",
+            "business_class": "Release",
+            "permitted": true,
+            "name": "Manufacturing unit 0",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "r1fdbd69b5bc031dc",
+            "kind": "entity",
+            "business_class": "Organization",
+            "permitted": true,
+            "name": "Manufacturing unit 1",
+            "notes": "Synthetic administrative description; not decision evidence."
+          },
+          {
+            "id": "r177fddd9218992f5",
+            "kind": "link",
+            "from": "r72211a11e8a6898c",
+            "to": "r1fdbd69b5bc031dc",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-12-31"
+          },
+          {
+            "id": "r6f769d753ba6a9e1",
+            "kind": "certificate",
+            "subject": "r72211a11e8a6898c",
+            "issuer": "rd5f607e64eba9174",
+            "status": "current",
+            "valid_from": "2026-01-01",
+            "valid_to": "2026-09-30"
+          }
+        ]
+      },
+      "evaluation": {
+        "variant": "missing_depth",
+        "source_depth": 1,
+        "expected": {
+          "decision": "abstain",
+          "depth": null,
+          "load": null
+        },
+        "expected_execution": null
+      },
+      "results": [
+        {
+          "case_id": "0904bc04a02fe625",
+          "repeat": 1,
+          "status": "not_executed",
+          "expected": {
+            "variant": "missing_depth",
+            "source_depth": 1,
+            "expected": {
+              "decision": "abstain",
+              "depth": null,
+              "load": null
+            },
+            "expected_execution": null
+          }
+        },
+        {
+          "case_id": "0904bc04a02fe625",
+          "repeat": 2,
+          "status": "not_executed",
+          "expected": {
+            "variant": "missing_depth",
+            "source_depth": 1,
+            "expected": {
+              "decision": "abstain",
+              "depth": null,
+              "load": null
+            },
+            "expected_execution": null
+          }
+        }
+      ]
+    }
+  ],
+  "gleif": [
+    {
+      "case": {
+        "contract": {
+          "max_hops": 4,
+          "registration": "PUBLISHED",
+          "relation": "direct",
+          "scope": "supplied_snapshot",
+          "status": "ACTIVE",
+          "subject": "54930096XQDYTGP81123",
+          "target": "IGJSJL3JD5P30I6NJZ34"
+        },
+        "id": "gleif-001",
+        "question": "In the supplied snapshot, is IGJSJL3JD5P30I6NJZ34 reachable from 54930096XQDYTGP81123 by 1 to 4 directed ACTIVE/PUBLISHED direct accounting-consolidation edges?",
+        "records": [
+          {
+            "id": "rr-214008",
+            "object": "LBQ3CAGQB6M55WHL3G85",
+            "period_fields": {
+              "Relationship.Period.1.endDate": "2022-12-31T00:00:00.000Z",
+              "Relationship.Period.1.periodType": "ACCOUNTING_PERIOD",
+              "Relationship.Period.1.startDate": "2022-01-01T00:00:00.000Z",
+              "Relationship.Period.2.endDate": "",
+              "Relationship.Period.2.periodType": "RELATIONSHIP_PERIOD",
+              "Relationship.Period.2.startDate": "2017-01-20T12:00:00.000Z",
+              "Relationship.Period.3.endDate": "",
+              "Relationship.Period.3.periodType": "",
+              "Relationship.Period.3.startDate": "",
+              "Relationship.Period.4.endDate": "",
+              "Relationship.Period.4.periodType": "",
+              "Relationship.Period.4.startDate": "",
+              "Relationship.Period.5.endDate": "",
+              "Relationship.Period.5.periodType": "",
+              "Relationship.Period.5.startDate": ""
+            },
+            "provenance": {
+              "csv_data_row": 214008,
+              "source_sha256": "e2edd8e761a60b3dd67dd7cca67cf52c55292c28fd2b0edd69107c9715f4c775"
+            },
+            "registration": "PUBLISHED",
+            "relation": "direct",
+            "status": "ACTIVE",
+            "subject": "54930005XCDE0V0KOV19"
+          },
+          {
+            "id": "rr-228659",
+            "object": "XWD7EQW61XGTJ6SJJH78",
+            "period_fields": {
+              "Relationship.Period.1.endDate": "",
+              "Relationship.Period.1.periodType": "RELATIONSHIP_PERIOD",
+              "Relationship.Period.1.startDate": "1987-10-20T00:00:00.000Z",
+              "Relationship.Period.2.endDate": "2022-12-31T00:00:00.000Z",
+              "Relationship.Period.2.periodType": "ACCOUNTING_PERIOD",
+              "Relationship.Period.2.startDate": "2022-01-01T00:00:00.000Z",
+              "Relationship.Period.3.endDate": "",
+              "Relationship.Period.3.periodType": "",
+              "Relationship.Period.3.startDate": "",
+              "Relationship.Period.4.endDate": "",
+              "Relationship.Period.4.periodType": "",
+              "Relationship.Period.4.startDate": "",
+              "Relationship.Period.5.endDate": "",
+              "Relationship.Period.5.periodType": "",
+              "Relationship.Period.5.startDate": ""
+            },
+            "provenance": {
+              "csv_data_row": 228659,
+              "source_sha256": "e2edd8e761a60b3dd67dd7cca67cf52c55292c28fd2b0edd69107c9715f4c775"
+            },
+            "registration": "PUBLISHED",
+            "relation": "direct",
+            "status": "ACTIVE",
+            "subject": "54930036I2IOT4H5JG90"
+          },
+          {
+            "id": "rr-253005",
+            "object": "549300DU7ZDOU5925B20",
+            "period_fields": {
+              "Relationship.Period.1.endDate": "",
+              "Relationship.Period.1.periodType": "RELATIONSHIP_PERIOD",
+              "Relationship.Period.1.startDate": "2011-08-10T17:30:00.000Z",
+              "Relationship.Period.2.endDate": "2022-12-31T00:00:00.000Z",
+              "Relationship.Period.2.periodType": "ACCOUNTING_PERIOD",
+              "Relationship.Period.2.startDate": "2022-01-01T00:00:00.000Z",
+              "Relationship.Period.3.endDate": "",
+              "Relationship.Period.3.periodType": "",
+              "Relationship.Period.3.startDate": "",
+              "Relationship.Period.4.endDate": "",
+              "Relationship.Period.4.periodType": "",
+              "Relationship.Period.4.startDate": "",
+              "Relationship.Period.5.endDate": "",
+              "Relationship.Period.5.periodType": "",
+              "Relationship.Period.5.startDate": ""
+            },
+            "provenance": {
+              "csv_data_row": 253005,
+              "source_sha256": "e2edd8e761a60b3dd67dd7cca67cf52c55292c28fd2b0edd69107c9715f4c775"
+            },
+            "registration": "PUBLISHED",
+            "relation": "direct",
+            "status": "ACTIVE",
+            "subject": "54930096XQDYTGP81123"
+          },
+          {
+            "id": "rr-269228",
+            "object": "54930036I2IOT4H5JG90",
+            "period_fields": {
+              "Relationship.Period.1.endDate": "",
+              "Relationship.Period.1.periodType": "RELATIONSHIP_PERIOD",
+              "Relationship.Period.1.startDate": "2016-12-31T00:00:00.000Z",
+              "Relationship.Period.2.endDate": "2022-12-31T00:00:00.000Z",
+              "Relationship.Period.2.periodType": "ACCOUNTING_PERIOD",
+              "Relationship.Period.2.startDate": "2022-01-01T00:00:00.000Z",
+              "Relationship.Period.3.endDate": "",
+              "Relationship.Period.3.periodType": "",
+              "Relationship.Period.3.startDate": "",
+              "Relationship.Period.4.endDate": "",
+              "Relationship.Period.4.periodType": "",
+              "Relationship.Period.4.startDate": "",
+              "Relationship.Period.5.endDate": "",
+              "Relationship.Period.5.periodType": "",
+              "Relationship.Period.5.startDate": ""
+            },
+            "provenance": {
+              "csv_data_row": 269228,
+              "source_sha256": "e2edd8e761a60b3dd67dd7cca67cf52c55292c28fd2b0edd69107c9715f4c775"
+            },
+            "registration": "PUBLISHED",
+            "relation": "direct",
+            "status": "ACTIVE",
+            "subject": "549300DU7ZDOU5925B20"
+          },
+          {
+            "id": "rr-490093",
+            "object": "IGJSJL3JD5P30I6NJZ34",
+            "period_fields": {
+              "Relationship.Period.1.endDate": "",
+              "Relationship.Period.1.periodType": "RELATIONSHIP_PERIOD",
+              "Relationship.Period.1.startDate": "2003-06-13T00:00:00.000Z",
+              "Relationship.Period.2.endDate": "2022-12-31T00:00:00.000Z",
+              "Relationship.Period.2.periodType": "ACCOUNTING_PERIOD",
+              "Relationship.Period.2.startDate": "2022-01-01T00:00:00.000Z",
+              "Relationship.Period.3.endDate": "",
+              "Relationship.Period.3.periodType": "",
+              "Relationship.Period.3.startDate": "",
+              "Relationship.Period.4.endDate": "",
+              "Relationship.Period.4.periodType": "",
+              "Relationship.Period.4.startDate": "",
+              "Relationship.Period.5.endDate": "",
+              "Relationship.Period.5.periodType": "",
+              "Relationship.Period.5.startDate": ""
+            },
+            "provenance": {
+              "csv_data_row": 490093,
+              "source_sha256": "e2edd8e761a60b3dd67dd7cca67cf52c55292c28fd2b0edd69107c9715f4c775"
+            },
+            "registration": "PUBLISHED",
+            "relation": "direct",
+            "status": "ACTIVE",
+            "subject": "XWD7EQW61XGTJ6SJJH78"
+          }
+        ]
+      },
+      "evaluation": {
+        "depth": 4,
+        "distractor_component": "2221001Z98Q31691G813",
+        "expected_decision": "reachable",
+        "query_provenance": {
+          "subject": {
+            "csv_data_row": 253005,
+            "source_sha256": "e2edd8e761a60b3dd67dd7cca67cf52c55292c28fd2b0edd69107c9715f4c775"
+          },
+          "target": {
+            "csv_data_row": 876,
+            "source_sha256": "e2edd8e761a60b3dd67dd7cca67cf52c55292c28fd2b0edd69107c9715f4c775"
+          }
+        },
+        "selected_component": "0WWZ9WRSWZSADGTPNI62"
+      },
+      "results": [
+        {
+          "case_id": "gleif-001",
+          "condition": "code",
+          "status": "ok",
+          "prediction": {
+            "decision": "reachable",
+            "evidence_ids": [
+              "rr-253005",
+              "rr-269228",
+              "rr-228659",
+              "rr-490093"
+            ]
+          },
+          "contract_correct": true,
+          "truth_correct": true,
+          "unsafe_positive": false,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": true,
+          "model_trace": null
+        },
+        {
+          "case_id": "gleif-001",
+          "condition": "symbolic",
+          "status": "ok",
+          "prediction": {
+            "decision": "reachable",
+            "evidence_ids": []
+          },
+          "contract_correct": true,
+          "truth_correct": true,
+          "unsafe_positive": false,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": false,
+          "model_trace": null
+        }
+      ],
+      "scope": "Offline Python/SPARQL fixture check only; LLM not executed"
+    },
+    {
+      "case": {
+        "contract": {
+          "max_hops": 4,
+          "registration": "PUBLISHED",
+          "relation": "direct",
+          "scope": "supplied_snapshot",
+          "status": "ACTIVE",
+          "subject": "54930096XQDYTGP81123",
+          "target": "LBQ3CAGQB6M55WHL3G85"
+        },
+        "id": "gleif-002",
+        "question": "In the supplied snapshot, is LBQ3CAGQB6M55WHL3G85 reachable from 54930096XQDYTGP81123 by 1 to 4 directed ACTIVE/PUBLISHED direct accounting-consolidation edges?",
+        "records": [
+          {
+            "id": "rr-214008",
+            "object": "LBQ3CAGQB6M55WHL3G85",
+            "period_fields": {
+              "Relationship.Period.1.endDate": "2022-12-31T00:00:00.000Z",
+              "Relationship.Period.1.periodType": "ACCOUNTING_PERIOD",
+              "Relationship.Period.1.startDate": "2022-01-01T00:00:00.000Z",
+              "Relationship.Period.2.endDate": "",
+              "Relationship.Period.2.periodType": "RELATIONSHIP_PERIOD",
+              "Relationship.Period.2.startDate": "2017-01-20T12:00:00.000Z",
+              "Relationship.Period.3.endDate": "",
+              "Relationship.Period.3.periodType": "",
+              "Relationship.Period.3.startDate": "",
+              "Relationship.Period.4.endDate": "",
+              "Relationship.Period.4.periodType": "",
+              "Relationship.Period.4.startDate": "",
+              "Relationship.Period.5.endDate": "",
+              "Relationship.Period.5.periodType": "",
+              "Relationship.Period.5.startDate": ""
+            },
+            "provenance": {
+              "csv_data_row": 214008,
+              "source_sha256": "e2edd8e761a60b3dd67dd7cca67cf52c55292c28fd2b0edd69107c9715f4c775"
+            },
+            "registration": "PUBLISHED",
+            "relation": "direct",
+            "status": "ACTIVE",
+            "subject": "54930005XCDE0V0KOV19"
+          },
+          {
+            "id": "rr-228659",
+            "object": "XWD7EQW61XGTJ6SJJH78",
+            "period_fields": {
+              "Relationship.Period.1.endDate": "",
+              "Relationship.Period.1.periodType": "RELATIONSHIP_PERIOD",
+              "Relationship.Period.1.startDate": "1987-10-20T00:00:00.000Z",
+              "Relationship.Period.2.endDate": "2022-12-31T00:00:00.000Z",
+              "Relationship.Period.2.periodType": "ACCOUNTING_PERIOD",
+              "Relationship.Period.2.startDate": "2022-01-01T00:00:00.000Z",
+              "Relationship.Period.3.endDate": "",
+              "Relationship.Period.3.periodType": "",
+              "Relationship.Period.3.startDate": "",
+              "Relationship.Period.4.endDate": "",
+              "Relationship.Period.4.periodType": "",
+              "Relationship.Period.4.startDate": "",
+              "Relationship.Period.5.endDate": "",
+              "Relationship.Period.5.periodType": "",
+              "Relationship.Period.5.startDate": ""
+            },
+            "provenance": {
+              "csv_data_row": 228659,
+              "source_sha256": "e2edd8e761a60b3dd67dd7cca67cf52c55292c28fd2b0edd69107c9715f4c775"
+            },
+            "registration": "PUBLISHED",
+            "relation": "direct",
+            "status": "ACTIVE",
+            "subject": "54930036I2IOT4H5JG90"
+          },
+          {
+            "id": "rr-253005",
+            "object": "549300DU7ZDOU5925B20",
+            "period_fields": {
+              "Relationship.Period.1.endDate": "",
+              "Relationship.Period.1.periodType": "RELATIONSHIP_PERIOD",
+              "Relationship.Period.1.startDate": "2011-08-10T17:30:00.000Z",
+              "Relationship.Period.2.endDate": "2022-12-31T00:00:00.000Z",
+              "Relationship.Period.2.periodType": "ACCOUNTING_PERIOD",
+              "Relationship.Period.2.startDate": "2022-01-01T00:00:00.000Z",
+              "Relationship.Period.3.endDate": "",
+              "Relationship.Period.3.periodType": "",
+              "Relationship.Period.3.startDate": "",
+              "Relationship.Period.4.endDate": "",
+              "Relationship.Period.4.periodType": "",
+              "Relationship.Period.4.startDate": "",
+              "Relationship.Period.5.endDate": "",
+              "Relationship.Period.5.periodType": "",
+              "Relationship.Period.5.startDate": ""
+            },
+            "provenance": {
+              "csv_data_row": 253005,
+              "source_sha256": "e2edd8e761a60b3dd67dd7cca67cf52c55292c28fd2b0edd69107c9715f4c775"
+            },
+            "registration": "PUBLISHED",
+            "relation": "direct",
+            "status": "ACTIVE",
+            "subject": "54930096XQDYTGP81123"
+          },
+          {
+            "id": "rr-269228",
+            "object": "54930036I2IOT4H5JG90",
+            "period_fields": {
+              "Relationship.Period.1.endDate": "",
+              "Relationship.Period.1.periodType": "RELATIONSHIP_PERIOD",
+              "Relationship.Period.1.startDate": "2016-12-31T00:00:00.000Z",
+              "Relationship.Period.2.endDate": "2022-12-31T00:00:00.000Z",
+              "Relationship.Period.2.periodType": "ACCOUNTING_PERIOD",
+              "Relationship.Period.2.startDate": "2022-01-01T00:00:00.000Z",
+              "Relationship.Period.3.endDate": "",
+              "Relationship.Period.3.periodType": "",
+              "Relationship.Period.3.startDate": "",
+              "Relationship.Period.4.endDate": "",
+              "Relationship.Period.4.periodType": "",
+              "Relationship.Period.4.startDate": "",
+              "Relationship.Period.5.endDate": "",
+              "Relationship.Period.5.periodType": "",
+              "Relationship.Period.5.startDate": ""
+            },
+            "provenance": {
+              "csv_data_row": 269228,
+              "source_sha256": "e2edd8e761a60b3dd67dd7cca67cf52c55292c28fd2b0edd69107c9715f4c775"
+            },
+            "registration": "PUBLISHED",
+            "relation": "direct",
+            "status": "ACTIVE",
+            "subject": "549300DU7ZDOU5925B20"
+          },
+          {
+            "id": "rr-490093",
+            "object": "IGJSJL3JD5P30I6NJZ34",
+            "period_fields": {
+              "Relationship.Period.1.endDate": "",
+              "Relationship.Period.1.periodType": "RELATIONSHIP_PERIOD",
+              "Relationship.Period.1.startDate": "2003-06-13T00:00:00.000Z",
+              "Relationship.Period.2.endDate": "2022-12-31T00:00:00.000Z",
+              "Relationship.Period.2.periodType": "ACCOUNTING_PERIOD",
+              "Relationship.Period.2.startDate": "2022-01-01T00:00:00.000Z",
+              "Relationship.Period.3.endDate": "",
+              "Relationship.Period.3.periodType": "",
+              "Relationship.Period.3.startDate": "",
+              "Relationship.Period.4.endDate": "",
+              "Relationship.Period.4.periodType": "",
+              "Relationship.Period.4.startDate": "",
+              "Relationship.Period.5.endDate": "",
+              "Relationship.Period.5.periodType": "",
+              "Relationship.Period.5.startDate": ""
+            },
+            "provenance": {
+              "csv_data_row": 490093,
+              "source_sha256": "e2edd8e761a60b3dd67dd7cca67cf52c55292c28fd2b0edd69107c9715f4c775"
+            },
+            "registration": "PUBLISHED",
+            "relation": "direct",
+            "status": "ACTIVE",
+            "subject": "XWD7EQW61XGTJ6SJJH78"
+          }
+        ]
+      },
+      "evaluation": {
+        "depth": 4,
+        "distractor_component": "2221001Z98Q31691G813",
+        "expected_decision": "not_reachable",
+        "query_provenance": {
+          "subject": {
+            "csv_data_row": 253005,
+            "source_sha256": "e2edd8e761a60b3dd67dd7cca67cf52c55292c28fd2b0edd69107c9715f4c775"
+          },
+          "target": {
+            "csv_data_row": 214008,
+            "source_sha256": "e2edd8e761a60b3dd67dd7cca67cf52c55292c28fd2b0edd69107c9715f4c775"
+          }
+        },
+        "selected_component": "0WWZ9WRSWZSADGTPNI62"
+      },
+      "results": [
+        {
+          "case_id": "gleif-002",
+          "condition": "code",
+          "status": "ok",
+          "prediction": {
+            "decision": "not_reachable",
+            "evidence_ids": []
+          },
+          "contract_correct": true,
+          "truth_correct": true,
+          "unsafe_positive": false,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": false,
+          "model_trace": null
+        },
+        {
+          "case_id": "gleif-002",
+          "condition": "symbolic",
+          "status": "ok",
+          "prediction": {
+            "decision": "not_reachable",
+            "evidence_ids": []
+          },
+          "contract_correct": true,
+          "truth_correct": true,
+          "unsafe_positive": false,
+          "unnecessary_abstention": false,
+          "citation_ids_exist": true,
+          "has_citation": false,
+          "model_trace": null
+        }
+      ],
+      "scope": "Offline Python/SPARQL fixture check only; LLM not executed"
+    }
+  ]
+}

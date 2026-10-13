@@ -10,12 +10,25 @@ For session continuity, read local `MEMORY.md` if present. It is ignored by Git 
 - YAGO selective follow-up (protocol 0.4) keeps the same source/shapes and distinguishes question-relevant violations from missing evidence. Keep source absence separate from retrieval omission. S1/S2/C2 use a predeclared birthPlace contract, not a learned general-purpose policy. Report wrong answers and unnecessary abstentions together; this reuses the pilot cohort and is exploratory.
 - User authorized a complete bounded pilot without routine clarification. Use conservative recorded budgets. Keep source corruption separate from retrieval omissions; never repair from evaluation gold. Preserve unsuccessful runs.
 - Distinguish the 24-case pilot from representative benchmarks, free-form Text2SPARQL, full vector RAG and graph-engine comparisons.
+- Semantic follow-up separates question/evidence applicability, conflicting evidence, and externally scored factual truth. Do not infer general LLM semantic weakness from prompts that prohibit real-world truth assessment. SHACL can encode declared semantic constraints; conformance is not external truth.
+- Preserve semantically wrong model decisions as measured outcomes; do not correct or reject them with runtime oracle checks. Separate response-schema errors, citation applicability, final decisions and retrieval policy. Synthetic semantic development with supplied question contracts is not natural-language contract extraction or a fresh GLEIF benchmark.
+- Protocol 0.5-study1 now has completed 12-entity development (72 cases) and 30-entity reserved evaluation (180 cases), six conditions and three repeats. This cohort is consumed, not fresh held-out data for future tuning. Keep frozen inputs, source-only retries, all failed attempts and entity-level analysis. Jev was measured separately on development only; actual Neo4j/Cypher parity covered 72 development cases, not engine performance.
+- Expanded-study API reservations share `_workspace/expanded-study/campaign-budget.json` (3,200 attempts / $5 hard cap, never refund failures). Existing results must not be rerun merely to fill the budget. Scope new work explicitly; do not reset the ledger. Check intended subject limits and planned row counts before small paid smoke runs.
+
+## Hybrid intervention research scope
+
+- Current user objective: identify the data/question complexity and pipeline locations where a small explicit ontology/constraint layer helps controlled workflows and audit tasks. Do not assume RDF/SHACL superiority or require converting all source data to ontology.
+- `hybrid-complexity-1` separates depth, constraint load, unrelated records and evidence state. It uses synthetic manufacturing approval contracts and a separate actual GLEIF bounded-reachability transfer check. Synthetic SHACL and GLEIF SPARQL are different comparators; no OWL reasoning or full graph-engine benchmark claim.
+- Same-policy Python is essential. Pre-report benefits are computed-feature treatment, not proof of RDF superiority. Post-checks veto positive decisions only. Derived selective/post arms reuse model traces and are not independent paid measurements.
+- Preserve the distinction between contract agreement, external synthetic truth, unnecessary rejection/abstention, source absence and projection/retrieval omission. A shape-conforming false fact with no contrary evidence cannot be identified by validation alone.
+- Natural-language to typed-template selection is a separate bounded diagnostic, not free Text2SPARQL. Valid but wrong contracts must remain outcomes; a successful checker execution does not verify that the user's question was interpreted correctly.
+- Keep interrupted runs and unresolved cost reservations. A manually inspected continuation must record its selected unfinished cases, separate original failure from recovery, and never silently rewrite the original denominator.
 
 ## Stack decisions (do not casually reverse)
 
 - **Host OS:** Ubuntu 22.04 / 24.04 on AWS EC2
 - **Python:** manage with **uv** only (`uv sync`, `uv run`). Do not introduce plain `pip`/`venv` workflows.
-- **LLM gateway:** **OpenRouter** via `.env` (`OPENROUTER_*`). No local GPU serving.
+- **Experimental LLM gateway:** **OpenRouter** via `.env` (`OPENROUTER_*`). Research operations and code work use the current Codex session and native subagents, not OpenRouter. No local GPU serving.
 - **Secrets:** never commit `.env`, API keys, PEM, or AWS credentials. Use `.env.example` as the template.
 - **IaC:** Terraform lives under `infra/terraform/` (placeholder until the account/region is fixed).
 - **Graph stores (later):** GraphDB Free (primary SHACL), Neo4j Community (LPG baseline), Neptune (short window). Do not invent install scripts unless asked.
@@ -52,6 +65,17 @@ For session continuity, read local `MEMORY.md` if present. It is ignored by Git 
 - **Orca** is an IDE/runtime that *hosts* agents; it does **not** replace Codex/Claude Code/etc. Install and authenticate the agent CLI on the machine where agents actually run (see `docs/setup/agents.md`).
 - For SSH-only laptop→EC2: agents still need their CLIs/credentials available on the EC2 side when work runs remotely.
 - For phone/mobile continuity: prefer Remote Orca Server (`orca serve`) on EC2, not SSH-only.
+
+## Research operations workflow
+
+- Research operations and code changes use the current Codex session and native Codex subagents. Only experimental QA calls OpenRouter. Never substitute an OpenRouter or OpenAI API worker for an unavailable native subagent.
+- Main Codex owns planning, synthesis, implementation and interpretation. Delegate independent methods and implementation reviews with separate contexts (`fork_turns="none"` where supported); give each only its phase request and own result path. Reviewers must not read one another's outputs or write source code. Native subagents inherit workspace/tool access; these boundaries are instructions, not an OS sandbox.
+- Follow `research/operations/RUNBOOK.md`. `scripts/research_ops.py` only freezes requests, records returned JSON, enforces reviewer gates and runs registered offline checks. It never starts an LLM client, nested Codex CLI or background service. Use Codex's available collaboration tools to dispatch requested reviews.
+- Config, role instructions and task examples live in `research/operations/`. New requests, submissions, attempts and a logical request ledger live under ignored `_workspace/research-ops-codex/`. Preserve historical OpenRouter jobs and costs in `_workspace/research-ops/`; do not rerun them through the new runner.
+- Keep the user-authorized maximum of 100 recorded role requests per UTC day, 7 per job and 2 concurrent reviewers. This is a repository workflow limit, not a Codex token/account or monetary cap. Do not claim Codex usage is free. Experimental API budgets remain in their existing runners; AWS billing is separate.
+- Explicit prose packets exclude held-out gold and secrets. A reviewer receiving an abbreviated packet must mark omitted facts unverified, not invent defects. Never repair from evaluation gold. Preserve source absence, retrieval omission and externally scored factual error as separate concepts.
+- Every submission records its request binding and operator-supplied agent ID. That ID is an audit annotation, not authenticated proof. Both reviewers must be distinct agents; a coordinator cannot override a reviewer blocker. If collaboration is unavailable, leave the work awaiting review and report the limitation.
+- Preserve unsuccessful attempts and consumed request reservations. Inspect before explicit retry; changed verification code or plan requires a new job. Completed steps are reused. Source code changes after a review need fresh review/check records. Local software tests are not GraphRAG benchmarks.
 
 ## Safety / scope
 

@@ -6,6 +6,16 @@
 
 <!-- RUNS -->
 
+- [2026-10-13 최소 온톨로지 개입 비교](20261013-hybrid-comparison.md) — 공통 완료 189개 문항 실행, 미수신 2회·미실행 범위 보존
+
+- [2026-10-13 의미 판단 후속 실행](20261013-semantic-comparison.md) — 합성 개발 180행·대응 점검 36행, 첫 형식 실패 실행 180행 보존
+
+
+- [2026-10-13 확대 비교](20261013-expanded-comparison.md) — 개발 1,296개·별도 평가 3,240개·Jev 개발 216개 결과
+
+- [20261013T075333Z-gleif-comparison-7b979a6a](20261013T075333Z-gleif-comparison-7b979a6a.md) — completed, development model smoke
+- [20261013T075145Z-gleif-comparison-648a2ddf](20261013T075145Z-gleif-comparison-648a2ddf.md) — completed, development deterministic
+
 - [20261012T123009Z-yago-selective-abb7e636](20261012T123009Z-yago-selective-abb7e636.md) — completed, pilot
 
 - [20261012T122943Z-yago-selective-dad1f7f7](20261012T122943Z-yago-selective-dad1f7f7.md) — completed, development

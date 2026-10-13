@@ -1,0 +1,4063 @@
+{
+  "protocol": "0.5-study1",
+  "scope": "Exploratory GLEIF convenience cohort; no population/equivalence/full GraphRAG claim",
+  "prompt_selection": {
+    "selected_at": "2026-10-13T09:23:46.839121+00:00",
+    "rule": "Highest valid initial overall judgment agreement with equivalent code; errors disagreement. Tie raw-v2, structured-v3, original-structured-v2. Prespecified before candidates.",
+    "candidates": [
+      {
+        "run_id": "20261013T091152Z-comparison-study-1e017f9d",
+        "agreement": 17,
+        "denominator": 36
+      },
+      {
+        "run_id": "20261013T092154Z-comparison-study-33b8f5aa",
+        "agreement": 9,
+        "denominator": 36
+      },
+      {
+        "run_id": "20261013T092245Z-comparison-study-146178dc",
+        "agreement": 24,
+        "denominator": 36
+      }
+    ],
+    "selected_prompt": "experiments/comparison/judge-prompt-v3.txt",
+    "selected_prompt_sha256": "5bf1453716cd3c30ca095995715ee4706e7f36f381cf8dece9f998c6fdd5b870",
+    "scope": "development-only tuning on two reused entities; not unbiased prompt benchmark"
+  },
+  "evaluation_freeze": {
+    "frozen_at": "2026-10-13T09:30:11.554769+00:00",
+    "protocol": "0.5-study1",
+    "review_job": "20261013T092037Z-expanded-final-preflight-c82fa9",
+    "development_run": "20261013T092347Z-comparison-study-1f4c8b36",
+    "heldout_semantics_unopened": true,
+    "planned_entities": 30,
+    "planned_cases": 180,
+    "planned_rows": 3240,
+    "inference": "exploratory paired entity bootstrap10k; no p-values or equivalence"
+  },
+  "evaluation_input_hashes": {
+    "scripts/run_comparison_study.py": "74f2db7a454a121b102d52ad9e11ab825dac5547ee3731a05e565689c678f1c0",
+    "scripts/run_gleif_comparison.py": "3134ce5a565e11ba90ac43f939a84e9f0acaae83446a3e8bedbb3db201027ba0",
+    "scripts/run_gleif_pilot.py": "5fe64ee05b240b6afa42f0e80f8909389c6aae5ec1dae2094c2b0b031a05e4cb",
+    "scripts/prepare_gleif_comparison.py": "fb5074974d8e34631b92805acb81a4e18e08e3ec8348489bf2b579fa6998de42",
+    "scripts/analyze_comparison_study.py": "6ada63e8771b7ca22b2600213de934e722ee7f652acd424380f2b6b220651988",
+    "experiments/comparison/study-evaluation.json": "969462b3a97967edde37f67250c69434f36070e89b174fde7e037ac56b73ef2b",
+    "experiments/comparison/shapes.ttl": "c83ab7215386cfc36712004e99a6717870b7ea84c67e6bd1c4a124875887290e",
+    "experiments/comparison/judge-prompt-v3.txt": "5bf1453716cd3c30ca095995715ee4706e7f36f381cf8dece9f998c6fdd5b870",
+    "uv.lock": "b29fc8a715c3f6e37b6528e28f0e1bf517b97cd9afd2beda3dfe36a22635edc0",
+    "pyproject.toml": "18af676de1c07964bedff4c739dd8831f2af0c613e00fccf7f16216ea2650721",
+    "docs/experiments/specification.md": "78687262cbde28c839685eff1e8778c3af62f28a861e4f45893bfdf5071a6d5e",
+    "data/gleif/20261012T080000/comparison-20261013-dev1/reserved-dataset.json": "80287eb72534824da52659b93f3d1f2f11313f6b073fbf763265e21f41a66426",
+    "data/gleif/20261012T080000/comparison-20261013-dev1/source-manifest.json": "90b8f20ea1d18d1c4f656b608f26574543c74d493a61cf66e3f68058d9bf11bc"
+  },
+  "evaluation_launch_verification": {
+    "verified_at": "2026-10-13T09:30:21.547366+00:00",
+    "files_verified": 15,
+    "freeze_sha256": "623f9c06e7df28d19960a7780da8bb8bcbfd0a025499bf95b1f905c2c63dcdb1"
+  },
+  "costs": {
+    "reported_usd": 0.36300283800000044,
+    "attempts": 2214,
+    "reserved_usd": 3.340730999999934,
+    "unknown_interrupted_responses": 1,
+    "note": "One interrupted request has no returned cost; reported total is not final billing. Reservations retained. AWS/Codex excluded."
+  },
+  "jev_development_exact_code_matches": 216,
+  "cypher": {
+    "run_id": "20261013T091122Z-gleif-cypher-940cf7377ff6460e9a001e510489cae9",
+    "status": "completed",
+    "cases": 72,
+    "parity": 72,
+    "neo4j_version": [
+      {
+        "name": "Neo4j Kernel",
+        "versions": [
+          "5.26.32"
+        ],
+        "edition": "community"
+      }
+    ],
+    "dataset_sha256": "f20c1a4af9889a6e3e18dbeb9258bf6272791c83b285db1bdbf39af5dc8cefa4"
+  },
+  "runs": [
+    {
+      "run_id": "20261013T091152Z-comparison-study-1e017f9d",
+      "stage": "development",
+      "status": "completed_with_errors",
+      "summary": {
+        "llm": {
+          "total": 36,
+          "correct": 0,
+          "wrong": 0,
+          "abstained": 35,
+          "errors": 1,
+          "unnecessary_abstentions": 21,
+          "source_answerable": 21,
+          "extra_retrievals": 12,
+          "accuracy_all": 0.0
+        }
+      },
+      "budget": {
+        "calls": 48,
+        "reserved_usd": 0.06715440000000002,
+        "reported_usd": 0.00779625,
+        "missing_cost": 0
+      },
+      "record_sha256": "4ec5a1328c7bb9033534eda3049e3c5a74d11da64575e2a73baea00a3f39943a"
+    },
+    {
+      "run_id": "20261013T092154Z-comparison-study-33b8f5aa",
+      "stage": "development",
+      "status": "completed",
+      "summary": {
+        "llm": {
+          "total": 36,
+          "correct": 0,
+          "wrong": 0,
+          "abstained": 36,
+          "errors": 0,
+          "unnecessary_abstentions": 21,
+          "source_answerable": 21,
+          "extra_retrievals": 3,
+          "accuracy_all": 0.0
+        }
+      },
+      "budget": {
+        "calls": 39,
+        "reserved_usd": 0.052454400000000005,
+        "reported_usd": 0.0065394000000000025,
+        "missing_cost": 0
+      },
+      "record_sha256": "e332ee312ff4847b98a553bc134c93e44cfcd740dfa3a8af51c07ae17dcb5309"
+    },
+    {
+      "run_id": "20261013T092245Z-comparison-study-146178dc",
+      "stage": "development",
+      "status": "completed",
+      "summary": {
+        "llm": {
+          "total": 36,
+          "correct": 18,
+          "wrong": 3,
+          "abstained": 15,
+          "errors": 0,
+          "unnecessary_abstentions": 3,
+          "source_answerable": 21,
+          "extra_retrievals": 3,
+          "accuracy_all": 0.5
+        }
+      },
+      "budget": {
+        "calls": 39,
+        "reserved_usd": 0.05570579999999999,
+        "reported_usd": 0.007367400000000003,
+        "missing_cost": 0
+      },
+      "record_sha256": "a689fcc7369d290833f3a133bf0cf146e29de8ae3360b0804599a20cefcc708b"
+    },
+    {
+      "run_id": "20261013T092347Z-comparison-study-1f4c8b36",
+      "stage": "development",
+      "status": "completed",
+      "summary": {
+        "code": {
+          "total": 216,
+          "correct": 126,
+          "wrong": 18,
+          "abstained": 72,
+          "errors": 0,
+          "unnecessary_abstentions": 0,
+          "source_answerable": 126,
+          "extra_retrievals": 90,
+          "accuracy_all": 0.5833333333333334
+        },
+        "hybrid": {
+          "total": 216,
+          "correct": 108,
+          "wrong": 18,
+          "abstained": 90,
+          "errors": 0,
+          "unnecessary_abstentions": 18,
+          "source_answerable": 126,
+          "extra_retrievals": 90,
+          "accuracy_all": 0.5
+        },
+        "llm": {
+          "total": 216,
+          "correct": 79,
+          "wrong": 18,
+          "abstained": 119,
+          "errors": 0,
+          "unnecessary_abstentions": 47,
+          "source_answerable": 126,
+          "extra_retrievals": 4,
+          "accuracy_all": 0.36574074074074076
+        },
+        "none": {
+          "total": 216,
+          "correct": 90,
+          "wrong": 54,
+          "abstained": 72,
+          "errors": 0,
+          "unnecessary_abstentions": 36,
+          "source_answerable": 126,
+          "extra_retrievals": 0,
+          "accuracy_all": 0.4166666666666667
+        },
+        "refresh": {
+          "total": 216,
+          "correct": 126,
+          "wrong": 54,
+          "abstained": 36,
+          "errors": 0,
+          "unnecessary_abstentions": 0,
+          "source_answerable": 126,
+          "extra_retrievals": 216,
+          "accuracy_all": 0.5833333333333334
+        },
+        "shacl": {
+          "total": 216,
+          "correct": 126,
+          "wrong": 18,
+          "abstained": 72,
+          "errors": 0,
+          "unnecessary_abstentions": 0,
+          "source_answerable": 126,
+          "extra_retrievals": 90,
+          "accuracy_all": 0.5833333333333334
+        }
+      },
+      "budget": {
+        "calls": 490,
+        "reserved_usd": 0.6946178000000002,
+        "reported_usd": 0.0890457,
+        "missing_cost": 0
+      },
+      "record_sha256": "3769e01cb698e8f7e24e383bca8f6f24825131a497cbed70155a1e123fde0e3d"
+    },
+    {
+      "run_id": "20261013T093021Z-comparison-study-6cdea714",
+      "stage": "evaluation",
+      "status": "completed",
+      "summary": {
+        "code": {
+          "total": 540,
+          "correct": 315,
+          "wrong": 45,
+          "abstained": 180,
+          "errors": 0,
+          "unnecessary_abstentions": 0,
+          "source_answerable": 315,
+          "extra_retrievals": 225,
+          "accuracy_all": 0.5833333333333334
+        },
+        "hybrid": {
+          "total": 540,
+          "correct": 280,
+          "wrong": 45,
+          "abstained": 215,
+          "errors": 0,
+          "unnecessary_abstentions": 35,
+          "source_answerable": 315,
+          "extra_retrievals": 216,
+          "accuracy_all": 0.5185185185185185
+        },
+        "llm": {
+          "total": 540,
+          "correct": 215,
+          "wrong": 45,
+          "abstained": 280,
+          "errors": 0,
+          "unnecessary_abstentions": 100,
+          "source_answerable": 315,
+          "extra_retrievals": 28,
+          "accuracy_all": 0.39814814814814814
+        },
+        "none": {
+          "total": 540,
+          "correct": 225,
+          "wrong": 135,
+          "abstained": 180,
+          "errors": 0,
+          "unnecessary_abstentions": 90,
+          "source_answerable": 315,
+          "extra_retrievals": 0,
+          "accuracy_all": 0.4166666666666667
+        },
+        "refresh": {
+          "total": 540,
+          "correct": 315,
+          "wrong": 135,
+          "abstained": 90,
+          "errors": 0,
+          "unnecessary_abstentions": 0,
+          "source_answerable": 315,
+          "extra_retrievals": 540,
+          "accuracy_all": 0.5833333333333334
+        },
+        "shacl": {
+          "total": 540,
+          "correct": 315,
+          "wrong": 45,
+          "abstained": 180,
+          "errors": 0,
+          "unnecessary_abstentions": 0,
+          "source_answerable": 315,
+          "extra_retrievals": 225,
+          "accuracy_all": 0.5833333333333334
+        }
+      },
+      "budget": {
+        "calls": 1234,
+        "reserved_usd": 1.7470689999999962,
+        "reported_usd": 0.2214735000000004,
+        "missing_cost": 0
+      },
+      "record_sha256": "7a8a333f9b5eb9d978dce7e1ba12d9d518b72c5d2dab9f90ad2f306b4944c71a"
+    },
+    {
+      "run_id": "20261013T092943Z-jev-dev-smoke-d3a99038",
+      "stage": "development",
+      "status": "completed",
+      "summary": {
+        "jev": {
+          "total": 36,
+          "correct": 21,
+          "wrong": 3,
+          "abstained": 12,
+          "errors": 0,
+          "unnecessary_abstentions": 0,
+          "source_answerable": 21,
+          "extra_retrievals": 15,
+          "accuracy_all": 0.5833333333333334
+        }
+      },
+      "budget": {
+        "calls": 51,
+        "reserved_usd": 0.10200000000000008,
+        "reported_usd": 0.004238639999999999,
+        "missing_cost": 0
+      },
+      "record_sha256": "34a4f013fe3bca6f7dccd6e75960cfe1bdb118e9ef8c7aecf7f70643bf32ff53"
+    },
+    {
+      "run_id": "20261013T093602Z-jev-dev-full-61aa4797",
+      "stage": "development",
+      "status": "completed",
+      "summary": {
+        "jev": {
+          "total": 216,
+          "correct": 126,
+          "wrong": 18,
+          "abstained": 72,
+          "errors": 0,
+          "unnecessary_abstentions": 0,
+          "source_answerable": 126,
+          "extra_retrievals": 90,
+          "accuracy_all": 0.5833333333333334
+        }
+      },
+      "budget": {
+        "calls": 306,
+        "reserved_usd": 0.6120000000000004,
+        "reported_usd": 0.025372998,
+        "missing_cost": 0
+      },
+      "record_sha256": "3c9f5994c69b088b132ccd85da2e4847d466f1e072a1498d06ee74358471d3fd"
+    }
+  ],
+  "interrupted_run": {
+    "run_id": "20261013T091122Z-comparison-study-e760e4e4",
+    "status": "operator_interrupted",
+    "raw_status": "running",
+    "budget": {
+      "calls": 7,
+      "reserved_usd": 0.009729600000000001,
+      "reported_usd": 0.00116895,
+      "missing_cost": 0
+    },
+    "note": "Missing --limit-subjects 2; SIGINT stopped run. Excluded from planned comparisons; raw record retained."
+  },
+  "primary_analysis": {
+    "analysis_config": {
+      "seed": 20261013,
+      "bootstrap_samples": 10000,
+      "confidence": 0.95,
+      "method": "paired entity cluster percentile bootstrap; equal entity weights",
+      "cluster": "original entity LEI, one selected entity per corporate component",
+      "repeat_handling": "average repeats and variants within entity/condition before resampling",
+      "contrasts": [
+        "shacl-minus-code",
+        "shacl-minus-llm"
+      ],
+      "metrics": [
+        "wrong/all",
+        "unnecessary_abstentions/source_answerable"
+      ],
+      "jev": "unmeasured; excluded from primary comparisons",
+      "p_values": "not computed",
+      "interpretation": "exploratory convenience cohort; no equivalence or population claims"
+    },
+    "run_id": "20261013T093021Z-comparison-study-6cdea714",
+    "descriptive": {
+      "code": {
+        "total": 540,
+        "correct": 315,
+        "wrong": 45,
+        "abstained": 180,
+        "errors": 0,
+        "source_answerable": 315,
+        "unnecessary_abstentions": 0,
+        "wrong_rate_all": 0.08333333333333333,
+        "unnecessary_abstention_rate": 0.0,
+        "coverage": 0.6666666666666666,
+        "risk_among_answers": 0.125,
+        "extra_retrievals": 225,
+        "api_cost": {
+          "reported_usd": 0,
+          "missing_cost": 0,
+          "rows_with_cost_metadata": 540
+        }
+      },
+      "hybrid": {
+        "total": 540,
+        "correct": 280,
+        "wrong": 45,
+        "abstained": 215,
+        "errors": 0,
+        "source_answerable": 315,
+        "unnecessary_abstentions": 35,
+        "wrong_rate_all": 0.08333333333333333,
+        "unnecessary_abstention_rate": 0.1111111111111111,
+        "coverage": 0.6018518518518519,
+        "risk_among_answers": 0.13846153846153847,
+        "extra_retrievals": 216,
+        "api_cost": {
+          "reported_usd": 0.11863785,
+          "missing_cost": 0,
+          "rows_with_cost_metadata": 540
+        }
+      },
+      "llm": {
+        "total": 540,
+        "correct": 215,
+        "wrong": 45,
+        "abstained": 280,
+        "errors": 0,
+        "source_answerable": 315,
+        "unnecessary_abstentions": 100,
+        "wrong_rate_all": 0.08333333333333333,
+        "unnecessary_abstention_rate": 0.31746031746031744,
+        "coverage": 0.48148148148148145,
+        "risk_among_answers": 0.17307692307692307,
+        "extra_retrievals": 28,
+        "api_cost": {
+          "reported_usd": 0.10283565,
+          "missing_cost": 0,
+          "rows_with_cost_metadata": 540
+        }
+      },
+      "none": {
+        "total": 540,
+        "correct": 225,
+        "wrong": 135,
+        "abstained": 180,
+        "errors": 0,
+        "source_answerable": 315,
+        "unnecessary_abstentions": 90,
+        "wrong_rate_all": 0.25,
+        "unnecessary_abstention_rate": 0.2857142857142857,
+        "coverage": 0.6666666666666666,
+        "risk_among_answers": 0.375,
+        "extra_retrievals": 0,
+        "api_cost": {
+          "reported_usd": 0,
+          "missing_cost": 0,
+          "rows_with_cost_metadata": 540
+        }
+      },
+      "refresh": {
+        "total": 540,
+        "correct": 315,
+        "wrong": 135,
+        "abstained": 90,
+        "errors": 0,
+        "source_answerable": 315,
+        "unnecessary_abstentions": 0,
+        "wrong_rate_all": 0.25,
+        "unnecessary_abstention_rate": 0.0,
+        "coverage": 0.8333333333333334,
+        "risk_among_answers": 0.3,
+        "extra_retrievals": 540,
+        "api_cost": {
+          "reported_usd": 0,
+          "missing_cost": 0,
+          "rows_with_cost_metadata": 540
+        }
+      },
+      "shacl": {
+        "total": 540,
+        "correct": 315,
+        "wrong": 45,
+        "abstained": 180,
+        "errors": 0,
+        "source_answerable": 315,
+        "unnecessary_abstentions": 0,
+        "wrong_rate_all": 0.08333333333333333,
+        "unnecessary_abstention_rate": 0.0,
+        "coverage": 0.6666666666666666,
+        "risk_among_answers": 0.125,
+        "extra_retrievals": 225,
+        "api_cost": {
+          "reported_usd": 0,
+          "missing_cost": 0,
+          "rows_with_cost_metadata": 540
+        }
+      }
+    },
+    "cluster_count": 30,
+    "cluster_summaries": {
+      "097900BIIU0000167998": {
+        "code": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "hybrid": {
+          "total": 15,
+          "correct": 0,
+          "wrong": 0,
+          "abstained": 15,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 9,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 1.0,
+          "coverage": 0.0,
+          "risk_among_answers": null,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0.0030891,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "llm": {
+          "total": 15,
+          "correct": 0,
+          "wrong": 0,
+          "abstained": 15,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 9,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 1.0,
+          "coverage": 0.0,
+          "risk_among_answers": null,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0.00242625,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "none": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.6,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "refresh": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 15,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "shacl": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        }
+      },
+      "097900CAKA0000020733": {
+        "code": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "hybrid": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0.0029655000000000003,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "llm": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 0,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.4,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 1,
+          "api_cost": {
+            "reported_usd": 0.0027174,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "none": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.6,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "refresh": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 15,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "shacl": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        }
+      },
+      "097900CAKA0000071464": {
+        "code": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "hybrid": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0.0029745,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "llm": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 0,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.4,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0.00255465,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "none": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.6,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "refresh": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 15,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "shacl": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        }
+      },
+      "097900CAKA0000185245": {
+        "code": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "hybrid": {
+          "total": 15,
+          "correct": 0,
+          "wrong": 0,
+          "abstained": 15,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 9,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 1.0,
+          "coverage": 0.0,
+          "risk_among_answers": null,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0.0028887,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "llm": {
+          "total": 15,
+          "correct": 0,
+          "wrong": 0,
+          "abstained": 15,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 9,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 1.0,
+          "coverage": 0.0,
+          "risk_among_answers": null,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0.00262725,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "none": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.6,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "refresh": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 15,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "shacl": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        }
+      },
+      "097900CAKA0000185342": {
+        "code": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "hybrid": {
+          "total": 15,
+          "correct": 0,
+          "wrong": 0,
+          "abstained": 15,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 9,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 1.0,
+          "coverage": 0.0,
+          "risk_among_answers": null,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0.0028647,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "llm": {
+          "total": 15,
+          "correct": 0,
+          "wrong": 0,
+          "abstained": 15,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 9,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 1.0,
+          "coverage": 0.0,
+          "risk_among_answers": null,
+          "extra_retrievals": 5,
+          "api_cost": {
+            "reported_usd": 0.0032499,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "none": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.6,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "refresh": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 15,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "shacl": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        }
+      },
+      "097900CAKA0000190774": {
+        "code": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "hybrid": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0.0028878,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "llm": {
+          "total": 15,
+          "correct": 7,
+          "wrong": 0,
+          "abstained": 8,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 2,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.2222222222222222,
+          "coverage": 0.4666666666666667,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 3,
+          "api_cost": {
+            "reported_usd": 0.0029218499999999997,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "none": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.6,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "refresh": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 15,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "shacl": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        }
+      },
+      "1595287S7YBHX6YC5K39": {
+        "code": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "hybrid": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0.0030945,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "llm": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 0,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.4,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0.00255285,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "none": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.6,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "refresh": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 15,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "shacl": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        }
+      },
+      "159535JCF1ABUOI1HJ27": {
+        "code": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "hybrid": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0.00302205,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "llm": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 0,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.4,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0.00259425,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "none": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.6,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "refresh": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 15,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "shacl": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        }
+      },
+      "15953PK21NE33HL21I80": {
+        "code": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "hybrid": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0.00306585,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "llm": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 0,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.4,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0.00256725,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "none": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.6,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "refresh": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 15,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "shacl": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        }
+      },
+      "1595A5CD4SDMF94YYL69": {
+        "code": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "hybrid": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0.00310215,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "llm": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 0,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.4,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0.00248805,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "none": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.6,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "refresh": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 15,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "shacl": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        }
+      },
+      "1595BELJR4N2P4OEE491": {
+        "code": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "hybrid": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0.0031224,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "llm": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 0,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.4,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0.00253665,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "none": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.6,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "refresh": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 15,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "shacl": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        }
+      },
+      "1595DXRYIXD3AXTPFX40": {
+        "code": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "hybrid": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0.0030967499999999997,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "llm": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 0,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.4,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0.00251625,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "none": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.6,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "refresh": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 15,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "shacl": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        }
+      },
+      "1595G8W173B66N52Y346": {
+        "code": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "hybrid": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0.0031947,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "llm": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 0,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.4,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0.00252825,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "none": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.6,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "refresh": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 15,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "shacl": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        }
+      },
+      "1595HIHUC15JDHGTYU67": {
+        "code": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "hybrid": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0.0031758,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "llm": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 0,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.4,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0.00249885,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "none": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.6,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "refresh": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 15,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "shacl": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        }
+      },
+      "1595OF0DUL28A4QDJ487": {
+        "code": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "hybrid": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0.00296925,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "llm": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 0,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.4,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0.00246525,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "none": {
+          "total": 15,
+          "correct": 6,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.6,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "refresh": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 15,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        },
+        "shacl": {
+          "total": 15,
+          "correct": 9,
+          "wrong": 0,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 9,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.0,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.6,
+          "risk_among_answers": 0.0,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 15
+          }
+        }
+      },
+      "21380017P45XJ8NWYS77": {
+        "code": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "hybrid": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0.00489585,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "llm": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.5714285714285714,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0.00410985,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "none": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 6,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.4,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "refresh": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 6,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8571428571428571,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 21,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "shacl": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        }
+      },
+      "21380019TK4MA77L8S39": {
+        "code": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "hybrid": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0.00477075,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "llm": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.5714285714285714,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0.00399645,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "none": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 6,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.4,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "refresh": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 6,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8571428571428571,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 21,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "shacl": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        }
+      },
+      "21380039546VHZD3WM28": {
+        "code": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "hybrid": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0.00489105,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "llm": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.5714285714285714,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0.004014,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "none": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 6,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.4,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "refresh": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 6,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8571428571428571,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 21,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "shacl": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        }
+      },
+      "2138003SPFZA4UV23165": {
+        "code": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "hybrid": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0.00500685,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "llm": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.5714285714285714,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0.0041682,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "none": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 6,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.4,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "refresh": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 6,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8571428571428571,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 21,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "shacl": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        }
+      },
+      "2138006E7GBHP9DZHW75": {
+        "code": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "hybrid": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 8,
+          "api_cost": {
+            "reported_usd": 0.0051135,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "llm": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.5714285714285714,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 1,
+          "api_cost": {
+            "reported_usd": 0.0041123999999999996,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "none": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 6,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.4,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "refresh": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 6,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8571428571428571,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 21,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "shacl": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        }
+      },
+      "21380088DPE44QTJ6T23": {
+        "code": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "hybrid": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0.00491325,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "llm": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.5714285714285714,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0.00414945,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "none": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 6,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.4,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "refresh": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 6,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8571428571428571,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 21,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "shacl": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        }
+      },
+      "2138008CH41AP8WU6O59": {
+        "code": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "hybrid": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0.0048939,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "llm": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 3,
+          "api_cost": {
+            "reported_usd": 0.00446655,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "none": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 6,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.4,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "refresh": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 6,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8571428571428571,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 21,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "shacl": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        }
+      },
+      "21380098KBW5I2KPPP81": {
+        "code": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "hybrid": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.5714285714285714,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0.0043782,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "llm": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.5714285714285714,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 3,
+          "api_cost": {
+            "reported_usd": 0.0044187,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "none": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 6,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.4,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "refresh": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 6,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8571428571428571,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 21,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "shacl": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        }
+      },
+      "2138009GYX1D1EGCHD67": {
+        "code": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "hybrid": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0.0050595,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "llm": {
+          "total": 21,
+          "correct": 11,
+          "wrong": 3,
+          "abstained": 7,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 1,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.08333333333333333,
+          "coverage": 0.6666666666666666,
+          "risk_among_answers": 0.21428571428571427,
+          "extra_retrievals": 2,
+          "api_cost": {
+            "reported_usd": 0.00461385,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "none": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 6,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.4,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "refresh": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 6,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8571428571428571,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 21,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "shacl": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        }
+      },
+      "213800AC4TSSNVI4Q244": {
+        "code": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "hybrid": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0.00514125,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "llm": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.5714285714285714,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 2,
+          "api_cost": {
+            "reported_usd": 0.00436575,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "none": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 6,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.4,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "refresh": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 6,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8571428571428571,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 21,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "shacl": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        }
+      },
+      "213800IP2W2CXCOTO303": {
+        "code": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "hybrid": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.5714285714285714,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 6,
+          "api_cost": {
+            "reported_usd": 0.00450135,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "llm": {
+          "total": 21,
+          "correct": 10,
+          "wrong": 3,
+          "abstained": 8,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 2,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.16666666666666666,
+          "coverage": 0.6190476190476191,
+          "risk_among_answers": 0.23076923076923078,
+          "extra_retrievals": 4,
+          "api_cost": {
+            "reported_usd": 0.00466515,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "none": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 6,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.4,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "refresh": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 6,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8571428571428571,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 21,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "shacl": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        }
+      },
+      "213800JBHE39OG74OJ98": {
+        "code": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "hybrid": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0.0052191,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "llm": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.5714285714285714,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0.0038682,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "none": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 6,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.4,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "refresh": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 6,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8571428571428571,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 21,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "shacl": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        }
+      },
+      "213800JQ9CR1K91OE582": {
+        "code": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "hybrid": {
+          "total": 21,
+          "correct": 10,
+          "wrong": 3,
+          "abstained": 8,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 2,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.16666666666666666,
+          "coverage": 0.6190476190476191,
+          "risk_among_answers": 0.23076923076923078,
+          "extra_retrievals": 7,
+          "api_cost": {
+            "reported_usd": 0.0044325,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "llm": {
+          "total": 21,
+          "correct": 8,
+          "wrong": 3,
+          "abstained": 10,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 4,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.3333333333333333,
+          "coverage": 0.5238095238095238,
+          "risk_among_answers": 0.2727272727272727,
+          "extra_retrievals": 2,
+          "api_cost": {
+            "reported_usd": 0.0042294,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "none": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 6,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.4,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "refresh": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 6,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8571428571428571,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 21,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "shacl": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        }
+      },
+      "213800L1TKYQ483XS608": {
+        "code": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "hybrid": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0.0050757,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "llm": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 3,
+          "abstained": 9,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.5714285714285714,
+          "risk_among_answers": 0.25,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0.00421605,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "none": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 6,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.4,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "refresh": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 6,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8571428571428571,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 21,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "shacl": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        }
+      },
+      "213800M1R5BUJEUHEH31": {
+        "code": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "hybrid": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0.00483135,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "llm": {
+          "total": 21,
+          "correct": 11,
+          "wrong": 3,
+          "abstained": 7,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 1,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.08333333333333333,
+          "coverage": 0.6666666666666666,
+          "risk_among_answers": 0.21428571428571427,
+          "extra_retrievals": 2,
+          "api_cost": {
+            "reported_usd": 0.0041967,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "none": {
+          "total": 21,
+          "correct": 9,
+          "wrong": 6,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 3,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.25,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.4,
+          "extra_retrievals": 0,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "refresh": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 6,
+          "abstained": 3,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.2857142857142857,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.8571428571428571,
+          "risk_among_answers": 0.3333333333333333,
+          "extra_retrievals": 21,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        },
+        "shacl": {
+          "total": 21,
+          "correct": 12,
+          "wrong": 3,
+          "abstained": 6,
+          "errors": 0,
+          "source_answerable": 12,
+          "unnecessary_abstentions": 0,
+          "wrong_rate_all": 0.14285714285714285,
+          "unnecessary_abstention_rate": 0.0,
+          "coverage": 0.7142857142857143,
+          "risk_among_answers": 0.2,
+          "extra_retrievals": 9,
+          "api_cost": {
+            "reported_usd": 0,
+            "missing_cost": 0,
+            "rows_with_cost_metadata": 21
+          }
+        }
+      }
+    },
+    "primary_contrasts": {
+      "shacl-minus-code": {
+        "status": "measured",
+        "wrong_rate_all": {
+          "difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "eligible_clusters": 30
+        },
+        "unnecessary_abstention_rate": {
+          "difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "eligible_clusters": 30
+        }
+      },
+      "shacl-minus-llm": {
+        "status": "measured",
+        "wrong_rate_all": {
+          "difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "eligible_clusters": 30
+        },
+        "unnecessary_abstention_rate": {
+          "difference": -0.3351851851851852,
+          "ci95": [
+            -0.42777777777777776,
+            -0.25925925925925924
+          ],
+          "eligible_clusters": 30
+        }
+      }
+    },
+    "actual_reported_api_budget": {
+      "calls": 1234,
+      "reserved_usd": 1.7470689999999962,
+      "reported_usd": 0.2214735000000004,
+      "missing_cost": 0
+    },
+    "cost_note": "Reported API costs only; missing costs remain unknown; AWS and Codex excluded.",
+    "record_sha256": "7a8a333f9b5eb9d978dce7e1ba12d9d518b72c5d2dab9f90ad2f306b4944c71a",
+    "analysis_script_sha256": "6ada63e8771b7ca22b2600213de934e722ee7f652acd424380f2b6b220651988"
+  },
+  "evaluation_model_metadata": {
+    "providers": {
+      "Azure": 1234
+    },
+    "models": {
+      "openai/gpt-4o-mini": 1234
+    },
+    "finish_reasons": {
+      "stop": 1234
+    }
+  }
+}

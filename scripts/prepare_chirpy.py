@@ -102,6 +102,11 @@ def prepare():
         manifest[relative] = url
         search.append(dict(title=title, url=BASEURL + url, categories='', tags='',
                            date=dated[1] if dated else '', content=re.sub(r'<[^>]*>', '', body)))
+    # Explicit public, offline HTML artifact; never copy private workspace files.
+    preview = DOCS / 'experiments/preview/index.html'
+    preview_dest = OUTPUT / preview.relative_to(DOCS)
+    preview_dest.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(preview, preview_dest)
     for source in DOCS.rglob('*.json'):
         dest = OUTPUT / source.relative_to(DOCS)
         dest.parent.mkdir(parents=True, exist_ok=True)

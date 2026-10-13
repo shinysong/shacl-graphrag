@@ -1,0 +1,1319 @@
+{
+  "scope": "Purposefully selected observed evaluation examples, not prevalence estimates. Original snapshot answers are evaluator-only; wrong_parent is artificial corruption.",
+  "samples": [
+    {
+      "title": "검색 관계 누락",
+      "case_id": "21380017P45XJ8NWYS77-retrieval_relation_missing",
+      "repeat_zero_based": 0,
+      "question": "GATES FINANCE LIMITED의 직접 회계연결 모회사 또는 보고 예외 코드는?",
+      "subject_lei": "21380017P45XJ8NWYS77",
+      "original_snapshot_answer": {
+        "kind": "parent",
+        "value": "549300S6K4FWUSB9KM27"
+      },
+      "original_answer_label": "GATES INDUSTRIAL CORPORATION PLC",
+      "injection_variant": "retrieval_relation_missing",
+      "first_evidence": [
+        {
+          "id": "F001",
+          "s": "https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F002",
+          "s": "https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/QuerySubject",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F003",
+          "s": "https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "GATES FINANCE LIMITED",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F004",
+          "s": "https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "21380017P45XJ8NWYS77",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F005",
+          "s": "https://rdf.gleif.org/L1/L-549300S6K4FWUSB9KM27",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F006",
+          "s": "https://rdf.gleif.org/L1/L-549300S6K4FWUSB9KM27",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "GATES INDUSTRIAL CORPORATION PLC",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F007",
+          "s": "https://rdf.gleif.org/L1/L-549300S6K4FWUSB9KM27",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "549300S6K4FWUSB9KM27",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        }
+      ],
+      "allowed_source_turtle": "@prefix ns1: <https://example.org/gleif-pilot/> .\n\n<https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77> a ns1:Entity,\n        ns1:QuerySubject ;\n    ns1:directParent <https://rdf.gleif.org/L1/L-549300S6K4FWUSB9KM27> ;\n    ns1:legalName \"GATES FINANCE LIMITED\" ;\n    ns1:lei \"21380017P45XJ8NWYS77\" .\n\n<https://rdf.gleif.org/L1/L-549300S6K4FWUSB9KM27> a ns1:Entity ;\n    ns1:legalName \"GATES INDUSTRIAL CORPORATION PLC\" ;\n    ns1:lei \"549300S6K4FWUSB9KM27\" .\n\n",
+      "conditions": {
+        "llm": {
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "correct": false,
+          "wrong": false,
+          "extra_retrievals": 0,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {
+                "llm": {
+                  "judgement": "pass",
+                  "response": {
+                    "status": "answer",
+                    "kind": "judgement",
+                    "value": "pass",
+                    "checks": {
+                      "cardinality": "pass",
+                      "parent_type": "pass",
+                      "exception_reason": "not_applicable"
+                    },
+                    "evidence_ids": [
+                      "F001",
+                      "F002",
+                      "F003",
+                      "F004"
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "refresh": {
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "549300S6K4FWUSB9KM27"
+          },
+          "correct": true,
+          "wrong": false,
+          "extra_retrievals": 1,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ]
+        },
+        "hybrid": {
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "549300S6K4FWUSB9KM27"
+          },
+          "correct": true,
+          "wrong": false,
+          "extra_retrievals": 1,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unknown",
+              "detail": {
+                "shacl": {
+                  "judgement": "unknown",
+                  "raw_conforms": true,
+                  "issues": [],
+                  "validation_ms": 1.880530995549634
+                },
+                "llm": {
+                  "judgement": "pass",
+                  "response": {
+                    "status": "answer",
+                    "kind": "judgement",
+                    "value": "pass",
+                    "checks": {
+                      "cardinality": "pass",
+                      "parent_type": "pass",
+                      "exception_reason": "not_applicable"
+                    },
+                    "evidence_ids": [
+                      "F001",
+                      "F002",
+                      "F003",
+                      "F004",
+                      "F005",
+                      "F006",
+                      "F007"
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "attempt": 1,
+              "judgement": "pass",
+              "detail": {
+                "shacl": {
+                  "judgement": "pass",
+                  "raw_conforms": true,
+                  "issues": [],
+                  "validation_ms": 1.6597979993093759
+                },
+                "llm": {
+                  "judgement": "pass",
+                  "response": {
+                    "status": "answer",
+                    "kind": "judgement",
+                    "value": "pass",
+                    "checks": {
+                      "cardinality": "pass",
+                      "parent_type": "pass",
+                      "exception_reason": "not_applicable"
+                    },
+                    "evidence_ids": [
+                      "F001",
+                      "F003",
+                      "F006"
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "none": {
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "correct": false,
+          "wrong": false,
+          "extra_retrievals": 0,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ]
+        },
+        "shacl": {
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "549300S6K4FWUSB9KM27"
+          },
+          "correct": true,
+          "wrong": false,
+          "extra_retrievals": 1,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unknown",
+              "detail": {
+                "shacl": {
+                  "judgement": "unknown",
+                  "raw_conforms": true,
+                  "issues": [],
+                  "validation_ms": 2.7598599990596995
+                }
+              }
+            },
+            {
+              "attempt": 1,
+              "judgement": "pass",
+              "detail": {
+                "shacl": {
+                  "judgement": "pass",
+                  "raw_conforms": true,
+                  "issues": [],
+                  "validation_ms": 1.9346139961271547
+                }
+              }
+            }
+          ]
+        },
+        "code": {
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "549300S6K4FWUSB9KM27"
+          },
+          "correct": true,
+          "wrong": false,
+          "extra_retrievals": 1,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unknown",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "pass",
+              "detail": {}
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "타입 근거 없이 맞힌 답",
+      "case_id": "21380017P45XJ8NWYS77-retrieval_type_missing",
+      "repeat_zero_based": 0,
+      "question": "GATES FINANCE LIMITED의 직접 회계연결 모회사 또는 보고 예외 코드는?",
+      "subject_lei": "21380017P45XJ8NWYS77",
+      "original_snapshot_answer": {
+        "kind": "parent",
+        "value": "549300S6K4FWUSB9KM27"
+      },
+      "original_answer_label": "GATES INDUSTRIAL CORPORATION PLC",
+      "injection_variant": "retrieval_type_missing",
+      "first_evidence": [
+        {
+          "id": "F001",
+          "s": "https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F002",
+          "s": "https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/QuerySubject",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F003",
+          "s": "https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77",
+          "p": "https://example.org/gleif-pilot/directParent",
+          "o": "https://rdf.gleif.org/L1/L-549300S6K4FWUSB9KM27",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F004",
+          "s": "https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "GATES FINANCE LIMITED",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F005",
+          "s": "https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "21380017P45XJ8NWYS77",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F006",
+          "s": "https://rdf.gleif.org/L1/L-549300S6K4FWUSB9KM27",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "GATES INDUSTRIAL CORPORATION PLC",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F007",
+          "s": "https://rdf.gleif.org/L1/L-549300S6K4FWUSB9KM27",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "549300S6K4FWUSB9KM27",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        }
+      ],
+      "allowed_source_turtle": "@prefix ns1: <https://example.org/gleif-pilot/> .\n\n<https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77> a ns1:Entity,\n        ns1:QuerySubject ;\n    ns1:directParent <https://rdf.gleif.org/L1/L-549300S6K4FWUSB9KM27> ;\n    ns1:legalName \"GATES FINANCE LIMITED\" ;\n    ns1:lei \"21380017P45XJ8NWYS77\" .\n\n<https://rdf.gleif.org/L1/L-549300S6K4FWUSB9KM27> a ns1:Entity ;\n    ns1:legalName \"GATES INDUSTRIAL CORPORATION PLC\" ;\n    ns1:lei \"549300S6K4FWUSB9KM27\" .\n\n",
+      "conditions": {
+        "code": {
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "549300S6K4FWUSB9KM27"
+          },
+          "correct": true,
+          "wrong": false,
+          "extra_retrievals": 1,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unknown",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "pass",
+              "detail": {}
+            }
+          ]
+        },
+        "llm": {
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "549300S6K4FWUSB9KM27"
+          },
+          "correct": true,
+          "wrong": false,
+          "extra_retrievals": 0,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {
+                "llm": {
+                  "judgement": "pass",
+                  "response": {
+                    "status": "answer",
+                    "kind": "judgement",
+                    "value": "pass",
+                    "checks": {
+                      "cardinality": "pass",
+                      "parent_type": "pass",
+                      "exception_reason": "not_applicable"
+                    },
+                    "evidence_ids": [
+                      "F003"
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "refresh": {
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "549300S6K4FWUSB9KM27"
+          },
+          "correct": true,
+          "wrong": false,
+          "extra_retrievals": 1,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ]
+        },
+        "shacl": {
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "549300S6K4FWUSB9KM27"
+          },
+          "correct": true,
+          "wrong": false,
+          "extra_retrievals": 1,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unknown",
+              "detail": {
+                "shacl": {
+                  "judgement": "unknown",
+                  "raw_conforms": false,
+                  "issues": [
+                    [
+                      "https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77",
+                      "https://example.org/gleif-pilot/directParent",
+                      "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+                    ]
+                  ],
+                  "validation_ms": 2.924951993918512
+                }
+              }
+            },
+            {
+              "attempt": 1,
+              "judgement": "pass",
+              "detail": {
+                "shacl": {
+                  "judgement": "pass",
+                  "raw_conforms": true,
+                  "issues": [],
+                  "validation_ms": 2.0208569985697977
+                }
+              }
+            }
+          ]
+        },
+        "none": {
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "549300S6K4FWUSB9KM27"
+          },
+          "correct": true,
+          "wrong": false,
+          "extra_retrievals": 0,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ]
+        },
+        "hybrid": {
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "549300S6K4FWUSB9KM27"
+          },
+          "correct": true,
+          "wrong": false,
+          "extra_retrievals": 1,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unknown",
+              "detail": {
+                "shacl": {
+                  "judgement": "unknown",
+                  "raw_conforms": false,
+                  "issues": [
+                    [
+                      "https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77",
+                      "https://example.org/gleif-pilot/directParent",
+                      "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+                    ]
+                  ],
+                  "validation_ms": 3.103472998191137
+                },
+                "llm": {
+                  "judgement": "pass",
+                  "response": {
+                    "status": "answer",
+                    "kind": "judgement",
+                    "value": "pass",
+                    "checks": {
+                      "cardinality": "pass",
+                      "parent_type": "pass",
+                      "exception_reason": "not_applicable"
+                    },
+                    "evidence_ids": [
+                      "F003"
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "attempt": 1,
+              "judgement": "pass",
+              "detail": {
+                "shacl": {
+                  "judgement": "pass",
+                  "raw_conforms": true,
+                  "issues": [],
+                  "validation_ms": 1.9878940001945011
+                },
+                "llm": {
+                  "judgement": "pass",
+                  "response": {
+                    "status": "answer",
+                    "kind": "judgement",
+                    "value": "pass",
+                    "checks": {
+                      "cardinality": "pass",
+                      "parent_type": "pass",
+                      "exception_reason": "not_applicable"
+                    },
+                    "evidence_ids": [
+                      "F001",
+                      "F003",
+                      "F006"
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "원천 관계 누락",
+      "case_id": "21380017P45XJ8NWYS77-source_relation_missing",
+      "repeat_zero_based": 0,
+      "question": "GATES FINANCE LIMITED의 직접 회계연결 모회사 또는 보고 예외 코드는?",
+      "subject_lei": "21380017P45XJ8NWYS77",
+      "original_snapshot_answer": {
+        "kind": "parent",
+        "value": "549300S6K4FWUSB9KM27"
+      },
+      "original_answer_label": "GATES INDUSTRIAL CORPORATION PLC",
+      "injection_variant": "source_relation_missing",
+      "first_evidence": [
+        {
+          "id": "F001",
+          "s": "https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F002",
+          "s": "https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/QuerySubject",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F003",
+          "s": "https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "GATES FINANCE LIMITED",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F004",
+          "s": "https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "21380017P45XJ8NWYS77",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        }
+      ],
+      "allowed_source_turtle": "@prefix ns1: <https://example.org/gleif-pilot/> .\n\n<https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77> a ns1:Entity,\n        ns1:QuerySubject ;\n    ns1:legalName \"GATES FINANCE LIMITED\" ;\n    ns1:lei \"21380017P45XJ8NWYS77\" .\n\n<https://rdf.gleif.org/L1/L-549300S6K4FWUSB9KM27> a ns1:Entity ;\n    ns1:legalName \"GATES INDUSTRIAL CORPORATION PLC\" ;\n    ns1:lei \"549300S6K4FWUSB9KM27\" .\n\n",
+      "conditions": {
+        "llm": {
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "correct": false,
+          "wrong": false,
+          "extra_retrievals": 0,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {
+                "llm": {
+                  "judgement": "pass",
+                  "response": {
+                    "status": "answer",
+                    "kind": "judgement",
+                    "value": "pass",
+                    "checks": {
+                      "cardinality": "pass",
+                      "parent_type": "pass",
+                      "exception_reason": "not_applicable"
+                    },
+                    "evidence_ids": [
+                      "F001",
+                      "F002",
+                      "F003",
+                      "F004"
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "none": {
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "correct": false,
+          "wrong": false,
+          "extra_retrievals": 0,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ]
+        },
+        "refresh": {
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "correct": false,
+          "wrong": false,
+          "extra_retrievals": 1,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ]
+        },
+        "hybrid": {
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "correct": false,
+          "wrong": false,
+          "extra_retrievals": 1,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unknown",
+              "detail": {
+                "shacl": {
+                  "judgement": "unknown",
+                  "raw_conforms": true,
+                  "issues": [],
+                  "validation_ms": 2.923497995652724
+                },
+                "llm": {
+                  "judgement": "pass",
+                  "response": {
+                    "status": "answer",
+                    "kind": "judgement",
+                    "value": "pass",
+                    "checks": {
+                      "cardinality": "pass",
+                      "parent_type": "pass",
+                      "exception_reason": "not_applicable"
+                    },
+                    "evidence_ids": [
+                      "F001",
+                      "F002",
+                      "F003",
+                      "F004"
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "attempt": 1,
+              "judgement": "unknown",
+              "detail": {
+                "shacl": {
+                  "judgement": "unknown",
+                  "raw_conforms": true,
+                  "issues": [],
+                  "validation_ms": 2.10739100293722
+                },
+                "llm": {
+                  "judgement": "pass",
+                  "response": {
+                    "status": "answer",
+                    "kind": "judgement",
+                    "value": "pass",
+                    "checks": {
+                      "cardinality": "pass",
+                      "parent_type": "pass",
+                      "exception_reason": "not_applicable"
+                    },
+                    "evidence_ids": [
+                      "F001",
+                      "F002"
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "shacl": {
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "correct": false,
+          "wrong": false,
+          "extra_retrievals": 1,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unknown",
+              "detail": {
+                "shacl": {
+                  "judgement": "unknown",
+                  "raw_conforms": true,
+                  "issues": [],
+                  "validation_ms": 2.2159519940032624
+                }
+              }
+            },
+            {
+              "attempt": 1,
+              "judgement": "unknown",
+              "detail": {
+                "shacl": {
+                  "judgement": "unknown",
+                  "raw_conforms": true,
+                  "issues": [],
+                  "validation_ms": 1.7059550009435043
+                }
+              }
+            }
+          ]
+        },
+        "code": {
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "correct": false,
+          "wrong": false,
+          "extra_retrievals": 1,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unknown",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "unknown",
+              "detail": {}
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "형식에 맞는 거짓 관계",
+      "case_id": "21380017P45XJ8NWYS77-wrong_parent",
+      "repeat_zero_based": 0,
+      "question": "GATES FINANCE LIMITED의 직접 회계연결 모회사 또는 보고 예외 코드는?",
+      "subject_lei": "21380017P45XJ8NWYS77",
+      "original_snapshot_answer": {
+        "kind": "parent",
+        "value": "549300S6K4FWUSB9KM27"
+      },
+      "original_answer_label": "GATES INDUSTRIAL CORPORATION PLC",
+      "injection_variant": "wrong_parent",
+      "first_evidence": [
+        {
+          "id": "F001",
+          "s": "https://rdf.gleif.org/L1/L-097900BIIU0000167998",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F002",
+          "s": "https://rdf.gleif.org/L1/L-097900BIIU0000167998",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "SEE RE Three s.r.o.",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F003",
+          "s": "https://rdf.gleif.org/L1/L-097900BIIU0000167998",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "097900BIIU0000167998",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F004",
+          "s": "https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F005",
+          "s": "https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/QuerySubject",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F006",
+          "s": "https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77",
+          "p": "https://example.org/gleif-pilot/directParent",
+          "o": "https://rdf.gleif.org/L1/L-097900BIIU0000167998",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F007",
+          "s": "https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "GATES FINANCE LIMITED",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F008",
+          "s": "https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "21380017P45XJ8NWYS77",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        }
+      ],
+      "allowed_source_turtle": "@prefix ns1: <https://example.org/gleif-pilot/> .\n\n<https://rdf.gleif.org/L1/L-21380017P45XJ8NWYS77> a ns1:Entity,\n        ns1:QuerySubject ;\n    ns1:directParent <https://rdf.gleif.org/L1/L-097900BIIU0000167998> ;\n    ns1:legalName \"GATES FINANCE LIMITED\" ;\n    ns1:lei \"21380017P45XJ8NWYS77\" .\n\n<https://rdf.gleif.org/L1/L-549300S6K4FWUSB9KM27> a ns1:Entity ;\n    ns1:legalName \"GATES INDUSTRIAL CORPORATION PLC\" ;\n    ns1:lei \"549300S6K4FWUSB9KM27\" .\n\n<https://rdf.gleif.org/L1/L-097900BIIU0000167998> a ns1:Entity ;\n    ns1:legalName \"SEE RE Three s.r.o.\" ;\n    ns1:lei \"097900BIIU0000167998\" .\n\n",
+      "conditions": {
+        "refresh": {
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "097900BIIU0000167998"
+          },
+          "correct": false,
+          "wrong": true,
+          "extra_retrievals": 1,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ]
+        },
+        "hybrid": {
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "097900BIIU0000167998"
+          },
+          "correct": false,
+          "wrong": true,
+          "extra_retrievals": 0,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {
+                "shacl": {
+                  "judgement": "pass",
+                  "raw_conforms": true,
+                  "issues": [],
+                  "validation_ms": 2.0723790003103204
+                },
+                "llm": {
+                  "judgement": "pass",
+                  "response": {
+                    "status": "answer",
+                    "kind": "judgement",
+                    "value": "pass",
+                    "checks": {
+                      "cardinality": "pass",
+                      "parent_type": "pass",
+                      "exception_reason": "not_applicable"
+                    },
+                    "evidence_ids": [
+                      "F006",
+                      "F001"
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "llm": {
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "097900BIIU0000167998"
+          },
+          "correct": false,
+          "wrong": true,
+          "extra_retrievals": 0,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {
+                "llm": {
+                  "judgement": "pass",
+                  "response": {
+                    "status": "answer",
+                    "kind": "judgement",
+                    "value": "pass",
+                    "checks": {
+                      "cardinality": "pass",
+                      "parent_type": "pass",
+                      "exception_reason": "not_applicable"
+                    },
+                    "evidence_ids": [
+                      "F006",
+                      "F001"
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "shacl": {
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "097900BIIU0000167998"
+          },
+          "correct": false,
+          "wrong": true,
+          "extra_retrievals": 0,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {
+                "shacl": {
+                  "judgement": "pass",
+                  "raw_conforms": true,
+                  "issues": [],
+                  "validation_ms": 2.697800002351869
+                }
+              }
+            }
+          ]
+        },
+        "code": {
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "097900BIIU0000167998"
+          },
+          "correct": false,
+          "wrong": true,
+          "extra_retrievals": 0,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {}
+            }
+          ]
+        },
+        "none": {
+          "answer": {
+            "status": "answer",
+            "kind": "parent",
+            "value": "097900BIIU0000167998"
+          },
+          "correct": false,
+          "wrong": true,
+          "extra_retrievals": 0,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "정상 보고 예외의 잘못된 차단",
+      "case_id": "097900BIIU0000167998-clean",
+      "repeat_zero_based": 0,
+      "question": "SEE RE Three s.r.o.의 직접 회계연결 모회사 또는 보고 예외 코드는?",
+      "subject_lei": "097900BIIU0000167998",
+      "original_snapshot_answer": {
+        "kind": "exception",
+        "value": "NON_CONSOLIDATING"
+      },
+      "original_answer_label": "NON_CONSOLIDATING",
+      "injection_variant": "clean",
+      "first_evidence": [
+        {
+          "id": "F001",
+          "s": "https://rdf.gleif.org/L1/L-097900BIIU0000167998",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/Entity",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F002",
+          "s": "https://rdf.gleif.org/L1/L-097900BIIU0000167998",
+          "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "o": "https://example.org/gleif-pilot/QuerySubject",
+          "kind": "iri",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F003",
+          "s": "https://rdf.gleif.org/L1/L-097900BIIU0000167998",
+          "p": "https://example.org/gleif-pilot/exceptionReason",
+          "o": "NON_CONSOLIDATING",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F004",
+          "s": "https://rdf.gleif.org/L1/L-097900BIIU0000167998",
+          "p": "https://example.org/gleif-pilot/legalName",
+          "o": "SEE RE Three s.r.o.",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        },
+        {
+          "id": "F005",
+          "s": "https://rdf.gleif.org/L1/L-097900BIIU0000167998",
+          "p": "https://example.org/gleif-pilot/lei",
+          "o": "097900BIIU0000167998",
+          "kind": "literal",
+          "datatype": null,
+          "language": null
+        }
+      ],
+      "allowed_source_turtle": "@prefix ns1: <https://example.org/gleif-pilot/> .\n\n<https://rdf.gleif.org/L1/L-097900BIIU0000167998> a ns1:Entity,\n        ns1:QuerySubject ;\n    ns1:exceptionReason \"NON_CONSOLIDATING\" ;\n    ns1:legalName \"SEE RE Three s.r.o.\" ;\n    ns1:lei \"097900BIIU0000167998\" .\n\n",
+      "conditions": {
+        "hybrid": {
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "correct": false,
+          "wrong": false,
+          "extra_retrievals": 0,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "fail",
+              "detail": {
+                "shacl": {
+                  "judgement": "pass",
+                  "raw_conforms": true,
+                  "issues": [],
+                  "validation_ms": 2.087219007080421
+                },
+                "llm": {
+                  "judgement": "fail",
+                  "response": {
+                    "status": "answer",
+                    "kind": "judgement",
+                    "value": "fail",
+                    "checks": {
+                      "cardinality": "fail",
+                      "parent_type": "pass",
+                      "exception_reason": "fail"
+                    },
+                    "evidence_ids": [
+                      "F001",
+                      "F002",
+                      "F003"
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "shacl": {
+          "answer": {
+            "status": "answer",
+            "kind": "exception",
+            "value": "NON_CONSOLIDATING"
+          },
+          "correct": true,
+          "wrong": false,
+          "extra_retrievals": 0,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {
+                "shacl": {
+                  "judgement": "pass",
+                  "raw_conforms": true,
+                  "issues": [],
+                  "validation_ms": 2.0871359956800006
+                }
+              }
+            }
+          ]
+        },
+        "refresh": {
+          "answer": {
+            "status": "answer",
+            "kind": "exception",
+            "value": "NON_CONSOLIDATING"
+          },
+          "correct": true,
+          "wrong": false,
+          "extra_retrievals": 1,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            },
+            {
+              "attempt": 1,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ]
+        },
+        "none": {
+          "answer": {
+            "status": "answer",
+            "kind": "exception",
+            "value": "NON_CONSOLIDATING"
+          },
+          "correct": true,
+          "wrong": false,
+          "extra_retrievals": 0,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "unchecked",
+              "detail": {}
+            }
+          ]
+        },
+        "llm": {
+          "answer": {
+            "status": "abstain",
+            "kind": null,
+            "value": null
+          },
+          "correct": false,
+          "wrong": false,
+          "extra_retrievals": 0,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "fail",
+              "detail": {
+                "llm": {
+                  "judgement": "fail",
+                  "response": {
+                    "status": "answer",
+                    "kind": "judgement",
+                    "value": "fail",
+                    "checks": {
+                      "cardinality": "fail",
+                      "parent_type": "pass",
+                      "exception_reason": "fail"
+                    },
+                    "evidence_ids": [
+                      "F001",
+                      "F002",
+                      "F003",
+                      "F004",
+                      "F005"
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "code": {
+          "answer": {
+            "status": "answer",
+            "kind": "exception",
+            "value": "NON_CONSOLIDATING"
+          },
+          "correct": true,
+          "wrong": false,
+          "extra_retrievals": 0,
+          "trace": [
+            {
+              "attempt": 0,
+              "judgement": "pass",
+              "detail": {}
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

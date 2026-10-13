@@ -1,0 +1,42 @@
+{
+  "protocol_version": "0.5-study1",
+  "scope": "GLEIF development only; evaluation reserved unopened",
+  "conditions": [
+    "llm"
+  ],
+  "parent_variants": [
+    "clean",
+    "irrelevant_name_missing",
+    "retrieval_relation_missing",
+    "retrieval_type_missing",
+    "source_relation_missing",
+    "wrong_class",
+    "wrong_parent"
+  ],
+  "exception_variants": [
+    "clean",
+    "irrelevant_name_missing",
+    "retrieval_exception_missing",
+    "source_exception_missing",
+    "invalid_reason"
+  ],
+  "max_retries": 1,
+  "repeat_count": 3,
+  "max_llm_calls": 72,
+  "max_cost_usd": 0.2,
+  "max_completion_tokens": 240,
+  "max_prompt_chars": 12000,
+  "provider_max_price_per_million": {
+    "prompt": 0.2,
+    "completion": 0.8
+  },
+  "temperature": 0,
+  "inference": "none",
+  "model": "openai/gpt-4o-mini",
+  "stage": "development",
+  "prompt_path": "experiments/comparison/judge-prompt-v2.txt",
+  "evidence_format": "raw",
+  "campaign_ledger_path": "_workspace/expanded-study/campaign-budget.json",
+  "seed": 20261013,
+  "max_parallel_calls": 4
+}

@@ -1,0 +1,17 @@
+{
+  "protocol_version": "0.5-dev1",
+  "scope": "GLEIF development only; evaluation reserved unopened",
+  "conditions": ["none", "code", "shacl", "refresh"],
+  "parent_variants": ["clean", "irrelevant_name_missing", "retrieval_relation_missing", "retrieval_type_missing", "source_relation_missing", "wrong_class", "wrong_parent"],
+  "exception_variants": ["clean", "irrelevant_name_missing", "retrieval_exception_missing", "source_exception_missing", "invalid_reason"],
+  "max_retries": 1,
+  "repeat_count": 1,
+  "max_llm_calls": 24,
+  "max_cost_usd": 0.10,
+  "max_completion_tokens": 240,
+  "max_prompt_chars": 12000,
+  "provider_max_price_per_million": {"prompt": 0.2, "completion": 0.8},
+  "temperature": 0,
+  "inference": "none",
+  "model": "openai/gpt-4o-mini"
+}

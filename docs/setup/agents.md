@@ -1,5 +1,7 @@
 # Coding agents: Codex vs Orca (SSH / mobile)
 
+Codex 서브에이전트의 실험 계획·독립 검토·로컬 점검 절차는 [연구 운영 에이전트](research-operations.md)를 따릅니다. 아래 내용은 Codex·Orca의 설치와 접속 구성을 설명합니다.
+
 ## Codex와 Orca의 역할
 
 | 도구 | 역할 | 서버에 따로 필요한 것 |

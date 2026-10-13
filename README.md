@@ -9,14 +9,21 @@ SHACL·OWL 제약을 GraphRAG의 검색–검증–생성 루프에 **런타임 
 
 ## 배경
 
-기존 GraphRAG 연구는 온톨로지를 검색 범위 축소나 사후 필터에 쓰는 경우가 많습니다.  
-스키마 수준의 논리 제약과 검증 계층이 없으면 잘못된 근거로 답변이 나와도 위반을 판정하기 어렵습니다.
+통제 가능한 업무·의사결정 시스템과 금융·의료 감사처럼 판단 근거가 중요한 활용에서 출발합니다. 이미 RDF나 그래프 데이터를 보유한 환경에서, 어떤 정보와 규칙을 명시적으로 관리하면 LLM의 잘못된 판단을 줄일 수 있는지 확인합니다.
 
-첫 데이터셋은 GLEIF의 법인·회계연결 모회사·보고 예외 데이터입니다. 같은 검색 근거를 검증 없이 사용할 때와 검사 후 보류하거나 다시 검색할 때를 비교합니다. SHACL이 잡지 못하는 사실 오류와 정상 근거의 과도한 차단도 함께 측정합니다.
+모든 데이터를 온톨로지로 만들 필요가 있는지부터 비교합니다. JSON과 코드 규칙으로 충분한 범위, 필요한 필드만 RDF·SHACL로 관리하는 범위, LLM의 추가 검토를 쓰는 범위를 나누고 같은 질문·근거로 평가합니다. RDF·SHACL이 더 좋다는 결론을 전제하지 않습니다.
 
-YAGO 4.6도 같은 비교 조건으로 실행합니다. 원본 SHACL을 수정하지 않고 출생지 질의에서 제약의 탐지 범위와 재검색 효과를 확인합니다.
+첫 데이터셋은 GLEIF의 법인·회계연결 모회사·보고 예외 데이터입니다. YAGO 4.6 후속 파일럿은 원본 SHACL을 수정하지 않고 출생지 질문에서 제약의 탐지 범위와 재검색 효과를 확인했습니다. 현재 [최소 온톨로지 개입 실험](docs/experiments/hybrid-study.md)에서는 관계 깊이·판단 조건·무관한 정보를 나누어 비교합니다.
 
 ## 구현 범위
+
+GLEIF 개발 12개 기업·72개 사례와 별도 평가 30개 기업·180개 사례를 여섯 조건으로 세 번씩 실행했습니다. Jev의 별도 개발 216개 결과와 실제 Neo4j/Cypher 근거 대조도 기록했습니다. 코드 규칙과 SHACL의 별도 평가 결과는 같았으며 전체 GraphRAG나 엔진 성능의 우열을 입증한 것은 아닙니다.
+
+[확대 실행 결과와 실제 사례](docs/journal/2026-10-13-expanded-comparison.md)
+
+[의미 판단 후속 결과](docs/journal/2026-10-13-semantic-comparison.md)에는 합성 개발 180행과 오래된 검색 근거의 대응 점검 36행을 기록했습니다. 의미 판단·인용·추가조회 결정을 나누어 평가했으며 실제 GLEIF 벤치마크와 구분합니다.
+
+[최소 온톨로지 개입 결과](docs/journal/2026-10-13-hybrid-intervention.md)에는 합성 첫 120문항과 반복 69문항의 공통 비교를 기록했습니다. 명시적 검사 보고서가 LLM의 계약 불일치를 줄였지만 코드와 SHACL의 판정은 같았습니다. 응답 미수신 두 건 이후 유료 호출을 중단했으며 GLEIF 모델 비교와 질문 계약 추출은 미실행입니다.
 
 합성 RDF 사전 점검을 실행할 수 있습니다. GLEIF 배치 수집과 부분집합 추출, RDF 변환을 거쳐 SHACL 검증·OpenRouter 구조화 답변·정답 채점까지 실행할 수 있습니다.
 
@@ -24,9 +31,9 @@ YAGO 4.6도 같은 비교 조건으로 실행합니다. 원본 SHACL을 수정�
 - 검증 후 보류·제한 재검색, 무조건 재조회 비교군
 - 원본·입력 해시·질의·근거·보고서·LLM 사용량과 실패 기록
 
-Text-to-SPARQL, OWL 추론, 독립적인 벡터 검색 RAG, GraphDB·Neo4j·Neptune 비교는 후속 범위입니다.
+Text-to-SPARQL, OWL 추론, 독립적인 벡터 검색 RAG와 GraphDB·Neo4j·Neptune의 엔진 성능 비교는 후속 범위입니다.
 
-## 수행 범위
+## 후속 계획
 
 1. GLEIF 동일 시점 배치 3종 수집과 관계·보고 예외를 보존한 부분집합 추출
 2. SHACL·OWL 검증 로직 구현, 제약 위반 주입 프로토콜 및 채점 도구
@@ -94,6 +101,16 @@ BUNDLE_GEMFILE=website/Gemfile bundle install
 실행 기록은 `docs/experiments/records/`, 입력 사본과 상세 보고서는 `runs/`에 남습니다.
 합성 데이터 실행기의 `--local-only`는 공개 기록 생성을 생략합니다. GLEIF 실행기는 기본적으로 `runs/`에만 저장하며 검토 후 공개용 기록을 내보냅니다. 전체 배치 재수집과 파일럿의 범위는 실험 명세를 따릅니다.
 재현에 필요한 `uv.lock`도 코드·명세와 함께 버전 관리합니다.
+
+## 연구 운영
+
+연구 운영과 코드 작성은 [Codex와 서브에이전트](docs/setup/research-operations.md)가 맡습니다. 메인이 계획을 작성하고 두 담당이 독립 검토합니다. OpenRouter는 실험의 답변 모델에 사용합니다. 운영 도구는 모델 API를 호출하지 않으며 Codex 사용량은 계정의 한도를 따릅니다.
+
+```bash
+JOB_ID=$(uv run --locked python scripts/research_ops.py init research/operations/tasks/local-verification.json)
+uv run --locked python scripts/research_ops.py request "$JOB_ID" plan
+uv run --locked python scripts/research_ops.py status
+```
 
 ## 예상 결과물
 

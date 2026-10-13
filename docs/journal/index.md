@@ -2,6 +2,10 @@
 
 실험을 시작한 이유, 결과를 보고 바꾼 판단, 다음에 확인할 질문을 기록한다. 실패하거나 중단한 작업도 남긴다.
 
+- [2026-10-13 질문 계약과 검사 위치에 따른 판단 차이](2026-10-13-hybrid-intervention.md)
+- [2026-10-13 질문에 맞는 근거 선택과 의미 판단](2026-10-13-semantic-comparison.md)
+- [2026-10-13 GLEIF 확대 비교와 검사 도구의 역할](2026-10-13-expanded-comparison.md)
+- [2026-10-13 GLEIF 새 개발 집합과 첫 비교 실행](2026-10-13-gleif-comparison-development.md)
 - [2026-10-12 YAGO 질문·근거·답변의 실제 사례](2026-10-12-yago-case-examples.md)
 - [2026-10-12 불완전한 YAGO 근거의 선택적 검증](2026-10-12-yago-selective.md)
 - [2026-10-12 YAGO 원본 SHACL 파일럿](2026-10-12-yago-pilot.md)
