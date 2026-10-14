@@ -29,3 +29,5 @@
 - [응답 미수신 호출의 비용 보존과 제한적 재개](2026-10-13-hybrid-timeout.md)
 
 - [2026-10-14 전체 결과 검증의 누락 방지](2026-10-14-lifecycle-coverage.md)
+
+- [2026-10-14 공통 규칙 실험의 검토 분량](2026-10-14-shared-semantics-review.md)
