@@ -1,0 +1,61 @@
+{
+  "member": "20261012-0800-gleif-goldencopy-lei2-golden-copy.csv",
+  "rows_scanned": 16,
+  "samples": [
+    {
+      "LEI": "00TR8NKAEL48RGTZEW89",
+      "Entity.LegalName": "ESG DOMESTIC OPPORTUNITY OFFSHORE FUND LTD.",
+      "Entity.LegalAddress.Country": "KY",
+      "Entity.HeadquartersAddress.Country": "CW"
+    },
+    {
+      "LEI": "01370W6ZIY66KQ4J3570",
+      "Entity.LegalName": "GOLD COAST CAPITAL SUBSIDIARY I LIMITED",
+      "Entity.LegalAddress.Country": "KY",
+      "Entity.HeadquartersAddress.Country": "US"
+    },
+    {
+      "LEI": "014W5MNVD8KOIPLIND87",
+      "Entity.LegalName": "III Select Credit Hub Fund Ltd.",
+      "Entity.LegalAddress.Country": "KY",
+      "Entity.HeadquartersAddress.Country": "US"
+    }
+  ],
+  "snapshot": "2026-10-12 08:00:00",
+  "source_url": "https://goldencopy.gleif.org/storage/golden-copy-files/2026/10/12/1287560/20261012-0800-gleif-goldencopy-lei2-golden-copy.csv.zip",
+  "source_sha256": "fa989a882cf05fb854ae14693de7fe3f1ea1b60ab7d81270246dc21360f24db2",
+  "license": "CC0",
+  "selection": "First3records with nonempty different legal/headquarters country in archive order; illustrative, not representative or held-out.",
+  "official_contract": {
+    "schema_version": 1,
+    "id": "gleif-address-contract-1",
+    "scope": "Manually declared typed question contracts backed by official CDF3.1 definitions; not automated natural-language interpretation or external factual verification.",
+    "source_document": {
+      "url": "https://www.gleif.org/lei-data/access-and-use-lei-data/level-1-data-lei-cdf-3-1-format/2021-03-04_lei-cdf-v3-1.xsd",
+      "sha256": "1c896df8b093b6c3418772179c6e4b489014a57bd0e9606aef0ec3825d5937e6",
+      "retrieved_date": "2026-10-14"
+    },
+    "source_page": "https://www.gleif.org/en/lei-data/access-and-use-lei-data/level-1-data-lei-cdf-3-1-format",
+    "contracts": [
+      {
+        "id": "registered_address_country",
+        "question": "등록 주소의 국가는 어디인가?",
+        "csv_field": "Entity.LegalAddress.Country",
+        "xml_parent": "LegalAddress"
+      },
+      {
+        "id": "headquarters_country",
+        "question": "본사 주소의 국가는 어디인가?",
+        "csv_field": "Entity.HeadquartersAddress.Country",
+        "xml_parent": "HeadquartersAddress"
+      },
+      {
+        "id": "unspecified_country",
+        "question": "이 기업은 어느 나라 기업인가?",
+        "csv_field": null,
+        "action": "clarify_address_role",
+        "reason": "Legal address, headquarters and legal jurisdiction are distinct concepts; no role supplied."
+      }
+    ]
+  }
+}

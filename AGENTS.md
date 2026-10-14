@@ -30,6 +30,10 @@ For session continuity, read local `MEMORY.md` if present. It is ignored by Git 
 
 - `semantic-guards-1` replays the same 12,288 development outputs under six veto policies and three synthetic field catalogs (221,184 decisions, not independent trials). Separate published operational metadata from evaluation references; wrong mapping is published as wrong too. Preserve missing/mislabeled catalog controls, conservative group-wide vetoes and dependency scope. Report wrong allowed and correct-known unnecessary withholding together; no repaired-answer, external-truth, latency or RDF-specific benefit claims.
 
+- `bounded-refresh-1` reuses original outputs under veto/selective/eager policies, three catalogs and current/unavailable/initial-source services. One JSON snapshot read per three-task bundle; original arm names are lineage, not refreshed engines. Preserve advertised current fingerprints and count attempts/bytes once per group. Semantic conflict blocks automatic refresh/remapping; missing source stays unknown. GLEIF official-definition address examples and typed contracts are manual illustrations, not automatic document interpretation or independent benchmark evidence.
+
+- `refresh-fallback-1` derives 110,592 decisions from saved selective-refresh responses. Restore only prevalidated outputs and rerun mixed-workflow checks. Report zero new source calls, inherited costs, newly allowed wrong outputs and restored correct outputs separately. Preserve original group-failure behavior and results.
+
 ## Stack decisions (do not casually reverse)
 
 - Ontology research now includes a bounded offline OWL-RL reasoning study, beyond SHACL validation. JSON rules and OWL-RL receive identical ontology semantics; asserted lookup is an ablation. Keep positive-rule closure membership, graph-wide disjoint-class witnesses, external truth and LLM hallucination separate. Vocabulary renaming is not real-domain transfer. Preserve the 2026-10-13 one-day 105-request authorization and default 100-request cap; do not extend the exception to later days.

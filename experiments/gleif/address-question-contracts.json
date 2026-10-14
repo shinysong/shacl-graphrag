@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "id": "gleif-address-contract-1",
+  "scope": "Manually declared typed question contracts backed by official CDF3.1 definitions; not automated natural-language interpretation or external factual verification.",
+  "source_document": {
+    "url": "https://www.gleif.org/lei-data/access-and-use-lei-data/level-1-data-lei-cdf-3-1-format/2021-03-04_lei-cdf-v3-1.xsd",
+    "sha256": "1c896df8b093b6c3418772179c6e4b489014a57bd0e9606aef0ec3825d5937e6",
+    "retrieved_date": "2026-10-14"
+  },
+  "source_page": "https://www.gleif.org/en/lei-data/access-and-use-lei-data/level-1-data-lei-cdf-3-1-format",
+  "contracts": [
+    {
+      "id": "registered_address_country",
+      "question": "등록 주소의 국가는 어디인가?",
+      "csv_field": "Entity.LegalAddress.Country",
+      "xml_parent": "LegalAddress"
+    },
+    {
+      "id": "headquarters_country",
+      "question": "본사 주소의 국가는 어디인가?",
+      "csv_field": "Entity.HeadquartersAddress.Country",
+      "xml_parent": "HeadquartersAddress"
+    },
+    {
+      "id": "unspecified_country",
+      "question": "이 기업은 어느 나라 기업인가?",
+      "csv_field": null,
+      "action": "clarify_address_role",
+      "reason": "Legal address, headquarters and legal jurisdiction are distinct concepts; no role supplied."
+    }
+  ]
+}
