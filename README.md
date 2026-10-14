@@ -17,6 +17,8 @@ SHACL·OWL 제약을 GraphRAG의 검색–검증–생성 루프에 **런타임 
 
 실제 그래프 DB 후속 비교: [JSON·Neo4j 변경 반영 실험](docs/experiments/graph-lifecycle-study.md).
 
+선택적 검사 후속 비교: [업무 일관성·버전·의미 매핑](docs/experiments/semantic-guards-study.md).
+
 공통 의미 정의 후속 비교: [공급 국가 조회·지역 제한 점검·추천의 변경 일관성](docs/experiments/shared-semantics-study.md).
 
 ## 구현 범위

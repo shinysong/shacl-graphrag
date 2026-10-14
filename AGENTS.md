@@ -28,6 +28,8 @@ For session continuity, read local `MEMORY.md` if present. It is ignored by Git 
 
 - `shared-semantics-1` compares three copied JSON configurations, shared live JSON, matched JSON materialization and RDFLib SPARQL hybrid across three typed workflows. Preserve 12,288 controlled rows and distinguish fault injection topology, repeated pinned foreground, output errors, full candidate evidence mismatch, and freshness provenance. No measured maintenance labor, natural failure rates, LLM/OWL/SHACL/DB-server claims. Independent scorer verifies saved source contracts; it must never repair runtime answers.
 
+- `semantic-guards-1` replays the same 12,288 development outputs under six veto policies and three synthetic field catalogs (221,184 decisions, not independent trials). Separate published operational metadata from evaluation references; wrong mapping is published as wrong too. Preserve missing/mislabeled catalog controls, conservative group-wide vetoes and dependency scope. Report wrong allowed and correct-known unnecessary withholding together; no repaired-answer, external-truth, latency or RDF-specific benefit claims.
+
 ## Stack decisions (do not casually reverse)
 
 - Ontology research now includes a bounded offline OWL-RL reasoning study, beyond SHACL validation. JSON rules and OWL-RL receive identical ontology semantics; asserted lookup is an ablation. Keep positive-rule closure membership, graph-wide disjoint-class witnesses, external truth and LLM hallucination separate. Vocabulary renaming is not real-domain transfer. Preserve the 2026-10-13 one-day 105-request authorization and default 100-request cap; do not extend the exception to later days.
