@@ -86,3 +86,7 @@ GLEIF 파일럿은 모회사 관계가 있는 법인과 보고 예외가 있는 
 | [기록 운영 방법](setup/recording.md) | 재실행과 문서 미리보기, GitHub Pages 공개 절차 |
 | [환경 구성](setup/bootstrap.md) | Ubuntu와 uv로 실험 환경 준비 |
 | [시행착오](lessons-learned/README.md) | 반복하지 않으려는 실수와 해결 방법 |
+
+## 금융·제조업의 업무 질문
+
+[여섯 업무 질문](experiments/business-questions-study.md)과 [첫 실행의 실제 입력·출력](experiments/records/20261014-business-questions.md)을 정리했다.

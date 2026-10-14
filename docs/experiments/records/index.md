@@ -6,6 +6,8 @@
 
 <!-- RUNS -->
 
+- [2026-10-14 금융·제조업 여섯 업무 질문](20261014-business-questions.md)
+
 - [2026-10-14 부품 변경의 영향 경로와 완전성](20261014-change-impact.md) — 192개 합성 사례, 2,304행과 경로·표현 일치 검증
 - [2026-10-14 실제 원천의 관계·시점·출처](20261014-domain-characteristics.md) — GLEIF·FIBO·FHIR·YAGO·Wikidata·문서의 제한된 구조 점검
 

@@ -1,5 +1,9 @@
 # 온톨로지 활용 실험 명세
 
+## 금융·제조업 여섯 업무 질문
+
+`business-questions-1`은 [질문별 관계·조건·보류 기준](business-questions-study.md)을 고정한 36개 합성 사례와 세 조건을 비교한다. [첫 실행](records/20261014-business-questions.md)의 108행과 실제 GLEIF의 네 예시는 분리한다. 같은 판단 규칙을 공유하는 JSON·RDF 비교이며 독립적인 업무 정확도 검증은 아니다.
+
 ## 변경 영향과 도메인별 의미 조건
 
 [도메인·데이터 구조 연구 지도](domain-characteristics.md)는 입문 안내서에 필요한 적용 전제와 실패 사례를 정리한다. `change-impact-1`은 [제조업 재검증 대상 탐색](change-impact-study.md), `domain-characteristics-1`은 [실제 원천 특성 점검](records/20261014-domain-characteristics.md)이다. 잠재적 영향·실제 승인·물리적 예측을 구분하며, 같은 정보를 다른 형식으로 바꾼 결과와 도메인 차이를 합산하지 않는다.

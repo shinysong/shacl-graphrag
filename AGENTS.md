@@ -34,6 +34,11 @@ For session continuity, read local `MEMORY.md` if present. It is ignored by Git 
 
 - `refresh-fallback-1` derives 110,592 decisions from saved selective-refresh responses. Restore only prevalidated outputs and rerun mixed-workflow checks. Report zero new source calls, inherited costs, newly allowed wrong outputs and restored correct outputs separately. Preserve original group-failure behavior and results.
 
+## Six business-question pilot
+
+- `business-questions-1` fixes three manufacturing and three finance tasks: impact products, replacement conditions, rechecks; direct accounting parent, same reported ultimate parent, internal review readiness. Preserve 36 authored synthetic fixtures /108 rows separately from four unscored actual GLEIF illustrations. JSON/RDF share decision logic; do not claim RDF superiority or independent business accuracy.
+- Real GLEIF ACTIVE relationships may have LAPSED registration. This pilot conservatively accepts PUBLISHED RR only; withholding does not prove recorded relations false. Next planned comparison separates reported facts with source status from decision eligibility. Manufacturing remains synthetic; completeness/dependency declarations are supplied.
+
 ## Domain and introductory-guide research
 
 - User expanded the objective to change-impact decision support across manufacturing, finance/GLEIF/FIBO, healthcare records, YAGO, Wikidata and documents. Separate domain, semantic layer and serialization; do not call renamed synthetic nodes domain transfer.

@@ -1,0 +1,923 @@
+{
+  "protocol": "business-questions-1",
+  "synthetic_run": "20261014T230240Z-business-questions-synthetic",
+  "gleif_run": "20261014T230240Z-business-questions-gleif",
+  "audit": {
+    "scope": "Declared synthetic fixtures; not independent factual gold",
+    "cases": 36,
+    "rows": 108,
+    "json_rdf_exact_parity": 36,
+    "groups": [
+      {
+        "task": "F1",
+        "arm": "raw_lookup",
+        "total": 6,
+        "decision_correct": 2,
+        "evidence_correct": 2
+      },
+      {
+        "task": "F1",
+        "arm": "typed_json",
+        "total": 6,
+        "decision_correct": 6,
+        "evidence_correct": 6
+      },
+      {
+        "task": "F1",
+        "arm": "typed_rdf",
+        "total": 6,
+        "decision_correct": 6,
+        "evidence_correct": 6
+      },
+      {
+        "task": "F2",
+        "arm": "raw_lookup",
+        "total": 6,
+        "decision_correct": 3,
+        "evidence_correct": 3
+      },
+      {
+        "task": "F2",
+        "arm": "typed_json",
+        "total": 6,
+        "decision_correct": 6,
+        "evidence_correct": 6
+      },
+      {
+        "task": "F2",
+        "arm": "typed_rdf",
+        "total": 6,
+        "decision_correct": 6,
+        "evidence_correct": 6
+      },
+      {
+        "task": "F3",
+        "arm": "raw_lookup",
+        "total": 6,
+        "decision_correct": 2,
+        "evidence_correct": 3
+      },
+      {
+        "task": "F3",
+        "arm": "typed_json",
+        "total": 6,
+        "decision_correct": 6,
+        "evidence_correct": 6
+      },
+      {
+        "task": "F3",
+        "arm": "typed_rdf",
+        "total": 6,
+        "decision_correct": 6,
+        "evidence_correct": 6
+      },
+      {
+        "task": "M1",
+        "arm": "raw_lookup",
+        "total": 6,
+        "decision_correct": 1,
+        "evidence_correct": 4
+      },
+      {
+        "task": "M1",
+        "arm": "typed_json",
+        "total": 6,
+        "decision_correct": 6,
+        "evidence_correct": 6
+      },
+      {
+        "task": "M1",
+        "arm": "typed_rdf",
+        "total": 6,
+        "decision_correct": 6,
+        "evidence_correct": 6
+      },
+      {
+        "task": "M2",
+        "arm": "raw_lookup",
+        "total": 6,
+        "decision_correct": 1,
+        "evidence_correct": 4
+      },
+      {
+        "task": "M2",
+        "arm": "typed_json",
+        "total": 6,
+        "decision_correct": 6,
+        "evidence_correct": 6
+      },
+      {
+        "task": "M2",
+        "arm": "typed_rdf",
+        "total": 6,
+        "decision_correct": 6,
+        "evidence_correct": 6
+      },
+      {
+        "task": "M3",
+        "arm": "raw_lookup",
+        "total": 6,
+        "decision_correct": 0,
+        "evidence_correct": 1
+      },
+      {
+        "task": "M3",
+        "arm": "typed_json",
+        "total": 6,
+        "decision_correct": 6,
+        "evidence_correct": 6
+      },
+      {
+        "task": "M3",
+        "arm": "typed_rdf",
+        "total": 6,
+        "decision_correct": 6,
+        "evidence_correct": 6
+      }
+    ]
+  },
+  "source_audit": {
+    "source_rows_verified": {
+      "rr": 6,
+      "repex": 2,
+      "lei2": 3
+    },
+    "unique_selected_entity_rows": true,
+    "scope": "RR/REPEX selected matches exhaustively compared; LEI uniqueness only within first19 rows; no independent factual truth scoring",
+    "examples": 4
+  },
+  "synthetic_samples": [
+    {
+      "case_id": "M1-1",
+      "scenario": "transitive_alias_success",
+      "packet": {
+        "task": "M1",
+        "question": "Which listed products are potentially affected by the declared part change?",
+        "asof": "2026-10-12",
+        "observed_records": [
+          {
+            "id": "b1",
+            "kind": "bom",
+            "status": "ACTIVE",
+            "start": "2026-01-01",
+            "end": "2026-12-31",
+            "subject": "part-A",
+            "object": "assembly",
+            "relation": "part_of"
+          },
+          {
+            "id": "b2",
+            "kind": "bom",
+            "status": "ACTIVE",
+            "start": "2026-01-01",
+            "end": "2026-12-31",
+            "subject": "product-X",
+            "object": "assembly",
+            "relation": "contains"
+          }
+        ],
+        "published_schema": {
+          "bom_relations": {
+            "contains": "parent_child",
+            "part_of": "child_parent"
+          }
+        },
+        "internal_policy": {
+          "part": "part-A",
+          "products": [
+            "product-X",
+            "product-Y"
+          ],
+          "complete_bom": true
+        }
+      },
+      "expected": {
+        "status": "known",
+        "value": [
+          "product-X"
+        ],
+        "evidence_ids": [
+          "b1",
+          "b2"
+        ]
+      },
+      "outputs": [
+        {
+          "case_id": "M1-1",
+          "task": "M1",
+          "arm": "raw_lookup",
+          "answer": {
+            "status": "known",
+            "value": [],
+            "evidence_ids": []
+          },
+          "decision_correct": false,
+          "evidence_correct": false
+        },
+        {
+          "case_id": "M1-1",
+          "task": "M1",
+          "arm": "typed_json",
+          "answer": {
+            "status": "known",
+            "value": [
+              "product-X"
+            ],
+            "evidence_ids": [
+              "b1",
+              "b2"
+            ]
+          },
+          "decision_correct": true,
+          "evidence_correct": true
+        },
+        {
+          "case_id": "M1-1",
+          "task": "M1",
+          "arm": "typed_rdf",
+          "answer": {
+            "status": "known",
+            "value": [
+              "product-X"
+            ],
+            "evidence_ids": [
+              "b1",
+              "b2"
+            ]
+          },
+          "decision_correct": true,
+          "evidence_correct": true
+        }
+      ]
+    },
+    {
+      "case_id": "M2-1",
+      "scenario": "equivalent_unit_success",
+      "packet": {
+        "task": "M2",
+        "question": "Is the replacement eligible under the declared tolerance, certificate and compatibility policy?",
+        "asof": "2026-10-12",
+        "observed_records": [
+          {
+            "id": "c1",
+            "kind": "candidate",
+            "status": "ACTIVE",
+            "start": "2026-01-01",
+            "end": "2026-12-31",
+            "candidate": "replacement-A",
+            "tolerance": 50,
+            "unit": "um",
+            "certificate": "cert-A",
+            "compatibility": "interface-A"
+          }
+        ],
+        "published_schema": {},
+        "internal_policy": {
+          "candidate": "replacement-A",
+          "max_tolerance_mm": 0.1,
+          "approved_certificates": [
+            "cert-A"
+          ],
+          "compatibility": "interface-A"
+        }
+      },
+      "expected": {
+        "status": "eligible",
+        "value": null,
+        "evidence_ids": [
+          "c1"
+        ]
+      },
+      "outputs": [
+        {
+          "case_id": "M2-1",
+          "task": "M2",
+          "arm": "raw_lookup",
+          "answer": {
+            "status": "blocked",
+            "value": null,
+            "evidence_ids": [
+              "c1"
+            ]
+          },
+          "decision_correct": false,
+          "evidence_correct": true
+        },
+        {
+          "case_id": "M2-1",
+          "task": "M2",
+          "arm": "typed_json",
+          "answer": {
+            "status": "eligible",
+            "value": null,
+            "evidence_ids": [
+              "c1"
+            ]
+          },
+          "decision_correct": true,
+          "evidence_correct": true
+        },
+        {
+          "case_id": "M2-1",
+          "task": "M2",
+          "arm": "typed_rdf",
+          "answer": {
+            "status": "eligible",
+            "value": null,
+            "evidence_ids": [
+              "c1"
+            ]
+          },
+          "decision_correct": true,
+          "evidence_correct": true
+        }
+      ]
+    },
+    {
+      "case_id": "M3-1",
+      "scenario": "dependency_scoped_success",
+      "packet": {
+        "task": "M3",
+        "question": "Which declared work items require revalidation after the recorded field change?",
+        "asof": "2026-10-12",
+        "observed_records": [
+          {
+            "id": "h1",
+            "kind": "change",
+            "status": "ACTIVE",
+            "start": "2026-01-01",
+            "end": "2026-12-31",
+            "field": "spec.tolerance"
+          },
+          {
+            "id": "d1",
+            "kind": "dependency",
+            "status": "ACTIVE",
+            "start": "2026-01-01",
+            "end": "2026-12-31",
+            "field": "spec.tolerance",
+            "workitem": "fit-review",
+            "required": true
+          },
+          {
+            "id": "d2",
+            "kind": "dependency",
+            "status": "ACTIVE",
+            "start": "2026-01-01",
+            "end": "2026-12-31",
+            "field": "certificate.validity",
+            "workitem": "certificate-review",
+            "required": true
+          },
+          {
+            "id": "d3",
+            "kind": "dependency",
+            "status": "ACTIVE",
+            "start": "2026-01-01",
+            "end": "2026-12-31",
+            "field": "bom.member",
+            "workitem": "assembly-review",
+            "required": true
+          }
+        ],
+        "published_schema": {},
+        "internal_policy": {
+          "complete_dependencies": true,
+          "known_fields": [
+            "spec.tolerance",
+            "certificate.validity",
+            "bom.member",
+            "display.color"
+          ]
+        }
+      },
+      "expected": {
+        "status": "known",
+        "value": [
+          "fit-review"
+        ],
+        "evidence_ids": [
+          "d1",
+          "h1"
+        ]
+      },
+      "outputs": [
+        {
+          "case_id": "M3-1",
+          "task": "M3",
+          "arm": "raw_lookup",
+          "answer": {
+            "status": "known",
+            "value": [
+              "assembly-review",
+              "certificate-review",
+              "fit-review"
+            ],
+            "evidence_ids": [
+              "d1",
+              "d2",
+              "d3"
+            ]
+          },
+          "decision_correct": false,
+          "evidence_correct": false
+        },
+        {
+          "case_id": "M3-1",
+          "task": "M3",
+          "arm": "typed_json",
+          "answer": {
+            "status": "known",
+            "value": [
+              "fit-review"
+            ],
+            "evidence_ids": [
+              "d1",
+              "h1"
+            ]
+          },
+          "decision_correct": true,
+          "evidence_correct": true
+        },
+        {
+          "case_id": "M3-1",
+          "task": "M3",
+          "arm": "typed_rdf",
+          "answer": {
+            "status": "known",
+            "value": [
+              "fit-review"
+            ],
+            "evidence_ids": [
+              "d1",
+              "h1"
+            ]
+          },
+          "decision_correct": true,
+          "evidence_correct": true
+        }
+      ]
+    },
+    {
+      "case_id": "F1-6",
+      "scenario": "fund_manager_role",
+      "packet": {
+        "task": "F1",
+        "question": "What is the reported direct accounting parent at the reference date?",
+        "asof": "2026-10-12",
+        "observed_records": [
+          {
+            "id": "r1",
+            "kind": "relationship",
+            "status": "ACTIVE",
+            "start": "2026-01-01",
+            "end": "2026-12-31",
+            "snapshot_date": "2026-10-12",
+            "registration_status": "PUBLISHED",
+            "subject": "LEI-A",
+            "object": "LEI-P",
+            "relation": "FUND_MANAGER"
+          }
+        ],
+        "published_schema": {},
+        "internal_policy": {
+          "entity": "LEI-A"
+        }
+      },
+      "expected": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": []
+      },
+      "outputs": [
+        {
+          "case_id": "F1-6",
+          "task": "F1",
+          "arm": "raw_lookup",
+          "answer": {
+            "status": "known",
+            "value": "LEI-P",
+            "evidence_ids": [
+              "r1"
+            ]
+          },
+          "decision_correct": false,
+          "evidence_correct": false
+        },
+        {
+          "case_id": "F1-6",
+          "task": "F1",
+          "arm": "typed_json",
+          "answer": {
+            "status": "unknown",
+            "value": null,
+            "evidence_ids": []
+          },
+          "decision_correct": true,
+          "evidence_correct": true
+        },
+        {
+          "case_id": "F1-6",
+          "task": "F1",
+          "arm": "typed_rdf",
+          "answer": {
+            "status": "unknown",
+            "value": null,
+            "evidence_ids": []
+          },
+          "decision_correct": true,
+          "evidence_correct": true
+        }
+      ]
+    },
+    {
+      "case_id": "F2-5",
+      "scenario": "expired_second_parent",
+      "packet": {
+        "task": "F2",
+        "question": "Do both entities report the same explicit ultimate accounting parent?",
+        "asof": "2026-10-12",
+        "observed_records": [
+          {
+            "id": "r1",
+            "kind": "relationship",
+            "status": "ACTIVE",
+            "start": "2026-01-01",
+            "end": "2026-12-31",
+            "snapshot_date": "2026-10-12",
+            "registration_status": "PUBLISHED",
+            "subject": "LEI-A",
+            "object": "LEI-P",
+            "relation": "ULTIMATE_ACCOUNTING"
+          },
+          {
+            "id": "r2",
+            "kind": "relationship",
+            "status": "ACTIVE",
+            "start": "2026-01-01",
+            "end": "2026-10-11",
+            "snapshot_date": "2026-10-12",
+            "registration_status": "PUBLISHED",
+            "subject": "LEI-B",
+            "object": "LEI-P",
+            "relation": "ULTIMATE_ACCOUNTING"
+          }
+        ],
+        "published_schema": {},
+        "internal_policy": {
+          "entities": [
+            "LEI-A",
+            "LEI-B"
+          ]
+        }
+      },
+      "expected": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": []
+      },
+      "outputs": [
+        {
+          "case_id": "F2-5",
+          "task": "F2",
+          "arm": "raw_lookup",
+          "answer": {
+            "status": "known",
+            "value": true,
+            "evidence_ids": [
+              "r1",
+              "r2"
+            ]
+          },
+          "decision_correct": false,
+          "evidence_correct": false
+        },
+        {
+          "case_id": "F2-5",
+          "task": "F2",
+          "arm": "typed_json",
+          "answer": {
+            "status": "unknown",
+            "value": null,
+            "evidence_ids": []
+          },
+          "decision_correct": true,
+          "evidence_correct": true
+        },
+        {
+          "case_id": "F2-5",
+          "task": "F2",
+          "arm": "typed_rdf",
+          "answer": {
+            "status": "unknown",
+            "value": null,
+            "evidence_ids": []
+          },
+          "decision_correct": true,
+          "evidence_correct": true
+        }
+      ]
+    },
+    {
+      "case_id": "F3-2",
+      "scenario": "lapsed_registration",
+      "packet": {
+        "task": "F3",
+        "question": "Is relationship evidence ready under the declared internal review rule?",
+        "asof": "2026-10-12",
+        "observed_records": [
+          {
+            "id": "e1",
+            "kind": "entity",
+            "status": "ACTIVE",
+            "start": "2026-01-01",
+            "end": "2026-12-31",
+            "snapshot_date": "2026-10-12",
+            "entity": "LEI-A",
+            "legal_status": "ACTIVE",
+            "registration_status": "LAPSED"
+          },
+          {
+            "id": "r1",
+            "kind": "relationship",
+            "status": "ACTIVE",
+            "start": "2026-01-01",
+            "end": "2026-12-31",
+            "snapshot_date": "2026-10-12",
+            "registration_status": "PUBLISHED",
+            "subject": "LEI-A",
+            "object": "LEI-P",
+            "relation": "DIRECT_ACCOUNTING"
+          }
+        ],
+        "published_schema": {},
+        "internal_policy": {
+          "entity": "LEI-A"
+        }
+      },
+      "expected": {
+        "status": "review_required",
+        "value": null,
+        "evidence_ids": [
+          "e1"
+        ]
+      },
+      "outputs": [
+        {
+          "case_id": "F3-2",
+          "task": "F3",
+          "arm": "raw_lookup",
+          "answer": {
+            "status": "review_ready",
+            "value": null,
+            "evidence_ids": [
+              "e1"
+            ]
+          },
+          "decision_correct": false,
+          "evidence_correct": true
+        },
+        {
+          "case_id": "F3-2",
+          "task": "F3",
+          "arm": "typed_json",
+          "answer": {
+            "status": "review_required",
+            "value": null,
+            "evidence_ids": [
+              "e1"
+            ]
+          },
+          "decision_correct": true,
+          "evidence_correct": true
+        },
+        {
+          "case_id": "F3-2",
+          "task": "F3",
+          "arm": "typed_rdf",
+          "answer": {
+            "status": "review_required",
+            "value": null,
+            "evidence_ids": [
+              "e1"
+            ]
+          },
+          "decision_correct": true,
+          "evidence_correct": true
+        }
+      ]
+    }
+  ],
+  "actual_unscored_examples": [
+    {
+      "task": "F1",
+      "policy": {
+        "entity": "010PWNH4K3BLIC3I7R03"
+      },
+      "outputs": {
+        "raw_lookup": {
+          "status": "known",
+          "value": "549300COKYB5EGSU1838",
+          "evidence_ids": [
+            "rr-10-period-2"
+          ]
+        },
+        "typed_json": {
+          "status": "unknown",
+          "value": null,
+          "evidence_ids": []
+        },
+        "typed_rdf": {
+          "status": "unknown",
+          "value": null,
+          "evidence_ids": []
+        }
+      }
+    },
+    {
+      "task": "F1",
+      "policy": {
+        "entity": "001GPB6A9XPE8XJICC14"
+      },
+      "outputs": {
+        "raw_lookup": {
+          "status": "known",
+          "value": "5493001Z012YSB2A0K51",
+          "evidence_ids": [
+            "rr-1-period-1"
+          ]
+        },
+        "typed_json": {
+          "status": "reported_exception",
+          "value": null,
+          "evidence_ids": [
+            "repex-1"
+          ]
+        },
+        "typed_rdf": {
+          "status": "reported_exception",
+          "value": null,
+          "evidence_ids": [
+            "repex-1"
+          ]
+        }
+      }
+    },
+    {
+      "task": "F2",
+      "policy": {
+        "entities": [
+          "010PWNH4K3BLIC3I7R03",
+          "01ERPZV3DOLNXY2MLB90"
+        ]
+      },
+      "outputs": {
+        "raw_lookup": {
+          "status": "known",
+          "value": false,
+          "evidence_ids": [
+            "rr-10-period-2",
+            "rr-14-period-1"
+          ]
+        },
+        "typed_json": {
+          "status": "unknown",
+          "value": null,
+          "evidence_ids": []
+        },
+        "typed_rdf": {
+          "status": "unknown",
+          "value": null,
+          "evidence_ids": []
+        }
+      }
+    },
+    {
+      "task": "F3",
+      "policy": {
+        "entity": "001GPB6A9XPE8XJICC14"
+      },
+      "outputs": {
+        "raw_lookup": {
+          "status": "review_ready",
+          "value": null,
+          "evidence_ids": [
+            "lei-1",
+            "lei-14",
+            "lei-19"
+          ]
+        },
+        "typed_json": {
+          "status": "review_required",
+          "value": null,
+          "evidence_ids": [
+            "lei-1"
+          ]
+        },
+        "typed_rdf": {
+          "status": "review_required",
+          "value": null,
+          "evidence_ids": [
+            "lei-1"
+          ]
+        }
+      }
+    }
+  ],
+  "actual_relationships": [
+    {
+      "row": 1,
+      "record": {
+        "Relationship.StartNode.NodeID": "001GPB6A9XPE8XJICC14",
+        "Relationship.EndNode.NodeID": "5493001Z012YSB2A0K51",
+        "Relationship.RelationshipType": "IS_FUND-MANAGED_BY",
+        "Relationship.RelationshipStatus": "ACTIVE",
+        "Relationship.Period.1.startDate": "2012-11-29T00:00:00.000Z",
+        "Relationship.Period.1.periodType": "RELATIONSHIP_PERIOD",
+        "Registration.RegistrationStatus": "LAPSED"
+      }
+    },
+    {
+      "row": 2,
+      "record": {
+        "Relationship.StartNode.NodeID": "001GPB6A9XPE8XJICC14",
+        "Relationship.EndNode.NodeID": "C7J4FOV6ELAVE39B7M82",
+        "Relationship.RelationshipType": "IS_SUBFUND_OF",
+        "Relationship.RelationshipStatus": "ACTIVE",
+        "Relationship.Period.1.startDate": "2012-11-29T00:00:00.000Z",
+        "Relationship.Period.1.periodType": "RELATIONSHIP_PERIOD",
+        "Registration.RegistrationStatus": "LAPSED"
+      }
+    },
+    {
+      "row": 10,
+      "record": {
+        "Relationship.StartNode.NodeID": "010PWNH4K3BLIC3I7R03",
+        "Relationship.EndNode.NodeID": "549300COKYB5EGSU1838",
+        "Relationship.RelationshipType": "IS_DIRECTLY_CONSOLIDATED_BY",
+        "Relationship.RelationshipStatus": "ACTIVE",
+        "Relationship.Period.1.startDate": "2021-01-01T01:00:00+01:00",
+        "Relationship.Period.1.endDate": "2021-12-31T01:00:00+01:00",
+        "Relationship.Period.1.periodType": "ACCOUNTING_PERIOD",
+        "Relationship.Period.2.startDate": "2017-12-06T01:00:00+01:00",
+        "Relationship.Period.2.periodType": "RELATIONSHIP_PERIOD",
+        "Registration.RegistrationStatus": "LAPSED"
+      }
+    },
+    {
+      "row": 11,
+      "record": {
+        "Relationship.StartNode.NodeID": "010PWNH4K3BLIC3I7R03",
+        "Relationship.EndNode.NodeID": "549300B2Q47IR0CR5B54",
+        "Relationship.RelationshipType": "IS_ULTIMATELY_CONSOLIDATED_BY",
+        "Relationship.RelationshipStatus": "ACTIVE",
+        "Relationship.Period.1.startDate": "2021-01-01T01:00:00+01:00",
+        "Relationship.Period.1.endDate": "2021-12-31T01:00:00+01:00",
+        "Relationship.Period.1.periodType": "ACCOUNTING_PERIOD",
+        "Relationship.Period.2.startDate": "2017-12-06T01:00:00+01:00",
+        "Relationship.Period.2.periodType": "RELATIONSHIP_PERIOD",
+        "Relationship.Period.3.startDate": "2021-01-01T01:00:00+01:00",
+        "Relationship.Period.3.endDate": "2021-12-31T01:00:00+01:00",
+        "Relationship.Period.3.periodType": "DOCUMENT_FILING_PERIOD",
+        "Registration.RegistrationStatus": "LAPSED"
+      }
+    },
+    {
+      "row": 14,
+      "record": {
+        "Relationship.StartNode.NodeID": "01ERPZV3DOLNXY2MLB90",
+        "Relationship.EndNode.NodeID": "Q774KI4AW80FHFW33O61",
+        "Relationship.RelationshipType": "IS_DIRECTLY_CONSOLIDATED_BY",
+        "Relationship.RelationshipStatus": "ACTIVE",
+        "Relationship.Period.1.startDate": "1995-10-10T00:00:00.000Z",
+        "Relationship.Period.1.periodType": "RELATIONSHIP_PERIOD",
+        "Relationship.Period.2.startDate": "2024-01-01T00:00:00.000Z",
+        "Relationship.Period.2.endDate": "2024-12-31T00:00:00.000Z",
+        "Relationship.Period.2.periodType": "ACCOUNTING_PERIOD",
+        "Registration.RegistrationStatus": "PUBLISHED"
+      }
+    },
+    {
+      "row": 15,
+      "record": {
+        "Relationship.StartNode.NodeID": "01ERPZV3DOLNXY2MLB90",
+        "Relationship.EndNode.NodeID": "Q774KI4AW80FHFW33O61",
+        "Relationship.RelationshipType": "IS_ULTIMATELY_CONSOLIDATED_BY",
+        "Relationship.RelationshipStatus": "ACTIVE",
+        "Relationship.Period.1.startDate": "1995-10-10T00:00:00.000Z",
+        "Relationship.Period.1.periodType": "RELATIONSHIP_PERIOD",
+        "Relationship.Period.2.startDate": "2024-01-01T00:00:00.000Z",
+        "Relationship.Period.2.endDate": "2024-12-31T00:00:00.000Z",
+        "Relationship.Period.2.periodType": "ACCOUNTING_PERIOD",
+        "Registration.RegistrationStatus": "PUBLISHED"
+      }
+    }
+  ],
+  "source_release": "20261012T080000",
+  "source_zip_sha256": {
+    "lei2.csv.zip": "fa989a882cf05fb854ae14693de7fe3f1ea1b60ab7d81270246dc21360f24db2",
+    "rr.csv.zip": "e2edd8e761a60b3dd67dd7cca67cf52c55292c28fd2b0edd69107c9715f4c775",
+    "repex.csv.zip": "fca6dd1fd0530d611ee0b54d9fb88976fb1c4f56ef6412a069751b59019f96c8"
+  },
+  "paid_api_calls": 0
+}
