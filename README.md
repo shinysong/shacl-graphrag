@@ -15,6 +15,8 @@ SHACL·OWL 제약을 GraphRAG의 검색–검증–생성 루프에 **런타임 
 
 첫 데이터셋은 GLEIF의 법인·회계연결 모회사·보고 예외 데이터입니다. YAGO 4.6 후속 파일럿은 원본 SHACL을 수정하지 않고 출생지 질문에서 제약의 탐지 범위와 재검색 효과를 확인했습니다. 현재 [최소 온톨로지 개입 실험](docs/experiments/hybrid-study.md)에서는 관계 깊이·판단 조건·무관한 정보를 나누어 비교합니다.
 
+실제 그래프 DB 후속 비교: [JSON·Neo4j 변경 반영 실험](docs/experiments/graph-lifecycle-study.md).
+
 ## 구현 범위
 
 [개념 통합과 명시적 추론](docs/experiments/records/20261013-ontology-reasoning.md)에서는 SHACL 검사와 별도로 합성 64개 그래프·640개 질의를 세 비교군으로 실행했습니다. JSON·Python과 RDF·OWL-RL은 같은 공리에서 같은 답을 도출했습니다. 온톨로지 의미 모델의 효과와 RDF 도구만의 효과를 구분하며, LLM 환각 감소를 측정한 실행은 아닙니다.

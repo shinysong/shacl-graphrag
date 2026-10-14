@@ -1,0 +1,185 @@
+{
+  "run_id": "20261014T015328Z-graph-lifecycle",
+  "protocol": "graph-lifecycle-1",
+  "planned_rows": 2880,
+  "executed_rows": 2880,
+  "query_invocations": 11520,
+  "versions": {
+    "httpx": "0.28.1",
+    "neo4j": [
+      {
+        "edition": "community",
+        "name": "Neo4j Kernel",
+        "versions": [
+          "5.26.32"
+        ]
+      }
+    ],
+    "python": "3.12.3"
+  },
+  "source_hashes": {
+    "scripts/run_graph_lifecycle_study.py": "00014fde2d4b324d990992c3c2bf9cf09dc79184546527c3374b13c07bec331b",
+    "tests/test_graph_lifecycle_study.py": "2c1e9d0ea406b2395f3a1570b96d24f68c5e4274527df3445be318f8dcb7c256",
+    "uv.lock": "b29fc8a715c3f6e37b6528e28f0e1bf517b97cd9afd2beda3dfe36a22635edc0"
+  },
+  "rdf_verification": {
+    "status": "completed",
+    "snapshots_checked": 48,
+    "queries_checked": 960,
+    "rows_compared": 2880,
+    "mismatches": []
+  },
+  "arms": {
+    "json_scan": {
+      "rows": 960,
+      "agreement": 960,
+      "empty_answers": 60,
+      "unstable": 0
+    },
+    "json_indexed": {
+      "rows": 960,
+      "agreement": 960,
+      "empty_answers": 60,
+      "unstable": 0
+    },
+    "neo4j": {
+      "rows": 960,
+      "agreement": 960,
+      "empty_answers": 60,
+      "unstable": 0
+    }
+  },
+  "query_median_ms": {
+    "json_scan": {
+      "100": 0.053992502216715366,
+      "1000": 0.15498699940508232,
+      "5000": 0.6038744977558963
+    },
+    "json_indexed": {
+      "100": 0.038662001315969974,
+      "1000": 0.04180749965598807,
+      "5000": 0.04151800385443494
+    },
+    "neo4j": {
+      "100": 5.269143504847307,
+      "1000": 3.758258004381787,
+      "5000": 3.211798502888996
+    }
+  },
+  "updates_median_ms": {
+    "json_scan": {
+      "100": {
+        "initial": 4.688822999014519,
+        "add_products": 5.461343003844377,
+        "change_region": 5.548754001210909,
+        "delete_supply": 5.460316497192252,
+        "restore_supply": 5.586271006905008,
+        "add_backup": 5.384966018027626,
+        "allow_backup": 0.02213400148320943,
+        "revert_rule": 0.019941006030421704
+      },
+      "1000": {
+        "initial": 25.557653010764625,
+        "add_products": 21.396002994151786,
+        "change_region": 21.160707001399714,
+        "delete_supply": 21.231385006103665,
+        "restore_supply": 21.047094502137043,
+        "add_backup": 21.00307548971614,
+        "allow_backup": 0.02090700581902638,
+        "revert_rule": 0.02034049975918606
+      },
+      "5000": {
+        "initial": 111.91127351048635,
+        "add_products": 89.73703399533406,
+        "change_region": 88.45788548933342,
+        "delete_supply": 87.89565001643496,
+        "restore_supply": 87.36877750925487,
+        "add_backup": 86.95385599276051,
+        "allow_backup": 0.02092700742650777,
+        "revert_rule": 0.02090350608341396
+      }
+    },
+    "json_indexed": {
+      "100": {
+        "initial": 4.855184488405939,
+        "add_products": 5.465342001116369,
+        "change_region": 5.521934996068012,
+        "delete_supply": 5.491604999406263,
+        "restore_supply": 5.45198550389614,
+        "add_backup": 5.558589502470568,
+        "allow_backup": 0.01908200647449121,
+        "revert_rule": 0.02066450542770326
+      },
+      "1000": {
+        "initial": 25.700527490698732,
+        "add_products": 21.80271700490266,
+        "change_region": 21.471844498591963,
+        "delete_supply": 21.475809000548907,
+        "restore_supply": 21.498198504559696,
+        "add_backup": 21.371188486227766,
+        "allow_backup": 0.022384003386832774,
+        "revert_rule": 0.02058950485661626
+      },
+      "5000": {
+        "initial": 117.30761750368401,
+        "add_products": 91.39413700177101,
+        "change_region": 89.47502399678342,
+        "delete_supply": 92.98295349435648,
+        "restore_supply": 91.90483248676173,
+        "add_backup": 89.16331600630656,
+        "allow_backup": 0.023378503101412207,
+        "revert_rule": 0.02200249582529068
+      }
+    },
+    "neo4j": {
+      "100": {
+        "initial": 800.3023470009794,
+        "add_products": 121.82690049667144,
+        "change_region": 171.4005339963478,
+        "delete_supply": 14.414678007597104,
+        "restore_supply": 78.94225050404202,
+        "add_backup": 9.53026300703641,
+        "allow_backup": 0.004896995960734785,
+        "revert_rule": 0.005595502443611622
+      },
+      "1000": {
+        "initial": 397.53886649850756,
+        "add_products": 98.58191449893638,
+        "change_region": 66.79709300078684,
+        "delete_supply": 12.85342950723134,
+        "restore_supply": 31.98395750223426,
+        "add_backup": 6.789957005821634,
+        "allow_backup": 0.005371504812501371,
+        "revert_rule": 0.005385998520068824
+      },
+      "5000": {
+        "initial": 678.8034869969124,
+        "add_products": 93.89708100206917,
+        "change_region": 76.38272600161145,
+        "delete_supply": 16.702645007171668,
+        "restore_supply": 31.408239992742892,
+        "add_backup": 7.965673503349535,
+        "allow_backup": 0.005628993676509708,
+        "revert_rule": 0.004615496436599642
+      }
+    }
+  },
+  "paired_changes": {
+    "json_scan": {
+      "expected_changed": 63,
+      "expected_unchanged": 777,
+      "incorrect_post_change": 0
+    },
+    "json_indexed": {
+      "expected_changed": 63,
+      "expected_unchanged": 777,
+      "incorrect_post_change": 0
+    },
+    "neo4j": {
+      "expected_changed": 63,
+      "expected_unchanged": 777,
+      "incorrect_post_change": 0
+    }
+  },
+  "container_removed": true
+}

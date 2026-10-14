@@ -24,6 +24,8 @@ For session continuity, read local `MEMORY.md` if present. It is ignored by Git 
 - Natural-language to typed-template selection is a separate bounded diagnostic, not free Text2SPARQL. Valid but wrong contracts must remain outcomes; a successful checker execution does not verify that the user's question was interpreted correctly.
 - Keep interrupted runs and unresolved cost reservations. A manually inspected continuation must record its selected unfinished cases, separate original failure from recovery, and never silently rewrite the original denominator.
 
+- Graph lifecycle protocol `graph-lifecycle-1` is a bounded synthetic JSON scan/indexed vs actual localhost Neo4j study. Preserve 2,880 rows and distinguish HTTP versus resident Python timing, full-file JSON update policy, predefined role changes and human maintenance effort (unmeasured). RDFLib SPARQL is an independent snapshot cross-check, not an RDF DB arm. Temporary owned Neo4j containers must be removed after execution; paid API stop remains.
+
 ## Stack decisions (do not casually reverse)
 
 - Ontology research now includes a bounded offline OWL-RL reasoning study, beyond SHACL validation. JSON rules and OWL-RL receive identical ontology semantics; asserted lookup is an ablation. Keep positive-rule closure membership, graph-wide disjoint-class witnesses, external truth and LLM hallucination separate. Vocabulary renaming is not real-domain transfer. Preserve the 2026-10-13 one-day 105-request authorization and default 100-request cap; do not extend the exception to later days.
