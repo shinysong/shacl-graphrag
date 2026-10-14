@@ -1,0 +1,395 @@
+{
+  "created_at": "2026-10-14T16:00:43.551050+00:00",
+  "failures": [],
+  "gleif_source_manifest": {
+    "files": {
+      "lei2": {
+        "cdf_version": "LEI_3.1",
+        "delta_type": "GoldenCopy",
+        "format": "csv",
+        "path": "data/gleif/20261012T080000/lei2.csv.zip",
+        "record_count": 3458852,
+        "sha256": "fa989a882cf05fb854ae14693de7fe3f1ea1b60ab7d81270246dc21360f24db2",
+        "size": 503809882,
+        "size_human_readable": "480.47 MB",
+        "type": "lei2",
+        "url": "https://goldencopy.gleif.org/storage/golden-copy-files/2026/10/12/1287560/20261012-0800-gleif-goldencopy-lei2-golden-copy.csv.zip"
+      },
+      "repex": {
+        "cdf_version": "REPEX_2.1",
+        "delta_type": "GoldenCopy",
+        "format": "csv",
+        "path": "data/gleif/20261012T080000/repex.csv.zip",
+        "record_count": 6411075,
+        "sha256": "fca6dd1fd0530d611ee0b54d9fb88976fb1c4f56ef6412a069751b59019f96c8",
+        "size": 62143277,
+        "size_human_readable": "59.26 MB",
+        "type": "repex",
+        "url": "https://goldencopy.gleif.org/storage/golden-copy-files/2026/10/12/1287650/20261012-0800-gleif-goldencopy-repex-golden-copy.csv.zip"
+      },
+      "rr": {
+        "cdf_version": "RR_2.1",
+        "delta_type": "GoldenCopy",
+        "format": "csv",
+        "path": "data/gleif/20261012T080000/rr.csv.zip",
+        "record_count": 490833,
+        "sha256": "e2edd8e761a60b3dd67dd7cca67cf52c55292c28fd2b0edd69107c9715f4c775",
+        "size": 24474305,
+        "size_human_readable": "23.34 MB",
+        "type": "rr",
+        "url": "https://goldencopy.gleif.org/storage/golden-copy-files/2026/10/12/1287602/20261012-0800-gleif-goldencopy-rr-golden-copy.csv.zip"
+      }
+    },
+    "license": "CC0",
+    "license_url": "https://www.gleif.org/en/meta/lei-data-terms-of-use/",
+    "metadata_url": "https://goldencopy.gleif.org/api/v2/golden-copies/publishes",
+    "publish_date": "2026-10-12 08:00:00",
+    "retrieved_at": "2026-10-12T11:04:48.966484+00:00"
+  },
+  "gleif_verified_archives": {
+    "archives": [
+      "rr",
+      "repex"
+    ],
+    "checks": "Full archive SHA-256 and byte length match the retained same-release manifest; LEI archive not read or verified.",
+    "release": "2026-10-12 08:00:00"
+  },
+  "official_document_manifest": {
+    "purpose": "Manual field-definition provenance, not measured document extraction",
+    "sha256": "3fd68c116a9478759908ef0ef95cfadb9d261ecd3ff6b4fa70221213d278d35b",
+    "url": "https://www.gleif.org/en/lei-data/access-and-use-lei-data/level-1-data-lei-cdf-3-1-format"
+  },
+  "profiles": {
+    "documents": {
+      "html_content_sha256": "3fd68c116a9478759908ef0ef95cfadb9d261ecd3ff6b4fa70221213d278d35b",
+      "html_heading_counts": {
+        "h1": 1,
+        "h2": 1
+      },
+      "scope": "Structural document description; address purpose requires manual official-definition interpretation. No automatic semantic interpretation or long copied definitions.",
+      "xsd_address_elements": [
+        {
+          "name": "LegalAddress",
+          "type": "lei:AddressType"
+        },
+        {
+          "name": "HeadquartersAddress",
+          "type": "lei:AddressType"
+        }
+      ]
+    },
+    "fhir": {
+      "bare_id_collision_groups": {
+        "example": 3
+      },
+      "bare_id_overwrite_losses": 2,
+      "bare_id_unique_count": 1,
+      "deliberate_pathless_projection": {
+        "interpretation": "Removing paths loses reference roles such as subject and encounter; no answer-error score.",
+        "reference_rows": 4,
+        "removed_path_fields": 4
+      },
+      "reference_scope": "Exact relative reference membership in these resources only; unresolved does not imply globally invalid.",
+      "references": 4,
+      "resources": 3,
+      "typed_key_unique_count": 3,
+      "typed_keys": [
+        "Observation/example",
+        "Patient/example",
+        "Encounter/example"
+      ],
+      "unresolved_in_selected_bundle": 1
+    },
+    "fibo": {
+      "deprecated_assertions": 2,
+      "import_triples": 9,
+      "imports": [
+        "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+        "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+        "https://www.omg.org/spec/Commons/ContextualDesignators/",
+        "https://www.omg.org/spec/Commons/Designators/",
+        "https://www.omg.org/spec/Commons/Documents/",
+        "https://www.omg.org/spec/Commons/Organizations/",
+        "https://www.omg.org/spec/Commons/RegulatoryAgencies/",
+        "https://www.omg.org/spec/Commons/RolesAndCompositions/",
+        "https://www.omg.org/spec/Commons/TextDatatype/"
+      ],
+      "inverse_triples": 10,
+      "object_properties": 26,
+      "owl_classes": 1,
+      "scope": "One asserted RDF/XML module only; imports listed, never fetched or inferred; not a closed ontology.",
+      "subproperty_triples": 10,
+      "transitive_properties": 0,
+      "triples": 162
+    },
+    "gleif": {
+      "archive_members": {
+        "repex": "20261012-0800-gleif-goldencopy-repex-golden-copy.csv",
+        "rr": "20261012-0800-gleif-goldencopy-rr-golden-copy.csv"
+      },
+      "exception_categories": {
+        "DIRECT_ACCOUNTING_CONSOLIDATION_PARENT": 256
+      },
+      "exception_reasons": {
+        "CONSENT_NOT_OBTAINED": 1,
+        "NATURAL_PERSONS": 42,
+        "NON_CONSOLIDATING": 35,
+        "NO_KNOWN_PERSON": 175,
+        "NO_LEI": 3
+      },
+      "period_field_nonempty_counts": {
+        "Relationship.Period.1.endDate": 127,
+        "Relationship.Period.1.periodType": 256,
+        "Relationship.Period.1.startDate": 256,
+        "Relationship.Period.2.endDate": 57,
+        "Relationship.Period.2.periodType": 190,
+        "Relationship.Period.2.startDate": 190,
+        "Relationship.Period.3.endDate": 7,
+        "Relationship.Period.3.periodType": 49,
+        "Relationship.Period.3.startDate": 49,
+        "Relationship.Period.4.endDate": 0,
+        "Relationship.Period.4.periodType": 0,
+        "Relationship.Period.4.startDate": 0,
+        "Relationship.Period.5.endDate": 0,
+        "Relationship.Period.5.periodType": 0,
+        "Relationship.Period.5.startDate": 0
+      },
+      "period_types": {
+        "ACCOUNTING_PERIOD": 190,
+        "DOCUMENT_FILING_PERIOD": 49,
+        "RELATIONSHIP_PERIOD": 256
+      },
+      "registration_status": {
+        "LAPSED": 41,
+        "PUBLISHED": 215
+      },
+      "relationship_status": {
+        "ACTIVE": 256
+      },
+      "relationship_types": {
+        "IS_DIRECTLY_CONSOLIDATED_BY": 93,
+        "IS_FUND-MANAGED_BY": 42,
+        "IS_INTERNATIONAL_BRANCH_OF": 1,
+        "IS_SUBFUND_OF": 24,
+        "IS_ULTIMATELY_CONSOLIDATED_BY": 96
+      },
+      "repex_rows": 256,
+      "rr_rows": 256,
+      "scope": "No joins or parent-absence inference. No edge in this sample does not mean no parent.",
+      "selection": "First 256 rows per archive in CSV order; bounded biased convenience sample."
+    },
+    "wikidata": {
+      "claims": 283,
+      "claims_with_qualifiers": 101,
+      "claims_with_references": 112,
+      "deliberate_subject_property_value_projection": {
+        "interpretation": "Metadata removal counts, not semantic errors or benchmark outcomes.",
+        "policy": "One row per claim, retaining subject, property and entire mainsnak (including snaktype); no deduplication.",
+        "removed_qualifier_snaks": 168,
+        "removed_rank_fields": 283,
+        "removed_reference_blocks": 152,
+        "removed_statement_ids": 283,
+        "rows": 283
+      },
+      "entity": "Q80",
+      "lastrevid": 2556310829,
+      "mainsnak_types": {
+        "value": 283
+      },
+      "properties": 183,
+      "qualifier_snaks": 168,
+      "qualifier_snaktypes": {
+        "somevalue": 1,
+        "value": 167
+      },
+      "ranks": {
+        "deprecated": 2,
+        "normal": 278,
+        "preferred": 3
+      },
+      "reference_blocks": 152,
+      "reference_snaks": 428,
+      "reference_snaktypes": {
+        "value": 428
+      },
+      "selection": "One purposefully selected entity; not representative domain prevalence."
+    },
+    "yago": {
+      "date_datatype_constraints": {
+        "http://www.w3.org/2001/XMLSchema#date": 5,
+        "http://www.w3.org/2001/XMLSchema#dateTime": 5,
+        "http://www.w3.org/2001/XMLSchema#gYear": 5,
+        "http://www.w3.org/2001/XMLSchema#gYearMonth": 5
+      },
+      "explicit_property_shapes": 0,
+      "node_shapes": 55,
+      "property_shape_nodes_explicit_or_linked": 156,
+      "scope": "Original YAGO 4.6 SHACL schema only; no instance benchmark; CC BY 4.0.",
+      "triples": 5536
+    }
+  },
+  "protocol": "domain-characteristics-1",
+  "provenance": {
+    "code": {
+      "bytes": 17399,
+      "path": "profile_domain_sources.py",
+      "sha256": "a5ecb96568dc6db11a26e0b18518b4c82582c2ca1f7b39faf3347d8ef3cfa0e5"
+    },
+    "download-manifest.json": {
+      "bytes": 1867,
+      "path": "download-manifest.json",
+      "sha256": "290a1d1f1ee9190165707d9e59c3fc06be9cb0b251bd19dce1b81f5565ddcee3"
+    },
+    "fhir-encounter.json": {
+      "bytes": 413,
+      "path": "fhir-encounter.json",
+      "sha256": "6ef7c93b28fa76d3f1f1dcd3e795a8e35c70b5f86ad4659b75f7fc3d93ff0bb5"
+    },
+    "fhir-observation.json": {
+      "bytes": 2087,
+      "path": "fhir-observation.json",
+      "sha256": "95b2b641707cd473902670a65c20008282c09b7e71731d1010a3db6ce24fce7f"
+    },
+    "fhir-patient.json": {
+      "bytes": 3748,
+      "path": "fhir-patient.json",
+      "sha256": "7cc6b3817264c22e722b6bc10e494d3441341032f8294db7ccec796ca7a0cf81"
+    },
+    "fibo-license.txt": {
+      "bytes": 1121,
+      "path": "fibo-license.txt",
+      "sha256": "59f852c87fa59411aa7dc527bd5629074d2caced7de4a48bbe7c5763359d8559"
+    },
+    "fibo-relations.rdf": {
+      "bytes": 23816,
+      "path": "fibo-relations.rdf",
+      "sha256": "e34a47bbf8c3d64aa2f747c14fd1f8871175eaea4a2720d1a347fb60837eaace"
+    },
+    "gleif-format.html": {
+      "bytes": 252220,
+      "path": "gleif-format.html",
+      "sha256": "3fd68c116a9478759908ef0ef95cfadb9d261ecd3ff6b4fa70221213d278d35b"
+    },
+    "lei-cdf-3.1.xsd": {
+      "bytes": 103937,
+      "path": "lei-cdf-3.1.xsd",
+      "sha256": "1c896df8b093b6c3418772179c6e4b489014a57bd0e9606aef0ec3825d5937e6"
+    },
+    "manifest.json": {
+      "bytes": 1829,
+      "path": "manifest.json",
+      "sha256": "90b8f20ea1d18d1c4f656b608f26574543c74d493a61cf66e3f68058d9bf11bc"
+    },
+    "official-doc-manifest.json": {
+      "bytes": 269,
+      "path": "official-doc-manifest.json",
+      "sha256": "f66d498e6e790e8fbc10adf8bccfd46b72e40af30d0ecd3dd4be0d5344ef4005"
+    },
+    "repex.csv.zip": {
+      "bytes": 62143277,
+      "path": "repex.csv.zip",
+      "sha256": "fca6dd1fd0530d611ee0b54d9fb88976fb1c4f56ef6412a069751b59019f96c8"
+    },
+    "rr.csv.zip": {
+      "bytes": 24474305,
+      "path": "rr.csv.zip",
+      "sha256": "e2edd8e761a60b3dd67dd7cca67cf52c55292c28fd2b0edd69107c9715f4c775"
+    },
+    "tests": {
+      "bytes": 5832,
+      "path": "test_domain_sources.py",
+      "sha256": "49420dbcd013aefbf7d5df58ea75c8678f9ead894c22a041f15313af35ca2c87"
+    },
+    "wikidata-Q80.json": {
+      "bytes": 303588,
+      "path": "wikidata-Q80.json",
+      "sha256": "aea871f7242d4708d6e5c012ee32ac401790a85ed00192e890dcd8deceb87f9a"
+    },
+    "yago-schema": {
+      "bytes": 117074,
+      "path": "schema.ttl",
+      "sha256": "b3f185f27c21e0e2b561dc92f7f9e3d54ccd6f4acac01e9ae97c2d42ef3b636f"
+    }
+  },
+  "scope": "Offline descriptive source characterization and deliberate projection diagnostics; not a benchmark, prevalence estimate, or semantic-error score.",
+  "source_download_manifest": [
+    {
+      "bytes": 2087,
+      "path": "fhir-observation.json",
+      "retrieved_at": "2026-10-14T15:48:58.918389+00:00",
+      "sha256": "95b2b641707cd473902670a65c20008282c09b7e71731d1010a3db6ce24fce7f",
+      "status": "downloaded",
+      "url": "https://hl7.org/fhir/R4/observation-example.json"
+    },
+    {
+      "bytes": 3748,
+      "path": "fhir-patient.json",
+      "retrieved_at": "2026-10-14T15:48:59.406354+00:00",
+      "sha256": "7cc6b3817264c22e722b6bc10e494d3441341032f8294db7ccec796ca7a0cf81",
+      "status": "downloaded",
+      "url": "https://hl7.org/fhir/R4/patient-example.json"
+    },
+    {
+      "bytes": 413,
+      "path": "fhir-encounter.json",
+      "retrieved_at": "2026-10-14T15:48:59.893176+00:00",
+      "sha256": "6ef7c93b28fa76d3f1f1dcd3e795a8e35c70b5f86ad4659b75f7fc3d93ff0bb5",
+      "status": "downloaded",
+      "url": "https://hl7.org/fhir/R4/encounter-example.json"
+    },
+    {
+      "bytes": 23816,
+      "path": "fibo-relations.rdf",
+      "retrieved_at": "2026-10-14T15:49:00.166915+00:00",
+      "sha256": "e34a47bbf8c3d64aa2f747c14fd1f8871175eaea4a2720d1a347fb60837eaace",
+      "status": "downloaded",
+      "url": "https://raw.githubusercontent.com/edmcouncil/fibo/9d9e5375dddc528f7c5fc96f0c508e2fcb05ea0b/FND/Relations/Relations.rdf"
+    },
+    {
+      "bytes": 1121,
+      "path": "fibo-license.txt",
+      "retrieved_at": "2026-10-14T15:49:00.480652+00:00",
+      "sha256": "59f852c87fa59411aa7dc527bd5629074d2caced7de4a48bbe7c5763359d8559",
+      "status": "downloaded",
+      "url": "https://raw.githubusercontent.com/edmcouncil/fibo/9d9e5375dddc528f7c5fc96f0c508e2fcb05ea0b/LICENSE"
+    },
+    {
+      "bytes": 303588,
+      "path": "wikidata-Q80.json",
+      "retrieved_at": "2026-10-14T15:49:01.704715+00:00",
+      "sha256": "aea871f7242d4708d6e5c012ee32ac401790a85ed00192e890dcd8deceb87f9a",
+      "status": "downloaded",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q80.json"
+    }
+  ],
+  "status": "complete",
+  "run_id": "20261014T160043Z-domain-characteristics",
+  "verification": {
+    "status": "complete",
+    "provenance_files": 16,
+    "archived_code_and_tests": true,
+    "historical_yago_html_xsd_hashes": true,
+    "independent_selected_counts": [
+      "FHIR typed IDs/references",
+      "Wikidata claims/qualifiers/references/ranks",
+      "FIBO triples/imports",
+      "YAGO triples/node shapes",
+      "GLEIF first256 relationshiptypes/exceptionreasons"
+    ],
+    "scope": "Selected independent recounts; not a second implementation of every profiler output or externally verified source facts."
+  },
+  "failed_acquisitions": [
+    {
+      "url": "https://www.nist.gov/document/sfa-bill-materials-spreadsheet",
+      "status": "failed",
+      "error": "HTTP403 urllib download; no workbook obtained"
+    }
+  ],
+  "attribution": {
+    "yago": "YAGO team, Télécom Paris, YAGO 4.6, CC BY 4.0",
+    "fibo": "EDM Council and OMG; MIT; pinned 9d9e5375dddc528f7c5fc96f0c508e2fcb05ea0b",
+    "fhir": "HL7 FHIR R4 official examples, not actual patient records",
+    "gleif": "GLEIF Golden Copy 2026-10-12T08:00:00, CC0",
+    "wikidata": "Wikidata Q80, CC0 data, revision2556310829"
+  }
+}

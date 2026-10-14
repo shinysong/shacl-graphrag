@@ -1,0 +1,551 @@
+{
+  "documents": {},
+  "fhir": {
+    "coding_namespaces": [
+      {
+        "code": "vital-signs",
+        "path": "/category/0/coding/0",
+        "source": "Observation/example",
+        "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+      },
+      {
+        "code": "29463-7",
+        "path": "/code/coding/0",
+        "source": "Observation/example",
+        "system": "http://loinc.org"
+      },
+      {
+        "code": "3141-9",
+        "path": "/code/coding/1",
+        "source": "Observation/example",
+        "system": "http://loinc.org"
+      },
+      {
+        "code": "27113001",
+        "path": "/code/coding/2",
+        "source": "Observation/example",
+        "system": "http://snomed.info/sct"
+      },
+      {
+        "code": "body-weight",
+        "path": "/code/coding/3",
+        "source": "Observation/example",
+        "system": "http://acme.org/devices/clinical-codes"
+      },
+      {
+        "code": "[lb_av]",
+        "path": "/valueQuantity",
+        "source": "Observation/example",
+        "system": "http://unitsofmeasure.org"
+      },
+      {
+        "code": "MR",
+        "path": "/identifier/0/type/coding/0",
+        "source": "Patient/example",
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+      },
+      {
+        "code": "N",
+        "path": "/contact/0/relationship/0/coding/0",
+        "source": "Patient/example",
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0131"
+      },
+      {
+        "code": "IMP",
+        "path": "/class",
+        "source": "Encounter/example",
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+      }
+    ],
+    "pathless_references": [
+      {
+        "reference": "Patient/example",
+        "source": "Observation/example"
+      },
+      {
+        "reference": "Encounter/example",
+        "source": "Observation/example"
+      },
+      {
+        "reference": "Organization/1",
+        "source": "Patient/example"
+      },
+      {
+        "reference": "Patient/example",
+        "source": "Encounter/example"
+      }
+    ],
+    "references": [
+      {
+        "path": "/subject/reference",
+        "reference": "Patient/example",
+        "resolved_in_bundle": true,
+        "source": "Observation/example"
+      },
+      {
+        "path": "/encounter/reference",
+        "reference": "Encounter/example",
+        "resolved_in_bundle": true,
+        "source": "Observation/example"
+      },
+      {
+        "path": "/managingOrganization/reference",
+        "reference": "Organization/1",
+        "resolved_in_bundle": false,
+        "source": "Patient/example"
+      },
+      {
+        "path": "/subject/reference",
+        "reference": "Patient/example",
+        "resolved_in_bundle": true,
+        "source": "Encounter/example"
+      }
+    ],
+    "value_quantities": [
+      {
+        "code": "[lb_av]",
+        "path": "/valueQuantity",
+        "source": "Observation/example",
+        "system": "http://unitsofmeasure.org",
+        "unit": "lbs",
+        "value": 185
+      }
+    ]
+  },
+  "fibo": {},
+  "gleif": {
+    "repex_first_three": [
+      {
+        "Exception.Category": "DIRECT_ACCOUNTING_CONSOLIDATION_PARENT",
+        "Exception.Reason.1": "NON_CONSOLIDATING",
+        "Exception.Reason.2": "",
+        "Exception.Reason.3": "",
+        "Exception.Reason.4": "",
+        "Exception.Reason.5": "",
+        "Exception.Reference.1": "",
+        "Exception.Reference.2": "",
+        "Exception.Reference.3": "",
+        "Exception.Reference.4": "",
+        "Exception.Reference.5": "",
+        "LEI": "001GPB6A9XPE8XJICC14"
+      },
+      {
+        "Exception.Category": "DIRECT_ACCOUNTING_CONSOLIDATION_PARENT",
+        "Exception.Reason.1": "NON_CONSOLIDATING",
+        "Exception.Reason.2": "",
+        "Exception.Reason.3": "",
+        "Exception.Reason.4": "",
+        "Exception.Reason.5": "",
+        "Exception.Reference.1": "",
+        "Exception.Reference.2": "",
+        "Exception.Reference.3": "",
+        "Exception.Reference.4": "",
+        "Exception.Reference.5": "",
+        "LEI": "004L5FPTUREIWK9T2N63"
+      },
+      {
+        "Exception.Category": "DIRECT_ACCOUNTING_CONSOLIDATION_PARENT",
+        "Exception.Reason.1": "NON_CONSOLIDATING",
+        "Exception.Reason.2": "",
+        "Exception.Reason.3": "",
+        "Exception.Reason.4": "",
+        "Exception.Reason.5": "",
+        "Exception.Reference.1": "",
+        "Exception.Reference.2": "",
+        "Exception.Reference.3": "",
+        "Exception.Reference.4": "",
+        "Exception.Reference.5": "",
+        "LEI": "00EHHQ2ZHDCFXJCPCL46"
+      }
+    ],
+    "rr_first_three": [
+      {
+        "Registration.RegistrationStatus": "LAPSED",
+        "Relationship.EndNode.NodeID": "5493001Z012YSB2A0K51",
+        "Relationship.EndNode.NodeIDType": "LEI",
+        "Relationship.Period.1.endDate": "",
+        "Relationship.Period.1.periodType": "RELATIONSHIP_PERIOD",
+        "Relationship.Period.1.startDate": "2012-11-29T00:00:00.000Z",
+        "Relationship.Period.2.endDate": "",
+        "Relationship.Period.2.periodType": "",
+        "Relationship.Period.2.startDate": "",
+        "Relationship.Period.3.endDate": "",
+        "Relationship.Period.3.periodType": "",
+        "Relationship.Period.3.startDate": "",
+        "Relationship.Period.4.endDate": "",
+        "Relationship.Period.4.periodType": "",
+        "Relationship.Period.4.startDate": "",
+        "Relationship.Period.5.endDate": "",
+        "Relationship.Period.5.periodType": "",
+        "Relationship.Period.5.startDate": "",
+        "Relationship.RelationshipStatus": "ACTIVE",
+        "Relationship.RelationshipType": "IS_FUND-MANAGED_BY",
+        "Relationship.StartNode.NodeID": "001GPB6A9XPE8XJICC14",
+        "Relationship.StartNode.NodeIDType": "LEI"
+      },
+      {
+        "Registration.RegistrationStatus": "LAPSED",
+        "Relationship.EndNode.NodeID": "C7J4FOV6ELAVE39B7M82",
+        "Relationship.EndNode.NodeIDType": "LEI",
+        "Relationship.Period.1.endDate": "",
+        "Relationship.Period.1.periodType": "RELATIONSHIP_PERIOD",
+        "Relationship.Period.1.startDate": "2012-11-29T00:00:00.000Z",
+        "Relationship.Period.2.endDate": "",
+        "Relationship.Period.2.periodType": "",
+        "Relationship.Period.2.startDate": "",
+        "Relationship.Period.3.endDate": "",
+        "Relationship.Period.3.periodType": "",
+        "Relationship.Period.3.startDate": "",
+        "Relationship.Period.4.endDate": "",
+        "Relationship.Period.4.periodType": "",
+        "Relationship.Period.4.startDate": "",
+        "Relationship.Period.5.endDate": "",
+        "Relationship.Period.5.periodType": "",
+        "Relationship.Period.5.startDate": "",
+        "Relationship.RelationshipStatus": "ACTIVE",
+        "Relationship.RelationshipType": "IS_SUBFUND_OF",
+        "Relationship.StartNode.NodeID": "001GPB6A9XPE8XJICC14",
+        "Relationship.StartNode.NodeIDType": "LEI"
+      },
+      {
+        "Registration.RegistrationStatus": "PUBLISHED",
+        "Relationship.EndNode.NodeID": "5493002IC8N66XNR2841",
+        "Relationship.EndNode.NodeIDType": "LEI",
+        "Relationship.Period.1.endDate": "",
+        "Relationship.Period.1.periodType": "RELATIONSHIP_PERIOD",
+        "Relationship.Period.1.startDate": "2011-10-01T00:00:00+02:00",
+        "Relationship.Period.2.endDate": "",
+        "Relationship.Period.2.periodType": "",
+        "Relationship.Period.2.startDate": "",
+        "Relationship.Period.3.endDate": "",
+        "Relationship.Period.3.periodType": "",
+        "Relationship.Period.3.startDate": "",
+        "Relationship.Period.4.endDate": "",
+        "Relationship.Period.4.periodType": "",
+        "Relationship.Period.4.startDate": "",
+        "Relationship.Period.5.endDate": "",
+        "Relationship.Period.5.periodType": "",
+        "Relationship.Period.5.startDate": "",
+        "Relationship.RelationshipStatus": "ACTIVE",
+        "Relationship.RelationshipType": "IS_FUND-MANAGED_BY",
+        "Relationship.StartNode.NodeID": "00EHHQ2ZHDCFXJCPCL46",
+        "Relationship.StartNode.NodeIDType": "LEI"
+      }
+    ]
+  },
+  "wikidata": {
+    "employer_P108": [
+      {
+        "id": "q80$CBC0EA40-FD9B-4731-AA52-47320FC4C2FD",
+        "mainsnak": {
+          "datatype": "wikibase-item",
+          "datavalue": {
+            "type": "wikibase-entityid",
+            "value": {
+              "entity-type": "item",
+              "id": "Q37033",
+              "numeric-id": 37033
+            }
+          },
+          "hash": "7f926697d39dc27be292ef141a47d18c49b377af",
+          "property": "P108",
+          "snaktype": "value"
+        },
+        "property": "P108",
+        "rank": "normal",
+        "reference_blocks": 0
+      },
+      {
+        "id": "q80$1396F07A-7A21-4E73-9FDF-5AC6B197C7C4",
+        "mainsnak": {
+          "datatype": "wikibase-item",
+          "datavalue": {
+            "type": "wikibase-entityid",
+            "value": {
+              "entity-type": "item",
+              "id": "Q7432436",
+              "numeric-id": 7432436
+            }
+          },
+          "hash": "7caae9cf009aa11914e4aee895068120bf230a86",
+          "property": "P108",
+          "snaktype": "value"
+        },
+        "property": "P108",
+        "rank": "normal",
+        "reference_blocks": 2
+      },
+      {
+        "id": "q80$EEE56E94-833A-491D-8448-D891B5BF9FBE",
+        "mainsnak": {
+          "datatype": "wikibase-item",
+          "datavalue": {
+            "type": "wikibase-entityid",
+            "value": {
+              "entity-type": "item",
+              "id": "Q49108",
+              "numeric-id": 49108
+            }
+          },
+          "hash": "a5e3177b09ef52cf283b5049e11e3b311c635a45",
+          "property": "P108",
+          "snaktype": "value"
+        },
+        "property": "P108",
+        "rank": "normal",
+        "reference_blocks": 2
+      },
+      {
+        "id": "Q80$3b10e3d0-4d39-a6fe-6f5c-2f799aa1843d",
+        "mainsnak": {
+          "datatype": "wikibase-item",
+          "datavalue": {
+            "type": "wikibase-entityid",
+            "value": {
+              "entity-type": "item",
+              "id": "Q7204713",
+              "numeric-id": 7204713
+            }
+          },
+          "hash": "3f85a3e9f5ea35e2b1fa530ceccc93e32a68a206",
+          "property": "P108",
+          "snaktype": "value"
+        },
+        "property": "P108",
+        "qualifiers": {
+          "P580": [
+            {
+              "datatype": "time",
+              "datavalue": {
+                "type": "time",
+                "value": {
+                  "after": 0,
+                  "before": 0,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                  "precision": 9,
+                  "time": "+1976-00-00T00:00:00Z",
+                  "timezone": 0
+                }
+              },
+              "hash": "5d2e9fce4313dbba2dda39f013c35ac9e1cd97ef",
+              "property": "P580",
+              "snaktype": "value"
+            }
+          ],
+          "P582": [
+            {
+              "datatype": "time",
+              "datavalue": {
+                "type": "time",
+                "value": {
+                  "after": 0,
+                  "before": 0,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                  "precision": 9,
+                  "time": "+1978-00-00T00:00:00Z",
+                  "timezone": 0
+                }
+              },
+              "hash": "603baa61b7211e9c859a5cd8e897021f2ada4158",
+              "property": "P582",
+              "snaktype": "value"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P580",
+          "P582"
+        ],
+        "rank": "normal",
+        "reference_blocks": 0
+      },
+      {
+        "id": "Q80$fcba864c-4c22-6f24-cee4-5c8bfea5a25b",
+        "mainsnak": {
+          "datatype": "wikibase-item",
+          "datavalue": {
+            "type": "wikibase-entityid",
+            "value": {
+              "entity-type": "item",
+              "id": "Q42944",
+              "numeric-id": 42944
+            }
+          },
+          "hash": "562f5dfc2ca1553198878efffff0f463a5a9f881",
+          "property": "P108",
+          "snaktype": "value"
+        },
+        "property": "P108",
+        "qualifiers": {
+          "P39": [
+            {
+              "datatype": "wikibase-item",
+              "datavalue": {
+                "type": "wikibase-entityid",
+                "value": {
+                  "entity-type": "item",
+                  "id": "Q2912172",
+                  "numeric-id": 2912172
+                }
+              },
+              "hash": "d0722e97917b3f7d7ee3178b72666f68e7961245",
+              "property": "P39",
+              "snaktype": "value"
+            }
+          ],
+          "P580": [
+            {
+              "datatype": "time",
+              "datavalue": {
+                "type": "time",
+                "value": {
+                  "after": 0,
+                  "before": 0,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                  "precision": 10,
+                  "time": "+1980-06-00T00:00:00Z",
+                  "timezone": 0
+                }
+              },
+              "hash": "549a0e3112af29788b56be47807f17d334a68c16",
+              "property": "P580",
+              "snaktype": "value"
+            }
+          ],
+          "P582": [
+            {
+              "datatype": "time",
+              "datavalue": {
+                "type": "time",
+                "value": {
+                  "after": 0,
+                  "before": 0,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                  "precision": 10,
+                  "time": "+1980-12-00T00:00:00Z",
+                  "timezone": 0
+                }
+              },
+              "hash": "667c0414b4828e96d6e44409b767c1aa10223bb7",
+              "property": "P582",
+              "snaktype": "value"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P580",
+          "P582",
+          "P39"
+        ],
+        "rank": "normal",
+        "reference_blocks": 0
+      },
+      {
+        "id": "Q80$4fe7940f-4ce6-a991-bb18-22f67d2d20f4",
+        "mainsnak": {
+          "datatype": "wikibase-item",
+          "datavalue": {
+            "type": "wikibase-entityid",
+            "value": {
+              "entity-type": "item",
+              "id": "Q42944",
+              "numeric-id": 42944
+            }
+          },
+          "hash": "562f5dfc2ca1553198878efffff0f463a5a9f881",
+          "property": "P108",
+          "snaktype": "value"
+        },
+        "property": "P108",
+        "qualifiers": {
+          "P39": [
+            {
+              "datatype": "wikibase-item",
+              "datavalue": {
+                "type": "wikibase-entityid",
+                "value": {
+                  "entity-type": "item",
+                  "id": "Q1404101",
+                  "numeric-id": 1404101
+                }
+              },
+              "hash": "a4c223817caac7824ba1ef7bc0747da529312151",
+              "property": "P39",
+              "snaktype": "value"
+            }
+          ],
+          "P580": [
+            {
+              "datatype": "time",
+              "datavalue": {
+                "type": "time",
+                "value": {
+                  "after": 0,
+                  "before": 0,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                  "precision": 9,
+                  "time": "+1984-00-00T00:00:00Z",
+                  "timezone": 0
+                }
+              },
+              "hash": "6e9dc009e5d21d486b74950c06e04ee0f6c05b81",
+              "property": "P580",
+              "snaktype": "value"
+            }
+          ],
+          "P582": [
+            {
+              "datatype": "time",
+              "datavalue": {
+                "type": "time",
+                "value": {
+                  "after": 0,
+                  "before": 0,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727",
+                  "precision": 9,
+                  "time": "+1994-00-00T00:00:00Z",
+                  "timezone": 0
+                }
+              },
+              "hash": "c52610cf2484d0ad6653d33766c3606e3e67ec6f",
+              "property": "P582",
+              "snaktype": "value"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P580",
+          "P582",
+          "P39"
+        ],
+        "rank": "normal",
+        "reference_blocks": 0
+      },
+      {
+        "id": "Q80$8cbf2405-4b20-e53c-dbf0-6424c46c0e74",
+        "mainsnak": {
+          "datatype": "wikibase-item",
+          "datavalue": {
+            "type": "wikibase-entityid",
+            "value": {
+              "entity-type": "item",
+              "id": "Q7095994",
+              "numeric-id": 7095994
+            }
+          },
+          "hash": "34d020bfe8a070ed927bd94fe5bdfb3ef18e4e85",
+          "property": "P108",
+          "snaktype": "value"
+        },
+        "property": "P108",
+        "rank": "normal",
+        "reference_blocks": 1
+      }
+    ],
+    "entity": "Q80",
+    "lastrevid": 2556310829
+  },
+  "yago": {
+    "date_constraints": []
+  }
+}

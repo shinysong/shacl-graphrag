@@ -1,5 +1,9 @@
 # 온톨로지 활용 실험 명세
 
+## 변경 영향과 도메인별 의미 조건
+
+[도메인·데이터 구조 연구 지도](domain-characteristics.md)는 입문 안내서에 필요한 적용 전제와 실패 사례를 정리한다. `change-impact-1`은 [제조업 재검증 대상 탐색](change-impact-study.md), `domain-characteristics-1`은 [실제 원천 특성 점검](records/20261014-domain-characteristics.md)이다. 잠재적 영향·실제 승인·물리적 예측을 구분하며, 같은 정보를 다른 형식으로 바꾼 결과와 도메인 차이를 합산하지 않는다.
+
 ## 검사 뒤의 제한된 추가조회
 
 `bounded-refresh-1`은 [보류 유지·선택 조회·매번 조회](bounded-refresh-study.md)를 비교한다. 기존 답을 재사용하며 현재·실패·초기 원천 응답을 분리한다. 추가조회는 모두 JSON으로 수행하고, 기존 구조 이름은 최초 답의 출처를 표시한다.

@@ -1,5 +1,7 @@
 # SHACL GraphRAG
 
+최근 연구: [변경 영향과 도메인별 의미 조건](docs/experiments/domain-characteristics.md), [제조업 192개 사례](docs/experiments/records/20261014-change-impact.md), [실제 원천 특성 점검](docs/experiments/records/20261014-domain-characteristics.md). 합성 실험과 자료 구조 점검은 별도 결과입니다.
+
 온톨로지 제약 기반 검증 루프 GraphRAG
 
 Graph User Group (GUG) 커뮤니티 프로젝트입니다.  

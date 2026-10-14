@@ -1,0 +1,6030 @@
+[
+  {
+    "case": {
+      "canonical_bom": [
+        {
+          "child": "changed",
+          "id": "b0_1",
+          "parent": "a0_1_8699",
+          "status": "active"
+        },
+        {
+          "child": "a0_1_8699",
+          "id": "b0_2",
+          "parent": "a0_2_503",
+          "status": "active"
+        },
+        {
+          "child": "a0_2_503",
+          "id": "b0_3",
+          "parent": "a0_3_9352",
+          "status": "active"
+        },
+        {
+          "child": "a0_3_9352",
+          "id": "b0_4",
+          "parent": "p191",
+          "status": "active"
+        },
+        {
+          "child": "changed",
+          "id": "b1_1",
+          "parent": "a1_1_7159",
+          "status": "active"
+        },
+        {
+          "child": "a1_1_7159",
+          "id": "b1_2",
+          "parent": "a1_2_9982",
+          "status": "active"
+        },
+        {
+          "child": "a1_2_9982",
+          "id": "b1_3",
+          "parent": "a1_3_7194",
+          "status": "active"
+        },
+        {
+          "child": "a1_3_7194",
+          "id": "b1_4",
+          "parent": "p225",
+          "status": "active"
+        },
+        {
+          "child": "changed",
+          "id": "b2_1",
+          "parent": "a2_1_2343",
+          "status": "active"
+        },
+        {
+          "child": "a2_1_2343",
+          "id": "b2_2",
+          "parent": "a2_2_7470",
+          "status": "active"
+        },
+        {
+          "child": "a2_2_7470",
+          "id": "b2_3",
+          "parent": "a2_3_7964",
+          "status": "active"
+        },
+        {
+          "child": "a2_3_7964",
+          "id": "b2_4",
+          "parent": "p140",
+          "status": "active"
+        },
+        {
+          "child": "changed",
+          "id": "retired",
+          "parent": "retired_product",
+          "status": "retired"
+        }
+      ],
+      "canonical_nodes": [
+        {
+          "id": "changed",
+          "kind": "component"
+        },
+        {
+          "id": "a0_1_8699",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_2_503",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_3_9352",
+          "kind": "assembly"
+        },
+        {
+          "id": "p191",
+          "kind": "product"
+        },
+        {
+          "id": "a1_1_7159",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_2_9982",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_3_7194",
+          "kind": "assembly"
+        },
+        {
+          "id": "p225",
+          "kind": "product"
+        },
+        {
+          "id": "a2_1_2343",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_2_7470",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_3_7964",
+          "kind": "assembly"
+        },
+        {
+          "id": "p140",
+          "kind": "product"
+        },
+        {
+          "id": "unrelated",
+          "kind": "product"
+        },
+        {
+          "id": "retired_product",
+          "kind": "product"
+        },
+        {
+          "id": "old_product",
+          "kind": "product"
+        }
+      ],
+      "case_id": "d4-f3-s11-complete",
+      "depth": 4,
+      "fanout": 3,
+      "fault": "complete",
+      "mutation": {
+        "after_packet_hash": "81091fcc613763eb2ae79790f70bfea14943369bce8ced634e2c8e0cb7ffaab8",
+        "before_packet_hash": "81091fcc613763eb2ae79790f70bfea14943369bce8ced634e2c8e0cb7ffaab8",
+        "kind": "complete",
+        "selected_edge_id": "b0_1"
+      },
+      "original_packet": {
+        "catalog": {
+          "associatedWith": "ignore",
+          "contains": "inverse",
+          "partOf": "forward",
+          "usedIn": "forward"
+        },
+        "changed": "changed",
+        "coverage": {
+          "advertised_version": "v2",
+          "relations_complete": true,
+          "source_version": "v2"
+        },
+        "edges": [
+          {
+            "id": "b0_1",
+            "relation": "contains",
+            "source": "a0_1_8699",
+            "status": "active",
+            "target": "changed"
+          },
+          {
+            "id": "b0_2",
+            "relation": "partOf",
+            "source": "a0_1_8699",
+            "status": "active",
+            "target": "a0_2_503"
+          },
+          {
+            "id": "b0_3",
+            "relation": "partOf",
+            "source": "a0_2_503",
+            "status": "active",
+            "target": "a0_3_9352"
+          },
+          {
+            "id": "b0_4",
+            "relation": "usedIn",
+            "source": "a0_3_9352",
+            "status": "active",
+            "target": "p191"
+          },
+          {
+            "id": "b1_1",
+            "relation": "partOf",
+            "source": "changed",
+            "status": "active",
+            "target": "a1_1_7159"
+          },
+          {
+            "id": "b1_2",
+            "relation": "usedIn",
+            "source": "a1_1_7159",
+            "status": "active",
+            "target": "a1_2_9982"
+          },
+          {
+            "id": "b1_3",
+            "relation": "partOf",
+            "source": "a1_2_9982",
+            "status": "active",
+            "target": "a1_3_7194"
+          },
+          {
+            "id": "b1_4",
+            "relation": "partOf",
+            "source": "a1_3_7194",
+            "status": "active",
+            "target": "p225"
+          },
+          {
+            "id": "b2_1",
+            "relation": "contains",
+            "source": "a2_1_2343",
+            "status": "active",
+            "target": "changed"
+          },
+          {
+            "id": "b2_2",
+            "relation": "usedIn",
+            "source": "a2_1_2343",
+            "status": "active",
+            "target": "a2_2_7470"
+          },
+          {
+            "id": "b2_3",
+            "relation": "partOf",
+            "source": "a2_2_7470",
+            "status": "active",
+            "target": "a2_3_7964"
+          },
+          {
+            "id": "b2_4",
+            "relation": "usedIn",
+            "source": "a2_3_7964",
+            "status": "active",
+            "target": "p140"
+          },
+          {
+            "id": "noise",
+            "relation": "associatedWith",
+            "source": "changed",
+            "status": "active",
+            "target": "unrelated"
+          },
+          {
+            "id": "retired",
+            "relation": "partOf",
+            "source": "changed",
+            "status": "retired",
+            "target": "retired_product"
+          }
+        ],
+        "nodes": [
+          {
+            "id": "a0_1_8699",
+            "kind": "assembly"
+          },
+          {
+            "id": "a0_2_503",
+            "kind": "assembly"
+          },
+          {
+            "id": "a0_3_9352",
+            "kind": "assembly"
+          },
+          {
+            "id": "a1_1_7159",
+            "kind": "assembly"
+          },
+          {
+            "id": "a1_2_9982",
+            "kind": "assembly"
+          },
+          {
+            "id": "a1_3_7194",
+            "kind": "assembly"
+          },
+          {
+            "id": "a2_1_2343",
+            "kind": "assembly"
+          },
+          {
+            "id": "a2_2_7470",
+            "kind": "assembly"
+          },
+          {
+            "id": "a2_3_7964",
+            "kind": "assembly"
+          },
+          {
+            "id": "changed",
+            "kind": "component"
+          },
+          {
+            "id": "old_product",
+            "kind": "product"
+          },
+          {
+            "id": "p140",
+            "kind": "product"
+          },
+          {
+            "id": "p191",
+            "kind": "product"
+          },
+          {
+            "id": "p225",
+            "kind": "product"
+          },
+          {
+            "id": "retired_product",
+            "kind": "product"
+          },
+          {
+            "id": "unrelated",
+            "kind": "product"
+          }
+        ]
+      },
+      "seed": 11,
+      "truth": [
+        "p140",
+        "p191",
+        "p225"
+      ]
+    },
+    "packet": {
+      "catalog": {
+        "associatedWith": "ignore",
+        "contains": "inverse",
+        "partOf": "forward",
+        "usedIn": "forward"
+      },
+      "changed": "changed",
+      "coverage": {
+        "advertised_version": "v2",
+        "relations_complete": true,
+        "source_version": "v2"
+      },
+      "edges": [
+        {
+          "id": "b0_1",
+          "relation": "contains",
+          "source": "a0_1_8699",
+          "status": "active",
+          "target": "changed"
+        },
+        {
+          "id": "b0_2",
+          "relation": "partOf",
+          "source": "a0_1_8699",
+          "status": "active",
+          "target": "a0_2_503"
+        },
+        {
+          "id": "b0_3",
+          "relation": "partOf",
+          "source": "a0_2_503",
+          "status": "active",
+          "target": "a0_3_9352"
+        },
+        {
+          "id": "b0_4",
+          "relation": "usedIn",
+          "source": "a0_3_9352",
+          "status": "active",
+          "target": "p191"
+        },
+        {
+          "id": "b1_1",
+          "relation": "partOf",
+          "source": "changed",
+          "status": "active",
+          "target": "a1_1_7159"
+        },
+        {
+          "id": "b1_2",
+          "relation": "usedIn",
+          "source": "a1_1_7159",
+          "status": "active",
+          "target": "a1_2_9982"
+        },
+        {
+          "id": "b1_3",
+          "relation": "partOf",
+          "source": "a1_2_9982",
+          "status": "active",
+          "target": "a1_3_7194"
+        },
+        {
+          "id": "b1_4",
+          "relation": "partOf",
+          "source": "a1_3_7194",
+          "status": "active",
+          "target": "p225"
+        },
+        {
+          "id": "b2_1",
+          "relation": "contains",
+          "source": "a2_1_2343",
+          "status": "active",
+          "target": "changed"
+        },
+        {
+          "id": "b2_2",
+          "relation": "usedIn",
+          "source": "a2_1_2343",
+          "status": "active",
+          "target": "a2_2_7470"
+        },
+        {
+          "id": "b2_3",
+          "relation": "partOf",
+          "source": "a2_2_7470",
+          "status": "active",
+          "target": "a2_3_7964"
+        },
+        {
+          "id": "b2_4",
+          "relation": "usedIn",
+          "source": "a2_3_7964",
+          "status": "active",
+          "target": "p140"
+        },
+        {
+          "id": "noise",
+          "relation": "associatedWith",
+          "source": "changed",
+          "status": "active",
+          "target": "unrelated"
+        },
+        {
+          "id": "retired",
+          "relation": "partOf",
+          "source": "changed",
+          "status": "retired",
+          "target": "retired_product"
+        }
+      ],
+      "nodes": [
+        {
+          "id": "a0_1_8699",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_2_503",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_3_9352",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_1_7159",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_2_9982",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_3_7194",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_1_2343",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_2_7470",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_3_7964",
+          "kind": "assembly"
+        },
+        {
+          "id": "changed",
+          "kind": "component"
+        },
+        {
+          "id": "old_product",
+          "kind": "product"
+        },
+        {
+          "id": "p140",
+          "kind": "product"
+        },
+        {
+          "id": "p191",
+          "kind": "product"
+        },
+        {
+          "id": "p225",
+          "kind": "product"
+        },
+        {
+          "id": "retired_product",
+          "kind": "product"
+        },
+        {
+          "id": "unrelated",
+          "kind": "product"
+        }
+      ]
+    },
+    "rows": [
+      {
+        "arm": "direct_only",
+        "case_id": "d4-f3-s11-complete",
+        "evaluation": {
+          "complete_claim": false,
+          "exact": false,
+          "false_negative": [
+            "p140",
+            "p191",
+            "p225"
+          ],
+          "false_positive": [],
+          "unsafe_complete_claim": false
+        },
+        "format": "json",
+        "graph_hash": "81091fcc613763eb2ae79790f70bfea14943369bce8ced634e2c8e0cb7ffaab8",
+        "model_hash": "8525a8d7a0e63069e235f7b67056cc418e55e1650d7cb5c55214e2da54e6c55c",
+        "output": {
+          "candidates": [],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a0_1_8699",
+              "b0_1"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ],
+            [
+              "changed",
+              "a2_1_2343",
+              "b2_1"
+            ]
+          ],
+          "status": "partial/unknown",
+          "uncertainty": [
+            "approximate_policy"
+          ],
+          "unmapped_edge_ids": [],
+          "witnesses": {}
+        }
+      },
+      {
+        "arm": "untyped_transitive",
+        "case_id": "d4-f3-s11-complete",
+        "evaluation": {
+          "complete_claim": false,
+          "exact": false,
+          "false_negative": [],
+          "false_positive": [
+            "unrelated"
+          ],
+          "unsafe_complete_claim": false
+        },
+        "format": "json",
+        "graph_hash": "81091fcc613763eb2ae79790f70bfea14943369bce8ced634e2c8e0cb7ffaab8",
+        "model_hash": "8525a8d7a0e63069e235f7b67056cc418e55e1650d7cb5c55214e2da54e6c55c",
+        "output": {
+          "candidates": [
+            "p140",
+            "p191",
+            "p225",
+            "unrelated"
+          ],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_1_8699",
+              "changed",
+              "b0_1"
+            ],
+            [
+              "a0_2_503",
+              "a0_1_8699",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "a0_2_503",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_1_7159",
+              "changed",
+              "b1_1"
+            ],
+            [
+              "a1_2_9982",
+              "a1_1_7159",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "a1_2_9982",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_1_2343",
+              "changed",
+              "b2_1"
+            ],
+            [
+              "a2_2_7470",
+              "a2_1_2343",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "a2_2_7470",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a0_1_8699",
+              "b0_1"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ],
+            [
+              "changed",
+              "a2_1_2343",
+              "b2_1"
+            ],
+            [
+              "changed",
+              "unrelated",
+              "noise"
+            ],
+            [
+              "p140",
+              "a2_3_7964",
+              "b2_4"
+            ],
+            [
+              "p191",
+              "a0_3_9352",
+              "b0_4"
+            ],
+            [
+              "p225",
+              "a1_3_7194",
+              "b1_4"
+            ],
+            [
+              "unrelated",
+              "changed",
+              "noise"
+            ]
+          ],
+          "status": "partial/unknown",
+          "uncertainty": [
+            "approximate_policy"
+          ],
+          "unmapped_edge_ids": [],
+          "witnesses": {
+            "p140": [
+              "b2_1",
+              "b2_2",
+              "b2_3",
+              "b2_4"
+            ],
+            "p191": [
+              "b0_1",
+              "b0_2",
+              "b0_3",
+              "b0_4"
+            ],
+            "p225": [
+              "b1_1",
+              "b1_2",
+              "b1_3",
+              "b1_4"
+            ],
+            "unrelated": [
+              "noise"
+            ]
+          }
+        }
+      },
+      {
+        "arm": "typed_json",
+        "case_id": "d4-f3-s11-complete",
+        "evaluation": {
+          "complete_claim": true,
+          "exact": true,
+          "false_negative": [],
+          "false_positive": [],
+          "unsafe_complete_claim": false
+        },
+        "format": "json",
+        "graph_hash": "81091fcc613763eb2ae79790f70bfea14943369bce8ced634e2c8e0cb7ffaab8",
+        "model_hash": "8525a8d7a0e63069e235f7b67056cc418e55e1650d7cb5c55214e2da54e6c55c",
+        "output": {
+          "candidates": [
+            "p140",
+            "p191",
+            "p225"
+          ],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a0_1_8699",
+              "b0_1"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ],
+            [
+              "changed",
+              "a2_1_2343",
+              "b2_1"
+            ]
+          ],
+          "status": "complete",
+          "uncertainty": [],
+          "unmapped_edge_ids": [],
+          "witnesses": {
+            "p140": [
+              "b2_1",
+              "b2_2",
+              "b2_3",
+              "b2_4"
+            ],
+            "p191": [
+              "b0_1",
+              "b0_2",
+              "b0_3",
+              "b0_4"
+            ],
+            "p225": [
+              "b1_1",
+              "b1_2",
+              "b1_3",
+              "b1_4"
+            ]
+          }
+        }
+      },
+      {
+        "arm": "typed_rdf",
+        "case_id": "d4-f3-s11-complete",
+        "evaluation": {
+          "complete_claim": true,
+          "exact": true,
+          "false_negative": [],
+          "false_positive": [],
+          "unsafe_complete_claim": false
+        },
+        "format": "json",
+        "graph_hash": "81091fcc613763eb2ae79790f70bfea14943369bce8ced634e2c8e0cb7ffaab8",
+        "model_hash": "8525a8d7a0e63069e235f7b67056cc418e55e1650d7cb5c55214e2da54e6c55c",
+        "output": {
+          "candidates": [
+            "p140",
+            "p191",
+            "p225"
+          ],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a0_1_8699",
+              "b0_1"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ],
+            [
+              "changed",
+              "a2_1_2343",
+              "b2_1"
+            ]
+          ],
+          "status": "complete",
+          "uncertainty": [],
+          "unmapped_edge_ids": [],
+          "witnesses": {
+            "p140": [
+              "b2_1",
+              "b2_2",
+              "b2_3",
+              "b2_4"
+            ],
+            "p191": [
+              "b0_1",
+              "b0_2",
+              "b0_3",
+              "b0_4"
+            ],
+            "p225": [
+              "b1_1",
+              "b1_2",
+              "b1_3",
+              "b1_4"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "case": {
+      "canonical_bom": [
+        {
+          "child": "changed",
+          "id": "b0_1",
+          "parent": "a0_1_8699",
+          "status": "active"
+        },
+        {
+          "child": "a0_1_8699",
+          "id": "b0_2",
+          "parent": "a0_2_503",
+          "status": "active"
+        },
+        {
+          "child": "a0_2_503",
+          "id": "b0_3",
+          "parent": "a0_3_9352",
+          "status": "active"
+        },
+        {
+          "child": "a0_3_9352",
+          "id": "b0_4",
+          "parent": "p191",
+          "status": "active"
+        },
+        {
+          "child": "changed",
+          "id": "b1_1",
+          "parent": "a1_1_7159",
+          "status": "active"
+        },
+        {
+          "child": "a1_1_7159",
+          "id": "b1_2",
+          "parent": "a1_2_9982",
+          "status": "active"
+        },
+        {
+          "child": "a1_2_9982",
+          "id": "b1_3",
+          "parent": "a1_3_7194",
+          "status": "active"
+        },
+        {
+          "child": "a1_3_7194",
+          "id": "b1_4",
+          "parent": "p225",
+          "status": "active"
+        },
+        {
+          "child": "changed",
+          "id": "b2_1",
+          "parent": "a2_1_2343",
+          "status": "active"
+        },
+        {
+          "child": "a2_1_2343",
+          "id": "b2_2",
+          "parent": "a2_2_7470",
+          "status": "active"
+        },
+        {
+          "child": "a2_2_7470",
+          "id": "b2_3",
+          "parent": "a2_3_7964",
+          "status": "active"
+        },
+        {
+          "child": "a2_3_7964",
+          "id": "b2_4",
+          "parent": "p140",
+          "status": "active"
+        },
+        {
+          "child": "changed",
+          "id": "retired",
+          "parent": "retired_product",
+          "status": "retired"
+        }
+      ],
+      "canonical_nodes": [
+        {
+          "id": "changed",
+          "kind": "component"
+        },
+        {
+          "id": "a0_1_8699",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_2_503",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_3_9352",
+          "kind": "assembly"
+        },
+        {
+          "id": "p191",
+          "kind": "product"
+        },
+        {
+          "id": "a1_1_7159",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_2_9982",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_3_7194",
+          "kind": "assembly"
+        },
+        {
+          "id": "p225",
+          "kind": "product"
+        },
+        {
+          "id": "a2_1_2343",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_2_7470",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_3_7964",
+          "kind": "assembly"
+        },
+        {
+          "id": "p140",
+          "kind": "product"
+        },
+        {
+          "id": "unrelated",
+          "kind": "product"
+        },
+        {
+          "id": "retired_product",
+          "kind": "product"
+        },
+        {
+          "id": "old_product",
+          "kind": "product"
+        }
+      ],
+      "case_id": "d4-f3-s11-missing_edge",
+      "depth": 4,
+      "fanout": 3,
+      "fault": "missing_edge",
+      "mutation": {
+        "after_packet_hash": "fdeb436a7acc3c05b47e7e560b389bdf36b80e8b25a27976649b8d27fd4c2de5",
+        "before_packet_hash": "81091fcc613763eb2ae79790f70bfea14943369bce8ced634e2c8e0cb7ffaab8",
+        "kind": "missing_edge",
+        "selected_edge_id": "b0_1"
+      },
+      "original_packet": {
+        "catalog": {
+          "associatedWith": "ignore",
+          "contains": "inverse",
+          "partOf": "forward",
+          "usedIn": "forward"
+        },
+        "changed": "changed",
+        "coverage": {
+          "advertised_version": "v2",
+          "relations_complete": true,
+          "source_version": "v2"
+        },
+        "edges": [
+          {
+            "id": "b0_1",
+            "relation": "contains",
+            "source": "a0_1_8699",
+            "status": "active",
+            "target": "changed"
+          },
+          {
+            "id": "b0_2",
+            "relation": "partOf",
+            "source": "a0_1_8699",
+            "status": "active",
+            "target": "a0_2_503"
+          },
+          {
+            "id": "b0_3",
+            "relation": "partOf",
+            "source": "a0_2_503",
+            "status": "active",
+            "target": "a0_3_9352"
+          },
+          {
+            "id": "b0_4",
+            "relation": "usedIn",
+            "source": "a0_3_9352",
+            "status": "active",
+            "target": "p191"
+          },
+          {
+            "id": "b1_1",
+            "relation": "partOf",
+            "source": "changed",
+            "status": "active",
+            "target": "a1_1_7159"
+          },
+          {
+            "id": "b1_2",
+            "relation": "usedIn",
+            "source": "a1_1_7159",
+            "status": "active",
+            "target": "a1_2_9982"
+          },
+          {
+            "id": "b1_3",
+            "relation": "partOf",
+            "source": "a1_2_9982",
+            "status": "active",
+            "target": "a1_3_7194"
+          },
+          {
+            "id": "b1_4",
+            "relation": "partOf",
+            "source": "a1_3_7194",
+            "status": "active",
+            "target": "p225"
+          },
+          {
+            "id": "b2_1",
+            "relation": "contains",
+            "source": "a2_1_2343",
+            "status": "active",
+            "target": "changed"
+          },
+          {
+            "id": "b2_2",
+            "relation": "usedIn",
+            "source": "a2_1_2343",
+            "status": "active",
+            "target": "a2_2_7470"
+          },
+          {
+            "id": "b2_3",
+            "relation": "partOf",
+            "source": "a2_2_7470",
+            "status": "active",
+            "target": "a2_3_7964"
+          },
+          {
+            "id": "b2_4",
+            "relation": "usedIn",
+            "source": "a2_3_7964",
+            "status": "active",
+            "target": "p140"
+          },
+          {
+            "id": "noise",
+            "relation": "associatedWith",
+            "source": "changed",
+            "status": "active",
+            "target": "unrelated"
+          },
+          {
+            "id": "retired",
+            "relation": "partOf",
+            "source": "changed",
+            "status": "retired",
+            "target": "retired_product"
+          }
+        ],
+        "nodes": [
+          {
+            "id": "a0_1_8699",
+            "kind": "assembly"
+          },
+          {
+            "id": "a0_2_503",
+            "kind": "assembly"
+          },
+          {
+            "id": "a0_3_9352",
+            "kind": "assembly"
+          },
+          {
+            "id": "a1_1_7159",
+            "kind": "assembly"
+          },
+          {
+            "id": "a1_2_9982",
+            "kind": "assembly"
+          },
+          {
+            "id": "a1_3_7194",
+            "kind": "assembly"
+          },
+          {
+            "id": "a2_1_2343",
+            "kind": "assembly"
+          },
+          {
+            "id": "a2_2_7470",
+            "kind": "assembly"
+          },
+          {
+            "id": "a2_3_7964",
+            "kind": "assembly"
+          },
+          {
+            "id": "changed",
+            "kind": "component"
+          },
+          {
+            "id": "old_product",
+            "kind": "product"
+          },
+          {
+            "id": "p140",
+            "kind": "product"
+          },
+          {
+            "id": "p191",
+            "kind": "product"
+          },
+          {
+            "id": "p225",
+            "kind": "product"
+          },
+          {
+            "id": "retired_product",
+            "kind": "product"
+          },
+          {
+            "id": "unrelated",
+            "kind": "product"
+          }
+        ]
+      },
+      "seed": 11,
+      "truth": [
+        "p140",
+        "p191",
+        "p225"
+      ]
+    },
+    "packet": {
+      "catalog": {
+        "associatedWith": "ignore",
+        "contains": "inverse",
+        "partOf": "forward",
+        "usedIn": "forward"
+      },
+      "changed": "changed",
+      "coverage": {
+        "advertised_version": "v2",
+        "relations_complete": false,
+        "source_version": "v2"
+      },
+      "edges": [
+        {
+          "id": "b0_2",
+          "relation": "partOf",
+          "source": "a0_1_8699",
+          "status": "active",
+          "target": "a0_2_503"
+        },
+        {
+          "id": "b0_3",
+          "relation": "partOf",
+          "source": "a0_2_503",
+          "status": "active",
+          "target": "a0_3_9352"
+        },
+        {
+          "id": "b0_4",
+          "relation": "usedIn",
+          "source": "a0_3_9352",
+          "status": "active",
+          "target": "p191"
+        },
+        {
+          "id": "b1_1",
+          "relation": "partOf",
+          "source": "changed",
+          "status": "active",
+          "target": "a1_1_7159"
+        },
+        {
+          "id": "b1_2",
+          "relation": "usedIn",
+          "source": "a1_1_7159",
+          "status": "active",
+          "target": "a1_2_9982"
+        },
+        {
+          "id": "b1_3",
+          "relation": "partOf",
+          "source": "a1_2_9982",
+          "status": "active",
+          "target": "a1_3_7194"
+        },
+        {
+          "id": "b1_4",
+          "relation": "partOf",
+          "source": "a1_3_7194",
+          "status": "active",
+          "target": "p225"
+        },
+        {
+          "id": "b2_1",
+          "relation": "contains",
+          "source": "a2_1_2343",
+          "status": "active",
+          "target": "changed"
+        },
+        {
+          "id": "b2_2",
+          "relation": "usedIn",
+          "source": "a2_1_2343",
+          "status": "active",
+          "target": "a2_2_7470"
+        },
+        {
+          "id": "b2_3",
+          "relation": "partOf",
+          "source": "a2_2_7470",
+          "status": "active",
+          "target": "a2_3_7964"
+        },
+        {
+          "id": "b2_4",
+          "relation": "usedIn",
+          "source": "a2_3_7964",
+          "status": "active",
+          "target": "p140"
+        },
+        {
+          "id": "noise",
+          "relation": "associatedWith",
+          "source": "changed",
+          "status": "active",
+          "target": "unrelated"
+        },
+        {
+          "id": "retired",
+          "relation": "partOf",
+          "source": "changed",
+          "status": "retired",
+          "target": "retired_product"
+        }
+      ],
+      "nodes": [
+        {
+          "id": "a0_1_8699",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_2_503",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_3_9352",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_1_7159",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_2_9982",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_3_7194",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_1_2343",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_2_7470",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_3_7964",
+          "kind": "assembly"
+        },
+        {
+          "id": "changed",
+          "kind": "component"
+        },
+        {
+          "id": "old_product",
+          "kind": "product"
+        },
+        {
+          "id": "p140",
+          "kind": "product"
+        },
+        {
+          "id": "p191",
+          "kind": "product"
+        },
+        {
+          "id": "p225",
+          "kind": "product"
+        },
+        {
+          "id": "retired_product",
+          "kind": "product"
+        },
+        {
+          "id": "unrelated",
+          "kind": "product"
+        }
+      ]
+    },
+    "rows": [
+      {
+        "arm": "direct_only",
+        "case_id": "d4-f3-s11-missing_edge",
+        "evaluation": {
+          "complete_claim": false,
+          "exact": false,
+          "false_negative": [
+            "p140",
+            "p191",
+            "p225"
+          ],
+          "false_positive": [],
+          "unsafe_complete_claim": false
+        },
+        "format": "json",
+        "graph_hash": "fdeb436a7acc3c05b47e7e560b389bdf36b80e8b25a27976649b8d27fd4c2de5",
+        "model_hash": "8525a8d7a0e63069e235f7b67056cc418e55e1650d7cb5c55214e2da54e6c55c",
+        "output": {
+          "candidates": [],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ],
+            [
+              "changed",
+              "a2_1_2343",
+              "b2_1"
+            ]
+          ],
+          "status": "partial/unknown",
+          "uncertainty": [
+            "declared_relation_incompleteness",
+            "approximate_policy"
+          ],
+          "unmapped_edge_ids": [],
+          "witnesses": {}
+        }
+      },
+      {
+        "arm": "untyped_transitive",
+        "case_id": "d4-f3-s11-missing_edge",
+        "evaluation": {
+          "complete_claim": false,
+          "exact": false,
+          "false_negative": [
+            "p191"
+          ],
+          "false_positive": [
+            "unrelated"
+          ],
+          "unsafe_complete_claim": false
+        },
+        "format": "json",
+        "graph_hash": "fdeb436a7acc3c05b47e7e560b389bdf36b80e8b25a27976649b8d27fd4c2de5",
+        "model_hash": "8525a8d7a0e63069e235f7b67056cc418e55e1650d7cb5c55214e2da54e6c55c",
+        "output": {
+          "candidates": [
+            "p140",
+            "p225",
+            "unrelated"
+          ],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_1_8699",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "a0_2_503",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_1_7159",
+              "changed",
+              "b1_1"
+            ],
+            [
+              "a1_2_9982",
+              "a1_1_7159",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "a1_2_9982",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_1_2343",
+              "changed",
+              "b2_1"
+            ],
+            [
+              "a2_2_7470",
+              "a2_1_2343",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "a2_2_7470",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ],
+            [
+              "changed",
+              "a2_1_2343",
+              "b2_1"
+            ],
+            [
+              "changed",
+              "unrelated",
+              "noise"
+            ],
+            [
+              "p140",
+              "a2_3_7964",
+              "b2_4"
+            ],
+            [
+              "p191",
+              "a0_3_9352",
+              "b0_4"
+            ],
+            [
+              "p225",
+              "a1_3_7194",
+              "b1_4"
+            ],
+            [
+              "unrelated",
+              "changed",
+              "noise"
+            ]
+          ],
+          "status": "partial/unknown",
+          "uncertainty": [
+            "declared_relation_incompleteness",
+            "approximate_policy"
+          ],
+          "unmapped_edge_ids": [],
+          "witnesses": {
+            "p140": [
+              "b2_1",
+              "b2_2",
+              "b2_3",
+              "b2_4"
+            ],
+            "p225": [
+              "b1_1",
+              "b1_2",
+              "b1_3",
+              "b1_4"
+            ],
+            "unrelated": [
+              "noise"
+            ]
+          }
+        }
+      },
+      {
+        "arm": "typed_json",
+        "case_id": "d4-f3-s11-missing_edge",
+        "evaluation": {
+          "complete_claim": false,
+          "exact": false,
+          "false_negative": [
+            "p191"
+          ],
+          "false_positive": [],
+          "unsafe_complete_claim": false
+        },
+        "format": "json",
+        "graph_hash": "fdeb436a7acc3c05b47e7e560b389bdf36b80e8b25a27976649b8d27fd4c2de5",
+        "model_hash": "8525a8d7a0e63069e235f7b67056cc418e55e1650d7cb5c55214e2da54e6c55c",
+        "output": {
+          "candidates": [
+            "p140",
+            "p225"
+          ],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ],
+            [
+              "changed",
+              "a2_1_2343",
+              "b2_1"
+            ]
+          ],
+          "status": "partial/unknown",
+          "uncertainty": [
+            "declared_relation_incompleteness"
+          ],
+          "unmapped_edge_ids": [],
+          "witnesses": {
+            "p140": [
+              "b2_1",
+              "b2_2",
+              "b2_3",
+              "b2_4"
+            ],
+            "p225": [
+              "b1_1",
+              "b1_2",
+              "b1_3",
+              "b1_4"
+            ]
+          }
+        }
+      },
+      {
+        "arm": "typed_rdf",
+        "case_id": "d4-f3-s11-missing_edge",
+        "evaluation": {
+          "complete_claim": false,
+          "exact": false,
+          "false_negative": [
+            "p191"
+          ],
+          "false_positive": [],
+          "unsafe_complete_claim": false
+        },
+        "format": "json",
+        "graph_hash": "fdeb436a7acc3c05b47e7e560b389bdf36b80e8b25a27976649b8d27fd4c2de5",
+        "model_hash": "8525a8d7a0e63069e235f7b67056cc418e55e1650d7cb5c55214e2da54e6c55c",
+        "output": {
+          "candidates": [
+            "p140",
+            "p225"
+          ],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ],
+            [
+              "changed",
+              "a2_1_2343",
+              "b2_1"
+            ]
+          ],
+          "status": "partial/unknown",
+          "uncertainty": [
+            "declared_relation_incompleteness"
+          ],
+          "unmapped_edge_ids": [],
+          "witnesses": {
+            "p140": [
+              "b2_1",
+              "b2_2",
+              "b2_3",
+              "b2_4"
+            ],
+            "p225": [
+              "b1_1",
+              "b1_2",
+              "b1_3",
+              "b1_4"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "case": {
+      "canonical_bom": [
+        {
+          "child": "changed",
+          "id": "b0_1",
+          "parent": "a0_1_8699",
+          "status": "active"
+        },
+        {
+          "child": "a0_1_8699",
+          "id": "b0_2",
+          "parent": "a0_2_503",
+          "status": "active"
+        },
+        {
+          "child": "a0_2_503",
+          "id": "b0_3",
+          "parent": "a0_3_9352",
+          "status": "active"
+        },
+        {
+          "child": "a0_3_9352",
+          "id": "b0_4",
+          "parent": "p191",
+          "status": "active"
+        },
+        {
+          "child": "changed",
+          "id": "b1_1",
+          "parent": "a1_1_7159",
+          "status": "active"
+        },
+        {
+          "child": "a1_1_7159",
+          "id": "b1_2",
+          "parent": "a1_2_9982",
+          "status": "active"
+        },
+        {
+          "child": "a1_2_9982",
+          "id": "b1_3",
+          "parent": "a1_3_7194",
+          "status": "active"
+        },
+        {
+          "child": "a1_3_7194",
+          "id": "b1_4",
+          "parent": "p225",
+          "status": "active"
+        },
+        {
+          "child": "changed",
+          "id": "b2_1",
+          "parent": "a2_1_2343",
+          "status": "active"
+        },
+        {
+          "child": "a2_1_2343",
+          "id": "b2_2",
+          "parent": "a2_2_7470",
+          "status": "active"
+        },
+        {
+          "child": "a2_2_7470",
+          "id": "b2_3",
+          "parent": "a2_3_7964",
+          "status": "active"
+        },
+        {
+          "child": "a2_3_7964",
+          "id": "b2_4",
+          "parent": "p140",
+          "status": "active"
+        },
+        {
+          "child": "changed",
+          "id": "retired",
+          "parent": "retired_product",
+          "status": "retired"
+        }
+      ],
+      "canonical_nodes": [
+        {
+          "id": "changed",
+          "kind": "component"
+        },
+        {
+          "id": "a0_1_8699",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_2_503",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_3_9352",
+          "kind": "assembly"
+        },
+        {
+          "id": "p191",
+          "kind": "product"
+        },
+        {
+          "id": "a1_1_7159",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_2_9982",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_3_7194",
+          "kind": "assembly"
+        },
+        {
+          "id": "p225",
+          "kind": "product"
+        },
+        {
+          "id": "a2_1_2343",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_2_7470",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_3_7964",
+          "kind": "assembly"
+        },
+        {
+          "id": "p140",
+          "kind": "product"
+        },
+        {
+          "id": "unrelated",
+          "kind": "product"
+        },
+        {
+          "id": "retired_product",
+          "kind": "product"
+        },
+        {
+          "id": "old_product",
+          "kind": "product"
+        }
+      ],
+      "case_id": "d4-f3-s11-stale_edge",
+      "depth": 4,
+      "fanout": 3,
+      "fault": "stale_edge",
+      "mutation": {
+        "after_packet_hash": "c99b1deb6c7f2447ecb6a1c29ae2923d4644b7cf845a298eb569e6cd98e3d9e8",
+        "before_packet_hash": "81091fcc613763eb2ae79790f70bfea14943369bce8ced634e2c8e0cb7ffaab8",
+        "kind": "stale_edge",
+        "selected_edge_id": "b0_1"
+      },
+      "original_packet": {
+        "catalog": {
+          "associatedWith": "ignore",
+          "contains": "inverse",
+          "partOf": "forward",
+          "usedIn": "forward"
+        },
+        "changed": "changed",
+        "coverage": {
+          "advertised_version": "v2",
+          "relations_complete": true,
+          "source_version": "v2"
+        },
+        "edges": [
+          {
+            "id": "b0_1",
+            "relation": "contains",
+            "source": "a0_1_8699",
+            "status": "active",
+            "target": "changed"
+          },
+          {
+            "id": "b0_2",
+            "relation": "partOf",
+            "source": "a0_1_8699",
+            "status": "active",
+            "target": "a0_2_503"
+          },
+          {
+            "id": "b0_3",
+            "relation": "partOf",
+            "source": "a0_2_503",
+            "status": "active",
+            "target": "a0_3_9352"
+          },
+          {
+            "id": "b0_4",
+            "relation": "usedIn",
+            "source": "a0_3_9352",
+            "status": "active",
+            "target": "p191"
+          },
+          {
+            "id": "b1_1",
+            "relation": "partOf",
+            "source": "changed",
+            "status": "active",
+            "target": "a1_1_7159"
+          },
+          {
+            "id": "b1_2",
+            "relation": "usedIn",
+            "source": "a1_1_7159",
+            "status": "active",
+            "target": "a1_2_9982"
+          },
+          {
+            "id": "b1_3",
+            "relation": "partOf",
+            "source": "a1_2_9982",
+            "status": "active",
+            "target": "a1_3_7194"
+          },
+          {
+            "id": "b1_4",
+            "relation": "partOf",
+            "source": "a1_3_7194",
+            "status": "active",
+            "target": "p225"
+          },
+          {
+            "id": "b2_1",
+            "relation": "contains",
+            "source": "a2_1_2343",
+            "status": "active",
+            "target": "changed"
+          },
+          {
+            "id": "b2_2",
+            "relation": "usedIn",
+            "source": "a2_1_2343",
+            "status": "active",
+            "target": "a2_2_7470"
+          },
+          {
+            "id": "b2_3",
+            "relation": "partOf",
+            "source": "a2_2_7470",
+            "status": "active",
+            "target": "a2_3_7964"
+          },
+          {
+            "id": "b2_4",
+            "relation": "usedIn",
+            "source": "a2_3_7964",
+            "status": "active",
+            "target": "p140"
+          },
+          {
+            "id": "noise",
+            "relation": "associatedWith",
+            "source": "changed",
+            "status": "active",
+            "target": "unrelated"
+          },
+          {
+            "id": "retired",
+            "relation": "partOf",
+            "source": "changed",
+            "status": "retired",
+            "target": "retired_product"
+          }
+        ],
+        "nodes": [
+          {
+            "id": "a0_1_8699",
+            "kind": "assembly"
+          },
+          {
+            "id": "a0_2_503",
+            "kind": "assembly"
+          },
+          {
+            "id": "a0_3_9352",
+            "kind": "assembly"
+          },
+          {
+            "id": "a1_1_7159",
+            "kind": "assembly"
+          },
+          {
+            "id": "a1_2_9982",
+            "kind": "assembly"
+          },
+          {
+            "id": "a1_3_7194",
+            "kind": "assembly"
+          },
+          {
+            "id": "a2_1_2343",
+            "kind": "assembly"
+          },
+          {
+            "id": "a2_2_7470",
+            "kind": "assembly"
+          },
+          {
+            "id": "a2_3_7964",
+            "kind": "assembly"
+          },
+          {
+            "id": "changed",
+            "kind": "component"
+          },
+          {
+            "id": "old_product",
+            "kind": "product"
+          },
+          {
+            "id": "p140",
+            "kind": "product"
+          },
+          {
+            "id": "p191",
+            "kind": "product"
+          },
+          {
+            "id": "p225",
+            "kind": "product"
+          },
+          {
+            "id": "retired_product",
+            "kind": "product"
+          },
+          {
+            "id": "unrelated",
+            "kind": "product"
+          }
+        ]
+      },
+      "seed": 11,
+      "truth": [
+        "p140",
+        "p191",
+        "p225"
+      ]
+    },
+    "packet": {
+      "catalog": {
+        "associatedWith": "ignore",
+        "contains": "inverse",
+        "partOf": "forward",
+        "usedIn": "forward"
+      },
+      "changed": "changed",
+      "coverage": {
+        "advertised_version": "v2",
+        "relations_complete": true,
+        "source_version": "v1"
+      },
+      "edges": [
+        {
+          "id": "b0_1",
+          "relation": "contains",
+          "source": "old_product",
+          "status": "active",
+          "target": "changed"
+        },
+        {
+          "id": "b0_2",
+          "relation": "partOf",
+          "source": "a0_1_8699",
+          "status": "active",
+          "target": "a0_2_503"
+        },
+        {
+          "id": "b0_3",
+          "relation": "partOf",
+          "source": "a0_2_503",
+          "status": "active",
+          "target": "a0_3_9352"
+        },
+        {
+          "id": "b0_4",
+          "relation": "usedIn",
+          "source": "a0_3_9352",
+          "status": "active",
+          "target": "p191"
+        },
+        {
+          "id": "b1_1",
+          "relation": "partOf",
+          "source": "changed",
+          "status": "active",
+          "target": "a1_1_7159"
+        },
+        {
+          "id": "b1_2",
+          "relation": "usedIn",
+          "source": "a1_1_7159",
+          "status": "active",
+          "target": "a1_2_9982"
+        },
+        {
+          "id": "b1_3",
+          "relation": "partOf",
+          "source": "a1_2_9982",
+          "status": "active",
+          "target": "a1_3_7194"
+        },
+        {
+          "id": "b1_4",
+          "relation": "partOf",
+          "source": "a1_3_7194",
+          "status": "active",
+          "target": "p225"
+        },
+        {
+          "id": "b2_1",
+          "relation": "contains",
+          "source": "a2_1_2343",
+          "status": "active",
+          "target": "changed"
+        },
+        {
+          "id": "b2_2",
+          "relation": "usedIn",
+          "source": "a2_1_2343",
+          "status": "active",
+          "target": "a2_2_7470"
+        },
+        {
+          "id": "b2_3",
+          "relation": "partOf",
+          "source": "a2_2_7470",
+          "status": "active",
+          "target": "a2_3_7964"
+        },
+        {
+          "id": "b2_4",
+          "relation": "usedIn",
+          "source": "a2_3_7964",
+          "status": "active",
+          "target": "p140"
+        },
+        {
+          "id": "noise",
+          "relation": "associatedWith",
+          "source": "changed",
+          "status": "active",
+          "target": "unrelated"
+        },
+        {
+          "id": "retired",
+          "relation": "partOf",
+          "source": "changed",
+          "status": "retired",
+          "target": "retired_product"
+        }
+      ],
+      "nodes": [
+        {
+          "id": "a0_1_8699",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_2_503",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_3_9352",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_1_7159",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_2_9982",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_3_7194",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_1_2343",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_2_7470",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_3_7964",
+          "kind": "assembly"
+        },
+        {
+          "id": "changed",
+          "kind": "component"
+        },
+        {
+          "id": "old_product",
+          "kind": "product"
+        },
+        {
+          "id": "p140",
+          "kind": "product"
+        },
+        {
+          "id": "p191",
+          "kind": "product"
+        },
+        {
+          "id": "p225",
+          "kind": "product"
+        },
+        {
+          "id": "retired_product",
+          "kind": "product"
+        },
+        {
+          "id": "unrelated",
+          "kind": "product"
+        }
+      ]
+    },
+    "rows": [
+      {
+        "arm": "direct_only",
+        "case_id": "d4-f3-s11-stale_edge",
+        "evaluation": {
+          "complete_claim": false,
+          "exact": false,
+          "false_negative": [
+            "p140",
+            "p191",
+            "p225"
+          ],
+          "false_positive": [
+            "old_product"
+          ],
+          "unsafe_complete_claim": false
+        },
+        "format": "json",
+        "graph_hash": "c99b1deb6c7f2447ecb6a1c29ae2923d4644b7cf845a298eb569e6cd98e3d9e8",
+        "model_hash": "8525a8d7a0e63069e235f7b67056cc418e55e1650d7cb5c55214e2da54e6c55c",
+        "output": {
+          "candidates": [
+            "old_product"
+          ],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ],
+            [
+              "changed",
+              "a2_1_2343",
+              "b2_1"
+            ],
+            [
+              "changed",
+              "old_product",
+              "b0_1"
+            ]
+          ],
+          "status": "partial/unknown",
+          "uncertainty": [
+            "stale_source",
+            "approximate_policy"
+          ],
+          "unmapped_edge_ids": [],
+          "witnesses": {
+            "old_product": [
+              "b0_1"
+            ]
+          }
+        }
+      },
+      {
+        "arm": "untyped_transitive",
+        "case_id": "d4-f3-s11-stale_edge",
+        "evaluation": {
+          "complete_claim": false,
+          "exact": false,
+          "false_negative": [
+            "p191"
+          ],
+          "false_positive": [
+            "old_product",
+            "unrelated"
+          ],
+          "unsafe_complete_claim": false
+        },
+        "format": "json",
+        "graph_hash": "c99b1deb6c7f2447ecb6a1c29ae2923d4644b7cf845a298eb569e6cd98e3d9e8",
+        "model_hash": "8525a8d7a0e63069e235f7b67056cc418e55e1650d7cb5c55214e2da54e6c55c",
+        "output": {
+          "candidates": [
+            "old_product",
+            "p140",
+            "p225",
+            "unrelated"
+          ],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_1_8699",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "a0_2_503",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_1_7159",
+              "changed",
+              "b1_1"
+            ],
+            [
+              "a1_2_9982",
+              "a1_1_7159",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "a1_2_9982",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_1_2343",
+              "changed",
+              "b2_1"
+            ],
+            [
+              "a2_2_7470",
+              "a2_1_2343",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "a2_2_7470",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ],
+            [
+              "changed",
+              "a2_1_2343",
+              "b2_1"
+            ],
+            [
+              "changed",
+              "old_product",
+              "b0_1"
+            ],
+            [
+              "changed",
+              "unrelated",
+              "noise"
+            ],
+            [
+              "old_product",
+              "changed",
+              "b0_1"
+            ],
+            [
+              "p140",
+              "a2_3_7964",
+              "b2_4"
+            ],
+            [
+              "p191",
+              "a0_3_9352",
+              "b0_4"
+            ],
+            [
+              "p225",
+              "a1_3_7194",
+              "b1_4"
+            ],
+            [
+              "unrelated",
+              "changed",
+              "noise"
+            ]
+          ],
+          "status": "partial/unknown",
+          "uncertainty": [
+            "stale_source",
+            "approximate_policy"
+          ],
+          "unmapped_edge_ids": [],
+          "witnesses": {
+            "old_product": [
+              "b0_1"
+            ],
+            "p140": [
+              "b2_1",
+              "b2_2",
+              "b2_3",
+              "b2_4"
+            ],
+            "p225": [
+              "b1_1",
+              "b1_2",
+              "b1_3",
+              "b1_4"
+            ],
+            "unrelated": [
+              "noise"
+            ]
+          }
+        }
+      },
+      {
+        "arm": "typed_json",
+        "case_id": "d4-f3-s11-stale_edge",
+        "evaluation": {
+          "complete_claim": false,
+          "exact": false,
+          "false_negative": [
+            "p191"
+          ],
+          "false_positive": [
+            "old_product"
+          ],
+          "unsafe_complete_claim": false
+        },
+        "format": "json",
+        "graph_hash": "c99b1deb6c7f2447ecb6a1c29ae2923d4644b7cf845a298eb569e6cd98e3d9e8",
+        "model_hash": "8525a8d7a0e63069e235f7b67056cc418e55e1650d7cb5c55214e2da54e6c55c",
+        "output": {
+          "candidates": [
+            "old_product",
+            "p140",
+            "p225"
+          ],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ],
+            [
+              "changed",
+              "a2_1_2343",
+              "b2_1"
+            ],
+            [
+              "changed",
+              "old_product",
+              "b0_1"
+            ]
+          ],
+          "status": "partial/unknown",
+          "uncertainty": [
+            "stale_source"
+          ],
+          "unmapped_edge_ids": [],
+          "witnesses": {
+            "old_product": [
+              "b0_1"
+            ],
+            "p140": [
+              "b2_1",
+              "b2_2",
+              "b2_3",
+              "b2_4"
+            ],
+            "p225": [
+              "b1_1",
+              "b1_2",
+              "b1_3",
+              "b1_4"
+            ]
+          }
+        }
+      },
+      {
+        "arm": "typed_rdf",
+        "case_id": "d4-f3-s11-stale_edge",
+        "evaluation": {
+          "complete_claim": false,
+          "exact": false,
+          "false_negative": [
+            "p191"
+          ],
+          "false_positive": [
+            "old_product"
+          ],
+          "unsafe_complete_claim": false
+        },
+        "format": "json",
+        "graph_hash": "c99b1deb6c7f2447ecb6a1c29ae2923d4644b7cf845a298eb569e6cd98e3d9e8",
+        "model_hash": "8525a8d7a0e63069e235f7b67056cc418e55e1650d7cb5c55214e2da54e6c55c",
+        "output": {
+          "candidates": [
+            "old_product",
+            "p140",
+            "p225"
+          ],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ],
+            [
+              "changed",
+              "a2_1_2343",
+              "b2_1"
+            ],
+            [
+              "changed",
+              "old_product",
+              "b0_1"
+            ]
+          ],
+          "status": "partial/unknown",
+          "uncertainty": [
+            "stale_source"
+          ],
+          "unmapped_edge_ids": [],
+          "witnesses": {
+            "old_product": [
+              "b0_1"
+            ],
+            "p140": [
+              "b2_1",
+              "b2_2",
+              "b2_3",
+              "b2_4"
+            ],
+            "p225": [
+              "b1_1",
+              "b1_2",
+              "b1_3",
+              "b1_4"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "case": {
+      "canonical_bom": [
+        {
+          "child": "changed",
+          "id": "b0_1",
+          "parent": "a0_1_8699",
+          "status": "active"
+        },
+        {
+          "child": "a0_1_8699",
+          "id": "b0_2",
+          "parent": "a0_2_503",
+          "status": "active"
+        },
+        {
+          "child": "a0_2_503",
+          "id": "b0_3",
+          "parent": "a0_3_9352",
+          "status": "active"
+        },
+        {
+          "child": "a0_3_9352",
+          "id": "b0_4",
+          "parent": "p191",
+          "status": "active"
+        },
+        {
+          "child": "changed",
+          "id": "b1_1",
+          "parent": "a1_1_7159",
+          "status": "active"
+        },
+        {
+          "child": "a1_1_7159",
+          "id": "b1_2",
+          "parent": "a1_2_9982",
+          "status": "active"
+        },
+        {
+          "child": "a1_2_9982",
+          "id": "b1_3",
+          "parent": "a1_3_7194",
+          "status": "active"
+        },
+        {
+          "child": "a1_3_7194",
+          "id": "b1_4",
+          "parent": "p225",
+          "status": "active"
+        },
+        {
+          "child": "changed",
+          "id": "b2_1",
+          "parent": "a2_1_2343",
+          "status": "active"
+        },
+        {
+          "child": "a2_1_2343",
+          "id": "b2_2",
+          "parent": "a2_2_7470",
+          "status": "active"
+        },
+        {
+          "child": "a2_2_7470",
+          "id": "b2_3",
+          "parent": "a2_3_7964",
+          "status": "active"
+        },
+        {
+          "child": "a2_3_7964",
+          "id": "b2_4",
+          "parent": "p140",
+          "status": "active"
+        },
+        {
+          "child": "changed",
+          "id": "retired",
+          "parent": "retired_product",
+          "status": "retired"
+        }
+      ],
+      "canonical_nodes": [
+        {
+          "id": "changed",
+          "kind": "component"
+        },
+        {
+          "id": "a0_1_8699",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_2_503",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_3_9352",
+          "kind": "assembly"
+        },
+        {
+          "id": "p191",
+          "kind": "product"
+        },
+        {
+          "id": "a1_1_7159",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_2_9982",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_3_7194",
+          "kind": "assembly"
+        },
+        {
+          "id": "p225",
+          "kind": "product"
+        },
+        {
+          "id": "a2_1_2343",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_2_7470",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_3_7964",
+          "kind": "assembly"
+        },
+        {
+          "id": "p140",
+          "kind": "product"
+        },
+        {
+          "id": "unrelated",
+          "kind": "product"
+        },
+        {
+          "id": "retired_product",
+          "kind": "product"
+        },
+        {
+          "id": "old_product",
+          "kind": "product"
+        }
+      ],
+      "case_id": "d4-f3-s11-wrong_relation",
+      "depth": 4,
+      "fanout": 3,
+      "fault": "wrong_relation",
+      "mutation": {
+        "after_packet_hash": "907b00af51aa9e98008f80dff7e9485fdfcb90b08dab8318bc4b73a6bf1a4549",
+        "before_packet_hash": "81091fcc613763eb2ae79790f70bfea14943369bce8ced634e2c8e0cb7ffaab8",
+        "kind": "wrong_relation",
+        "selected_edge_id": "b0_1"
+      },
+      "original_packet": {
+        "catalog": {
+          "associatedWith": "ignore",
+          "contains": "inverse",
+          "partOf": "forward",
+          "usedIn": "forward"
+        },
+        "changed": "changed",
+        "coverage": {
+          "advertised_version": "v2",
+          "relations_complete": true,
+          "source_version": "v2"
+        },
+        "edges": [
+          {
+            "id": "b0_1",
+            "relation": "contains",
+            "source": "a0_1_8699",
+            "status": "active",
+            "target": "changed"
+          },
+          {
+            "id": "b0_2",
+            "relation": "partOf",
+            "source": "a0_1_8699",
+            "status": "active",
+            "target": "a0_2_503"
+          },
+          {
+            "id": "b0_3",
+            "relation": "partOf",
+            "source": "a0_2_503",
+            "status": "active",
+            "target": "a0_3_9352"
+          },
+          {
+            "id": "b0_4",
+            "relation": "usedIn",
+            "source": "a0_3_9352",
+            "status": "active",
+            "target": "p191"
+          },
+          {
+            "id": "b1_1",
+            "relation": "partOf",
+            "source": "changed",
+            "status": "active",
+            "target": "a1_1_7159"
+          },
+          {
+            "id": "b1_2",
+            "relation": "usedIn",
+            "source": "a1_1_7159",
+            "status": "active",
+            "target": "a1_2_9982"
+          },
+          {
+            "id": "b1_3",
+            "relation": "partOf",
+            "source": "a1_2_9982",
+            "status": "active",
+            "target": "a1_3_7194"
+          },
+          {
+            "id": "b1_4",
+            "relation": "partOf",
+            "source": "a1_3_7194",
+            "status": "active",
+            "target": "p225"
+          },
+          {
+            "id": "b2_1",
+            "relation": "contains",
+            "source": "a2_1_2343",
+            "status": "active",
+            "target": "changed"
+          },
+          {
+            "id": "b2_2",
+            "relation": "usedIn",
+            "source": "a2_1_2343",
+            "status": "active",
+            "target": "a2_2_7470"
+          },
+          {
+            "id": "b2_3",
+            "relation": "partOf",
+            "source": "a2_2_7470",
+            "status": "active",
+            "target": "a2_3_7964"
+          },
+          {
+            "id": "b2_4",
+            "relation": "usedIn",
+            "source": "a2_3_7964",
+            "status": "active",
+            "target": "p140"
+          },
+          {
+            "id": "noise",
+            "relation": "associatedWith",
+            "source": "changed",
+            "status": "active",
+            "target": "unrelated"
+          },
+          {
+            "id": "retired",
+            "relation": "partOf",
+            "source": "changed",
+            "status": "retired",
+            "target": "retired_product"
+          }
+        ],
+        "nodes": [
+          {
+            "id": "a0_1_8699",
+            "kind": "assembly"
+          },
+          {
+            "id": "a0_2_503",
+            "kind": "assembly"
+          },
+          {
+            "id": "a0_3_9352",
+            "kind": "assembly"
+          },
+          {
+            "id": "a1_1_7159",
+            "kind": "assembly"
+          },
+          {
+            "id": "a1_2_9982",
+            "kind": "assembly"
+          },
+          {
+            "id": "a1_3_7194",
+            "kind": "assembly"
+          },
+          {
+            "id": "a2_1_2343",
+            "kind": "assembly"
+          },
+          {
+            "id": "a2_2_7470",
+            "kind": "assembly"
+          },
+          {
+            "id": "a2_3_7964",
+            "kind": "assembly"
+          },
+          {
+            "id": "changed",
+            "kind": "component"
+          },
+          {
+            "id": "old_product",
+            "kind": "product"
+          },
+          {
+            "id": "p140",
+            "kind": "product"
+          },
+          {
+            "id": "p191",
+            "kind": "product"
+          },
+          {
+            "id": "p225",
+            "kind": "product"
+          },
+          {
+            "id": "retired_product",
+            "kind": "product"
+          },
+          {
+            "id": "unrelated",
+            "kind": "product"
+          }
+        ]
+      },
+      "seed": 11,
+      "truth": [
+        "p140",
+        "p191",
+        "p225"
+      ]
+    },
+    "packet": {
+      "catalog": {
+        "associatedWith": "ignore",
+        "contains": "inverse",
+        "partOf": "forward",
+        "usedIn": "forward"
+      },
+      "changed": "changed",
+      "coverage": {
+        "advertised_version": "v2",
+        "relations_complete": true,
+        "source_version": "v2"
+      },
+      "edges": [
+        {
+          "id": "b0_1",
+          "relation": "associatedWith",
+          "source": "a0_1_8699",
+          "status": "active",
+          "target": "changed"
+        },
+        {
+          "id": "b0_2",
+          "relation": "partOf",
+          "source": "a0_1_8699",
+          "status": "active",
+          "target": "a0_2_503"
+        },
+        {
+          "id": "b0_3",
+          "relation": "partOf",
+          "source": "a0_2_503",
+          "status": "active",
+          "target": "a0_3_9352"
+        },
+        {
+          "id": "b0_4",
+          "relation": "usedIn",
+          "source": "a0_3_9352",
+          "status": "active",
+          "target": "p191"
+        },
+        {
+          "id": "b1_1",
+          "relation": "partOf",
+          "source": "changed",
+          "status": "active",
+          "target": "a1_1_7159"
+        },
+        {
+          "id": "b1_2",
+          "relation": "usedIn",
+          "source": "a1_1_7159",
+          "status": "active",
+          "target": "a1_2_9982"
+        },
+        {
+          "id": "b1_3",
+          "relation": "partOf",
+          "source": "a1_2_9982",
+          "status": "active",
+          "target": "a1_3_7194"
+        },
+        {
+          "id": "b1_4",
+          "relation": "partOf",
+          "source": "a1_3_7194",
+          "status": "active",
+          "target": "p225"
+        },
+        {
+          "id": "b2_1",
+          "relation": "contains",
+          "source": "a2_1_2343",
+          "status": "active",
+          "target": "changed"
+        },
+        {
+          "id": "b2_2",
+          "relation": "usedIn",
+          "source": "a2_1_2343",
+          "status": "active",
+          "target": "a2_2_7470"
+        },
+        {
+          "id": "b2_3",
+          "relation": "partOf",
+          "source": "a2_2_7470",
+          "status": "active",
+          "target": "a2_3_7964"
+        },
+        {
+          "id": "b2_4",
+          "relation": "usedIn",
+          "source": "a2_3_7964",
+          "status": "active",
+          "target": "p140"
+        },
+        {
+          "id": "noise",
+          "relation": "associatedWith",
+          "source": "changed",
+          "status": "active",
+          "target": "unrelated"
+        },
+        {
+          "id": "retired",
+          "relation": "partOf",
+          "source": "changed",
+          "status": "retired",
+          "target": "retired_product"
+        }
+      ],
+      "nodes": [
+        {
+          "id": "a0_1_8699",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_2_503",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_3_9352",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_1_7159",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_2_9982",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_3_7194",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_1_2343",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_2_7470",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_3_7964",
+          "kind": "assembly"
+        },
+        {
+          "id": "changed",
+          "kind": "component"
+        },
+        {
+          "id": "old_product",
+          "kind": "product"
+        },
+        {
+          "id": "p140",
+          "kind": "product"
+        },
+        {
+          "id": "p191",
+          "kind": "product"
+        },
+        {
+          "id": "p225",
+          "kind": "product"
+        },
+        {
+          "id": "retired_product",
+          "kind": "product"
+        },
+        {
+          "id": "unrelated",
+          "kind": "product"
+        }
+      ]
+    },
+    "rows": [
+      {
+        "arm": "direct_only",
+        "case_id": "d4-f3-s11-wrong_relation",
+        "evaluation": {
+          "complete_claim": false,
+          "exact": false,
+          "false_negative": [
+            "p140",
+            "p191",
+            "p225"
+          ],
+          "false_positive": [],
+          "unsafe_complete_claim": false
+        },
+        "format": "json",
+        "graph_hash": "907b00af51aa9e98008f80dff7e9485fdfcb90b08dab8318bc4b73a6bf1a4549",
+        "model_hash": "8525a8d7a0e63069e235f7b67056cc418e55e1650d7cb5c55214e2da54e6c55c",
+        "output": {
+          "candidates": [],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ],
+            [
+              "changed",
+              "a2_1_2343",
+              "b2_1"
+            ]
+          ],
+          "status": "partial/unknown",
+          "uncertainty": [
+            "approximate_policy"
+          ],
+          "unmapped_edge_ids": [],
+          "witnesses": {}
+        }
+      },
+      {
+        "arm": "untyped_transitive",
+        "case_id": "d4-f3-s11-wrong_relation",
+        "evaluation": {
+          "complete_claim": false,
+          "exact": false,
+          "false_negative": [],
+          "false_positive": [
+            "unrelated"
+          ],
+          "unsafe_complete_claim": false
+        },
+        "format": "json",
+        "graph_hash": "907b00af51aa9e98008f80dff7e9485fdfcb90b08dab8318bc4b73a6bf1a4549",
+        "model_hash": "8525a8d7a0e63069e235f7b67056cc418e55e1650d7cb5c55214e2da54e6c55c",
+        "output": {
+          "candidates": [
+            "p140",
+            "p191",
+            "p225",
+            "unrelated"
+          ],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_1_8699",
+              "changed",
+              "b0_1"
+            ],
+            [
+              "a0_2_503",
+              "a0_1_8699",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "a0_2_503",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_1_7159",
+              "changed",
+              "b1_1"
+            ],
+            [
+              "a1_2_9982",
+              "a1_1_7159",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "a1_2_9982",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_1_2343",
+              "changed",
+              "b2_1"
+            ],
+            [
+              "a2_2_7470",
+              "a2_1_2343",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "a2_2_7470",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a0_1_8699",
+              "b0_1"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ],
+            [
+              "changed",
+              "a2_1_2343",
+              "b2_1"
+            ],
+            [
+              "changed",
+              "unrelated",
+              "noise"
+            ],
+            [
+              "p140",
+              "a2_3_7964",
+              "b2_4"
+            ],
+            [
+              "p191",
+              "a0_3_9352",
+              "b0_4"
+            ],
+            [
+              "p225",
+              "a1_3_7194",
+              "b1_4"
+            ],
+            [
+              "unrelated",
+              "changed",
+              "noise"
+            ]
+          ],
+          "status": "partial/unknown",
+          "uncertainty": [
+            "approximate_policy"
+          ],
+          "unmapped_edge_ids": [],
+          "witnesses": {
+            "p140": [
+              "b2_1",
+              "b2_2",
+              "b2_3",
+              "b2_4"
+            ],
+            "p191": [
+              "b0_1",
+              "b0_2",
+              "b0_3",
+              "b0_4"
+            ],
+            "p225": [
+              "b1_1",
+              "b1_2",
+              "b1_3",
+              "b1_4"
+            ],
+            "unrelated": [
+              "noise"
+            ]
+          }
+        }
+      },
+      {
+        "arm": "typed_json",
+        "case_id": "d4-f3-s11-wrong_relation",
+        "evaluation": {
+          "complete_claim": true,
+          "exact": false,
+          "false_negative": [
+            "p191"
+          ],
+          "false_positive": [],
+          "unsafe_complete_claim": true
+        },
+        "format": "json",
+        "graph_hash": "907b00af51aa9e98008f80dff7e9485fdfcb90b08dab8318bc4b73a6bf1a4549",
+        "model_hash": "8525a8d7a0e63069e235f7b67056cc418e55e1650d7cb5c55214e2da54e6c55c",
+        "output": {
+          "candidates": [
+            "p140",
+            "p225"
+          ],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ],
+            [
+              "changed",
+              "a2_1_2343",
+              "b2_1"
+            ]
+          ],
+          "status": "complete",
+          "uncertainty": [],
+          "unmapped_edge_ids": [],
+          "witnesses": {
+            "p140": [
+              "b2_1",
+              "b2_2",
+              "b2_3",
+              "b2_4"
+            ],
+            "p225": [
+              "b1_1",
+              "b1_2",
+              "b1_3",
+              "b1_4"
+            ]
+          }
+        }
+      },
+      {
+        "arm": "typed_rdf",
+        "case_id": "d4-f3-s11-wrong_relation",
+        "evaluation": {
+          "complete_claim": true,
+          "exact": false,
+          "false_negative": [
+            "p191"
+          ],
+          "false_positive": [],
+          "unsafe_complete_claim": true
+        },
+        "format": "json",
+        "graph_hash": "907b00af51aa9e98008f80dff7e9485fdfcb90b08dab8318bc4b73a6bf1a4549",
+        "model_hash": "8525a8d7a0e63069e235f7b67056cc418e55e1650d7cb5c55214e2da54e6c55c",
+        "output": {
+          "candidates": [
+            "p140",
+            "p225"
+          ],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ],
+            [
+              "changed",
+              "a2_1_2343",
+              "b2_1"
+            ]
+          ],
+          "status": "complete",
+          "uncertainty": [],
+          "unmapped_edge_ids": [],
+          "witnesses": {
+            "p140": [
+              "b2_1",
+              "b2_2",
+              "b2_3",
+              "b2_4"
+            ],
+            "p225": [
+              "b1_1",
+              "b1_2",
+              "b1_3",
+              "b1_4"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "case": {
+      "canonical_bom": [
+        {
+          "child": "changed",
+          "id": "b0_1",
+          "parent": "a0_1_8699",
+          "status": "active"
+        },
+        {
+          "child": "a0_1_8699",
+          "id": "b0_2",
+          "parent": "a0_2_503",
+          "status": "active"
+        },
+        {
+          "child": "a0_2_503",
+          "id": "b0_3",
+          "parent": "a0_3_9352",
+          "status": "active"
+        },
+        {
+          "child": "a0_3_9352",
+          "id": "b0_4",
+          "parent": "p191",
+          "status": "active"
+        },
+        {
+          "child": "changed",
+          "id": "b1_1",
+          "parent": "a1_1_7159",
+          "status": "active"
+        },
+        {
+          "child": "a1_1_7159",
+          "id": "b1_2",
+          "parent": "a1_2_9982",
+          "status": "active"
+        },
+        {
+          "child": "a1_2_9982",
+          "id": "b1_3",
+          "parent": "a1_3_7194",
+          "status": "active"
+        },
+        {
+          "child": "a1_3_7194",
+          "id": "b1_4",
+          "parent": "p225",
+          "status": "active"
+        },
+        {
+          "child": "changed",
+          "id": "b2_1",
+          "parent": "a2_1_2343",
+          "status": "active"
+        },
+        {
+          "child": "a2_1_2343",
+          "id": "b2_2",
+          "parent": "a2_2_7470",
+          "status": "active"
+        },
+        {
+          "child": "a2_2_7470",
+          "id": "b2_3",
+          "parent": "a2_3_7964",
+          "status": "active"
+        },
+        {
+          "child": "a2_3_7964",
+          "id": "b2_4",
+          "parent": "p140",
+          "status": "active"
+        },
+        {
+          "child": "changed",
+          "id": "retired",
+          "parent": "retired_product",
+          "status": "retired"
+        }
+      ],
+      "canonical_nodes": [
+        {
+          "id": "changed",
+          "kind": "component"
+        },
+        {
+          "id": "a0_1_8699",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_2_503",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_3_9352",
+          "kind": "assembly"
+        },
+        {
+          "id": "p191",
+          "kind": "product"
+        },
+        {
+          "id": "a1_1_7159",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_2_9982",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_3_7194",
+          "kind": "assembly"
+        },
+        {
+          "id": "p225",
+          "kind": "product"
+        },
+        {
+          "id": "a2_1_2343",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_2_7470",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_3_7964",
+          "kind": "assembly"
+        },
+        {
+          "id": "p140",
+          "kind": "product"
+        },
+        {
+          "id": "unrelated",
+          "kind": "product"
+        },
+        {
+          "id": "retired_product",
+          "kind": "product"
+        },
+        {
+          "id": "old_product",
+          "kind": "product"
+        }
+      ],
+      "case_id": "d4-f3-s11-missing_mapping",
+      "depth": 4,
+      "fanout": 3,
+      "fault": "missing_mapping",
+      "mutation": {
+        "after_packet_hash": "416004e3efb76613e5c217ec76d45ed734a393345f173d859949c5d6b972aba9",
+        "before_packet_hash": "81091fcc613763eb2ae79790f70bfea14943369bce8ced634e2c8e0cb7ffaab8",
+        "kind": "missing_mapping",
+        "selected_edge_id": "b0_1"
+      },
+      "original_packet": {
+        "catalog": {
+          "associatedWith": "ignore",
+          "contains": "inverse",
+          "partOf": "forward",
+          "usedIn": "forward"
+        },
+        "changed": "changed",
+        "coverage": {
+          "advertised_version": "v2",
+          "relations_complete": true,
+          "source_version": "v2"
+        },
+        "edges": [
+          {
+            "id": "b0_1",
+            "relation": "contains",
+            "source": "a0_1_8699",
+            "status": "active",
+            "target": "changed"
+          },
+          {
+            "id": "b0_2",
+            "relation": "partOf",
+            "source": "a0_1_8699",
+            "status": "active",
+            "target": "a0_2_503"
+          },
+          {
+            "id": "b0_3",
+            "relation": "partOf",
+            "source": "a0_2_503",
+            "status": "active",
+            "target": "a0_3_9352"
+          },
+          {
+            "id": "b0_4",
+            "relation": "usedIn",
+            "source": "a0_3_9352",
+            "status": "active",
+            "target": "p191"
+          },
+          {
+            "id": "b1_1",
+            "relation": "partOf",
+            "source": "changed",
+            "status": "active",
+            "target": "a1_1_7159"
+          },
+          {
+            "id": "b1_2",
+            "relation": "usedIn",
+            "source": "a1_1_7159",
+            "status": "active",
+            "target": "a1_2_9982"
+          },
+          {
+            "id": "b1_3",
+            "relation": "partOf",
+            "source": "a1_2_9982",
+            "status": "active",
+            "target": "a1_3_7194"
+          },
+          {
+            "id": "b1_4",
+            "relation": "partOf",
+            "source": "a1_3_7194",
+            "status": "active",
+            "target": "p225"
+          },
+          {
+            "id": "b2_1",
+            "relation": "contains",
+            "source": "a2_1_2343",
+            "status": "active",
+            "target": "changed"
+          },
+          {
+            "id": "b2_2",
+            "relation": "usedIn",
+            "source": "a2_1_2343",
+            "status": "active",
+            "target": "a2_2_7470"
+          },
+          {
+            "id": "b2_3",
+            "relation": "partOf",
+            "source": "a2_2_7470",
+            "status": "active",
+            "target": "a2_3_7964"
+          },
+          {
+            "id": "b2_4",
+            "relation": "usedIn",
+            "source": "a2_3_7964",
+            "status": "active",
+            "target": "p140"
+          },
+          {
+            "id": "noise",
+            "relation": "associatedWith",
+            "source": "changed",
+            "status": "active",
+            "target": "unrelated"
+          },
+          {
+            "id": "retired",
+            "relation": "partOf",
+            "source": "changed",
+            "status": "retired",
+            "target": "retired_product"
+          }
+        ],
+        "nodes": [
+          {
+            "id": "a0_1_8699",
+            "kind": "assembly"
+          },
+          {
+            "id": "a0_2_503",
+            "kind": "assembly"
+          },
+          {
+            "id": "a0_3_9352",
+            "kind": "assembly"
+          },
+          {
+            "id": "a1_1_7159",
+            "kind": "assembly"
+          },
+          {
+            "id": "a1_2_9982",
+            "kind": "assembly"
+          },
+          {
+            "id": "a1_3_7194",
+            "kind": "assembly"
+          },
+          {
+            "id": "a2_1_2343",
+            "kind": "assembly"
+          },
+          {
+            "id": "a2_2_7470",
+            "kind": "assembly"
+          },
+          {
+            "id": "a2_3_7964",
+            "kind": "assembly"
+          },
+          {
+            "id": "changed",
+            "kind": "component"
+          },
+          {
+            "id": "old_product",
+            "kind": "product"
+          },
+          {
+            "id": "p140",
+            "kind": "product"
+          },
+          {
+            "id": "p191",
+            "kind": "product"
+          },
+          {
+            "id": "p225",
+            "kind": "product"
+          },
+          {
+            "id": "retired_product",
+            "kind": "product"
+          },
+          {
+            "id": "unrelated",
+            "kind": "product"
+          }
+        ]
+      },
+      "seed": 11,
+      "truth": [
+        "p140",
+        "p191",
+        "p225"
+      ]
+    },
+    "packet": {
+      "catalog": {
+        "associatedWith": "ignore",
+        "partOf": "forward",
+        "usedIn": "forward"
+      },
+      "changed": "changed",
+      "coverage": {
+        "advertised_version": "v2",
+        "relations_complete": true,
+        "source_version": "v2"
+      },
+      "edges": [
+        {
+          "id": "b0_1",
+          "relation": "contains",
+          "source": "a0_1_8699",
+          "status": "active",
+          "target": "changed"
+        },
+        {
+          "id": "b0_2",
+          "relation": "partOf",
+          "source": "a0_1_8699",
+          "status": "active",
+          "target": "a0_2_503"
+        },
+        {
+          "id": "b0_3",
+          "relation": "partOf",
+          "source": "a0_2_503",
+          "status": "active",
+          "target": "a0_3_9352"
+        },
+        {
+          "id": "b0_4",
+          "relation": "usedIn",
+          "source": "a0_3_9352",
+          "status": "active",
+          "target": "p191"
+        },
+        {
+          "id": "b1_1",
+          "relation": "partOf",
+          "source": "changed",
+          "status": "active",
+          "target": "a1_1_7159"
+        },
+        {
+          "id": "b1_2",
+          "relation": "usedIn",
+          "source": "a1_1_7159",
+          "status": "active",
+          "target": "a1_2_9982"
+        },
+        {
+          "id": "b1_3",
+          "relation": "partOf",
+          "source": "a1_2_9982",
+          "status": "active",
+          "target": "a1_3_7194"
+        },
+        {
+          "id": "b1_4",
+          "relation": "partOf",
+          "source": "a1_3_7194",
+          "status": "active",
+          "target": "p225"
+        },
+        {
+          "id": "b2_1",
+          "relation": "contains",
+          "source": "a2_1_2343",
+          "status": "active",
+          "target": "changed"
+        },
+        {
+          "id": "b2_2",
+          "relation": "usedIn",
+          "source": "a2_1_2343",
+          "status": "active",
+          "target": "a2_2_7470"
+        },
+        {
+          "id": "b2_3",
+          "relation": "partOf",
+          "source": "a2_2_7470",
+          "status": "active",
+          "target": "a2_3_7964"
+        },
+        {
+          "id": "b2_4",
+          "relation": "usedIn",
+          "source": "a2_3_7964",
+          "status": "active",
+          "target": "p140"
+        },
+        {
+          "id": "noise",
+          "relation": "associatedWith",
+          "source": "changed",
+          "status": "active",
+          "target": "unrelated"
+        },
+        {
+          "id": "retired",
+          "relation": "partOf",
+          "source": "changed",
+          "status": "retired",
+          "target": "retired_product"
+        }
+      ],
+      "nodes": [
+        {
+          "id": "a0_1_8699",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_2_503",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_3_9352",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_1_7159",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_2_9982",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_3_7194",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_1_2343",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_2_7470",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_3_7964",
+          "kind": "assembly"
+        },
+        {
+          "id": "changed",
+          "kind": "component"
+        },
+        {
+          "id": "old_product",
+          "kind": "product"
+        },
+        {
+          "id": "p140",
+          "kind": "product"
+        },
+        {
+          "id": "p191",
+          "kind": "product"
+        },
+        {
+          "id": "p225",
+          "kind": "product"
+        },
+        {
+          "id": "retired_product",
+          "kind": "product"
+        },
+        {
+          "id": "unrelated",
+          "kind": "product"
+        }
+      ]
+    },
+    "rows": [
+      {
+        "arm": "direct_only",
+        "case_id": "d4-f3-s11-missing_mapping",
+        "evaluation": {
+          "complete_claim": false,
+          "exact": false,
+          "false_negative": [
+            "p140",
+            "p191",
+            "p225"
+          ],
+          "false_positive": [],
+          "unsafe_complete_claim": false
+        },
+        "format": "json",
+        "graph_hash": "416004e3efb76613e5c217ec76d45ed734a393345f173d859949c5d6b972aba9",
+        "model_hash": "9511d30e6798ba86780a9261bd72d2b320a3d963adecb2e92a825d3b30ca2b34",
+        "output": {
+          "candidates": [],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ]
+          ],
+          "status": "partial/unknown",
+          "uncertainty": [
+            "unmapped_active_relation",
+            "approximate_policy"
+          ],
+          "unmapped_edge_ids": [
+            "b0_1",
+            "b2_1"
+          ],
+          "witnesses": {}
+        }
+      },
+      {
+        "arm": "untyped_transitive",
+        "case_id": "d4-f3-s11-missing_mapping",
+        "evaluation": {
+          "complete_claim": false,
+          "exact": false,
+          "false_negative": [],
+          "false_positive": [
+            "unrelated"
+          ],
+          "unsafe_complete_claim": false
+        },
+        "format": "json",
+        "graph_hash": "416004e3efb76613e5c217ec76d45ed734a393345f173d859949c5d6b972aba9",
+        "model_hash": "9511d30e6798ba86780a9261bd72d2b320a3d963adecb2e92a825d3b30ca2b34",
+        "output": {
+          "candidates": [
+            "p140",
+            "p191",
+            "p225",
+            "unrelated"
+          ],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_1_8699",
+              "changed",
+              "b0_1"
+            ],
+            [
+              "a0_2_503",
+              "a0_1_8699",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "a0_2_503",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_1_7159",
+              "changed",
+              "b1_1"
+            ],
+            [
+              "a1_2_9982",
+              "a1_1_7159",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "a1_2_9982",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_1_2343",
+              "changed",
+              "b2_1"
+            ],
+            [
+              "a2_2_7470",
+              "a2_1_2343",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "a2_2_7470",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a0_1_8699",
+              "b0_1"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ],
+            [
+              "changed",
+              "a2_1_2343",
+              "b2_1"
+            ],
+            [
+              "changed",
+              "unrelated",
+              "noise"
+            ],
+            [
+              "p140",
+              "a2_3_7964",
+              "b2_4"
+            ],
+            [
+              "p191",
+              "a0_3_9352",
+              "b0_4"
+            ],
+            [
+              "p225",
+              "a1_3_7194",
+              "b1_4"
+            ],
+            [
+              "unrelated",
+              "changed",
+              "noise"
+            ]
+          ],
+          "status": "partial/unknown",
+          "uncertainty": [
+            "unmapped_active_relation",
+            "approximate_policy"
+          ],
+          "unmapped_edge_ids": [
+            "b0_1",
+            "b2_1"
+          ],
+          "witnesses": {
+            "p140": [
+              "b2_1",
+              "b2_2",
+              "b2_3",
+              "b2_4"
+            ],
+            "p191": [
+              "b0_1",
+              "b0_2",
+              "b0_3",
+              "b0_4"
+            ],
+            "p225": [
+              "b1_1",
+              "b1_2",
+              "b1_3",
+              "b1_4"
+            ],
+            "unrelated": [
+              "noise"
+            ]
+          }
+        }
+      },
+      {
+        "arm": "typed_json",
+        "case_id": "d4-f3-s11-missing_mapping",
+        "evaluation": {
+          "complete_claim": false,
+          "exact": false,
+          "false_negative": [
+            "p140",
+            "p191"
+          ],
+          "false_positive": [],
+          "unsafe_complete_claim": false
+        },
+        "format": "json",
+        "graph_hash": "416004e3efb76613e5c217ec76d45ed734a393345f173d859949c5d6b972aba9",
+        "model_hash": "9511d30e6798ba86780a9261bd72d2b320a3d963adecb2e92a825d3b30ca2b34",
+        "output": {
+          "candidates": [
+            "p225"
+          ],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ]
+          ],
+          "status": "partial/unknown",
+          "uncertainty": [
+            "unmapped_active_relation"
+          ],
+          "unmapped_edge_ids": [
+            "b0_1",
+            "b2_1"
+          ],
+          "witnesses": {
+            "p225": [
+              "b1_1",
+              "b1_2",
+              "b1_3",
+              "b1_4"
+            ]
+          }
+        }
+      },
+      {
+        "arm": "typed_rdf",
+        "case_id": "d4-f3-s11-missing_mapping",
+        "evaluation": {
+          "complete_claim": false,
+          "exact": false,
+          "false_negative": [
+            "p140",
+            "p191"
+          ],
+          "false_positive": [],
+          "unsafe_complete_claim": false
+        },
+        "format": "json",
+        "graph_hash": "416004e3efb76613e5c217ec76d45ed734a393345f173d859949c5d6b972aba9",
+        "model_hash": "9511d30e6798ba86780a9261bd72d2b320a3d963adecb2e92a825d3b30ca2b34",
+        "output": {
+          "candidates": [
+            "p225"
+          ],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ]
+          ],
+          "status": "partial/unknown",
+          "uncertainty": [
+            "unmapped_active_relation"
+          ],
+          "unmapped_edge_ids": [
+            "b0_1",
+            "b2_1"
+          ],
+          "witnesses": {
+            "p225": [
+              "b1_1",
+              "b1_2",
+              "b1_3",
+              "b1_4"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "case": {
+      "canonical_bom": [
+        {
+          "child": "changed",
+          "id": "b0_1",
+          "parent": "a0_1_8699",
+          "status": "active"
+        },
+        {
+          "child": "a0_1_8699",
+          "id": "b0_2",
+          "parent": "a0_2_503",
+          "status": "active"
+        },
+        {
+          "child": "a0_2_503",
+          "id": "b0_3",
+          "parent": "a0_3_9352",
+          "status": "active"
+        },
+        {
+          "child": "a0_3_9352",
+          "id": "b0_4",
+          "parent": "p191",
+          "status": "active"
+        },
+        {
+          "child": "changed",
+          "id": "b1_1",
+          "parent": "a1_1_7159",
+          "status": "active"
+        },
+        {
+          "child": "a1_1_7159",
+          "id": "b1_2",
+          "parent": "a1_2_9982",
+          "status": "active"
+        },
+        {
+          "child": "a1_2_9982",
+          "id": "b1_3",
+          "parent": "a1_3_7194",
+          "status": "active"
+        },
+        {
+          "child": "a1_3_7194",
+          "id": "b1_4",
+          "parent": "p225",
+          "status": "active"
+        },
+        {
+          "child": "changed",
+          "id": "b2_1",
+          "parent": "a2_1_2343",
+          "status": "active"
+        },
+        {
+          "child": "a2_1_2343",
+          "id": "b2_2",
+          "parent": "a2_2_7470",
+          "status": "active"
+        },
+        {
+          "child": "a2_2_7470",
+          "id": "b2_3",
+          "parent": "a2_3_7964",
+          "status": "active"
+        },
+        {
+          "child": "a2_3_7964",
+          "id": "b2_4",
+          "parent": "p140",
+          "status": "active"
+        },
+        {
+          "child": "changed",
+          "id": "retired",
+          "parent": "retired_product",
+          "status": "retired"
+        }
+      ],
+      "canonical_nodes": [
+        {
+          "id": "changed",
+          "kind": "component"
+        },
+        {
+          "id": "a0_1_8699",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_2_503",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_3_9352",
+          "kind": "assembly"
+        },
+        {
+          "id": "p191",
+          "kind": "product"
+        },
+        {
+          "id": "a1_1_7159",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_2_9982",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_3_7194",
+          "kind": "assembly"
+        },
+        {
+          "id": "p225",
+          "kind": "product"
+        },
+        {
+          "id": "a2_1_2343",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_2_7470",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_3_7964",
+          "kind": "assembly"
+        },
+        {
+          "id": "p140",
+          "kind": "product"
+        },
+        {
+          "id": "unrelated",
+          "kind": "product"
+        },
+        {
+          "id": "retired_product",
+          "kind": "product"
+        },
+        {
+          "id": "old_product",
+          "kind": "product"
+        }
+      ],
+      "case_id": "d4-f3-s11-bad_mapping",
+      "depth": 4,
+      "fanout": 3,
+      "fault": "bad_mapping",
+      "mutation": {
+        "after_packet_hash": "16e7872001d80e521aebbd04fca52c0029b3109629d64fce03dae83c2a4560d4",
+        "before_packet_hash": "81091fcc613763eb2ae79790f70bfea14943369bce8ced634e2c8e0cb7ffaab8",
+        "kind": "bad_mapping",
+        "selected_edge_id": "b0_1"
+      },
+      "original_packet": {
+        "catalog": {
+          "associatedWith": "ignore",
+          "contains": "inverse",
+          "partOf": "forward",
+          "usedIn": "forward"
+        },
+        "changed": "changed",
+        "coverage": {
+          "advertised_version": "v2",
+          "relations_complete": true,
+          "source_version": "v2"
+        },
+        "edges": [
+          {
+            "id": "b0_1",
+            "relation": "contains",
+            "source": "a0_1_8699",
+            "status": "active",
+            "target": "changed"
+          },
+          {
+            "id": "b0_2",
+            "relation": "partOf",
+            "source": "a0_1_8699",
+            "status": "active",
+            "target": "a0_2_503"
+          },
+          {
+            "id": "b0_3",
+            "relation": "partOf",
+            "source": "a0_2_503",
+            "status": "active",
+            "target": "a0_3_9352"
+          },
+          {
+            "id": "b0_4",
+            "relation": "usedIn",
+            "source": "a0_3_9352",
+            "status": "active",
+            "target": "p191"
+          },
+          {
+            "id": "b1_1",
+            "relation": "partOf",
+            "source": "changed",
+            "status": "active",
+            "target": "a1_1_7159"
+          },
+          {
+            "id": "b1_2",
+            "relation": "usedIn",
+            "source": "a1_1_7159",
+            "status": "active",
+            "target": "a1_2_9982"
+          },
+          {
+            "id": "b1_3",
+            "relation": "partOf",
+            "source": "a1_2_9982",
+            "status": "active",
+            "target": "a1_3_7194"
+          },
+          {
+            "id": "b1_4",
+            "relation": "partOf",
+            "source": "a1_3_7194",
+            "status": "active",
+            "target": "p225"
+          },
+          {
+            "id": "b2_1",
+            "relation": "contains",
+            "source": "a2_1_2343",
+            "status": "active",
+            "target": "changed"
+          },
+          {
+            "id": "b2_2",
+            "relation": "usedIn",
+            "source": "a2_1_2343",
+            "status": "active",
+            "target": "a2_2_7470"
+          },
+          {
+            "id": "b2_3",
+            "relation": "partOf",
+            "source": "a2_2_7470",
+            "status": "active",
+            "target": "a2_3_7964"
+          },
+          {
+            "id": "b2_4",
+            "relation": "usedIn",
+            "source": "a2_3_7964",
+            "status": "active",
+            "target": "p140"
+          },
+          {
+            "id": "noise",
+            "relation": "associatedWith",
+            "source": "changed",
+            "status": "active",
+            "target": "unrelated"
+          },
+          {
+            "id": "retired",
+            "relation": "partOf",
+            "source": "changed",
+            "status": "retired",
+            "target": "retired_product"
+          }
+        ],
+        "nodes": [
+          {
+            "id": "a0_1_8699",
+            "kind": "assembly"
+          },
+          {
+            "id": "a0_2_503",
+            "kind": "assembly"
+          },
+          {
+            "id": "a0_3_9352",
+            "kind": "assembly"
+          },
+          {
+            "id": "a1_1_7159",
+            "kind": "assembly"
+          },
+          {
+            "id": "a1_2_9982",
+            "kind": "assembly"
+          },
+          {
+            "id": "a1_3_7194",
+            "kind": "assembly"
+          },
+          {
+            "id": "a2_1_2343",
+            "kind": "assembly"
+          },
+          {
+            "id": "a2_2_7470",
+            "kind": "assembly"
+          },
+          {
+            "id": "a2_3_7964",
+            "kind": "assembly"
+          },
+          {
+            "id": "changed",
+            "kind": "component"
+          },
+          {
+            "id": "old_product",
+            "kind": "product"
+          },
+          {
+            "id": "p140",
+            "kind": "product"
+          },
+          {
+            "id": "p191",
+            "kind": "product"
+          },
+          {
+            "id": "p225",
+            "kind": "product"
+          },
+          {
+            "id": "retired_product",
+            "kind": "product"
+          },
+          {
+            "id": "unrelated",
+            "kind": "product"
+          }
+        ]
+      },
+      "seed": 11,
+      "truth": [
+        "p140",
+        "p191",
+        "p225"
+      ]
+    },
+    "packet": {
+      "catalog": {
+        "associatedWith": "forward",
+        "contains": "inverse",
+        "partOf": "forward",
+        "usedIn": "forward"
+      },
+      "changed": "changed",
+      "coverage": {
+        "advertised_version": "v2",
+        "relations_complete": true,
+        "source_version": "v2"
+      },
+      "edges": [
+        {
+          "id": "b0_1",
+          "relation": "contains",
+          "source": "a0_1_8699",
+          "status": "active",
+          "target": "changed"
+        },
+        {
+          "id": "b0_2",
+          "relation": "partOf",
+          "source": "a0_1_8699",
+          "status": "active",
+          "target": "a0_2_503"
+        },
+        {
+          "id": "b0_3",
+          "relation": "partOf",
+          "source": "a0_2_503",
+          "status": "active",
+          "target": "a0_3_9352"
+        },
+        {
+          "id": "b0_4",
+          "relation": "usedIn",
+          "source": "a0_3_9352",
+          "status": "active",
+          "target": "p191"
+        },
+        {
+          "id": "b1_1",
+          "relation": "partOf",
+          "source": "changed",
+          "status": "active",
+          "target": "a1_1_7159"
+        },
+        {
+          "id": "b1_2",
+          "relation": "usedIn",
+          "source": "a1_1_7159",
+          "status": "active",
+          "target": "a1_2_9982"
+        },
+        {
+          "id": "b1_3",
+          "relation": "partOf",
+          "source": "a1_2_9982",
+          "status": "active",
+          "target": "a1_3_7194"
+        },
+        {
+          "id": "b1_4",
+          "relation": "partOf",
+          "source": "a1_3_7194",
+          "status": "active",
+          "target": "p225"
+        },
+        {
+          "id": "b2_1",
+          "relation": "contains",
+          "source": "a2_1_2343",
+          "status": "active",
+          "target": "changed"
+        },
+        {
+          "id": "b2_2",
+          "relation": "usedIn",
+          "source": "a2_1_2343",
+          "status": "active",
+          "target": "a2_2_7470"
+        },
+        {
+          "id": "b2_3",
+          "relation": "partOf",
+          "source": "a2_2_7470",
+          "status": "active",
+          "target": "a2_3_7964"
+        },
+        {
+          "id": "b2_4",
+          "relation": "usedIn",
+          "source": "a2_3_7964",
+          "status": "active",
+          "target": "p140"
+        },
+        {
+          "id": "noise",
+          "relation": "associatedWith",
+          "source": "changed",
+          "status": "active",
+          "target": "unrelated"
+        },
+        {
+          "id": "retired",
+          "relation": "partOf",
+          "source": "changed",
+          "status": "retired",
+          "target": "retired_product"
+        }
+      ],
+      "nodes": [
+        {
+          "id": "a0_1_8699",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_2_503",
+          "kind": "assembly"
+        },
+        {
+          "id": "a0_3_9352",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_1_7159",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_2_9982",
+          "kind": "assembly"
+        },
+        {
+          "id": "a1_3_7194",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_1_2343",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_2_7470",
+          "kind": "assembly"
+        },
+        {
+          "id": "a2_3_7964",
+          "kind": "assembly"
+        },
+        {
+          "id": "changed",
+          "kind": "component"
+        },
+        {
+          "id": "old_product",
+          "kind": "product"
+        },
+        {
+          "id": "p140",
+          "kind": "product"
+        },
+        {
+          "id": "p191",
+          "kind": "product"
+        },
+        {
+          "id": "p225",
+          "kind": "product"
+        },
+        {
+          "id": "retired_product",
+          "kind": "product"
+        },
+        {
+          "id": "unrelated",
+          "kind": "product"
+        }
+      ]
+    },
+    "rows": [
+      {
+        "arm": "direct_only",
+        "case_id": "d4-f3-s11-bad_mapping",
+        "evaluation": {
+          "complete_claim": false,
+          "exact": false,
+          "false_negative": [
+            "p140",
+            "p191",
+            "p225"
+          ],
+          "false_positive": [
+            "unrelated"
+          ],
+          "unsafe_complete_claim": false
+        },
+        "format": "json",
+        "graph_hash": "16e7872001d80e521aebbd04fca52c0029b3109629d64fce03dae83c2a4560d4",
+        "model_hash": "42ebc53f0b457dcb03d88fcb8328f27412bdec8e2e79148021b3a290c6dc7c84",
+        "output": {
+          "candidates": [
+            "unrelated"
+          ],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a0_1_8699",
+              "b0_1"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ],
+            [
+              "changed",
+              "a2_1_2343",
+              "b2_1"
+            ],
+            [
+              "changed",
+              "unrelated",
+              "noise"
+            ]
+          ],
+          "status": "partial/unknown",
+          "uncertainty": [
+            "approximate_policy"
+          ],
+          "unmapped_edge_ids": [],
+          "witnesses": {
+            "unrelated": [
+              "noise"
+            ]
+          }
+        }
+      },
+      {
+        "arm": "untyped_transitive",
+        "case_id": "d4-f3-s11-bad_mapping",
+        "evaluation": {
+          "complete_claim": false,
+          "exact": false,
+          "false_negative": [],
+          "false_positive": [
+            "unrelated"
+          ],
+          "unsafe_complete_claim": false
+        },
+        "format": "json",
+        "graph_hash": "16e7872001d80e521aebbd04fca52c0029b3109629d64fce03dae83c2a4560d4",
+        "model_hash": "42ebc53f0b457dcb03d88fcb8328f27412bdec8e2e79148021b3a290c6dc7c84",
+        "output": {
+          "candidates": [
+            "p140",
+            "p191",
+            "p225",
+            "unrelated"
+          ],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_1_8699",
+              "changed",
+              "b0_1"
+            ],
+            [
+              "a0_2_503",
+              "a0_1_8699",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "a0_2_503",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_1_7159",
+              "changed",
+              "b1_1"
+            ],
+            [
+              "a1_2_9982",
+              "a1_1_7159",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "a1_2_9982",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_1_2343",
+              "changed",
+              "b2_1"
+            ],
+            [
+              "a2_2_7470",
+              "a2_1_2343",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "a2_2_7470",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a0_1_8699",
+              "b0_1"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ],
+            [
+              "changed",
+              "a2_1_2343",
+              "b2_1"
+            ],
+            [
+              "changed",
+              "unrelated",
+              "noise"
+            ],
+            [
+              "p140",
+              "a2_3_7964",
+              "b2_4"
+            ],
+            [
+              "p191",
+              "a0_3_9352",
+              "b0_4"
+            ],
+            [
+              "p225",
+              "a1_3_7194",
+              "b1_4"
+            ],
+            [
+              "unrelated",
+              "changed",
+              "noise"
+            ]
+          ],
+          "status": "partial/unknown",
+          "uncertainty": [
+            "approximate_policy"
+          ],
+          "unmapped_edge_ids": [],
+          "witnesses": {
+            "p140": [
+              "b2_1",
+              "b2_2",
+              "b2_3",
+              "b2_4"
+            ],
+            "p191": [
+              "b0_1",
+              "b0_2",
+              "b0_3",
+              "b0_4"
+            ],
+            "p225": [
+              "b1_1",
+              "b1_2",
+              "b1_3",
+              "b1_4"
+            ],
+            "unrelated": [
+              "noise"
+            ]
+          }
+        }
+      },
+      {
+        "arm": "typed_json",
+        "case_id": "d4-f3-s11-bad_mapping",
+        "evaluation": {
+          "complete_claim": true,
+          "exact": false,
+          "false_negative": [],
+          "false_positive": [
+            "unrelated"
+          ],
+          "unsafe_complete_claim": true
+        },
+        "format": "json",
+        "graph_hash": "16e7872001d80e521aebbd04fca52c0029b3109629d64fce03dae83c2a4560d4",
+        "model_hash": "42ebc53f0b457dcb03d88fcb8328f27412bdec8e2e79148021b3a290c6dc7c84",
+        "output": {
+          "candidates": [
+            "p140",
+            "p191",
+            "p225",
+            "unrelated"
+          ],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a0_1_8699",
+              "b0_1"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ],
+            [
+              "changed",
+              "a2_1_2343",
+              "b2_1"
+            ],
+            [
+              "changed",
+              "unrelated",
+              "noise"
+            ]
+          ],
+          "status": "complete",
+          "uncertainty": [],
+          "unmapped_edge_ids": [],
+          "witnesses": {
+            "p140": [
+              "b2_1",
+              "b2_2",
+              "b2_3",
+              "b2_4"
+            ],
+            "p191": [
+              "b0_1",
+              "b0_2",
+              "b0_3",
+              "b0_4"
+            ],
+            "p225": [
+              "b1_1",
+              "b1_2",
+              "b1_3",
+              "b1_4"
+            ],
+            "unrelated": [
+              "noise"
+            ]
+          }
+        }
+      },
+      {
+        "arm": "typed_rdf",
+        "case_id": "d4-f3-s11-bad_mapping",
+        "evaluation": {
+          "complete_claim": true,
+          "exact": false,
+          "false_negative": [],
+          "false_positive": [
+            "unrelated"
+          ],
+          "unsafe_complete_claim": true
+        },
+        "format": "json",
+        "graph_hash": "16e7872001d80e521aebbd04fca52c0029b3109629d64fce03dae83c2a4560d4",
+        "model_hash": "42ebc53f0b457dcb03d88fcb8328f27412bdec8e2e79148021b3a290c6dc7c84",
+        "output": {
+          "candidates": [
+            "p140",
+            "p191",
+            "p225",
+            "unrelated"
+          ],
+          "eligible_edges": [
+            [
+              "a0_1_8699",
+              "a0_2_503",
+              "b0_2"
+            ],
+            [
+              "a0_2_503",
+              "a0_3_9352",
+              "b0_3"
+            ],
+            [
+              "a0_3_9352",
+              "p191",
+              "b0_4"
+            ],
+            [
+              "a1_1_7159",
+              "a1_2_9982",
+              "b1_2"
+            ],
+            [
+              "a1_2_9982",
+              "a1_3_7194",
+              "b1_3"
+            ],
+            [
+              "a1_3_7194",
+              "p225",
+              "b1_4"
+            ],
+            [
+              "a2_1_2343",
+              "a2_2_7470",
+              "b2_2"
+            ],
+            [
+              "a2_2_7470",
+              "a2_3_7964",
+              "b2_3"
+            ],
+            [
+              "a2_3_7964",
+              "p140",
+              "b2_4"
+            ],
+            [
+              "changed",
+              "a0_1_8699",
+              "b0_1"
+            ],
+            [
+              "changed",
+              "a1_1_7159",
+              "b1_1"
+            ],
+            [
+              "changed",
+              "a2_1_2343",
+              "b2_1"
+            ],
+            [
+              "changed",
+              "unrelated",
+              "noise"
+            ]
+          ],
+          "status": "complete",
+          "uncertainty": [],
+          "unmapped_edge_ids": [],
+          "witnesses": {
+            "p140": [
+              "b2_1",
+              "b2_2",
+              "b2_3",
+              "b2_4"
+            ],
+            "p191": [
+              "b0_1",
+              "b0_2",
+              "b0_3",
+              "b0_4"
+            ],
+            "p225": [
+              "b1_1",
+              "b1_2",
+              "b1_3",
+              "b1_4"
+            ],
+            "unrelated": [
+              "noise"
+            ]
+          }
+        }
+      }
+    ]
+  }
+]

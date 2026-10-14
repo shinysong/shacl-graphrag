@@ -34,6 +34,14 @@ For session continuity, read local `MEMORY.md` if present. It is ignored by Git 
 
 - `refresh-fallback-1` derives 110,592 decisions from saved selective-refresh responses. Restore only prevalidated outputs and rerun mixed-workflow checks. Report zero new source calls, inherited costs, newly allowed wrong outputs and restored correct outputs separately. Preserve original group-failure behavior and results.
 
+## Domain and introductory-guide research
+
+- User expanded the objective to change-impact decision support across manufacturing, finance/GLEIF/FIBO, healthcare records, YAGO, Wikidata and documents. Separate domain, semantic layer and serialization; do not call renamed synthetic nodes domain transfer.
+- `change-impact-1` is synthetic manufacturing potential-impact targeting, not physical simulation or change approval. Preserve 192 cases / 2,304 rows, aggregate one serialization only, and separate candidate errors from completeness claims. Typed JSON and RDF share eligibility semantics; supplied completeness/version metadata does not detect hidden source omissions. Direct and untyped arms always mark partial/unknown, so zero unsafe-complete claims do not establish superior safety.
+- `domain-characteristics-1` is descriptive profiling of purposeful bounded real artifacts, not a cross-domain accuracy benchmark. Keep FIBO/YAGO schema inspection, official FHIR examples, one Wikidata entity and first-256 GLEIF source rows separate. Preserve identifier namespaces, reference roles, time/rank/provenance, imports, original hashes and failed source acquisitions. Do not infer global absence from a selected bundle or archive prefix.
+- Build future 101 guidance from traceable input examples, preprocessing prerequisites, minimum semantics, measured outputs/failures and unverified scope. Include cases where JSON or LPG rules suffice; ontology is not presumed superior.
+- User requested continued improvements if no reply within 30 minutes after results. Continue bounded authorized work in an active session, honoring existing budgets and paid-API stop. This instruction is not an installed scheduler; record continuation state and never claim an automatic wake-up without a supported tool and confirmed registration.
+
 ## Stack decisions (do not casually reverse)
 
 - Ontology research now includes a bounded offline OWL-RL reasoning study, beyond SHACL validation. JSON rules and OWL-RL receive identical ontology semantics; asserted lookup is an ablation. Keep positive-rule closure membership, graph-wide disjoint-class witnesses, external truth and LLM hallucination separate. Vocabulary renaming is not real-domain transfer. Preserve the 2026-10-13 one-day 105-request authorization and default 100-request cap; do not extend the exception to later days.
