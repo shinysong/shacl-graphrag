@@ -1,5 +1,7 @@
 # 온톨로지 활용 실험 명세
 
+최신 LLM 주도 실험은 [조회·의미 설명·검증 도구 비교 명세](llm-ontology-tools-study.md)를 따른다. 기존 규칙 기반 업무 실험과 구분한다.
+
 ## 금융·제조업 여섯 업무 질문
 
 `business-questions-1`은 [질문별 관계·조건·보류 기준](business-questions-study.md)을 고정한 36개 합성 사례와 세 조건을 비교한다. [첫 실행](records/20261014-business-questions.md)의 108행과 실제 GLEIF의 네 예시는 분리한다. 같은 판단 규칙을 공유하는 JSON·RDF 비교이며 독립적인 업무 정확도 검증은 아니다.

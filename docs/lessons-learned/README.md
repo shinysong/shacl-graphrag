@@ -1,5 +1,7 @@
 # Lessons learned
 
+- [공개 정책의 관계 방향과 조회 인터페이스](2026-10-15-policy-direction-and-query-interface.md)
+
 - [2026-10-13 분석 기록의 종료 코드 표기](2026-10-13-analysis-exit-code.md)
 
 실험·인프라·검증 루프를 만들면서 겪은 **실수, 결정, 재현 팁**을 짧게 남깁니다.

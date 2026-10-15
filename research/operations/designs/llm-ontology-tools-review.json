@@ -1,0 +1,73 @@
+{
+  "protocol": "llm-ontology-tools-draft-1",
+  "status": "reviewed_design_only_not_execution_approval",
+  "review_job": "20261015T070241Z-llm-ontology-tools-design-204670",
+  "methods_agent": "/root/tool_design_methods",
+  "implementation_agent": "/root/tool_design_implementation",
+  "reviews": {
+    "methods": {
+      "summary": "Ready as a design-only handoff for the proposed offline adapter and trace fixtures. The supplied plan separates model interpretation, callable validation, retrieval and final-answer outcomes, preserves failed episodes, and explicitly prohibits paid execution. No implementation, test result, leakage isolation or model behavior was verified in this review.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "Arm B adds 'explicit concept/role definitions, unit relationships and published policy semantics' to A's physical source schema; the objective concerns explicit ontology information. This changes available task-relevant information as well as its semantic organization.",
+          "recommendation": "Interpret A/B differences as the effect of the disclosed information package. Do not attribute them specifically to ontology representation without a later matched-information control."
+        },
+        {
+          "severity": "warning",
+          "evidence": "The draft permits 'clarification or qualified answer' for ambiguous dates, lists an absent final fixture set, and requires independent adjudication for ambiguous intent. No clarification-response procedure or frozen scoring rubric is supplied.",
+          "recommendation": "Before any model evaluation, freeze whether clarification terminates an episode or receives a scripted response, and define eligible denominators and criteria for qualified answers, unnecessary abstention and unresolved intent. These are future execution prerequisites, not blockers for offline schema/adapter work."
+        },
+        {
+          "severity": "info",
+          "evidence": "The next deliverable says 'Prove no gold leakage and failure retention'; the packet also states shared workspace/tool access is not sandbox isolation and existing unit tests do not validate this design.",
+          "recommendation": "Bound the eventual leakage claim to explicitly audited runtime inputs, artifact access paths and adversarial software fixtures. Report which isolation properties remain unverified; do not describe ordinary unit-test success as a general proof of absent leakage."
+        }
+      ],
+      "tasks": []
+    },
+    "implementation": {
+      "summary": "Ready as a design-only handoff for offline implementation. The packet separates experimental execution, evaluator references and runtime tool feedback, but does not establish implemented isolation, bounded execution or reproducibility. No sources or software were inspected and no checks were run.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "The draft specifies a five-second query timeout and 100 returned rows, but neither bounds RDFLib intermediate computation or graph memory. Feasibility on a 16GiB host is unverified.",
+          "recommendation": "Implement enforceable worker termination and memory limits, restrict accepted query forms, and test adversarial joins and paths offline. Record timeout and resource failures without discarding assigned episodes. Returning 100 rows alone must not be treated as a compute bound."
+        },
+        {
+          "severity": "warning",
+          "evidence": "The event field list references parent_event_id without an explicit event_id, and tool argument schemas, artifact manifests, dependency versions and per-event required fields remain unspecified. Fixture generation and exact source hashes are explicitly deferred.",
+          "recommendation": "Freeze typed event and tool schemas plus a manifest before model execution. Include stable event identifiers, terminal reasons, effective query limits, artifact references, snapshot and ontology/shape hashes, policy versions, model settings and ordering seed. Preserve original shape bytes if native SHACL is later used; this packet provides no such files to verify."
+        },
+        {
+          "severity": "warning",
+          "evidence": "The draft prohibits runtime gold access and external SPARQL access, but these are design requirements rather than demonstrated access boundaries. Shared workspace access is not isolation proof.",
+          "recommendation": "Use explicit runtime input allowlists and an adapter that cannot load arbitrary files or remote resources. Add scripted negative cases for scorer-reference leakage, SERVICE/update rejection, unsupported query analysis, truncation, and failed-call accounting. Describe the resulting evidence as bounded checks rather than proof against every leakage channel."
+        }
+      ],
+      "tasks": [
+        {
+          "owner": "main",
+          "deliverable": "Create proposed scripts/llm_ontology_tools.py and a trace schema under research/ for the offline-only adapter, typed events, input allowlists, budget accounting and killable read-only query workers. These paths are suggestions; existing repository layout was not inspected.",
+          "verification": "Add scripted software fixtures to the existing unit-tests check for query rejection, deadline enforcement, row truncation metadata, unknown semantic outcomes, stable event linkage, exhausted budgets and retained failures. Keep all provider execution disabled. Tests have not run."
+        },
+        {
+          "owner": "main",
+          "deliverable": "Record the implementation contract and immutable artifact-manifest requirements in docs/experiments/specification.md, including source/ontology/shape hashes, dependency versions, repair-counter rules and terminal outcomes. Separate runtime manifests from scorer-only references.",
+          "verification": "Before any separately authorized paid run, inspect the frozen runtime manifest and replay scripted transcripts to confirm reproducible inputs, failure retention and absence of scorer-only fields. Resource suitability and native SHACL preservation remain unverified until actual artifacts and implementation exist."
+        }
+      ]
+    }
+  },
+  "required_before_implementation_freeze": [
+    "Add stable event_id, typed tool/event schemas and immutable runtime manifest; reviewed draft field list is incomplete",
+    "Implement killable worker and actual resource ceilings, not only result LIMIT",
+    "Explicit input allowlists and no arbitrary file/network access",
+    "Freeze clarification termination/response protocol and scoring rubric before model evaluation",
+    "Describe A/B information-package effect; ontology representation benefit requires matched-information control",
+    "Bound leakage claims to inspected paths and tested fixtures, not universal proof"
+  ],
+  "execution_authorization": "No paid calls; offline software work only under fresh reviews."
+}

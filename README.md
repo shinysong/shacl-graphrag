@@ -1,6 +1,6 @@
 # SHACL GraphRAG
 
-최근 연구: [변경 영향과 도메인별 의미 조건](docs/experiments/domain-characteristics.md), [제조업 192개 사례](docs/experiments/records/20261014-change-impact.md), [실제 원천 특성 점검](docs/experiments/records/20261014-domain-characteristics.md). 합성 실험과 자료 구조 점검은 별도 결과입니다.
+최근 연구: [LLM 주도 조회·온톨로지 도구 실제 실행](docs/experiments/records/20261015-llm-ontology-tools.md). 54개 개발 실행에서 조회 성공, 검증 호출, 미완료와 입력 정책 오류를 구분했습니다.
 
 온톨로지 제약 기반 검증 루프 GraphRAG
 

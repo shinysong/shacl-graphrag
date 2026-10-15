@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 740" role="img" aria-labelledby="title desc"><title id="title">제조 1 · 부품 변경 영향 실제 LLM 실행</title><desc id="desc">C 조건의 실제 실행. 질문, 원천 요약, 조회·검증 횟수, 최종 출력과 별도 채점 기준.</desc><rect width="360" height="740" rx="18" fill="#fff" stroke="#bfcbd9"/><g font-family="Noto Sans KR, sans-serif" fill="#182b42">
+<text x="26" y="32" font-size="18" font-weight="700">제조 1 · 부품 변경 영향</text>
+<text x="26" y="56" font-size="12" font-weight="400">실제 모델 실행 · case01-C</text>
+<rect x="16" y="75" width="328" height="90" rx="12" fill="#eef3fa"/>
+<text x="26" y="100" font-size="13" font-weight="700">질문 · 기준일 2026-10-12</text>
+<text x="26" y="126" font-size="14" font-weight="400">part-A를 바꾸면 X·Y 중 영향 제품은?</text>
+<rect x="16" y="180" width="328" height="126" rx="12" fill="#eef3fa"/>
+<text x="26" y="205" font-size="13" font-weight="700">원천 데이터 요약</text>
+<text x="26" y="231" font-size="14" font-weight="400">b1: part-A → part_of → assembly</text>
+<text x="26" y="254" font-size="14" font-weight="400">b2: product-X → contains → assembly</text>
+<text x="26" y="277" font-size="14" font-weight="400">주의: 공개 정책의 방향 설명 오류</text>
+<rect x="16" y="325" width="328" height="112" rx="12" fill="#eaf4f2"/>
+<text x="26" y="350" font-size="13" font-weight="700">LLM 작성 쿼리 → 실제 조회</text>
+<text x="26" y="376" font-size="14" font-weight="400">SELECT ?product ?id WHERE { ?bom a ur…</text>
+<text x="26" y="399" font-size="14" font-weight="400">조회 4회 / 실행 성공 3회</text>
+<text x="26" y="422" font-size="14" font-weight="400">행을 얻은 조회 0회 / 검사 0회</text>
+<rect x="16" y="455" width="328" height="112" rx="12" fill="#fff0e8"/>
+<text x="26" y="480" font-size="13" font-weight="700">저장된 최종 출력</text>
+<text x="26" y="506" font-size="14" font-weight="400">unknown</text>
+<text x="26" y="529" font-size="14" font-weight="400">value: null</text>
+<rect x="16" y="585" width="328" height="105" rx="12" fill="#eef3fa"/>
+<text x="26" y="610" font-size="13" font-weight="700">별도 채점 기준 · 실행에 전달하지 않음</text>
+<text x="26" y="636" font-size="14" font-weight="400">known · [&quot;product-X&quot;]</text>
+<text x="26" y="659" font-size="14" font-weight="400">정책 오류 영향 사례</text>
+<text x="26" y="716" font-size="11" font-weight="400">검사 통과·조회 성공은 사실 정확성과 별개</text>
+</g></svg>

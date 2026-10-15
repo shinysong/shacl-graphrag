@@ -1,0 +1,3981 @@
+{
+  "protocol": "llm-ontology-tools-1-offline-analysis",
+  "overall": {
+    "counts": {
+      "assigned": 54,
+      "finished": 35,
+      "failed": 0,
+      "unfinished": 19,
+      "decision_match": 13,
+      "qualified_decision_match": 13,
+      "evidence_exact": 11,
+      "wrong_substantive": 4,
+      "unnecessary_withholding": 11,
+      "invalid_citation_episodes": 1,
+      "unretrieved_citation_episodes": 1,
+      "episodes_using_checks": 0,
+      "observed_tool_errors": 277,
+      "model_calls": 253,
+      "source_queries": 175,
+      "checks": 0,
+      "tool_calls": 393,
+      "query_revisions": 90,
+      "calls_with_metadata": 253,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0
+    },
+    "terminal_statuses": {
+      "finished": 35,
+      "tool_budget_exhausted": 19
+    },
+    "check_results": {},
+    "reported_cost_usd": 0.09770355000000003,
+    "decision_match_denominator": 54,
+    "rate": 0.24074074074074073
+  },
+  "by_arm": {
+    "A": {
+      "counts": {
+        "assigned": 18,
+        "finished": 14,
+        "failed": 0,
+        "unfinished": 4,
+        "decision_match": 6,
+        "qualified_decision_match": 6,
+        "evidence_exact": 5,
+        "wrong_substantive": 2,
+        "unnecessary_withholding": 3,
+        "invalid_citation_episodes": 1,
+        "unretrieved_citation_episodes": 1,
+        "episodes_using_checks": 0,
+        "observed_tool_errors": 93,
+        "model_calls": 87,
+        "source_queries": 57,
+        "checks": 0,
+        "tool_calls": 126,
+        "query_revisions": 34,
+        "calls_with_metadata": 87,
+        "calls_without_metadata": 0,
+        "call_failure_artifacts": 0
+      },
+      "terminal_statuses": {
+        "finished": 14,
+        "tool_budget_exhausted": 4
+      },
+      "check_results": {},
+      "reported_cost_usd": 0.029351099999999998,
+      "decision_match_denominator": 18,
+      "rate": 0.3333333333333333
+    },
+    "B": {
+      "counts": {
+        "assigned": 18,
+        "finished": 12,
+        "failed": 0,
+        "unfinished": 6,
+        "decision_match": 4,
+        "qualified_decision_match": 4,
+        "evidence_exact": 3,
+        "wrong_substantive": 2,
+        "unnecessary_withholding": 4,
+        "invalid_citation_episodes": 0,
+        "unretrieved_citation_episodes": 0,
+        "episodes_using_checks": 0,
+        "observed_tool_errors": 79,
+        "model_calls": 75,
+        "source_queries": 56,
+        "checks": 0,
+        "tool_calls": 124,
+        "query_revisions": 29,
+        "calls_with_metadata": 75,
+        "calls_without_metadata": 0,
+        "call_failure_artifacts": 0
+      },
+      "terminal_statuses": {
+        "finished": 12,
+        "tool_budget_exhausted": 6
+      },
+      "check_results": {},
+      "reported_cost_usd": 0.0307311,
+      "decision_match_denominator": 18,
+      "rate": 0.2222222222222222
+    },
+    "C": {
+      "counts": {
+        "assigned": 18,
+        "finished": 9,
+        "failed": 0,
+        "unfinished": 9,
+        "decision_match": 3,
+        "qualified_decision_match": 3,
+        "evidence_exact": 3,
+        "wrong_substantive": 0,
+        "unnecessary_withholding": 4,
+        "invalid_citation_episodes": 0,
+        "unretrieved_citation_episodes": 0,
+        "episodes_using_checks": 0,
+        "observed_tool_errors": 105,
+        "model_calls": 91,
+        "source_queries": 62,
+        "checks": 0,
+        "tool_calls": 143,
+        "query_revisions": 27,
+        "calls_with_metadata": 91,
+        "calls_without_metadata": 0,
+        "call_failure_artifacts": 0
+      },
+      "terminal_statuses": {
+        "finished": 9,
+        "tool_budget_exhausted": 9
+      },
+      "check_results": {},
+      "reported_cost_usd": 0.03762135,
+      "decision_match_denominator": 18,
+      "rate": 0.16666666666666666
+    }
+  },
+  "by_family": {
+    "F1": {
+      "counts": {
+        "assigned": 9,
+        "finished": 9,
+        "failed": 0,
+        "unfinished": 0,
+        "decision_match": 5,
+        "qualified_decision_match": 5,
+        "evidence_exact": 3,
+        "wrong_substantive": 0,
+        "unnecessary_withholding": 4,
+        "invalid_citation_episodes": 0,
+        "unretrieved_citation_episodes": 0,
+        "episodes_using_checks": 0,
+        "observed_tool_errors": 33,
+        "model_calls": 47,
+        "source_queries": 30,
+        "checks": 0,
+        "tool_calls": 47,
+        "query_revisions": 8,
+        "calls_with_metadata": 47,
+        "calls_without_metadata": 0,
+        "call_failure_artifacts": 0
+      },
+      "terminal_statuses": {
+        "finished": 9
+      },
+      "check_results": {},
+      "reported_cost_usd": 0.014469000000000001,
+      "decision_match_denominator": 9,
+      "rate": 0.5555555555555556
+    },
+    "F2": {
+      "counts": {
+        "assigned": 9,
+        "finished": 3,
+        "failed": 0,
+        "unfinished": 6,
+        "decision_match": 1,
+        "qualified_decision_match": 1,
+        "evidence_exact": 1,
+        "wrong_substantive": 0,
+        "unnecessary_withholding": 0,
+        "invalid_citation_episodes": 0,
+        "unretrieved_citation_episodes": 0,
+        "episodes_using_checks": 0,
+        "observed_tool_errors": 68,
+        "model_calls": 49,
+        "source_queries": 31,
+        "checks": 0,
+        "tool_calls": 85,
+        "query_revisions": 18,
+        "calls_with_metadata": 49,
+        "calls_without_metadata": 0,
+        "call_failure_artifacts": 0
+      },
+      "terminal_statuses": {
+        "finished": 3,
+        "tool_budget_exhausted": 6
+      },
+      "check_results": {},
+      "reported_cost_usd": 0.02761425,
+      "decision_match_denominator": 9,
+      "rate": 0.1111111111111111
+    },
+    "F3": {
+      "counts": {
+        "assigned": 9,
+        "finished": 5,
+        "failed": 0,
+        "unfinished": 4,
+        "decision_match": 1,
+        "qualified_decision_match": 1,
+        "evidence_exact": 1,
+        "wrong_substantive": 2,
+        "unnecessary_withholding": 2,
+        "invalid_citation_episodes": 1,
+        "unretrieved_citation_episodes": 1,
+        "episodes_using_checks": 0,
+        "observed_tool_errors": 54,
+        "model_calls": 46,
+        "source_queries": 29,
+        "checks": 0,
+        "tool_calls": 77,
+        "query_revisions": 18,
+        "calls_with_metadata": 46,
+        "calls_without_metadata": 0,
+        "call_failure_artifacts": 0
+      },
+      "terminal_statuses": {
+        "finished": 5,
+        "tool_budget_exhausted": 4
+      },
+      "check_results": {},
+      "reported_cost_usd": 0.01743585,
+      "decision_match_denominator": 9,
+      "rate": 0.1111111111111111
+    },
+    "M1": {
+      "counts": {
+        "assigned": 9,
+        "finished": 9,
+        "failed": 0,
+        "unfinished": 0,
+        "decision_match": 3,
+        "qualified_decision_match": 3,
+        "evidence_exact": 3,
+        "wrong_substantive": 0,
+        "unnecessary_withholding": 3,
+        "invalid_citation_episodes": 0,
+        "unretrieved_citation_episodes": 0,
+        "episodes_using_checks": 0,
+        "observed_tool_errors": 15,
+        "model_calls": 42,
+        "source_queries": 33,
+        "checks": 0,
+        "tool_calls": 45,
+        "query_revisions": 12,
+        "calls_with_metadata": 42,
+        "calls_without_metadata": 0,
+        "call_failure_artifacts": 0
+      },
+      "terminal_statuses": {
+        "finished": 9
+      },
+      "check_results": {},
+      "reported_cost_usd": 0.012148349999999999,
+      "decision_match_denominator": 9,
+      "rate": 0.3333333333333333
+    },
+    "M2": {
+      "counts": {
+        "assigned": 9,
+        "finished": 0,
+        "failed": 0,
+        "unfinished": 9,
+        "decision_match": 0,
+        "qualified_decision_match": 0,
+        "evidence_exact": 0,
+        "wrong_substantive": 0,
+        "unnecessary_withholding": 0,
+        "invalid_citation_episodes": 0,
+        "unretrieved_citation_episodes": 0,
+        "episodes_using_checks": 0,
+        "observed_tool_errors": 90,
+        "model_calls": 29,
+        "source_queries": 27,
+        "checks": 0,
+        "tool_calls": 99,
+        "query_revisions": 18,
+        "calls_with_metadata": 29,
+        "calls_without_metadata": 0,
+        "call_failure_artifacts": 0
+      },
+      "terminal_statuses": {
+        "tool_budget_exhausted": 9
+      },
+      "check_results": {},
+      "reported_cost_usd": 0.015105899999999998,
+      "decision_match_denominator": 9,
+      "rate": 0.0
+    },
+    "M3": {
+      "counts": {
+        "assigned": 9,
+        "finished": 9,
+        "failed": 0,
+        "unfinished": 0,
+        "decision_match": 3,
+        "qualified_decision_match": 3,
+        "evidence_exact": 3,
+        "wrong_substantive": 2,
+        "unnecessary_withholding": 2,
+        "invalid_citation_episodes": 0,
+        "unretrieved_citation_episodes": 0,
+        "episodes_using_checks": 0,
+        "observed_tool_errors": 17,
+        "model_calls": 40,
+        "source_queries": 25,
+        "checks": 0,
+        "tool_calls": 40,
+        "query_revisions": 16,
+        "calls_with_metadata": 40,
+        "calls_without_metadata": 0,
+        "call_failure_artifacts": 0
+      },
+      "terminal_statuses": {
+        "finished": 9
+      },
+      "check_results": {},
+      "reported_cost_usd": 0.0109302,
+      "decision_match_denominator": 9,
+      "rate": 0.3333333333333333
+    }
+  },
+  "by_arm_family": {
+    "A": {
+      "F1": {
+        "counts": {
+          "assigned": 3,
+          "finished": 3,
+          "failed": 0,
+          "unfinished": 0,
+          "decision_match": 3,
+          "qualified_decision_match": 3,
+          "evidence_exact": 1,
+          "wrong_substantive": 0,
+          "unnecessary_withholding": 0,
+          "invalid_citation_episodes": 0,
+          "unretrieved_citation_episodes": 0,
+          "episodes_using_checks": 0,
+          "observed_tool_errors": 4,
+          "model_calls": 11,
+          "source_queries": 7,
+          "checks": 0,
+          "tool_calls": 11,
+          "query_revisions": 4,
+          "calls_with_metadata": 11,
+          "calls_without_metadata": 0,
+          "call_failure_artifacts": 0
+        },
+        "terminal_statuses": {
+          "finished": 3
+        },
+        "check_results": {},
+        "reported_cost_usd": 0.0029804999999999996,
+        "decision_match_denominator": 3,
+        "rate": 1.0
+      },
+      "F2": {
+        "counts": {
+          "assigned": 3,
+          "finished": 2,
+          "failed": 0,
+          "unfinished": 1,
+          "decision_match": 1,
+          "qualified_decision_match": 1,
+          "evidence_exact": 1,
+          "wrong_substantive": 0,
+          "unnecessary_withholding": 0,
+          "invalid_citation_episodes": 0,
+          "unretrieved_citation_episodes": 0,
+          "episodes_using_checks": 0,
+          "observed_tool_errors": 18,
+          "model_calls": 16,
+          "source_queries": 12,
+          "checks": 0,
+          "tool_calls": 25,
+          "query_revisions": 6,
+          "calls_with_metadata": 16,
+          "calls_without_metadata": 0,
+          "call_failure_artifacts": 0
+        },
+        "terminal_statuses": {
+          "finished": 2,
+          "tool_budget_exhausted": 1
+        },
+        "check_results": {},
+        "reported_cost_usd": 0.00919365,
+        "decision_match_denominator": 3,
+        "rate": 0.3333333333333333
+      },
+      "F3": {
+        "counts": {
+          "assigned": 3,
+          "finished": 3,
+          "failed": 0,
+          "unfinished": 0,
+          "decision_match": 0,
+          "qualified_decision_match": 0,
+          "evidence_exact": 1,
+          "wrong_substantive": 2,
+          "unnecessary_withholding": 1,
+          "invalid_citation_episodes": 1,
+          "unretrieved_citation_episodes": 1,
+          "episodes_using_checks": 0,
+          "observed_tool_errors": 17,
+          "model_calls": 17,
+          "source_queries": 9,
+          "checks": 0,
+          "tool_calls": 23,
+          "query_revisions": 6,
+          "calls_with_metadata": 17,
+          "calls_without_metadata": 0,
+          "call_failure_artifacts": 0
+        },
+        "terminal_statuses": {
+          "finished": 3
+        },
+        "check_results": {},
+        "reported_cost_usd": 0.0051714,
+        "decision_match_denominator": 3,
+        "rate": 0.0
+      },
+      "M1": {
+        "counts": {
+          "assigned": 3,
+          "finished": 3,
+          "failed": 0,
+          "unfinished": 0,
+          "decision_match": 1,
+          "qualified_decision_match": 1,
+          "evidence_exact": 1,
+          "wrong_substantive": 0,
+          "unnecessary_withholding": 1,
+          "invalid_citation_episodes": 0,
+          "unretrieved_citation_episodes": 0,
+          "episodes_using_checks": 0,
+          "observed_tool_errors": 9,
+          "model_calls": 16,
+          "source_queries": 11,
+          "checks": 0,
+          "tool_calls": 16,
+          "query_revisions": 6,
+          "calls_with_metadata": 16,
+          "calls_without_metadata": 0,
+          "call_failure_artifacts": 0
+        },
+        "terminal_statuses": {
+          "finished": 3
+        },
+        "check_results": {},
+        "reported_cost_usd": 0.0036685499999999996,
+        "decision_match_denominator": 3,
+        "rate": 0.3333333333333333
+      },
+      "M2": {
+        "counts": {
+          "assigned": 3,
+          "finished": 0,
+          "failed": 0,
+          "unfinished": 3,
+          "decision_match": 0,
+          "qualified_decision_match": 0,
+          "evidence_exact": 0,
+          "wrong_substantive": 0,
+          "unnecessary_withholding": 0,
+          "invalid_citation_episodes": 0,
+          "unretrieved_citation_episodes": 0,
+          "episodes_using_checks": 0,
+          "observed_tool_errors": 30,
+          "model_calls": 9,
+          "source_queries": 9,
+          "checks": 0,
+          "tool_calls": 33,
+          "query_revisions": 6,
+          "calls_with_metadata": 9,
+          "calls_without_metadata": 0,
+          "call_failure_artifacts": 0
+        },
+        "terminal_statuses": {
+          "tool_budget_exhausted": 3
+        },
+        "check_results": {},
+        "reported_cost_usd": 0.00432135,
+        "decision_match_denominator": 3,
+        "rate": 0.0
+      },
+      "M3": {
+        "counts": {
+          "assigned": 3,
+          "finished": 3,
+          "failed": 0,
+          "unfinished": 0,
+          "decision_match": 1,
+          "qualified_decision_match": 1,
+          "evidence_exact": 1,
+          "wrong_substantive": 0,
+          "unnecessary_withholding": 1,
+          "invalid_citation_episodes": 0,
+          "unretrieved_citation_episodes": 0,
+          "episodes_using_checks": 0,
+          "observed_tool_errors": 15,
+          "model_calls": 18,
+          "source_queries": 9,
+          "checks": 0,
+          "tool_calls": 18,
+          "query_revisions": 6,
+          "calls_with_metadata": 18,
+          "calls_without_metadata": 0,
+          "call_failure_artifacts": 0
+        },
+        "terminal_statuses": {
+          "finished": 3
+        },
+        "check_results": {},
+        "reported_cost_usd": 0.00401565,
+        "decision_match_denominator": 3,
+        "rate": 0.3333333333333333
+      }
+    },
+    "B": {
+      "F1": {
+        "counts": {
+          "assigned": 3,
+          "finished": 3,
+          "failed": 0,
+          "unfinished": 0,
+          "decision_match": 1,
+          "qualified_decision_match": 1,
+          "evidence_exact": 1,
+          "wrong_substantive": 0,
+          "unnecessary_withholding": 2,
+          "invalid_citation_episodes": 0,
+          "unretrieved_citation_episodes": 0,
+          "episodes_using_checks": 0,
+          "observed_tool_errors": 14,
+          "model_calls": 18,
+          "source_queries": 11,
+          "checks": 0,
+          "tool_calls": 18,
+          "query_revisions": 4,
+          "calls_with_metadata": 18,
+          "calls_without_metadata": 0,
+          "call_failure_artifacts": 0
+        },
+        "terminal_statuses": {
+          "finished": 3
+        },
+        "check_results": {},
+        "reported_cost_usd": 0.0055449,
+        "decision_match_denominator": 3,
+        "rate": 0.3333333333333333
+      },
+      "F2": {
+        "counts": {
+          "assigned": 3,
+          "finished": 1,
+          "failed": 0,
+          "unfinished": 2,
+          "decision_match": 0,
+          "qualified_decision_match": 0,
+          "evidence_exact": 0,
+          "wrong_substantive": 0,
+          "unnecessary_withholding": 0,
+          "invalid_citation_episodes": 0,
+          "unretrieved_citation_episodes": 0,
+          "episodes_using_checks": 0,
+          "observed_tool_errors": 20,
+          "model_calls": 15,
+          "source_queries": 9,
+          "checks": 0,
+          "tool_calls": 27,
+          "query_revisions": 6,
+          "calls_with_metadata": 15,
+          "calls_without_metadata": 0,
+          "call_failure_artifacts": 0
+        },
+        "terminal_statuses": {
+          "finished": 1,
+          "tool_budget_exhausted": 2
+        },
+        "check_results": {},
+        "reported_cost_usd": 0.008923799999999999,
+        "decision_match_denominator": 3,
+        "rate": 0.0
+      },
+      "F3": {
+        "counts": {
+          "assigned": 3,
+          "finished": 2,
+          "failed": 0,
+          "unfinished": 1,
+          "decision_match": 1,
+          "qualified_decision_match": 1,
+          "evidence_exact": 0,
+          "wrong_substantive": 0,
+          "unnecessary_withholding": 1,
+          "invalid_citation_episodes": 0,
+          "unretrieved_citation_episodes": 0,
+          "episodes_using_checks": 0,
+          "observed_tool_errors": 9,
+          "model_calls": 11,
+          "source_queries": 9,
+          "checks": 0,
+          "tool_calls": 21,
+          "query_revisions": 6,
+          "calls_with_metadata": 11,
+          "calls_without_metadata": 0,
+          "call_failure_artifacts": 0
+        },
+        "terminal_statuses": {
+          "tool_budget_exhausted": 1,
+          "finished": 2
+        },
+        "check_results": {},
+        "reported_cost_usd": 0.004324799999999999,
+        "decision_match_denominator": 3,
+        "rate": 0.3333333333333333
+      },
+      "M1": {
+        "counts": {
+          "assigned": 3,
+          "finished": 3,
+          "failed": 0,
+          "unfinished": 0,
+          "decision_match": 1,
+          "qualified_decision_match": 1,
+          "evidence_exact": 1,
+          "wrong_substantive": 0,
+          "unnecessary_withholding": 1,
+          "invalid_citation_episodes": 0,
+          "unretrieved_citation_episodes": 0,
+          "episodes_using_checks": 0,
+          "observed_tool_errors": 4,
+          "model_calls": 12,
+          "source_queries": 11,
+          "checks": 0,
+          "tool_calls": 15,
+          "query_revisions": 3,
+          "calls_with_metadata": 12,
+          "calls_without_metadata": 0,
+          "call_failure_artifacts": 0
+        },
+        "terminal_statuses": {
+          "finished": 3
+        },
+        "check_results": {},
+        "reported_cost_usd": 0.004262999999999999,
+        "decision_match_denominator": 3,
+        "rate": 0.3333333333333333
+      },
+      "M2": {
+        "counts": {
+          "assigned": 3,
+          "finished": 0,
+          "failed": 0,
+          "unfinished": 3,
+          "decision_match": 0,
+          "qualified_decision_match": 0,
+          "evidence_exact": 0,
+          "wrong_substantive": 0,
+          "unnecessary_withholding": 0,
+          "invalid_citation_episodes": 0,
+          "unretrieved_citation_episodes": 0,
+          "episodes_using_checks": 0,
+          "observed_tool_errors": 30,
+          "model_calls": 9,
+          "source_queries": 9,
+          "checks": 0,
+          "tool_calls": 33,
+          "query_revisions": 6,
+          "calls_with_metadata": 9,
+          "calls_without_metadata": 0,
+          "call_failure_artifacts": 0
+        },
+        "terminal_statuses": {
+          "tool_budget_exhausted": 3
+        },
+        "check_results": {},
+        "reported_cost_usd": 0.00478455,
+        "decision_match_denominator": 3,
+        "rate": 0.0
+      },
+      "M3": {
+        "counts": {
+          "assigned": 3,
+          "finished": 3,
+          "failed": 0,
+          "unfinished": 0,
+          "decision_match": 1,
+          "qualified_decision_match": 1,
+          "evidence_exact": 1,
+          "wrong_substantive": 2,
+          "unnecessary_withholding": 0,
+          "invalid_citation_episodes": 0,
+          "unretrieved_citation_episodes": 0,
+          "episodes_using_checks": 0,
+          "observed_tool_errors": 2,
+          "model_calls": 10,
+          "source_queries": 7,
+          "checks": 0,
+          "tool_calls": 10,
+          "query_revisions": 4,
+          "calls_with_metadata": 10,
+          "calls_without_metadata": 0,
+          "call_failure_artifacts": 0
+        },
+        "terminal_statuses": {
+          "finished": 3
+        },
+        "check_results": {},
+        "reported_cost_usd": 0.00289005,
+        "decision_match_denominator": 3,
+        "rate": 0.3333333333333333
+      }
+    },
+    "C": {
+      "F1": {
+        "counts": {
+          "assigned": 3,
+          "finished": 3,
+          "failed": 0,
+          "unfinished": 0,
+          "decision_match": 1,
+          "qualified_decision_match": 1,
+          "evidence_exact": 1,
+          "wrong_substantive": 0,
+          "unnecessary_withholding": 2,
+          "invalid_citation_episodes": 0,
+          "unretrieved_citation_episodes": 0,
+          "episodes_using_checks": 0,
+          "observed_tool_errors": 15,
+          "model_calls": 18,
+          "source_queries": 12,
+          "checks": 0,
+          "tool_calls": 18,
+          "query_revisions": 0,
+          "calls_with_metadata": 18,
+          "calls_without_metadata": 0,
+          "call_failure_artifacts": 0
+        },
+        "terminal_statuses": {
+          "finished": 3
+        },
+        "check_results": {},
+        "reported_cost_usd": 0.0059436,
+        "decision_match_denominator": 3,
+        "rate": 0.3333333333333333
+      },
+      "F2": {
+        "counts": {
+          "assigned": 3,
+          "finished": 0,
+          "failed": 0,
+          "unfinished": 3,
+          "decision_match": 0,
+          "qualified_decision_match": 0,
+          "evidence_exact": 0,
+          "wrong_substantive": 0,
+          "unnecessary_withholding": 0,
+          "invalid_citation_episodes": 0,
+          "unretrieved_citation_episodes": 0,
+          "episodes_using_checks": 0,
+          "observed_tool_errors": 30,
+          "model_calls": 18,
+          "source_queries": 10,
+          "checks": 0,
+          "tool_calls": 33,
+          "query_revisions": 6,
+          "calls_with_metadata": 18,
+          "calls_without_metadata": 0,
+          "call_failure_artifacts": 0
+        },
+        "terminal_statuses": {
+          "tool_budget_exhausted": 3
+        },
+        "check_results": {},
+        "reported_cost_usd": 0.0094968,
+        "decision_match_denominator": 3,
+        "rate": 0.0
+      },
+      "F3": {
+        "counts": {
+          "assigned": 3,
+          "finished": 0,
+          "failed": 0,
+          "unfinished": 3,
+          "decision_match": 0,
+          "qualified_decision_match": 0,
+          "evidence_exact": 0,
+          "wrong_substantive": 0,
+          "unnecessary_withholding": 0,
+          "invalid_citation_episodes": 0,
+          "unretrieved_citation_episodes": 0,
+          "episodes_using_checks": 0,
+          "observed_tool_errors": 28,
+          "model_calls": 18,
+          "source_queries": 11,
+          "checks": 0,
+          "tool_calls": 33,
+          "query_revisions": 6,
+          "calls_with_metadata": 18,
+          "calls_without_metadata": 0,
+          "call_failure_artifacts": 0
+        },
+        "terminal_statuses": {
+          "tool_budget_exhausted": 3
+        },
+        "check_results": {},
+        "reported_cost_usd": 0.00793965,
+        "decision_match_denominator": 3,
+        "rate": 0.0
+      },
+      "M1": {
+        "counts": {
+          "assigned": 3,
+          "finished": 3,
+          "failed": 0,
+          "unfinished": 0,
+          "decision_match": 1,
+          "qualified_decision_match": 1,
+          "evidence_exact": 1,
+          "wrong_substantive": 0,
+          "unnecessary_withholding": 1,
+          "invalid_citation_episodes": 0,
+          "unretrieved_citation_episodes": 0,
+          "episodes_using_checks": 0,
+          "observed_tool_errors": 2,
+          "model_calls": 14,
+          "source_queries": 11,
+          "checks": 0,
+          "tool_calls": 14,
+          "query_revisions": 3,
+          "calls_with_metadata": 14,
+          "calls_without_metadata": 0,
+          "call_failure_artifacts": 0
+        },
+        "terminal_statuses": {
+          "finished": 3
+        },
+        "check_results": {},
+        "reported_cost_usd": 0.0042168,
+        "decision_match_denominator": 3,
+        "rate": 0.3333333333333333
+      },
+      "M2": {
+        "counts": {
+          "assigned": 3,
+          "finished": 0,
+          "failed": 0,
+          "unfinished": 3,
+          "decision_match": 0,
+          "qualified_decision_match": 0,
+          "evidence_exact": 0,
+          "wrong_substantive": 0,
+          "unnecessary_withholding": 0,
+          "invalid_citation_episodes": 0,
+          "unretrieved_citation_episodes": 0,
+          "episodes_using_checks": 0,
+          "observed_tool_errors": 30,
+          "model_calls": 11,
+          "source_queries": 9,
+          "checks": 0,
+          "tool_calls": 33,
+          "query_revisions": 6,
+          "calls_with_metadata": 11,
+          "calls_without_metadata": 0,
+          "call_failure_artifacts": 0
+        },
+        "terminal_statuses": {
+          "tool_budget_exhausted": 3
+        },
+        "check_results": {},
+        "reported_cost_usd": 0.006,
+        "decision_match_denominator": 3,
+        "rate": 0.0
+      },
+      "M3": {
+        "counts": {
+          "assigned": 3,
+          "finished": 3,
+          "failed": 0,
+          "unfinished": 0,
+          "decision_match": 1,
+          "qualified_decision_match": 1,
+          "evidence_exact": 1,
+          "wrong_substantive": 0,
+          "unnecessary_withholding": 1,
+          "invalid_citation_episodes": 0,
+          "unretrieved_citation_episodes": 0,
+          "episodes_using_checks": 0,
+          "observed_tool_errors": 0,
+          "model_calls": 12,
+          "source_queries": 9,
+          "checks": 0,
+          "tool_calls": 12,
+          "query_revisions": 6,
+          "calls_with_metadata": 12,
+          "calls_without_metadata": 0,
+          "call_failure_artifacts": 0
+        },
+        "terminal_statuses": {
+          "finished": 3
+        },
+        "check_results": {},
+        "reported_cost_usd": 0.0040245,
+        "decision_match_denominator": 3,
+        "rate": 0.3333333333333333
+      }
+    }
+  },
+  "repeated_assignments": [],
+  "limitations": [
+    "All assigned rows retained; repeated run assignments are not deduplicated or independent trials.",
+    "Decision agreement excludes citations; qualified agreement additionally requires caveat terms. Evidence equality and invalid/unretrieved citations reported separately.",
+    "Reported costs sum saved call metadata only; missing metadata and unresolved reservations are not zero-cost evidence. No ledger reservation is refunded.",
+    "Observed tool errors and declared interpretations do not independently identify semantic interpretation errors or causal repairs.",
+    "Consumed synthetic development references measure authored contract agreement, not external business truth."
+  ],
+  "input_policy_limitation": {
+    "detected_during_run": true,
+    "affected_cases": [
+      "case01",
+      "case02",
+      "case03"
+    ],
+    "evidence": "public_policies.impact.rule says reversing part_of edges, while source part_of subject=part-A object=assembly requires forward part_of and reverse contains. Natural-language high-level follow to containing products conflicts with explicit reversal clause.",
+    "handling": "Preserve frozen run and all54 assignments. Do not repair runtime or rerun against gold. Report all-arm M1 outcomes as input-policy-compromised; remaining15cases separate descriptive subtotal, not replacement predeclared primary outcome.",
+    "future": "Fix public relation direction in new version before any new confirmatory run; first inspect all declaration and reference consistency."
+  },
+  "ledger": {
+    "protocol": "llm-ontology-tools-1",
+    "max_calls": 324,
+    "max_reserved_usd": 1.5,
+    "attempts": 253,
+    "reserved_usd": 0.84940785,
+    "reported_usd": 0.09770355000000001
+  },
+  "rows": [
+    {
+      "run": "runs/20261015T080650Z-ontology-tools-smoke",
+      "episode_id": "case01-A",
+      "case_id": "case01",
+      "arm": "A",
+      "family": "M1",
+      "scenario": "transitive_alias_success",
+      "question": "As of 2026-10-12, which of product-X and product-Y are potentially affected by a change to part-A under the published BOM policy?",
+      "expected": {
+        "status": "known",
+        "value": [
+          "product-X"
+        ],
+        "evidence_ids": [
+          "b1",
+          "b2"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying BOM policy",
+          "subject_ids": [
+            "product-X",
+            "product-Y"
+          ],
+          "reference_date": "2026-10-12",
+          "conditions": "Unable to retrieve information regarding the relationship of products to part-A under the BOM policy."
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": true,
+      "counts": {
+        "model_calls": 6,
+        "source_queries": 4,
+        "checks": 0,
+        "tool_calls": 6,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 6,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0013464,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080650Z-ontology-tools-smoke",
+      "episode_id": "case01-B",
+      "case_id": "case01",
+      "arm": "B",
+      "family": "M1",
+      "scenario": "transitive_alias_success",
+      "question": "As of 2026-10-12, which of product-X and product-Y are potentially affected by a change to part-A under the published BOM policy?",
+      "expected": {
+        "status": "known",
+        "value": [
+          "product-X"
+        ],
+        "evidence_ids": [
+          "b1",
+          "b2"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying for affected products",
+          "subject_ids": [
+            "part-A"
+          ],
+          "reference_date": "2026-10-12",
+          "conditions": "published BOM policy"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": true,
+      "counts": {
+        "model_calls": 6,
+        "source_queries": 4,
+        "checks": 0,
+        "tool_calls": 6,
+        "query_revisions": 1
+      },
+      "calls_with_metadata": 6,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.00203865,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080650Z-ontology-tools-smoke",
+      "episode_id": "case01-C",
+      "case_id": "case01",
+      "arm": "C",
+      "family": "M1",
+      "scenario": "transitive_alias_success",
+      "question": "As of 2026-10-12, which of product-X and product-Y are potentially affected by a change to part-A under the published BOM policy?",
+      "expected": {
+        "status": "known",
+        "value": [
+          "product-X"
+        ],
+        "evidence_ids": [
+          "b1",
+          "b2"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying BOM for products affected by part-A",
+          "snapshot_date": "2026-10-12"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": true,
+      "counts": {
+        "model_calls": 5,
+        "source_queries": 4,
+        "checks": 0,
+        "tool_calls": 5,
+        "query_revisions": 1
+      },
+      "calls_with_metadata": 5,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.00153435,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case06-A",
+      "case_id": "case06",
+      "arm": "A",
+      "family": "M2",
+      "scenario": "explicit_policy_failure",
+      "question": "As of 2026-10-12, is replacement-A eligible under the published 0.1 mm tolerance, cert-A certificate and interface-A compatibility requirements?",
+      "expected": {
+        "status": "blocked",
+        "value": null,
+        "evidence_ids": [
+          "c1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {},
+      "terminal_status": "tool_budget_exhausted",
+      "finished": false,
+      "failed": false,
+      "unfinished": true,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 3,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 11,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 3,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0015162,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case06-C",
+      "case_id": "case06",
+      "arm": "C",
+      "family": "M2",
+      "scenario": "explicit_policy_failure",
+      "question": "As of 2026-10-12, is replacement-A eligible under the published 0.1 mm tolerance, cert-A certificate and interface-A compatibility requirements?",
+      "expected": {
+        "status": "blocked",
+        "value": null,
+        "evidence_ids": [
+          "c1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {},
+      "terminal_status": "tool_budget_exhausted",
+      "finished": false,
+      "failed": false,
+      "unfinished": true,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 3,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 11,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 3,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.00167325,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case11-C",
+      "case_id": "case11",
+      "arm": "C",
+      "family": "F1",
+      "scenario": "lapsed_reported_parent",
+      "question": "As of 2026-10-12, what direct accounting parent does LEI-A report? Report facts with registration caveats, without substituting the internal-review eligibility rule.",
+      "expected": {
+        "status": "known",
+        "value": "LEI-P",
+        "evidence_ids": [
+          "r1"
+        ],
+        "required_caveat_terms": [
+          "LAPSED"
+        ]
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying for direct accounting parent",
+          "subject_ids": [
+            "LEI-A"
+          ],
+          "reference_date": "2026-10-12",
+          "conditions": "no evidence found for direct accounting parent"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": false,
+      "caveats_match": false,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": true,
+      "counts": {
+        "model_calls": 6,
+        "source_queries": 4,
+        "checks": 0,
+        "tool_calls": 6,
+        "query_revisions": 0
+      },
+      "calls_with_metadata": 6,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0020796,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case15-A",
+      "case_id": "case15",
+      "arm": "A",
+      "family": "F2",
+      "scenario": "conflicting_ultimate",
+      "question": "As of 2026-10-12, do LEI-A and LEI-B report the same explicit ultimate accounting parent under the published reported-fact policy?",
+      "expected": {
+        "status": "conflict",
+        "value": null,
+        "evidence_ids": [
+          "r1",
+          "r2"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [
+          "No records found for LEI-A and LEI-B under the specified conditions."
+        ],
+        "interpretation": {
+          "role": "finalizing query results",
+          "LEI-A": "urn:business-questions:record/LEI-A",
+          "LEI-B": "urn:business-questions:record/LEI-B",
+          "snapshot_date": "2026-10-12"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 5,
+        "source_queries": 4,
+        "checks": 0,
+        "tool_calls": 7,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 5,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.00282495,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case17-A",
+      "case_id": "case17",
+      "arm": "A",
+      "family": "F3",
+      "scenario": "stale_relationship",
+      "question": "As of 2026-10-12, is LEI-A ready for internal relationship review under the published ACTIVE/ISSUED entity and PUBLISHED direct-accounting relationship policy?",
+      "expected": {
+        "status": "incomplete",
+        "value": null,
+        "evidence_ids": [
+          "e1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "review_required",
+        "value": null,
+        "evidence_ids": [
+          "e1"
+        ],
+        "caveats": [
+          "LAPSED relationships may still be reported facts."
+        ],
+        "interpretation": {
+          "role": "final assessment",
+          "subject_ids": "LEI-A",
+          "reference_date": "2026-10-12"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": true,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": true,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 6,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 8,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 6,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0016266,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case17-B",
+      "case_id": "case17",
+      "arm": "B",
+      "family": "F3",
+      "scenario": "stale_relationship",
+      "question": "As of 2026-10-12, is LEI-A ready for internal relationship review under the published ACTIVE/ISSUED entity and PUBLISHED direct-accounting relationship policy?",
+      "expected": {
+        "status": "incomplete",
+        "value": null,
+        "evidence_ids": [
+          "e1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {},
+      "terminal_status": "tool_budget_exhausted",
+      "finished": false,
+      "failed": false,
+      "unfinished": true,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 5,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 11,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 5,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0023604,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case02-A",
+      "case_id": "case02",
+      "arm": "A",
+      "family": "M1",
+      "scenario": "missing_evidence",
+      "question": "As of 2026-10-12, which of product-X and product-Y are potentially affected by a change to part-A under the published BOM policy?",
+      "expected": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying for products affected by part-A",
+          "date": "2026-10-12"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": true,
+      "caveats_match": true,
+      "qualified_decision_match": true,
+      "evidence_exact": true,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 5,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 5,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 5,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0010724999999999999,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case03-C",
+      "case_id": "case03",
+      "arm": "C",
+      "family": "M1",
+      "scenario": "conflicting_inclusion",
+      "question": "As of 2026-10-12, which of product-X and product-Y are potentially affected by a change to part-A under the published BOM policy?",
+      "expected": {
+        "status": "conflict",
+        "value": null,
+        "evidence_ids": [
+          "b1",
+          "b2"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying BOM for products affected by part-A",
+          "snapshot_date": "2026-10-12"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 5,
+        "source_queries": 4,
+        "checks": 0,
+        "tool_calls": 5,
+        "query_revisions": 1
+      },
+      "calls_with_metadata": 5,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.00137115,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case11-B",
+      "case_id": "case11",
+      "arm": "B",
+      "family": "F1",
+      "scenario": "lapsed_reported_parent",
+      "question": "As of 2026-10-12, what direct accounting parent does LEI-A report? Report facts with registration caveats, without substituting the internal-review eligibility rule.",
+      "expected": {
+        "status": "known",
+        "value": "LEI-P",
+        "evidence_ids": [
+          "r1"
+        ],
+        "required_caveat_terms": [
+          "LAPSED"
+        ]
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying for direct accounting parent",
+          "subject_id": "LEI-A",
+          "reference_date": "2026-10-12"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": false,
+      "caveats_match": false,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": true,
+      "counts": {
+        "model_calls": 6,
+        "source_queries": 4,
+        "checks": 0,
+        "tool_calls": 6,
+        "query_revisions": 1
+      },
+      "calls_with_metadata": 6,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0019761,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case18-A",
+      "case_id": "case18",
+      "arm": "A",
+      "family": "F3",
+      "scenario": "status_namespace_swap",
+      "question": "As of 2026-10-12, is LEI-A ready for internal relationship review under the published ACTIVE/ISSUED entity and PUBLISHED direct-accounting relationship policy?",
+      "expected": {
+        "status": "review_required",
+        "value": null,
+        "evidence_ids": [
+          "e1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying for LEI-A review readiness",
+          "subject_ids": [
+            "LEI-A"
+          ],
+          "reference_date": "2026-10-12",
+          "conditions": "unable to retrieve necessary data for assessment"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": true,
+      "counts": {
+        "model_calls": 5,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 7,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 5,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.00159735,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case14-A",
+      "case_id": "case14",
+      "arm": "A",
+      "family": "F2",
+      "scenario": "expired_second_parent",
+      "question": "As of 2026-10-12, do LEI-A and LEI-B report the same explicit ultimate accounting parent under the published reported-fact policy?",
+      "expected": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "query",
+          "subject_ids": [
+            "LEI-A",
+            "LEI-B"
+          ],
+          "reference_date": "2026-10-12",
+          "conditions": "No explicit ultimate accounting parent found for both LEI-A and LEI-B."
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": true,
+      "caveats_match": true,
+      "qualified_decision_match": true,
+      "evidence_exact": true,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 5,
+        "source_queries": 4,
+        "checks": 0,
+        "tool_calls": 7,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 5,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0027805499999999997,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case16-C",
+      "case_id": "case16",
+      "arm": "C",
+      "family": "F3",
+      "scenario": "complete_internal_review",
+      "question": "As of 2026-10-12, is LEI-A ready for internal relationship review under the published ACTIVE/ISSUED entity and PUBLISHED direct-accounting relationship policy?",
+      "expected": {
+        "status": "review_ready",
+        "value": null,
+        "evidence_ids": [
+          "e1",
+          "r1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {},
+      "terminal_status": "tool_budget_exhausted",
+      "finished": false,
+      "failed": false,
+      "unfinished": true,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 6,
+        "source_queries": 4,
+        "checks": 0,
+        "tool_calls": 11,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 6,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0028220999999999997,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case15-C",
+      "case_id": "case15",
+      "arm": "C",
+      "family": "F2",
+      "scenario": "conflicting_ultimate",
+      "question": "As of 2026-10-12, do LEI-A and LEI-B report the same explicit ultimate accounting parent under the published reported-fact policy?",
+      "expected": {
+        "status": "conflict",
+        "value": null,
+        "evidence_ids": [
+          "r1",
+          "r2"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {},
+      "terminal_status": "tool_budget_exhausted",
+      "finished": false,
+      "failed": false,
+      "unfinished": true,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 6,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 11,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 6,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.00280065,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case13-C",
+      "case_id": "case13",
+      "arm": "C",
+      "family": "F2",
+      "scenario": "same_group",
+      "question": "As of 2026-10-12, do LEI-A and LEI-B report the same explicit ultimate accounting parent under the published reported-fact policy?",
+      "expected": {
+        "status": "known",
+        "value": true,
+        "evidence_ids": [
+          "r1",
+          "r2"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {},
+      "terminal_status": "tool_budget_exhausted",
+      "finished": false,
+      "failed": false,
+      "unfinished": true,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 6,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 11,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 6,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.00377655,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case15-B",
+      "case_id": "case15",
+      "arm": "B",
+      "family": "F2",
+      "scenario": "conflicting_ultimate",
+      "question": "As of 2026-10-12, do LEI-A and LEI-B report the same explicit ultimate accounting parent under the published reported-fact policy?",
+      "expected": {
+        "status": "conflict",
+        "value": null,
+        "evidence_ids": [
+          "r1",
+          "r2"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [
+          "No ultimate accounting parent found for LEI-A or LEI-B."
+        ],
+        "interpretation": {
+          "role": "querying ultimate accounting parents",
+          "subject_ids": [
+            "LEI-A",
+            "LEI-B"
+          ],
+          "reference_date": "2026-10-12",
+          "conditions": "published reported-fact policy"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 3,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 5,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 3,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.00173415,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case06-B",
+      "case_id": "case06",
+      "arm": "B",
+      "family": "M2",
+      "scenario": "explicit_policy_failure",
+      "question": "As of 2026-10-12, is replacement-A eligible under the published 0.1 mm tolerance, cert-A certificate and interface-A compatibility requirements?",
+      "expected": {
+        "status": "blocked",
+        "value": null,
+        "evidence_ids": [
+          "c1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {},
+      "terminal_status": "tool_budget_exhausted",
+      "finished": false,
+      "failed": false,
+      "unfinished": true,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 3,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 11,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 3,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0016854,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case05-A",
+      "case_id": "case05",
+      "arm": "A",
+      "family": "M2",
+      "scenario": "missing_certificate",
+      "question": "As of 2026-10-12, is replacement-A eligible under the published 0.1 mm tolerance, cert-A certificate and interface-A compatibility requirements?",
+      "expected": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [
+          "c1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {},
+      "terminal_status": "tool_budget_exhausted",
+      "finished": false,
+      "failed": false,
+      "unfinished": true,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 3,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 11,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 3,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.00153105,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case02-C",
+      "case_id": "case02",
+      "arm": "C",
+      "family": "M1",
+      "scenario": "missing_evidence",
+      "question": "As of 2026-10-12, which of product-X and product-Y are potentially affected by a change to part-A under the published BOM policy?",
+      "expected": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying BOM for products affected by part-A",
+          "snapshot_date": "2026-10-12",
+          "conditions": "products are product-X and product-Y"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": true,
+      "caveats_match": true,
+      "qualified_decision_match": true,
+      "evidence_exact": true,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 4,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 4,
+        "query_revisions": 1
+      },
+      "calls_with_metadata": 4,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0013113,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case12-B",
+      "case_id": "case12",
+      "arm": "B",
+      "family": "F1",
+      "scenario": "fund_manager_role",
+      "question": "As of 2026-10-12, what direct accounting parent does LEI-A report? Report facts with registration caveats, without substituting the internal-review eligibility rule.",
+      "expected": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [
+          "LAPSED"
+        ],
+        "interpretation": {
+          "role": "reporting",
+          "subject_id": "LEI-A",
+          "reference_date": "2026-10-12",
+          "conditions": "No direct accounting parent found with the specified conditions."
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": true,
+      "caveats_match": true,
+      "qualified_decision_match": true,
+      "evidence_exact": true,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 6,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 6,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 6,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0017376,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case17-C",
+      "case_id": "case17",
+      "arm": "C",
+      "family": "F3",
+      "scenario": "stale_relationship",
+      "question": "As of 2026-10-12, is LEI-A ready for internal relationship review under the published ACTIVE/ISSUED entity and PUBLISHED direct-accounting relationship policy?",
+      "expected": {
+        "status": "incomplete",
+        "value": null,
+        "evidence_ids": [
+          "e1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {},
+      "terminal_status": "tool_budget_exhausted",
+      "finished": false,
+      "failed": false,
+      "unfinished": true,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 6,
+        "source_queries": 4,
+        "checks": 0,
+        "tool_calls": 11,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 6,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0026163,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case05-B",
+      "case_id": "case05",
+      "arm": "B",
+      "family": "M2",
+      "scenario": "missing_certificate",
+      "question": "As of 2026-10-12, is replacement-A eligible under the published 0.1 mm tolerance, cert-A certificate and interface-A compatibility requirements?",
+      "expected": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [
+          "c1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {},
+      "terminal_status": "tool_budget_exhausted",
+      "finished": false,
+      "failed": false,
+      "unfinished": true,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 3,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 11,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 3,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0015504,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case11-A",
+      "case_id": "case11",
+      "arm": "A",
+      "family": "F1",
+      "scenario": "lapsed_reported_parent",
+      "question": "As of 2026-10-12, what direct accounting parent does LEI-A report? Report facts with registration caveats, without substituting the internal-review eligibility rule.",
+      "expected": {
+        "status": "known",
+        "value": "LEI-P",
+        "evidence_ids": [
+          "r1"
+        ],
+        "required_caveat_terms": [
+          "LAPSED"
+        ]
+      },
+      "answer": {
+        "status": "known",
+        "value": "LEI-P",
+        "evidence_ids": [],
+        "caveats": [
+          "LAPSED"
+        ],
+        "interpretation": {
+          "role": "reporting direct accounting parent",
+          "subject_ids": [
+            "LEI-A"
+          ],
+          "reference_date": "2026-10-12",
+          "conditions": "found a direct accounting parent with LAPSED registration status"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": true,
+      "caveats_match": true,
+      "qualified_decision_match": true,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 3,
+        "source_queries": 2,
+        "checks": 0,
+        "tool_calls": 3,
+        "query_revisions": 1
+      },
+      "calls_with_metadata": 3,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0007623,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case09-A",
+      "case_id": "case09",
+      "arm": "A",
+      "family": "M3",
+      "scenario": "conflicting_dependencies",
+      "question": "As of 2026-10-12, which work items require revalidation for the recorded changes under the published dependency policy?",
+      "expected": {
+        "status": "conflict",
+        "value": null,
+        "evidence_ids": [
+          "d2",
+          "d4",
+          "h1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [
+          "No valid queries returned results due to namespace errors."
+        ],
+        "interpretation": {
+          "role": "querying for work items requiring revalidation",
+          "snapshot_date": "2026-10-12"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 6,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 6,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 6,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.00144645,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case14-C",
+      "case_id": "case14",
+      "arm": "C",
+      "family": "F2",
+      "scenario": "expired_second_parent",
+      "question": "As of 2026-10-12, do LEI-A and LEI-B report the same explicit ultimate accounting parent under the published reported-fact policy?",
+      "expected": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "required_caveat_terms": []
+      },
+      "answer": {},
+      "terminal_status": "tool_budget_exhausted",
+      "finished": false,
+      "failed": false,
+      "unfinished": true,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 6,
+        "source_queries": 4,
+        "checks": 0,
+        "tool_calls": 11,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 6,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0029196,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case16-B",
+      "case_id": "case16",
+      "arm": "B",
+      "family": "F3",
+      "scenario": "complete_internal_review",
+      "question": "As of 2026-10-12, is LEI-A ready for internal relationship review under the published ACTIVE/ISSUED entity and PUBLISHED direct-accounting relationship policy?",
+      "expected": {
+        "status": "review_ready",
+        "value": null,
+        "evidence_ids": [
+          "e1",
+          "r1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [
+          "r1"
+        ],
+        "caveats": [
+          "LAPSED"
+        ],
+        "interpretation": {
+          "role": "finalizing review status",
+          "subject_ids": [
+            "LEI-A"
+          ],
+          "reference_date": "2026-10-12"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": true,
+      "counts": {
+        "model_calls": 3,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 5,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 3,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0009530999999999999,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case09-B",
+      "case_id": "case09",
+      "arm": "B",
+      "family": "M3",
+      "scenario": "conflicting_dependencies",
+      "question": "As of 2026-10-12, which work items require revalidation for the recorded changes under the published dependency policy?",
+      "expected": {
+        "status": "conflict",
+        "value": null,
+        "evidence_ids": [
+          "d2",
+          "d4",
+          "h1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "known",
+        "value": [
+          {
+            "workitem": "fit-review",
+            "field": "spec.tolerance"
+          },
+          {
+            "workitem": "certificate-review",
+            "field": "certificate.validity"
+          },
+          {
+            "workitem": "assembly-review",
+            "field": "bom.member"
+          }
+        ],
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying for work items requiring revalidation",
+          "snapshot_date": "2026-10-12"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": true,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 2,
+        "source_queries": 1,
+        "checks": 0,
+        "tool_calls": 2,
+        "query_revisions": 0
+      },
+      "calls_with_metadata": 2,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.00065835,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case12-A",
+      "case_id": "case12",
+      "arm": "A",
+      "family": "F1",
+      "scenario": "fund_manager_role",
+      "question": "As of 2026-10-12, what direct accounting parent does LEI-A report? Report facts with registration caveats, without substituting the internal-review eligibility rule.",
+      "expected": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying for direct accounting parent",
+          "subject_ids": [
+            "LEI-A"
+          ],
+          "reference_date": "2026-10-12",
+          "conditions": "no direct accounting parent found"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": true,
+      "caveats_match": true,
+      "qualified_decision_match": true,
+      "evidence_exact": true,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 5,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 5,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 5,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0014593499999999999,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case04-A",
+      "case_id": "case04",
+      "arm": "A",
+      "family": "M2",
+      "scenario": "equivalent_unit_success",
+      "question": "As of 2026-10-12, is replacement-A eligible under the published 0.1 mm tolerance, cert-A certificate and interface-A compatibility requirements?",
+      "expected": {
+        "status": "eligible",
+        "value": null,
+        "evidence_ids": [
+          "c1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {},
+      "terminal_status": "tool_budget_exhausted",
+      "finished": false,
+      "failed": false,
+      "unfinished": true,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 3,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 11,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 3,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0012741,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case18-C",
+      "case_id": "case18",
+      "arm": "C",
+      "family": "F3",
+      "scenario": "status_namespace_swap",
+      "question": "As of 2026-10-12, is LEI-A ready for internal relationship review under the published ACTIVE/ISSUED entity and PUBLISHED direct-accounting relationship policy?",
+      "expected": {
+        "status": "review_required",
+        "value": null,
+        "evidence_ids": [
+          "e1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {},
+      "terminal_status": "tool_budget_exhausted",
+      "finished": false,
+      "failed": false,
+      "unfinished": true,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 6,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 11,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 6,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.00250125,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case14-B",
+      "case_id": "case14",
+      "arm": "B",
+      "family": "F2",
+      "scenario": "expired_second_parent",
+      "question": "As of 2026-10-12, do LEI-A and LEI-B report the same explicit ultimate accounting parent under the published reported-fact policy?",
+      "expected": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "required_caveat_terms": []
+      },
+      "answer": {},
+      "terminal_status": "tool_budget_exhausted",
+      "finished": false,
+      "failed": false,
+      "unfinished": true,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 6,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 11,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 6,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0032691,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case03-B",
+      "case_id": "case03",
+      "arm": "B",
+      "family": "M1",
+      "scenario": "conflicting_inclusion",
+      "question": "As of 2026-10-12, which of product-X and product-Y are potentially affected by a change to part-A under the published BOM policy?",
+      "expected": {
+        "status": "conflict",
+        "value": null,
+        "evidence_ids": [
+          "b1",
+          "b2"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying BOM for part-A",
+          "subject_ids": [],
+          "reference_date": "2026-10-12",
+          "conditions": "No records found for products affected by part-A under the BOM policy."
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 2,
+        "source_queries": 4,
+        "checks": 0,
+        "tool_calls": 5,
+        "query_revisions": 0
+      },
+      "calls_with_metadata": 2,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0007732500000000001,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case03-A",
+      "case_id": "case03",
+      "arm": "A",
+      "family": "M1",
+      "scenario": "conflicting_inclusion",
+      "question": "As of 2026-10-12, which of product-X and product-Y are potentially affected by a change to part-A under the published BOM policy?",
+      "expected": {
+        "status": "conflict",
+        "value": null,
+        "evidence_ids": [
+          "b1",
+          "b2"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying",
+          "subject_ids": [
+            "part-A"
+          ],
+          "reference_date": "2026-10-12",
+          "conditions": "No products found related to part-A under the BOM policy."
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 5,
+        "source_queries": 4,
+        "checks": 0,
+        "tool_calls": 5,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 5,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.00124965,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case04-C",
+      "case_id": "case04",
+      "arm": "C",
+      "family": "M2",
+      "scenario": "equivalent_unit_success",
+      "question": "As of 2026-10-12, is replacement-A eligible under the published 0.1 mm tolerance, cert-A certificate and interface-A compatibility requirements?",
+      "expected": {
+        "status": "eligible",
+        "value": null,
+        "evidence_ids": [
+          "c1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {},
+      "terminal_status": "tool_budget_exhausted",
+      "finished": false,
+      "failed": false,
+      "unfinished": true,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 4,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 11,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 4,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.00216975,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case10-B",
+      "case_id": "case10",
+      "arm": "B",
+      "family": "F1",
+      "scenario": "direct_parent",
+      "question": "As of 2026-10-12, what direct accounting parent does LEI-A report? Report facts with registration caveats, without substituting the internal-review eligibility rule.",
+      "expected": {
+        "status": "known",
+        "value": "LEI-P",
+        "evidence_ids": [
+          "r1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying for direct accounting parent",
+          "subject_id": "LEI-A",
+          "reference_date": "2026-10-12"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": true,
+      "counts": {
+        "model_calls": 6,
+        "source_queries": 4,
+        "checks": 0,
+        "tool_calls": 6,
+        "query_revisions": 1
+      },
+      "calls_with_metadata": 6,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0018311999999999998,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case08-C",
+      "case_id": "case08",
+      "arm": "C",
+      "family": "M3",
+      "scenario": "missing_dependency_declaration",
+      "question": "As of 2026-10-12, which work items require revalidation for the recorded changes under the published dependency policy?",
+      "expected": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying for work items requiring revalidation",
+          "snapshot_date": "2026-10-12"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": true,
+      "caveats_match": true,
+      "qualified_decision_match": true,
+      "evidence_exact": true,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 4,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 4,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 4,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0012993,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case12-C",
+      "case_id": "case12",
+      "arm": "C",
+      "family": "F1",
+      "scenario": "fund_manager_role",
+      "question": "As of 2026-10-12, what direct accounting parent does LEI-A report? Report facts with registration caveats, without substituting the internal-review eligibility rule.",
+      "expected": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying for direct accounting parent",
+          "subject_ids": [
+            "LEI-A"
+          ],
+          "reference_date": "2026-10-12",
+          "conditions": "no valid evidence retrieved due to query errors"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": true,
+      "caveats_match": true,
+      "qualified_decision_match": true,
+      "evidence_exact": true,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 6,
+        "source_queries": 4,
+        "checks": 0,
+        "tool_calls": 6,
+        "query_revisions": 0
+      },
+      "calls_with_metadata": 6,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0019362,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case07-B",
+      "case_id": "case07",
+      "arm": "B",
+      "family": "M3",
+      "scenario": "dependency_scoped_success",
+      "question": "As of 2026-10-12, which work items require revalidation for the recorded changes under the published dependency policy?",
+      "expected": {
+        "status": "known",
+        "value": [
+          "fit-review"
+        ],
+        "evidence_ids": [
+          "d1",
+          "h1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "known",
+        "value": [
+          {
+            "workitem": "fit-review",
+            "field": "spec.tolerance"
+          },
+          {
+            "workitem": "certificate-review",
+            "field": "certificate.validity"
+          },
+          {
+            "workitem": "assembly-review",
+            "field": "bom.member"
+          }
+        ],
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying for work items requiring revalidation",
+          "date": "2026-10-12"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": true,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 4,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 4,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 4,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.00104055,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case18-B",
+      "case_id": "case18",
+      "arm": "B",
+      "family": "F3",
+      "scenario": "status_namespace_swap",
+      "question": "As of 2026-10-12, is LEI-A ready for internal relationship review under the published ACTIVE/ISSUED entity and PUBLISHED direct-accounting relationship policy?",
+      "expected": {
+        "status": "review_required",
+        "value": null,
+        "evidence_ids": [
+          "e1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "review_required",
+        "value": null,
+        "evidence_ids": [
+          "r1"
+        ],
+        "caveats": [
+          "LAPSED"
+        ],
+        "interpretation": {
+          "role": "internal review",
+          "subject_ids": [
+            "LEI-A"
+          ],
+          "reference_date": "2026-10-12",
+          "conditions": "Entity status failure or conflicting reports yields review_required."
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": true,
+      "caveats_match": true,
+      "qualified_decision_match": true,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 3,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 5,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 3,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0010113,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case10-A",
+      "case_id": "case10",
+      "arm": "A",
+      "family": "F1",
+      "scenario": "direct_parent",
+      "question": "As of 2026-10-12, what direct accounting parent does LEI-A report? Report facts with registration caveats, without substituting the internal-review eligibility rule.",
+      "expected": {
+        "status": "known",
+        "value": "LEI-P",
+        "evidence_ids": [
+          "r1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "known",
+        "value": "LEI-P",
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "reporting direct accounting parent",
+          "subject_ids": [
+            "LEI-A"
+          ],
+          "reference_date": "2026-10-12",
+          "conditions": "found a direct accounting relationship with registration status PUBLISHED"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": true,
+      "caveats_match": true,
+      "qualified_decision_match": true,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 3,
+        "source_queries": 2,
+        "checks": 0,
+        "tool_calls": 3,
+        "query_revisions": 1
+      },
+      "calls_with_metadata": 3,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0007588499999999999,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case07-A",
+      "case_id": "case07",
+      "arm": "A",
+      "family": "M3",
+      "scenario": "dependency_scoped_success",
+      "question": "As of 2026-10-12, which work items require revalidation for the recorded changes under the published dependency policy?",
+      "expected": {
+        "status": "known",
+        "value": [
+          "fit-review"
+        ],
+        "evidence_ids": [
+          "d1",
+          "h1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying for work items requiring revalidation",
+          "date": "2026-10-12",
+          "reason": "Unable to retrieve data due to query errors."
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": true,
+      "counts": {
+        "model_calls": 6,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 6,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 6,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0012882,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case02-B",
+      "case_id": "case02",
+      "arm": "B",
+      "family": "M1",
+      "scenario": "missing_evidence",
+      "question": "As of 2026-10-12, which of product-X and product-Y are potentially affected by a change to part-A under the published BOM policy?",
+      "expected": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [
+          "Incomplete BOM scope yields unknown."
+        ],
+        "interpretation": {
+          "role": "final assessment of product impact",
+          "snapshot_date": "2026-10-12",
+          "context": "No products were found to be affected by changes to part-A under the published BOM policy."
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": true,
+      "caveats_match": true,
+      "qualified_decision_match": true,
+      "evidence_exact": true,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 4,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 4,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 4,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0014510999999999999,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case04-B",
+      "case_id": "case04",
+      "arm": "B",
+      "family": "M2",
+      "scenario": "equivalent_unit_success",
+      "question": "As of 2026-10-12, is replacement-A eligible under the published 0.1 mm tolerance, cert-A certificate and interface-A compatibility requirements?",
+      "expected": {
+        "status": "eligible",
+        "value": null,
+        "evidence_ids": [
+          "c1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {},
+      "terminal_status": "tool_budget_exhausted",
+      "finished": false,
+      "failed": false,
+      "unfinished": true,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 3,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 11,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 3,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.00154875,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case07-C",
+      "case_id": "case07",
+      "arm": "C",
+      "family": "M3",
+      "scenario": "dependency_scoped_success",
+      "question": "As of 2026-10-12, which work items require revalidation for the recorded changes under the published dependency policy?",
+      "expected": {
+        "status": "known",
+        "value": [
+          "fit-review"
+        ],
+        "evidence_ids": [
+          "d1",
+          "h1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying for work items requiring revalidation",
+          "snapshot_date": "2026-10-12"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": true,
+      "counts": {
+        "model_calls": 4,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 4,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 4,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.00153945,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case16-A",
+      "case_id": "case16",
+      "arm": "A",
+      "family": "F3",
+      "scenario": "complete_internal_review",
+      "question": "As of 2026-10-12, is LEI-A ready for internal relationship review under the published ACTIVE/ISSUED entity and PUBLISHED direct-accounting relationship policy?",
+      "expected": {
+        "status": "review_ready",
+        "value": null,
+        "evidence_ids": [
+          "e1",
+          "r1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "review_required",
+        "value": null,
+        "evidence_ids": [
+          "urn:business-questions:record/e1"
+        ],
+        "caveats": [
+          "LAPSED relationships may still be reported facts."
+        ],
+        "interpretation": {
+          "role": "finalizing",
+          "subject_ids": "LEI-A",
+          "reference_date": "2026-10-12",
+          "conditions": "LEI-A has ACTIVE legal status and ISSUED registration status, but the status of the DIRECT_ACCOUNTING relationship is unclear."
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [
+        "urn:business-questions:record/e1"
+      ],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [
+        "urn:business-questions:record/e1"
+      ],
+      "wrong_substantive": true,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 6,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 8,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 6,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0019474499999999999,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case13-B",
+      "case_id": "case13",
+      "arm": "B",
+      "family": "F2",
+      "scenario": "same_group",
+      "question": "As of 2026-10-12, do LEI-A and LEI-B report the same explicit ultimate accounting parent under the published reported-fact policy?",
+      "expected": {
+        "status": "known",
+        "value": true,
+        "evidence_ids": [
+          "r1",
+          "r2"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {},
+      "terminal_status": "tool_budget_exhausted",
+      "finished": false,
+      "failed": false,
+      "unfinished": true,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 6,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 11,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 6,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.00392055,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case05-C",
+      "case_id": "case05",
+      "arm": "C",
+      "family": "M2",
+      "scenario": "missing_certificate",
+      "question": "As of 2026-10-12, is replacement-A eligible under the published 0.1 mm tolerance, cert-A certificate and interface-A compatibility requirements?",
+      "expected": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [
+          "c1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {},
+      "terminal_status": "tool_budget_exhausted",
+      "finished": false,
+      "failed": false,
+      "unfinished": true,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 4,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 11,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 4,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.002157,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case08-A",
+      "case_id": "case08",
+      "arm": "A",
+      "family": "M3",
+      "scenario": "missing_dependency_declaration",
+      "question": "As of 2026-10-12, which work items require revalidation for the recorded changes under the published dependency policy?",
+      "expected": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying for work items requiring revalidation",
+          "date": "2026-10-12"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": true,
+      "caveats_match": true,
+      "qualified_decision_match": true,
+      "evidence_exact": true,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 6,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 6,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 6,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.001281,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case09-C",
+      "case_id": "case09",
+      "arm": "C",
+      "family": "M3",
+      "scenario": "conflicting_dependencies",
+      "question": "As of 2026-10-12, which work items require revalidation for the recorded changes under the published dependency policy?",
+      "expected": {
+        "status": "conflict",
+        "value": null,
+        "evidence_ids": [
+          "d2",
+          "d4",
+          "h1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying for work items requiring revalidation",
+          "snapshot_date": "2026-10-12"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 4,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 4,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 4,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.00118575,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case08-B",
+      "case_id": "case08",
+      "arm": "B",
+      "family": "M3",
+      "scenario": "missing_dependency_declaration",
+      "question": "As of 2026-10-12, which work items require revalidation for the recorded changes under the published dependency policy?",
+      "expected": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying for work items requiring revalidation",
+          "date": "2026-10-12"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": true,
+      "caveats_match": true,
+      "qualified_decision_match": true,
+      "evidence_exact": true,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 4,
+        "source_queries": 3,
+        "checks": 0,
+        "tool_calls": 4,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 4,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.00119115,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case10-C",
+      "case_id": "case10",
+      "arm": "C",
+      "family": "F1",
+      "scenario": "direct_parent",
+      "question": "As of 2026-10-12, what direct accounting parent does LEI-A report? Report facts with registration caveats, without substituting the internal-review eligibility rule.",
+      "expected": {
+        "status": "known",
+        "value": "LEI-P",
+        "evidence_ids": [
+          "r1"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "evidence_ids": [],
+        "caveats": [],
+        "interpretation": {
+          "role": "querying for direct accounting parent",
+          "subject_ids": [
+            "LEI-A"
+          ],
+          "reference_date": "2026-10-12",
+          "conditions": "unable to retrieve direct accounting parent due to query errors"
+        }
+      },
+      "terminal_status": "finished",
+      "finished": true,
+      "failed": false,
+      "unfinished": false,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": true,
+      "counts": {
+        "model_calls": 6,
+        "source_queries": 4,
+        "checks": 0,
+        "tool_calls": 6,
+        "query_revisions": 0
+      },
+      "calls_with_metadata": 6,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.0019278,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    },
+    {
+      "run": "runs/20261015T080850Z-ontology-tools-main",
+      "episode_id": "case13-A",
+      "case_id": "case13",
+      "arm": "A",
+      "family": "F2",
+      "scenario": "same_group",
+      "question": "As of 2026-10-12, do LEI-A and LEI-B report the same explicit ultimate accounting parent under the published reported-fact policy?",
+      "expected": {
+        "status": "known",
+        "value": true,
+        "evidence_ids": [
+          "r1",
+          "r2"
+        ],
+        "required_caveat_terms": []
+      },
+      "answer": {},
+      "terminal_status": "tool_budget_exhausted",
+      "finished": false,
+      "failed": false,
+      "unfinished": true,
+      "decision_match": false,
+      "caveats_match": true,
+      "qualified_decision_match": false,
+      "evidence_exact": false,
+      "citation_schema_valid": true,
+      "invalid_citations": [],
+      "citation_source_check": "checked",
+      "unretrieved_citations": [],
+      "wrong_substantive": false,
+      "unnecessary_withholding": false,
+      "counts": {
+        "model_calls": 6,
+        "source_queries": 4,
+        "checks": 0,
+        "tool_calls": 11,
+        "query_revisions": 2
+      },
+      "calls_with_metadata": 6,
+      "calls_without_metadata": 0,
+      "call_failure_artifacts": 0,
+      "reported_cost_usd": 0.00358815,
+      "metadata_missing_cost": 0,
+      "event_read_errors": [],
+      "error_type": null,
+      "semantic_stage_attribution": "unverified_without_independent_intent_and_evidence_adjudication"
+    }
+  ],
+  "uncompromised_family_subtotal": {
+    "A": {
+      "assigned": 15,
+      "decision_match": 5
+    },
+    "B": {
+      "assigned": 15,
+      "decision_match": 3
+    },
+    "C": {
+      "assigned": 15,
+      "decision_match": 2
+    }
+  },
+  "retrieval_diagnostics": {
+    "A": {
+      "episodes_with_nonempty_rows": 4,
+      "decision_matches_without_nonempty_rows": 4,
+      "any_successful_query": 10
+    },
+    "B": {
+      "episodes_with_nonempty_rows": 4,
+      "decision_matches_without_nonempty_rows": 3,
+      "any_successful_query": 12
+    },
+    "C": {
+      "episodes_with_nonempty_rows": 0,
+      "decision_matches_without_nonempty_rows": 3,
+      "any_successful_query": 7
+    }
+  }
+}

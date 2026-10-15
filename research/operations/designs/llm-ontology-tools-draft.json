@@ -1,0 +1,154 @@
+{
+  "protocol": "llm-ontology-tools-draft-1",
+  "status": "design_only_not_implemented",
+  "paid_execution": "disabled_pending_separate_authorization_and_frozen_budget",
+  "objective": "Measure whether explicit ontology information and callable validation help an LLM interpret business questions, construct queries, retrieve applicable evidence and repair errors; do not presume RDF or SHACL superiority.",
+  "question_families": [
+    "M1 affected products after part change",
+    "M2 declared replacement conditions",
+    "M3 dependent revalidation work items",
+    "F1 reported direct accounting parent",
+    "F2 same reported ultimate accounting parent",
+    "F3 internal relationship-review readiness"
+  ],
+  "boundaries": {
+    "existing_rule_pilot": "Tool behavior baseline only, not LLM evaluation or held-out benchmark",
+    "runtime_input": "Natural-language question plus identical source access and common operational limits; no gold task ID, scenario label, expected answer, evaluator relation mapping or preselected workflow. Public schema and declared policies may be discoverable via tools.",
+    "dates": "Question supplies reference date where needed; absent/ambiguous dates permit clarification or qualified answer, never silent gold date insertion.",
+    "finance": "Separate a recorded relationship with publication status from policy eligibility for completing a review. LAPSED alone is not factual falsity or source absence.",
+    "manufacturing": "Potential impact and declared replacement conditions, not physical simulation or production approval.",
+    "real_sources": "Existing GLEIF is a consumed convenience cohort; synthetic manufacturing remains synthetic; no new independent benchmark claim."
+  },
+  "arms": [
+    {
+      "id": "A",
+      "name": "LLM plus source tools",
+      "available": "Shared source schema descriptions, read-only query tool, identical syntax/runtime/resource errors, final-answer tool. No additional conceptual ontology or semantic validator feedback."
+    },
+    {
+      "id": "B",
+      "name": "LLM plus ontology information",
+      "available": "A plus explicit concept/role definitions, unit relationships and published policy semantics, accessible before planning and querying. No semantic validator feedback."
+    },
+    {
+      "id": "C",
+      "name": "LLM plus ontology and callable checks",
+      "available": "B plus check_query_contract and check_evidence tools. LLM selects when to call them and whether to repair. Tool findings are returned to the model, never silently substituted for its output."
+    }
+  ],
+  "controls": {
+    "backend": "Hold the same RDFLib snapshot/SPARQL backend fixed across A/B/C first; this is an orchestration/semantic-information comparison, not JSON vs RDF or engine superiority. A gets enough physical schema to issue valid queries.",
+    "model": "One pinned OpenRouter experimental model and identical sampling settings per comparison; model/version/token and monetary cap frozen before any paid run. None selected or called in this design step.",
+    "conditions": "Same question/source snapshot and budget per arm, separate conversations, randomized arm order. Store all attempts and costs.",
+    "budget_draft": {
+      "episodes": 18,
+      "composition": "six families x three declared situations each, development only; final fixture set not generated",
+      "arms": 3,
+      "repeats": 1,
+      "max_model_turns_per_episode": 6,
+      "max_source_queries_per_episode": 4,
+      "max_semantic_checks_per_episode": 4,
+      "max_total_tool_calls_per_episode": 10,
+      "max_query_repair_attempts": 2,
+      "max_query_rows": 100,
+      "query_timeout_seconds": 5,
+      "wall_seconds_per_episode": 120,
+      "maximum_model_calls_if_enabled": 324,
+      "note": "Planned ceilings, not authorized spending; all model turns including repairs count. Tool/model errors consume limits. Exhaustion is recorded, not removed from denominator."
+    },
+    "repair_fairness": "A and B can also self-review and repair under the same turn/query budget. C uses its budget for checker calls; report actual usage and quality/cost tradeoffs rather than assuming equal realized costs.",
+    "counterfactual": "Optional saved-query shadow checking only after episode freeze, offline and separately labelled; no retroactive effect on model output or main accuracy denominator."
+  },
+  "flow": [
+    "LLM reads natural-language question",
+    "LLM discovers schema/source and optionally ontology",
+    "LLM emits structured interpretation and rationale for intended tool action",
+    "LLM constructs SELECT/ASK query using read-only query tool",
+    "Optional C query check: compare declared interpretation against query and ontology",
+    "Execute query with common limits; return rows, source IDs, truncation/timeout metadata",
+    "Optional C evidence check: validate declared constraints and report applicability/coverage limits",
+    "LLM chooses repair, further query, qualified response, clarification or abstention",
+    "Preserve final structured decision and user-facing text plus trace"
+  ],
+  "validator_contract": {
+    "query_syntax": "Parse SPARQL and enforce read-only local SELECT/ASK; reject update/service/external access and query plans beyond resource policy in all arms. This common guard is operational, not an ontology treatment.",
+    "query_semantics": "Check declared plan role/property/domain/range/date/unit compatibility only where supported by ontology and query analysis. Return pass/fail/unknown plus rule IDs and witnesses. Unsupported SPARQL constructs are unknown, not valid.",
+    "interpretation_limit": "The interpretation is produced by the same model and can be wrong. A query consistent with a wrong interpretation can pass. Validators do not receive evaluator question intent. Score this common-mode failure externally.",
+    "shacl_scope": "Validate RDF evidence and/or RDF-encoded intermediate plan against published shapes where applicable. Keep syntactic parsing, SHACL conformance, ontology inference and external factual correctness distinct.",
+    "missingness": "A missing required property under a declared review contract is not proof the source fact is false. Distinguish source absence, retrieval omission and unknown coverage using source metadata, never evaluation gold at runtime.",
+    "result_completeness": "LIMIT/truncation or unsupported property paths cannot certify a complete impact list. Preserve these metadata in every arm.",
+    "feedback": "Return concise observations with checked scope, violated constraint IDs and source witnesses; do not supply reference answers, oracle repairs or hidden source values."
+  },
+  "event_schema": {
+    "fields": [
+      "episode_id",
+      "arm",
+      "sequence",
+      "timestamp_utc",
+      "event_type",
+      "parent_event_id",
+      "model_request_id",
+      "tool_call_id",
+      "input_artifact_hash",
+      "output_artifact_hash",
+      "query_text",
+      "source_snapshot_hash",
+      "returned_source_ids",
+      "result_truncated",
+      "validator_rule_ids",
+      "validation_status",
+      "elapsed_ms",
+      "token_usage",
+      "provider_cost",
+      "error_type"
+    ],
+    "event_types": [
+      "question_received",
+      "model_interpretation",
+      "tool_requested",
+      "query_check_result",
+      "query_result",
+      "evidence_check_result",
+      "repair_requested",
+      "final_answer",
+      "episode_stopped"
+    ],
+    "final_answer_fields": [
+      "status",
+      "answer",
+      "evidence_ids",
+      "source_status_caveats",
+      "remaining_uncertainty"
+    ],
+    "storage": "Secrets excluded; prompts, completions, calls, tool errors and failed episodes retained. Reasoning summaries are observable model outputs, not claims to access hidden chain of thought."
+  },
+  "evaluation": {
+    "isolation": "Expected intent/answers/required-source references kept in scorer-only artifacts never exposed to runtime or feedback. Fixture authorship/consumed cohorts disclosed.",
+    "error_dimensions": [
+      "interpretation: question target/role/date/unit mismatch",
+      "query: syntax error or semantic mismatch to intended question",
+      "retrieval: required evidence omitted vs source absent vs unknown coverage",
+      "validation: true detection, missed error, false alarm, unsupported/unknown",
+      "repair: error fixed, unchanged, new error introduced",
+      "answer: supported correct, supported wrong, unsupported claim, qualified answer, clarification, abstention"
+    ],
+    "metrics": [
+      "Final task agreement and evidence applicability per question family",
+      "Wrong substantive answers alongside unnecessary abstentions",
+      "Validator call rate; oracle-free findings; detected errors and missed common-mode interpretation errors",
+      "Repair success/introduced-error counts with pre-repair and post-repair outputs",
+      "Tool queries/checks, model calls/tokens/cost, elapsed time and termination counts"
+    ],
+    "denominators": "Report all assigned episodes, failed/exhausted episodes and per-stage eligible denominators. No call-rate denominator replacing episode outcomes. No causal repair claim from cross-arm outcome differences alone.",
+    "false_alarm_limit": "Independent adjudication required for ambiguous natural-language intent; mark unresolved rather than using checker as ground truth."
+  },
+  "next_offline_deliverable": "Create trace schema + read-only bounded local tool adapter with scripted transcripts explicitly labelled software fixtures. Prove no gold leakage and failure retention before any paid QA. Then implement actual OpenRouter tool loop separately, still disabled by default.",
+  "not_claimed": [
+    "LLM experiment executed",
+    "representative business accuracy",
+    "SHACL proves factual truth",
+    "ontology independently verifies intent",
+    "RDF engine advantage",
+    "automatic full production workflow"
+  ]
+}

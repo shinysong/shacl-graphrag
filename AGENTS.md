@@ -39,6 +39,12 @@ For session continuity, read local `MEMORY.md` if present. It is ignored by Git 
 - `business-questions-1` fixes three manufacturing and three finance tasks: impact products, replacement conditions, rechecks; direct accounting parent, same reported ultimate parent, internal review readiness. Preserve 36 authored synthetic fixtures /108 rows separately from four unscored actual GLEIF illustrations. JSON/RDF share decision logic; do not claim RDF superiority or independent business accuracy.
 - Real GLEIF ACTIVE relationships may have LAPSED registration. This pilot conservatively accepts PUBLISHED RR only; withholding does not prove recorded relations false. Next planned comparison separates reported facts with source status from decision eligibility. Manufacturing remains synthetic; completeness/dependency declarations are supplied.
 
+## LLM-led ontology tool study
+
+- `llm-ontology-tools-1` gives the LLM natural-language questions, schema and shared policies; it constructs SPARQL, chooses optional validation and finalizes. A adds source tools, B adds ontology information, C adds callable query-contract/SHACL checks. Same RDFLib backend; no RDF engine advantage claim. The earlier deterministic business study remains a tool baseline.
+- Latest human authorized this bounded paid campaign: 18 consumed synthetic development cases ×3 arms, one repeat, max324 calls/$1.50 nonrefunded reservation ledger `_workspace/ontology-tools-study/campaign-budget.json`. Do not reset old ledgers. Inspect unresolved costs before each manual launch; no automatic retry. Existing paid stop remains outside this authorization.
+- Runtime receives no scorer task/scenario/answer. Query checking uses model-declared interpretation and can pass a wrong interpretation; unsupported constructs return unknown. SHACL selected-record conformance does not certify complete evidence or truth. Preserve failed queries, source absence, retrieval omissions, unfinished episodes and wrong final outcomes separately. No gold repair.
+
 ## Domain and introductory-guide research
 
 - User expanded the objective to change-impact decision support across manufacturing, finance/GLEIF/FIBO, healthcare records, YAGO, Wikidata and documents. Separate domain, semantic layer and serialization; do not call renamed synthetic nodes domain transfer.
