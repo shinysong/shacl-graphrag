@@ -2,6 +2,33 @@
 
 [업무 질문과 판단 기준](../business-questions-study.md)을 고정하고 질문마다 여섯 상황을 실행했다. 합성 사례 36개에 세 조건을 적용한 108행이며 별도로 실제 GLEIF 예시 네 개를 실행했다. 유료 모델 호출은 없었다.
 
+## 질문·탐색·출력 도식
+
+각 카드에 업무 질문, 입력 데이터, 탐색·판단 과정, 두 조건의 실제 출력을 함께 배치했다. 질문은 실행에 사용한 영어 질문을 한국어로 옮겼다. 탐색 과정은 저장된 입력과 실행 코드에서 재구성한 설명이며 별도로 수집한 단계별 로그는 아니다. 출력은 기존 실행 기록을 그대로 사용했다.
+
+여섯 카드는 합성 사례다. 단순 조회는 일부 조건을 제거한 비교이며, 규칙·JSON과 규칙·RDF는 같은 판단 함수를 사용한다. 자연어를 자동으로 해석하거나 RDF 추론으로 답을 만든 실험은 아니다. 카드 아래 기존 표는 도식의 텍스트 설명으로도 읽을 수 있다.
+
+
+
+[전체 도식 SVG 열기·확대](../figures/business-questions-overview.svg) · [원본 실행 데이터](20261014-business-questions-summary.json)
+
+<div class="business-trace-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;margin:24px 0;">
+<a href="/shacl-graphrag/experiments/figures/business-m1-1.svg" aria-label="제조 1 영향 제품 도식 확대"><img src="/experiments/figures/business-m1-1.svg" alt="제조 1 영향 제품: 질문, 입력 데이터, 탐색 과정과 두 조건의 실제 출력. 상세 내용은 아래 표 참조." width="360" height="692" style="width:100%;height:auto;display:block;margin:0;" /></a>
+<a href="/shacl-graphrag/experiments/figures/business-m2-1.svg" aria-label="제조 2 교체 조건 도식 확대"><img src="/experiments/figures/business-m2-1.svg" alt="제조 2 교체 조건: 질문, 입력 데이터, 탐색 과정과 두 조건의 실제 출력. 상세 내용은 아래 표 참조." width="360" height="692" style="width:100%;height:auto;display:block;margin:0;" /></a>
+<a href="/shacl-graphrag/experiments/figures/business-m3-1.svg" aria-label="제조 3 재검사 항목 도식 확대"><img src="/experiments/figures/business-m3-1.svg" alt="제조 3 재검사 항목: 질문, 입력 데이터, 탐색 과정과 두 조건의 실제 출력. 상세 내용은 아래 표 참조." width="360" height="692" style="width:100%;height:auto;display:block;margin:0;" /></a>
+<a href="/shacl-graphrag/experiments/figures/business-f1-6.svg" aria-label="금융 1 직접 모회사 도식 확대"><img src="/experiments/figures/business-f1-6.svg" alt="금융 1 직접 모회사: 질문, 입력 데이터, 탐색 과정과 두 조건의 실제 출력. 상세 내용은 아래 표 참조." width="360" height="692" style="width:100%;height:auto;display:block;margin:0;" /></a>
+<a href="/shacl-graphrag/experiments/figures/business-f2-5.svg" aria-label="금융 2 최종 모회사 도식 확대"><img src="/experiments/figures/business-f2-5.svg" alt="금융 2 최종 모회사: 질문, 입력 데이터, 탐색 과정과 두 조건의 실제 출력. 상세 내용은 아래 표 참조." width="360" height="692" style="width:100%;height:auto;display:block;margin:0;" /></a>
+<a href="/shacl-graphrag/experiments/figures/business-f3-2.svg" aria-label="금융 3 내부 검토 도식 확대"><img src="/experiments/figures/business-f3-2.svg" alt="금융 3 내부 검토: 질문, 입력 데이터, 탐색 과정과 두 조건의 실제 출력. 상세 내용은 아래 표 참조." width="360" height="692" style="width:100%;height:auto;display:block;margin:0;" /></a>
+</div>
+
+### 실제 GLEIF 관계의 조회와 보류
+
+별도 카드에는 실제 GLEIF 자료를 사용했다. 관계가 원천에 존재해도 등록 상태를 제한하는 내부 정책 때문에 보류할 수 있다. 이 예시에는 독립적인 정답률을 부여하지 않았다.
+
+<img src="/experiments/figures/business-gleif-source.svg" alt="실제 GLEIF: ACTIVE 관계가 LAPSED 등록 상태 때문에 보류되는 과정" width="360" height="760" style="max-width:360px;width:100%;height:auto;" />
+
+[실제 GLEIF 도식 SVG 확대](../figures/business-gleif-source.svg)
+
 ## 질문별 선언한 답과의 일치
 
 | 업무 질문 | 단순 조회 | 규칙·JSON | 같은 규칙·RDF |

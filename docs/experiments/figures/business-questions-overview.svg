@@ -1,0 +1,187 @@
+<?xml version="1.0" ?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1144 1550" role="img" aria-labelledby="title desc">
+  <title id="title">여섯 업무 질문의 탐색·출력 전체 도식</title>
+  <desc id="desc">제조업 세 질문과 금융 세 질문. 합성 실행 사례이며 자연어 해석이나 RDF 고유 성능을 평가한 도식이 아니다.</desc>
+  <g font-family="Noto Sans KR, Apple SD Gothic Neo, Malgun Gothic, sans-serif">
+    <rect width="1144" height="1550" fill="#edf2f7"/>
+    <text x="24" y="40" font-size="26" fill="#182b42" font-weight="700">여섯 업무 질문 · 데이터 탐색과 실제 출력</text>
+    <text x="24" y="72" font-size="16" fill="#182b42" font-weight="400">합성 사례 6개 발췌 · 기준일 2026-10-12 · JSON과 RDF는 같은 판단 함수 사용</text>
+    <g transform="translate(20,100)">
+      <rect width="360" height="692" rx="18" fill="#ffffff" stroke="#cdd8e4"/>
+      <text x="20" y="31" font-size="19" fill="#153957" font-weight="700">제조 1 · 영향 제품</text>
+      <text x="20" y="55" font-size="12" fill="#52657b" font-weight="400">합성 입력 · 저장된 실행 M1-1</text>
+      <rect x="16" y="70" width="328" height="90" rx="12" fill="#eaf1fb"/>
+      <text x="28" y="94" font-size="12" fill="#365c86" font-weight="700">업무 질문</text>
+      <text x="28" y="120" font-size="17" fill="#182b42" font-weight="700">부품 A를 바꾸면</text>
+      <text x="28" y="144" font-size="17" fill="#182b42" font-weight="700">어떤 제품이 영향을 받나?</text>
+      <rect x="16" y="174" width="328" height="115" rx="12" fill="#f2f5f9"/>
+      <text x="28" y="197" font-size="12" fill="#52657b" font-weight="700">입력 데이터</text>
+      <text x="28" y="223" font-size="14" fill="#182b42" font-weight="400">b1: A ─part_of→ 조립체</text>
+      <text x="28" y="247" font-size="14" fill="#182b42" font-weight="400">b2: X ─contains→ 조립체</text>
+      <text x="28" y="271" font-size="14" fill="#182b42" font-weight="400">대상 제품: X·Y / BOM 완전 선언</text>
+      <text x="173" y="310" font-size="22" fill="#446987" font-weight="400">↓</text>
+      <rect x="16" y="320" width="328" height="116" rx="12" fill="#e9f4f3"/>
+      <text x="28" y="344" font-size="12" fill="#21625d" font-weight="700">규칙 조건의 탐색·판단</text>
+      <text x="28" y="370" font-size="14" fill="#182b42" font-weight="400">관계 종류와 방향을 맞춤</text>
+      <text x="28" y="394" font-size="14" fill="#182b42" font-weight="400">A → 조립체 → X 역방향 탐색</text>
+      <text x="28" y="418" font-size="14" fill="#182b42" font-weight="400">대상 제품 목록과 교집합</text>
+      <text x="173" y="457" font-size="22" fill="#446987" font-weight="400">↓</text>
+      <rect x="16" y="466" width="328" height="88" rx="12" fill="#fff1e6"/>
+      <text x="28" y="490" font-size="12" fill="#92501f" font-weight="700">단순 조회의 실제 출력</text>
+      <text x="28" y="516" font-size="14" fill="#182b42" font-weight="400">known · 제품 없음 []</text>
+      <rect x="16" y="565" width="328" height="91" rx="12" fill="#eaf1fb"/>
+      <text x="28" y="589" font-size="12" fill="#365c86" font-weight="700">규칙·JSON = 같은 규칙·RDF</text>
+      <text x="28" y="615" font-size="14" fill="#182b42" font-weight="400">known · product-X</text>
+      <text x="28" y="639" font-size="14" fill="#182b42" font-weight="400">근거: b1, b2</text>
+      <text x="20" y="679" font-size="11" fill="#52657b" font-weight="400">과정은 코드·입력에서 재구성 / 출력은 실행 기록</text>
+    </g>
+    <g transform="translate(392,100)">
+      <rect width="360" height="692" rx="18" fill="#ffffff" stroke="#cdd8e4"/>
+      <text x="20" y="31" font-size="19" fill="#153957" font-weight="700">제조 2 · 교체 조건</text>
+      <text x="20" y="55" font-size="12" fill="#52657b" font-weight="400">합성 입력 · 저장된 실행 M2-1</text>
+      <rect x="16" y="70" width="328" height="90" rx="12" fill="#eaf1fb"/>
+      <text x="28" y="94" font-size="12" fill="#365c86" font-weight="700">업무 질문</text>
+      <text x="28" y="120" font-size="17" fill="#182b42" font-weight="700">대체 부품이 규격·인증</text>
+      <text x="28" y="144" font-size="17" fill="#182b42" font-weight="700">조건을 충족하나?</text>
+      <rect x="16" y="174" width="328" height="115" rx="12" fill="#f2f5f9"/>
+      <text x="28" y="197" font-size="12" fill="#52657b" font-weight="700">입력 데이터</text>
+      <text x="28" y="223" font-size="14" fill="#182b42" font-weight="400">c1: 50 µm / cert-A / interface-A</text>
+      <text x="28" y="247" font-size="14" fill="#182b42" font-weight="400">요구: ≤ 0.1 mm / cert-A</text>
+      <text x="28" y="271" font-size="14" fill="#182b42" font-weight="400">인터페이스 일치 / 유효 레코드</text>
+      <text x="173" y="310" font-size="22" fill="#446987" font-weight="400">↓</text>
+      <rect x="16" y="320" width="328" height="116" rx="12" fill="#e9f4f3"/>
+      <text x="28" y="344" font-size="12" fill="#21625d" font-weight="700">규칙 조건의 탐색·판단</text>
+      <text x="28" y="370" font-size="14" fill="#182b42" font-weight="400">후보 레코드 선택·유효성 확인</text>
+      <text x="28" y="394" font-size="14" fill="#182b42" font-weight="400">50 µm → 0.05 mm로 환산</text>
+      <text x="28" y="418" font-size="14" fill="#182b42" font-weight="400">허용치·인증·인터페이스 비교</text>
+      <text x="173" y="457" font-size="22" fill="#446987" font-weight="400">↓</text>
+      <rect x="16" y="466" width="328" height="88" rx="12" fill="#fff1e6"/>
+      <text x="28" y="490" font-size="12" fill="#92501f" font-weight="700">단순 조회의 실제 출력</text>
+      <text x="28" y="516" font-size="14" fill="#182b42" font-weight="400">blocked · 조건 미충족</text>
+      <rect x="16" y="565" width="328" height="91" rx="12" fill="#eaf1fb"/>
+      <text x="28" y="589" font-size="12" fill="#365c86" font-weight="700">규칙·JSON = 같은 규칙·RDF</text>
+      <text x="28" y="615" font-size="14" fill="#182b42" font-weight="400">eligible · 선언한 조건 충족</text>
+      <text x="28" y="639" font-size="14" fill="#182b42" font-weight="400">근거: c1 / 실제 교체 승인 아님</text>
+      <text x="20" y="679" font-size="11" fill="#52657b" font-weight="400">과정은 코드·입력에서 재구성 / 출력은 실행 기록</text>
+    </g>
+    <g transform="translate(764,100)">
+      <rect width="360" height="692" rx="18" fill="#ffffff" stroke="#cdd8e4"/>
+      <text x="20" y="31" font-size="19" fill="#153957" font-weight="700">제조 3 · 재검사 항목</text>
+      <text x="20" y="55" font-size="12" fill="#52657b" font-weight="400">합성 입력 · 저장된 실행 M3-1</text>
+      <rect x="16" y="70" width="328" height="90" rx="12" fill="#eaf1fb"/>
+      <text x="28" y="94" font-size="12" fill="#365c86" font-weight="700">업무 질문</text>
+      <text x="28" y="120" font-size="17" fill="#182b42" font-weight="700">공차만 변경했을 때</text>
+      <text x="28" y="144" font-size="17" fill="#182b42" font-weight="700">어떤 검사를 다시 하나?</text>
+      <rect x="16" y="174" width="328" height="115" rx="12" fill="#f2f5f9"/>
+      <text x="28" y="197" font-size="12" fill="#52657b" font-weight="700">입력 데이터</text>
+      <text x="28" y="223" font-size="14" fill="#182b42" font-weight="400">h1: spec.tolerance 변경</text>
+      <text x="28" y="247" font-size="14" fill="#182b42" font-weight="400">d1: 공차 → fit-review</text>
+      <text x="28" y="271" font-size="14" fill="#182b42" font-weight="400">d2·d3: 인증·조립 검사 의존성</text>
+      <text x="173" y="310" font-size="22" fill="#446987" font-weight="400">↓</text>
+      <rect x="16" y="320" width="328" height="116" rx="12" fill="#e9f4f3"/>
+      <text x="28" y="344" font-size="12" fill="#21625d" font-weight="700">규칙 조건의 탐색·판단</text>
+      <text x="28" y="370" font-size="14" fill="#182b42" font-weight="400">완전한 의존성 목록 선언 확인</text>
+      <text x="28" y="394" font-size="14" fill="#182b42" font-weight="400">변경 필드와 의존성 필드 연결</text>
+      <text x="28" y="418" font-size="14" fill="#182b42" font-weight="400">required=true인 항목만 선택</text>
+      <text x="173" y="457" font-size="22" fill="#446987" font-weight="400">↓</text>
+      <rect x="16" y="466" width="328" height="88" rx="12" fill="#fff1e6"/>
+      <text x="28" y="490" font-size="12" fill="#92501f" font-weight="700">단순 조회의 실제 출력</text>
+      <text x="28" y="516" font-size="14" fill="#182b42" font-weight="400">known · 조립·인증·공차</text>
+      <text x="28" y="540" font-size="14" fill="#182b42" font-weight="400">검사 세 항목을 모두 반환</text>
+      <rect x="16" y="565" width="328" height="91" rx="12" fill="#eaf1fb"/>
+      <text x="28" y="589" font-size="12" fill="#365c86" font-weight="700">규칙·JSON = 같은 규칙·RDF</text>
+      <text x="28" y="615" font-size="14" fill="#182b42" font-weight="400">known · fit-review만</text>
+      <text x="28" y="639" font-size="14" fill="#182b42" font-weight="400">근거: d1, h1</text>
+      <text x="20" y="679" font-size="11" fill="#52657b" font-weight="400">과정은 코드·입력에서 재구성 / 출력은 실행 기록</text>
+    </g>
+    <g transform="translate(20,816)">
+      <rect width="360" height="692" rx="18" fill="#ffffff" stroke="#cdd8e4"/>
+      <text x="20" y="31" font-size="19" fill="#153957" font-weight="700">금융 1 · 직접 모회사</text>
+      <text x="20" y="55" font-size="12" fill="#52657b" font-weight="400">합성 입력 · 저장된 실행 F1-6</text>
+      <rect x="16" y="70" width="328" height="90" rx="12" fill="#eaf1fb"/>
+      <text x="28" y="94" font-size="12" fill="#365c86" font-weight="700">업무 질문</text>
+      <text x="28" y="120" font-size="17" fill="#182b42" font-weight="700">기업 A의 직접 회계 연결</text>
+      <text x="28" y="144" font-size="17" fill="#182b42" font-weight="700">모회사는 어디인가?</text>
+      <rect x="16" y="174" width="328" height="115" rx="12" fill="#f2f5f9"/>
+      <text x="28" y="197" font-size="12" fill="#52657b" font-weight="700">입력 데이터</text>
+      <text x="28" y="223" font-size="14" fill="#182b42" font-weight="400">r1: A → P / FUND_MANAGER</text>
+      <text x="28" y="247" font-size="14" fill="#182b42" font-weight="400">ACTIVE·PUBLISHED / 기간 유효</text>
+      <text x="28" y="271" font-size="14" fill="#182b42" font-weight="400">직접 회계 연결·보고 예외 없음</text>
+      <text x="173" y="310" font-size="22" fill="#446987" font-weight="400">↓</text>
+      <rect x="16" y="320" width="328" height="116" rx="12" fill="#e9f4f3"/>
+      <text x="28" y="344" font-size="12" fill="#21625d" font-weight="700">규칙 조건의 탐색·판단</text>
+      <text x="28" y="370" font-size="14" fill="#182b42" font-weight="400">A의 직접 회계 연결 관계 선택</text>
+      <text x="28" y="394" font-size="14" fill="#182b42" font-weight="400">운용 관계 r1은 역할이 달라 제외</text>
+      <text x="28" y="418" font-size="14" fill="#182b42" font-weight="400">해당 범주의 보고 예외도 없음</text>
+      <text x="173" y="457" font-size="22" fill="#446987" font-weight="400">↓</text>
+      <rect x="16" y="466" width="328" height="88" rx="12" fill="#fff1e6"/>
+      <text x="28" y="490" font-size="12" fill="#92501f" font-weight="700">단순 조회의 실제 출력</text>
+      <text x="28" y="516" font-size="14" fill="#182b42" font-weight="400">known · LEI-P</text>
+      <text x="28" y="540" font-size="14" fill="#182b42" font-weight="400">운용사를 모회사처럼 반환</text>
+      <rect x="16" y="565" width="328" height="91" rx="12" fill="#eaf1fb"/>
+      <text x="28" y="589" font-size="12" fill="#365c86" font-weight="700">규칙·JSON = 같은 규칙·RDF</text>
+      <text x="28" y="615" font-size="14" fill="#182b42" font-weight="400">unknown · 확인 불가</text>
+      <text x="28" y="639" font-size="14" fill="#182b42" font-weight="400">출력 근거: [] / 모회사 없음 아님</text>
+      <text x="20" y="679" font-size="11" fill="#52657b" font-weight="400">과정은 코드·입력에서 재구성 / 출력은 실행 기록</text>
+    </g>
+    <g transform="translate(392,816)">
+      <rect width="360" height="692" rx="18" fill="#ffffff" stroke="#cdd8e4"/>
+      <text x="20" y="31" font-size="19" fill="#153957" font-weight="700">금융 2 · 최종 모회사</text>
+      <text x="20" y="55" font-size="12" fill="#52657b" font-weight="400">합성 입력 · 저장된 실행 F2-5</text>
+      <rect x="16" y="70" width="328" height="90" rx="12" fill="#eaf1fb"/>
+      <text x="28" y="94" font-size="12" fill="#365c86" font-weight="700">업무 질문</text>
+      <text x="28" y="120" font-size="17" fill="#182b42" font-weight="700">A와 B의 보고된 최종</text>
+      <text x="28" y="144" font-size="17" fill="#182b42" font-weight="700">회계 연결 모회사는 같은가?</text>
+      <rect x="16" y="174" width="328" height="115" rx="12" fill="#f2f5f9"/>
+      <text x="28" y="197" font-size="12" fill="#52657b" font-weight="700">입력 데이터</text>
+      <text x="28" y="223" font-size="14" fill="#182b42" font-weight="400">r1: A → P / 최종 모회사</text>
+      <text x="28" y="247" font-size="14" fill="#182b42" font-weight="400">r2: B → P / 종료 2026-10-11</text>
+      <text x="28" y="271" font-size="14" fill="#182b42" font-weight="400">질의 기준일: 2026-10-12</text>
+      <text x="173" y="310" font-size="22" fill="#446987" font-weight="400">↓</text>
+      <rect x="16" y="320" width="328" height="116" rx="12" fill="#e9f4f3"/>
+      <text x="28" y="344" font-size="12" fill="#21625d" font-weight="700">규칙 조건의 탐색·판단</text>
+      <text x="28" y="370" font-size="14" fill="#182b42" font-weight="400">각 기업의 최종 모회사 관계 선택</text>
+      <text x="28" y="394" font-size="14" fill="#182b42" font-weight="400">r1 유효 / r2는 기간 만료로 제외</text>
+      <text x="28" y="418" font-size="14" fill="#182b42" font-weight="400">B의 유효 근거가 없어 비교 보류</text>
+      <text x="173" y="457" font-size="22" fill="#446987" font-weight="400">↓</text>
+      <rect x="16" y="466" width="328" height="88" rx="12" fill="#fff1e6"/>
+      <text x="28" y="490" font-size="12" fill="#92501f" font-weight="700">단순 조회의 실제 출력</text>
+      <text x="28" y="516" font-size="14" fill="#182b42" font-weight="400">known · true</text>
+      <text x="28" y="540" font-size="14" fill="#182b42" font-weight="400">같은 모회사로 판단</text>
+      <rect x="16" y="565" width="328" height="91" rx="12" fill="#eaf1fb"/>
+      <text x="28" y="589" font-size="12" fill="#365c86" font-weight="700">규칙·JSON = 같은 규칙·RDF</text>
+      <text x="28" y="615" font-size="14" fill="#182b42" font-weight="400">unknown · 확인 불가</text>
+      <text x="28" y="639" font-size="14" fill="#182b42" font-weight="400">출력 근거: [] / 다르다는 뜻 아님</text>
+      <text x="20" y="679" font-size="11" fill="#52657b" font-weight="400">과정은 코드·입력에서 재구성 / 출력은 실행 기록</text>
+    </g>
+    <g transform="translate(764,816)">
+      <rect width="360" height="692" rx="18" fill="#ffffff" stroke="#cdd8e4"/>
+      <text x="20" y="31" font-size="19" fill="#153957" font-weight="700">금융 3 · 내부 검토</text>
+      <text x="20" y="55" font-size="12" fill="#52657b" font-weight="400">합성 입력 · 저장된 실행 F3-2</text>
+      <rect x="16" y="70" width="328" height="90" rx="12" fill="#eaf1fb"/>
+      <text x="28" y="94" font-size="12" fill="#365c86" font-weight="700">업무 질문</text>
+      <text x="28" y="120" font-size="17" fill="#182b42" font-weight="700">현재 자료로 기업 관계의</text>
+      <text x="28" y="144" font-size="17" fill="#182b42" font-weight="700">내부 검토를 완료할 수 있나?</text>
+      <rect x="16" y="174" width="328" height="115" rx="12" fill="#f2f5f9"/>
+      <text x="28" y="197" font-size="12" fill="#52657b" font-weight="700">입력 데이터</text>
+      <text x="28" y="223" font-size="14" fill="#182b42" font-weight="400">e1: 기업 A / 법인 상태 ACTIVE</text>
+      <text x="28" y="247" font-size="14" fill="#182b42" font-weight="400">e1: LEI 등록 상태 LAPSED</text>
+      <text x="28" y="271" font-size="14" fill="#182b42" font-weight="400">r1: 유효한 직접 회계 연결 관계</text>
+      <text x="173" y="310" font-size="22" fill="#446987" font-weight="400">↓</text>
+      <rect x="16" y="320" width="328" height="116" rx="12" fill="#e9f4f3"/>
+      <text x="28" y="344" font-size="12" fill="#21625d" font-weight="700">규칙 조건의 탐색·판단</text>
+      <text x="28" y="370" font-size="14" fill="#182b42" font-weight="400">대상 기업·스냅샷 상태 확인</text>
+      <text x="28" y="394" font-size="14" fill="#182b42" font-weight="400">내부 정책: ACTIVE + ISSUED</text>
+      <text x="28" y="418" font-size="14" fill="#182b42" font-weight="400">LAPSED에서 조기 반환</text>
+      <text x="173" y="457" font-size="22" fill="#446987" font-weight="400">↓</text>
+      <rect x="16" y="466" width="328" height="88" rx="12" fill="#fff1e6"/>
+      <text x="28" y="490" font-size="12" fill="#92501f" font-weight="700">단순 조회의 실제 출력</text>
+      <text x="28" y="516" font-size="14" fill="#182b42" font-weight="400">review_ready · 검토 가능</text>
+      <rect x="16" y="565" width="328" height="91" rx="12" fill="#eaf1fb"/>
+      <text x="28" y="589" font-size="12" fill="#365c86" font-weight="700">규칙·JSON = 같은 규칙·RDF</text>
+      <text x="28" y="615" font-size="14" fill="#182b42" font-weight="400">review_required · 재검토 필요</text>
+      <text x="28" y="639" font-size="14" fill="#182b42" font-weight="400">근거: e1 / 법인 소멸 아님</text>
+      <text x="20" y="679" font-size="11" fill="#52657b" font-weight="400">과정은 코드·입력에서 재구성 / 출력은 실행 기록</text>
+    </g>
+  </g>
+</svg>
