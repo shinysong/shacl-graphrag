@@ -1,10 +1,10 @@
 # 연구 일지
 
-- [NL2SHACL-Bench 리뷰 — 문법을 통과한 규칙의 의미 평가](2026-10-16-review-nl2shacl-bench.md)
-- [REGAE 리뷰 — 예시로 프로그램의 해석 차이를 확인하는 방법](2026-10-16-review-regae.md)
-- [SHACL Guru 도구 리뷰 — 자연어 작성 지원과 실행 검증의 경계](2026-10-16-review-shacl-guru.md)
-- [shacl-test 도구 리뷰 — 검증 사례를 회귀 테스트로 남기는 방법](2026-10-16-review-shacl-test.md)
-- [Shapes from Examples 리뷰 — 사례로 SHACL을 학습하는 조건](2026-10-16-review-shapes-from-examples.md)
+- [NL2SHACL-Bench 리뷰 — 자연어로 만든 검증 규칙을 평가하는 전체 과정](2026-10-16-review-nl2shacl-bench.md)
+- [REGAE 리뷰 — 예시를 주고받으며 정규표현식을 만드는 도구](2026-10-16-review-regae.md)
+- [SHACL Guru 도구 리뷰 — VS Code에서 규칙을 생성하고 설명받는 과정](2026-10-16-review-shacl-guru.md)
+- [shacl-test 도구 리뷰 — RDF 사례와 검증 보고서를 반복 검사하는 방법](2026-10-16-review-shacl-test.md)
+- [Shapes from Examples 리뷰 — 그래프 사례에서 검증 규칙을 학습하는 이론](2026-10-16-review-shapes-from-examples.md)
 
 - [2026-10-15 LLM 도구 선택과 조회 인터페이스](2026-10-15-llm-ontology-tools.md)
 
