@@ -1,0 +1,1062 @@
+{
+  "status": "16smoke_completed_176_primary_pending",
+  "selection": {
+    "phase": "current-model-tier-diagnostic",
+    "n_pairs": 12,
+    "calls": 192,
+    "models": {
+      "openai/gpt-6-astra": {
+        "input_price_per_million": 11,
+        "output_price_per_million": 55,
+        "reasoning": {
+          "effort": "medium"
+        },
+        "response_aliases": [
+          "openai/gpt-6-astra-20260903"
+        ]
+      },
+      "openai/gpt-6-luna": {
+        "input_price_per_million": 0.12,
+        "output_price_per_million": 0.6,
+        "reasoning": {
+          "effort": "medium"
+        },
+        "response_aliases": [
+          "openai/gpt-6-luna-20260922"
+        ]
+      },
+      "anthropic/claude-opus-5.5": {
+        "input_price_per_million": 4.4,
+        "output_price_per_million": 22,
+        "reasoning": {
+          "effort": "medium"
+        },
+        "response_aliases": [
+          "anthropic/claude-opus-5.5-20260921"
+        ]
+      },
+      "anthropic/claude-haiku-5.5": {
+        "input_price_per_million": 0.12,
+        "output_price_per_million": 0.6,
+        "reasoning": {
+          "effort": "medium"
+        },
+        "response_aliases": [
+          "anthropic/claude-haiku-5.5-20261007"
+        ]
+      },
+      "google/gemini-4-argon": {
+        "input_price_per_million": 2.2,
+        "output_price_per_million": 11,
+        "reasoning": {
+          "effort": "medium"
+        },
+        "response_aliases": [
+          "google/gemini-4-argon-20261013"
+        ]
+      },
+      "google/gemini-3.8-flash": {
+        "input_price_per_million": 1,
+        "output_price_per_million": 5,
+        "reasoning": {
+          "effort": "medium"
+        },
+        "response_aliases": [
+          "google/gemini-3.8-flash-20260902"
+        ]
+      },
+      "qwen/qwen3.8-max-0902": {
+        "input_price_per_million": 2.2,
+        "output_price_per_million": 6.6,
+        "reasoning": {
+          "effort": "medium"
+        },
+        "response_aliases": [
+          "qwen/qwen3.8-max-20260902"
+        ]
+      },
+      "qwen/qwen3.8-flash": {
+        "input_price_per_million": 0.2,
+        "output_price_per_million": 0.6,
+        "reasoning": {
+          "max_tokens": 4096
+        },
+        "response_aliases": [
+          "qwen/qwen3.8-flash-20260826"
+        ]
+      }
+    },
+    "within_family_pairs": [
+      [
+        "openai/gpt-6-astra",
+        "openai/gpt-6-luna"
+      ],
+      [
+        "anthropic/claude-opus-5.5",
+        "anthropic/claude-haiku-5.5"
+      ],
+      [
+        "google/gemini-4-argon",
+        "google/gemini-3.8-flash"
+      ],
+      [
+        "qwen/qwen3.8-max-0902",
+        "qwen/qwen3.8-flash"
+      ]
+    ],
+    "limits": "Sameeffort label !=equalcompute;QwenFlashuses4096reasoningbudget; all8192combinedcap. Prices/tiers notknownparametercount. Conveniencecohortnotrepresentative.",
+    "old96_spend_included": true,
+    "semantic_error_evaluation": "not yetmeasured; rawmeta/structurefirst, posthocwitnessesnext"
+  },
+  "reported_new_usd": 0.120593754,
+  "reported_with_predecessor_usd": 0.5654965365,
+  "new_calls": 16,
+  "predecessor_calls": 96,
+  "metadata": [
+    {
+      "model": "openai/gpt-6-astra",
+      "language": "en",
+      "provider": "OpenAI",
+      "reported_usd": 0.02388,
+      "latency_seconds": 3.150248632999137,
+      "usage": {
+        "prompt_tokens": 1395,
+        "completion_tokens": 129,
+        "total_tokens": 1524,
+        "cost": 0.02388,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 1392,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.02388,
+          "upstream_inference_prompt_cost": 0.01743,
+          "upstream_inference_completions_cost": 0.00645
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "language": "ko",
+      "provider": "OpenAI",
+      "reported_usd": 0.024155,
+      "latency_seconds": 2.8839943180209957,
+      "usage": {
+        "prompt_tokens": 1417,
+        "completion_tokens": 129,
+        "total_tokens": 1546,
+        "cost": 0.024155,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 1414,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.024155,
+          "upstream_inference_prompt_cost": 0.017705,
+          "upstream_inference_completions_cost": 0.00645
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "language": "en",
+      "provider": "OpenAI",
+      "reported_usd": 0.0002963,
+      "latency_seconds": 3.5039369689766318,
+      "usage": {
+        "prompt_tokens": 1395,
+        "completion_tokens": 244,
+        "total_tokens": 1639,
+        "cost": 0.0002963,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 1392,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0002963,
+          "upstream_inference_prompt_cost": 0.0001743,
+          "upstream_inference_completions_cost": 0.000122
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 96,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "language": "ko",
+      "provider": "OpenAI",
+      "reported_usd": 0.00029105,
+      "latency_seconds": 3.744540938991122,
+      "usage": {
+        "prompt_tokens": 1417,
+        "completion_tokens": 228,
+        "total_tokens": 1645,
+        "cost": 0.00029105,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 1414,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00029105,
+          "upstream_inference_prompt_cost": 0.00017705,
+          "upstream_inference_completions_cost": 0.000114
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 103,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "language": "en",
+      "provider": "Claude Platform on AWS",
+      "reported_usd": 0.016696,
+      "latency_seconds": 4.705055201018695,
+      "usage": {
+        "prompt_tokens": 2219,
+        "completion_tokens": 391,
+        "total_tokens": 2610,
+        "cost": 0.016696,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.016696,
+          "upstream_inference_prompt_cost": 0.008876,
+          "upstream_inference_completions_cost": 0.00782
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "language": "ko",
+      "provider": "Claude Platform on AWS",
+      "reported_usd": 0.016144,
+      "latency_seconds": 4.446727645990904,
+      "usage": {
+        "prompt_tokens": 2276,
+        "completion_tokens": 352,
+        "total_tokens": 2628,
+        "cost": 0.016144,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.016144,
+          "upstream_inference_prompt_cost": 0.009104,
+          "upstream_inference_completions_cost": 0.00704
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "language": "en",
+      "provider": "Claude Platform on AWS",
+      "reported_usd": 0.0005129,
+      "latency_seconds": 4.382278934994247,
+      "usage": {
+        "prompt_tokens": 2219,
+        "completion_tokens": 582,
+        "total_tokens": 2801,
+        "cost": 0.0005129,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0005129,
+          "upstream_inference_prompt_cost": 0.0002219,
+          "upstream_inference_completions_cost": 0.000291
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 193,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "language": "ko",
+      "provider": "Claude Platform on AWS",
+      "reported_usd": 0.0005346,
+      "latency_seconds": 4.553320345992688,
+      "usage": {
+        "prompt_tokens": 2276,
+        "completion_tokens": 614,
+        "total_tokens": 2890,
+        "cost": 0.0005346,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0005346,
+          "upstream_inference_prompt_cost": 0.0002276,
+          "upstream_inference_completions_cost": 0.000307
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 228,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "language": "en",
+      "provider": "Google",
+      "reported_usd": 0.006162,
+      "latency_seconds": 8.641681624983903,
+      "usage": {
+        "prompt_tokens": 1546,
+        "completion_tokens": 307,
+        "total_tokens": 1853,
+        "cost": 0.006162,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.006162,
+          "upstream_inference_prompt_cost": 0.003092,
+          "upstream_inference_completions_cost": 0.00307
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "language": "ko",
+      "provider": "Google",
+      "reported_usd": 0.006282,
+      "latency_seconds": 7.061674443946686,
+      "usage": {
+        "prompt_tokens": 1551,
+        "completion_tokens": 318,
+        "total_tokens": 1869,
+        "cost": 0.006282,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.006282,
+          "upstream_inference_prompt_cost": 0.003102,
+          "upstream_inference_completions_cost": 0.00318
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "language": "en",
+      "provider": "Google",
+      "reported_usd": 0.00701325,
+      "latency_seconds": 9.56609851703979,
+      "usage": {
+        "prompt_tokens": 1516,
+        "completion_tokens": 1567,
+        "total_tokens": 3083,
+        "cost": 0.00701325,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00701325,
+          "upstream_inference_prompt_cost": 0.001137,
+          "upstream_inference_completions_cost": 0.00587625
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1354,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "language": "ko",
+      "provider": "Google",
+      "reported_usd": 0.00619425,
+      "latency_seconds": 10.410969025979284,
+      "usage": {
+        "prompt_tokens": 1529,
+        "completion_tokens": 1346,
+        "total_tokens": 2875,
+        "cost": 0.00619425,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00619425,
+          "upstream_inference_prompt_cost": 0.00114675,
+          "upstream_inference_completions_cost": 0.0050475
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1203,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "language": "en",
+      "provider": "Alibaba",
+      "reported_usd": 0.006314,
+      "latency_seconds": 13.867064574034885,
+      "usage": {
+        "prompt_tokens": 1474,
+        "completion_tokens": 561,
+        "total_tokens": 2035,
+        "cost": 0.006314,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.006314,
+          "upstream_inference_prompt_cost": 0.002948,
+          "upstream_inference_completions_cost": 0.003366
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 325,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "language": "ko",
+      "provider": "Alibaba",
+      "reported_usd": 0.005148,
+      "latency_seconds": 14.01842478994513,
+      "usage": {
+        "prompt_tokens": 1484,
+        "completion_tokens": 662,
+        "total_tokens": 2146,
+        "cost": 0.005148,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 1024,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.005148,
+          "upstream_inference_prompt_cost": 0.001176,
+          "upstream_inference_completions_cost": 0.003972
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 410,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "language": "en",
+      "provider": "Alibaba",
+      "reported_usd": 0.00044966,
+      "latency_seconds": 8.181733420002274,
+      "usage": {
+        "prompt_tokens": 1500,
+        "completion_tokens": 478,
+        "total_tokens": 1978,
+        "cost": 0.00044966,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00044966,
+          "upstream_inference_prompt_cost": 0.000225,
+          "upstream_inference_completions_cost": 0.00022466
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 308,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "language": "ko",
+      "provider": "Alibaba",
+      "reported_usd": 0.000520744,
+      "latency_seconds": 13.127559939981438,
+      "usage": {
+        "prompt_tokens": 1510,
+        "completion_tokens": 918,
+        "total_tokens": 2428,
+        "cost": 0.000520744,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 1024,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.000520744,
+          "upstream_inference_prompt_cost": 8.9284e-05,
+          "upstream_inference_completions_cost": 0.00043146
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 759,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "audit_summary": {
+    "across_model_matched_cases": {
+      "en": {
+        "completed_ids_shared_across_all_models": [
+          "chemrof-1"
+        ],
+        "raw_meta_conformant_on_shared_ids": {
+          "anthropic/claude-haiku-5.5": 1,
+          "anthropic/claude-opus-5.5": 1,
+          "google/gemini-3.8-flash": 1,
+          "google/gemini-4-argon": 1,
+          "openai/gpt-6-astra": 1,
+          "openai/gpt-6-luna": 1,
+          "qwen/qwen3.8-flash": 1,
+          "qwen/qwen3.8-max-0902": 1
+        }
+      },
+      "ko": {
+        "completed_ids_shared_across_all_models": [
+          "chemrof-1"
+        ],
+        "raw_meta_conformant_on_shared_ids": {
+          "anthropic/claude-haiku-5.5": 0,
+          "anthropic/claude-opus-5.5": 1,
+          "google/gemini-3.8-flash": 1,
+          "google/gemini-4-argon": 1,
+          "openai/gpt-6-astra": 1,
+          "openai/gpt-6-luna": 1,
+          "qwen/qwen3.8-flash": 1,
+          "qwen/qwen3.8-max-0902": 1
+        }
+      }
+    },
+    "model_language": [
+      {
+        "classification": {
+          "meta_conformant": 1
+        },
+        "completed": 1,
+        "language": "en",
+        "model": "anthropic/claude-haiku-5.5",
+        "raw_meta": {
+          "meta_conformant": 1
+        },
+        "reserved": 1,
+        "upstream_flags_pass": {
+          "parsing_valid": 1,
+          "spec_valid": 1,
+          "vocab_valid": 1
+        },
+        "upstream_gated_structural_isomorphism": 0,
+        "upstream_scored": 1
+      },
+      {
+        "classification": {
+          "parse_failure": 1
+        },
+        "completed": 1,
+        "language": "ko",
+        "model": "anthropic/claude-haiku-5.5",
+        "raw_meta": {
+          "parse_failure": 1
+        },
+        "reserved": 1,
+        "upstream_flags_pass": {
+          "parsing_valid": 1,
+          "spec_valid": 1,
+          "vocab_valid": 1
+        },
+        "upstream_gated_structural_isomorphism": 0,
+        "upstream_scored": 1
+      },
+      {
+        "classification": {
+          "meta_conformant": 1
+        },
+        "completed": 1,
+        "language": "en",
+        "model": "anthropic/claude-opus-5.5",
+        "raw_meta": {
+          "meta_conformant": 1
+        },
+        "reserved": 1,
+        "upstream_flags_pass": {
+          "parsing_valid": 1,
+          "spec_valid": 1,
+          "vocab_valid": 1
+        },
+        "upstream_gated_structural_isomorphism": 0,
+        "upstream_scored": 1
+      },
+      {
+        "classification": {
+          "meta_conformant": 1
+        },
+        "completed": 1,
+        "language": "ko",
+        "model": "anthropic/claude-opus-5.5",
+        "raw_meta": {
+          "meta_conformant": 1
+        },
+        "reserved": 1,
+        "upstream_flags_pass": {
+          "parsing_valid": 1,
+          "spec_valid": 1,
+          "vocab_valid": 1
+        },
+        "upstream_gated_structural_isomorphism": 1,
+        "upstream_scored": 1
+      },
+      {
+        "classification": {
+          "meta_conformant": 1
+        },
+        "completed": 1,
+        "language": "en",
+        "model": "google/gemini-3.8-flash",
+        "raw_meta": {
+          "meta_conformant": 1
+        },
+        "reserved": 1,
+        "upstream_flags_pass": {
+          "parsing_valid": 1,
+          "spec_valid": 1,
+          "vocab_valid": 1
+        },
+        "upstream_gated_structural_isomorphism": 1,
+        "upstream_scored": 1
+      },
+      {
+        "classification": {
+          "meta_conformant": 1
+        },
+        "completed": 1,
+        "language": "ko",
+        "model": "google/gemini-3.8-flash",
+        "raw_meta": {
+          "meta_conformant": 1
+        },
+        "reserved": 1,
+        "upstream_flags_pass": {
+          "parsing_valid": 1,
+          "spec_valid": 1,
+          "vocab_valid": 1
+        },
+        "upstream_gated_structural_isomorphism": 1,
+        "upstream_scored": 1
+      },
+      {
+        "classification": {
+          "meta_conformant": 1
+        },
+        "completed": 1,
+        "language": "en",
+        "model": "google/gemini-4-argon",
+        "raw_meta": {
+          "meta_conformant": 1
+        },
+        "reserved": 1,
+        "upstream_flags_pass": {
+          "parsing_valid": 1,
+          "spec_valid": 1,
+          "vocab_valid": 1
+        },
+        "upstream_gated_structural_isomorphism": 0,
+        "upstream_scored": 1
+      },
+      {
+        "classification": {
+          "meta_conformant": 1
+        },
+        "completed": 1,
+        "language": "ko",
+        "model": "google/gemini-4-argon",
+        "raw_meta": {
+          "meta_conformant": 1
+        },
+        "reserved": 1,
+        "upstream_flags_pass": {
+          "parsing_valid": 1,
+          "spec_valid": 1,
+          "vocab_valid": 1
+        },
+        "upstream_gated_structural_isomorphism": 0,
+        "upstream_scored": 1
+      },
+      {
+        "classification": {
+          "meta_conformant": 1
+        },
+        "completed": 1,
+        "language": "en",
+        "model": "openai/gpt-6-astra",
+        "raw_meta": {
+          "meta_conformant": 1
+        },
+        "reserved": 1,
+        "upstream_flags_pass": {
+          "parsing_valid": 1,
+          "spec_valid": 1,
+          "vocab_valid": 1
+        },
+        "upstream_gated_structural_isomorphism": 1,
+        "upstream_scored": 1
+      },
+      {
+        "classification": {
+          "meta_conformant": 1
+        },
+        "completed": 1,
+        "language": "ko",
+        "model": "openai/gpt-6-astra",
+        "raw_meta": {
+          "meta_conformant": 1
+        },
+        "reserved": 1,
+        "upstream_flags_pass": {
+          "parsing_valid": 1,
+          "spec_valid": 1,
+          "vocab_valid": 1
+        },
+        "upstream_gated_structural_isomorphism": 1,
+        "upstream_scored": 1
+      },
+      {
+        "classification": {
+          "meta_conformant": 1
+        },
+        "completed": 1,
+        "language": "en",
+        "model": "openai/gpt-6-luna",
+        "raw_meta": {
+          "meta_conformant": 1
+        },
+        "reserved": 1,
+        "upstream_flags_pass": {
+          "parsing_valid": 1,
+          "spec_valid": 1,
+          "vocab_valid": 1
+        },
+        "upstream_gated_structural_isomorphism": 1,
+        "upstream_scored": 1
+      },
+      {
+        "classification": {
+          "meta_conformant": 1
+        },
+        "completed": 1,
+        "language": "ko",
+        "model": "openai/gpt-6-luna",
+        "raw_meta": {
+          "meta_conformant": 1
+        },
+        "reserved": 1,
+        "upstream_flags_pass": {
+          "parsing_valid": 1,
+          "spec_valid": 1,
+          "vocab_valid": 1
+        },
+        "upstream_gated_structural_isomorphism": 1,
+        "upstream_scored": 1
+      },
+      {
+        "classification": {
+          "meta_conformant": 1
+        },
+        "completed": 1,
+        "language": "en",
+        "model": "qwen/qwen3.8-flash",
+        "raw_meta": {
+          "meta_conformant": 1
+        },
+        "reserved": 1,
+        "upstream_flags_pass": {
+          "parsing_valid": 1,
+          "spec_valid": 1,
+          "vocab_valid": 1
+        },
+        "upstream_gated_structural_isomorphism": 0,
+        "upstream_scored": 1
+      },
+      {
+        "classification": {
+          "meta_conformant": 1
+        },
+        "completed": 1,
+        "language": "ko",
+        "model": "qwen/qwen3.8-flash",
+        "raw_meta": {
+          "meta_conformant": 1
+        },
+        "reserved": 1,
+        "upstream_flags_pass": {
+          "parsing_valid": 1,
+          "spec_valid": 1,
+          "vocab_valid": 1
+        },
+        "upstream_gated_structural_isomorphism": 0,
+        "upstream_scored": 1
+      },
+      {
+        "classification": {
+          "meta_conformant": 1
+        },
+        "completed": 1,
+        "language": "en",
+        "model": "qwen/qwen3.8-max-0902",
+        "raw_meta": {
+          "meta_conformant": 1
+        },
+        "reserved": 1,
+        "upstream_flags_pass": {
+          "parsing_valid": 1,
+          "spec_valid": 1,
+          "vocab_valid": 1
+        },
+        "upstream_gated_structural_isomorphism": 1,
+        "upstream_scored": 1
+      },
+      {
+        "classification": {
+          "meta_conformant": 1
+        },
+        "completed": 1,
+        "language": "ko",
+        "model": "qwen/qwen3.8-max-0902",
+        "raw_meta": {
+          "meta_conformant": 1
+        },
+        "reserved": 1,
+        "upstream_flags_pass": {
+          "parsing_valid": 1,
+          "spec_valid": 1,
+          "vocab_valid": 1
+        },
+        "upstream_gated_structural_isomorphism": 0,
+        "upstream_scored": 1
+      }
+    ],
+    "paired": [
+      {
+        "completed_en_ko_pairs": 1,
+        "model": "anthropic/claude-haiku-5.5",
+        "raw_meta_conformant_on_completed_pairs": {
+          "en": 1,
+          "ko": 0
+        },
+        "reserved_en_ko_pairs": 1,
+        "unpaired_reserved_ids": []
+      },
+      {
+        "completed_en_ko_pairs": 1,
+        "model": "anthropic/claude-opus-5.5",
+        "raw_meta_conformant_on_completed_pairs": {
+          "en": 1,
+          "ko": 1
+        },
+        "reserved_en_ko_pairs": 1,
+        "unpaired_reserved_ids": []
+      },
+      {
+        "completed_en_ko_pairs": 1,
+        "model": "google/gemini-3.8-flash",
+        "raw_meta_conformant_on_completed_pairs": {
+          "en": 1,
+          "ko": 1
+        },
+        "reserved_en_ko_pairs": 1,
+        "unpaired_reserved_ids": []
+      },
+      {
+        "completed_en_ko_pairs": 1,
+        "model": "google/gemini-4-argon",
+        "raw_meta_conformant_on_completed_pairs": {
+          "en": 1,
+          "ko": 1
+        },
+        "reserved_en_ko_pairs": 1,
+        "unpaired_reserved_ids": []
+      },
+      {
+        "completed_en_ko_pairs": 1,
+        "model": "openai/gpt-6-astra",
+        "raw_meta_conformant_on_completed_pairs": {
+          "en": 1,
+          "ko": 1
+        },
+        "reserved_en_ko_pairs": 1,
+        "unpaired_reserved_ids": []
+      },
+      {
+        "completed_en_ko_pairs": 1,
+        "model": "openai/gpt-6-luna",
+        "raw_meta_conformant_on_completed_pairs": {
+          "en": 1,
+          "ko": 1
+        },
+        "reserved_en_ko_pairs": 1,
+        "unpaired_reserved_ids": []
+      },
+      {
+        "completed_en_ko_pairs": 1,
+        "model": "qwen/qwen3.8-flash",
+        "raw_meta_conformant_on_completed_pairs": {
+          "en": 1,
+          "ko": 1
+        },
+        "reserved_en_ko_pairs": 1,
+        "unpaired_reserved_ids": []
+      },
+      {
+        "completed_en_ko_pairs": 1,
+        "model": "qwen/qwen3.8-max-0902",
+        "raw_meta_conformant_on_completed_pairs": {
+          "en": 1,
+          "ko": 1
+        },
+        "reserved_en_ko_pairs": 1,
+        "unpaired_reserved_ids": []
+      }
+    ]
+  },
+  "review_job": "20261016T161702Z-nl2-tier-diagnostic-80ce79",
+  "verification": {
+    "generation_exit_code": 0,
+    "audit_exit_code": 0,
+    "upstream_exit_codes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "mock_tests_pass": 36
+  },
+  "limitations": [
+    "Onecasepermodel cannotrankquality. OneHaikuKOparsefailure retained, not repaired.",
+    "Astra/Opus/Argon reportedreasoningtokens0 despite requestedmedium; internalcomputeunverified.",
+    "Historicalnonthinkingresultsseparate; tiernotparametercount. Semanticaccuracyunmeasured."
+  ],
+  "artifacts": {
+    "_workspace/nl2-tiers/config.json": "cd7f7ad1c9589db07e758fe14ff342a38b77e88fe178a4bd3498c344006dff73",
+    "_workspace/nl2-tiers/inputs.json": "4aa1915816c76fefc2079410cad2ee7e58910d7b8111c28804a2c07f3bee04f8",
+    "_workspace/nl2-tiers/campaign-budget.json": "97987b4b9e6c14062c3ecc016912bbde7d0a59ddcb687752a1ea26f3a4aa075b",
+    "_workspace/nl2-tiers/smoke-audit.json": "09015a17b40d3213dd54d296e4e9631b0790a04b2d2b7b074b683288fd306497"
+  }
+}

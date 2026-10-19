@@ -1,0 +1,535 @@
+{
+  "protocol": "nl2shacl-current-tier-interrupted-diagnostic",
+  "date": "2026-10-16",
+  "planned_calls": 192,
+  "attempts": 29,
+  "completed": 28,
+  "failed": 1,
+  "unexecuted": 163,
+  "failure": "QwenFlash chemrof2 KO HTTP429 upstream Throttling.Concurrency; no retry",
+  "cost": {
+    "current_reported_usd": "0.317935004",
+    "current_reserved_usd": "3.05920052",
+    "failed_unknown_cost_count": 1,
+    "including_old96_reported_usd": "0.7628377865",
+    "including_old96_reserved_usd": "8.98194012"
+  },
+  "audit": {
+    "source_files_verified": 361,
+    "summary": {
+      "across_model_matched_cases": {
+        "en": {
+          "completed_ids_shared_across_all_models": [
+            "chemrof-1"
+          ],
+          "raw_meta_conformant_on_shared_ids": {
+            "anthropic/claude-haiku-5.5": 1,
+            "anthropic/claude-opus-5.5": 1,
+            "google/gemini-3.8-flash": 1,
+            "google/gemini-4-argon": 1,
+            "openai/gpt-6-astra": 1,
+            "openai/gpt-6-luna": 1,
+            "qwen/qwen3.8-flash": 1,
+            "qwen/qwen3.8-max-0902": 1
+          }
+        },
+        "ko": {
+          "completed_ids_shared_across_all_models": [
+            "chemrof-1"
+          ],
+          "raw_meta_conformant_on_shared_ids": {
+            "anthropic/claude-haiku-5.5": 0,
+            "anthropic/claude-opus-5.5": 1,
+            "google/gemini-3.8-flash": 1,
+            "google/gemini-4-argon": 1,
+            "openai/gpt-6-astra": 1,
+            "openai/gpt-6-luna": 1,
+            "qwen/qwen3.8-flash": 1,
+            "qwen/qwen3.8-max-0902": 1
+          }
+        }
+      },
+      "model_language": [
+        {
+          "classification": {
+            "meta_conformant": 1,
+            "parse_failure": 1
+          },
+          "completed": 2,
+          "language": "en",
+          "model": "anthropic/claude-haiku-5.5",
+          "raw_meta": {
+            "meta_conformant": 1,
+            "parse_failure": 1
+          },
+          "reserved": 2,
+          "upstream_flags_pass": {
+            "parsing_valid": 2,
+            "spec_valid": 2,
+            "vocab_valid": 2
+          },
+          "upstream_gated_structural_isomorphism": 0,
+          "upstream_scored": 2
+        },
+        {
+          "classification": {
+            "parse_failure": 2
+          },
+          "completed": 2,
+          "language": "ko",
+          "model": "anthropic/claude-haiku-5.5",
+          "raw_meta": {
+            "parse_failure": 2
+          },
+          "reserved": 2,
+          "upstream_flags_pass": {
+            "parsing_valid": 2,
+            "spec_valid": 2,
+            "vocab_valid": 2
+          },
+          "upstream_gated_structural_isomorphism": 0,
+          "upstream_scored": 2
+        },
+        {
+          "classification": {
+            "meta_conformant": 2
+          },
+          "completed": 2,
+          "language": "en",
+          "model": "anthropic/claude-opus-5.5",
+          "raw_meta": {
+            "meta_conformant": 2
+          },
+          "reserved": 2,
+          "upstream_flags_pass": {
+            "parsing_valid": 2,
+            "spec_valid": 2,
+            "vocab_valid": 2
+          },
+          "upstream_gated_structural_isomorphism": 1,
+          "upstream_scored": 2
+        },
+        {
+          "classification": {
+            "meta_conformant": 2
+          },
+          "completed": 2,
+          "language": "ko",
+          "model": "anthropic/claude-opus-5.5",
+          "raw_meta": {
+            "meta_conformant": 2
+          },
+          "reserved": 2,
+          "upstream_flags_pass": {
+            "parsing_valid": 2,
+            "spec_valid": 2,
+            "vocab_valid": 2
+          },
+          "upstream_gated_structural_isomorphism": 2,
+          "upstream_scored": 2
+        },
+        {
+          "classification": {
+            "meta_conformant": 1,
+            "truncation": 1
+          },
+          "completed": 2,
+          "language": "en",
+          "model": "google/gemini-3.8-flash",
+          "raw_meta": {
+            "meta_conformant": 1,
+            "parse_failure": 1
+          },
+          "reserved": 2,
+          "upstream_flags_pass": {
+            "parsing_valid": 1,
+            "spec_valid": 1,
+            "vocab_valid": 1
+          },
+          "upstream_gated_structural_isomorphism": 1,
+          "upstream_scored": 2
+        },
+        {
+          "classification": {
+            "meta_conformant": 1,
+            "truncation": 1
+          },
+          "completed": 2,
+          "language": "ko",
+          "model": "google/gemini-3.8-flash",
+          "raw_meta": {
+            "meta_conformant": 1,
+            "parse_failure": 1
+          },
+          "reserved": 2,
+          "upstream_flags_pass": {
+            "parsing_valid": 1,
+            "spec_valid": 1,
+            "vocab_valid": 1
+          },
+          "upstream_gated_structural_isomorphism": 1,
+          "upstream_scored": 2
+        },
+        {
+          "classification": {
+            "meta_conformant": 2
+          },
+          "completed": 2,
+          "language": "en",
+          "model": "google/gemini-4-argon",
+          "raw_meta": {
+            "meta_conformant": 2
+          },
+          "reserved": 2,
+          "upstream_flags_pass": {
+            "parsing_valid": 2,
+            "spec_valid": 2,
+            "vocab_valid": 2
+          },
+          "upstream_gated_structural_isomorphism": 0,
+          "upstream_scored": 2
+        },
+        {
+          "classification": {
+            "meta_conformant": 2
+          },
+          "completed": 2,
+          "language": "ko",
+          "model": "google/gemini-4-argon",
+          "raw_meta": {
+            "meta_conformant": 2
+          },
+          "reserved": 2,
+          "upstream_flags_pass": {
+            "parsing_valid": 2,
+            "spec_valid": 2,
+            "vocab_valid": 2
+          },
+          "upstream_gated_structural_isomorphism": 0,
+          "upstream_scored": 2
+        },
+        {
+          "classification": {
+            "meta_conformant": 1
+          },
+          "completed": 1,
+          "language": "en",
+          "model": "openai/gpt-6-astra",
+          "raw_meta": {
+            "meta_conformant": 1
+          },
+          "reserved": 1,
+          "upstream_flags_pass": {
+            "parsing_valid": 1,
+            "spec_valid": 1,
+            "vocab_valid": 1
+          },
+          "upstream_gated_structural_isomorphism": 1,
+          "upstream_scored": 1
+        },
+        {
+          "classification": {
+            "meta_conformant": 1
+          },
+          "completed": 1,
+          "language": "ko",
+          "model": "openai/gpt-6-astra",
+          "raw_meta": {
+            "meta_conformant": 1
+          },
+          "reserved": 1,
+          "upstream_flags_pass": {
+            "parsing_valid": 1,
+            "spec_valid": 1,
+            "vocab_valid": 1
+          },
+          "upstream_gated_structural_isomorphism": 1,
+          "upstream_scored": 1
+        },
+        {
+          "classification": {
+            "meta_conformant": 2
+          },
+          "completed": 2,
+          "language": "en",
+          "model": "openai/gpt-6-luna",
+          "raw_meta": {
+            "meta_conformant": 2
+          },
+          "reserved": 2,
+          "upstream_flags_pass": {
+            "parsing_valid": 2,
+            "spec_valid": 2,
+            "vocab_valid": 2
+          },
+          "upstream_gated_structural_isomorphism": 1,
+          "upstream_scored": 2
+        },
+        {
+          "classification": {
+            "meta_conformant": 2
+          },
+          "completed": 2,
+          "language": "ko",
+          "model": "openai/gpt-6-luna",
+          "raw_meta": {
+            "meta_conformant": 2
+          },
+          "reserved": 2,
+          "upstream_flags_pass": {
+            "parsing_valid": 2,
+            "spec_valid": 2,
+            "vocab_valid": 2
+          },
+          "upstream_gated_structural_isomorphism": 1,
+          "upstream_scored": 2
+        },
+        {
+          "classification": {
+            "meta_conformant": 1
+          },
+          "completed": 1,
+          "language": "en",
+          "model": "qwen/qwen3.8-flash",
+          "raw_meta": {
+            "meta_conformant": 1
+          },
+          "reserved": 1,
+          "upstream_flags_pass": {
+            "parsing_valid": 1,
+            "spec_valid": 1,
+            "vocab_valid": 1
+          },
+          "upstream_gated_structural_isomorphism": 0,
+          "upstream_scored": 1
+        },
+        {
+          "classification": {
+            "meta_conformant": 1,
+            "provider_failure": 1
+          },
+          "completed": 1,
+          "language": "ko",
+          "model": "qwen/qwen3.8-flash",
+          "raw_meta": {
+            "meta_conformant": 1,
+            "not_evaluated": 1
+          },
+          "reserved": 2,
+          "upstream_flags_pass": {
+            "parsing_valid": 1,
+            "spec_valid": 1,
+            "vocab_valid": 1
+          },
+          "upstream_gated_structural_isomorphism": 0,
+          "upstream_scored": 1
+        },
+        {
+          "classification": {
+            "meta_conformant": 2
+          },
+          "completed": 2,
+          "language": "en",
+          "model": "qwen/qwen3.8-max-0902",
+          "raw_meta": {
+            "meta_conformant": 2
+          },
+          "reserved": 2,
+          "upstream_flags_pass": {
+            "parsing_valid": 2,
+            "spec_valid": 2,
+            "vocab_valid": 2
+          },
+          "upstream_gated_structural_isomorphism": 1,
+          "upstream_scored": 2
+        },
+        {
+          "classification": {
+            "meta_conformant": 2
+          },
+          "completed": 2,
+          "language": "ko",
+          "model": "qwen/qwen3.8-max-0902",
+          "raw_meta": {
+            "meta_conformant": 2
+          },
+          "reserved": 2,
+          "upstream_flags_pass": {
+            "parsing_valid": 2,
+            "spec_valid": 2,
+            "vocab_valid": 2
+          },
+          "upstream_gated_structural_isomorphism": 0,
+          "upstream_scored": 2
+        }
+      ],
+      "paired": [
+        {
+          "completed_en_ko_pairs": 2,
+          "model": "anthropic/claude-haiku-5.5",
+          "raw_meta_conformant_on_completed_pairs": {
+            "en": 1,
+            "ko": 0
+          },
+          "reserved_en_ko_pairs": 2,
+          "unpaired_reserved_ids": []
+        },
+        {
+          "completed_en_ko_pairs": 2,
+          "model": "anthropic/claude-opus-5.5",
+          "raw_meta_conformant_on_completed_pairs": {
+            "en": 2,
+            "ko": 2
+          },
+          "reserved_en_ko_pairs": 2,
+          "unpaired_reserved_ids": []
+        },
+        {
+          "completed_en_ko_pairs": 2,
+          "model": "google/gemini-3.8-flash",
+          "raw_meta_conformant_on_completed_pairs": {
+            "en": 1,
+            "ko": 1
+          },
+          "reserved_en_ko_pairs": 2,
+          "unpaired_reserved_ids": []
+        },
+        {
+          "completed_en_ko_pairs": 2,
+          "model": "google/gemini-4-argon",
+          "raw_meta_conformant_on_completed_pairs": {
+            "en": 2,
+            "ko": 2
+          },
+          "reserved_en_ko_pairs": 2,
+          "unpaired_reserved_ids": []
+        },
+        {
+          "completed_en_ko_pairs": 1,
+          "model": "openai/gpt-6-astra",
+          "raw_meta_conformant_on_completed_pairs": {
+            "en": 1,
+            "ko": 1
+          },
+          "reserved_en_ko_pairs": 1,
+          "unpaired_reserved_ids": []
+        },
+        {
+          "completed_en_ko_pairs": 2,
+          "model": "openai/gpt-6-luna",
+          "raw_meta_conformant_on_completed_pairs": {
+            "en": 2,
+            "ko": 2
+          },
+          "reserved_en_ko_pairs": 2,
+          "unpaired_reserved_ids": []
+        },
+        {
+          "completed_en_ko_pairs": 1,
+          "model": "qwen/qwen3.8-flash",
+          "raw_meta_conformant_on_completed_pairs": {
+            "en": 1,
+            "ko": 1
+          },
+          "reserved_en_ko_pairs": 1,
+          "unpaired_reserved_ids": [
+            "chemrof-2"
+          ]
+        },
+        {
+          "completed_en_ko_pairs": 2,
+          "model": "qwen/qwen3.8-max-0902",
+          "raw_meta_conformant_on_completed_pairs": {
+            "en": 2,
+            "ko": 2
+          },
+          "reserved_en_ko_pairs": 2,
+          "unpaired_reserved_ids": []
+        }
+      ]
+    },
+    "raw_meta_conformant": 23,
+    "raw_parse_failure": 5,
+    "provider_unscored": 1
+  },
+  "witness": {
+    "case": "chemrof-1",
+    "candidate_shapes": 16,
+    "evaluated_shapes": 15,
+    "unavailable_shapes": 1,
+    "witnesses_per_shape": 11,
+    "summary": {
+      "agreement": 165,
+      "underconstraint_observed": 0,
+      "overconstraint_observed": 0,
+      "unavailable": 11
+    },
+    "raw_graph_isomorphic": 0,
+    "nonisomorphic_all_probes_agree": 15,
+    "source_only_design": true,
+    "limits": [
+      "Finite authored witnesses cannot establish logical equivalence or complete semantic correctness. No other original case is covered.",
+      "Probe results compare generated-shape behavior with this supplied reference, not independent truth of the natural-language requirement or domain facts.",
+      "Decoy path and outside-target probes cover one named namespace confusion and one alternate class, not every erroneous target/path.",
+      "Graph-level failures can combine multiple constraint violations; report components do not by themselves identify the construction error.",
+      "No subclass entailment, custom targets, rules, SPARQL constraints, alternate severities, large graphs, lexical-invalid literals or complete numeric-domain coverage.",
+      "Same finite data graphs across languages/models are paired diagnostic measurements, not 176 independent benchmark cases.",
+      "Reference source and generated outputs must never be modified to improve agreement.",
+      "Only raw proper-meta conformant candidates execute. Parse/meta/provider failures are unavailable, never semantic negatives.",
+      "SHACL Core only; executable extensions are unavailable. No targets or repairs are injected.",
+      "A timeout makes all witnesses for that candidate unavailable; partial worker progress is not recovered.",
+      "Observed under/overconstraint is relative to frozen references; path/target errors can cause either direction. Finite agreement is not semantic equivalence."
+    ]
+  },
+  "checks": {
+    "audit_exit": 0,
+    "viewer_exit": 0,
+    "witness_exit": 0,
+    "viewer_unittest_passed": 10,
+    "witness_pytest_passed": 16,
+    "browser": [
+      {
+        "width": 1600,
+        "mode": "light",
+        "cards": 8,
+        "case_and_language_switch": true,
+        "overflow": false,
+        "js_errors": []
+      },
+      {
+        "width": 390,
+        "mode": "light",
+        "cards": 8,
+        "case_and_language_switch": true,
+        "overflow": false,
+        "js_errors": []
+      },
+      {
+        "width": 390,
+        "mode": "dark",
+        "cards": 8,
+        "case_and_language_switch": true,
+        "overflow": false,
+        "js_errors": []
+      }
+    ],
+    "review_job": "20261016T163553Z-nl2-tier-offline-46e6c3"
+  },
+  "artifacts": {
+    "_workspace/nl2-tiers/interrupted29-audit.json": "325440645b346b6cc7bf7b176c6f79ee2e83f05ff838d7b5d874f76726b6c624",
+    "_workspace/nl2-tiers/chemrof1-witness-results.json": "399c317a48e88dddee23396040f6aa8f7ec53543889eb7e880ceb4de8bcee8bd",
+    "_workspace/nl2-tiers/semantic-design.json": "e35f429984b23cc27e8af4819d7c9eff07675ec44b29cf267a6e1ce67fbea955",
+    "_workspace/nl2-tiers/comparison.html": "b1d09b82b5f69490394f8d232b6e6ab2844bfa6fcd87f726994e61cc5d7d05f8",
+    "_workspace/nl2-tiers/browser-check.json": "fe3a98ffd0409e5d547e8b4585559874da8ed18e453bd3d558b8ef2a96ddec4c",
+    "scripts/render_nl2shacl_tier_report.py": "208a78f6bf5a5023d1f243fa8f7e8289903b0a807ba262b09a74a8860a826f26",
+    "scripts/audit_nl2shacl_witnesses.py": "8cff6fc048ffce6e13db389a7ffa52672c92c62994763b54c6f07978e6c5fdf7"
+  },
+  "limitations": [
+    "Partial unequal cohort: all-model matched EN/KO case only chemrof1; no model ranking.",
+    "Raw parsing and normalized upstream pipeline differ: three Haiku fenced outputs parse after original postprocessing; two GeminiFlash outputs truncated and still fail.",
+    "Witness agreement is finite reference behavior only, not semantic equivalence or natural-language truth.",
+    "No paid retry; failed cost unknown."
+  ],
+  "next_step": "Offline reviewed normalized-vs-raw witness comparison and source-only probes on additional completed cases. Paid generation remains stopped; no automatic retries or ledger edits.",
+  "published": false
+}

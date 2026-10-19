@@ -1,0 +1,173 @@
+{
+  "scope": "Authored offline controls, not new LLM measurements or logical-equivalence proof.",
+  "versions": {
+    "rdflib": "7.6.0",
+    "pyshacl": "0.40.1",
+    "rdf-graph-gen": "1.2.0",
+    "setuptools": "80.10.2"
+  },
+  "upstream_sha256": "98ef2e938ff550ec2a6fe1b6871a8e68b5606492b31361290bfaea3853747513",
+  "script_sha256": "95614b2924b9bfec06d1cf099be75daffe735f4d2a5aa3e4bb83d2f88f4133dd",
+  "shape_ttl": {
+    "self": "@prefix ex: <urn:audit:> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\nex:Rule a sh:NodeShape ; sh:targetClass ex:Book ;\n sh:property [ sh:path ex:author ; sh:minCount 1 ; sh:maxCount 1 ] .\n",
+    "weaker": "@prefix ex: <urn:audit:> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\nex:Rule a sh:NodeShape ; sh:targetClass ex:Book ;\n sh:property [ sh:path ex:author ; sh:minCount 0 ; sh:maxCount 2 ] .\n",
+    "missing_target": "@prefix ex: <urn:audit:> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\nex:Rule a sh:NodeShape ; \n sh:property [ sh:path ex:author ; sh:minCount 1 ; sh:maxCount 1 ] .\n",
+    "wrong_path": "@prefix ex: <urn:audit:> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\nex:Rule a sh:NodeShape ; sh:targetClass ex:Book ;\n sh:property [ sh:path ex:editor ; sh:minCount 1 ; sh:maxCount 1 ] .\n"
+  },
+  "data_ttl": {
+    "zero_authors": "@prefix ex: <urn:audit:> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\nex:book a ex:Book .",
+    "one_author": "@prefix ex: <urn:audit:> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\nex:book a ex:Book ; ex:author ex:alice .",
+    "two_authors": "@prefix ex: <urn:audit:> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\nex:book a ex:Book ; ex:author ex:alice, ex:bob .",
+    "untargeted": "@prefix ex: <urn:audit:> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\nex:other a ex:Other ."
+  },
+  "expected": {
+    "self": [
+      false,
+      true,
+      false,
+      true
+    ],
+    "weaker": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "missing_target": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "wrong_path": [
+      false,
+      false,
+      false,
+      true
+    ]
+  },
+  "witness_results": {
+    "self": [
+      false,
+      true,
+      false,
+      true
+    ],
+    "weaker": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "missing_target": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "wrong_path": [
+      false,
+      false,
+      false,
+      true
+    ]
+  },
+  "upstream_sample_results": {
+    "self": {
+      "status": "success",
+      "equivalent": true,
+      "gt_violation_focus_node_count": 0,
+      "llm_violation_focus_node_count": 0,
+      "focus_nodes_only_in_gt": [],
+      "focus_nodes_only_in_llm": [],
+      "gt_data_triples": 30,
+      "gt_node_count": 10,
+      "debug_file": "_workspace/nl2-evaluator-audit/run1/semantic-validation-process/authored-controls/offline/self.txt"
+    },
+    "weaker": {
+      "status": "success",
+      "equivalent": true,
+      "gt_violation_focus_node_count": 0,
+      "llm_violation_focus_node_count": 0,
+      "focus_nodes_only_in_gt": [],
+      "focus_nodes_only_in_llm": [],
+      "gt_data_triples": 30,
+      "gt_node_count": 10,
+      "debug_file": "_workspace/nl2-evaluator-audit/run1/semantic-validation-process/authored-controls/offline/weaker.txt"
+    },
+    "missing_target": {
+      "status": "success",
+      "equivalent": true,
+      "gt_violation_focus_node_count": 0,
+      "llm_violation_focus_node_count": 0,
+      "focus_nodes_only_in_gt": [],
+      "focus_nodes_only_in_llm": [],
+      "gt_data_triples": 30,
+      "gt_node_count": 10,
+      "debug_file": "_workspace/nl2-evaluator-audit/run1/semantic-validation-process/authored-controls/offline/missing_target.txt"
+    },
+    "wrong_path": {
+      "status": "success",
+      "equivalent": false,
+      "gt_violation_focus_node_count": 0,
+      "llm_violation_focus_node_count": 10,
+      "focus_nodes_only_in_gt": [],
+      "focus_nodes_only_in_llm": [
+        "http://example.org/ns#NodeB1_130",
+        "http://example.org/ns#NodeB1_131",
+        "http://example.org/ns#NodeB1_132",
+        "http://example.org/ns#NodeB1_133",
+        "http://example.org/ns#NodeB1_134",
+        "http://example.org/ns#NodeB1_135",
+        "http://example.org/ns#NodeB1_136",
+        "http://example.org/ns#NodeB1_137",
+        "http://example.org/ns#NodeB1_138",
+        "http://example.org/ns#NodeB1_139"
+      ],
+      "gt_data_triples": 30,
+      "gt_node_count": 10,
+      "debug_file": "_workspace/nl2-evaluator-audit/run1/semantic-validation-process/authored-controls/offline/wrong_path.txt"
+    }
+  },
+  "invalid_shape_ttl": "@prefix ex: <urn:audit:> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\nex:Rule a sh:NodeShape ; sh:property [ sh:path ex:author ; sh:minCount \"one\" ] .",
+  "upstream_invalid_shape_check": [
+    true,
+    null
+  ],
+  "explicit_meta_check": {
+    "status": "exception",
+    "type": "ReportableRuntimeError",
+    "message": "SHACL File does not validate against the SHACL Shapes SHACL (MetaSHACL) file.\nValidation Report\nConforms: False\nResults (1):\nConstraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:datatype xsd:integer ; sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:path sh:minCount ]\n\tFocus Node: [ sh:minCount Literal(\"one\") ; sh:path ex:author ]\n\tValue Node: Literal(\"one\")\n\tResult Path: sh:minCount\n\tMessage: Value is not Literal with datatype xsd:integer\n"
+  },
+  "witness_expectations_match": true,
+  "limits": [
+    "Same graph-level conformance on these four data graphs proves no equivalence.",
+    "Generated reference-only samples may omit discriminating inputs.",
+    "Meta-check exceptions retained, not silently treated as model failures.",
+    "No original dataset, model output, evaluator source or paid ledger modified."
+  ],
+  "execution": {
+    "exit_code": 0,
+    "timeout_seconds": 60,
+    "paid_calls": 0,
+    "registered_checks": [],
+    "review_job": "20261016T084134Z-nl2-evaluator-audit-ff5b8f",
+    "source_and_paid_ledger_hashes_unchanged": {
+      "scripts/audit_nl2shacl_evaluator.py": "95614b2924b9bfec06d1cf099be75daffe735f4d2a5aa3e4bb83d2f88f4133dd",
+      "_workspace/nl2shacl-ko/framework/Shapes-Evaluation/evaluators.py": "98ef2e938ff550ec2a6fe1b6871a8e68b5606492b31361290bfaea3853747513",
+      "_workspace/nl2shacl-ko/campaign-budget.json": "4909d23b3a84c9c75bc3fc866357aaf7498029c70536edabee027fe37916afcf"
+    }
+  },
+  "diagnostic_conclusion": {
+    "wrong_mutants_distinguished_by_explicit_witnesses": 3,
+    "wrong_mutants_distinguished_by_upstream_sample": 1,
+    "caution": "Three authored mutations are controls, not sampled model-error rates or benchmark accuracy.",
+    "meta_observation": "Upstream accepts minCount string without target; explicit meta_shacl=True raises ReportableRuntimeError with datatype violation. Installed pySHACL implementation reads meta_shacl, while upstream passes shacl_shacl_path."
+  },
+  "upstream_debug": {
+    "weaker.txt": "RECORD: weaker\nSubset: authored-controls  |  Model: offline\n======================================================================\n\n--- GROUND TRUTH SHACL ---\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix ex: <http://example.org/ns#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n\n@prefix ex: <urn:audit:> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\nex:Rule a sh:NodeShape ; sh:targetClass ex:Book ;\n sh:property [ sh:path ex:author ; sh:minCount 1 ; sh:maxCount 1 ] .\n\n\n--- LLM-GENERATED SHACL ---\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix ex: <http://example.org/ns#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n\n@prefix ex: <urn:audit:> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\nex:Rule a sh:NodeShape ; sh:targetClass ex:Book ;\n sh:property [ sh:path ex:author ; sh:minCount 0 ; sh:maxCount 2 ] .\n\n\n--- GENERATED DATA GRAPH (from GT SHACL) ---\nTriples: 30  |  Typed nodes: 10\n@prefix ns1: <urn:audit:> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n\n<http://example.org/ns#NodeB1_110> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"hFPByDeUL9f\" .\n\n<http://example.org/ns#NodeB1_111> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"4zPBOSqSQcZt7V\" .\n\n<http://example.org/ns#NodeB1_112> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"owNfn1TJF\" .\n\n<http://example.org/ns#NodeB1_113> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"ktAWV1w3K\" .\n\n<http://example.org/ns#NodeB1_114> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"HfyObFTIifevR8\" .\n\n<http://example.org/ns#NodeB1_115> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"YJa85Qml4FB\" .\n\n<http://example.org/ns#NodeB1_116> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"Zw4kGBbxynt\" .\n\n<http://example.org/ns#NodeB1_117> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"c7gkhT06y67\" .\n\n<http://example.org/ns#NodeB1_118> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"L1etRDeW\" .\n\n<http://example.org/ns#NodeB1_119> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"Ml1cptAQhTiyR\" .\n\n\n\n======================================================================\nVALIDATION RESULTS\n======================================================================\n\nData graph: 30 triples, 10 typed nodes\nEquivalent (focus nodes match): True\n\n--- Violation focus nodes against GT SHACL (0) ---\n\n--- Violation focus nodes against LLM SHACL (0) ---\n\n--- Focus nodes in BOTH (0) ---\n\n--- Focus nodes ONLY in GT (0) ---\n\n--- Focus nodes ONLY in LLM (0) ---\n\n--- Full GT SHACL validation report ---\nValidation Report\nConforms: True\n\n\n--- Full LLM SHACL validation report ---\nValidation Report\nConforms: True\n",
+    "missing_target.txt": "RECORD: missing_target\nSubset: authored-controls  |  Model: offline\n======================================================================\n\n--- GROUND TRUTH SHACL ---\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix ex: <http://example.org/ns#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n\n@prefix ex: <urn:audit:> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\nex:Rule a sh:NodeShape ; sh:targetClass ex:Book ;\n sh:property [ sh:path ex:author ; sh:minCount 1 ; sh:maxCount 1 ] .\n\n\n--- LLM-GENERATED SHACL ---\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix ex: <http://example.org/ns#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n\n@prefix ex: <urn:audit:> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\nex:Rule a sh:NodeShape ; \n sh:property [ sh:path ex:author ; sh:minCount 1 ; sh:maxCount 1 ] .\n\n\n--- GENERATED DATA GRAPH (from GT SHACL) ---\nTriples: 30  |  Typed nodes: 10\n@prefix ns1: <urn:audit:> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n\n<http://example.org/ns#NodeB1_120> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"EnKRPQ6oURwLXXl\" .\n\n<http://example.org/ns#NodeB1_121> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"uv2pnRj69Einh7Q\" .\n\n<http://example.org/ns#NodeB1_122> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"N6xW3eMu3C81gv\" .\n\n<http://example.org/ns#NodeB1_123> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"CjFYRaVHi\" .\n\n<http://example.org/ns#NodeB1_124> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"skFHaen0s\" .\n\n<http://example.org/ns#NodeB1_125> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"kWdKieWT55\" .\n\n<http://example.org/ns#NodeB1_126> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"jg8mYlxsQXYlN\" .\n\n<http://example.org/ns#NodeB1_127> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"F47LGwKZAZQjL\" .\n\n<http://example.org/ns#NodeB1_128> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"vQ7DIAS8Le\" .\n\n<http://example.org/ns#NodeB1_129> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"kCXmMKkEf\" .\n\n\n\n======================================================================\nVALIDATION RESULTS\n======================================================================\n\nData graph: 30 triples, 10 typed nodes\nEquivalent (focus nodes match): True\n\n--- Violation focus nodes against GT SHACL (0) ---\n\n--- Violation focus nodes against LLM SHACL (0) ---\n\n--- Focus nodes in BOTH (0) ---\n\n--- Focus nodes ONLY in GT (0) ---\n\n--- Focus nodes ONLY in LLM (0) ---\n\n--- Full GT SHACL validation report ---\nValidation Report\nConforms: True\n\n\n--- Full LLM SHACL validation report ---\nValidation Report\nConforms: True\n",
+    "self.txt": "RECORD: self\nSubset: authored-controls  |  Model: offline\n======================================================================\n\n--- GROUND TRUTH SHACL ---\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix ex: <http://example.org/ns#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n\n@prefix ex: <urn:audit:> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\nex:Rule a sh:NodeShape ; sh:targetClass ex:Book ;\n sh:property [ sh:path ex:author ; sh:minCount 1 ; sh:maxCount 1 ] .\n\n\n--- LLM-GENERATED SHACL ---\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix ex: <http://example.org/ns#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n\n@prefix ex: <urn:audit:> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\nex:Rule a sh:NodeShape ; sh:targetClass ex:Book ;\n sh:property [ sh:path ex:author ; sh:minCount 1 ; sh:maxCount 1 ] .\n\n\n--- GENERATED DATA GRAPH (from GT SHACL) ---\nTriples: 30  |  Typed nodes: 10\n@prefix ns1: <urn:audit:> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n\n<http://example.org/ns#NodeB1_100> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"vF7p1Ix5FtZb\" .\n\n<http://example.org/ns#NodeB1_101> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"Z6znr1b0PsXJ4O\" .\n\n<http://example.org/ns#NodeB1_102> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"MPJHgPyJhD\" .\n\n<http://example.org/ns#NodeB1_103> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"B6sD7ChuNW\" .\n\n<http://example.org/ns#NodeB1_104> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"mYqwlcKvf\" .\n\n<http://example.org/ns#NodeB1_105> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"LOxckGMtx\" .\n\n<http://example.org/ns#NodeB1_106> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"x1h1XVyjvV96kqS\" .\n\n<http://example.org/ns#NodeB1_107> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"FsDU5P1QV6f7iB\" .\n\n<http://example.org/ns#NodeB1_108> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"uwfOyD8bgT2PJf\" .\n\n<http://example.org/ns#NodeB1_109> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"SiuNBOXo4cT6Z\" .\n\n\n\n======================================================================\nVALIDATION RESULTS\n======================================================================\n\nData graph: 30 triples, 10 typed nodes\nEquivalent (focus nodes match): True\n\n--- Violation focus nodes against GT SHACL (0) ---\n\n--- Violation focus nodes against LLM SHACL (0) ---\n\n--- Focus nodes in BOTH (0) ---\n\n--- Focus nodes ONLY in GT (0) ---\n\n--- Focus nodes ONLY in LLM (0) ---\n\n--- Full GT SHACL validation report ---\nValidation Report\nConforms: True\n\n\n--- Full LLM SHACL validation report ---\nValidation Report\nConforms: True\n",
+    "wrong_path.txt": "RECORD: wrong_path\nSubset: authored-controls  |  Model: offline\n======================================================================\n\n--- GROUND TRUTH SHACL ---\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix ex: <http://example.org/ns#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n\n@prefix ex: <urn:audit:> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\nex:Rule a sh:NodeShape ; sh:targetClass ex:Book ;\n sh:property [ sh:path ex:author ; sh:minCount 1 ; sh:maxCount 1 ] .\n\n\n--- LLM-GENERATED SHACL ---\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix ex: <http://example.org/ns#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n\n@prefix ex: <urn:audit:> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\nex:Rule a sh:NodeShape ; sh:targetClass ex:Book ;\n sh:property [ sh:path ex:editor ; sh:minCount 1 ; sh:maxCount 1 ] .\n\n\n--- GENERATED DATA GRAPH (from GT SHACL) ---\nTriples: 30  |  Typed nodes: 10\n@prefix ns1: <urn:audit:> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n\n<http://example.org/ns#NodeB1_130> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"MRomdtyWJD\" .\n\n<http://example.org/ns#NodeB1_131> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"qSxfSmAx\" .\n\n<http://example.org/ns#NodeB1_132> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"cY3v2fWZDqE\" .\n\n<http://example.org/ns#NodeB1_133> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"atGdG9TZXu0qX\" .\n\n<http://example.org/ns#NodeB1_134> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"ytZXcQw0tEqQxZ\" .\n\n<http://example.org/ns#NodeB1_135> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"l2Hu2ANDNmzA\" .\n\n<http://example.org/ns#NodeB1_136> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"2ExuJjZAfgc\" .\n\n<http://example.org/ns#NodeB1_137> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"9adgOFsyZcJ\" .\n\n<http://example.org/ns#NodeB1_138> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"SsPMgT9V\" .\n\n<http://example.org/ns#NodeB1_139> a ns1:Book ;\n    sh:description ns1:Rule ;\n    ns1:author \"sa874mfjGlz\" .\n\n\n\n======================================================================\nVALIDATION RESULTS\n======================================================================\n\nData graph: 30 triples, 10 typed nodes\nEquivalent (focus nodes match): False\n\n--- Violation focus nodes against GT SHACL (0) ---\n\n--- Violation focus nodes against LLM SHACL (10) ---\n  http://example.org/ns#NodeB1_130\n  http://example.org/ns#NodeB1_131\n  http://example.org/ns#NodeB1_132\n  http://example.org/ns#NodeB1_133\n  http://example.org/ns#NodeB1_134\n  http://example.org/ns#NodeB1_135\n  http://example.org/ns#NodeB1_136\n  http://example.org/ns#NodeB1_137\n  http://example.org/ns#NodeB1_138\n  http://example.org/ns#NodeB1_139\n\n--- Focus nodes in BOTH (0) ---\n\n--- Focus nodes ONLY in GT (0) ---\n\n--- Focus nodes ONLY in LLM (10) ---\n  http://example.org/ns#NodeB1_130\n  http://example.org/ns#NodeB1_131\n  http://example.org/ns#NodeB1_132\n  http://example.org/ns#NodeB1_133\n  http://example.org/ns#NodeB1_134\n  http://example.org/ns#NodeB1_135\n  http://example.org/ns#NodeB1_136\n  http://example.org/ns#NodeB1_137\n  http://example.org/ns#NodeB1_138\n  http://example.org/ns#NodeB1_139\n\n--- Full GT SHACL validation report ---\nValidation Report\nConforms: True\n\n\n--- Full LLM SHACL validation report ---\nValidation Report\nConforms: False\nResults (10):\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path ex:editor ]\n\tFocus Node: <http://example.org/ns#NodeB1_130>\n\tResult Path: ex:editor\n\tMessage: Less than 1 values on <http://example.org/ns#NodeB1_130>->ex:editor\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path ex:editor ]\n\tFocus Node: <http://example.org/ns#NodeB1_131>\n\tResult Path: ex:editor\n\tMessage: Less than 1 values on <http://example.org/ns#NodeB1_131>->ex:editor\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path ex:editor ]\n\tFocus Node: <http://example.org/ns#NodeB1_132>\n\tResult Path: ex:editor\n\tMessage: Less than 1 values on <http://example.org/ns#NodeB1_132>->ex:editor\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path ex:editor ]\n\tFocus Node: <http://example.org/ns#NodeB1_133>\n\tResult Path: ex:editor\n\tMessage: Less than 1 values on <http://example.org/ns#NodeB1_133>->ex:editor\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path ex:editor ]\n\tFocus Node: <http://example.org/ns#NodeB1_134>\n\tResult Path: ex:editor\n\tMessage: Less than 1 values on <http://example.org/ns#NodeB1_134>->ex:editor\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path ex:editor ]\n\tFocus Node: <http://example.org/ns#NodeB1_135>\n\tResult Path: ex:editor\n\tMessage: Less than 1 values on <http://example.org/ns#NodeB1_135>->ex:editor\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path ex:editor ]\n\tFocus Node: <http://example.org/ns#NodeB1_136>\n\tResult Path: ex:editor\n\tMessage: Less than 1 values on <http://example.org/ns#NodeB1_136>->ex:editor\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path ex:editor ]\n\tFocus Node: <http://example.org/ns#NodeB1_137>\n\tResult Path: ex:editor\n\tMessage: Less than 1 values on <http://example.org/ns#NodeB1_137>->ex:editor\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path ex:editor ]\n\tFocus Node: <http://example.org/ns#NodeB1_138>\n\tResult Path: ex:editor\n\tMessage: Less than 1 values on <http://example.org/ns#NodeB1_138>->ex:editor\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path ex:editor ]\n\tFocus Node: <http://example.org/ns#NodeB1_139>\n\tResult Path: ex:editor\n\tMessage: Less than 1 values on <http://example.org/ns#NodeB1_139>->ex:editor\n"
+  }
+}

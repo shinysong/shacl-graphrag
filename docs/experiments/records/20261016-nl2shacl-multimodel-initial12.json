@@ -1,0 +1,424 @@
+{
+  "protocol": "nl2shacl-crossfamily-1",
+  "status": "initial12_completed_primary48_remaining",
+  "session": {
+    "scope": "NL2SHACL cross-family paired comparison; latest human authorizes paid expansion8h and raised call limit",
+    "started_at": "2026-10-16T15:20:54.909943+00:00",
+    "deadline_utc": "2026-10-16T23:20:54.909943+00:00",
+    "campaign_max_calls": 600,
+    "daily_max_calls": 1000,
+    "max_reported_usd": 10,
+    "max_nonrefunded_reserved_usd": 50,
+    "planned_primary_calls": 480,
+    "old_qwen_calls_reused": 120,
+    "continuation_idle_minutes": 10,
+    "publish_authorized": false,
+    "extra_paid_scope": "Only reviewed diagnostics addressing measured errors, no duplicate case/model/language repeats or automatic retries; total600 andUSD10reported/50reserve. Offline evaluation/docs when paid work complete."
+  },
+  "actual_new_calls": 96,
+  "remaining_primary_calls": 384,
+  "reported_usd": 0.4449027825,
+  "nonrefunded_reserved_usd": 5.9227396,
+  "model_settings": {
+    "openai/gpt-5.4": {
+      "input_price_per_million": 3,
+      "output_price_per_million": 18,
+      "reasoning": {
+        "effort": "none"
+      },
+      "response_aliases": [
+        "openai/gpt-5.4-20260305"
+      ]
+    },
+    "anthropic/claude-sonnet-4.6": {
+      "input_price_per_million": 3.6,
+      "output_price_per_million": 18,
+      "temperature": 0,
+      "reasoning": {
+        "enabled": false
+      },
+      "response_aliases": [
+        "anthropic/claude-4.6-sonnet-20260217"
+      ]
+    },
+    "google/gemini-2.5-flash": {
+      "input_price_per_million": 0.6,
+      "output_price_per_million": 5,
+      "temperature": 0,
+      "reasoning": {
+        "enabled": false
+      }
+    },
+    "meta-llama/llama-4-maverick": {
+      "input_price_per_million": 0.4,
+      "output_price_per_million": 1.3,
+      "temperature": 0,
+      "response_aliases": [
+        "meta-llama/llama-4-maverick-17b-128e-instruct"
+      ]
+    }
+  },
+  "initial12_summary": {
+    "across_model_matched_cases": {
+      "en": {
+        "completed_ids_shared_across_all_models": [
+          "chemrof-1",
+          "chemrof-2",
+          "dbpedia-1",
+          "dbpedia-2",
+          "dcat-1",
+          "dcat-2",
+          "epo-1",
+          "epo-2",
+          "invoice-1",
+          "invoice-2",
+          "snik-1",
+          "snik-2"
+        ],
+        "raw_meta_conformant_on_shared_ids": {
+          "anthropic/claude-sonnet-4.6": 12,
+          "google/gemini-2.5-flash": 7,
+          "meta-llama/llama-4-maverick": 9,
+          "openai/gpt-5.4": 12
+        }
+      },
+      "ko": {
+        "completed_ids_shared_across_all_models": [
+          "chemrof-1",
+          "chemrof-2",
+          "dbpedia-1",
+          "dbpedia-2",
+          "dcat-1",
+          "dcat-2",
+          "epo-1",
+          "epo-2",
+          "invoice-1",
+          "invoice-2",
+          "snik-1",
+          "snik-2"
+        ],
+        "raw_meta_conformant_on_shared_ids": {
+          "anthropic/claude-sonnet-4.6": 12,
+          "google/gemini-2.5-flash": 8,
+          "meta-llama/llama-4-maverick": 9,
+          "openai/gpt-5.4": 12
+        }
+      }
+    },
+    "model_language": [
+      {
+        "classification": {
+          "meta_conformant": 12
+        },
+        "completed": 12,
+        "language": "en",
+        "model": "anthropic/claude-sonnet-4.6",
+        "raw_meta": {
+          "meta_conformant": 12
+        },
+        "reserved": 12,
+        "upstream_flags_pass": {
+          "parsing_valid": 12,
+          "spec_valid": 12,
+          "vocab_valid": 12
+        },
+        "upstream_gated_structural_isomorphism": 5,
+        "upstream_scored": 12
+      },
+      {
+        "classification": {
+          "meta_conformant": 12
+        },
+        "completed": 12,
+        "language": "ko",
+        "model": "anthropic/claude-sonnet-4.6",
+        "raw_meta": {
+          "meta_conformant": 12
+        },
+        "reserved": 12,
+        "upstream_flags_pass": {
+          "parsing_valid": 12,
+          "spec_valid": 12,
+          "vocab_valid": 12
+        },
+        "upstream_gated_structural_isomorphism": 5,
+        "upstream_scored": 12
+      },
+      {
+        "classification": {
+          "meta_conformant": 7,
+          "parse_failure": 5
+        },
+        "completed": 12,
+        "language": "en",
+        "model": "google/gemini-2.5-flash",
+        "raw_meta": {
+          "meta_conformant": 7,
+          "parse_failure": 5
+        },
+        "reserved": 12,
+        "upstream_flags_pass": {
+          "parsing_valid": 7,
+          "spec_valid": 7,
+          "vocab_valid": 7
+        },
+        "upstream_gated_structural_isomorphism": 2,
+        "upstream_scored": 12
+      },
+      {
+        "classification": {
+          "invalid_shape": 1,
+          "meta_conformant": 8,
+          "parse_failure": 3
+        },
+        "completed": 12,
+        "language": "ko",
+        "model": "google/gemini-2.5-flash",
+        "raw_meta": {
+          "invalid_shape": 1,
+          "meta_conformant": 8,
+          "parse_failure": 3
+        },
+        "reserved": 12,
+        "upstream_flags_pass": {
+          "parsing_valid": 9,
+          "spec_valid": 9,
+          "vocab_valid": 9
+        },
+        "upstream_gated_structural_isomorphism": 3,
+        "upstream_scored": 12
+      },
+      {
+        "classification": {
+          "meta_conformant": 9,
+          "parse_failure": 3
+        },
+        "completed": 12,
+        "language": "en",
+        "model": "meta-llama/llama-4-maverick",
+        "raw_meta": {
+          "meta_conformant": 9,
+          "parse_failure": 3
+        },
+        "reserved": 12,
+        "upstream_flags_pass": {
+          "parsing_valid": 9,
+          "spec_valid": 9,
+          "vocab_valid": 9
+        },
+        "upstream_gated_structural_isomorphism": 2,
+        "upstream_scored": 12
+      },
+      {
+        "classification": {
+          "meta_conformant": 9,
+          "parse_failure": 3
+        },
+        "completed": 12,
+        "language": "ko",
+        "model": "meta-llama/llama-4-maverick",
+        "raw_meta": {
+          "meta_conformant": 9,
+          "parse_failure": 3
+        },
+        "reserved": 12,
+        "upstream_flags_pass": {
+          "parsing_valid": 9,
+          "spec_valid": 9,
+          "vocab_valid": 9
+        },
+        "upstream_gated_structural_isomorphism": 2,
+        "upstream_scored": 12
+      },
+      {
+        "classification": {
+          "meta_conformant": 12
+        },
+        "completed": 12,
+        "language": "en",
+        "model": "openai/gpt-5.4",
+        "raw_meta": {
+          "meta_conformant": 12
+        },
+        "reserved": 12,
+        "upstream_flags_pass": {
+          "parsing_valid": 12,
+          "spec_valid": 12,
+          "vocab_valid": 12
+        },
+        "upstream_gated_structural_isomorphism": 5,
+        "upstream_scored": 12
+      },
+      {
+        "classification": {
+          "meta_conformant": 12
+        },
+        "completed": 12,
+        "language": "ko",
+        "model": "openai/gpt-5.4",
+        "raw_meta": {
+          "meta_conformant": 12
+        },
+        "reserved": 12,
+        "upstream_flags_pass": {
+          "parsing_valid": 12,
+          "spec_valid": 12,
+          "vocab_valid": 12
+        },
+        "upstream_gated_structural_isomorphism": 5,
+        "upstream_scored": 12
+      }
+    ],
+    "paired": [
+      {
+        "completed_en_ko_pairs": 12,
+        "model": "anthropic/claude-sonnet-4.6",
+        "raw_meta_conformant_on_completed_pairs": {
+          "en": 12,
+          "ko": 12
+        },
+        "reserved_en_ko_pairs": 12,
+        "unpaired_reserved_ids": []
+      },
+      {
+        "completed_en_ko_pairs": 12,
+        "model": "google/gemini-2.5-flash",
+        "raw_meta_conformant_on_completed_pairs": {
+          "en": 7,
+          "ko": 8
+        },
+        "reserved_en_ko_pairs": 12,
+        "unpaired_reserved_ids": []
+      },
+      {
+        "completed_en_ko_pairs": 12,
+        "model": "meta-llama/llama-4-maverick",
+        "raw_meta_conformant_on_completed_pairs": {
+          "en": 9,
+          "ko": 9
+        },
+        "reserved_en_ko_pairs": 12,
+        "unpaired_reserved_ids": []
+      },
+      {
+        "completed_en_ko_pairs": 12,
+        "model": "openai/gpt-5.4",
+        "raw_meta_conformant_on_completed_pairs": {
+          "en": 12,
+          "ko": 12
+        },
+        "reserved_en_ko_pairs": 12,
+        "unpaired_reserved_ids": []
+      }
+    ]
+  },
+  "qwen_historical_same12": {
+    "en": {
+      "proper_meta": 10,
+      "structure": 1
+    },
+    "ko": {
+      "proper_meta": 9,
+      "structure": 2
+    }
+  },
+  "limitations": [
+    "Initial12 convenience sample, no representative language or model superiority claim.",
+    "GPT temperature omitted unlike others0; historical Qwen measured earlier. GeminiFlash chosen for nonthinking compatibility, not equal capability or flagship.",
+    "All96 nonempty/nontruncated, reported reasoning_tokens0. Meta conformance and structural isomorphism are not semanticaccuracy.",
+    "One GeminiKO chemrof-1 passesoriginalspec butfailspropermeta; rawfailurepreserved.",
+    "OriginalEnglish ontology/examples and SHACL unchanged; only requirement translated."
+  ],
+  "checks": {
+    "generation_exit_code": 0,
+    "audit_exit_code": 0,
+    "upstream_runs": [
+      {
+        "command": [
+          "/home/ubuntu/.cache/uv/builds-v0/.tmpTgULi3/bin/python",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2shacl-ko/framework/Shapes-Evaluation/run_evaluation.py",
+          "--input",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-multimodel/initial12-audit-artifacts/cohort_model000_processed.jsonl",
+          "--output_dir",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-multimodel/initial12-audit-artifacts/upstream",
+          "--run",
+          "structural"
+        ],
+        "exit_code": 0,
+        "model": "anthropic/claude-sonnet-4.6",
+        "processed_input": "_workspace/nl2-multimodel/initial12-audit-artifacts/cohort_model000_processed.jsonl",
+        "status": "completed"
+      },
+      {
+        "command": [
+          "/home/ubuntu/.cache/uv/builds-v0/.tmpTgULi3/bin/python",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2shacl-ko/framework/Shapes-Evaluation/run_evaluation.py",
+          "--input",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-multimodel/initial12-audit-artifacts/cohort_model001_processed.jsonl",
+          "--output_dir",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-multimodel/initial12-audit-artifacts/upstream",
+          "--run",
+          "structural"
+        ],
+        "exit_code": 0,
+        "model": "google/gemini-2.5-flash",
+        "processed_input": "_workspace/nl2-multimodel/initial12-audit-artifacts/cohort_model001_processed.jsonl",
+        "status": "completed"
+      },
+      {
+        "command": [
+          "/home/ubuntu/.cache/uv/builds-v0/.tmpTgULi3/bin/python",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2shacl-ko/framework/Shapes-Evaluation/run_evaluation.py",
+          "--input",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-multimodel/initial12-audit-artifacts/cohort_model002_processed.jsonl",
+          "--output_dir",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-multimodel/initial12-audit-artifacts/upstream",
+          "--run",
+          "structural"
+        ],
+        "exit_code": 0,
+        "model": "meta-llama/llama-4-maverick",
+        "processed_input": "_workspace/nl2-multimodel/initial12-audit-artifacts/cohort_model002_processed.jsonl",
+        "status": "completed"
+      },
+      {
+        "command": [
+          "/home/ubuntu/.cache/uv/builds-v0/.tmpTgULi3/bin/python",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2shacl-ko/framework/Shapes-Evaluation/run_evaluation.py",
+          "--input",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-multimodel/initial12-audit-artifacts/cohort_model003_processed.jsonl",
+          "--output_dir",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-multimodel/initial12-audit-artifacts/upstream",
+          "--run",
+          "structural"
+        ],
+        "exit_code": 0,
+        "model": "openai/gpt-5.4",
+        "processed_input": "_workspace/nl2-multimodel/initial12-audit-artifacts/cohort_model003_processed.jsonl",
+        "status": "completed"
+      }
+    ],
+    "mock_runner_tests": 23,
+    "mock_evaluator_tests": 8,
+    "source_files_verified": 361
+  },
+  "review_jobs": [
+    "20261016T152635Z-nl2-multimodel-execute-fcc3c0",
+    "20261016T152943Z-nl2-multimodel-evaluation-76682b"
+  ],
+  "heartbeat": {
+    "id": "43f21dcf",
+    "name": "nl2shacl-multimodel-continuation",
+    "cadence": "cron:*/10 * * * * (Etc/UTC)",
+    "target": "agent:fa5747a",
+    "status": "active",
+    "nextRunAt": "2026-10-16T15:30:00.000Z",
+    "lastRunAt": null
+  },
+  "artifact_hashes": {
+    "_workspace/nl2-multimodel/config.json": "110c5ad202f4ab315d089a7574f123c1801e90e7bfe2a43d6bd4589e5a9071ca",
+    "_workspace/nl2-multimodel/inputs.json": "e67ab16a2e7f03064b7f34c13759ad21a103cf25c6a304434d2177cd2bcc5a9c",
+    "_workspace/nl2-multimodel/campaign-budget.json": "d5bf9f9278938c7cd93cf8b087b64e6c0f74fb8e95cc14a84c7acf8cce61f25f",
+    "_workspace/nl2-multimodel/initial12-audit.json": "403fa6da88693ff6cca223dae78da81be34358b51998900d9890aaefc071b363"
+  }
+}

@@ -1,0 +1,470 @@
+{
+  "scope": "Raw saved 24 outputs; meta-SHACL conformance is not requirement correctness.",
+  "versions": {
+    "rdflib": "7.6.0",
+    "pyshacl": "0.40.1"
+  },
+  "operation": "pyshacl.entrypoints.meta_validate, inference=rdfs, do_owl_imports=False",
+  "control_ttl": {
+    "valid": "@prefix ex: <urn:audit:> . @prefix sh: <http://www.w3.org/ns/shacl#> . ex:S a sh:NodeShape ; sh:property [sh:path ex:p ; sh:minCount 1] .",
+    "invalid": "@prefix ex: <urn:audit:> . @prefix sh: <http://www.w3.org/ns/shacl#> . ex:S a sh:NodeShape ; sh:property [sh:path ex:p ; sh:minCount \"one\"] .",
+    "parse_failure": "ex:S a sh:NodeShape ."
+  },
+  "controls": {
+    "valid": {
+      "status": "meta_conformant",
+      "report": "Validation Report\nConforms: True\n",
+      "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+    },
+    "invalid": {
+      "status": "invalid_shape",
+      "report": "Validation Report\nConforms: False\nResults (1):\nConstraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:datatype xsd:integer ; sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:path sh:minCount ]\n\tFocus Node: [ rdf:type rdfs:Resource ; sh:minCount Literal(\"one\") ; sh:path ex:p ]\n\tValue Node: Literal(\"one\")\n\tResult Path: sh:minCount\n\tMessage: Value is not Literal with datatype xsd:integer\n",
+      "report_ttl": "@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode [ a rdfs:Resource ;\n                    sh:minCount \"one\" ;\n                    sh:path <urn:audit:p> ] ;\n            sh:resultMessage \"Value is not Literal with datatype xsd:integer\" ;\n            sh:resultPath sh:minCount ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;\n            sh:sourceShape [ sh:datatype xsd:integer ;\n                    sh:maxCount 1 ;\n                    sh:path sh:minCount ] ;\n            sh:value \"one\" ] .\n\n"
+    },
+    "parse_failure": {
+      "status": "parse_failure",
+      "error_type": "BadSyntax",
+      "detail": "at line 1 of <>:\nBad syntax (Prefix \"ex:\" not bound) at ^ in:\n\"b''^b'ex:S a sh:NodeShape .'\""
+    }
+  },
+  "hashes": {
+    "_workspace/nl2shacl-ko/generation/call-0000/output.ttl": "89fd4b7d7ba90108435e16b5e008f92b1ee25aea4c663329967b83dde8b4ea77",
+    "_workspace/nl2shacl-ko/generation/call-0001/output.ttl": "7e40232478ba9c67ee5d1fe703363b8e3cf5ee9eb65c69cf4e7060ce590899d6",
+    "_workspace/nl2shacl-ko/generation/call-0002/output.ttl": "2a26aca20326535d9b96aa0a13e7c13fc272665265784a3654c02af098ab8572",
+    "_workspace/nl2shacl-ko/generation/call-0003/output.ttl": "8a9b4565bd0386c3b133bec940728d4db46307f9490207f38b9fce54bba4ea1d",
+    "_workspace/nl2shacl-ko/generation/call-0004/output.ttl": "3b34587f97df4352d3d0505efc9a35f4936831414f38f77119bb8d7a3a7448c8",
+    "_workspace/nl2shacl-ko/generation/call-0005/output.ttl": "3237892a5a8188ca21e2f43bb33134b448380ce0da1e9adcd82a4aa6422517bc",
+    "_workspace/nl2shacl-ko/generation/call-0006/output.ttl": "ea99106f559598169e6c08773813582c219521fa0829d38b9164b8231f7fff01",
+    "_workspace/nl2shacl-ko/generation/call-0007/output.ttl": "c1de9d281d4f635a6a7628a85a759cc368ff21c4d54b954d92a93dbc6acb015a",
+    "_workspace/nl2shacl-ko/generation/call-0008/output.ttl": "10cb3c6638215bf659cd47f83728b7f354cd85e0e344d658a2a2f19ee188c986",
+    "_workspace/nl2shacl-ko/generation/call-0009/output.ttl": "1e7e73e79c5920b678eb82d18d698cdd740a312f60f98b6299ac0f3feb77fab4",
+    "_workspace/nl2shacl-ko/generation/call-0010/output.ttl": "61e8ac8575e32e9cf9f811bcdeee0ca91477f684544c4a0e379ace388b783da0",
+    "_workspace/nl2shacl-ko/generation/call-0011/output.ttl": "ce48abece43042c75829acbb3fdb4abe851c31c26358ab58570c2d3c8257dab8",
+    "_workspace/nl2shacl-ko/generation/call-0012/output.ttl": "f2e9dd38b4d6ccddf7e97d8576833dd8c6ff459b549b40a34cd1b0df1bfa5b87",
+    "_workspace/nl2shacl-ko/generation/call-0013/output.ttl": "fd3afc1ec13101f34fda4a6003174a561aaef8651417a48efef14ac21eef6035",
+    "_workspace/nl2shacl-ko/generation/call-0014/output.ttl": "045a5a34759f8e5a48c0c67b7570a82fd104467dabaea00be1548b9fc66b33c0",
+    "_workspace/nl2shacl-ko/generation/call-0015/output.ttl": "00f8c9b5f0f3b1b7a932b58dea41adf40c2b546f854e465294f136d5498a2f45",
+    "_workspace/nl2shacl-ko/generation/call-0016/output.ttl": "97da9c9c5c8b40e8e90da0376e2bd599d88c02e679fa42e1702a595d61f44e5e",
+    "_workspace/nl2shacl-ko/generation/call-0017/output.ttl": "9da9ac91d7898cbaf1bfb3a8aad37941b317abf4472b77a98e2e51996dca9588",
+    "_workspace/nl2shacl-ko/generation/call-0018/output.ttl": "94c563e928bce09d549a0528bfbf2eeb4a65f4d2f993aa298b3b461c03634745",
+    "_workspace/nl2shacl-ko/generation/call-0019/output.ttl": "8b084ea8cd6d90845484f9e46c364dd69d72fb8848e724e73b6b942c76521812",
+    "_workspace/nl2shacl-ko/generation/call-0020/output.ttl": "6df6549ff21084fa048638ccb4a94f8de977ad430f445f427bdf8ddf51c5fa1c",
+    "_workspace/nl2shacl-ko/generation/call-0021/output.ttl": "18cae8ff4004124f7e2c0ab258aa0a19ff4a9b84a767738a71902eb0b8a43a2a",
+    "_workspace/nl2shacl-ko/generation/call-0022/output.ttl": "3e2a6d6c630a0c01fb9f9e816f77d363be342aebba4f8e85e1a8eadac19ec865",
+    "_workspace/nl2shacl-ko/generation/call-0023/output.ttl": "3dc186142becd4d66f71c729a507b8db84ab9bc8e7b366425dd1b69bbc0b17df",
+    "_workspace/nl2shacl-ko/results.json": "38b53f0a00d797b3f00e775afdf2bdc4361dac6029bf35b27efb440cd407a72a",
+    "_workspace/nl2shacl-ko/campaign-budget.json": "4909d23b3a84c9c75bc3fc866357aaf7498029c70536edabee027fe37916afcf",
+    "/home/ubuntu/shacl-graphrag/scripts/audit_nl2shacl_saved_meta.py": "44e62cbb6801fd66570a8157d6c9fc100526ddfb78791114bfe9e6a4eafe5377"
+  },
+  "summary": {
+    "en": {
+      "meta_conformant": 10,
+      "parse_failure": 2
+    },
+    "ko": {
+      "meta_conformant": 9,
+      "parse_failure": 3
+    }
+  },
+  "results": [
+    {
+      "id": "chemrof-1",
+      "language": "en",
+      "original_validity": [
+        true,
+        null
+      ],
+      "raw_sha256": "89fd4b7d7ba90108435e16b5e008f92b1ee25aea4c663329967b83dde8b4ea77",
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      }
+    },
+    {
+      "id": "chemrof-1",
+      "language": "ko",
+      "original_validity": [
+        true,
+        null
+      ],
+      "raw_sha256": "7e40232478ba9c67ee5d1fe703363b8e3cf5ee9eb65c69cf4e7060ce590899d6",
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      }
+    },
+    {
+      "id": "chemrof-2",
+      "language": "ko",
+      "original_validity": [
+        true,
+        null
+      ],
+      "raw_sha256": "2a26aca20326535d9b96aa0a13e7c13fc272665265784a3654c02af098ab8572",
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      }
+    },
+    {
+      "id": "chemrof-2",
+      "language": "en",
+      "original_validity": [
+        false,
+        {
+          "status": "failure",
+          "failure_stage": 1,
+          "failure_type": "SyntaxError",
+          "details": "at line 18 of <>:\nBad syntax (Prefix \"rdfs:\" not bound) at ^ in:\n\"...b'xsd:string ;\\n        sh:name \"id\"\\n    ] , [\\n        sh:path '^b'rdfs:label ;\\n        sh:maxCount 1 ;\\n        sh:datatype xsd'...\""
+        }
+      ],
+      "raw_sha256": "8a9b4565bd0386c3b133bec940728d4db46307f9490207f38b9fce54bba4ea1d",
+      "meta": {
+        "status": "parse_failure",
+        "error_type": "BadSyntax",
+        "detail": "at line 18 of <>:\nBad syntax (Prefix \"rdfs:\" not bound) at ^ in:\n\"...b'xsd:string ;\\n        sh:name \"id\"\\n    ] , [\\n        sh:path '^b'rdfs:label ;\\n        sh:maxCount 1 ;\\n        sh:datatype xsd'...\""
+      }
+    },
+    {
+      "id": "dbpedia-1",
+      "language": "en",
+      "original_validity": [
+        false,
+        {
+          "status": "failure",
+          "failure_stage": 1,
+          "failure_type": "SyntaxError",
+          "details": "at line 7 of <>:\nBad syntax (Prefix \"ex:\" not bound) at ^ in:\n\"...b'acl#> .\\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\\n\\n'^b'ex:BookAuthorShape a sh:NodeShape ;\\n    sh:description \"A bo'...\""
+        }
+      ],
+      "raw_sha256": "3b34587f97df4352d3d0505efc9a35f4936831414f38f77119bb8d7a3a7448c8",
+      "meta": {
+        "status": "parse_failure",
+        "error_type": "BadSyntax",
+        "detail": "at line 7 of <>:\nBad syntax (Prefix \"ex:\" not bound) at ^ in:\n\"...b'acl#> .\\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\\n\\n'^b'ex:BookAuthorShape a sh:NodeShape ;\\n    sh:description \"A bo'...\""
+      }
+    },
+    {
+      "id": "dbpedia-1",
+      "language": "ko",
+      "original_validity": [
+        false,
+        {
+          "status": "failure",
+          "failure_stage": 1,
+          "failure_type": "SyntaxError",
+          "details": "at line 7 of <>:\nBad syntax (Prefix \"ex:\" not bound) at ^ in:\n\"...b'acl#> .\\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\\n\\n'^b'ex:BookAuthorShape a sh:NodeShape ;\\n    sh:description \"\\xec\\xb1\\x85\\xec'...\""
+        }
+      ],
+      "raw_sha256": "3237892a5a8188ca21e2f43bb33134b448380ce0da1e9adcd82a4aa6422517bc",
+      "meta": {
+        "status": "parse_failure",
+        "error_type": "BadSyntax",
+        "detail": "at line 7 of <>:\nBad syntax (Prefix \"ex:\" not bound) at ^ in:\n\"...b'acl#> .\\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\\n\\n'^b'ex:BookAuthorShape a sh:NodeShape ;\\n    sh:description \"\\xec\\xb1\\x85\\xec'...\""
+      }
+    },
+    {
+      "id": "dbpedia-2",
+      "language": "ko",
+      "original_validity": [
+        true,
+        null
+      ],
+      "raw_sha256": "ea99106f559598169e6c08773813582c219521fa0829d38b9164b8231f7fff01",
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      }
+    },
+    {
+      "id": "dbpedia-2",
+      "language": "en",
+      "original_validity": [
+        true,
+        null
+      ],
+      "raw_sha256": "c1de9d281d4f635a6a7628a85a759cc368ff21c4d54b954d92a93dbc6acb015a",
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      }
+    },
+    {
+      "id": "dcat-1",
+      "language": "en",
+      "original_validity": [
+        true,
+        null
+      ],
+      "raw_sha256": "10cb3c6638215bf659cd47f83728b7f354cd85e0e344d658a2a2f19ee188c986",
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      }
+    },
+    {
+      "id": "dcat-1",
+      "language": "ko",
+      "original_validity": [
+        true,
+        null
+      ],
+      "raw_sha256": "1e7e73e79c5920b678eb82d18d698cdd740a312f60f98b6299ac0f3feb77fab4",
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      }
+    },
+    {
+      "id": "dcat-2",
+      "language": "ko",
+      "original_validity": [
+        true,
+        null
+      ],
+      "raw_sha256": "61e8ac8575e32e9cf9f811bcdeee0ca91477f684544c4a0e379ace388b783da0",
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      }
+    },
+    {
+      "id": "dcat-2",
+      "language": "en",
+      "original_validity": [
+        true,
+        null
+      ],
+      "raw_sha256": "ce48abece43042c75829acbb3fdb4abe851c31c26358ab58570c2d3c8257dab8",
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      }
+    },
+    {
+      "id": "epo-1",
+      "language": "en",
+      "original_validity": [
+        true,
+        null
+      ],
+      "raw_sha256": "f2e9dd38b4d6ccddf7e97d8576833dd8c6ff459b549b40a34cd1b0df1bfa5b87",
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      }
+    },
+    {
+      "id": "epo-1",
+      "language": "ko",
+      "original_validity": [
+        true,
+        null
+      ],
+      "raw_sha256": "fd3afc1ec13101f34fda4a6003174a561aaef8651417a48efef14ac21eef6035",
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      }
+    },
+    {
+      "id": "epo-2",
+      "language": "ko",
+      "original_validity": [
+        true,
+        null
+      ],
+      "raw_sha256": "045a5a34759f8e5a48c0c67b7570a82fd104467dabaea00be1548b9fc66b33c0",
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      }
+    },
+    {
+      "id": "epo-2",
+      "language": "en",
+      "original_validity": [
+        true,
+        null
+      ],
+      "raw_sha256": "00f8c9b5f0f3b1b7a932b58dea41adf40c2b546f854e465294f136d5498a2f45",
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      }
+    },
+    {
+      "id": "invoice-1",
+      "language": "en",
+      "original_validity": [
+        true,
+        null
+      ],
+      "raw_sha256": "97da9c9c5c8b40e8e90da0376e2bd599d88c02e679fa42e1702a595d61f44e5e",
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      }
+    },
+    {
+      "id": "invoice-1",
+      "language": "ko",
+      "original_validity": [
+        true,
+        null
+      ],
+      "raw_sha256": "9da9ac91d7898cbaf1bfb3a8aad37941b317abf4472b77a98e2e51996dca9588",
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      }
+    },
+    {
+      "id": "invoice-2",
+      "language": "ko",
+      "original_validity": [
+        true,
+        null
+      ],
+      "raw_sha256": "94c563e928bce09d549a0528bfbf2eeb4a65f4d2f993aa298b3b461c03634745",
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      }
+    },
+    {
+      "id": "invoice-2",
+      "language": "en",
+      "original_validity": [
+        true,
+        null
+      ],
+      "raw_sha256": "8b084ea8cd6d90845484f9e46c364dd69d72fb8848e724e73b6b942c76521812",
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      }
+    },
+    {
+      "id": "snik-1",
+      "language": "en",
+      "original_validity": [
+        true,
+        null
+      ],
+      "raw_sha256": "6df6549ff21084fa048638ccb4a94f8de977ad430f445f427bdf8ddf51c5fa1c",
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      }
+    },
+    {
+      "id": "snik-1",
+      "language": "ko",
+      "original_validity": [
+        false,
+        {
+          "status": "failure",
+          "failure_stage": 1,
+          "failure_type": "SyntaxError",
+          "details": "at line 24 of <>:\nBad syntax (Prefix \"rdf:\" not bound) at ^ in:\n\"...b'e ;\\n    ] ;\\n    sh:closed true ;\\n    sh:ignoredProperties ( '^b'rdf:type ) .'\""
+        }
+      ],
+      "raw_sha256": "18cae8ff4004124f7e2c0ab258aa0a19ff4a9b84a767738a71902eb0b8a43a2a",
+      "meta": {
+        "status": "parse_failure",
+        "error_type": "BadSyntax",
+        "detail": "at line 24 of <>:\nBad syntax (Prefix \"rdf:\" not bound) at ^ in:\n\"...b'e ;\\n    ] ;\\n    sh:closed true ;\\n    sh:ignoredProperties ( '^b'rdf:type ) .'\""
+      }
+    },
+    {
+      "id": "snik-2",
+      "language": "ko",
+      "original_validity": [
+        false,
+        {
+          "status": "failure",
+          "failure_stage": 1,
+          "failure_type": "SyntaxError",
+          "details": "at line 22 of <>:\nBad syntax (Prefix \"rdf:\" not bound) at ^ in:\n\"...b's ;\\n    ] ;\\n    sh:closed true ;\\n    sh:ignoredProperties ( '^b'rdf:type ) .'\""
+        }
+      ],
+      "raw_sha256": "3e2a6d6c630a0c01fb9f9e816f77d363be342aebba4f8e85e1a8eadac19ec865",
+      "meta": {
+        "status": "parse_failure",
+        "error_type": "BadSyntax",
+        "detail": "at line 22 of <>:\nBad syntax (Prefix \"rdf:\" not bound) at ^ in:\n\"...b's ;\\n    ] ;\\n    sh:closed true ;\\n    sh:ignoredProperties ( '^b'rdf:type ) .'\""
+      }
+    },
+    {
+      "id": "snik-2",
+      "language": "en",
+      "original_validity": [
+        true,
+        null
+      ],
+      "raw_sha256": "3dc186142becd4d66f71c729a507b8db84ab9bc8e7b366425dd1b69bbc0b17df",
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      }
+    }
+  ],
+  "paid_calls": 0,
+  "execution": {
+    "exit_code": 0,
+    "timeout_seconds": 60,
+    "review_job": "20261016T090116Z-nl2-saved-meta-2e6c62",
+    "registered_checks": [],
+    "control_assertions_passed": 3,
+    "before_after_hashes_unchanged": {
+      "scripts/audit_nl2shacl_saved_meta.py": "44e62cbb6801fd66570a8157d6c9fc100526ddfb78791114bfe9e6a4eafe5377",
+      "_workspace/nl2shacl-ko/campaign-budget.json": "4909d23b3a84c9c75bc3fc866357aaf7498029c70536edabee027fe37916afcf",
+      "_workspace/nl2shacl-ko/results.json": "38b53f0a00d797b3f00e775afdf2bdc4361dac6029bf35b27efb440cd407a72a",
+      "_workspace/nl2shacl-ko/generation/call-0008/output.ttl": "10cb3c6638215bf659cd47f83728b7f354cd85e0e344d658a2a2f19ee188c986",
+      "_workspace/nl2shacl-ko/generation/call-0006/output.ttl": "ea99106f559598169e6c08773813582c219521fa0829d38b9164b8231f7fff01",
+      "_workspace/nl2shacl-ko/generation/call-0018/output.ttl": "94c563e928bce09d549a0528bfbf2eeb4a65f4d2f993aa298b3b461c03634745",
+      "_workspace/nl2shacl-ko/generation/call-0009/output.ttl": "1e7e73e79c5920b678eb82d18d698cdd740a312f60f98b6299ac0f3feb77fab4",
+      "_workspace/nl2shacl-ko/generation/call-0011/output.ttl": "ce48abece43042c75829acbb3fdb4abe851c31c26358ab58570c2d3c8257dab8",
+      "_workspace/nl2shacl-ko/generation/call-0004/output.ttl": "3b34587f97df4352d3d0505efc9a35f4936831414f38f77119bb8d7a3a7448c8",
+      "_workspace/nl2shacl-ko/generation/call-0010/output.ttl": "61e8ac8575e32e9cf9f811bcdeee0ca91477f684544c4a0e379ace388b783da0",
+      "_workspace/nl2shacl-ko/generation/call-0014/output.ttl": "045a5a34759f8e5a48c0c67b7570a82fd104467dabaea00be1548b9fc66b33c0",
+      "_workspace/nl2shacl-ko/generation/call-0023/output.ttl": "3dc186142becd4d66f71c729a507b8db84ab9bc8e7b366425dd1b69bbc0b17df",
+      "_workspace/nl2shacl-ko/generation/call-0017/output.ttl": "9da9ac91d7898cbaf1bfb3a8aad37941b317abf4472b77a98e2e51996dca9588",
+      "_workspace/nl2shacl-ko/generation/call-0003/output.ttl": "8a9b4565bd0386c3b133bec940728d4db46307f9490207f38b9fce54bba4ea1d",
+      "_workspace/nl2shacl-ko/generation/call-0021/output.ttl": "18cae8ff4004124f7e2c0ab258aa0a19ff4a9b84a767738a71902eb0b8a43a2a",
+      "_workspace/nl2shacl-ko/generation/call-0002/output.ttl": "2a26aca20326535d9b96aa0a13e7c13fc272665265784a3654c02af098ab8572",
+      "_workspace/nl2shacl-ko/generation/call-0007/output.ttl": "c1de9d281d4f635a6a7628a85a759cc368ff21c4d54b954d92a93dbc6acb015a",
+      "_workspace/nl2shacl-ko/generation/call-0015/output.ttl": "00f8c9b5f0f3b1b7a932b58dea41adf40c2b546f854e465294f136d5498a2f45",
+      "_workspace/nl2shacl-ko/generation/call-0020/output.ttl": "6df6549ff21084fa048638ccb4a94f8de977ad430f445f427bdf8ddf51c5fa1c",
+      "_workspace/nl2shacl-ko/generation/call-0016/output.ttl": "97da9c9c5c8b40e8e90da0376e2bd599d88c02e679fa42e1702a595d61f44e5e",
+      "_workspace/nl2shacl-ko/generation/call-0005/output.ttl": "3237892a5a8188ca21e2f43bb33134b448380ce0da1e9adcd82a4aa6422517bc",
+      "_workspace/nl2shacl-ko/generation/call-0019/output.ttl": "8b084ea8cd6d90845484f9e46c364dd69d72fb8848e724e73b6b942c76521812",
+      "_workspace/nl2shacl-ko/generation/call-0012/output.ttl": "f2e9dd38b4d6ccddf7e97d8576833dd8c6ff459b549b40a34cd1b0df1bfa5b87",
+      "_workspace/nl2shacl-ko/generation/call-0001/output.ttl": "7e40232478ba9c67ee5d1fe703363b8e3cf5ee9eb65c69cf4e7060ce590899d6",
+      "_workspace/nl2shacl-ko/generation/call-0013/output.ttl": "fd3afc1ec13101f34fda4a6003174a561aaef8651417a48efef14ac21eef6035",
+      "_workspace/nl2shacl-ko/generation/call-0000/output.ttl": "89fd4b7d7ba90108435e16b5e008f92b1ee25aea4c663329967b83dde8b4ea77",
+      "_workspace/nl2shacl-ko/generation/call-0022/output.ttl": "3e2a6d6c630a0c01fb9f9e816f77d363be342aebba4f8e85e1a8eadac19ec865"
+    }
+  },
+  "interpretation": "All19raw-parseable outputs meta-conformant;5parsefailures retained. No additional invalidshape/runtimeexception/unknown in thiscohort. This doesnot showNLsemanticcorrectness orvalidateupstreammetacheck generally."
+}

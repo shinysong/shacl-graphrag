@@ -1,0 +1,215 @@
+{
+  "status": "revised_selection_pending_new_execution_review",
+  "checked_at": "2026-10-16T16:10:39.011928+00:00",
+  "supersedes": "old unfinished GPT5.4/Sonnet4.6/Gemini2.5Flash/Llama4 expansion",
+  "primary_tier": "current high-capability/flagship positioning, NOT proven equal NL2SHACL ability",
+  "primary_models": [
+    {
+      "id": "openai/gpt-6-astra",
+      "canonical_slug": "openai/gpt-6-astra-20260903",
+      "description": "GPT-6 Astra is OpenAI's flagship model for demanding end-to-end work. It is suited for advanced analysis, software engineering, deep research, scientific work, and document creation, with particular strengths in long-horizon...",
+      "reasoning": {
+        "mandatory": true,
+        "default_enabled": true,
+        "supported_efforts": [
+          "max",
+          "xhigh",
+          "high",
+          "medium",
+          "low"
+        ],
+        "default_effort": "medium"
+      },
+      "pricing": {
+        "prompt": "0.00001",
+        "completion": "0.00005",
+        "web_search": "0.01",
+        "input_cache_read": "0.000001",
+        "input_cache_write": "0.0000125",
+        "overrides": [
+          {
+            "min_prompt_tokens": 272000,
+            "prompt": "0.00002",
+            "completion": "0.000075",
+            "input_cache_read": "0.000002",
+            "input_cache_write": "0.000025"
+          }
+        ]
+      },
+      "supported_parameters": [
+        "include_reasoning",
+        "max_completion_tokens",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "tool_choice",
+        "tools",
+        "verbosity"
+      ],
+      "openrouter_created_utc": "2026-09-04T20:13:58+00:00",
+      "date_caveat": "OpenRouter created timestamp is catalog registration; canonical slug date not independently treated as official launch date",
+      "available_endpoint_count": 7
+    },
+    {
+      "id": "anthropic/claude-opus-5.5",
+      "canonical_slug": "anthropic/claude-opus-5.5-20260921",
+      "description": "Claude Opus 5.5 is Anthropic's flagship model for demanding reasoning, coding, and long-horizon agentic work, succeeding Claude Opus 5. It is particularly strong at multi-step changes in large codebases, code...",
+      "reasoning": {
+        "mandatory": true,
+        "supported_efforts": [
+          "max",
+          "xhigh",
+          "high",
+          "medium",
+          "low"
+        ],
+        "default_effort": "high"
+      },
+      "pricing": {
+        "prompt": "0.000004",
+        "completion": "0.00002",
+        "web_search": "0.01",
+        "input_cache_read": "0.0000002",
+        "input_cache_write": "0.000005",
+        "input_cache_write_1h": "0.000008"
+      },
+      "supported_parameters": [
+        "include_reasoning",
+        "max_completion_tokens",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "response_format",
+        "stop",
+        "structured_outputs",
+        "tool_choice",
+        "tools",
+        "verbosity"
+      ],
+      "openrouter_created_utc": "2026-09-22T16:32:12+00:00",
+      "date_caveat": "OpenRouter created timestamp is catalog registration; canonical slug date not independently treated as official launch date",
+      "available_endpoint_count": 11
+    },
+    {
+      "id": "google/gemini-4-argon",
+      "canonical_slug": "google/gemini-4-argon-20261013",
+      "description": "Gemini 4 Argon is Google's flagship reasoning model, built for complex software engineering, deep mathematical and scientific problem solving, and autonomous multi-step agents. Google trained it to keep context across...",
+      "reasoning": {
+        "mandatory": true,
+        "supported_efforts": [
+          "high",
+          "medium",
+          "low"
+        ],
+        "default_effort": "medium"
+      },
+      "pricing": {
+        "prompt": "0.000002",
+        "completion": "0.00001",
+        "image": "0.000002",
+        "audio": "0.000002",
+        "input_audio_cache": "0.0000001",
+        "web_search": "0.014",
+        "internal_reasoning": "0.00001",
+        "input_cache_read": "0.0000001",
+        "input_cache_write": "0.0000001875"
+      },
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "openrouter_created_utc": "2026-10-13T16:04:37+00:00",
+      "date_caveat": "OpenRouter created timestamp is catalog registration; canonical slug date not independently treated as official launch date",
+      "available_endpoint_count": 6
+    },
+    {
+      "id": "qwen/qwen3.8-max-0902",
+      "canonical_slug": "qwen/qwen3.8-max-20260902",
+      "description": "Qwen3.8 Max 0902 is an updated snapshot of Qwen3.8 Max from Alibaba's Qwen team. It is a 2.4-trillion-parameter mixture-of-experts model that accepts text, image, and video input and returns text,...",
+      "reasoning": {
+        "mandatory": true,
+        "default_enabled": true,
+        "supported_efforts": [
+          "xhigh",
+          "high",
+          "medium",
+          "low",
+          "minimal"
+        ],
+        "default_effort": "xhigh"
+      },
+      "pricing": {
+        "prompt": "0.000002",
+        "completion": "0.000006",
+        "input_cache_read": "0.00000025"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logprobs",
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
+        "reasoning_effort",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "openrouter_created_utc": "2026-09-03T21:08:24+00:00",
+      "date_caveat": "OpenRouter created timestamp is catalog registration; canonical slug date not independently treated as official launch date",
+      "available_endpoint_count": 2
+    }
+  ],
+  "secondary_current_tier": [
+    "openai/gpt-6.1-sol",
+    "anthropic/claude-sonnet-5.5",
+    "google/gemini-3.8-flash"
+  ],
+  "historical_only": [
+    "qwen/qwen3.5-397b-a17b",
+    "openai/gpt-5.4",
+    "anthropic/claude-sonnet-4.6",
+    "google/gemini-2.5-flash",
+    "meta-llama/llama-4-maverick"
+  ],
+  "proposed_settings": {
+    "reasoning_effort": "medium",
+    "temperature": "omit for all if unsupported by any; report not deterministic",
+    "max_tokens": "must review sufficient combined reasoning+visible token cap; old4096 nonthinking cap not automatically reusable"
+  },
+  "method_limits": [
+    "Same effort label does not equate actual reasoning compute. Record reasoning/visible tokens,price,latency,truncation separately.",
+    "Same12 diagnostic then same60target, no prompt changes from gold; original source bytes.",
+    "Old96 preserved as exploratory older-generation/settings study, not headline latest-model comparison.",
+    "No extra paidcalls during refresh. Residual budgets must include old96 and their costs; oldledgers immutable; original deadline unchanged."
+  ],
+  "evidence_links": [
+    "https://developers.openai.com/api/docs/models",
+    "https://developers.openai.com/api/docs/models/gpt-6-astra",
+    "https://www.anthropic.com/claude-opus-5-5",
+    "https://www.anthropic.com/claude-sonnet-5-5",
+    "https://ai.google.dev/gemini-api/docs/models/gemini-4-argon",
+    "https://openrouter.ai/qwen/qwen3.8-max-0902",
+    "https://openrouter.ai/api/v1/models"
+  ]
+}

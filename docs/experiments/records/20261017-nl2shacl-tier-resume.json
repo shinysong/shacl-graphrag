@@ -1,0 +1,881 @@
+{
+  "protocol": "nl2shacl-tier-manual-resume-1",
+  "planned": 192,
+  "attempted": 183,
+  "completed": 181,
+  "failed": 2,
+  "unattempted": [
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "epo-2",
+      "language": "en"
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "invoice-1",
+      "language": "en"
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "invoice-1",
+      "language": "ko"
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "invoice-2",
+      "language": "ko"
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "invoice-2",
+      "language": "en"
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "snik-1",
+      "language": "en"
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "snik-1",
+      "language": "ko"
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "snik-2",
+      "language": "ko"
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "snik-2",
+      "language": "en"
+    }
+  ],
+  "new_attempts": 154,
+  "new_completed": 153,
+  "new_failed": 1,
+  "paid_reported_usd_new": 1.505059187,
+  "paid_reported_usd_current_tier_total": 1.822994191,
+  "unknown_cost_upper_total": 0.014287000000000001,
+  "audit_pins": {
+    "_workspace/nl2-tiers/interrupted29-audit.json": "325440645b346b6cc7bf7b176c6f79ee2e83f05ff838d7b5d874f76726b6c624",
+    "_workspace/nl2-tier-resume/final-audit.json": "e144114fa38d5a6a8a88ca296146d5aed94a5e44545a7e9bd1a4656dc89c98d0",
+    "_workspace/nl2-tiers/campaign-budget.json": "920ed5654c4a3fe322eef5c436c30b19fa2222becd09da185c45474c813061a0",
+    "_workspace/nl2-tier-resume/campaign-budget.json": "f5fc7d22dac7059c00507c1fa15856a8ec68f3d797afd6000492d425613632bd"
+  },
+  "summary": {
+    "model_language": [
+      {
+        "model": "anthropic/claude-haiku-5.5",
+        "language": "en",
+        "reserved": 12,
+        "completed": 12,
+        "classification": {
+          "meta_conformant": 6,
+          "parse_failure": 6
+        },
+        "raw_meta": {
+          "meta_conformant": 6,
+          "parse_failure": 6
+        },
+        "upstream_scored": 12,
+        "upstream_flags_pass": {
+          "parsing_valid": 12,
+          "spec_valid": 12,
+          "vocab_valid": 12
+        },
+        "upstream_gated_structural_isomorphism": 4
+      },
+      {
+        "model": "anthropic/claude-haiku-5.5",
+        "language": "ko",
+        "reserved": 12,
+        "completed": 12,
+        "classification": {
+          "parse_failure": 6,
+          "meta_conformant": 6
+        },
+        "raw_meta": {
+          "parse_failure": 6,
+          "meta_conformant": 6
+        },
+        "upstream_scored": 12,
+        "upstream_flags_pass": {
+          "parsing_valid": 12,
+          "spec_valid": 12,
+          "vocab_valid": 12
+        },
+        "upstream_gated_structural_isomorphism": 4
+      },
+      {
+        "model": "anthropic/claude-opus-5.5",
+        "language": "en",
+        "reserved": 12,
+        "completed": 12,
+        "classification": {
+          "meta_conformant": 12
+        },
+        "raw_meta": {
+          "meta_conformant": 12
+        },
+        "upstream_scored": 12,
+        "upstream_flags_pass": {
+          "parsing_valid": 12,
+          "spec_valid": 12,
+          "vocab_valid": 12
+        },
+        "upstream_gated_structural_isomorphism": 5
+      },
+      {
+        "model": "anthropic/claude-opus-5.5",
+        "language": "ko",
+        "reserved": 12,
+        "completed": 12,
+        "classification": {
+          "meta_conformant": 12
+        },
+        "raw_meta": {
+          "meta_conformant": 12
+        },
+        "upstream_scored": 12,
+        "upstream_flags_pass": {
+          "parsing_valid": 12,
+          "spec_valid": 12,
+          "vocab_valid": 12
+        },
+        "upstream_gated_structural_isomorphism": 6
+      },
+      {
+        "model": "google/gemini-3.8-flash",
+        "language": "en",
+        "reserved": 12,
+        "completed": 12,
+        "classification": {
+          "meta_conformant": 11,
+          "truncation": 1
+        },
+        "raw_meta": {
+          "meta_conformant": 11,
+          "parse_failure": 1
+        },
+        "upstream_scored": 12,
+        "upstream_flags_pass": {
+          "parsing_valid": 11,
+          "spec_valid": 11,
+          "vocab_valid": 11
+        },
+        "upstream_gated_structural_isomorphism": 5
+      },
+      {
+        "model": "google/gemini-3.8-flash",
+        "language": "ko",
+        "reserved": 12,
+        "completed": 12,
+        "classification": {
+          "meta_conformant": 10,
+          "truncation": 1,
+          "parse_failure": 1
+        },
+        "raw_meta": {
+          "meta_conformant": 10,
+          "parse_failure": 2
+        },
+        "upstream_scored": 12,
+        "upstream_flags_pass": {
+          "parsing_valid": 11,
+          "spec_valid": 11,
+          "vocab_valid": 11
+        },
+        "upstream_gated_structural_isomorphism": 5
+      },
+      {
+        "model": "google/gemini-4-argon",
+        "language": "en",
+        "reserved": 12,
+        "completed": 12,
+        "classification": {
+          "meta_conformant": 12
+        },
+        "raw_meta": {
+          "meta_conformant": 12
+        },
+        "upstream_scored": 12,
+        "upstream_flags_pass": {
+          "parsing_valid": 12,
+          "spec_valid": 12,
+          "vocab_valid": 12
+        },
+        "upstream_gated_structural_isomorphism": 4
+      },
+      {
+        "model": "google/gemini-4-argon",
+        "language": "ko",
+        "reserved": 12,
+        "completed": 12,
+        "classification": {
+          "meta_conformant": 12
+        },
+        "raw_meta": {
+          "meta_conformant": 12
+        },
+        "upstream_scored": 12,
+        "upstream_flags_pass": {
+          "parsing_valid": 12,
+          "spec_valid": 12,
+          "vocab_valid": 12
+        },
+        "upstream_gated_structural_isomorphism": 4
+      },
+      {
+        "model": "openai/gpt-6-astra",
+        "language": "en",
+        "reserved": 12,
+        "completed": 12,
+        "classification": {
+          "meta_conformant": 12
+        },
+        "raw_meta": {
+          "meta_conformant": 12
+        },
+        "upstream_scored": 12,
+        "upstream_flags_pass": {
+          "parsing_valid": 12,
+          "spec_valid": 12,
+          "vocab_valid": 12
+        },
+        "upstream_gated_structural_isomorphism": 5
+      },
+      {
+        "model": "openai/gpt-6-astra",
+        "language": "ko",
+        "reserved": 12,
+        "completed": 12,
+        "classification": {
+          "meta_conformant": 12
+        },
+        "raw_meta": {
+          "meta_conformant": 12
+        },
+        "upstream_scored": 12,
+        "upstream_flags_pass": {
+          "parsing_valid": 12,
+          "spec_valid": 12,
+          "vocab_valid": 12
+        },
+        "upstream_gated_structural_isomorphism": 5
+      },
+      {
+        "model": "openai/gpt-6-luna",
+        "language": "en",
+        "reserved": 12,
+        "completed": 12,
+        "classification": {
+          "meta_conformant": 10,
+          "parse_failure": 2
+        },
+        "raw_meta": {
+          "meta_conformant": 10,
+          "parse_failure": 2
+        },
+        "upstream_scored": 12,
+        "upstream_flags_pass": {
+          "parsing_valid": 10,
+          "spec_valid": 10,
+          "vocab_valid": 10
+        },
+        "upstream_gated_structural_isomorphism": 5
+      },
+      {
+        "model": "openai/gpt-6-luna",
+        "language": "ko",
+        "reserved": 12,
+        "completed": 12,
+        "classification": {
+          "meta_conformant": 12
+        },
+        "raw_meta": {
+          "meta_conformant": 12
+        },
+        "upstream_scored": 12,
+        "upstream_flags_pass": {
+          "parsing_valid": 12,
+          "spec_valid": 12,
+          "vocab_valid": 12
+        },
+        "upstream_gated_structural_isomorphism": 5
+      },
+      {
+        "model": "qwen/qwen3.8-flash",
+        "language": "en",
+        "reserved": 7,
+        "completed": 7,
+        "classification": {
+          "meta_conformant": 6,
+          "parse_failure": 1
+        },
+        "raw_meta": {
+          "meta_conformant": 6,
+          "parse_failure": 1
+        },
+        "upstream_scored": 7,
+        "upstream_flags_pass": {
+          "parsing_valid": 6,
+          "spec_valid": 6,
+          "vocab_valid": 6
+        },
+        "upstream_gated_structural_isomorphism": 1
+      },
+      {
+        "model": "qwen/qwen3.8-flash",
+        "language": "ko",
+        "reserved": 8,
+        "completed": 6,
+        "classification": {
+          "meta_conformant": 6,
+          "provider_failure": 2
+        },
+        "raw_meta": {
+          "meta_conformant": 6,
+          "not_evaluated": 2
+        },
+        "upstream_scored": 6,
+        "upstream_flags_pass": {
+          "parsing_valid": 6,
+          "spec_valid": 6,
+          "vocab_valid": 6
+        },
+        "upstream_gated_structural_isomorphism": 2
+      },
+      {
+        "model": "qwen/qwen3.8-max-0902",
+        "language": "en",
+        "reserved": 12,
+        "completed": 12,
+        "classification": {
+          "meta_conformant": 12
+        },
+        "raw_meta": {
+          "meta_conformant": 12
+        },
+        "upstream_scored": 12,
+        "upstream_flags_pass": {
+          "parsing_valid": 12,
+          "spec_valid": 12,
+          "vocab_valid": 12
+        },
+        "upstream_gated_structural_isomorphism": 5
+      },
+      {
+        "model": "qwen/qwen3.8-max-0902",
+        "language": "ko",
+        "reserved": 12,
+        "completed": 12,
+        "classification": {
+          "meta_conformant": 12
+        },
+        "raw_meta": {
+          "meta_conformant": 12
+        },
+        "upstream_scored": 12,
+        "upstream_flags_pass": {
+          "parsing_valid": 12,
+          "spec_valid": 12,
+          "vocab_valid": 12
+        },
+        "upstream_gated_structural_isomorphism": 4
+      }
+    ],
+    "paired": [
+      {
+        "model": "anthropic/claude-haiku-5.5",
+        "reserved_en_ko_pairs": 12,
+        "completed_en_ko_pairs": 12,
+        "raw_meta_conformant_on_completed_pairs": {
+          "en": 6,
+          "ko": 6
+        },
+        "unpaired_reserved_ids": []
+      },
+      {
+        "model": "anthropic/claude-opus-5.5",
+        "reserved_en_ko_pairs": 12,
+        "completed_en_ko_pairs": 12,
+        "raw_meta_conformant_on_completed_pairs": {
+          "en": 12,
+          "ko": 12
+        },
+        "unpaired_reserved_ids": []
+      },
+      {
+        "model": "google/gemini-3.8-flash",
+        "reserved_en_ko_pairs": 12,
+        "completed_en_ko_pairs": 12,
+        "raw_meta_conformant_on_completed_pairs": {
+          "en": 11,
+          "ko": 10
+        },
+        "unpaired_reserved_ids": []
+      },
+      {
+        "model": "google/gemini-4-argon",
+        "reserved_en_ko_pairs": 12,
+        "completed_en_ko_pairs": 12,
+        "raw_meta_conformant_on_completed_pairs": {
+          "en": 12,
+          "ko": 12
+        },
+        "unpaired_reserved_ids": []
+      },
+      {
+        "model": "openai/gpt-6-astra",
+        "reserved_en_ko_pairs": 12,
+        "completed_en_ko_pairs": 12,
+        "raw_meta_conformant_on_completed_pairs": {
+          "en": 12,
+          "ko": 12
+        },
+        "unpaired_reserved_ids": []
+      },
+      {
+        "model": "openai/gpt-6-luna",
+        "reserved_en_ko_pairs": 12,
+        "completed_en_ko_pairs": 12,
+        "raw_meta_conformant_on_completed_pairs": {
+          "en": 10,
+          "ko": 12
+        },
+        "unpaired_reserved_ids": []
+      },
+      {
+        "model": "qwen/qwen3.8-flash",
+        "reserved_en_ko_pairs": 7,
+        "completed_en_ko_pairs": 6,
+        "raw_meta_conformant_on_completed_pairs": {
+          "en": 5,
+          "ko": 6
+        },
+        "unpaired_reserved_ids": [
+          "epo-2"
+        ]
+      },
+      {
+        "model": "qwen/qwen3.8-max-0902",
+        "reserved_en_ko_pairs": 12,
+        "completed_en_ko_pairs": 12,
+        "raw_meta_conformant_on_completed_pairs": {
+          "en": 12,
+          "ko": 12
+        },
+        "unpaired_reserved_ids": []
+      }
+    ],
+    "across_model_matched_cases": {
+      "en": {
+        "completed_ids_shared_across_all_models": [
+          "chemrof-1",
+          "chemrof-2",
+          "dbpedia-1",
+          "dbpedia-2",
+          "dcat-1",
+          "dcat-2",
+          "epo-1"
+        ],
+        "raw_meta_conformant_on_shared_ids": {
+          "anthropic/claude-haiku-5.5": 4,
+          "anthropic/claude-opus-5.5": 7,
+          "google/gemini-3.8-flash": 6,
+          "google/gemini-4-argon": 7,
+          "openai/gpt-6-astra": 7,
+          "openai/gpt-6-luna": 5,
+          "qwen/qwen3.8-flash": 6,
+          "qwen/qwen3.8-max-0902": 7
+        }
+      },
+      "ko": {
+        "completed_ids_shared_across_all_models": [
+          "chemrof-1",
+          "dbpedia-1",
+          "dbpedia-2",
+          "dcat-1",
+          "dcat-2",
+          "epo-1"
+        ],
+        "raw_meta_conformant_on_shared_ids": {
+          "anthropic/claude-haiku-5.5": 4,
+          "anthropic/claude-opus-5.5": 6,
+          "google/gemini-3.8-flash": 6,
+          "google/gemini-4-argon": 6,
+          "openai/gpt-6-astra": 6,
+          "openai/gpt-6-luna": 6,
+          "qwen/qwen3.8-flash": 6,
+          "qwen/qwen3.8-max-0902": 6
+        }
+      }
+    }
+  },
+  "model_metrics": [
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "attempted": 24,
+      "completed": 24,
+      "reported_usd": 0.0143205,
+      "unknown_cost_upper_usd": 0,
+      "median_completed_latency_seconds": 3.980619736510562,
+      "languages": {
+        "en": {
+          "completed": 12,
+          "raw_meta_conformant": 6,
+          "original_parsing_valid": 12,
+          "original_structural_match": 4
+        },
+        "ko": {
+          "completed": 12,
+          "raw_meta_conformant": 6,
+          "original_parsing_valid": 12,
+          "original_structural_match": 4
+        }
+      }
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "attempted": 24,
+      "completed": 24,
+      "reported_usd": 0.44744,
+      "unknown_cost_upper_usd": 0,
+      "median_completed_latency_seconds": 5.198118219996104,
+      "languages": {
+        "en": {
+          "completed": 12,
+          "raw_meta_conformant": 12,
+          "original_parsing_valid": 12,
+          "original_structural_match": 5
+        },
+        "ko": {
+          "completed": 12,
+          "raw_meta_conformant": 12,
+          "original_parsing_valid": 12,
+          "original_structural_match": 6
+        }
+      }
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "attempted": 24,
+      "completed": 24,
+      "reported_usd": 0.29584275,
+      "unknown_cost_upper_usd": 0,
+      "median_completed_latency_seconds": 11.61371203098679,
+      "languages": {
+        "en": {
+          "completed": 12,
+          "raw_meta_conformant": 11,
+          "original_parsing_valid": 11,
+          "original_structural_match": 5
+        },
+        "ko": {
+          "completed": 12,
+          "raw_meta_conformant": 10,
+          "original_parsing_valid": 11,
+          "original_structural_match": 5
+        }
+      }
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "attempted": 24,
+      "completed": 24,
+      "reported_usd": 0.146388,
+      "unknown_cost_upper_usd": 0,
+      "median_completed_latency_seconds": 5.6168553759926,
+      "languages": {
+        "en": {
+          "completed": 12,
+          "raw_meta_conformant": 12,
+          "original_parsing_valid": 12,
+          "original_structural_match": 4
+        },
+        "ko": {
+          "completed": 12,
+          "raw_meta_conformant": 12,
+          "original_parsing_valid": 12,
+          "original_structural_match": 4
+        }
+      }
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "attempted": 24,
+      "completed": 24,
+      "reported_usd": 0.6854075,
+      "unknown_cost_upper_usd": 0,
+      "median_completed_latency_seconds": 3.8610586274589878,
+      "languages": {
+        "en": {
+          "completed": 12,
+          "raw_meta_conformant": 12,
+          "original_parsing_valid": 12,
+          "original_structural_match": 5
+        },
+        "ko": {
+          "completed": 12,
+          "raw_meta_conformant": 12,
+          "original_parsing_valid": 12,
+          "original_structural_match": 5
+        }
+      }
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "attempted": 24,
+      "completed": 24,
+      "reported_usd": 0.010043075,
+      "unknown_cost_upper_usd": 0,
+      "median_completed_latency_seconds": 4.579865995503496,
+      "languages": {
+        "en": {
+          "completed": 12,
+          "raw_meta_conformant": 10,
+          "original_parsing_valid": 10,
+          "original_structural_match": 5
+        },
+        "ko": {
+          "completed": 12,
+          "raw_meta_conformant": 12,
+          "original_parsing_valid": 12,
+          "original_structural_match": 5
+        }
+      }
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "attempted": 15,
+      "completed": 13,
+      "reported_usd": 0.006428366,
+      "unknown_cost_upper_usd": 0.014287000000000001,
+      "median_completed_latency_seconds": 9.084927849005908,
+      "languages": {
+        "en": {
+          "completed": 7,
+          "raw_meta_conformant": 6,
+          "original_parsing_valid": 6,
+          "original_structural_match": 1
+        },
+        "ko": {
+          "completed": 6,
+          "raw_meta_conformant": 6,
+          "original_parsing_valid": 6,
+          "original_structural_match": 2
+        }
+      }
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "attempted": 24,
+      "completed": 24,
+      "reported_usd": 0.217124,
+      "unknown_cost_upper_usd": 0,
+      "median_completed_latency_seconds": 19.89299615897471,
+      "languages": {
+        "en": {
+          "completed": 12,
+          "raw_meta_conformant": 12,
+          "original_parsing_valid": 12,
+          "original_structural_match": 5
+        },
+        "ko": {
+          "completed": 12,
+          "raw_meta_conformant": 12,
+          "original_parsing_valid": 12,
+          "original_structural_match": 4
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "12 consumed convenience items, not representative or held-out.",
+    "Different requested reasoning controls/providers and two execution dates; no matched compute or model-size causal claim.",
+    "QwenFlash failed2 and quarantined9unattempted; keep all192 denominators and separate common-complete cohort.",
+    "Structural match is original gated metric, not semantic equivalence. Raw meta conformity not task correctness.",
+    "Known missing CHEBI input and source-example issues retained unchanged; no gold repair."
+  ],
+  "source_files_verified": 361,
+  "review_job": "20261017T022432Z-nl2-tier-resume-dc4817",
+  "checks": {
+    "mock_tests_passed": 48,
+    "audit_exit_code": 0,
+    "upstream_cli_runs": [
+      {
+        "command": [
+          "/home/ubuntu/.cache/uv/builds-v0/.tmpyUF2GP/bin/python",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2shacl-ko/framework/Shapes-Evaluation/run_evaluation.py",
+          "--input",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-tier-resume/final-audit-artifacts/cohort_model000_processed.jsonl",
+          "--output_dir",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-tier-resume/final-audit-artifacts/upstream",
+          "--run",
+          "structural"
+        ],
+        "exit_code": 0,
+        "model": "anthropic/claude-haiku-5.5",
+        "processed_input": "_workspace/nl2-tier-resume/final-audit-artifacts/cohort_model000_processed.jsonl",
+        "status": "completed"
+      },
+      {
+        "command": [
+          "/home/ubuntu/.cache/uv/builds-v0/.tmpyUF2GP/bin/python",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2shacl-ko/framework/Shapes-Evaluation/run_evaluation.py",
+          "--input",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-tier-resume/final-audit-artifacts/cohort_model001_processed.jsonl",
+          "--output_dir",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-tier-resume/final-audit-artifacts/upstream",
+          "--run",
+          "structural"
+        ],
+        "exit_code": 0,
+        "model": "anthropic/claude-opus-5.5",
+        "processed_input": "_workspace/nl2-tier-resume/final-audit-artifacts/cohort_model001_processed.jsonl",
+        "status": "completed"
+      },
+      {
+        "command": [
+          "/home/ubuntu/.cache/uv/builds-v0/.tmpyUF2GP/bin/python",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2shacl-ko/framework/Shapes-Evaluation/run_evaluation.py",
+          "--input",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-tier-resume/final-audit-artifacts/cohort_model002_processed.jsonl",
+          "--output_dir",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-tier-resume/final-audit-artifacts/upstream",
+          "--run",
+          "structural"
+        ],
+        "exit_code": 0,
+        "model": "google/gemini-3.8-flash",
+        "processed_input": "_workspace/nl2-tier-resume/final-audit-artifacts/cohort_model002_processed.jsonl",
+        "status": "completed"
+      },
+      {
+        "command": [
+          "/home/ubuntu/.cache/uv/builds-v0/.tmpyUF2GP/bin/python",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2shacl-ko/framework/Shapes-Evaluation/run_evaluation.py",
+          "--input",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-tier-resume/final-audit-artifacts/cohort_model003_processed.jsonl",
+          "--output_dir",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-tier-resume/final-audit-artifacts/upstream",
+          "--run",
+          "structural"
+        ],
+        "exit_code": 0,
+        "model": "google/gemini-4-argon",
+        "processed_input": "_workspace/nl2-tier-resume/final-audit-artifacts/cohort_model003_processed.jsonl",
+        "status": "completed"
+      },
+      {
+        "command": [
+          "/home/ubuntu/.cache/uv/builds-v0/.tmpyUF2GP/bin/python",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2shacl-ko/framework/Shapes-Evaluation/run_evaluation.py",
+          "--input",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-tier-resume/final-audit-artifacts/cohort_model004_processed.jsonl",
+          "--output_dir",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-tier-resume/final-audit-artifacts/upstream",
+          "--run",
+          "structural"
+        ],
+        "exit_code": 0,
+        "model": "openai/gpt-6-astra",
+        "processed_input": "_workspace/nl2-tier-resume/final-audit-artifacts/cohort_model004_processed.jsonl",
+        "status": "completed"
+      },
+      {
+        "command": [
+          "/home/ubuntu/.cache/uv/builds-v0/.tmpyUF2GP/bin/python",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2shacl-ko/framework/Shapes-Evaluation/run_evaluation.py",
+          "--input",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-tier-resume/final-audit-artifacts/cohort_model005_processed.jsonl",
+          "--output_dir",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-tier-resume/final-audit-artifacts/upstream",
+          "--run",
+          "structural"
+        ],
+        "exit_code": 0,
+        "model": "openai/gpt-6-luna",
+        "processed_input": "_workspace/nl2-tier-resume/final-audit-artifacts/cohort_model005_processed.jsonl",
+        "status": "completed"
+      },
+      {
+        "command": [
+          "/home/ubuntu/.cache/uv/builds-v0/.tmpyUF2GP/bin/python",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2shacl-ko/framework/Shapes-Evaluation/run_evaluation.py",
+          "--input",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-tier-resume/final-audit-artifacts/cohort_model006_processed.jsonl",
+          "--output_dir",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-tier-resume/final-audit-artifacts/upstream",
+          "--run",
+          "structural"
+        ],
+        "exit_code": 0,
+        "model": "qwen/qwen3.8-flash",
+        "processed_input": "_workspace/nl2-tier-resume/final-audit-artifacts/cohort_model006_processed.jsonl",
+        "status": "completed"
+      },
+      {
+        "command": [
+          "/home/ubuntu/.cache/uv/builds-v0/.tmpyUF2GP/bin/python",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2shacl-ko/framework/Shapes-Evaluation/run_evaluation.py",
+          "--input",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-tier-resume/final-audit-artifacts/cohort_model007_processed.jsonl",
+          "--output_dir",
+          "/home/ubuntu/shacl-graphrag/_workspace/nl2-tier-resume/final-audit-artifacts/upstream",
+          "--run",
+          "structural"
+        ],
+        "exit_code": 0,
+        "model": "qwen/qwen3.8-max-0902",
+        "processed_input": "_workspace/nl2-tier-resume/final-audit-artifacts/cohort_model007_processed.jsonl",
+        "status": "completed"
+      }
+    ]
+  },
+  "implementation": {
+    "failure_policy": "isolate_transient_models",
+    "old_failure_reserved_not_reconciled": true,
+    "code_hashes": {
+      "scripts/nl2shacl_multimodel.py": "04a1131a028028d854d5de448f8738a49cf0b54290868b3ef5b815423b7deab5",
+      "tests/test_nl2shacl_multimodel.py": "d733cea4e27765258cd2ea85e5f93fa03eb7ec413e9ac405e63562c7077b8807",
+      "_workspace/nl2-tier-resume/config.json": "7aac63956df35dec7ceb212d5d14f3ae119288da52bfbc04ba03a5fc5035acaf",
+      "_workspace/nl2-tier-resume/inputs.json": "4aa1915816c76fefc2079410cad2ee7e58910d7b8111c28804a2c07f3bee04f8",
+      "_workspace/nl2-tier-resume/selection.json": "6c81f05d4e88a1d0e6b30940fde0529efe2ba50c6b0a1661e28fe386ab98051b"
+    },
+    "independent_reviews": "methods and implementation ready before execution; job completed5roles",
+    "new_run_only_viewer": "_workspace/nl2-tier-resume/comparison.html",
+    "viewer_limit": "This viewer covers only new154attempts; prior29 cases require previous viewer or aggregate record. Do not interpret absent prior cases as globally unattempted.",
+    "browser_checks": [
+      {
+        "width": 1600,
+        "mode": "light",
+        "page_errors": [],
+        "overflow": false,
+        "selects": 1
+      },
+      {
+        "width": 390,
+        "mode": "light",
+        "page_errors": [],
+        "overflow": false,
+        "selects": 1
+      },
+      {
+        "width": 390,
+        "mode": "dark",
+        "page_errors": [],
+        "overflow": false,
+        "selects": 1
+      }
+    ]
+  },
+  "complete_seven_model_cohort": {
+    "models": 7,
+    "items_per_language": 12,
+    "note": "QwenFlash excluded from this complete-cohort comparison but all its failures/unattempted cases preserved in full192 accounting."
+  },
+  "paid_reported_usd_including_old96": 2.2678969735,
+  "next_step": "Separate frozen format-only and independently sourced information interventions; not yet executed. Do not retry QwenFlash consumed failures or claim further automatic work."
+}

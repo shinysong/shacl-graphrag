@@ -1,0 +1,154 @@
+{
+  "protocol": "nl2shacl-tier-handoff-v1",
+  "status": "offline_handoff_not_execution_authorization",
+  "source_records": {
+    "docs/experiments/records/20261016-nl2shacl-tier-interrupted.json": "8ba58805dedd6de249396fa338e10249f36258d12cb2c67a6638d5b84d196627",
+    "docs/experiments/records/20261016-nl2shacl-normalized-witness.json": "d107b1c2aea6a1fb0f54d3882c9d69b63c94d054950f9eb34fe498f233813573",
+    "docs/experiments/records/20261016-nl2shacl-prompt-sufficiency.json": "9a3cec69c697a87e59a7b843c75668e881962975d1d19b57679b06f79ec12559",
+    "docs/experiments/records/20261016-nl2shacl-enum-coverage.json": "e7390495481c538a3ecf17e4c2eaf1968af20d44f82a5a1fe70f593e3cc45099",
+    "docs/experiments/records/20261016-nl2shacl-example-format.json": "70e8fc134f87c6c1a5005684889c6a99f6b7093ac701d326b3df58595e1e90e3"
+  },
+  "observed": {
+    "planned_current_tier_calls": 192,
+    "attempted": 29,
+    "completed": 28,
+    "failed": 1,
+    "unexecuted": 163,
+    "failure": "HTTP429; failed cost unknown; no automatic retry or paid resume",
+    "current_reported_usd": "0.317935004 + unknown failed cost",
+    "including_predecessor_reported_usd": "0.7628377865 + unknown failed cost",
+    "balanced_completed_cases_all_eight_models_both_languages": 1,
+    "ranking_supported": false,
+    "findings": [
+      "Three Haiku outputs become executable after original postprocessing; two Gemini Flash chemrof-2 outputs remain truncated. Raw format failure differs from behavior disagreement.",
+      "chemrof-1 normalized: all 16 outputs agree with all 11 authored reference-relative probes. Finite agreement does not establish equivalence.",
+      "chemrof-2 normalized: 186 agreement, 9 underconstraint, 5 overconstraint, 60 unavailable probe observations over 13 attempted outputs; 3 unexecuted outputs excluded. Probes are not independent benchmark questions.",
+      "Four reference CHEBI identifiers are absent from all chemrof-2 EN/KO prompts. Reference-relative enum mismatch cannot be attributed solely to model reasoning or language.",
+      "Five unique source examples repeated in 192 inputs: three standalone parse, four parse with their own preceding prefixes. Two examples have unclosed fences. Contextual validity and causal effects on generation are separate questions."
+    ]
+  },
+  "proposed_next_question": "Within matched items and model-language pairs, how much measured failure is associated with explicit input availability, example formatting, and generated constraint behavior?",
+  "design_status": "Proposed controlled follow-up, not yet frozen or executed; current items already inspected, hence exploratory. Confirmatory evaluation requires fresh held-out items.",
+  "factorial_conditions": [
+    {
+      "id": "original",
+      "input_information": "unchanged",
+      "example_format": "unchanged",
+      "purpose": "Preserved reproduction baseline; do not overwrite prior attempts."
+    },
+    {
+      "id": "format_only",
+      "input_information": "unchanged",
+      "example_format": "minimal documented fence/prefix formatting changes",
+      "purpose": "Isolate demonstration formatting; only use namespace mappings established independently of held-out target gold. Unresolved mappings excluded and recorded."
+    },
+    {
+      "id": "information_only",
+      "input_information": "explicit independently sourced requirements",
+      "example_format": "unchanged",
+      "purpose": "Isolate information availability; record immutable source/version/span provenance. If independently justified values unavailable, exclude or label a new authored-contract task, never silently copy target gold."
+    },
+    {
+      "id": "combined",
+      "input_information": "same supplement as information_only",
+      "example_format": "same edits as format_only",
+      "purpose": "Assess interaction; do not attribute combined changes to either factor alone."
+    }
+  ],
+  "execution_controls": [
+    "Freeze item eligibility and all four versions before generation. No candidate-dependent edits; log exact diffs and source hashes.",
+    "Translate only the same requirements and supplements EN/KO; independent bilingual equivalence review. Ontology/target SHACL unchanged; original examples preserved in baseline.",
+    "Review a concrete call matrix, total cost/reservations and deadline before any generation. This artifact allocates zero new calls and grants no retries.",
+    "Freeze model IDs/provider settings and run order. Frontier/low-cost are operational price/product tiers, not equal capacity or parameter-size controls.",
+    "Reasoning effort values are provider-specific. Record requested settings, actual reported usage, finish reason and visible output length; zero reported reasoning tokens does not establish zero internal reasoning.",
+    "Keep output-budget changes out of the four-condition comparison; test separately if needed. Truncation may relate to combined reasoning/output limits but causality is not established.",
+    "No automatic retries of consumed failures; all failures and original ledgers remain immutable. Any separately authorized replicate uses a new experiment identifier and remains labeled as a replicate."
+  ],
+  "evaluation": {
+    "pipelines": [
+      "raw output",
+      "unchanged original postprocessed output"
+    ],
+    "separate_outcomes": [
+      "provider failure",
+      "unexecuted",
+      "truncation",
+      "Turtle parse failure",
+      "meta-SHACL failure",
+      "reference-relative underconstraint",
+      "reference-relative overconstraint",
+      "reference-relative finite-probe agreement"
+    ],
+    "denominators": "Report planned, attempted, generation-completed and executable counts separately. Report paired item/model/language effects with failures retained; conditional executable scores are secondary.",
+    "primary_reporting": "Paired condition changes per item and language; both complete-output availability and behavior disagreement. With small convenience samples give descriptive paired counts, not population or overall model ranking.",
+    "probe_limits": "Design probes before inspecting new candidates, use independent requirements and freeze provenance. Reference-based probes diagnose reference-relative behavior, not independent domain truth. Do not feed target gold or probes to generation.",
+    "structural_metric": "Keep original normalized structural matching distinct from raw graph isomorphism and finite behavioral agreement."
+  },
+  "resume_gates": [
+    "Resolve unknown failure-cost accounting with evidence; do not assume HTTP429 was free.",
+    "Independently review changed method/code and a bounded executable matrix under remaining authorized scope and deadline.",
+    "Never extend the original eight-hour window or reuse canceled predecessor plans."
+  ],
+  "viewer": "_workspace/nl2-tiers/comparison-witnesses-v3.html",
+  "paid_calls_this_handoff": 0,
+  "existing_results_changed": false,
+  "review": {
+    "job": "20261016T190320Z-nl2-tier-handoff-093a84",
+    "decision": "ready_for_offline_handoff_only",
+    "protocol_sha256": "f63424219db08f46d0afe2cb590335fcab55665020bd0f20e9e3bf7dc3bfcc8a",
+    "reviewers": {
+      "methods": {
+        "summary": "Ready as an offline, nonexecuting handoff. All five source-record SHA-256 pins match. The recorded 192 planned / 29 attempted / 28 completed / 1 failed / 163 unexecuted counts, costs with unresolved failure cost, and normalized probe totals support the bounded synthesis. The protocol preserves paired failures, reference-relative interpretation, exploratory cohort reuse, separate information/format factors, and independent-source provenance requirements. This review did not execute tests, inspect raw candidates or gold files, or verify an executable follow-up matrix.",
+        "decision": "ready",
+        "findings": [
+          {
+            "severity": "info",
+            "evidence": "protocol.json status, design_status, execution_controls and resume_gates allocate zero calls, require a separately reviewed concrete matrix, retain unknown HTTP429 cost, and forbid extending the original window. The pinned interrupted and normalized records agree with the handoff counts; chemrof-2 has 13 attempts but only 12 completed generations, with 260 probe observations including 60 unavailable.",
+            "recommendation": "Keep this approval scoped to synthesis and proposed design. Preserve attempt versus completed-output terminology and do not interpret probe observations as independent questions."
+          },
+          {
+            "severity": "warning",
+            "evidence": "factorial_conditions.format_only permits minimal fence/prefix changes using independently established namespace mappings, while claiming input_information unchanged. Independent provenance prevents target-gold copying, but a newly supplied prefix mapping can still add information if it was absent from the original prompt.",
+            "recommendation": "When freezing a future matrix, restrict format-only prefix edits to relocation or repetition of mappings already supplied in the original input; otherwise classify the mapping addition as information treatment or a separate factor. Retain exact diffs and exclusions."
+          },
+          {
+            "severity": "info",
+            "evidence": "information_only requires immutable independent source/version/span provenance and excludes unavailable values or labels a new authored-contract task; probe_limits prohibits giving gold or probes to generation. No concrete supplemented prompts or source spans are included in this proposed handoff.",
+            "recommendation": "Treat leakage prevention as a design requirement, not a verified property of future inputs. Verify actual supplements and bilingual equivalence before any separately authorized execution."
+          }
+        ],
+        "tasks": []
+      },
+      "implementation": {
+        "summary": "The offline handoff is consistent with its five pinned source records. Both cited normalized-result hashes also match. Counts, recorded cost uncertainty, formatting diagnostics and reference-relative limitations support the stated synthesis; this is not execution approval.",
+        "decision": "ready",
+        "findings": [
+          {
+            "severity": "info",
+            "evidence": "All five source_records SHA-256 pins match. Interrupted record reports 192 planned, 29 attempted, 28 completed, one failed and 163 unexecuted; reported costs match both handoff totals with one unknown failure cost. Normalized records report chemrof-1 176/176 agreement and chemrof-2 186 agreement, 9 underconstraint, 5 overconstraint and 60 unavailable observations across 13 attempts.",
+            "recommendation": "Retain these separate denominators and unknown-cost qualification; do not convert probe counts to independent task counts."
+          },
+          {
+            "severity": "info",
+            "evidence": "Pinned prompt audit reports four absent CHEBI identifiers across all 16 chemrof-2 prompt rows. Example-format record has five unique examples, three standalone parse passes, four contextual parse passes, two unclosed fences and 192 input rows. Protocol separates information and formatting interventions and requires independently sourced supplements instead of target-gold copying.",
+            "recommendation": "Keep exploratory status and provenance gates when developing a concrete future matrix."
+          },
+          {
+            "severity": "warning",
+            "evidence": "No generation matrix, new intervention implementation, independent supplement provenance or execution resource measurements are supplied. Host memory assumptions and actual future bilingual equivalence remain unverified. This review only checks saved records and hashes; no registered checks or experiment tests were run.",
+            "recommendation": "Treat ready as approval of this offline handoff only. Complete its stated authorization, provenance, accounting and independent-review gates before any future execution."
+          }
+        ],
+        "tasks": []
+      }
+    },
+    "required_future_refinement": "Format-only prefix edits must repeat/relocate mappings already present in the original input. A newly supplied mapping adds information and belongs to the information treatment or a separate factor. Concrete future inputs and execution matrix require fresh review.",
+    "registered_checks": [],
+    "check_command_exit_code": 0
+  },
+  "automation": {
+    "id": "43f21dcf",
+    "deletion_confirmed": true,
+    "remaining_schedule_list": []
+  }
+}

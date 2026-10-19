@@ -1,0 +1,37 @@
+{
+  "id": "nl2shacl-ko-diagnostic-1",
+  "scope": "Partial English reproduction and paired Korean requirement-only diagnostic, not full paper reproduction or representative Korean benchmark.",
+  "source": {
+    "dataset": "https://github.com/DE-TUM/NL2SHACL-Dataset",
+    "dataset_commit": "1115fea06a9d2a148a89571fedb9858ec3e01b41",
+    "dataset_license": "CC-BY-SA-4.0; Korean translations derivative attributed to original NL2SHACL authors",
+    "framework": "https://github.com/DE-TUM/NL2SHACL-Framework",
+    "framework_commit": "328bc5071c9c6ca00c707db99e416762f1e2eb90"
+  },
+  "sample": "First two records in upstream file order per six subsets;12pairs;exclude one-shot last items; convenience pipeline diagnostic not random representative sample.",
+  "treatment": "Only description translated EN->KO; same upstream system prompt, English example, ontology terms, prefixes and reference bytes; English ontology labels may aid English and require later factorial localization. Native coordinator translation independently reviewed before outputs.",
+  "order": "Alternate EN-first and KO-first by pair; one generation each; no retries or gold correction.",
+  "generation": {
+    "model": "qwen/qwen3.5-397b-a17b",
+    "max_calls": 120,
+    "max_usd": 5,
+    "deadline_utc": "2026-10-16T16:13:02.685477+00:00",
+    "max_tokens": 4096,
+    "input_price_per_million": 0.6,
+    "output_price_per_million": 4.0,
+    "external_ledgers": [
+      "/home/ubuntu/shacl-graphrag/_workspace/expanded-study/campaign-budget.json",
+      "/home/ubuntu/shacl-graphrag/_workspace/ontology-tools-study/campaign-budget.json",
+      "/home/ubuntu/shacl-graphrag/_workspace/yago-tools/campaign-budget.json"
+    ],
+    "daily_cap": 500,
+    "ledger_path": "/home/ubuntu/shacl-graphrag/_workspace/nl2shacl-ko/campaign-budget.json",
+    "inputs_sha256": "4cf2833742b5955ef523b83ecf4831d1f3c07e49981d068dc203fcf717db7cbc"
+  },
+  "deviations": "Current paper-model endpoint, explicit reasoning disabled and4096output cap for cost; upstream runner only sets temperature0. Provider routing recorded, not fixed identical historical provider.",
+  "evaluation": "First raw Turtle parse + upstream validity and structural comparison; independently report real pySHACL meta_shacl status if needed. Upstream semantic code needs reference self-check and nontrivial negative controls before any equivalence claims. Never equate structure mismatch with semantic error; no LER implemented here. Original code evaluates sampled graphs only.",
+  "denominators": "All24attempts plus12paired complete outputs; parse errors, truncation, API errors, evaluator failures, unknown separate. No Korean inferiority/superiority claim from12pairs.",
+  "stopping": "Review blockers prevent paid calls; failed/unresolved calls fail-stop; budget limits ceilings not targets; no arbitrary extra paid runs.8h operating window.",
+  "input_freeze": "Initial24 orderedinput rows SHA256 bound toconfig; appended/changedrows rejected. Further paid expansion requires freshreview and a sessionaggregate budget mechanism, not silentmanifest edits.",
+  "evaluation_control": "Original code says equivalent for self and weakened minCount0/maxCount2 using30triples10nodes; authored zeroauthorbook distinguishes originalFalse/weakerTrue. Do not report upstreamSER as proven semantic equivalence."
+}

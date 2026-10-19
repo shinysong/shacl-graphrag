@@ -1,0 +1,3411 @@
+{
+  "protocol": "nl2shacl-finite-behavior-expansion-1",
+  "paid_calls": 0,
+  "planned": 192,
+  "reference_eligible_cases": [
+    "chemrof-1",
+    "chemrof-2",
+    "dbpedia-1",
+    "dbpedia-2",
+    "epo-1",
+    "epo-2",
+    "invoice-1",
+    "invoice-2"
+  ],
+  "reference_blocked_cases": {
+    "dcat-1": "reference_inactive",
+    "dcat-2": "reference_inactive",
+    "snik-1": "reference_invalid",
+    "snik-2": "reference_invalid"
+  },
+  "generation_counts": {
+    "completed": 181,
+    "failed": 2,
+    "unattempted": 9
+  },
+  "behavior_counts": {
+    "all_frozen_probes_agree": 105,
+    "counterexample_observed": 13,
+    "validation_unavailable": 3,
+    "provider_failure": 2,
+    "reference_inactive": 32,
+    "unattempted": 5,
+    "reference_invalid": 32
+  },
+  "probe_observation_counts": {
+    "agreement": 1882,
+    "underconstraint_observed": 12,
+    "overconstraint_observed": 11,
+    "unavailable": 93
+  },
+  "by_case": {
+    "chemrof-1": {
+      "all_frozen_probes_agree": 16
+    },
+    "chemrof-2": {
+      "counterexample_observed": 10,
+      "all_frozen_probes_agree": 3,
+      "validation_unavailable": 2,
+      "provider_failure": 1
+    },
+    "dbpedia-1": {
+      "all_frozen_probes_agree": 15,
+      "validation_unavailable": 1
+    },
+    "dbpedia-2": {
+      "all_frozen_probes_agree": 16
+    },
+    "dcat-1": {
+      "reference_inactive": 16
+    },
+    "dcat-2": {
+      "reference_inactive": 16
+    },
+    "epo-1": {
+      "counterexample_observed": 2,
+      "all_frozen_probes_agree": 14
+    },
+    "epo-2": {
+      "provider_failure": 1,
+      "unattempted": 1,
+      "all_frozen_probes_agree": 13,
+      "counterexample_observed": 1
+    },
+    "invoice-1": {
+      "all_frozen_probes_agree": 14,
+      "unattempted": 2
+    },
+    "invoice-2": {
+      "all_frozen_probes_agree": 14,
+      "unattempted": 2
+    },
+    "snik-1": {
+      "reference_invalid": 16
+    },
+    "snik-2": {
+      "reference_invalid": 16
+    }
+  },
+  "by_model_eligible_cases": {
+    "anthropic/claude-haiku-5.5": {
+      "en": {
+        "all_frozen_probes_agree": 7,
+        "counterexample_observed": 1
+      },
+      "ko": {
+        "all_frozen_probes_agree": 7,
+        "counterexample_observed": 1
+      }
+    },
+    "anthropic/claude-opus-5.5": {
+      "en": {
+        "all_frozen_probes_agree": 8
+      },
+      "ko": {
+        "all_frozen_probes_agree": 8
+      }
+    },
+    "google/gemini-3.8-flash": {
+      "en": {
+        "all_frozen_probes_agree": 7,
+        "validation_unavailable": 1
+      },
+      "ko": {
+        "all_frozen_probes_agree": 7,
+        "validation_unavailable": 1
+      }
+    },
+    "google/gemini-4-argon": {
+      "en": {
+        "all_frozen_probes_agree": 8
+      },
+      "ko": {
+        "all_frozen_probes_agree": 7,
+        "counterexample_observed": 1
+      }
+    },
+    "openai/gpt-6-astra": {
+      "en": {
+        "all_frozen_probes_agree": 7,
+        "counterexample_observed": 1
+      },
+      "ko": {
+        "all_frozen_probes_agree": 7,
+        "counterexample_observed": 1
+      }
+    },
+    "openai/gpt-6-luna": {
+      "en": {
+        "all_frozen_probes_agree": 6,
+        "counterexample_observed": 2
+      },
+      "ko": {
+        "all_frozen_probes_agree": 7,
+        "counterexample_observed": 1
+      }
+    },
+    "qwen/qwen3.8-flash": {
+      "en": {
+        "all_frozen_probes_agree": 3,
+        "counterexample_observed": 1,
+        "validation_unavailable": 1,
+        "unattempted": 3
+      },
+      "ko": {
+        "all_frozen_probes_agree": 4,
+        "provider_failure": 2,
+        "unattempted": 2
+      }
+    },
+    "qwen/qwen3.8-max-0902": {
+      "en": {
+        "all_frozen_probes_agree": 5,
+        "counterexample_observed": 3
+      },
+      "ko": {
+        "all_frozen_probes_agree": 7,
+        "counterexample_observed": 1
+      }
+    }
+  },
+  "structure_behavior_cross_tab": {
+    "structural_match / all_frozen_probes_agree": 69,
+    "structural_nonmatch / all_frozen_probes_agree": 36,
+    "structural_nonmatch / counterexample_observed": 13
+  },
+  "counterexamples": [
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "chemrof-2",
+      "language": "ko",
+      "witness_id": "all_iri_blocks_and_full_valid",
+      "outcome": "overconstraint_observed",
+      "expected_reference_conforms": true,
+      "observed_conforms": false,
+      "expectation_basis": "older_reference_only_unannotated",
+      "requirement_quote": null,
+      "coverage": "All four explicitly enumerated CHEBI IRIs, valid optional label, typed blank superclass and typed IRI subtype parent; four conforming target nodes.",
+      "data_path": "_workspace/nl2-tiers/chemrof2-witness-design/all_iri_blocks_and_full_valid.ttl",
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "chemrof-2",
+      "language": "ko",
+      "witness_id": "subtype_blank",
+      "outcome": "underconstraint_observed",
+      "expected_reference_conforms": false,
+      "observed_conforms": true,
+      "expectation_basis": "older_reference_only_unannotated",
+      "requirement_quote": null,
+      "coverage": "Isolates subtype IRI nodeKind with correct class evidence.",
+      "data_path": "_workspace/nl2-tiers/chemrof2-witness-design/subtype_blank.ttl",
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "chemrof-2",
+      "language": "en",
+      "witness_id": "all_iri_blocks_and_full_valid",
+      "outcome": "overconstraint_observed",
+      "expected_reference_conforms": true,
+      "observed_conforms": false,
+      "expectation_basis": "older_reference_only_unannotated",
+      "requirement_quote": null,
+      "coverage": "All four explicitly enumerated CHEBI IRIs, valid optional label, typed blank superclass and typed IRI subtype parent; four conforming target nodes.",
+      "data_path": "_workspace/nl2-tiers/chemrof2-witness-design/all_iri_blocks_and_full_valid.ttl",
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "chemrof-2",
+      "language": "en",
+      "witness_id": "subtype_blank",
+      "outcome": "underconstraint_observed",
+      "expected_reference_conforms": false,
+      "observed_conforms": true,
+      "expectation_basis": "older_reference_only_unannotated",
+      "requirement_quote": null,
+      "coverage": "Isolates subtype IRI nodeKind with correct class evidence.",
+      "data_path": "_workspace/nl2-tiers/chemrof2-witness-design/subtype_blank.ttl",
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "chemrof-2",
+      "language": "ko",
+      "witness_id": "nonmember_block",
+      "outcome": "underconstraint_observed",
+      "expected_reference_conforms": false,
+      "observed_conforms": true,
+      "expectation_basis": "older_reference_only_unannotated",
+      "requirement_quote": null,
+      "coverage": "Isolates enum membership with a nonmember IRI.",
+      "data_path": "_workspace/nl2-tiers/chemrof2-witness-design/nonmember_block.ttl",
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "chemrof-2",
+      "language": "ko",
+      "witness_id": "subtype_blank",
+      "outcome": "underconstraint_observed",
+      "expected_reference_conforms": false,
+      "observed_conforms": true,
+      "expectation_basis": "older_reference_only_unannotated",
+      "requirement_quote": null,
+      "coverage": "Isolates subtype IRI nodeKind with correct class evidence.",
+      "data_path": "_workspace/nl2-tiers/chemrof2-witness-design/subtype_blank.ttl",
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "chemrof-2",
+      "language": "en",
+      "witness_id": "nonmember_block",
+      "outcome": "underconstraint_observed",
+      "expected_reference_conforms": false,
+      "observed_conforms": true,
+      "expectation_basis": "older_reference_only_unannotated",
+      "requirement_quote": null,
+      "coverage": "Isolates enum membership with a nonmember IRI.",
+      "data_path": "_workspace/nl2-tiers/chemrof2-witness-design/nonmember_block.ttl",
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "chemrof-2",
+      "language": "en",
+      "witness_id": "subtype_blank",
+      "outcome": "underconstraint_observed",
+      "expected_reference_conforms": false,
+      "observed_conforms": true,
+      "expectation_basis": "older_reference_only_unannotated",
+      "requirement_quote": null,
+      "coverage": "Isolates subtype IRI nodeKind with correct class evidence.",
+      "data_path": "_workspace/nl2-tiers/chemrof2-witness-design/subtype_blank.ttl",
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json"
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "chemrof-2",
+      "language": "ko",
+      "witness_id": "all_iri_blocks_and_full_valid",
+      "outcome": "overconstraint_observed",
+      "expected_reference_conforms": true,
+      "observed_conforms": false,
+      "expectation_basis": "older_reference_only_unannotated",
+      "requirement_quote": null,
+      "coverage": "All four explicitly enumerated CHEBI IRIs, valid optional label, typed blank superclass and typed IRI subtype parent; four conforming target nodes.",
+      "data_path": "_workspace/nl2-tiers/chemrof2-witness-design/all_iri_blocks_and_full_valid.ttl",
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json"
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "chemrof-2",
+      "language": "ko",
+      "witness_id": "all_iri_blocks_and_full_valid",
+      "outcome": "overconstraint_observed",
+      "expected_reference_conforms": true,
+      "observed_conforms": false,
+      "expectation_basis": "older_reference_only_unannotated",
+      "requirement_quote": null,
+      "coverage": "All four explicitly enumerated CHEBI IRIs, valid optional label, typed blank superclass and typed IRI subtype parent; four conforming target nodes.",
+      "data_path": "_workspace/nl2-tiers/chemrof2-witness-design/all_iri_blocks_and_full_valid.ttl",
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json"
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "chemrof-2",
+      "language": "ko",
+      "witness_id": "superclass_untyped_blank",
+      "outcome": "underconstraint_observed",
+      "expected_reference_conforms": false,
+      "observed_conforms": true,
+      "expectation_basis": "older_reference_only_unannotated",
+      "requirement_quote": null,
+      "coverage": "Isolates superclass owl:Class constraint; no class evidence on blank node.",
+      "data_path": "_workspace/nl2-tiers/chemrof2-witness-design/superclass_untyped_blank.ttl",
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json"
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "chemrof-2",
+      "language": "ko",
+      "witness_id": "subtype_blank",
+      "outcome": "underconstraint_observed",
+      "expected_reference_conforms": false,
+      "observed_conforms": true,
+      "expectation_basis": "older_reference_only_unannotated",
+      "requirement_quote": null,
+      "coverage": "Isolates subtype IRI nodeKind with correct class evidence.",
+      "data_path": "_workspace/nl2-tiers/chemrof2-witness-design/subtype_blank.ttl",
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json"
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "chemrof-2",
+      "language": "en",
+      "witness_id": "all_iri_blocks_and_full_valid",
+      "outcome": "overconstraint_observed",
+      "expected_reference_conforms": true,
+      "observed_conforms": false,
+      "expectation_basis": "older_reference_only_unannotated",
+      "requirement_quote": null,
+      "coverage": "All four explicitly enumerated CHEBI IRIs, valid optional label, typed blank superclass and typed IRI subtype parent; four conforming target nodes.",
+      "data_path": "_workspace/nl2-tiers/chemrof2-witness-design/all_iri_blocks_and_full_valid.ttl",
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json"
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "chemrof-2",
+      "language": "en",
+      "witness_id": "subtype_blank",
+      "outcome": "underconstraint_observed",
+      "expected_reference_conforms": false,
+      "observed_conforms": true,
+      "expectation_basis": "older_reference_only_unannotated",
+      "requirement_quote": null,
+      "coverage": "Isolates subtype IRI nodeKind with correct class evidence.",
+      "data_path": "_workspace/nl2-tiers/chemrof2-witness-design/subtype_blank.ttl",
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json"
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "chemrof-2",
+      "language": "en",
+      "witness_id": "all_iri_blocks_and_full_valid",
+      "outcome": "overconstraint_observed",
+      "expected_reference_conforms": true,
+      "observed_conforms": false,
+      "expectation_basis": "older_reference_only_unannotated",
+      "requirement_quote": null,
+      "coverage": "All four explicitly enumerated CHEBI IRIs, valid optional label, typed blank superclass and typed IRI subtype parent; four conforming target nodes.",
+      "data_path": "_workspace/nl2-tiers/chemrof2-witness-design/all_iri_blocks_and_full_valid.ttl",
+      "evidence_path": "_workspace/nl2-semantics/results/chemrof-2-normalized.json"
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "chemrof-2",
+      "language": "en",
+      "witness_id": "subtype_blank",
+      "outcome": "underconstraint_observed",
+      "expected_reference_conforms": false,
+      "observed_conforms": true,
+      "expectation_basis": "older_reference_only_unannotated",
+      "requirement_quote": null,
+      "coverage": "Isolates subtype IRI nodeKind with correct class evidence.",
+      "data_path": "_workspace/nl2-tiers/chemrof2-witness-design/subtype_blank.ttl",
+      "evidence_path": "_workspace/nl2-semantics/results/chemrof-2-normalized.json"
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "chemrof-2",
+      "language": "ko",
+      "witness_id": "all_iri_blocks_and_full_valid",
+      "outcome": "overconstraint_observed",
+      "expected_reference_conforms": true,
+      "observed_conforms": false,
+      "expectation_basis": "older_reference_only_unannotated",
+      "requirement_quote": null,
+      "coverage": "All four explicitly enumerated CHEBI IRIs, valid optional label, typed blank superclass and typed IRI subtype parent; four conforming target nodes.",
+      "data_path": "_workspace/nl2-tiers/chemrof2-witness-design/all_iri_blocks_and_full_valid.ttl",
+      "evidence_path": "_workspace/nl2-semantics/results/chemrof-2-normalized.json"
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "chemrof-2",
+      "language": "ko",
+      "witness_id": "nonmember_block",
+      "outcome": "underconstraint_observed",
+      "expected_reference_conforms": false,
+      "observed_conforms": true,
+      "expectation_basis": "older_reference_only_unannotated",
+      "requirement_quote": null,
+      "coverage": "Isolates enum membership with a nonmember IRI.",
+      "data_path": "_workspace/nl2-tiers/chemrof2-witness-design/nonmember_block.ttl",
+      "evidence_path": "_workspace/nl2-semantics/results/chemrof-2-normalized.json"
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "chemrof-2",
+      "language": "en",
+      "witness_id": "all_iri_blocks_and_full_valid",
+      "outcome": "overconstraint_observed",
+      "expected_reference_conforms": true,
+      "observed_conforms": false,
+      "expectation_basis": "older_reference_only_unannotated",
+      "requirement_quote": null,
+      "coverage": "All four explicitly enumerated CHEBI IRIs, valid optional label, typed blank superclass and typed IRI subtype parent; four conforming target nodes.",
+      "data_path": "_workspace/nl2-tiers/chemrof2-witness-design/all_iri_blocks_and_full_valid.ttl",
+      "evidence_path": "_workspace/nl2-semantics/results/chemrof-2-normalized.json"
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "chemrof-2",
+      "language": "en",
+      "witness_id": "nonmember_block",
+      "outcome": "underconstraint_observed",
+      "expected_reference_conforms": false,
+      "observed_conforms": true,
+      "expectation_basis": "older_reference_only_unannotated",
+      "requirement_quote": null,
+      "coverage": "Isolates enum membership with a nonmember IRI.",
+      "data_path": "_workspace/nl2-tiers/chemrof2-witness-design/nonmember_block.ttl",
+      "evidence_path": "_workspace/nl2-semantics/results/chemrof-2-normalized.json"
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "epo-1",
+      "language": "en",
+      "witness_id": "refersToNotice_two",
+      "outcome": "overconstraint_observed",
+      "expected_reference_conforms": true,
+      "observed_conforms": false,
+      "expectation_basis": "reference_only",
+      "requirement_quote": null,
+      "coverage": "Cardinality boundary refersToNotice",
+      "data_path": "_workspace/nl2-semantics/probes/epo-1/refersToNotice_two.ttl",
+      "evidence_path": "_workspace/nl2-semantics/results/epo-1-normalized.json"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "epo-1",
+      "language": "en",
+      "witness_id": "refersToNotice_two",
+      "outcome": "overconstraint_observed",
+      "expected_reference_conforms": true,
+      "observed_conforms": false,
+      "expectation_basis": "reference_only",
+      "requirement_quote": null,
+      "coverage": "Cardinality boundary refersToNotice",
+      "data_path": "_workspace/nl2-semantics/probes/epo-1/refersToNotice_two.ttl",
+      "evidence_path": "_workspace/nl2-semantics/results/epo-1-normalized.json"
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "epo-2",
+      "language": "en",
+      "witness_id": "reserved_multiple",
+      "outcome": "overconstraint_observed",
+      "expected_reference_conforms": true,
+      "observed_conforms": false,
+      "expectation_basis": "reference_only",
+      "requirement_quote": null,
+      "coverage": "No maxCount on reserved concept",
+      "data_path": "_workspace/nl2-semantics/probes/epo-2/reserved_multiple.ttl",
+      "evidence_path": "_workspace/nl2-semantics/results/epo-2-normalized.json"
+    }
+  ],
+  "rows": [
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "chemrof-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 11,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof1-normalized-witness.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "chemrof-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 11,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof1-normalized-witness.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "chemrof-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 11,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof1-normalized-witness.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "chemrof-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 11,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof1-normalized-witness.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "chemrof-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 11,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof1-normalized-witness.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "chemrof-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 11,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof1-normalized-witness.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "chemrof-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 11,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof1-normalized-witness.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "chemrof-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 11,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof1-normalized-witness.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "outer_fence_removal_only_ignoring_boundary_whitespace",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "chemrof-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 11,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof1-normalized-witness.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "chemrof-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 11,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof1-normalized-witness.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "chemrof-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 11,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof1-normalized-witness.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "chemrof-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 11,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof1-normalized-witness.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "chemrof-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 11,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof1-normalized-witness.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "chemrof-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 11,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof1-normalized-witness.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "chemrof-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 11,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof1-normalized-witness.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "chemrof-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 11,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof1-normalized-witness.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "chemrof-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 18,
+        "underconstraint_observed": 1,
+        "overconstraint_observed": 1,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json",
+      "behavior_status": "counterexample_observed",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {
+        "older_reference_only_unannotated": 2
+      }
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "chemrof-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 18,
+        "underconstraint_observed": 1,
+        "overconstraint_observed": 1,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json",
+      "behavior_status": "counterexample_observed",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {
+        "older_reference_only_unannotated": 2
+      }
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "chemrof-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "chemrof-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "chemrof-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 18,
+        "underconstraint_observed": 2,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json",
+      "behavior_status": "counterexample_observed",
+      "postprocessing_change": "outer_fence_removal_only_ignoring_boundary_whitespace",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {
+        "older_reference_only_unannotated": 2
+      }
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "chemrof-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 18,
+        "underconstraint_observed": 2,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json",
+      "behavior_status": "counterexample_observed",
+      "postprocessing_change": "outer_fence_removal_only_ignoring_boundary_whitespace",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {
+        "older_reference_only_unannotated": 2
+      }
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "chemrof-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 19,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 1,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json",
+      "behavior_status": "counterexample_observed",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {
+        "older_reference_only_unannotated": 1
+      }
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "chemrof-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "chemrof-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": null,
+      "counts": {
+        "agreement": 0,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 20
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json",
+      "behavior_status": "validation_unavailable",
+      "postprocessing_change": "original_postprocessing_change",
+      "pipeline_status": "unavailable",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "chemrof-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": null,
+      "counts": {
+        "agreement": 0,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 20
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json",
+      "behavior_status": "validation_unavailable",
+      "postprocessing_change": "original_postprocessing_change",
+      "pipeline_status": "unavailable",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "chemrof-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 17,
+        "underconstraint_observed": 2,
+        "overconstraint_observed": 1,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json",
+      "behavior_status": "counterexample_observed",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {
+        "older_reference_only_unannotated": 3
+      }
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "chemrof-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 18,
+        "underconstraint_observed": 1,
+        "overconstraint_observed": 1,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json",
+      "behavior_status": "counterexample_observed",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {
+        "older_reference_only_unannotated": 2
+      }
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "chemrof-2",
+      "language": "ko",
+      "generation_status": "failed",
+      "original_structural_match": null,
+      "counts": {
+        "agreement": 0,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 20
+      },
+      "evidence_path": "_workspace/nl2-tiers/chemrof2-normalized-witness.json",
+      "behavior_status": "provider_failure",
+      "postprocessing_change": null,
+      "pipeline_status": "terminal_provider_failure",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "chemrof-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 18,
+        "underconstraint_observed": 1,
+        "overconstraint_observed": 1,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/chemrof-2-normalized.json",
+      "behavior_status": "counterexample_observed",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {
+        "older_reference_only_unannotated": 2
+      }
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "chemrof-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 18,
+        "underconstraint_observed": 1,
+        "overconstraint_observed": 1,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/chemrof-2-normalized.json",
+      "behavior_status": "counterexample_observed",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {
+        "older_reference_only_unannotated": 2
+      }
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "chemrof-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 18,
+        "underconstraint_observed": 1,
+        "overconstraint_observed": 1,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/chemrof-2-normalized.json",
+      "behavior_status": "counterexample_observed",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {
+        "older_reference_only_unannotated": 2
+      }
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "dbpedia-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 13,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "dbpedia-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 13,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "dbpedia-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 13,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "dbpedia-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 13,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "dbpedia-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 13,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "dbpedia-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 13,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "dbpedia-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 13,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "dbpedia-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 13,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "dbpedia-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 13,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "dbpedia-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 13,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "dbpedia-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": null,
+      "counts": {
+        "agreement": 0,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 13
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-1-normalized.json",
+      "behavior_status": "validation_unavailable",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "unavailable",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "dbpedia-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 13,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "dbpedia-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 13,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "original_postprocessing_change",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "dbpedia-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 13,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "original_postprocessing_change",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "dbpedia-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 13,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "dbpedia-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 13,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "dbpedia-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "dbpedia-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "dbpedia-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "dbpedia-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "dbpedia-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "dbpedia-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "dbpedia-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "dbpedia-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "dbpedia-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "dbpedia-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "dbpedia-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "original_postprocessing_change",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "dbpedia-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "dbpedia-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "dbpedia-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "dbpedia-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "dbpedia-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/dbpedia-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "dcat-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "dcat-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "dcat-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "dcat-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "dcat-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "dcat-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "dcat-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "dcat-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "dcat-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "dcat-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "dcat-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": null,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "dcat-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "dcat-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "dcat-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "dcat-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "dcat-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "dcat-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "dcat-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "dcat-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "dcat-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "dcat-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "dcat-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "dcat-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "dcat-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "dcat-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "dcat-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": null,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "dcat-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "dcat-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "dcat-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "dcat-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "dcat-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "dcat-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_inactive"
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "epo-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 19,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 1,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-1-normalized.json",
+      "behavior_status": "counterexample_observed",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {
+        "reference_only": 1
+      }
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "epo-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "epo-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "epo-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "epo-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "epo-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "epo-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 19,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 1,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-1-normalized.json",
+      "behavior_status": "counterexample_observed",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {
+        "reference_only": 1
+      }
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "epo-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "epo-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "epo-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "epo-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "outer_fence_removal_only_ignoring_boundary_whitespace",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "epo-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "epo-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "epo-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "epo-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "epo-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "epo-2",
+      "language": "ko",
+      "generation_status": "failed",
+      "original_structural_match": null,
+      "counts": {
+        "agreement": 0,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 20
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-2-normalized.json",
+      "behavior_status": "provider_failure",
+      "postprocessing_change": null,
+      "pipeline_status": "terminal_provider_failure",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "epo-2",
+      "language": "en",
+      "generation_status": "unattempted",
+      "original_structural_match": null,
+      "behavior_status": "unattempted"
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "epo-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "epo-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "epo-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "epo-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "epo-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "epo-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "epo-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "outer_fence_removal_only_ignoring_boundary_whitespace",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "epo-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "outer_fence_removal_only_ignoring_boundary_whitespace",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "epo-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "epo-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "epo-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "epo-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "epo-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 20,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "epo-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "counts": {
+        "agreement": 19,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 1,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/epo-2-normalized.json",
+      "behavior_status": "counterexample_observed",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {
+        "reference_only": 1
+      }
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "invoice-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "invoice-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "invoice-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "invoice-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "invoice-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "invoice-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "invoice-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "invoice-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "outer_fence_removal_only_ignoring_boundary_whitespace",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "invoice-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "invoice-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "invoice-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "invoice-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "invoice-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "invoice-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 15,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-1-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "invoice-1",
+      "language": "en",
+      "generation_status": "unattempted",
+      "original_structural_match": null,
+      "behavior_status": "unattempted"
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "invoice-1",
+      "language": "ko",
+      "generation_status": "unattempted",
+      "original_structural_match": null,
+      "behavior_status": "unattempted"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "invoice-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 16,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "invoice-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 16,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "invoice-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 16,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "invoice-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 16,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "invoice-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 16,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "invoice-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 16,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "invoice-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 16,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "invoice-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 16,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "invoice-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 16,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "invoice-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 16,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "invoice-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 16,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "invoice-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 16,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "invoice-2",
+      "language": "ko",
+      "generation_status": "unattempted",
+      "original_structural_match": null,
+      "behavior_status": "unattempted"
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "invoice-2",
+      "language": "en",
+      "generation_status": "unattempted",
+      "original_structural_match": null,
+      "behavior_status": "unattempted"
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "invoice-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 16,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "invoice-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": true,
+      "counts": {
+        "agreement": 16,
+        "underconstraint_observed": 0,
+        "overconstraint_observed": 0,
+        "unavailable": 0
+      },
+      "evidence_path": "_workspace/nl2-semantics/results/invoice-2-normalized.json",
+      "behavior_status": "all_frozen_probes_agree",
+      "postprocessing_change": "unchanged",
+      "pipeline_status": "evaluated",
+      "requirement_grounding_counts": {}
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "snik-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "snik-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "snik-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "snik-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "snik-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "snik-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "snik-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "snik-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "snik-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "snik-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "snik-1",
+      "language": "en",
+      "generation_status": "unattempted",
+      "original_structural_match": null,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "snik-1",
+      "language": "ko",
+      "generation_status": "unattempted",
+      "original_structural_match": null,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "snik-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "snik-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "snik-1",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "snik-1",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "snik-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "snik-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "snik-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "snik-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "snik-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "snik-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "snik-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "snik-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "snik-2",
+      "language": "ko",
+      "generation_status": "unattempted",
+      "original_structural_match": null,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "snik-2",
+      "language": "en",
+      "generation_status": "unattempted",
+      "original_structural_match": null,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "snik-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "snik-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "snik-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "snik-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "snik-2",
+      "language": "ko",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "snik-2",
+      "language": "en",
+      "generation_status": "completed",
+      "original_structural_match": false,
+      "behavior_status": "reference_invalid"
+    }
+  ],
+  "evidence_pins": {
+    "_workspace/nl2-tiers/chemrof1-normalized-witness.json": "5705688f18d7ed1050ed1c811608150449d84032d5156c2949e064e316754ade",
+    "_workspace/nl2-tiers/chemrof2-normalized-witness.json": "7f11f402bfc6230fbb2836464d0c9b239453de9b0e4eed0544c4f2b3fac47556",
+    "_workspace/nl2-semantics/results/chemrof-2-normalized.json": "c67a15d31aaef5c2d0cf566bf59d48ceaaa49c7124d20304e89302d7dce01fff",
+    "_workspace/nl2-semantics/results/dbpedia-1-normalized.json": "39a0c070650389cb448290581eaaea84380c2ed51ade2aaa96896a6f8f17c75f",
+    "_workspace/nl2-semantics/results/dbpedia-2-normalized.json": "0f94d3c0d6cdddeb0449b20ad965a9b16e667f4e4511498ba25eb16c32d2cc58",
+    "_workspace/nl2-semantics/results/epo-1-normalized.json": "4975923c6f64c88f10de987d29ff131eac8fdc8927a46ecba4eff9c190f43841",
+    "_workspace/nl2-semantics/results/epo-2-normalized.json": "25494e63de86faae78a2237342c3513311e9e011149ce514cf822f9b6b74ed79",
+    "_workspace/nl2-semantics/results/invoice-1-normalized.json": "5cdf39dff12708c3d5dac23be0a06c15156bcc855404a859aca3854c9c0193c4",
+    "_workspace/nl2-semantics/results/invoice-2-normalized.json": "a46bfbe2430948719872dbe752939c70f02c854e748a3082e9ea2c9d8bd743b0"
+  },
+  "limitations": [
+    "Reference-relative finite probes; all-pass does not prove equivalence or independent prose/domain correctness.",
+    "Explicit requirement labels are authored mappings, not independently proven full semantic alignment.",
+    "DCAT targetless and SNIK invalid references excluded, not repaired. Their candidate quality remains unassessed by this protocol.",
+    "Earlier chemrof designs are reused; enum missinginput qualification retained.",
+    "Consumed convenience cohort, no representativeness or equal compute/modelcapacity claim.",
+    "Unavailable outputs and provider failures are not semantic negatives; preserve planned denominators."
+  ],
+  "design_manifest": {
+    "designs": {
+      "_workspace/nl2-semantics/designs/dcat-1.json": "f7b77c8e23321d5c878c4e5bc36c4ad6e4eef64e417057f52b46ca41bc5169a6",
+      "_workspace/nl2-semantics/designs/snik-2.json": "488c832fab7f4a5a0669867c6af6cd1b1852ca191daf98af65525e193cce314a",
+      "_workspace/nl2-semantics/designs/snik-1.json": "4cbb646f2eea6ad78c8a5244afa04d0695c0835c5866d2bf24cde77557943d91",
+      "_workspace/nl2-semantics/designs/dbpedia-2.json": "f9c556a076e359d46c9544e5ede42bf2360f56019132228b232fe10cc79124e6",
+      "_workspace/nl2-semantics/designs/dbpedia-1.json": "26d6bef123094e4cc8e233699c202c05b440fbe5b98cb8241ce4cacb76698eae",
+      "_workspace/nl2-semantics/designs/invoice-1.json": "c025cdf9ab181c766d57f888e3dcd771a6fe22b9b42c1f1aa35a5c470d8bafed",
+      "_workspace/nl2-semantics/designs/dcat-2.json": "87a4797e67891b607ede38ad3e65ad82c8642bc7231ed429e35b5654b953904f",
+      "_workspace/nl2-semantics/designs/epo-2.json": "a7cb20a5d2c8b28f909f9fb8beafcbc54c4ec32a38cf23796945bd9488498bcf",
+      "_workspace/nl2-semantics/designs/invoice-2.json": "959e01f322c58e4957bef25b28e24ed6d61a9a5562fae0e5481ee040706b25a4",
+      "_workspace/nl2-semantics/designs/epo-1.json": "836d57e4c71366bbe9bf13e5f0f292f48e8e4f9670c6cdbae6130145a63f307a"
+    },
+    "old_designs": {
+      "_workspace/nl2-tiers/semantic-design.json": "e35f429984b23cc27e8af4819d7c9eff07675ec44b29cf267a6e1ce67fbea955",
+      "_workspace/nl2-tiers/chemrof2-semantic-design.json": "43a6dd677f4aedd4ad0a7bc5c555eddd18e815f78d23c698a8cdde702d0f3718"
+    },
+    "eligible_cases": [
+      "chemrof-1",
+      "chemrof-2",
+      "dbpedia-1",
+      "dbpedia-2",
+      "epo-1",
+      "epo-2",
+      "invoice-1",
+      "invoice-2"
+    ],
+    "blocked_cases": {
+      "dcat-1": "reference_inactive",
+      "dcat-2": "reference_inactive",
+      "snik-1": "reference_invalid",
+      "snik-2": "reference_invalid"
+    },
+    "builder_manifests": {
+      "_workspace/nl2-semantics/design-a/frozen-manifest.json": "40d7f098e954f9a4cb5409095cda1f66ab14809ff67e27b2af9e7fd0483bd654",
+      "_workspace/nl2-semantics/design-b/frozen-manifest.json": "171913a592fa79bfe440d4142b3084b52a33491f2c862dc251ebdbb706a0e555"
+    },
+    "paid_calls": 0
+  },
+  "review": {
+    "job": "20261017T071719Z-nl2-semantic-expansion-e85c15",
+    "status": "completed",
+    "independent_methods": "ready",
+    "independent_implementation": "ready",
+    "registered_checks": [],
+    "mock_tests_passed": 31,
+    "initial_mock_invocation": "failed: pytest absent; corrected uv --with pytest run passed31",
+    "execution_exit_code": 0,
+    "independent_saved_boolean_recount": {
+      "agreement": 105,
+      "difference": 13,
+      "unavailable": 3,
+      "provider_failed": 2
+    },
+    "renderer_exit_code": 0,
+    "browser_checks": [
+      {
+        "width": 1600,
+        "theme": "light",
+        "page_errors": [],
+        "overflow": false,
+        "cases": 7,
+        "cards": 8,
+        "probe_text_visible": true
+      },
+      {
+        "width": 390,
+        "theme": "light",
+        "page_errors": [],
+        "overflow": false,
+        "cases": 7,
+        "cards": 8,
+        "probe_text_visible": true
+      },
+      {
+        "width": 390,
+        "theme": "dark",
+        "page_errors": [],
+        "overflow": false,
+        "cases": 7,
+        "cards": 8,
+        "probe_text_visible": true
+      }
+    ]
+  },
+  "completed_output_breakdown": {
+    "all_frozen_probes_agree": 105,
+    "counterexample_observed": 13,
+    "validation_unavailable": 3,
+    "reference_inactive": 32,
+    "reference_invalid": 28
+  },
+  "viewer": {
+    "new_saved_generation_only": "_workspace/nl2-semantics/comparison.html",
+    "previous_chemrof_results": "_workspace/nl2-tiers/comparison-witnesses-v3.html",
+    "limitation": "New viewer shows seven eligible case portions from new generation ledger, not cumulative181; cumulative counts are this record."
+  },
+  "next_step": "A separately labeled requirement-contract evaluation can investigate targetless/invalid references and ambiguity; do not repair original reference or call current all-pass semantic equivalence."
+}

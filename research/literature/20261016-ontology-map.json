@@ -1,0 +1,187 @@
+{
+  "scope": "Targeted scoping review, not exhaustive systematic review",
+  "window": [
+    "2024-10-16",
+    "2026-10-16"
+  ],
+  "searched": "arXiv, ACL Anthology, ACM via indexed records/official programs/author copies, publisher journals, CEUR, GoogleScholar attempted",
+  "access_limits": [
+    "Google Scholar direct search inaccessible",
+    "ACM direct search inaccessible; author institutional sources and full manuscripts used",
+    "Some records abstract-only; read_level explicit",
+    "No citation-count or significance inference without verification"
+  ],
+  "records": [
+    {
+      "id": 1,
+      "title": "OG-RAG",
+      "status": "2025 EMNLP",
+      "url": "https://aclanthology.org/2025.emnlp-main.1674.pdf",
+      "read_level": "full text, evaluation sections",
+      "finding": "Ontology-grounded hypergraph retrieval; authors report 55% context recall and40% response correctness improvement, not percentage points.",
+      "limitation": "Generated QA/RAGAS evaluation; ontology grounding and retrieval algorithm change together; not same-rule Python/RDF isolation."
+    },
+    {
+      "id": 2,
+      "title": "Ontology-to-tools compilation for executable semantic constraint enforcement in LLM agents",
+      "status": "2026 arXiv preprint",
+      "url": "https://arxiv.org/html/2602.03439v1",
+      "read_level": "full text, tables7.1-7.3",
+      "finding": "30 chemistry papers; synthesis-step F1 .843 full versus .572 without constraint feedback.",
+      "limitation": "Strong adjacent positive evidence for executable feedback; not evidence of SHACL-specific benefit or superiority over matched Python tools."
+    },
+    {
+      "id": 3,
+      "title": "I Cannot Read All That: concise ontology-agnostic building-specific schemas",
+      "status": "2025 ACM BuildSys",
+      "url": "https://gtf.fyi/papers/bschema2025paul.pdf",
+      "read_level": "full text, table1",
+      "finding": "b-schema summarizes Brick/S223 models for queries, validation and LLM query generation; four HVAC questions show useful improvements.",
+      "limitation": "Tiny QA evaluation; one S223 question still fails. Closely relevant to our schema/context bottleneck, not broad accuracy benchmark."
+    },
+    {
+      "id": 4,
+      "title": "Evidence-Carrying Validation for Knowledge Graphs",
+      "status": "2026 arXiv preprint",
+      "url": "https://arxiv.org/html/2608.15948v1",
+      "read_level": "full text, abstract/evaluation",
+      "finding": "Shifty returns satisfaction traces and failure witnesses. Corpora45Brick+19S223 models; median materialization cost1.54-2.07x conformance-only.",
+      "limitation": "Direct prior art for evidence-producing validators; not measured end-to-end LLM hallucination reduction."
+    },
+    {
+      "id": 5,
+      "title": "OntoRipple: Making waves in the knowledge graph lifecycle",
+      "status": "2026 SoftwareX",
+      "url": "https://doi.org/10.1016/j.softx.2026.102542",
+      "read_level": "publisher abstract and author manuscript accessed",
+      "finding": "Propagates ontology changes into RML mappings and SHACL shapes.",
+      "limitation": "Direct lifecycle overlap; no verified human-labor effect size extracted. Do not claim all arbitrary code/prompts/agent state migrated."
+    },
+    {
+      "id": 6,
+      "title": "NL2SHACL-Bench",
+      "status": "2026 ISWC accepted per arXiv metadata",
+      "url": "https://arxiv.org/html/2608.07530v2",
+      "read_level": "full text, evaluation/metrics",
+      "finding": "Natural-language requirements to SHACL; separates syntax, structure and semantic equivalence. Samples and logical containment expose different failures.",
+      "limitation": "Logical checker has fragment/time coverage limits; author text has rate-denominator nuances, so no aggregate equivalence number quoted."
+    },
+    {
+      "id": 7,
+      "title": "Systematic Evaluation of Knowledge Graph Repair with Large Language Models",
+      "status": "2025 arXiv version",
+      "url": "https://arxiv.org/html/2507.22419v1",
+      "read_level": "full text, methods/evaluation",
+      "finding": "Violation-inducing operations create repair tasks; Brick,LUBM,QUDT; relevant concise constraint context improves repairs versus entire manifest.",
+      "limitation": "Injected failures and supplied constraints, not natural corruption prevalence or factual truth. Repairs of interdependent violations not fully assessed."
+    },
+    {
+      "id": 8,
+      "title": "SHACL Validation under Graph Updates",
+      "status": "2025 extended paper",
+      "url": "https://arxiv.org/abs/2508.00137",
+      "read_level": "abstract and extended-paper method excerpts",
+      "finding": "Static analysis asks whether updates preserve constraints for every initially conforming graph; regression to satisfiability.",
+      "limitation": "Not an incremental runtime speed benchmark. General problem and fragments have significant decidability/complexity limitations."
+    },
+    {
+      "id": 9,
+      "title": "SHACL validation in the presence of ontologies: Semantics and rewriting techniques",
+      "status": "2026 Artificial Intelligence;2025 preprint",
+      "url": "https://doi.org/10.1016/j.artint.2026.104483",
+      "read_level": "publisher abstract and author introduction",
+      "finding": "Core-universal-model semantics integrates open-world ontology reasoning with constraint validation and reduces to ordinary validation through rewriting.",
+      "limitation": "Formal contribution, no empirical LLM accuracy dataset. Ordinary pySHACL validation does not automatically implement all this semantics."
+    },
+    {
+      "id": 10,
+      "title": "OntoRAG: Enhancing Question-Answering through Automated Ontology Derivation from Unstructured Knowledge Bases",
+      "status": "2025 arXiv preprint",
+      "url": "https://arxiv.org/html/2506.00664v1",
+      "read_level": "full text, extraction/evaluation",
+      "finding": "Clusters extracted entities and builds ontology hierarchy; reports comprehensiveness win rates85% versus vector RAG and75% versus best GraphRAG configuration.",
+      "limitation": "Comprehensiveness preference is not factual accuracy; multiple extraction/chunking/retrieval components differ."
+    },
+    {
+      "id": 11,
+      "title": "Ontology Learning and Knowledge Graph Construction: A Comparison of Approaches and Their Impact on RAG Performance",
+      "status": "2025 arXiv preprint",
+      "url": "https://arxiv.org/html/2511.05991v1",
+      "read_level": "full text, evaluation",
+      "finding": "One grant application,20manualquestions. GraphRAG and both chunk-enriched ontology variants each18/20correct.",
+      "limitation": "Evidence against unconditional superiority; preserving textual chunks matters. Small single-document study."
+    },
+    {
+      "id": 12,
+      "title": "OntoURL",
+      "status": "2025 arXiv v3",
+      "url": "https://arxiv.org/abs/2505.11031v3",
+      "read_level": "abstract/version history",
+      "finding": "15tasks,57303questions,40ontologies,8domains,20models in this version; ontology understanding/reasoning/learning distinct.",
+      "limitation": "Do not mix later journal counts36159/43 from December2026 issue with selected version. Benchmark measures LLM ontology ability, not RDF-system advantage."
+    },
+    {
+      "id": 13,
+      "title": "Large Language Models Assisting Ontology Evaluation",
+      "status": "2025 arXiv preprint",
+      "url": "https://arxiv.org/abs/2507.14552",
+      "read_level": "abstract",
+      "finding": "OE-Assist uses1393competencyquestions with ontologies and stories; automated CQ verification compared with manualgold and users.",
+      "limitation": "CQ coverage/evaluation useful for selecting needed semantics; not assurance of all downstream task correctness."
+    },
+    {
+      "id": 14,
+      "title": "Evo-DKD: Dual-Knowledge Decoding for Autonomous Ontology Evolution in Large Language Models",
+      "status": "2025 arXiv preprint",
+      "url": "https://arxiv.org/abs/2507.21438",
+      "read_level": "abstract",
+      "finding": "Proposes ontology edits with textual justification and validation loop.",
+      "limitation": "Authors explicitly simulate dual-decoder behavior with prompts dueGPUconstraints. Treat as exploratory, not verified implemented dual-decoder architecture."
+    },
+    {
+      "id": 15,
+      "title": "Large Language Models for Ontology Engineering: A Systematic Literature Review",
+      "status": "2026 Semantic Web",
+      "url": "https://doi.org/10.1177/22104968261465514",
+      "read_level": "published review sections4/6",
+      "finding": "Published review selects36papers49task-levelstudies, search throughMay2025. Maintenance sparse within that sample.",
+      "limitation": "Not survey coverage throughOctober2026; repository earlier counts34/46 differ, use published version. Does not prove maintenance field globally empty."
+    },
+    {
+      "id": 16,
+      "title": "Lessons Learned from the Combined Development of OWL and SHACL",
+      "status": "2025 ACM K-CAP",
+      "url": "https://portalcientifico.upm.es/en/ipublic/item/10448674",
+      "read_level": "author institution abstract and official conference program",
+      "finding": "Railway case combines OWL,SHACL,SKOS; engine feature differences and manual effort remain; coordinated model/shape change management.",
+      "limitation": "Experience paper, not controlled maintenance-labor comparison. Institution January1date is not exact conference date; officialprogram December10-12."
+    },
+    {
+      "id": 17,
+      "title": "Ontology Evolution in Invasion Biology Using Large Language Models: A Hybrid Approach",
+      "status": "2025 LLM-TEXT2KG workshop",
+      "url": "https://ceur-ws.org/Vol-4020/Paper_ID_13.pdf",
+      "read_level": "abstract/introduction",
+      "finding": "Hybrid LLM approach updates existing INBIO ontology with emerging scientific knowledge.",
+      "limitation": "Concrete evolution domain candidate; quantitative effectiveness not verified in this pass."
+    }
+  ],
+  "synthesis": {
+    "revise": "Same-rule deterministic parity does not test retrieval grounding, schema compression, action-space constraints, ontology evolution or schema induction. Prior local findings cannot generalize to ontology uselessness.",
+    "retain": "No evidence here establishes universal RDF/SHACL superiority over a competent same-semantics implementation; factual truth is not validation conformance.",
+    "novelty_risks": [
+      "Ontology-to-tools already exists",
+      "Evidence-producing validation already exists",
+      "Ontology-to-mapping/shape change propagation already exists"
+    ],
+    "candidate_question": "Can task-specific semantic context and evidence-carrying feedback help an LLM execute and adapt queries/tools under schema changes at equal cost, without increasing unnecessary withholding? Novelty not established.",
+    "candidate_design": [
+      "same actual domain source and frozen natural-language questions",
+      "compare full schema versus task-specific schema summary",
+      "compare boolean report versus evidence-carrying feedback",
+      "same-semantics JSON/Python versus RDF tools",
+      "separate interpretation, query, retrieval, evidence, final-answer and update errors",
+      "include changes, incomplete evidence, wrong mapping, costs and failed runs"
+    ]
+  }
+}

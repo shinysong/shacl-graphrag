@@ -1,0 +1,82 @@
+{
+  "title": "NL2SHACL Korean requirement-only diagnostic pairs",
+  "attribution": "English descriptions: DE-TUM/NL2SHACL-Dataset contributors; Korean translations: native Codex coordinator, independently reviewed for this diagnostic.",
+  "source": "https://github.com/DE-TUM/NL2SHACL-Dataset/tree/1115fea06a9d2a148a89571fedb9858ec3e01b41",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "changes": "Added Korean natural-language descriptions only. Original English retained. Ontology and SHACL not translated.12convenience pairs not a representative new benchmark.",
+  "pairs": [
+    {
+      "id": "chemrof-1",
+      "subset": "chemrof-dataset",
+      "en": "When curating an Anion State, which serves as a mixin applied to any negatively charged atom or molecule, the data structure is flexible and remains open to additional properties beyond the core definition. Within this state, you may optionally record the elemental charge, which represents the number of protons minus the number of electrons. If this charge is specified, it must be provided as a single whole number. Furthermore, to accurately reflect the anionic nature of the entity, this integer must be negative one or lower.",
+      "ko": "음전하를 띤 원자나 분자에 적용하는 믹스인인 음이온 상태(Anion State)를 정리할 때, 데이터 구조는 유연하며 핵심 정의에 없는 추가 속성도 허용한다. 이 상태에는 양성자 수에서 전자 수를 뺀 값인 원소 전하를 선택적으로 기록할 수 있다. 전하를 명시한다면 하나의 정수로 제공해야 한다. 또한 해당 개체가 음이온임을 정확히 나타내려면 이 정수는 -1 이하여야 한다."
+    },
+    {
+      "id": "chemrof-2",
+      "subset": "chemrof-dataset",
+      "en": "When defining an Atom Grouping By Periodic Table Block, such as a group 13 atom, the data model is strictly closed, meaning no outside properties are permitted other than explicitly ignored system types. Every record must specify exactly one string-based identifier and may provide a single string representing the name of the chemical entity. The grouping can specify at most one periodic table block, which classifies elements unified by the orbitals of their valence electrons or vacancies, and this value must be chosen from a specific set of allowed CHEBI identifiers or the exact value 'g-block'. To establish hierarchical relationships, the record may include up to one OWL subclass categorization formatted as an internal nested record linking it to broader metaclasses. Furthermore, it can define subtype relationships using a direct link to a Molecule Grouping Class to indicate that this grouping is a more specialized form of another grouping class.",
+      "ko": "13족 원자와 같은 주기율표 블록별 원자 그룹(Atom Grouping By Periodic Table Block)을 정의할 때, 데이터 모델은 엄격히 닫혀 있으므로 명시적으로 검사에서 제외한 시스템 유형 외에는 외부 속성을 허용하지 않는다. 각 레코드는 문자열 식별자를 정확히 하나 지정해야 하며, 화학 개체의 이름을 나타내는 문자열을 하나 제공할 수 있다. 그룹은 원자가 전자의 궤도 또는 빈자리에 따라 원소를 분류하는 주기율표 블록을 최대 하나 지정할 수 있다. 이 값은 허용된 CHEBI 식별자의 특정 집합 또는 정확한 값 'g-block' 중에서 선택해야 한다. 계층 관계를 설정하기 위해, 레코드에는 더 넓은 메타클래스로 연결하는 내부 중첩 레코드 형식의 OWL 하위 클래스 분류를 최대 하나 포함할 수 있다. 또한 Molecule Grouping Class로 직접 연결하여 이 그룹이 다른 그룹 클래스의 더 특수한 형태임을 나타내는 하위 유형 관계를 정의할 수 있다."
+    },
+    {
+      "id": "dbpedia-1",
+      "subset": "dbpedia-dataset",
+      "en": "A book must have exactly one author.",
+      "ko": "책에는 저자가 정확히 한 명 있어야 한다."
+    },
+    {
+      "id": "dbpedia-2",
+      "subset": "dbpedia-dataset",
+      "en": "The age of a person must be an integer.",
+      "ko": "사람의 나이는 정수여야 한다."
+    },
+    {
+      "id": "dcat-1",
+      "subset": "dcat-dataset",
+      "en": "When applying a geographical names restriction, the resource must be explicitly associated with the concept scheme in which it is included. Specifically, you must provide at least one direct link to a concept scheme, which serves as a set of defined concepts, and this specific identifier URL must be exactly the GeoNames registry located at http://sws.geonames.org.",
+      "ko": "지명 제한을 적용할 때, 자원은 자신이 속한 개념 체계와 명시적으로 연결되어야 한다. 구체적으로, 정의된 개념들의 집합인 개념 체계로 직접 연결되는 링크를 적어도 하나 제공해야 하며, 이 식별자 URL은 정확히 http://sws.geonames.org 에 있는 GeoNames 레지스트리여야 한다."
+    },
+    {
+      "id": "dcat-2",
+      "subset": "dcat-dataset",
+      "en": "When establishing a continent restriction for a resource, it must be explicitly included within a formal concept scheme, which acts as a controlled set of concepts. To satisfy this requirement, you must provide at least one direct link formatted as a specific identifier URL that points exactly to the official continent authority list at http://publications.europa.eu/resource/authority/continent.",
+      "ko": "자원에 대륙 제한을 설정할 때, 자원은 통제된 개념 집합 역할을 하는 공식 개념 체계에 명시적으로 포함되어야 한다. 이를 충족하려면 http://publications.europa.eu/resource/authority/continent 에 있는 공식 대륙 전거 목록을 정확히 가리키는 식별자 URL 형식의 직접 링크를 적어도 하나 제공해야 한다."
+    },
+    {
+      "id": "epo-1",
+      "subset": "epo-dataset",
+      "en": "When curating an ESPD Request, which is a document issued by a buyer defining how the exclusion grounds and selection criteria should be addressed in a European Single Procurement Document for a specific procurement, several strict relationships must be established. The request must concern exactly one Procedure, representing the legally defined set of administrative activities conducted to conclude one or more contracts, and this relationship must be provided as a specific identifier URL. Furthermore, the request must specify at least one Procurement Criterion to be used, which must also be linked via a specific identifier URL. Finally, the ESPD Request may refer to a Notice, which is a document published by the buyer about market opportunities and results, and any such reference must similarly be recorded using a specific identifier URL.",
+      "ko": "특정 조달에 대한 유럽 단일 조달 문서에서 배제 사유와 선정 기준을 어떻게 다룰지 구매자가 정의하여 발행하는 문서인 ESPD Request를 정리할 때는 몇 가지 엄격한 관계를 설정해야 한다. 요청은 하나 이상의 계약을 체결하기 위해 수행하는 법적으로 정의된 행정 활동들의 집합인 Procedure와 정확히 하나의 관계를 맺어야 하며, 이 관계는 식별자 URL로 제공해야 한다. 또한 요청은 사용할 Procurement Criterion을 적어도 하나 지정해야 하며, 이 역시 식별자 URL로 연결해야 한다. 마지막으로, ESPD Request는 구매자가 시장 기회와 결과에 관해 게시한 문서인 Notice를 참조할 수 있으며, 그러한 참조 역시 식별자 URL로 기록해야 한다."
+    },
+    {
+      "id": "epo-2",
+      "subset": "epo-dataset",
+      "en": "When curating a Participation Conditions Summary, which serves as an overview of the participation conditions for a procurement, you may include up to one general explanatory text detailing the objective rules and criteria that a tender must fulfill. This description must be provided as a standard text string or a language-specific string. Similarly, the summary can contain at most one explanatory text describing the verification method, specifically the means used to validate these participation conditions, also formatted as a standard or language-tagged text string. Finally, to indicate whether the procurement is reserved for the participation of certain types of organizations, the summary may include a reserved procurement explanation, which must be expressed as a direct link to a standardized concept from a controlled vocabulary.",
+      "ko": "조달 참여 조건의 개요인 Participation Conditions Summary를 정리할 때, 입찰이 충족해야 할 객관적인 규칙과 기준을 자세히 설명하는 일반 설명문을 최대 하나 포함할 수 있다. 이 설명은 일반 문자열 또는 언어가 지정된 문자열로 제공해야 한다. 마찬가지로, 이 참여 조건을 검증하는 수단인 검증 방법을 설명하는 설명문을 최대 하나 포함할 수 있으며, 이 역시 일반 문자열 또는 언어 태그가 붙은 문자열이어야 한다. 마지막으로, 조달 참여가 특정 유형의 조직에 한정되는지를 나타내기 위해 제한 조달에 대한 설명을 포함할 수 있으며, 이는 통제 어휘의 표준화된 개념으로 직접 연결되는 링크로 표현해야 한다."
+    },
+    {
+      "id": "invoice-1",
+      "subset": "invoice-dataset",
+      "en": "When curating details for an Invoice record, you must specify exactly one actual delivery date formatted as a text string. Providing this single required date is critical to the integrity of the record, as failing to include it will trigger a system error indicating that the required DTM+35 segment is missing or extra from the data.",
+      "ko": "Invoice 레코드의 세부 정보를 정리할 때, 실제 납품일을 문자열 형식으로 정확히 하나 지정해야 한다. 이 필수 날짜 하나를 제공하는 것은 레코드의 무결성에 중요하며, 이를 충족하지 않으면 필수 DTM+35 세그먼트가 데이터에 없거나 초과한다는 시스템 오류가 발생한다."
+    },
+    {
+      "id": "invoice-2",
+      "subset": "invoice-dataset",
+      "en": "When curating details for an Invoice record, strict formatting rules apply to the date of the supplier's order number. To ensure the header information remains valid and specifically to prevent the RFF+VN segment from being too long, this date must be recorded as a text string and cannot exceed a maximum length of eight characters.",
+      "ko": "Invoice 레코드의 세부 정보를 정리할 때, 공급업체 주문번호의 날짜에는 엄격한 형식 규칙이 적용된다. 헤더 정보의 유효성을 유지하고 특히 RFF+VN 세그먼트가 너무 길어지는 것을 막으려면, 이 날짜는 문자열로 기록해야 하며 길이가 최대 8자를 넘을 수 없다."
+    },
+    {
+      "id": "snik-1",
+      "subset": "snik-dataset",
+      "en": "Every entity type must have at least one human-readable label and is strictly limited to a specific set of allowed attributes. It may include entity type components and indicate what it is based on. While no arbitrary information can be added, an entity type is also permitted to use standard top-level properties and specific connections to describe what it communicates with, the functions it supports, its associated software product, and its typical features.",
+      "ko": "모든 엔터티 유형에는 사람이 읽을 수 있는 레이블이 적어도 하나 있어야 하며, 허용된 특정 속성 집합만 사용할 수 있다. 엔터티 유형 구성요소를 포함하고 무엇을 기반으로 하는지 나타낼 수 있다. 임의의 정보는 추가할 수 없지만, 표준 최상위 속성과 특정 연결을 사용하여 무엇과 통신하는지, 어떤 기능을 지원하는지, 어떤 소프트웨어 제품과 연결되는지, 어떤 전형적인 특징이 있는지를 기술하는 것도 허용된다."
+    },
+    {
+      "id": "snik-2",
+      "subset": "snik-dataset",
+      "en": "Every function must have at least one label to serve as a human-readable name. Beyond standard basic information, a function is strictly limited to specifying its function components, the data it uses, the entity types it updates, and any measurable entity types it increases or decreases. No other details are permitted.",
+      "ko": "모든 기능에는 사람이 읽을 수 있는 이름 역할을 하는 레이블이 적어도 하나 있어야 한다. 표준 기본 정보 외에는 기능 구성요소, 사용하는 데이터, 갱신하는 엔터티 유형, 증가시키거나 감소시키는 측정 가능한 엔터티 유형만 지정할 수 있다. 다른 세부 정보는 허용되지 않는다."
+    }
+  ]
+}

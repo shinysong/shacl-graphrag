@@ -1,0 +1,4063 @@
+{
+  "scope": "48 new paired items; separate from initial12 convenience items; partial single-model reproduction",
+  "model": "qwen/qwen3.5-397b-a17b",
+  "provider_counts": {
+    "Alibaba": 96
+  },
+  "new_calls": 96,
+  "total_session_calls": 120,
+  "new_reported_usd": 0.13923975,
+  "session_reported_usd": 0.16689894,
+  "session_nonrefunded_reserved_usd": 2.702493,
+  "failed_generation": 0,
+  "truncations": 0,
+  "empty_outputs": 0,
+  "postprocessing_changed_nonwhitespace": 0,
+  "expansion_metrics": {
+    "en": {
+      "n": 48,
+      "raw_meta": {
+        "meta_conformant": 42,
+        "parse_failure": 6
+      },
+      "upstream_flags_pass": {
+        "parsing_valid": 42,
+        "spec_valid": 40,
+        "vocab_valid": 37
+      },
+      "upstream_all_validity_flags_pass": 37,
+      "upstream_gated_structural_isomorphism": 3
+    },
+    "ko": {
+      "n": 48,
+      "raw_meta": {
+        "meta_conformant": 36,
+        "parse_failure": 10,
+        "invalid_shape": 2
+      },
+      "upstream_flags_pass": {
+        "parsing_valid": 38,
+        "spec_valid": 38,
+        "vocab_valid": 37
+      },
+      "upstream_all_validity_flags_pass": 37,
+      "upstream_gated_structural_isomorphism": 2
+    }
+  },
+  "initial12_metrics": {
+    "en": {
+      "raw_parse": 10,
+      "proper_meta": 10,
+      "upstream_gated_structure": 1
+    },
+    "ko": {
+      "raw_parse": 9,
+      "proper_meta": 9,
+      "upstream_gated_structure": 2
+    }
+  },
+  "pooled60_metrics_nonrepresentative": {
+    "en": {
+      "raw_parse": 52,
+      "proper_meta": 52,
+      "upstream_gated_structure": 4
+    },
+    "ko": {
+      "raw_parse": 47,
+      "proper_meta": 45,
+      "upstream_gated_structure": 4
+    }
+  },
+  "upstream_false_meta_pass_examples": [
+    "dcat-7-ko",
+    "dcat-17-ko"
+  ],
+  "limitations": [
+    "Neither parsing, meta conformance nor structural mismatch measures semantic correctness.",
+    "No logical-semantic accuracy reported: earlier authored counterexamples exposed finite SER test blindspots.",
+    "Single model/provider; first12 convenience sample plus48 quota-selected items; no representative language superiority claim.",
+    "Original English system, ontology, examples unchanged; Korean requirements-only translations native-agent reviewed, not human-expert certified.",
+    "Original DCAT cross-domain example intentionally preserved.",
+    "Posthoc collection adapter coordinator checked; generation and translations independently reviewed. No new full-suite test claim."
+  ],
+  "dataset": {
+    "repository": "https://github.com/DE-TUM/NL2SHACL-Dataset",
+    "commit": "1115fea06a9d2a148a89571fedb9858ec3e01b41",
+    "license": "CC-BY-SA-4.0"
+  },
+  "framework": {
+    "repository": "https://github.com/DE-TUM/NL2SHACL-Framework",
+    "commit": "328bc5071c9c6ca00c707db99e416762f1e2eb90",
+    "license": "MIT"
+  },
+  "verification": {
+    "generation_exit_code": 0,
+    "raw_meta_collection_exit_code": 0,
+    "upstream_structural_cli_exit_code": 0,
+    "verified_frozen_hashes": {
+      "scripts/nl2shacl_pair_study.py": "15ce847504cf736bd030762f51b0123c9d15573f2bb6815ecc3268a8a2f237f7",
+      "tests/test_nl2shacl_pair_study.py": "f1b1eadad9372f3a6b347a956ddcfc2804ee7ee58b55d9fadcbcd20e59d31ca2",
+      "_workspace/nl2-expansion/preflight.py": "450509be08eb29e81934a5542eee20d07ff1d67ba9d6fb46db1144722d5bc1f2",
+      "_workspace/nl2-expansion/config.json": "89473ff9c7d9a09b5e469aebdd15afc48ac730e7ed7042eacec7b2e9d3163170",
+      "_workspace/nl2-expansion/inputs.json": "83dd05fc041f8b52a542ca6cdc20eb844629a770eaca48d123c59a073ccdf7fc",
+      "_workspace/nl2shacl-ko/campaign-budget.json": "4909d23b3a84c9c75bc3fc866357aaf7498029c70536edabee027fe37916afcf",
+      "research/nl2shacl/expansion-pairs.json": "a89996307819cef1bcfa9ac1796e2f7c33b6b8a9dfe9d538cd713739fd15f8f6",
+      "research/nl2shacl/expansion-selection.json": "6f3257a54f72e1582cdd6f55d38c8e654bfa12325595f992fc43cae3cf126bf8",
+      "_workspace/nl2-translation/prepare.py": "abdbd153e21538104add55303284f072752e2039339bf6c1cf96a3ff41ed72b9",
+      "_workspace/nl2-translation/input-manifest.json": "ced316ef4f1821db4df628402b798b8198afabde4663ff042f98f6151157d0a3",
+      "_workspace/nl2shacl-ko/config.json": "60e01bd6ed69cd821c4bf351fba2e7f4fccf6e4599f88555840ee79a5259ff0a",
+      "_workspace/nl2shacl-ko/inputs.json": "a387a3453387bacd9f70490ed74c2efeda6af1eb181a200b0e1cb2e1a3fa0c91",
+      "_workspace/nl2shacl-ko/pairs.json": "a6503ba59de5620e82cd0704dc3cf390440900a5eedf542d448261703ec8b553"
+    },
+    "source_files_verified": 361
+  },
+  "native_review_job": "20261016T100157Z-nl2-expansion-execute-5a0172",
+  "heartbeat": {
+    "id": "73143f1b",
+    "status": "deleted",
+    "reason": "120-call session ceiling exhausted"
+  },
+  "rows": [
+    {
+      "id": "chemrof-57",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00157599,
+      "upper_usd": 0.0228358,
+      "raw_sha256": "a2f5897892c8e52503f50d6f6d8c0b752f03d7df7011ee4662db6deceb48e609",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1677,
+        "completion_tokens": 394,
+        "total_tokens": 2071,
+        "cost": 0.00157599,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00157599,
+          "upstream_inference_prompt_cost": 0.00065403,
+          "upstream_inference_completions_cost": 0.00092196
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "74990e3f53bc89bd67132cbf2e55dffaa641f84ed963d03470f9e2de96029e4c",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "chemrof-57",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.0015834,
+      "upper_usd": 0.0228742,
+      "raw_sha256": "a2f5897892c8e52503f50d6f6d8c0b752f03d7df7011ee4662db6deceb48e609",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1696,
+        "completion_tokens": 394,
+        "total_tokens": 2090,
+        "cost": 0.0015834,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0015834,
+          "upstream_inference_prompt_cost": 0.00066144,
+          "upstream_inference_completions_cost": 0.00092196
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "74990e3f53bc89bd67132cbf2e55dffaa641f84ed963d03470f9e2de96029e4c",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "chemrof-39",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00139113,
+      "upper_usd": 0.0226144,
+      "raw_sha256": "d391ac1a539b31b622fe0b35a1f0cf7f8cfce61ed4b01d273d11dbbafc6fa0e5",
+      "empty_output": false,
+      "meta": {
+        "status": "parse_failure",
+        "error_type": "BadSyntax",
+        "detail": "at line 19 of <>:\nBad syntax (Prefix \"rdfs:\" not bound) at ^ in:\n\"...b'h:maxCount 1 ;\\n        sh:order 0\\n    ] , [\\n        sh:path '^b'rdfs:label ;\\n        sh:name \"label\" ;\\n        sh:datatype x'...\""
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1593,
+        "completion_tokens": 329,
+        "total_tokens": 1922,
+        "cost": 0.00139113,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00139113,
+          "upstream_inference_prompt_cost": 0.00062127,
+          "upstream_inference_completions_cost": 0.00076986
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "1738f25198541f89c635ccf5f60e81ab70761be634e6b9896b4a99f3e3fa58fe",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "chemrof-39",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00155922,
+      "upper_usd": 0.022555,
+      "raw_sha256": "d84a0dce598d33cc25a9fe93814ce3a31acd291801f76f50ab783ad981814e89",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1574,
+        "completion_tokens": 404,
+        "total_tokens": 1978,
+        "cost": 0.00155922,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00155922,
+          "upstream_inference_prompt_cost": 0.00061386,
+          "upstream_inference_completions_cost": 0.00094536
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "1738f25198541f89c635ccf5f60e81ab70761be634e6b9896b4a99f3e3fa58fe",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "chemrof-73",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00209547,
+      "upper_usd": 0.0237712,
+      "raw_sha256": "aec6442314473aac99f0105aece10480b61c70ebaa872947498f031acd71f81b",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2055,
+        "completion_tokens": 553,
+        "total_tokens": 2608,
+        "cost": 0.00209547,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00209547,
+          "upstream_inference_prompt_cost": 0.00080145,
+          "upstream_inference_completions_cost": 0.00129402
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "fd86780eab1c369342107a187d699955c588a778ad1a0e9612466e8bea67933d",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "chemrof-73",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00224094,
+      "upper_usd": 0.0238942,
+      "raw_sha256": "01f89856af789fed8587a0ccf14554242f4ea0929c8b2fb80816c7675cb767ed",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2098,
+        "completion_tokens": 608,
+        "total_tokens": 2706,
+        "cost": 0.00224094,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00224094,
+          "upstream_inference_prompt_cost": 0.00081822,
+          "upstream_inference_completions_cost": 0.00142272
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "fd86780eab1c369342107a187d699955c588a778ad1a0e9612466e8bea67933d",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "chemrof-9",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00140283,
+      "upper_usd": 0.0228178,
+      "raw_sha256": "73855df68e09c546dc360fc5f048006d2b3e74e1a6d50c98e0fd6360d190f1e9",
+      "empty_output": false,
+      "meta": {
+        "status": "parse_failure",
+        "error_type": "BadSyntax",
+        "detail": "at line 16 of <>:\nBad syntax (Prefix \"rdfs:\" not bound) at ^ in:\n\"...b'e xsd:string ;\\n        sh:order 0\\n    ] , [\\n        sh:path '^b'rdfs:label ;\\n        sh:maxCount 1 ;\\n        sh:datatype xsd'...\""
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1665,
+        "completion_tokens": 322,
+        "total_tokens": 1987,
+        "cost": 0.00140283,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00140283,
+          "upstream_inference_prompt_cost": 0.00064935,
+          "upstream_inference_completions_cost": 0.00075348
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "e98156ef5d5e2803204b66abb89cd108af30ac8b6d2ef3e0a03da73d2c3007c2",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "chemrof-9",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00147732,
+      "upper_usd": 0.02272,
+      "raw_sha256": "28aefb9e1cdb83378ebb60ef309088c1aea598871c59d865dd2554f682ced1b0",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1634,
+        "completion_tokens": 359,
+        "total_tokens": 1993,
+        "cost": 0.00147732,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00147732,
+          "upstream_inference_prompt_cost": 0.00063726,
+          "upstream_inference_completions_cost": 0.00084006
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "e98156ef5d5e2803204b66abb89cd108af30ac8b6d2ef3e0a03da73d2c3007c2",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "chemrof-61",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.0026403,
+      "upper_usd": 0.024195400000000002,
+      "raw_sha256": "b4da982f27599021eef7fef12837ea7c129d5e67788527e00cb58407a5004ece",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2240,
+        "completion_tokens": 755,
+        "total_tokens": 2995,
+        "cost": 0.0026403,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0026403,
+          "upstream_inference_prompt_cost": 0.0008736,
+          "upstream_inference_completions_cost": 0.0017667
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "62593b4f4d65380b99e1c8f680ef6da4dd82e69724dcf7af257dcbc3fdd2c44f",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "chemrof-61",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00282672,
+      "upper_usd": 0.024304,
+      "raw_sha256": "d720d28001b3d2ef4f8af365a9ad44988e8778ce5034e83d8de09bde84749ab6",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2298,
+        "completion_tokens": 825,
+        "total_tokens": 3123,
+        "cost": 0.00282672,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00282672,
+          "upstream_inference_prompt_cost": 0.00089622,
+          "upstream_inference_completions_cost": 0.0019305
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "62593b4f4d65380b99e1c8f680ef6da4dd82e69724dcf7af257dcbc3fdd2c44f",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "chemrof-46",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00238095,
+      "upper_usd": 0.023870799999999998,
+      "raw_sha256": "3480866282d9a530ce38e3102fa72edc6319c237278368159a27ebd05bd796bf",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2109,
+        "completion_tokens": 666,
+        "total_tokens": 2775,
+        "cost": 0.00238095,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00238095,
+          "upstream_inference_prompt_cost": 0.00082251,
+          "upstream_inference_completions_cost": 0.00155844
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "64ab1a0e93a7d5dfed293a20828bb16a840931178e9da7268a878d09a4547aae",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "chemrof-46",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00263679,
+      "upper_usd": 0.023779599999999998,
+      "raw_sha256": "1daf43863aa5405ca4077037506abe2b05d8f2f2667d2a92ece855290e385c34",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2033,
+        "completion_tokens": 788,
+        "total_tokens": 2821,
+        "cost": 0.00263679,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00263679,
+          "upstream_inference_prompt_cost": 0.00079287,
+          "upstream_inference_completions_cost": 0.00184392
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "64ab1a0e93a7d5dfed293a20828bb16a840931178e9da7268a878d09a4547aae",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "chemrof-14",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00161616,
+      "upper_usd": 0.0228484,
+      "raw_sha256": "83acbdf8ec781637fc45b6e54039f022a0d95777b7f2eb4109aae08f843e841e",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1672,
+        "completion_tokens": 412,
+        "total_tokens": 2084,
+        "cost": 0.00161616,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00161616,
+          "upstream_inference_prompt_cost": 0.00065208,
+          "upstream_inference_completions_cost": 0.00096408
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "1ed5a68e2555baa31b03c649356a9161efa1544af3b8cfde5a9cc331661c1ab0",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "chemrof-14",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00150189,
+      "upper_usd": 0.022945,
+      "raw_sha256": "9d006ab9273d4212a22c1a615d8a37c00463fd2e8387592f93e7721c6e7ba111",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1703,
+        "completion_tokens": 358,
+        "total_tokens": 2061,
+        "cost": 0.00150189,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00150189,
+          "upstream_inference_prompt_cost": 0.00066417,
+          "upstream_inference_completions_cost": 0.00083772
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "1ed5a68e2555baa31b03c649356a9161efa1544af3b8cfde5a9cc331661c1ab0",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "chemrof-60",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00247884,
+      "upper_usd": 0.024094,
+      "raw_sha256": "b78de0ddfe42f88006ea9bf2a00465f95654b44b26e00682c4cb14a34392e961",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2186,
+        "completion_tokens": 695,
+        "total_tokens": 2881,
+        "cost": 0.00247884,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00247884,
+          "upstream_inference_prompt_cost": 0.00085254,
+          "upstream_inference_completions_cost": 0.0016263
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "a7d0cf7528ea5dc687f82c0c2497d2d3e0030eeba8e4b34959b26da6a81e8ec3",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "chemrof-60",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00240396,
+      "upper_usd": 0.0240004,
+      "raw_sha256": "253080c3dd424cf0a394c420f73d6ff90bb315e59fc6cddce1fbeb901c9e50f9",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2132,
+        "completion_tokens": 672,
+        "total_tokens": 2804,
+        "cost": 0.00240396,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00240396,
+          "upstream_inference_prompt_cost": 0.00083148,
+          "upstream_inference_completions_cost": 0.00157248
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "a7d0cf7528ea5dc687f82c0c2497d2d3e0030eeba8e4b34959b26da6a81e8ec3",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dbpedia-3",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00088452,
+      "upper_usd": 0.021145599999999997,
+      "raw_sha256": "9f4c941de99dd9d16267613ca955ccfe334fcdef37e84fa6fe37be51fd46e366",
+      "empty_output": false,
+      "meta": {
+        "status": "parse_failure",
+        "error_type": "BadSyntax",
+        "detail": "at line 7 of <>:\nBad syntax (Prefix \"ex:\" not bound) at ^ in:\n\"...b'acl#> .\\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\\n\\n'^b'ex:PersonGenderShape a sh:NodeShape ;\\n    sh:description \"Th'...\""
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1026,
+        "completion_tokens": 207,
+        "total_tokens": 1233,
+        "cost": 0.00088452,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00088452,
+          "upstream_inference_prompt_cost": 0.00040014,
+          "upstream_inference_completions_cost": 0.00048438
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "6be4295053e22371a236419c7cb72eca6550be84405c1dff43051257ae757fc8",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dbpedia-3",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00088452,
+      "upper_usd": 0.0211486,
+      "raw_sha256": "93625c30e86df7e8b60777413a6c83316c03dba3d3732e02b8714b5d2dcd0223",
+      "empty_output": false,
+      "meta": {
+        "status": "parse_failure",
+        "error_type": "BadSyntax",
+        "detail": "at line 7 of <>:\nBad syntax (Prefix \"ex:\" not bound) at ^ in:\n\"...b'acl#> .\\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\\n\\n'^b'ex:PersonGenderShape a sh:NodeShape ;\\n    sh:description \"\\xec\\x82'...\""
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1026,
+        "completion_tokens": 207,
+        "total_tokens": 1233,
+        "cost": 0.00088452,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00088452,
+          "upstream_inference_prompt_cost": 0.00040014,
+          "upstream_inference_completions_cost": 0.00048438
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "6be4295053e22371a236419c7cb72eca6550be84405c1dff43051257ae757fc8",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dbpedia-6",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00091572,
+      "upper_usd": 0.021145599999999997,
+      "raw_sha256": "2cd58618a95d20d7e06f2f9c0985ee226801597290c27dea3ba61719a1a80e0d",
+      "empty_output": false,
+      "meta": {
+        "status": "parse_failure",
+        "error_type": "BadSyntax",
+        "detail": "at line 7 of <>:\nBad syntax (Prefix \"ex:\" not bound) at ^ in:\n\"...b'acl#> .\\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\\n\\n'^b'ex:FilmRatingShape a sh:NodeShape ;\\n    sh:description \"\\xec\\x98\\x81\\xed'...\""
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1028,
+        "completion_tokens": 220,
+        "total_tokens": 1248,
+        "cost": 0.00091572,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00091572,
+          "upstream_inference_prompt_cost": 0.00040092,
+          "upstream_inference_completions_cost": 0.0005148
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "a85e842479e7a6081ab4a0c214d18921def7538151eff917426f89193d5a8e18",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dbpedia-6",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00091299,
+      "upper_usd": 0.021142,
+      "raw_sha256": "23751af79e1eadbe25504221d5d553b116952cb4253ff84549dfedbd419d77f7",
+      "empty_output": false,
+      "meta": {
+        "status": "parse_failure",
+        "error_type": "BadSyntax",
+        "detail": "at line 7 of <>:\nBad syntax (Prefix \"ex:\" not bound) at ^ in:\n\"...b'acl#> .\\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\\n\\n'^b'ex:FilmRatingShape a sh:NodeShape ;\\n    sh:description \"A fi'...\""
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1027,
+        "completion_tokens": 219,
+        "total_tokens": 1246,
+        "cost": 0.00091299,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00091299,
+          "upstream_inference_prompt_cost": 0.00040053,
+          "upstream_inference_completions_cost": 0.00051246
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "a85e842479e7a6081ab4a0c214d18921def7538151eff917426f89193d5a8e18",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dbpedia-5",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00081471,
+      "upper_usd": 0.021137200000000002,
+      "raw_sha256": "5618833c06013f1982698d5660c41bb9a6e70db76826e28741bc5af53102fe8f",
+      "empty_output": false,
+      "meta": {
+        "status": "parse_failure",
+        "error_type": "BadSyntax",
+        "detail": "at line 7 of <>:\nBad syntax (Prefix \"ex:\" not bound) at ^ in:\n\"...b'acl#> .\\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\\n\\n'^b'ex:DocumentTagShape a sh:NodeShape ;\\n    sh:description \"A b'...\""
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1021,
+        "completion_tokens": 178,
+        "total_tokens": 1199,
+        "cost": 0.00081471,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00081471,
+          "upstream_inference_prompt_cost": 0.00039819,
+          "upstream_inference_completions_cost": 0.00041652
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "6faaf76b15aa2275168146341919ab60ae85779e09bfbf0374520b02d4431ad2",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dbpedia-5",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00081744,
+      "upper_usd": 0.021154,
+      "raw_sha256": "4a9656a863cc07ae320f74212ee14fdac9c5c2517668da606cde90489526a8cb",
+      "empty_output": false,
+      "meta": {
+        "status": "parse_failure",
+        "error_type": "BadSyntax",
+        "detail": "at line 7 of <>:\nBad syntax (Prefix \"ex:\" not bound) at ^ in:\n\"...b'acl#> .\\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\\n\\n'^b'ex:DocumentTagShape a sh:NodeShape ;\\n    sh:description \"\\xeb\\xb8\\x94'...\""
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1022,
+        "completion_tokens": 179,
+        "total_tokens": 1201,
+        "cost": 0.00081744,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00081744,
+          "upstream_inference_prompt_cost": 0.00039858,
+          "upstream_inference_completions_cost": 0.00041886
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "6faaf76b15aa2275168146341919ab60ae85779e09bfbf0374520b02d4431ad2",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dbpedia-7",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00082797,
+      "upper_usd": 0.0211438,
+      "raw_sha256": "a56f226682a0f6331ca2b3d1ed0e2fde99008b315942f798dab99eb1691a90d1",
+      "empty_output": false,
+      "meta": {
+        "status": "parse_failure",
+        "error_type": "BadSyntax",
+        "detail": "at line 7 of <>:\nBad syntax (Prefix \"ex:\" not bound) at ^ in:\n\"...b'acl#> .\\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\\n\\n'^b'ex:CityNameShape a sh:NodeShape ;\\n    sh:description \"\\xeb\\x8f\\x84\\xec\\x8b\\x9c'...\""
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1025,
+        "completion_tokens": 183,
+        "total_tokens": 1208,
+        "cost": 0.00082797,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00082797,
+          "upstream_inference_prompt_cost": 0.00039975,
+          "upstream_inference_completions_cost": 0.00042822
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "ce397d0ecf3b400fd7ad0188809af5c30f3b920e2a783e7105ab0bf427cc6bed",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dbpedia-7",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00084903,
+      "upper_usd": 0.021139599999999998,
+      "raw_sha256": "c927f8f872b37c0c82a75f622f0d68e0c9b79bb6f223244ed1245c0343753a28",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1025,
+        "completion_tokens": 192,
+        "total_tokens": 1217,
+        "cost": 0.00084903,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00084903,
+          "upstream_inference_prompt_cost": 0.00039975,
+          "upstream_inference_completions_cost": 0.00044928
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "ce397d0ecf3b400fd7ad0188809af5c30f3b920e2a783e7105ab0bf427cc6bed",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dbpedia-9",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00089037,
+      "upper_usd": 0.0211492,
+      "raw_sha256": "4c5d87095f7eb04a48c72bea1151eb4ee4a2a462b10a7a43df038b53272cc68e",
+      "empty_output": false,
+      "meta": {
+        "status": "parse_failure",
+        "error_type": "BadSyntax",
+        "detail": "at line 7 of <>:\nBad syntax (Prefix \"ex:\" not bound) at ^ in:\n\"...b'acl#> .\\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\\n\\n'^b'ex:CountryCodeShape a sh:NodeShape ;\\n    sh:description \"A c'...\""
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1023,
+        "completion_tokens": 210,
+        "total_tokens": 1233,
+        "cost": 0.00089037,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00089037,
+          "upstream_inference_prompt_cost": 0.00039897,
+          "upstream_inference_completions_cost": 0.0004914
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "714b86c8aa38402c0f57d78f2327ade3e8ddebc6f0f521481af5cf6f657b8daa",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dbpedia-9",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00090129,
+      "upper_usd": 0.021154,
+      "raw_sha256": "1785762248d3478ba1ffc10e635fbf22ed00927077c2e6030cddd1d315b738dd",
+      "empty_output": false,
+      "meta": {
+        "status": "parse_failure",
+        "error_type": "BadSyntax",
+        "detail": "at line 7 of <>:\nBad syntax (Prefix \"ex:\" not bound) at ^ in:\n\"...b'acl#> .\\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\\n\\n'^b'ex:CountryCodeShape a sh:NodeShape ;\\n    sh:description \"\\xea\\xb5\\xad'...\""
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1027,
+        "completion_tokens": 214,
+        "total_tokens": 1241,
+        "cost": 0.00090129,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00090129,
+          "upstream_inference_prompt_cost": 0.00040053,
+          "upstream_inference_completions_cost": 0.00050076
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "714b86c8aa38402c0f57d78f2327ade3e8ddebc6f0f521481af5cf6f657b8daa",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dbpedia-8",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00083616,
+      "upper_usd": 0.021134200000000002,
+      "raw_sha256": "b8290c5ae02f650d44544fa13fcce4023a0f519bc92e702d04a36ceeedbd8323",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1022,
+        "completion_tokens": 187,
+        "total_tokens": 1209,
+        "cost": 0.00083616,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00083616,
+          "upstream_inference_prompt_cost": 0.00039858,
+          "upstream_inference_completions_cost": 0.00043758
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "4ce1d41effa3a941f9080adfdefd828aa9e05b823a950223dbb92131783cba4c",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dbpedia-8",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00081471,
+      "upper_usd": 0.0211282,
+      "raw_sha256": "e5a72dc6446085503ef7306dfa9d38ad1c9c5de7c61fb2c20b9bd8df3e55ae07",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1021,
+        "completion_tokens": 178,
+        "total_tokens": 1199,
+        "cost": 0.00081471,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00081471,
+          "upstream_inference_prompt_cost": 0.00039819,
+          "upstream_inference_completions_cost": 0.00041652
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "4ce1d41effa3a941f9080adfdefd828aa9e05b823a950223dbb92131783cba4c",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dbpedia-4",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00088569,
+      "upper_usd": 0.0211444,
+      "raw_sha256": "64a5ad65b0c5f0ce8b6e72ddfd2c0de08e082a5021d2b901f7c3288ebdf9e83c",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1023,
+        "completion_tokens": 208,
+        "total_tokens": 1231,
+        "cost": 0.00088569,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00088569,
+          "upstream_inference_prompt_cost": 0.00039897,
+          "upstream_inference_completions_cost": 0.00048672
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "e6bb9138dbb92669d45c393f9160ebbfa293f41b2eb38f72a84581d120eebd30",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dbpedia-4",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00088881,
+      "upper_usd": 0.0211414,
+      "raw_sha256": "16c535f9ae1427c84b0d76b565f66cc45b67bad7c041c9aad59002625c5c3573",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1025,
+        "completion_tokens": 209,
+        "total_tokens": 1234,
+        "cost": 0.00088881,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00088881,
+          "upstream_inference_prompt_cost": 0.00039975,
+          "upstream_inference_completions_cost": 0.00048906
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "e6bb9138dbb92669d45c393f9160ebbfa293f41b2eb38f72a84581d120eebd30",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dcat-10",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00109629,
+      "upper_usd": 0.021652,
+      "raw_sha256": "bc0a0c36f29086520ac8fa83c32f300ef58b5de0d42f3584ea848720f3265635",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1257,
+        "completion_tokens": 259,
+        "total_tokens": 1516,
+        "cost": 0.00109629,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00109629,
+          "upstream_inference_prompt_cost": 0.00049023,
+          "upstream_inference_completions_cost": 0.00060606
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "faaf51e00a3f7291a7f6bc5919e381a8e7f6e44e4623936d0e2d79e48abc3aa1",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dcat-10",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.0012285,
+      "upper_usd": 0.0216364,
+      "raw_sha256": "77bc050f2450922b7c0e72cb55f8d737e8ada08e5b48154c11d2dbd33bc0a4aa",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1254,
+        "completion_tokens": 316,
+        "total_tokens": 1570,
+        "cost": 0.0012285,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0012285,
+          "upstream_inference_prompt_cost": 0.00048906,
+          "upstream_inference_completions_cost": 0.00073944
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "faaf51e00a3f7291a7f6bc5919e381a8e7f6e44e4623936d0e2d79e48abc3aa1",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dcat-3",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00137787,
+      "upper_usd": 0.021931,
+      "raw_sha256": "f80d0f8e760f0d1cf6d3684e58a896f1ce995deb4b9770eed236b0a2399959a8",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1313,
+        "completion_tokens": 370,
+        "total_tokens": 1683,
+        "cost": 0.00137787,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00137787,
+          "upstream_inference_prompt_cost": 0.00051207,
+          "upstream_inference_completions_cost": 0.0008658
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "0efdba3c0975ec0452fd38b4adbf83a0c2ae41e49e4b710863aa3c014257ffb9",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dcat-3",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00145392,
+      "upper_usd": 0.021946,
+      "raw_sha256": "4a967b2c57031222345231d8622cb0a27c887bef6c6bd77b8db35b0a0da42aed",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1328,
+        "completion_tokens": 400,
+        "total_tokens": 1728,
+        "cost": 0.00145392,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00145392,
+          "upstream_inference_prompt_cost": 0.00051792,
+          "upstream_inference_completions_cost": 0.000936
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "0efdba3c0975ec0452fd38b4adbf83a0c2ae41e49e4b710863aa3c014257ffb9",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dcat-5",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00140556,
+      "upper_usd": 0.022198,
+      "raw_sha256": "27c5d7b784368d6b0a5e04f505bd753182b0d0d6085e78dc2f29faa8d4549189",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1474,
+        "completion_tokens": 355,
+        "total_tokens": 1829,
+        "cost": 0.00140556,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00140556,
+          "upstream_inference_prompt_cost": 0.00057486,
+          "upstream_inference_completions_cost": 0.0008307
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "c44be0101df2f18f2a3021bc1326e1c0fdb636c77f1c0030bb865ad263bb44b3",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dcat-5",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00163644,
+      "upper_usd": 0.0221686,
+      "raw_sha256": "5c91f8d271e69e4e4489dd7a17300e1997c8eed42590a33a01084d6450b50d61",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1466,
+        "completion_tokens": 455,
+        "total_tokens": 1921,
+        "cost": 0.00163644,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00163644,
+          "upstream_inference_prompt_cost": 0.00057174,
+          "upstream_inference_completions_cost": 0.0010647
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "c44be0101df2f18f2a3021bc1326e1c0fdb636c77f1c0030bb865ad263bb44b3",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dcat-7",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00084708,
+      "upper_usd": 0.021499599999999997,
+      "raw_sha256": "c1f12e12d07d88fc466e1db045104e2140844c910b15b310b52b5b2a8ce39271",
+      "empty_output": false,
+      "meta": {
+        "status": "parse_failure",
+        "error_type": "BadSyntax",
+        "detail": "at line 5 of <>:\nBad syntax (Prefix \":\" not bound) at ^ in:\n\"...b' .\\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\\n\\n'^b':CatalogShape a sh:NodeShape ;\\n    sh:description \"When stru'...\""
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1170,
+        "completion_tokens": 167,
+        "total_tokens": 1337,
+        "cost": 0.00084708,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00084708,
+          "upstream_inference_prompt_cost": 0.0004563,
+          "upstream_inference_completions_cost": 0.00039078
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "c4cd5221b7a4c77a73b55b70a44d2c570701accf4e026ab5ab39fed3dff2d8c3",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dcat-7",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00104052,
+      "upper_usd": 0.0215266,
+      "raw_sha256": "11195fad58ebfa8f30445debfe023eaa3969e3a1191bb213881fa9f7b9a541b1",
+      "empty_output": false,
+      "meta": {
+        "status": "invalid_shape",
+        "report": "Validation Report\nConforms: False\nResults (1):\nConstraint Violation in XoneConstraintComponent (http://www.w3.org/ns/shacl#XoneConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: shsh:ShapeShape\n\tFocus Node: ex:CatalogShape\n\tValue Node: ex:CatalogShape\n\tMessage: Node ex:CatalogShape must conform to exactly one shape in shsh:NodeShapeShape , shsh:PropertyShapeShape\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix shsh: <http://www.w3.org/ns/shacl-shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <http://data.europa.eu/r5r#CatalogShape> ;\n            sh:resultMessage \"Node ex:CatalogShape must conform to exactly one shape in shsh:NodeShapeShape , shsh:PropertyShapeShape\" ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:XoneConstraintComponent ;\n            sh:sourceShape shsh:ShapeShape ;\n            sh:value <http://data.europa.eu/r5r#CatalogShape> ] .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1180,
+        "completion_tokens": 248,
+        "total_tokens": 1428,
+        "cost": 0.00104052,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00104052,
+          "upstream_inference_prompt_cost": 0.0004602,
+          "upstream_inference_completions_cost": 0.00058032
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "c4cd5221b7a4c77a73b55b70a44d2c570701accf4e026ab5ab39fed3dff2d8c3",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dcat-15",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00267423,
+      "upper_usd": 0.0243052,
+      "raw_sha256": "259ec4474b3252e6c58a6c0217dafa3e10721f8cec281d31f34cff9ffa317356",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2249,
+        "completion_tokens": 768,
+        "total_tokens": 3017,
+        "cost": 0.00267423,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00267423,
+          "upstream_inference_prompt_cost": 0.00087711,
+          "upstream_inference_completions_cost": 0.00179712
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "604aeb05055c7b0ea548f9754614e1f9b4bc469fbd0448f60163fcb26732b060",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dcat-15",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00303225,
+      "upper_usd": 0.024221799999999998,
+      "raw_sha256": "10f0dfde1f555f200f4dbe2e682943693a460e18363a106f24fadc7067058371",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2225,
+        "completion_tokens": 925,
+        "total_tokens": 3150,
+        "cost": 0.00303225,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00303225,
+          "upstream_inference_prompt_cost": 0.00086775,
+          "upstream_inference_completions_cost": 0.0021645
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "604aeb05055c7b0ea548f9754614e1f9b4bc469fbd0448f60163fcb26732b060",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dcat-19",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00333879,
+      "upper_usd": 0.0250846,
+      "raw_sha256": "0a923289a497a2f750116c316a25080ab71c87ccfa227d3c8ade3c81ad4ee49a",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2627,
+        "completion_tokens": 989,
+        "total_tokens": 3616,
+        "cost": 0.00333879,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00333879,
+          "upstream_inference_prompt_cost": 0.00102453,
+          "upstream_inference_completions_cost": 0.00231426
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "e772f47451a5895f325d9afb4c3ef45ac4bbd0814e0a249065fdb45a49cc3d0a",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dcat-19",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00327873,
+      "upper_usd": 0.025183,
+      "raw_sha256": "737f61e422ed8fc590feaae1d732418dfc37f0846171b9bd91c85c671747394d",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2617,
+        "completion_tokens": 965,
+        "total_tokens": 3582,
+        "cost": 0.00327873,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00327873,
+          "upstream_inference_prompt_cost": 0.00102063,
+          "upstream_inference_completions_cost": 0.0022581
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "e772f47451a5895f325d9afb4c3ef45ac4bbd0814e0a249065fdb45a49cc3d0a",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dcat-8",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00116844,
+      "upper_usd": 0.0215458,
+      "raw_sha256": "7b3eec625c2e2c96e807b25e7a198fd4226f2816a2bb68373618ae3c34d5f191",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1178,
+        "completion_tokens": 303,
+        "total_tokens": 1481,
+        "cost": 0.00116844,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00116844,
+          "upstream_inference_prompt_cost": 0.00045942,
+          "upstream_inference_completions_cost": 0.00070902
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "9b716371c9cd1fd045b7df51f24d08262d2e4bcd624783e657fa0bf681c0e521",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dcat-8",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00113178,
+      "upper_usd": 0.021507400000000003,
+      "raw_sha256": "e940481cbe5809bf0381d31959d7ff6ff08bd22e9f587eb00eac51a38f873bd2",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1174,
+        "completion_tokens": 288,
+        "total_tokens": 1462,
+        "cost": 0.00113178,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00113178,
+          "upstream_inference_prompt_cost": 0.00045786,
+          "upstream_inference_completions_cost": 0.00067392
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "9b716371c9cd1fd045b7df51f24d08262d2e4bcd624783e657fa0bf681c0e521",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dcat-17",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00137982,
+      "upper_usd": 0.022201,
+      "raw_sha256": "7b86960eb8255313b06a6deeafc629b80514276b4cdf7d09de4b6156dc8d2d74",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1516,
+        "completion_tokens": 337,
+        "total_tokens": 1853,
+        "cost": 0.00137982,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00137982,
+          "upstream_inference_prompt_cost": 0.00059124,
+          "upstream_inference_completions_cost": 0.00078858
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "17b8046bc18a21c2b8668451d7d76d5ead9e187c4d7f973df14fbd083f060b5d",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "dcat-17",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00154947,
+      "upper_usd": 0.022219,
+      "raw_sha256": "2528d2c57d199cb8e698e5b99be802d26b726eb4bbfb3c0e69e26f903be0e810",
+      "empty_output": false,
+      "meta": {
+        "status": "invalid_shape",
+        "report": "Validation Report\nConforms: False\nResults (1):\nConstraint Violation in MaxCountConstraintComponent (http://www.w3.org/ns/shacl#MaxCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"0\", datatype=xsd:integer) ; sh:path sh:path ]\n\tFocus Node: [ rdf:type rdfs:Resource ; sh:hasValue <http://purl.org/adms/publishertype/1.0> ; sh:path skos:inScheme ]\n\tResult Path: sh:path\n\tMessage: More than 0 values on [ rdf:type rdfs:Resource ; sh:hasValue <http://purl.org/adms/publishertype/1.0> ; sh:path skos:inScheme ]->sh:path\n",
+        "report_ttl": "@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode [ a rdfs:Resource ;\n                    sh:hasValue <http://purl.org/adms/publishertype/1.0> ;\n                    sh:path skos:inScheme ] ;\n            sh:resultMessage \"More than 0 values on [ rdf:type rdfs:Resource ; sh:hasValue <http://purl.org/adms/publishertype/1.0> ; sh:path skos:inScheme ]->sh:path\" ;\n            sh:resultPath sh:path ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;\n            sh:sourceShape [ sh:maxCount 0 ;\n                    sh:path sh:path ] ] .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1519,
+        "completion_tokens": 409,
+        "total_tokens": 1928,
+        "cost": 0.00154947,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00154947,
+          "upstream_inference_prompt_cost": 0.00059241,
+          "upstream_inference_completions_cost": 0.00095706
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "17b8046bc18a21c2b8668451d7d76d5ead9e187c4d7f973df14fbd083f060b5d",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "epo-37",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00138372,
+      "upper_usd": 0.0230818,
+      "raw_sha256": "c576a44efc5332a36abb670ba51f251cea6ab9d1b6e8f5cada823eeac2a025d8",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1730,
+        "completion_tokens": 303,
+        "total_tokens": 2033,
+        "cost": 0.00138372,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00138372,
+          "upstream_inference_prompt_cost": 0.0006747,
+          "upstream_inference_completions_cost": 0.00070902
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "d2f66385e64b7b48e2f61aa95c074887c82d700d05a1586189fe7764ef7edf50",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "epo-37",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00135018,
+      "upper_usd": 0.0229978,
+      "raw_sha256": "84c7651f6b512a0d9e0dfc6d82679fe5ddabf681b312535654010d8cb7f086ce",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1698,
+        "completion_tokens": 294,
+        "total_tokens": 1992,
+        "cost": 0.00135018,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00135018,
+          "upstream_inference_prompt_cost": 0.00066222,
+          "upstream_inference_completions_cost": 0.00068796
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "d2f66385e64b7b48e2f61aa95c074887c82d700d05a1586189fe7764ef7edf50",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "epo-30",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00164229,
+      "upper_usd": 0.023066200000000002,
+      "raw_sha256": "f5394c260b1923ff65ad7ff261e755839ab8a2540b89108f2205fc963e54e4d2",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1745,
+        "completion_tokens": 411,
+        "total_tokens": 2156,
+        "cost": 0.00164229,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00164229,
+          "upstream_inference_prompt_cost": 0.00068055,
+          "upstream_inference_completions_cost": 0.00096174
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "53037504123cc85ba435e3e33a8dcd7983b567084c6e2d1226e236d8f204a713",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "epo-30",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00164268,
+      "upper_usd": 0.0230812,
+      "raw_sha256": "5c8a6732fa882fd5cd567d7bb9b136eb1ecaa951140bb9653ca9d1d89fbfa42f",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1758,
+        "completion_tokens": 409,
+        "total_tokens": 2167,
+        "cost": 0.00164268,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00164268,
+          "upstream_inference_prompt_cost": 0.00068562,
+          "upstream_inference_completions_cost": 0.00095706
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "53037504123cc85ba435e3e33a8dcd7983b567084c6e2d1226e236d8f204a713",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "epo-34",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00149604,
+      "upper_usd": 0.0233698,
+      "raw_sha256": "8d969d08b6df9ac1318234302f2a8d7aaef5f0efbd211c6b90c4b43b65a70761",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1826,
+        "completion_tokens": 335,
+        "total_tokens": 2161,
+        "cost": 0.00149604,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00149604,
+          "upstream_inference_prompt_cost": 0.00071214,
+          "upstream_inference_completions_cost": 0.0007839
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "e47158620cc2f1de420f29dbb323825bc9433e45155f9439d8697e2b86f5452e",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "epo-34",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00156468,
+      "upper_usd": 0.023354200000000002,
+      "raw_sha256": "2837bc2d9016ef02b83ef35acb2e5727f0c56eab0558ae9c2e4beb74f6c61881",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1816,
+        "completion_tokens": 366,
+        "total_tokens": 2182,
+        "cost": 0.00156468,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00156468,
+          "upstream_inference_prompt_cost": 0.00070824,
+          "upstream_inference_completions_cost": 0.00085644
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "e47158620cc2f1de420f29dbb323825bc9433e45155f9439d8697e2b86f5452e",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "epo-49",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00164268,
+      "upper_usd": 0.0231886,
+      "raw_sha256": "9faffa16f209994bf67b8c45afe8ecc1d675d437cf23f4c10f8fa5486bf38e4a",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1812,
+        "completion_tokens": 400,
+        "total_tokens": 2212,
+        "cost": 0.00164268,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00164268,
+          "upstream_inference_prompt_cost": 0.00070668,
+          "upstream_inference_completions_cost": 0.000936
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "469b260a60203ace2a98535ec056383ad9935095dc7679db0f1f83bc36b48ffd",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "epo-49",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00165009,
+      "upper_usd": 0.0232528,
+      "raw_sha256": "ad49c50fa39132eaac4f548f90c18f1ee85cddad5abf6b6de522cf63805e85c5",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1825,
+        "completion_tokens": 401,
+        "total_tokens": 2226,
+        "cost": 0.00165009,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00165009,
+          "upstream_inference_prompt_cost": 0.00071175,
+          "upstream_inference_completions_cost": 0.00093834
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "469b260a60203ace2a98535ec056383ad9935095dc7679db0f1f83bc36b48ffd",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "epo-28",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00183729,
+      "upper_usd": 0.023533,
+      "raw_sha256": "6c91d865c99c6c9b98bef7ce42a8628eefdabc96d9fdd51c179392965ca3beb9",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1963,
+        "completion_tokens": 458,
+        "total_tokens": 2421,
+        "cost": 0.00183729,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00183729,
+          "upstream_inference_prompt_cost": 0.00076557,
+          "upstream_inference_completions_cost": 0.00107172
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "d715df902637521599c2dd15de229c77a9c31f7859c8b02156f4377ef5e7df09",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "epo-28",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00194415,
+      "upper_usd": 0.0234904,
+      "raw_sha256": "4442eedd9361dbbf0d0b955de94686d6a82fcba1b675f83cebe27959b14374fe",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1943,
+        "completion_tokens": 507,
+        "total_tokens": 2450,
+        "cost": 0.00194415,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00194415,
+          "upstream_inference_prompt_cost": 0.00075777,
+          "upstream_inference_completions_cost": 0.00118638
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "d715df902637521599c2dd15de229c77a9c31f7859c8b02156f4377ef5e7df09",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "epo-6",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.0019773,
+      "upper_usd": 0.023851599999999997,
+      "raw_sha256": "64cba48046f826309d3ecafd4e5c5ba576761895b26c191a8b24dcbbd1da2881",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2040,
+        "completion_tokens": 505,
+        "total_tokens": 2545,
+        "cost": 0.0019773,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0019773,
+          "upstream_inference_prompt_cost": 0.0007956,
+          "upstream_inference_completions_cost": 0.0011817
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "046a2346584c8bbccb53cfdcc61e166efb690acb4370eb4c6957ea1b2b105260",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "epo-6",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.0019773,
+      "upper_usd": 0.0239518,
+      "raw_sha256": "c9c96586a6120b0e29688e25a080d75a6578a32f30d5652e786ab8581207baf0",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2058,
+        "completion_tokens": 502,
+        "total_tokens": 2560,
+        "cost": 0.0019773,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0019773,
+          "upstream_inference_prompt_cost": 0.00080262,
+          "upstream_inference_completions_cost": 0.00117468
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "046a2346584c8bbccb53cfdcc61e166efb690acb4370eb4c6957ea1b2b105260",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "epo-33",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00161304,
+      "upper_usd": 0.0236032,
+      "raw_sha256": "aa59b8f845588b5333bf63400158237ae490c59a72e2d402e561431c4ceb312f",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1904,
+        "completion_tokens": 372,
+        "total_tokens": 2276,
+        "cost": 0.00161304,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00161304,
+          "upstream_inference_prompt_cost": 0.00074256,
+          "upstream_inference_completions_cost": 0.00087048
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "a94273b41647c7c53df6b838e52e57be451929b1348c03dba1d6fab339722d7d",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "epo-33",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00158613,
+      "upper_usd": 0.0235858,
+      "raw_sha256": "a02172f7720d87e23413056a9ed5a4390b69b439cefee2954100d064d2cdf4d4",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1883,
+        "completion_tokens": 364,
+        "total_tokens": 2247,
+        "cost": 0.00158613,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00158613,
+          "upstream_inference_prompt_cost": 0.00073437,
+          "upstream_inference_completions_cost": 0.00085176
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "a94273b41647c7c53df6b838e52e57be451929b1348c03dba1d6fab339722d7d",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "epo-42",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.0016848,
+      "upper_usd": 0.0233872,
+      "raw_sha256": "b8bca2dc221382dc1ab23de8f1f19242837c285bd2030992bea9e7263fea2221",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1860,
+        "completion_tokens": 410,
+        "total_tokens": 2270,
+        "cost": 0.0016848,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0016848,
+          "upstream_inference_prompt_cost": 0.0007254,
+          "upstream_inference_completions_cost": 0.0009594
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "1a1ffd8fd5ad9105abf44df7540482eeb42530af05ae275ba30d22448144f38e",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "epo-42",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00169611,
+      "upper_usd": 0.0234406,
+      "raw_sha256": "8c41f5f41798227374ca107e0b7cd369b24222fa7ac09192804bed309723a701",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1889,
+        "completion_tokens": 410,
+        "total_tokens": 2299,
+        "cost": 0.00169611,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00169611,
+          "upstream_inference_prompt_cost": 0.00073671,
+          "upstream_inference_completions_cost": 0.0009594
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "1a1ffd8fd5ad9105abf44df7540482eeb42530af05ae275ba30d22448144f38e",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "epo-14",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00148356,
+      "upper_usd": 0.023418400000000002,
+      "raw_sha256": "cf38c94d802383dc0c2d12f528f6a5928b7aa76d639b93eeb79e478e7e898dbb",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1866,
+        "completion_tokens": 323,
+        "total_tokens": 2189,
+        "cost": 0.00148356,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00148356,
+          "upstream_inference_prompt_cost": 0.00072774,
+          "upstream_inference_completions_cost": 0.00075582
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "5ab5ecf8935a407057da93674d24903dd02a5e8fc1b381b4adbe51abf74d98c0",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "epo-14",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00143754,
+      "upper_usd": 0.023402799999999998,
+      "raw_sha256": "a4d061bc91608ba90c3d57f805b2716c0756de9906942f57b51a76c3a72747d0",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1850,
+        "completion_tokens": 306,
+        "total_tokens": 2156,
+        "cost": 0.00143754,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00143754,
+          "upstream_inference_prompt_cost": 0.0007215,
+          "upstream_inference_completions_cost": 0.00071604
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "5ab5ecf8935a407057da93674d24903dd02a5e8fc1b381b4adbe51abf74d98c0",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "epo-48",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.0016419,
+      "upper_usd": 0.0238498,
+      "raw_sha256": "1a72ba427a508f6d848270f2df981721869f29db4877ebeb808a0596ae33ceef",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2002,
+        "completion_tokens": 368,
+        "total_tokens": 2370,
+        "cost": 0.0016419,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0016419,
+          "upstream_inference_prompt_cost": 0.00078078,
+          "upstream_inference_completions_cost": 0.00086112
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "2918deae84eaf8843acfa19dec1ed0a2df1350b740de636109c1de67b3dfe864",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "epo-48",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00164853,
+      "upper_usd": 0.023908,
+      "raw_sha256": "1a72ba427a508f6d848270f2df981721869f29db4877ebeb808a0596ae33ceef",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2019,
+        "completion_tokens": 368,
+        "total_tokens": 2387,
+        "cost": 0.00164853,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00164853,
+          "upstream_inference_prompt_cost": 0.00078741,
+          "upstream_inference_completions_cost": 0.00086112
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "2918deae84eaf8843acfa19dec1ed0a2df1350b740de636109c1de67b3dfe864",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "invoice-12",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00090675,
+      "upper_usd": 0.0220558,
+      "raw_sha256": "b04ff1db9e57309b0ae281d84dfc83c7a55b28975d213cce32f46bd33a1d98cd",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1275,
+        "completion_tokens": 175,
+        "total_tokens": 1450,
+        "cost": 0.00090675,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00090675,
+          "upstream_inference_prompt_cost": 0.00049725,
+          "upstream_inference_completions_cost": 0.0004095
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "40520db534d093e79e217b970a609870f2f9730f8ad93a4018e2f1acf9e4e67c",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "invoice-12",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00087282,
+      "upper_usd": 0.0220264,
+      "raw_sha256": "b0f61b2678ea1e7bb56b35bd1628886970806f3785297305bbf4e4544dd5beb1",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1266,
+        "completion_tokens": 162,
+        "total_tokens": 1428,
+        "cost": 0.00087282,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00087282,
+          "upstream_inference_prompt_cost": 0.00049374,
+          "upstream_inference_completions_cost": 0.00037908
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "40520db534d093e79e217b970a609870f2f9730f8ad93a4018e2f1acf9e4e67c",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "invoice-21",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00107289,
+      "upper_usd": 0.022096,
+      "raw_sha256": "60d056524a0b124a9b156b692c04f5c302703970e8dad43481a56a91f025de56",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1305,
+        "completion_tokens": 241,
+        "total_tokens": 1546,
+        "cost": 0.00107289,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00107289,
+          "upstream_inference_prompt_cost": 0.00050895,
+          "upstream_inference_completions_cost": 0.00056394
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "4d2509a8b165e139fde3f164774220bec54b47fc3f41bb77c009dedca7fb07a4",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "invoice-21",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00147225,
+      "upper_usd": 0.022110400000000002,
+      "raw_sha256": "7af8e86c62cd42b2b92459780be0aff9f6d8ee68d5af46cd63f0b8fea2b1430e",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1315,
+        "completion_tokens": 410,
+        "total_tokens": 1725,
+        "cost": 0.00147225,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00147225,
+          "upstream_inference_prompt_cost": 0.00051285,
+          "upstream_inference_completions_cost": 0.0009594
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "4d2509a8b165e139fde3f164774220bec54b47fc3f41bb77c009dedca7fb07a4",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "invoice-34",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00100776,
+      "upper_usd": 0.022099599999999997,
+      "raw_sha256": "7ad3a16b758ecf8f4adef8f666e2328453f9ce88967c9a27b52ac4dc7e64b661",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1318,
+        "completion_tokens": 211,
+        "total_tokens": 1529,
+        "cost": 0.00100776,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00100776,
+          "upstream_inference_prompt_cost": 0.00051402,
+          "upstream_inference_completions_cost": 0.00049374
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "6d35d8e26dc4fae52c1af27a45f80efd6a1c0143f8936c4dbfa9aa3d565d4a99",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "invoice-34",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00101556,
+      "upper_usd": 0.022072599999999998,
+      "raw_sha256": "38e497e7f75859d21da81c98f531149de54d0d32434149ea21a1540bd2ccac63",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1302,
+        "completion_tokens": 217,
+        "total_tokens": 1519,
+        "cost": 0.00101556,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00101556,
+          "upstream_inference_prompt_cost": 0.00050778,
+          "upstream_inference_completions_cost": 0.00050778
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "6d35d8e26dc4fae52c1af27a45f80efd6a1c0143f8936c4dbfa9aa3d565d4a99",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "invoice-35",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00102687,
+      "upper_usd": 0.0222124,
+      "raw_sha256": "68e3f4cc41d10cf28ac14e6e4c76d279f42b840485730d11cba2d62d05ea8096",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1331,
+        "completion_tokens": 217,
+        "total_tokens": 1548,
+        "cost": 0.00102687,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00102687,
+          "upstream_inference_prompt_cost": 0.00051909,
+          "upstream_inference_completions_cost": 0.00050778
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "6feb78a74ff00ef748b9b9aa3b98e72cf612029d1ad0b4a3efb55a6e45e5ebc6",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "invoice-35",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00100698,
+      "upper_usd": 0.0222172,
+      "raw_sha256": "c0a75a2696926cc75ddbbb698fb15ad53d7590d245c4de7cb42746bfe6145a0c",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1352,
+        "completion_tokens": 205,
+        "total_tokens": 1557,
+        "cost": 0.00100698,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00100698,
+          "upstream_inference_prompt_cost": 0.00052728,
+          "upstream_inference_completions_cost": 0.0004797
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "6feb78a74ff00ef748b9b9aa3b98e72cf612029d1ad0b4a3efb55a6e45e5ebc6",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "invoice-18",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00090363,
+      "upper_usd": 0.0220072,
+      "raw_sha256": "a5d676676c11075a5475380a8d3b0cddf0be638d0ea3f3b117e580f4571eba2c",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1267,
+        "completion_tokens": 175,
+        "total_tokens": 1442,
+        "cost": 0.00090363,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00090363,
+          "upstream_inference_prompt_cost": 0.00049413,
+          "upstream_inference_completions_cost": 0.0004095
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "e59cf532127fd3dd88363975efb8f2f38ee8682806eaef2a6e9c37ec372b2510",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "invoice-18",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00090285,
+      "upper_usd": 0.021982599999999998,
+      "raw_sha256": "953d653068be3f97c210de1bb12fe3005324c55d09a7648e5cc052cac5d05251",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1259,
+        "completion_tokens": 176,
+        "total_tokens": 1435,
+        "cost": 0.00090285,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00090285,
+          "upstream_inference_prompt_cost": 0.00049101,
+          "upstream_inference_completions_cost": 0.00041184
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "e59cf532127fd3dd88363975efb8f2f38ee8682806eaef2a6e9c37ec372b2510",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "invoice-22",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00120471,
+      "upper_usd": 0.022231,
+      "raw_sha256": "91a581e0c0114232c79884fcd028aedf180dedc206f68cf2e90b19e1d87865fe",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1343,
+        "completion_tokens": 291,
+        "total_tokens": 1634,
+        "cost": 0.00120471,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00120471,
+          "upstream_inference_prompt_cost": 0.00052377,
+          "upstream_inference_completions_cost": 0.00068094
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "62a0342f58e820728f00f89966e3ac094b8500462aa02c8c27bf187d348a4f9e",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "invoice-22",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00112008,
+      "upper_usd": 0.022249599999999998,
+      "raw_sha256": "2858091bb89232b086575b899fe8f0e271681fab2e60bd11f350cc6a98545df0",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1354,
+        "completion_tokens": 253,
+        "total_tokens": 1607,
+        "cost": 0.00112008,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00112008,
+          "upstream_inference_prompt_cost": 0.00052806,
+          "upstream_inference_completions_cost": 0.00059202
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "62a0342f58e820728f00f89966e3ac094b8500462aa02c8c27bf187d348a4f9e",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "invoice-30",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00110019,
+      "upper_usd": 0.022197400000000003,
+      "raw_sha256": "da025c7259fc0774989d4d98b3c71a1488bac56cf8923f3aebe946fec8988c03",
+      "empty_output": false,
+      "meta": {
+        "status": "parse_failure",
+        "error_type": "BadSyntax",
+        "detail": "at line 12 of <>:\nBad syntax (Prefix \"rdf:\" not bound) at ^ in:\n\"...b'pleRule ;\\n        sh:subject sh:this ;\\n        sh:predicate '^b'rdf:type ;\\n        sh:object :SupplierRole ;\\n        sh:cond'...\""
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1345,
+        "completion_tokens": 246,
+        "total_tokens": 1591,
+        "cost": 0.00110019,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00110019,
+          "upstream_inference_prompt_cost": 0.00052455,
+          "upstream_inference_completions_cost": 0.00057564
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "4c69fd925bb85a6f11d94fabc43d184aa65b8d4b82dd1adc7149982d2eaa8165",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "invoice-30",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00102843,
+      "upper_usd": 0.0221752,
+      "raw_sha256": "bf8521a1cd13381c2dd292075b8d78f0a6f61ce92d60ee6ff7acd78edf39c900",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1329,
+        "completion_tokens": 218,
+        "total_tokens": 1547,
+        "cost": 0.00102843,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00102843,
+          "upstream_inference_prompt_cost": 0.00051831,
+          "upstream_inference_completions_cost": 0.00051012
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "4c69fd925bb85a6f11d94fabc43d184aa65b8d4b82dd1adc7149982d2eaa8165",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "invoice-19",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00089778,
+      "upper_usd": 0.0220168,
+      "raw_sha256": "5fe14ee04fb9e76daef0f7535a8c44e4d7c9bc138ae7fe0aaec5d14fefd08f12",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1270,
+        "completion_tokens": 172,
+        "total_tokens": 1442,
+        "cost": 0.00089778,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00089778,
+          "upstream_inference_prompt_cost": 0.0004953,
+          "upstream_inference_completions_cost": 0.00040248
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "bed63bdc6a5e25dbaa8e5cfc1f012b61b98db957efc7e10e8f4b5c7822027e2f",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "invoice-19",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00090558,
+      "upper_usd": 0.022039,
+      "raw_sha256": "be784922cdb537df4c386e66a3ac19ef857f84a5169461688adadad5f25e7287",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1272,
+        "completion_tokens": 175,
+        "total_tokens": 1447,
+        "cost": 0.00090558,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00090558,
+          "upstream_inference_prompt_cost": 0.00049608,
+          "upstream_inference_completions_cost": 0.0004095
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "bed63bdc6a5e25dbaa8e5cfc1f012b61b98db957efc7e10e8f4b5c7822027e2f",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "invoice-25",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00149838,
+      "upper_usd": 0.0221392,
+      "raw_sha256": "c3e3bb2a8eefab48aea9e78c1ca0dd5f9595f2b9312845908efbe6b3c0ef0f41",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1334,
+        "completion_tokens": 418,
+        "total_tokens": 1752,
+        "cost": 0.00149838,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00149838,
+          "upstream_inference_prompt_cost": 0.00052026,
+          "upstream_inference_completions_cost": 0.00097812
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "576b5faf65bec61cf51226a61a44172420ea491b3871eb66ed4e8a77bf68d34f",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "invoice-25",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00129558,
+      "upper_usd": 0.0221044,
+      "raw_sha256": "e1aa826011e5639c36d10f97e4ff1653c8d4f75d490d1dcb3a0653bb12f8feeb",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1318,
+        "completion_tokens": 334,
+        "total_tokens": 1652,
+        "cost": 0.00129558,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00129558,
+          "upstream_inference_prompt_cost": 0.00051402,
+          "upstream_inference_completions_cost": 0.00078156
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "576b5faf65bec61cf51226a61a44172420ea491b3871eb66ed4e8a77bf68d34f",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "invoice-27",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00097344,
+      "upper_usd": 0.022075599999999997,
+      "raw_sha256": "c3a3426b0a9fd2e1fdaebe9a715ede16f9e6974a6a3705f807ae37a007a30ce1",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1302,
+        "completion_tokens": 199,
+        "total_tokens": 1501,
+        "cost": 0.00097344,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00097344,
+          "upstream_inference_prompt_cost": 0.00050778,
+          "upstream_inference_completions_cost": 0.00046566
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "3ac8fa5c62dc2b41ebe2bcf2fde13f9440cc4e04929d0fe82affe5d5f8d2503b",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "invoice-27",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00147498,
+      "upper_usd": 0.0220924,
+      "raw_sha256": "a0e3ce0226a6e989ad4933d12a3d07360b4580d5b17bc176e5b1918877827c39",
+      "empty_output": false,
+      "meta": {
+        "status": "parse_failure",
+        "error_type": "BadSyntax",
+        "detail": "at line 26 of <>:\nBad syntax (Prefix \"rdf:\" not bound) at ^ in:\n\"...b'ndition [\\n            sh:property [\\n                sh:path '^b'rdf:type ;\\n                sh:hasValue <http://example.com/S'...\""
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1310,
+        "completion_tokens": 412,
+        "total_tokens": 1722,
+        "cost": 0.00147498,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00147498,
+          "upstream_inference_prompt_cost": 0.0005109,
+          "upstream_inference_completions_cost": 0.00096408
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "3ac8fa5c62dc2b41ebe2bcf2fde13f9440cc4e04929d0fe82affe5d5f8d2503b",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "snik-4",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00080964,
+      "upper_usd": 0.0219448,
+      "raw_sha256": "991dd20a0522e65f7fe31295b89ca71960763c4153e888409204411ebad13f7a",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1296,
+        "completion_tokens": 130,
+        "total_tokens": 1426,
+        "cost": 0.00080964,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00080964,
+          "upstream_inference_prompt_cost": 0.00050544,
+          "upstream_inference_completions_cost": 0.0003042
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "967dd10f8498d59b3b81d6347a718171596829967cf3b631fc6f69fd5c7c2c45",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "snik-4",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00080691,
+      "upper_usd": 0.021925,
+      "raw_sha256": "991dd20a0522e65f7fe31295b89ca71960763c4153e888409204411ebad13f7a",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1289,
+        "completion_tokens": 130,
+        "total_tokens": 1419,
+        "cost": 0.00080691,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00080691,
+          "upstream_inference_prompt_cost": 0.00050271,
+          "upstream_inference_completions_cost": 0.0003042
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "967dd10f8498d59b3b81d6347a718171596829967cf3b631fc6f69fd5c7c2c45",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "snik-3",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00079248,
+      "upper_usd": 0.021925,
+      "raw_sha256": "fe49be139f0aa37af370d0ba260252920700bfd4262ccc33159859a911d18419",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1288,
+        "completion_tokens": 124,
+        "total_tokens": 1412,
+        "cost": 0.00079248,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00079248,
+          "upstream_inference_prompt_cost": 0.00050232,
+          "upstream_inference_completions_cost": 0.00029016
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "df3a2482dee39030d7471b305c6ed19ac5c2f140c8286a48c56e647f3041e5b8",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "snik-3",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00084591,
+      "upper_usd": 0.0219478,
+      "raw_sha256": "670c2e6c5c6debd5f4b235f0ea0b65b2f95149ef79813b1bec77f94fe730b9ce",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1299,
+        "completion_tokens": 145,
+        "total_tokens": 1444,
+        "cost": 0.00084591,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00084591,
+          "upstream_inference_prompt_cost": 0.00050661,
+          "upstream_inference_completions_cost": 0.0003393
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "df3a2482dee39030d7471b305c6ed19ac5c2f140c8286a48c56e647f3041e5b8",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "snik-5",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00077649,
+      "upper_usd": 0.021958,
+      "raw_sha256": "bb651ab08a748eedb88a5ec04c5488d247e312a179c538d206d12c86148f30c3",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1301,
+        "completion_tokens": 115,
+        "total_tokens": 1416,
+        "cost": 0.00077649,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00077649,
+          "upstream_inference_prompt_cost": 0.00050739,
+          "upstream_inference_completions_cost": 0.0002691
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "307b1b00993522267334bd08cf2efc2043057a5b1a9224938eee20e7775ea69c",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "snik-5",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.0008073,
+      "upper_usd": 0.021925,
+      "raw_sha256": "54f3f22ac16d8137e01d5892412a99b2e175ddb887ad4476323d44424c4c2b33",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1290,
+        "completion_tokens": 130,
+        "total_tokens": 1420,
+        "cost": 0.0008073,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0008073,
+          "upstream_inference_prompt_cost": 0.0005031,
+          "upstream_inference_completions_cost": 0.0003042
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "307b1b00993522267334bd08cf2efc2043057a5b1a9224938eee20e7775ea69c",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "snik-7",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00321282,
+      "upper_usd": 0.025458400000000003,
+      "raw_sha256": "85a8452e3c29210a5fae8876b15440617846b5bb23d018aeb8784d8e84ae4333",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2658,
+        "completion_tokens": 930,
+        "total_tokens": 3588,
+        "cost": 0.00321282,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00321282,
+          "upstream_inference_prompt_cost": 0.00103662,
+          "upstream_inference_completions_cost": 0.0021762
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "f7053f94c9223a6bcf78ea4b33c650e5135697a276762782f7a97316f8c9e58b",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "snik-7",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00266058,
+      "upper_usd": 0.025642,
+      "raw_sha256": "32c65915f54ccb1d3bdfa81d51a60e78f9af0e9672cb8f89e8f4e5d223e2aff6",
+      "empty_output": false,
+      "meta": {
+        "status": "parse_failure",
+        "error_type": "BadSyntax",
+        "detail": "at line 36 of <>:\nBad syntax (Prefix \"rdf:\" not bound) at ^ in:\n\"...b'BasedOn ] ;\\n    sh:closed true ;\\n    sh:ignoredProperties ( '^b'rdf:type skos:exactMatch skos:closeMatch skos:relatedMatch s'...\""
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2730,
+        "completion_tokens": 682,
+        "total_tokens": 3412,
+        "cost": 0.00266058,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00266058,
+          "upstream_inference_prompt_cost": 0.0010647,
+          "upstream_inference_completions_cost": 0.00159588
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "f7053f94c9223a6bcf78ea4b33c650e5135697a276762782f7a97316f8c9e58b",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "snik-6",
+      "language": "ko",
+      "status": "completed",
+      "reported_usd": 0.00121563,
+      "upper_usd": 0.0225958,
+      "raw_sha256": "680ddaee936605ce5eb6ee286bd9812d5b018b1040b2a2bd587b4cd7171b98ff",
+      "empty_output": false,
+      "meta": {
+        "status": "meta_conformant",
+        "report": "Validation Report\nConforms: True\n",
+        "report_ttl": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1545,
+        "completion_tokens": 262,
+        "total_tokens": 1807,
+        "cost": 0.00121563,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00121563,
+          "upstream_inference_prompt_cost": 0.00060255,
+          "upstream_inference_completions_cost": 0.00061308
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "1294e27e4fad0243359bc629353b93c9778e563eadab7d25ed267c2740621e16",
+      "postprocessing_changed_nonwhitespace": false
+    },
+    {
+      "id": "snik-6",
+      "language": "en",
+      "status": "completed",
+      "reported_usd": 0.00114894,
+      "upper_usd": 0.0225244,
+      "raw_sha256": "e3a161bea15bbe8754dd0492cff0e78771539efdb0bcc866353a99901e7caa42",
+      "empty_output": false,
+      "meta": {
+        "status": "parse_failure",
+        "error_type": "BadSyntax",
+        "detail": "at line 26 of <>:\nBad syntax (Prefix \"rdf:\" not bound) at ^ in:\n\"...b't ;\\n    ] ;\\n    sh:closed true ;\\n    sh:ignoredProperties ( '^b'rdf:type ) .'\""
+      },
+      "provider": "Alibaba",
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 1518,
+        "completion_tokens": 238,
+        "total_tokens": 1756,
+        "cost": 0.00114894,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00114894,
+          "upstream_inference_prompt_cost": 0.00059202,
+          "upstream_inference_completions_cost": 0.00055692
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reference_sha256": "1294e27e4fad0243359bc629353b93c9778e563eadab7d25ed267c2740621e16",
+      "postprocessing_changed_nonwhitespace": false
+    }
+  ],
+  "artifacts": {
+    "_workspace/nl2-expansion/raw-meta-results.json": "58f1eca0adcc19dedd871714f0d813595918941e40cbea410ab34f9803dfe115",
+    "_workspace/nl2-expansion/upstream-evaluation/expansion_qwen_eval.jsonl": "93f8a70efde0d1984858791ac0e6fd68967cb97006316d121fc71e7f2630db7b",
+    "_workspace/nl2-expansion/campaign-budget.json": "708ebe7af852b912eb883cc7cfaa4e3a56d2307c23aa4ced1547a73f488618ef"
+  }
+}

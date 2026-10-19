@@ -1,0 +1,401 @@
+{
+  "title": "NL2SHACL expansion EN/KO requirement-only pairs",
+  "source": "https://github.com/DE-TUM/NL2SHACL-Dataset",
+  "source_commit": "1115fea06a9d2a148a89571fedb9858ec3e01b41",
+  "attribution": "DE-TUM/NL2SHACL-Dataset contributors; Korean translations by native Codex translation agents, reviewed separately.",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "changes": "Korean natural-language translations only; original fields retained. Translation notes excluded from experimental model input.",
+  "pairs": [
+    {
+      "id": "chemrof-57",
+      "subset": "chemrof-dataset",
+      "label": "chemrof:Reaction",
+      "en": "When curating a Reaction record, you must adhere to a strict data model that prohibits any unlisted properties, with the sole exception of the standard system type. Every reaction must specify exactly one string-based identifier. Beyond this required ID, the record may optionally include a single string representing the name of the chemical entity, such as nickel or carbon-16, as well as a single type designation. To capture the chemical transformation, you may provide at most one Proposed Reactions InChI representation and a single reaction SMILES representation. Furthermore, kinetic data can be recorded by optionally including a single floating-point value for the reaction rate and at most one floating-point value for the reaction rate coefficient.",
+      "selection_hash": "0c87f7c318c98ef58f5fab2b41bfe201be1f16c17a2508009bc3f9a0d91095e0",
+      "ko": "Reaction 레코드를 관리할 때는 목록에 없는 속성을 모두 금지하는 엄격한 데이터 모델을 따라야 하며, 유일한 예외는 표준 시스템 타입이다. 모든 reaction은 문자열 식별자를 정확히 하나 명시해야 한다. 이 필수 ID 외에, 레코드에는 nickel이나 carbon-16과 같은 화학 개체의 이름을 나타내는 문자열 하나와 타입 지정 하나를 선택적으로 포함할 수 있다. 화학적 변환을 기록하기 위해 Proposed Reactions InChI 표현을 최대 하나, reaction SMILES 표현을 하나 제공할 수 있다. 또한 반응 속도를 나타내는 부동소수점 값 하나와 반응 속도 계수를 나타내는 부동소수점 값 최대 하나를 선택적으로 포함하여 반응 속도론 데이터를 기록할 수 있다."
+    },
+    {
+      "id": "chemrof-39",
+      "subset": "chemrof-dataset",
+      "label": "chemrof:Material",
+      "en": "When curating a Material, defined as a substance composed of repeated chemical units that has a specific arrangement of atoms or molecules, the data model must be strictly closed, permitting no outside properties other than the standard system type. Every material record must specify exactly one string-based identifier. In addition to this required identifier, the record may optionally include up to one string name, such as nickel or carbon-16, and at most one specific type designation. Finally, the material may feature a maximum of one repeat unit, which must be represented as a direct link to a recognized chemical entity.",
+      "selection_hash": "0ea09bccf6d737b3502629883fe6ad025d18a14b4c4fa82c6e3a8bdab1216506",
+      "ko": "원자나 분자가 특정한 배열을 이루며 반복되는 화학 단위로 구성된 물질로 정의되는 Material을 관리할 때, 데이터 모델은 엄격히 닫혀 있어야 하며 표준 시스템 타입 이외의 외부 속성을 허용하지 않는다. 모든 material 레코드는 문자열 식별자를 정확히 하나 명시해야 한다. 이 필수 식별자 외에, 레코드에는 nickel이나 carbon-16과 같은 문자열 이름을 최대 하나, 특정 타입 지정을 최대 하나 선택적으로 포함할 수 있다. 마지막으로 material에는 반복 단위가 최대 하나 있을 수 있으며, 이 반복 단위는 인정되는 화학 개체로 향하는 직접 링크로 표현해야 한다."
+    },
+    {
+      "id": "chemrof-73",
+      "subset": "chemrof-dataset",
+      "label": "chemrof:ChemicalEntity",
+      "en": "When defining a chemical entity, which represents a discrete structure of one or more atoms describable by a chemical formula, the data model is open, allowing additional properties beyond the specified rules while explicitly ignoring system type declarations. Each entity must specify exactly one string-based identifier. It may also include at most one string-based name, such as nickel or carbon-16, and at most one string-based IUPAC name. To describe its structure, you may provide at most one empirical formula denoting the relative proportion of atoms, like CH2O for glucose. The entity can also include at most one InChI string and at most one InChI chemical sublayer; this sublayer acts as the main chemical formula and must be a string consisting exclusively of uppercase letters, numbers, and periods. Additionally, the entity may feature one or more SMILES strings, which encode the molecular graph without chiral or isotopic information, acknowledging that multiple valid SMILES can represent the same structure, just as CCO, OCC, and C(O)C all specify ethanol. A single boolean value can be provided to indicate whether the entity is a radical. The entity can have at most one type designation and at most one chemical role, with the role structured as an internal nested record. Finally, the entity may be hierarchically categorized under at most one parent class, also formatted as an internal nested record. In this model, these parent classes often act as metaclasses representing groupings or specific countable elements, allowing the entity to be connected either as a subtype of a broader grouping, like an alkane being a hydrocarbon, or classified directly into a grouping, such as methane being a hydrocarbon.",
+      "selection_hash": "124a6da44341eeb857cc0278b00dfba5ac8f1e17c4ec01a93602cb20c6bff4f0",
+      "ko": "화학식으로 기술할 수 있는 하나 이상의 원자로 이루어진 개별 구조를 나타내는 chemical entity를 정의할 때, 데이터 모델은 열려 있어 명시된 규칙 이외의 추가 속성을 허용하며 시스템 타입 선언은 명시적으로 무시한다. 각 entity는 문자열 식별자를 정확히 하나 명시해야 한다. nickel이나 carbon-16과 같은 문자열 이름을 최대 하나, 문자열 IUPAC 이름을 최대 하나 포함할 수도 있다. 구조를 기술하기 위해, 포도당의 CH2O처럼 원자의 상대적 비율을 나타내는 실험식을 최대 하나 제공할 수 있다. entity에는 InChI 문자열을 최대 하나, InChI chemical sublayer를 최대 하나 포함할 수도 있다. 이 sublayer는 주 화학식 역할을 하며 대문자, 숫자, 마침표만으로 구성된 문자열이어야 한다. 또한 entity에는 키랄 또는 동위원소 정보 없이 분자 그래프를 인코딩하는 SMILES 문자열이 하나 이상 있을 수 있다. CCO, OCC, C(O)C가 모두 에탄올을 나타내듯이, 여러 유효한 SMILES가 같은 구조를 나타낼 수 있음을 인정한다. entity가 라디칼인지를 나타내는 불리언 값 하나를 제공할 수 있다. entity에는 타입 지정이 최대 하나, chemical role이 최대 하나 있을 수 있으며, role은 내부 중첩 레코드로 구성해야 한다. 마지막으로 entity는 최대 하나의 상위 클래스 아래에 계층적으로 분류될 수 있으며, 이 상위 클래스 역시 내부 중첩 레코드 형식이어야 한다. 이 모델에서 이러한 상위 클래스는 종종 그룹이나 특정한 셀 수 있는 요소를 나타내는 메타클래스로 기능한다. 따라서 entity를 alkane이 hydrocarbon인 경우처럼 더 넓은 그룹의 하위 타입으로 연결하거나, methane이 hydrocarbon인 경우처럼 그룹에 직접 분류할 수 있다."
+    },
+    {
+      "id": "chemrof-9",
+      "subset": "chemrof-dataset",
+      "label": "chemrof:AtomGroupingByPeriodicTablePlacement",
+      "en": "When curating an atom grouping by periodic table placement, the data model is open, meaning additional properties beyond the core requirements are permitted. Every record must specify exactly one string-based identifier. The grouping can also provide at most one string-based name to describe the chemical entity, such as nickel or carbon-16. To establish hierarchical categorizations, the record may include up to one OWL subclass relationship, formatted as an internal nested record, which connects the entity to a broader class or metaclass. Furthermore, the grouping may define its specialization using the subtype of relationship. If provided, this must be a direct link to a specific molecule grouping class, indicating that the current entity is a more specialized form of that broader grouping.",
+      "selection_hash": "14ad6f7c787d7649833a472a9b59bc58e311dd5f18a7c85a3e80707b5728b6ed",
+      "ko": "주기율표상의 위치에 따른 원자 그룹(atom grouping by periodic table placement)을 관리할 때, 데이터 모델은 열려 있으므로 핵심 요구사항 이외의 추가 속성이 허용된다. 모든 레코드는 문자열 식별자를 정확히 하나 명시해야 한다. 그룹에는 nickel이나 carbon-16과 같은 화학 개체를 기술하는 문자열 이름을 최대 하나 제공할 수도 있다. 계층적 분류를 설정하기 위해, 레코드에는 entity를 더 넓은 클래스나 메타클래스에 연결하는 OWL subclass 관계를 최대 하나 포함할 수 있으며, 이 관계는 내부 중첩 레코드 형식이어야 한다. 또한 그룹은 subtype of 관계를 사용하여 자신의 특수화를 정의할 수 있다. 이 관계를 제공하는 경우 특정 molecule grouping class로 향하는 직접 링크여야 하며, 현재 entity가 해당 더 넓은 그룹의 더 특수화된 형태임을 나타낸다."
+    },
+    {
+      "id": "chemrof-61",
+      "subset": "chemrof-dataset",
+      "label": "chemrof:SupramolecularPolymer",
+      "en": "When defining a supramolecular polymer—described as a polymeric array of monomeric units connected by reversible and highly directional secondary interactions, namely non-covalent bonds—the data model is strictly closed, meaning no outside properties are permitted other than standard system types. Each record must specify exactly one string identifier. Additionally, the record may include at most one string for its general name, at most one formal IUPAC name string, and at most one general type designation. The chemical nature of the polymer can be further detailed with at most one boolean value indicating whether it is a radical, and at most one empirical formula denoting the relative proportion of its atoms. For structural representation, the record may contain at most one complete InChI string, alongside specific InChI components: at most one main chemical formula sublayer that must consist exclusively of uppercase letters, numbers, and periods, and at most one atom connections sublayer detailing non-hydrogen bond connections, which must strictly begin with the lowercase letter c. The model also permits SMILES strings to encode the molecular graph without chiral or isotopic information. To define its composition and function, the polymer may feature at most one direct link to a specific macromolecule it is a polymer of, and at most one direct link to a chemical entity representing its repeat unit. Finally, its function and classification can be captured using at most one internal nested record defining its chemical role, and at most one internal nested record hierarchically categorizing it under a broader grouping or metaclass.",
+      "selection_hash": "18b83db999dc77697111f46001268fa287aac3cb4626857e562c91c5189f4fdc",
+      "ko": "가역적이며 방향성이 강한 이차 상호작용, 즉 비공유 결합으로 연결된 단량체 단위의 고분자 배열로 기술되는 supramolecular polymer를 정의할 때, 데이터 모델은 엄격히 닫혀 있으므로 표준 시스템 타입 이외의 외부 속성은 허용되지 않는다. 각 레코드는 문자열 식별자를 정확히 하나 명시해야 한다. 또한 레코드에는 일반 이름 문자열을 최대 하나, 정식 IUPAC 이름 문자열을 최대 하나, 일반 타입 지정을 최대 하나 포함할 수 있다. 고분자의 화학적 특성은 라디칼 여부를 나타내는 불리언 값 최대 하나와 원자의 상대적 비율을 나타내는 실험식 최대 하나로 더 상세히 기술할 수 있다. 구조 표현을 위해 레코드에는 완전한 InChI 문자열을 최대 하나 포함할 수 있으며, 특정 InChI 구성요소도 함께 포함할 수 있다. 즉, 대문자, 숫자, 마침표만으로 구성되어야 하는 주 화학식 sublayer를 최대 하나, 비수소 결합 연결을 상세히 기술하고 반드시 소문자 c로 시작해야 하는 atom connections sublayer를 최대 하나 포함할 수 있다. 이 모델은 키랄 또는 동위원소 정보 없이 분자 그래프를 인코딩하는 SMILES 문자열도 허용한다. 구성과 기능을 정의하기 위해, 고분자에는 자신이 그 고분자인 특정 macromolecule로 향하는 직접 링크를 최대 하나, 반복 단위를 나타내는 chemical entity로 향하는 직접 링크를 최대 하나 둘 수 있다. 마지막으로 chemical role을 정의하는 내부 중첩 레코드 최대 하나와, 더 넓은 그룹이나 메타클래스 아래에 계층적으로 분류하는 내부 중첩 레코드 최대 하나를 사용하여 기능과 분류를 기록할 수 있다.",
+      "translation_note": "원문의 “non-hydrogen bond connections”는 비수소 원자 간 결합인지 수소 결합 이외의 연결인지 명확하지 않아 “비수소 결합 연결”로 옮겼다."
+    },
+    {
+      "id": "chemrof-46",
+      "subset": "chemrof-dataset",
+      "label": "chemrof:MolecularSubsequence",
+      "en": "When defining a molecular subsequence, the data model is strictly closed, meaning no outside properties are permitted other than standard system types. Every molecular subsequence must specify exactly one string identifier. Beyond this required identifier, the record may include an optional single string for the name of the chemical entity, an optional single string for its IUPAC name, an optional single boolean flag indicating whether the structure is a radical, and an optional single type designation. For structural representation, the model allows an optional single empirical formula denoting the relative proportion of atoms, as well as any number of SMILES strings that encode the molecular graph without chiral or isotopic information. You may also include an optional single complete InChI string. If detailing specific InChI components, you can provide an optional single string for the InChI chemical sublayer representing the main chemical formula, which must consist exclusively of uppercase letters, numbers, and periods. Additionally, an optional single string can be provided for the InChI atom connections sublayer; this must begin with the lowercase letter 'c' and describes how non-hydrogen atoms are sequentially numbered and connected by bonds. Finally, the structure supports complex relationships through internal nested records: an optional single unnamed structure can be used to assign a specific chemical role, and another optional single internal nested record can establish hierarchical categorizations, linking the subsequence to broader grouping classes or metaclasses.",
+      "selection_hash": "2402c1c814b2204742bc52d899be2ff21e7bcdee5ef3045585a4cfc60f9e984f",
+      "ko": "molecular subsequence를 정의할 때, 데이터 모델은 엄격히 닫혀 있으므로 표준 시스템 타입 이외의 외부 속성은 허용되지 않는다. 모든 molecular subsequence는 문자열 식별자를 정확히 하나 명시해야 한다. 이 필수 식별자 외에, 레코드에는 chemical entity의 이름 문자열 하나, IUPAC 이름 문자열 하나, 구조가 라디칼인지를 나타내는 불리언 플래그 하나, 타입 지정 하나를 각각 선택적으로 포함할 수 있다. 구조 표현을 위해, 모델은 원자의 상대적 비율을 나타내는 실험식 하나를 선택적으로 허용하며, 키랄 또는 동위원소 정보 없이 분자 그래프를 인코딩하는 SMILES 문자열은 개수 제한 없이 허용한다. 완전한 InChI 문자열 하나를 선택적으로 포함할 수도 있다. 특정 InChI 구성요소를 상세히 기술하는 경우, 주 화학식을 나타내는 InChI chemical sublayer 문자열 하나를 선택적으로 제공할 수 있으며, 이 문자열은 대문자, 숫자, 마침표만으로 구성되어야 한다. 또한 InChI atom connections sublayer 문자열 하나를 선택적으로 제공할 수 있다. 이 문자열은 소문자 'c'로 시작해야 하며, 비수소 원자에 순서대로 번호를 부여하고 결합으로 연결하는 방식을 기술한다. 마지막으로 이 구조는 내부 중첩 레코드를 통해 복합 관계를 지원한다. 이름 없는 구조 하나를 선택적으로 사용하여 특정 chemical role을 부여할 수 있으며, 다른 내부 중첩 레코드 하나를 선택적으로 사용하여 subsequence를 더 넓은 grouping class나 메타클래스에 연결하는 계층적 분류를 설정할 수 있다."
+    },
+    {
+      "id": "chemrof-14",
+      "subset": "chemrof-dataset",
+      "label": "chemrof:ChemicalGroupingByCharge",
+      "en": "When curating a chemical grouping by charge, which serves as a grouping class that refines a charge-neutral entity, the data model is strictly closed, meaning no outside properties are permitted other than explicitly ignored system types. Each record must specify exactly one identifier as a text string. It may also include up to one name for the chemical entity, such as nickel or carbon-16, formatted as a string. To arrange these grouping classes into arbitrarily deep hierarchies, the record can include subtype relationships, which must be direct links or specific identifiers pointing to a molecule grouping class, ensuring this connection only occurs between two grouping classes. Finally, the entity may have at most one subclass relationship, represented as an internal nested record or unnamed structure categorized under an OWL class, which is used to establish hierarchical relationships where metaclasses represent groupings or specific countable elements.",
+      "selection_hash": "24c986f946f4746e68a75dca85dd55e07a759eec4dfa03a9c1ccea8b71790780",
+      "ko": "전하 중성 entity를 세분화하는 grouping class 역할을 하는 chemical grouping by charge를 관리할 때, 데이터 모델은 엄격히 닫혀 있으므로 명시적으로 무시하는 시스템 타입 이외의 외부 속성은 허용되지 않는다. 각 레코드는 텍스트 문자열 식별자를 정확히 하나 명시해야 한다. nickel이나 carbon-16과 같은 chemical entity의 이름을 문자열 형식으로 최대 하나 포함할 수도 있다. 이러한 grouping class를 깊이 제한이 없는 계층으로 배열하기 위해, 레코드에는 subtype 관계를 포함할 수 있다. 이 관계는 molecule grouping class를 가리키는 직접 링크 또는 특정 식별자여야 하며, 이러한 연결이 두 grouping class 사이에서만 이루어지도록 해야 한다. 마지막으로 entity에는 subclass 관계가 최대 하나 있을 수 있다. 이는 OWL class 아래에 분류되는 내부 중첩 레코드 또는 이름 없는 구조로 표현되며, 메타클래스가 그룹이나 특정한 셀 수 있는 요소를 나타내는 계층 관계를 설정하는 데 사용된다."
+    },
+    {
+      "id": "chemrof-60",
+      "subset": "chemrof-dataset",
+      "label": "chemrof:SequenceInterval",
+      "en": "When defining a sequence interval, which represents a chain of connected monomers in a linear polymer such as a sub-region of an amino acid or nucleotide sequence, the data model is flexible and open, allowing additional properties beyond the standard constraints while ignoring standard system types. Every sequence interval must specify exactly one string-based identifier. You may optionally provide at most one string-based name for the chemical entity, such as nickel or carbon-16, as well as a single string-based IUPAC name. The interval can be flagged by at most one boolean value indicating if it is a radical, and it may define at most one chemical role, which must be provided as an internal nested record categorized under the Chemical Role class. For structural representation, you may include at most one sequence representation, a single standard InChI string, and at most one empirical formula, which denotes the relative proportion of atoms like CH2O for glucose. The model also permits SMILES strings, which encode the molecular graph without chiral or isotopic information. If detailing specific InChI components, you may provide at most one InChI chemical sublayer to represent the main chemical formula, which must be a string containing only uppercase letters, numbers, and periods. Additionally, you can include at most one InChI atom connections sublayer, which describes the bond connectivity between sequentially numbered non-hydrogen atoms; this must be a string that begins with a lowercase 'c'. Finally, the sequence interval may include at most one general type designation and at most one hierarchical subclass relationship, formatted as an internal nested record, to connect the specific element to a broader grouping or metaclass.",
+      "selection_hash": "29d55a5e8056a8516998f2252acd6de27e058d482a01847ac387fe4bd20e82cc",
+      "ko": "아미노산 또는 뉴클레오타이드 서열의 하위 영역처럼 선형 고분자에서 연결된 단량체 사슬을 나타내는 sequence interval을 정의할 때, 데이터 모델은 유연하고 열려 있어 표준 제약 이외의 추가 속성을 허용하며 표준 시스템 타입은 무시한다. 모든 sequence interval은 문자열 식별자를 정확히 하나 명시해야 한다. nickel이나 carbon-16과 같은 chemical entity의 문자열 이름을 최대 하나, 문자열 IUPAC 이름 하나를 선택적으로 제공할 수 있다. interval에는 라디칼 여부를 나타내는 불리언 값을 최대 하나 표시할 수 있으며, chemical role을 최대 하나 정의할 수 있다. 이 role은 Chemical Role 클래스 아래에 분류되는 내부 중첩 레코드로 제공해야 한다. 구조 표현을 위해 sequence representation을 최대 하나, 표준 InChI 문자열 하나, 포도당의 CH2O처럼 원자의 상대적 비율을 나타내는 실험식을 최대 하나 포함할 수 있다. 이 모델은 키랄 또는 동위원소 정보 없이 분자 그래프를 인코딩하는 SMILES 문자열도 허용한다. 특정 InChI 구성요소를 상세히 기술하는 경우, 주 화학식을 나타내는 InChI chemical sublayer를 최대 하나 제공할 수 있으며, 이는 대문자, 숫자, 마침표만을 포함하는 문자열이어야 한다. 또한 순서대로 번호가 부여된 비수소 원자 사이의 결합 연결성을 기술하는 InChI atom connections sublayer를 최대 하나 포함할 수 있다. 이는 소문자 'c'로 시작하는 문자열이어야 한다. 마지막으로 sequence interval에는 일반 타입 지정을 최대 하나, 특정 요소를 더 넓은 그룹이나 메타클래스에 연결하는 계층적 subclass 관계를 최대 하나 포함할 수 있으며, 이 관계는 내부 중첩 레코드 형식이어야 한다."
+    },
+    {
+      "id": "dbpedia-3",
+      "subset": "dbpedia-dataset",
+      "label": "PersonGenderShape",
+      "en": "The gender of a person must be Male, Female, or Other.",
+      "selection_hash": "0bd2017771da33fafafb44bfa1cc8628c962a5610a9de03283a7e3da8eead951",
+      "ko": "사람의 성별은 Male, Female 또는 Other여야 한다."
+    },
+    {
+      "id": "dbpedia-6",
+      "subset": "dbpedia-dataset",
+      "label": "FilmRatingShape",
+      "en": "A film's rating must be an integer between 1 and 5.",
+      "selection_hash": "0f58f4b844a4fa4d1e2ab3bd2a39479f3a44556de06ec3e16d8d3db44997bd77",
+      "ko": "영화의 평점은 1과 5 사이의 정수여야 한다.",
+      "translation_note": "원문의 “between 1 and 5”는 양 끝값 포함 여부를 명시하지 않으므로 번역에서도 이를 추가하지 않았다."
+    },
+    {
+      "id": "dbpedia-5",
+      "subset": "dbpedia-dataset",
+      "label": "BlogPostShape",
+      "en": "A blog post must have at least one tag.",
+      "selection_hash": "10217d9bd6bcd55180c787a89a0881389c06b94e560d9d4822692642885d3b28",
+      "ko": "블로그 게시물에는 태그가 최소 하나 있어야 한다."
+    },
+    {
+      "id": "dbpedia-7",
+      "subset": "dbpedia-dataset",
+      "label": "CityShape",
+      "en": "The name of a city must not exceed 100 characters.",
+      "selection_hash": "127706b0362c0a15b27893c85c81a67c172bd652577804fe5e1cc377c26ed3c1",
+      "ko": "도시의 이름은 100자를 초과해서는 안 된다."
+    },
+    {
+      "id": "dbpedia-9",
+      "subset": "dbpedia-dataset",
+      "label": "CountryShape",
+      "en": "A country code must be exactly two uppercase letters.",
+      "selection_hash": "35844ed05be488365a65d45b63891c25a8cf5d196cc67859593f814095ef186b",
+      "ko": "국가 코드는 정확히 두 개의 대문자여야 한다."
+    },
+    {
+      "id": "dbpedia-8",
+      "subset": "dbpedia-dataset",
+      "label": "BookISBNShape",
+      "en": "A book's ISBN must be a string.",
+      "selection_hash": "b4fb6a6e2bbd49206fc4f6b4afd471a5907bd1558a598b33323092653d5b9198",
+      "ko": "책의 ISBN은 문자열이어야 한다."
+    },
+    {
+      "id": "dbpedia-4",
+      "subset": "dbpedia-dataset",
+      "label": "PersonHeightShape",
+      "en": "A person's height must be a positive decimal number.",
+      "selection_hash": "f41e12ba969708cdcf19f245f01411020f9304b76b35445aceb65cd5a1b5de12",
+      "ko": "사람의 키는 양의 십진수여야 한다."
+    },
+    {
+      "id": "dcat-10",
+      "subset": "dcat-dataset",
+      "label": "skos:Concept",
+      "en": "When defining a Concept, which represents a specific idea, notion, or unit of thought within the catalog, you must provide at least one preferred label. To ensure proper formatting, this preferred label must be recorded as a literal text value rather than a web link or identifier. Any violation of these constraints is considered a validation error and will be reported with a severity level of violation.",
+      "selection_hash": "067082a8ef30bd762b6473d309fc00144ec6c36e1709ad782bbf8d6457a7c960",
+      "ko": "카탈로그 내의 특정한 아이디어, 개념 또는 사고 단위를 나타내는 Concept를 정의할 때는 preferred label을 최소 하나 제공해야 한다. 올바른 형식을 보장하기 위해, 이 preferred label은 웹 링크나 식별자가 아닌 리터럴 텍스트 값으로 기록해야 한다. 이러한 제약의 위반은 모두 검증 오류로 간주되며 violation 심각도 수준으로 보고된다."
+    },
+    {
+      "id": "dcat-3",
+      "subset": "dcat-dataset",
+      "label": "spdx:Checksum",
+      "en": "When defining a Checksum, you must specify exactly one algorithm used to produce the checksum, and this must be provided as a specific identifier URL. Additionally, you must provide exactly one checksum value, which represents the actual lower case hexadecimal encoded digest produced by that algorithm, and this must be recorded as a literal text value. Any violation of these requirements is considered a validation error and will be reported with a severity level of violation.",
+      "selection_hash": "0c6fd506f96446bfaa766632abaa9bccf2da1dd886ca17fae7b33ba2a9d39cd7",
+      "ko": "Checksum을 정의할 때는 체크섬 생성에 사용한 algorithm을 정확히 하나 명시해야 하며, 이는 특정 식별자 URL로 제공해야 한다. 또한 checksum value를 정확히 하나 제공해야 한다. 이 값은 해당 algorithm이 생성한 실제 소문자 16진수 인코딩 다이제스트를 나타내며, 리터럴 텍스트 값으로 기록해야 한다. 이러한 요구사항의 위반은 모두 검증 오류로 간주되며 violation 심각도 수준으로 보고된다."
+    },
+    {
+      "id": "dcat-5",
+      "subset": "dcat-dataset",
+      "label": "dct:LicenseDocument",
+      "en": "When cataloging a License Document, which serves as a legal document giving official permission to use a resource, you may specify at most one type to define the nature or genre of the license. If this type is provided, it must be expressed as a specific identifier URL that links to a standardized concept. Any violation of these requirements is considered a validation error and will be reported with a severity level of violation. Furthermore, to comply with strict license type restrictions, this concept must be explicitly categorized within a formal concept scheme. Specifically, it must contain at least one direct link indicating it belongs to the exact ADMS license type vocabulary located at http://purl.org/adms/licencetype/1.0.",
+      "selection_hash": "11a6f3e9e8fe4b9e386ef136be174b03f70656ef268f4eaa0bd148684991697d",
+      "ko": "리소스를 사용할 수 있는 공식 허가를 부여하는 법적 문서인 License Document를 카탈로그에 등록할 때, 라이선스의 성격이나 장르를 정의하는 type을 최대 하나 명시할 수 있다. 이 type을 제공하는 경우, 표준화된 concept에 연결되는 특정 식별자 URL로 표현해야 한다. 이러한 요구사항의 위반은 모두 검증 오류로 간주되며 violation 심각도 수준으로 보고된다. 또한 엄격한 license type 제한을 준수하려면, 이 concept는 공식 concept scheme 내에 명시적으로 분류되어야 한다. 구체적으로, 정확히 http://purl.org/adms/licencetype/1.0 에 위치한 ADMS license type vocabulary에 속함을 나타내는 직접 링크를 최소 하나 포함해야 한다."
+    },
+    {
+      "id": "dcat-7",
+      "subset": "dcat-dataset",
+      "label": "MandatoryCatalog",
+      "en": "When structuring your data catalog environment, it is strictly required to define at least one Catalog. Serving as a curated collection of metadata about resources like datasets and data services, the Catalog is a fundamental entity. To comply with this mandatory rule, your overall metadata submission must contain at least one explicit record that is formally classified as a Catalog.",
+      "selection_hash": "159e3ba287444093db94083b9e3fe133356df1028b3b1f714e08c63a25085835",
+      "ko": "데이터 카탈로그 환경을 구성할 때는 Catalog를 최소 하나 정의하는 것이 엄격히 요구된다. Catalog는 데이터셋이나 데이터 서비스와 같은 리소스에 대한 메타데이터를 선별하여 모은 것으로, 기본 entity이다. 이 필수 규칙을 준수하려면 전체 메타데이터 제출물에 Catalog로 정식 분류된 명시적 레코드가 최소 하나 포함되어야 한다."
+    },
+    {
+      "id": "dcat-15",
+      "subset": "dcat-dataset",
+      "label": "dcat:Catalog-1",
+      "en": "When defining a Catalog, which serves as a curated collection of metadata about resources, several constraints apply.   The catalog must include at least one title and at least one description, both provided as text. It is also required to specify exactly one publisher responsible for making the resource available, which must be provided as a specific identifier URL. Furthermore, the catalog must list at least one dataset. If you choose to record the dates when the catalog was formally issued or last modified, you may provide at most one of each, and they must be formatted strictly as either a date or a date-time value.   The catalog can be structured hierarchically, meaning it may be included in at most one parent catalog, while any parts of a catalog must also be catalogs. It may also include catalog records that describe the registration of individual datasets or data services.   For legal and informational purposes, the catalog can link to at most one license document giving official permission for its use, at most one rights statement detailing intellectual property rights, and at most one homepage document. Finally, any specified languages, spatial coverage characteristics, or theme taxonomies used to classify the datasets must be provided as specific identifier URLs.  Any violation of the specified constraints results in a validation error with severity level Violation",
+      "selection_hash": "456d1b047e899c409c27ecad2766d9b044e7a35e6d004e8211c7f64aae5afcd9",
+      "ko": "리소스에 대한 메타데이터를 선별하여 모은 Catalog를 정의할 때는 여러 제약이 적용된다. 카탈로그에는 title과 description이 각각 최소 하나 포함되어야 하며, 둘 다 텍스트로 제공해야 한다. 리소스를 이용할 수 있도록 하는 책임을 지는 publisher도 정확히 하나 명시해야 하며, 이는 특정 식별자 URL로 제공해야 한다. 또한 카탈로그는 dataset을 최소 하나 나열해야 한다. 카탈로그가 공식 발행된 날짜나 마지막으로 수정된 날짜를 기록하기로 하는 경우, 각각 최대 하나씩 제공할 수 있으며 반드시 date 또는 date-time 값으로 형식을 지정해야 한다. 카탈로그는 계층적으로 구성될 수 있으므로 최대 하나의 상위 카탈로그에 포함될 수 있으며, 카탈로그의 모든 부분도 카탈로그여야 한다. 개별 데이터셋이나 데이터 서비스의 등록을 기술하는 catalog record를 포함할 수도 있다. 법적 목적과 정보 제공을 위해, 카탈로그는 사용을 공식 허가하는 license document 최대 하나, 지식재산권을 상세히 기술하는 rights statement 최대 하나, homepage document 최대 하나에 연결될 수 있다. 마지막으로, 명시된 모든 language, spatial coverage 특성, 또는 데이터셋 분류에 사용되는 theme taxonomy는 특정 식별자 URL로 제공해야 한다. 명시된 제약의 위반은 모두 Violation 심각도 수준의 검증 오류를 발생시킨다."
+    },
+    {
+      "id": "dcat-19",
+      "subset": "dcat-dataset",
+      "label": "dcat:Distribution-1",
+      "en": "When defining a Distribution, which serves as a specific physical or digital representation of a dataset, you must provide at least one access URL as an identifier URL to ensure the resource can be reached. The distribution's title and description, if provided, must be expressed as literal text values.  To track its lifecycle, if provided, at most one date issued and at most one date modified are allowed, and they must be formatted strictly as either a date or a date-time value. If you provide a download URL for the file, it must be an identifier URL.  If provided, the file's format must be given as at most one identifier URL referring to a Media Type or Extent. Similarly, if provided, at most one media type is allowed and it must refer to a Media Type or Extent.  If provided, the distribution's byte size must be a decimal number with at most one value.  For legal and access governance, if provided, at most one license is allowed, which must be a License Document, and at most one rights statement is allowed.  If indicating an established standard the distribution conforms to, it must be provided as either an identifier URL or an internal nested record. Additionally, if provided, the language of the resource must refer to a Linguistic System, and any related web pages must refer to Documents.  To verify file integrity, if provided, at most one checksum is allowed.  Finally, if provided, the distribution's status of the distribution must be represented by at most one identifier URL referring to a Concept with at most one value.  Any violation of these constraints results in a validation error with severity level Violation.",
+      "selection_hash": "4699c80219f58dba1b7302bc8f2f40c52424e668417aefe644e6798af113545f",
+      "ko": "데이터셋의 특정 물리적 또는 디지털 표현인 Distribution을 정의할 때는 리소스에 접근할 수 있도록 access URL을 최소 하나 식별자 URL로 제공해야 한다. distribution의 title과 description을 제공하는 경우, 리터럴 텍스트 값으로 표현해야 한다. 수명 주기를 추적하기 위한 date issued와 date modified를 제공하는 경우, 각각 최대 하나만 허용되며 반드시 date 또는 date-time 값으로 형식을 지정해야 한다. 파일의 download URL을 제공하는 경우, 식별자 URL이어야 한다. 파일의 format을 제공하는 경우, Media Type 또는 Extent를 참조하는 식별자 URL을 최대 하나 제공해야 한다. 마찬가지로 media type을 제공하는 경우 최대 하나만 허용되며, Media Type 또는 Extent를 참조해야 한다. distribution의 byte size를 제공하는 경우, 값은 최대 하나인 십진수여야 한다. 법적 관리와 접근 관리를 위한 license를 제공하는 경우 최대 하나만 허용되며 License Document여야 하고, rights statement를 제공하는 경우 최대 하나만 허용된다. distribution이 준수하는 확립된 standard를 표시하는 경우, 식별자 URL 또는 내부 중첩 레코드로 제공해야 한다. 또한 리소스의 language를 제공하는 경우 Linguistic System을 참조해야 하며, 관련 web page는 모두 Document를 참조해야 한다. 파일 무결성을 검증하기 위한 checksum을 제공하는 경우 최대 하나만 허용된다. 마지막으로 distribution의 status를 제공하는 경우, 값이 최대 하나인 Concept를 참조하는 식별자 URL 최대 하나로 표현해야 한다. 이러한 제약의 위반은 모두 Violation 심각도 수준의 검증 오류를 발생시킨다.",
+      "translation_note": "원문 마지막 문장의 “with at most one value”가 status의 값 개수를 반복하는지 Concept의 값 개수를 제한하는지 불명확하다. 원문의 Concept 뒤 수식 위치를 유지했다."
+    },
+    {
+      "id": "dcat-8",
+      "subset": "dcat-dataset",
+      "label": "MandatoryDataset",
+      "en": "When curating your data catalog, it is mandatory to include at least one Dataset. A Dataset represents a collection of data that is published or curated by a single source and made available for access or download in one or more representations. To satisfy this strict structural requirement, the data graph must contain at least one specific instance explicitly declared as a Dataset.",
+      "selection_hash": "853dd7921e192159765361b6c229a94aeabb048123c4c2efa730dd0e5af738e0",
+      "ko": "데이터 카탈로그를 관리할 때는 Dataset을 최소 하나 포함해야 한다. Dataset은 단일 출처가 발행하거나 관리하고, 하나 이상의 표현으로 접근하거나 다운로드할 수 있도록 제공하는 데이터 모음을 나타낸다. 이 엄격한 구조적 요구사항을 충족하려면 데이터 그래프에 Dataset으로 명시적으로 선언된 특정 인스턴스가 최소 하나 포함되어야 한다."
+    },
+    {
+      "id": "dcat-17",
+      "subset": "dcat-dataset",
+      "label": "foaf:Agent",
+      "en": "When defining an Agent, which represents an entity such as a person, group, software, or physical artifact, you must provide at least one name as a literal text value. You may also specify a maximum of one type. If a type is provided, it must be formatted as a specific identifier URL that represents a concept. Furthermore, this type concept is subject to a publisher type restriction, meaning it must be explicitly included in a concept scheme via a specific identifier URL, and this scheme must specifically be the ADMS publisher type 1.0 scheme. Any violation of these constraints results in a validation error with severity level Violation.",
+      "selection_hash": "8c004aea5828cfe266c374253635765a398fde46f10aee8f6e68d0de1629b71a",
+      "ko": "사람, 그룹, 소프트웨어 또는 물리적 인공물과 같은 entity를 나타내는 Agent를 정의할 때는 name을 최소 하나 리터럴 텍스트 값으로 제공해야 한다. type을 최대 하나 명시할 수도 있다. type을 제공하는 경우, concept를 나타내는 특정 식별자 URL 형식이어야 한다. 또한 이 type concept에는 publisher type 제한이 적용되므로, 특정 식별자 URL을 통해 concept scheme에 명시적으로 포함되어야 하며, 이 scheme은 구체적으로 ADMS publisher type 1.0 scheme이어야 한다. 이러한 제약의 위반은 모두 Violation 심각도 수준의 검증 오류를 발생시킨다."
+    },
+    {
+      "id": "epo-37",
+      "subset": "epo-dataset",
+      "label": "epo-shape:epo-ord-ContractInformationShape",
+      "en": "When defining Contract Information to capture details about a contract, the record must include exactly one direct link to the specific Contract it concerns. This linked Contract represents the voluntary, deliberate, and legally binding agreement between competent parties and relates to the contractor. Additionally, the contract information may include direct links to specific Order Lines to capture information that is particular to one or multiple order lines. Any referenced Order Line must be provided as a specific identifier URL that details a given unit of goods, services, or works requested in the order.",
+      "selection_hash": "0325cd63548a788c4b49c1fb552db5bbd42fb33015dae8219a30d08016f69a06",
+      "ko": "계약의 세부사항을 기록하기 위한 Contract Information을 정의할 때, 레코드에는 해당 정보가 다루는 특정 Contract로 향하는 직접 링크가 정확히 하나 포함되어야 한다. 이 연결된 Contract는 계약 능력이 있는 당사자들 사이의 자발적이고 의도적이며 법적 구속력이 있는 합의를 나타내며 contractor와 관련된다. 또한 contract information에는 하나 또는 여러 order line에 특유한 정보를 기록하기 위해 특정 Order Line으로 향하는 직접 링크를 포함할 수 있다. 참조하는 모든 Order Line은 주문에서 요청한 특정 단위의 물품, 서비스 또는 공사를 상세히 기술하는 특정 식별자 URL로 제공해야 한다."
+    },
+    {
+      "id": "epo-30",
+      "subset": "epo-dataset",
+      "label": "epo-shape:epo-QualityTargetInformationShape",
+      "en": "When defining Quality Target Information to capture details about a specific performance goal, the record must satisfy three specific requirements. It must contain exactly one direct link to a Contract Term, which establishes the conditions and stipulations defining particularities of the post-award phase. Additionally, the record requires exactly one specific identifier URL for the quality target code, pointing to a standardized concept that classifies the type of performance goal. Finally, it must include exactly one quality target description providing explanatory text about the performance goal, and this description must be formatted as either a standard text string or a language-tagged string.",
+      "selection_hash": "0b7a0a1b00cb1b900532471b3cbe81cbcae41364d1f006e81e0ded4921a3ae85",
+      "ko": "특정 성과 목표에 관한 세부 정보를 담는 Quality Target Information을 정의할 때, 레코드는 세 가지 특정 요구사항을 충족해야 한다. 낙찰 후 단계의 특수 사항을 규정하는 조건과 조항을 설정하는 Contract Term으로 향하는 직접 링크를 정확히 하나 포함해야 한다. 또한 성과 목표의 유형을 분류하는 표준화된 개념을 가리키는 품질 목표 코드의 특정 식별자 URL이 정확히 하나 필요하다. 마지막으로 성과 목표에 관한 설명문을 제공하는 품질 목표 설명을 정확히 하나 포함해야 하며, 이 설명은 일반 텍스트 문자열 또는 언어 태그가 있는 문자열 형식이어야 한다."
+    },
+    {
+      "id": "epo-34",
+      "subset": "epo-dataset",
+      "label": "epo-shape:epo-CertificateShape",
+      "en": "When defining a Certificate, which serves as proof of conformance to a defined set of criteria to provide assurance of credibility, trust, and transparency in the procurement process, several specific data constraints apply. The record may include at most one direct link to a Certification Label, which identifies the specific set of norms, expectations, standards, or policies that the certificate addresses. Additionally, it can specify a maximum of one certification number, formatted as either a standard text string or a language-specific string, to serve as the unique identifier of the certificate. Finally, the certificate may provide at most one direct link to a Certifier, indicating the organization acting in the role responsible for verifying conformance and issuing the document.",
+      "selection_hash": "1d2e05b45010ed1e4b885fa50bed86ae7cad42992815da56a7c3479d2040556b",
+      "ko": "조달 과정의 신뢰성, 신뢰 및 투명성을 보장하기 위해 정해진 기준 집합에 대한 적합성의 증거로 쓰이는 Certificate를 정의할 때에는 몇 가지 특정 데이터 제약이 적용된다. 레코드는 인증서가 다루는 특정 규범, 기대, 표준 또는 정책 집합을 식별하는 Certification Label로 향하는 직접 링크를 최대 하나 포함할 수 있다. 또한 인증서의 고유 식별자로 쓰이는 인증 번호를 최대 하나 지정할 수 있으며, 이 번호는 일반 텍스트 문자열 또는 언어별 문자열 형식이어야 한다. 마지막으로 인증서는 적합성을 확인하고 문서를 발급할 책임이 있는 역할을 맡은 조직을 나타내는 Certifier로 향하는 직접 링크를 최대 하나 제공할 수 있다."
+    },
+    {
+      "id": "epo-49",
+      "subset": "epo-dataset",
+      "label": "epo-shape:epo-AwardCriterionShape",
+      "en": "When defining an Award Criterion, which describes a requirement that a tender needs to resolve and on which it is evaluated and ranked, several specific data rules apply. You may provide at most one true or false value to indicate whether the award criteria are explicitly provided in the procurement documents. To classify the criterion, you can specify up to one award criterion type, which must be formatted as a direct link to a concept representing the category of the award criterion. Additionally, the record may include at most one fixed value, expressed as a decimal number to represent a constant amount. To clarify this number, you may also provide up to one fixed value type, which must be a specific identifier URL linking to a concept that defines the method for interpreting the fixed value, such as whether it pertains to a total or a unit.",
+      "selection_hash": "2639c2fbb5bc93fd6f85becf9dbcd16c0237d745b8e4a1501fd4e0bf241c5f3f",
+      "ko": "입찰서가 해결해야 하고 그에 따라 평가 및 순위 결정이 이루어지는 요구사항을 설명하는 Award Criterion을 정의할 때에는 몇 가지 특정 데이터 규칙이 적용된다. 낙찰 기준이 조달 문서에 명시적으로 제공되어 있는지를 나타내는 참 또는 거짓 값을 최대 하나 제공할 수 있다. 기준을 분류하기 위해 낙찰 기준 유형을 최대 하나 지정할 수 있으며, 이는 낙찰 기준의 범주를 나타내는 개념으로 향하는 직접 링크 형식이어야 한다. 또한 레코드는 일정한 양을 나타내는 십진수로 표현된 고정값을 최대 하나 포함할 수 있다. 이 수를 명확히 하기 위해 고정값 유형도 최대 하나 제공할 수 있으며, 이는 해당 값이 총액에 관한 것인지 단위에 관한 것인지 등 고정값의 해석 방법을 정의하는 개념으로 연결되는 특정 식별자 URL이어야 한다."
+    },
+    {
+      "id": "epo-28",
+      "subset": "epo-dataset",
+      "label": "epo-shape:epo-MonetaryValueShape",
+      "en": "When defining a Monetary Value, which represents a number of monetary units specified using a given unit of currency (keeping in mind that in the pre-award phase of procurement, all monetary values are considered to exclude VAT based on Directive 2014/24/EU), specific data constraints must be followed. The record must specify exactly one amount value, formatted as a decimal number, to capture the numeric value of the amount including any decimals. It must also include exactly one currency, provided as a specific identifier URL linking to a concept that identifies the currency according to a standard code list. Additionally, the record may optionally include a currency code list agency ID to identify the agency that maintains the code list, a currency code list agency name, and a currency code list ID to indicate the concept scheme URI used for the list; all three of these optional details must be expressed as either standard or language-tagged strings.",
+      "selection_hash": "2b7bd7a5d1784c7af3e9c391281f396ca2eaae19bb3c67975269efa2246e08af",
+      "ko": "주어진 통화 단위로 명시한 화폐 단위의 수를 나타내는 Monetary Value를 정의할 때에는 특정 데이터 제약을 따라야 한다. 이때 조달의 낙찰 전 단계에서는 Directive 2014/24/EU에 따라 모든 금액이 VAT를 제외한 것으로 간주됨을 염두에 두어야 한다. 레코드는 소수 부분을 포함한 금액의 수치를 담기 위해 십진수 형식의 금액 값을 정확히 하나 지정해야 한다. 또한 표준 코드 목록에 따라 통화를 식별하는 개념으로 연결되는 특정 식별자 URL로 제공되는 통화를 정확히 하나 포함해야 한다. 추가로 레코드는 코드 목록을 관리하는 기관을 식별하는 통화 코드 목록 기관 ID, 통화 코드 목록 기관명, 그리고 목록에 사용되는 개념 체계 URI를 나타내는 통화 코드 목록 ID를 선택적으로 포함할 수 있다. 이 세 가지 선택적 세부 정보는 모두 일반 문자열 또는 언어 태그가 있는 문자열로 표현해야 한다."
+    },
+    {
+      "id": "epo-6",
+      "subset": "epo-dataset",
+      "label": "epo-shape:epo-cat-EnvironmentalEmissionInformationShape",
+      "en": "When defining Environmental Emission Information, which details the emissions related to a product, work, or service that are released into the environment, several strict data constraints apply. The record must specify exactly one environmental emission code using a specific identifier URL that links to a standardized concept. It must also include exactly one measure, provided as a direct link to a quantity that indicates the unit used for stating the size. Optionally, the emission information may contain a direct link to at most one abstract item, which represents an item, item request, or deliverable related to a procurement need. It may also include a direct link to at most one transport means, describing a particular vehicle or vessel used for the conveyance of goods or persons. Finally, the record may specify at most one calculation method to describe the formula used for obtaining values, such as monetary values, ranking scores, or criterion weighting; if provided, this method must be formatted as either a standard text string or a language-tagged string.",
+      "selection_hash": "2bc782350110696668bf9f185c594123499947b8358722d4fece89e6c50fc480",
+      "ko": "제품, 공사 또는 서비스와 관련하여 환경으로 배출되는 배출물의 세부 사항을 설명하는 Environmental Emission Information을 정의할 때에는 몇 가지 엄격한 데이터 제약이 적용된다. 레코드는 표준화된 개념으로 연결되는 특정 식별자 URL을 사용하여 환경 배출 코드를 정확히 하나 지정해야 한다. 또한 크기를 명시하는 데 사용되는 단위를 나타내는 수량으로 향하는 직접 링크로 제공되는 측정값을 정확히 하나 포함해야 한다. 선택적으로 배출 정보는 조달 필요와 관련된 품목, 품목 요청 또는 인도물을 나타내는 abstract item으로 향하는 직접 링크를 최대 하나 포함할 수 있다. 물품이나 사람의 운송에 사용되는 특정 차량 또는 선박을 설명하는 transport means로 향하는 직접 링크도 최대 하나 포함할 수 있다. 마지막으로 레코드는 금액, 순위 점수 또는 기준 가중치와 같은 값을 구하는 데 사용되는 공식을 설명하는 계산 방법을 최대 하나 지정할 수 있다. 이 방법을 제공하는 경우 일반 텍스트 문자열 또는 언어 태그가 있는 문자열 형식이어야 한다."
+    },
+    {
+      "id": "epo-33",
+      "subset": "epo-dataset",
+      "label": "epo-shape:epo-LotGroupAwardInformationShape",
+      "en": "When defining Lot Group Award Information to capture award details related to a given group of lots, you must provide exactly one direct link to the specific Lot Group it describes, which represents a combination of several lots used to conduct a comparative assessment of tenders. Additionally, the record may contain a single optional direct link to an approximate group framework agreement value, indicating the estimated monetary value of the lot group within the framework agreement, as well as a single optional direct link to the group framework agreement maximum value. If either of these framework agreement values is provided, it must be formatted as a specific identifier URL pointing to a Monetary Value record, which expresses the financial amount using a specified unit of currency.",
+      "selection_hash": "2ce398bc74abd4190e8d65c80109738458aebd6a0fe872aef1e29aca0d4b01c9",
+      "ko": "주어진 로트 그룹과 관련된 낙찰 세부 정보를 담는 Lot Group Award Information을 정의할 때에는, 해당 정보가 설명하는 특정 Lot Group으로 향하는 직접 링크를 정확히 하나 제공해야 한다. Lot Group은 입찰서의 비교 평가에 사용되는 여러 로트의 조합을 나타낸다. 또한 레코드는 기본협약 내 로트 그룹의 추정 금액을 나타내는 대략적인 그룹 기본협약 금액으로 향하는 선택적 직접 링크 하나와 그룹 기본협약 최대 금액으로 향하는 선택적 직접 링크 하나를 포함할 수 있다. 이러한 기본협약 금액 중 어느 하나라도 제공하는 경우, 지정된 통화 단위로 금액을 표현하는 Monetary Value 레코드를 가리키는 특정 식별자 URL 형식이어야 한다."
+    },
+    {
+      "id": "epo-42",
+      "subset": "epo-dataset",
+      "label": "epo-shape:epo-ProcurementCriterionShape",
+      "en": "When defining a Procurement Criterion, which establishes a criterion specific to a procurement process, several data rules must be followed. You may provide at most one piece of additional information to offer supplementary data, which must be formatted as either a standard text string or a language-tagged string. The criterion can also be associated with specific limitations by linking to Constraint records; any such constraints must be provided as direct links to the respective limitation entities. If complex weighing methods, such as non-linear weighing or analytic hierarchy processes, are required because standard weighing cannot be expressed per criterion, you may include at most one formula. This formula must also be formatted as a standard text or language-tagged string to capture the mathematical equation or description. Finally, the criterion may specify at most one weight value type, which must be provided as a specific identifier URL pointing to a standardized Concept.",
+      "selection_hash": "468a58e91f7f26037c7b557af2a9d600f677de7e6acfa93240ca43d7f7ba4229",
+      "ko": "조달 과정에 고유한 기준을 설정하는 Procurement Criterion을 정의할 때에는 몇 가지 데이터 규칙을 따라야 한다. 보충 데이터를 제공하기 위한 추가 정보를 최대 하나 제공할 수 있으며, 이는 일반 텍스트 문자열 또는 언어 태그가 있는 문자열 형식이어야 한다. 기준은 Constraint 레코드로 연결하여 특정 제한과 연관 지을 수도 있다. 그러한 제약은 모두 해당 제한 엔터티로 향하는 직접 링크로 제공해야 한다. 기준별로 표준적인 가중치 부여를 표현할 수 없어 비선형 가중치 부여나 계층 분석 과정 같은 복잡한 가중치 부여 방법이 필요한 경우, 공식을 최대 하나 포함할 수 있다. 이 공식 또한 수학 방정식이나 설명을 담는 일반 텍스트 문자열 또는 언어 태그가 있는 문자열 형식이어야 한다. 마지막으로 기준은 가중값 유형을 최대 하나 지정할 수 있으며, 이는 표준화된 Concept를 가리키는 특정 식별자 URL로 제공해야 한다."
+    },
+    {
+      "id": "epo-14",
+      "subset": "epo-dataset",
+      "label": "epo-shape:epo-ful-ShipmentAgreementShape",
+      "en": "When defining a Shipment Agreement, which serves as the commercial agreement describing the items being shipped between the purchasing and supplying parties, specific acceptance rules must be followed. The agreement must specify at least one buyer who has accepted the terms, represented by a specific identifier URL linking directly to the Buyer, which is the agent that awards the contract or purchases the items. Furthermore, the record must include at least one seller who has accepted the agreement, also provided as a specific identifier URL pointing to the Seller, defined as the agent legally responsible for transferring the ownership of the procurement results, such as goods, services, or works, to the buyer.",
+      "selection_hash": "4a16cee01a55150a291b75655ec34763fc8404c9c8a14ae01b27375c3c4892bc",
+      "ko": "구매 당사자와 공급 당사자 사이에 선적되는 품목을 설명하는 상업적 합의인 Shipment Agreement를 정의할 때에는 특정 수락 규칙을 따라야 한다. 합의에는 조건을 수락한 구매자를 적어도 하나 지정해야 하며, 이는 Buyer로 직접 연결되는 특정 식별자 URL로 표현해야 한다. Buyer는 계약을 수여하거나 품목을 구매하는 주체이다. 또한 레코드는 합의를 수락한 판매자를 적어도 하나 포함해야 하며, 이 역시 Seller를 가리키는 특정 식별자 URL로 제공해야 한다. Seller는 물품, 서비스 또는 공사 등 조달 결과물의 소유권을 구매자에게 이전할 법적 책임이 있는 주체로 정의된다."
+    },
+    {
+      "id": "epo-48",
+      "subset": "epo-dataset",
+      "label": "epo-shape:epo-BusinessShape",
+      "en": "When defining a Business, which represents a private law company registered in a national registry, several specific attributes may be recorded. You may identify the company's beneficial owners, referring to the natural persons who ultimately own or control the organization or on whose behalf a transaction is conducted. Each beneficial owner must be provided as a specific identifier URL linking to a record of a real, non-imaginary person. Additionally, you may specify at most one business size to categorize the enterprise based on its number of employees and turnover; this must be expressed as a direct link to a standardized concept. Finally, the business record may include a single true or false value to indicate whether it is a listed company. This indicator denotes if the entity is a public company listed on a stock exchange and subject to strict disclosure requirements, a detail often used in eForms when the nationality of the beneficial owner is not provided due to the market's existing transparency standards.",
+      "selection_hash": "520a7def72f5a1f7c59b09ad5f39f2d46950272d7caeb7bd4de6889d179e8c62",
+      "ko": "국가 등록부에 등록된 사법상의 회사를 나타내는 Business를 정의할 때에는 몇 가지 특정 속성을 기록할 수 있다. 조직을 최종적으로 소유하거나 지배하는 자연인 또는 거래가 그를 대신하여 수행되는 자연인을 뜻하는 회사의 실소유자를 식별할 수 있다. 각 실소유자는 가상의 인물이 아닌 실재하는 사람의 레코드로 연결되는 특정 식별자 URL로 제공해야 한다. 또한 종업원 수와 매출액을 기준으로 기업을 분류하는 사업 규모를 최대 하나 지정할 수 있으며, 이는 표준화된 개념으로 향하는 직접 링크로 표현해야 한다. 마지막으로 Business 레코드는 상장회사인지 나타내는 참 또는 거짓 값 하나를 포함할 수 있다. 이 지표는 해당 엔터티가 증권거래소에 상장되어 엄격한 공시 요구사항을 적용받는 공개회사인지를 나타낸다. 이는 시장에 이미 존재하는 투명성 기준으로 인해 실소유자의 국적이 제공되지 않을 때 eForms에서 자주 사용되는 세부 정보이다."
+    },
+    {
+      "id": "invoice-12",
+      "subset": "invoice-dataset",
+      "label": "ExistenzAuftragsnummerKaeuferKopf",
+      "en": "When defining details of an Invoice record, you must specify exactly one buyer order number formatted as a text string. Enforcing this single required text value ensures that the document header contains the necessary reference information, specifically the order number commonly identified as RFF+ON, and failing to provide it will trigger a validation error indicating that the supplier's order number is missing or extra from the header.",
+      "selection_hash": "024400d42d45f3f7ba7635971ab8cd124834bff7cc1f6a70ce0364bd93d37f9e",
+      "ko": "Invoice 레코드의 세부 사항을 정의할 때에는 텍스트 문자열 형식의 구매자 주문 번호를 정확히 하나 지정해야 한다. 이 단일 필수 텍스트 값을 강제하면 문서 헤더에 필요한 참조 정보, 구체적으로는 일반적으로 RFF+ON으로 식별되는 주문 번호가 포함되도록 보장한다. 이를 제공하지 않으면 헤더에서 공급자의 주문 번호가 누락되었거나 과다하다는 검증 오류가 발생한다.",
+      "translation_note": "원문은 필수 값을 buyer order number라고 부르지만 오류 설명에서는 supplier's order number라고 부른다. 두 표현의 불일치를 그대로 보존했다."
+    },
+    {
+      "id": "invoice-21",
+      "subset": "invoice-dataset",
+      "label": "GLNKaeufer",
+      "en": "When defining a Formal Organization, specific data curation rules apply based on the entity's role. If the organization is categorized as a Buyer, it must be assigned exactly one Global Location Number. To ensure data integrity and prevent system errors indicating that data element 3039 is missing for the NAD+BY segment, this location number must be formatted as a numeric integer that is exactly thirteen digits in length. Alternatively, if the organization is not designated with a Buyer role, this strict location number requirement does not apply.",
+      "selection_hash": "06ab2d70d2cfedb2345785004f42153af9dce9a9de80d9709ec90b57a799c622",
+      "ko": "Formal Organization을 정의할 때에는 엔터티의 역할에 따라 특정 데이터 관리 규칙이 적용된다. 조직이 Buyer로 분류되면 Global Location Number를 정확히 하나 부여해야 한다. 데이터 무결성을 보장하고 NAD+BY 세그먼트에 데이터 요소 3039가 누락되었다는 시스템 오류를 방지하려면, 이 위치 번호는 길이가 정확히 13자리인 정수 형식이어야 한다. 반대로 조직에 Buyer 역할이 지정되지 않은 경우에는 이 엄격한 위치 번호 요구사항이 적용되지 않는다."
+    },
+    {
+      "id": "invoice-34",
+      "subset": "invoice-dataset",
+      "label": "PLZLieferant",
+      "en": "When curating a Formal Organization record, specific constraints apply depending on its designated role. If the organization is explicitly categorized as a supplier, it is strictly required to provide exactly one postal code to satisfy the business requirement for data element 3251 within the NAD+SU segment. This supplier postal code must be recorded as a text string and cannot exceed a maximum length of nine characters. Alternatively, if the organization does not hold the supplier role, this specific postal code requirement does not apply.",
+      "selection_hash": "06fc690fffe91a50ce83d766a13deece99d2b15a19dec35785ed508bb99ec866",
+      "ko": "Formal Organization 레코드를 관리할 때에는 지정된 역할에 따라 특정 제약이 적용된다. 조직이 명시적으로 공급자로 분류된 경우, NAD+SU 세그먼트 내 데이터 요소 3251에 대한 업무 요구사항을 충족하기 위해 우편번호를 정확히 하나 제공하는 것이 엄격히 요구된다. 이 공급자 우편번호는 텍스트 문자열로 기록해야 하며 최대 길이 9자를 초과할 수 없다. 반대로 조직이 공급자 역할을 갖지 않는 경우에는 이 특정 우편번호 요구사항이 적용되지 않는다."
+    },
+    {
+      "id": "invoice-35",
+      "subset": "invoice-dataset",
+      "label": "GLNRechnungsempfaenger",
+      "en": "When curating records for a Formal Organization, specific validation rules apply based on the entity's designated role. If the organization is classified as an invoice recipient, it is strictly required to provide exactly one Global Location Number to satisfy the requirements for data element 3039 within the NAD+IV segment. This location identifier must be formatted as a single integer that is exactly thirteen digits in length. If the organization does not serve in the invoice recipient role, this specific Global Location Number constraint does not apply, but failing to provide this thirteen-digit numeric identifier for an actual invoice recipient will result in a validation error indicating that the required specification is missing.",
+      "selection_hash": "0eb208fbb7b3d5b654c6d8448656c8ffc5e8b6aeedc223edae01487a9acbc40d",
+      "ko": "Formal Organization의 레코드를 관리할 때에는 엔터티에 지정된 역할에 따라 특정 검증 규칙이 적용된다. 조직이 송장 수신자로 분류된 경우, NAD+IV 세그먼트 내 데이터 요소 3039의 요구사항을 충족하기 위해 Global Location Number를 정확히 하나 제공하는 것이 엄격히 요구된다. 이 위치 식별자는 길이가 정확히 13자리인 단일 정수 형식이어야 한다. 조직이 송장 수신자 역할을 수행하지 않는 경우에는 이 특정 Global Location Number 제약이 적용되지 않는다. 그러나 실제 송장 수신자에 대해 이 13자리 숫자 식별자를 제공하지 않으면 필수 명세가 누락되었다는 검증 오류가 발생한다."
+    },
+    {
+      "id": "invoice-18",
+      "subset": "invoice-dataset",
+      "label": "LaengeLieferscheinnummer",
+      "en": "For any Invoice Details, the delivery note number must be formatted as a standard text string. Because this field represents the supplier's order number, specifically the RFF+DQ reference, it is strictly limited in size to prevent system errors where the value is too long. Therefore, the provided text must never exceed a maximum length of 35 characters.",
+      "selection_hash": "1691f95a7ff000a4ccfddd5278a555d61aa82b29576adbf1522f045bfa33298b",
+      "ko": "모든 Invoice Details에서 납품서 번호는 일반 텍스트 문자열 형식이어야 한다. 이 필드는 공급자의 주문 번호, 구체적으로는 RFF+DQ 참조를 나타내므로, 값이 너무 길어 발생하는 시스템 오류를 방지하기 위해 크기가 엄격히 제한된다. 따라서 제공된 텍스트는 최대 길이 35자를 절대로 초과해서는 안 된다.",
+      "translation_note": "원문은 delivery note number를 supplier's order number라고도 설명한다. 두 명칭을 그대로 보존했다."
+    },
+    {
+      "id": "invoice-22",
+      "subset": "invoice-dataset",
+      "label": "UmsatzsteuernummerKaeufer",
+      "en": "When defining a Formal Organization, strict data rules govern the presence of tax information based on the entity's function. If the organization is classified specifically as a Buyer Role, it is mandatory to provide exactly one VAT identifier, and this value must not exceed fourteen characters in length. The validation logic dictates that the organization must either not be categorized as a buyer at all, or it must fulfill this exact VAT identifier requirement. Failure to provide this required data for a buyer will trigger a system alert stating that the buyer's VAT number is missing from the record. Alternatively, if the organization is not designated with a Buyer role, this strict VAT identifier requirement does not apply.",
+      "selection_hash": "1ae02ba66e709c4d3f32215242d668006e953432dfef383822bc7918d05b2f70",
+      "ko": "Formal Organization을 정의할 때에는 엔터티의 기능에 따라 세금 정보의 존재 여부에 엄격한 데이터 규칙이 적용된다. 조직이 구체적으로 Buyer Role로 분류된 경우 VAT 식별자를 정확히 하나 제공해야 하며, 이 값의 길이는 14자를 초과해서는 안 된다. 검증 논리에 따르면 조직은 구매자로 전혀 분류되지 않거나, 이 정확한 VAT 식별자 요구사항을 충족해야 한다. 구매자에 대해 이 필수 데이터를 제공하지 않으면 레코드에서 구매자의 VAT 번호가 누락되었다는 시스템 경고가 발생한다. 반대로 조직에 Buyer 역할이 지정되지 않은 경우에는 이 엄격한 VAT 식별자 요구사항이 적용되지 않는다."
+    },
+    {
+      "id": "invoice-30",
+      "subset": "invoice-dataset",
+      "label": "StrasseLieferant",
+      "en": "When defining a Formal Organization, specific data entry rules apply based on the organization's designated role. If the organization is categorized specifically as a supplier, it must include exactly one street address formatted as a text string that does not exceed 35 characters in length. This conditional requirement ensures proper record completeness, as omitting this information will trigger a validation error indicating that data element 3042 is missing for the NAD+SU segment, which strictly mandates the specification of the supplier's street. However, if the formal organization is not classified under the supplier role, it is entirely exempt from this specific street address constraint.",
+      "selection_hash": "1b1a9d5e8da0ab589272599254ba2c7caa15ce8125f22037b47b9bdf9dd65468",
+      "ko": "Formal Organization을 정의할 때에는 조직에 지정된 역할에 따라 특정 데이터 입력 규칙이 적용된다. 조직이 구체적으로 공급자로 분류된 경우, 길이가 35자를 초과하지 않는 텍스트 문자열 형식의 도로명 주소를 정확히 하나 포함해야 한다. 이 조건부 요구사항은 레코드가 적절히 완전하도록 보장한다. 이 정보를 생략하면 공급자의 도로명 명시를 엄격히 요구하는 NAD+SU 세그먼트에 데이터 요소 3042가 누락되었다는 검증 오류가 발생하기 때문이다. 그러나 Formal Organization이 공급자 역할로 분류되지 않은 경우에는 이 특정 도로명 주소 제약에서 완전히 면제된다."
+    },
+    {
+      "id": "invoice-19",
+      "subset": "invoice-dataset",
+      "label": "ExistenzDatumLieferscheinnummer",
+      "en": "When curating details for an Invoice record, you must specify exactly one date associated with the delivery note number. This mandatory date must be formatted as a text string. It is critical to include this single required value, as its absence will trigger a system alert stating that the date of the supplier's order number, specifically the RFF+DQ reference, is missing from the document.",
+      "selection_hash": "1de923301f9dfc44a63c148c0c6f393408a9674c3dcbe987eb95eba76b2001c0",
+      "ko": "Invoice 레코드의 세부 사항을 관리할 때에는 납품서 번호와 관련된 날짜를 정확히 하나 지정해야 한다. 이 필수 날짜는 텍스트 문자열 형식이어야 한다. 이 단일 필수 값을 포함하는 것이 중요하다. 값이 없으면 공급자의 주문 번호, 구체적으로는 RFF+DQ 참조의 날짜가 문서에서 누락되었다는 시스템 경고가 발생하기 때문이다.",
+      "translation_note": "원문은 delivery note number에 관련된 날짜를 요구하면서 오류 설명에서는 supplier's order number의 날짜라고 부른다. 두 명칭을 그대로 보존했다."
+    },
+    {
+      "id": "invoice-25",
+      "subset": "invoice-dataset",
+      "label": "PLZKaeufer",
+      "en": "When curating records for a Formal Organization, specific validation rules apply to ensure the proper specification of a buyer's postal code. If the organization is explicitly designated with a Buyer Role, the record must include exactly one postal code formatted as a text string with a maximum length of nine characters. If the organization does not function as a buyer, this postal code constraint does not apply. Enforcing this rule ensures that data element 3251 is correctly populated for the NAD+BY segment, and any omission for a recognized buyer will be flagged as a missing postal code error.",
+      "selection_hash": "21c9471d147bfe1fc0c09f35775342087d3406659644edc3e756b05393e3d536",
+      "ko": "Formal Organization의 레코드를 관리할 때에는 구매자의 우편번호가 올바르게 명시되도록 특정 검증 규칙이 적용된다. 조직에 Buyer Role이 명시적으로 지정된 경우, 레코드는 최대 길이가 9자인 텍스트 문자열 형식의 우편번호를 정확히 하나 포함해야 한다. 조직이 구매자로 기능하지 않는 경우에는 이 우편번호 제약이 적용되지 않는다. 이 규칙을 강제하면 NAD+BY 세그먼트의 데이터 요소 3251이 올바르게 채워지도록 보장하며, 구매자로 인정된 조직에서 이 값이 생략되면 우편번호 누락 오류로 표시된다."
+    },
+    {
+      "id": "invoice-27",
+      "subset": "invoice-dataset",
+      "label": "FormalNameLieferant",
+      "en": "When defining a Formal Organization within the data model, specific curation rules apply to ensure the proper identification of suppliers, specifically addressing the requirement for data element 3036 in the NAD+SU segment. If the organization is categorized under a Supplier Role, it is strictly required to include exactly one formal name. This formal name must be provided as a standard text string and cannot exceed a maximum length of 35 characters. If the organization is not designated as a supplier, it is exempt from this specific naming constraint.",
+      "selection_hash": "25931f2eac7deffda548804115c9166ca4264699e875c004289422bdae0fe3fb",
+      "ko": "데이터 모델 내에서 Formal Organization을 정의할 때에는 공급자를 올바르게 식별하도록 특정 관리 규칙이 적용되며, 구체적으로 NAD+SU 세그먼트의 데이터 요소 3036에 대한 요구사항을 다룬다. 조직이 Supplier Role로 분류된 경우 공식 명칭을 정확히 하나 포함하는 것이 엄격히 요구된다. 이 공식 명칭은 일반 텍스트 문자열로 제공해야 하며 최대 길이 35자를 초과할 수 없다. 조직이 공급자로 지정되지 않은 경우에는 이 특정 명칭 제약에서 면제된다."
+    },
+    {
+      "id": "snik-4",
+      "subset": "snik-dataset",
+      "label": "meta:NotRoleShape",
+      "en": "An entity type or a function cannot be categorized as a specific type of role.",
+      "selection_hash": "37457b52796ef09af488a4a4f455e39b3f91417b2afce959b882e77917e4b9d9",
+      "ko": "엔터티 유형(entity type) 또는 기능(function)은 특정 유형의 역할(role)로 분류될 수 없다."
+    },
+    {
+      "id": "snik-3",
+      "subset": "snik-dataset",
+      "label": "meta:NotEntityTypeShape",
+      "en": "Functions and roles must not be classified as subcategories of an entity type.",
+      "selection_hash": "673ec8f4db9ffacb446635f345880a950df596ec6f4442a853eb70063d1f80c4",
+      "ko": "기능(function)과 역할(role)은 엔터티 유형(entity type)의 하위 범주로 분류되어서는 안 된다."
+    },
+    {
+      "id": "snik-5",
+      "subset": "snik-dataset",
+      "label": "meta:NotFunctionShape",
+      "en": "An entity type or a role must never be classified as a subclass of a function.",
+      "selection_hash": "6a2e425b080ff19d25c2e715e48911659e9a40d036e7e59251804d874bd2e182",
+      "ko": "엔터티 유형(entity type) 또는 역할(role)은 기능(function)의 하위 클래스로 절대로 분류되어서는 안 된다."
+    },
+    {
+      "id": "snik-7",
+      "subset": "snik-dataset",
+      "label": "meta:TopShape",
+      "en": "Every top class must be categorized as exactly one of three things: an entity type, a function, or a role. Any top class can be linked to other concepts through exact, close, related, broader, or narrower matches, and can be marked as a homonym. Beyond these matching links, each category is strictly limited in what characteristics it can have. An entity type may only include a label, entity type components, and information about what it is based on, while specifically ignoring traits like software products, typical features, supported functions, or communication with other components. A function is restricted to having a label, function components, and relationships showing that it uses, updates, increases, or decreases an entity type. Similarly, a role is limited to having a label, role components, and details about its duties, such as being involved in a task, being responsible for another role, function, or entity type, or having the authority to approve functions and entity types.",
+      "selection_hash": "9b95514722de1909db20278679cbf71957de8b2f6bbc35e25664fef964f183da",
+      "ko": "모든 최상위 클래스(top class)는 엔터티 유형(entity type), 기능(function), 역할(role)의 세 가지 중 정확히 하나로 분류되어야 한다. 모든 최상위 클래스는 정확한 일치(exact), 가까운 일치(close), 관련 일치(related), 더 넓은 일치(broader) 또는 더 좁은 일치(narrower)를 통해 다른 개념과 연결될 수 있으며, 동음이의어(homonym)로 표시될 수 있다. 이러한 일치 링크 외에는 각 범주가 가질 수 있는 특성이 엄격히 제한된다. 엔터티 유형은 레이블, 엔터티 유형 구성요소 및 무엇에 기반하는지에 대한 정보만 포함할 수 있으며, 소프트웨어 제품, 전형적인 특징, 지원하는 기능 또는 다른 구성요소와의 통신 같은 특성은 명시적으로 무시한다. 기능은 레이블, 기능 구성요소 및 엔터티 유형을 사용하거나 갱신하거나 증가시키거나 감소시킴을 보여 주는 관계만 가질 수 있다. 마찬가지로 역할은 레이블, 역할 구성요소 및 그 직무에 대한 세부 정보만 가질 수 있다. 직무의 예로는 과업에 관여하는 것, 다른 역할이나 기능 또는 엔터티 유형을 책임지는 것, 기능과 엔터티 유형을 승인할 권한을 갖는 것이 있다."
+    },
+    {
+      "id": "snik-6",
+      "subset": "snik-dataset",
+      "label": "meta:RoleShape",
+      "en": "Every role must have at least one human-readable name. A role is strictly limited to a specific set of allowed relationships and cannot have any other custom attributes. Specifically, a role can be responsible for another role, a function, or an entity type. It may also approve functions or entity types, be involved in tasks, or include other roles as components.",
+      "selection_hash": "c29e2648fe05aac5887943587e2b3ac006bbbefd00c0ab5031080120d1c931a1",
+      "ko": "모든 역할(role)은 사람이 읽을 수 있는 이름을 적어도 하나 가져야 한다. 역할은 허용된 관계의 특정 집합으로 엄격히 제한되며 그 밖의 사용자 정의 속성을 가질 수 없다. 구체적으로 역할은 다른 역할, 기능(function) 또는 엔터티 유형(entity type)을 책임질 수 있다. 또한 기능이나 엔터티 유형을 승인하거나, 과업에 관여하거나, 다른 역할을 구성요소로 포함할 수 있다."
+    }
+  ]
+}

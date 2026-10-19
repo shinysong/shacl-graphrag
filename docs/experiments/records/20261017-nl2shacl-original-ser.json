@@ -1,0 +1,3431 @@
+{
+  "scope": "Original upstream SER on saved181generated outputs,12consumed items,8models,EN/KO; not full240 benchmark or original-model numerical reproduction",
+  "paid_calls": 0,
+  "planned_generation": 192,
+  "generated": 181,
+  "provider_failures": 2,
+  "unattempted": 9,
+  "original_metrics": {
+    "N": 181,
+    "N_valid": 176,
+    "N_semantic_valid": 176,
+    "RDF_VR": 0.9723756906077348,
+    "RDF_ER": 0.027624309392265192,
+    "Spec_VR": 1.0,
+    "Spec_ER": 0.0,
+    "Vocab_VR": 1.0,
+    "Vocab_ER": 0.0,
+    "EMR": 0.39204545454545453,
+    "PMS": 0.6892241787296883,
+    "SER": 0.9943181818181818
+  },
+  "per_model_language": [
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "language": "en",
+      "metrics": {
+        "N": 12,
+        "N_valid": 12,
+        "N_semantic_valid": 12,
+        "RDF_VR": 1.0,
+        "RDF_ER": 0.0,
+        "Spec_VR": 1.0,
+        "Spec_ER": 0.0,
+        "Vocab_VR": 1.0,
+        "Vocab_ER": 0.0,
+        "EMR": 0.3333333333333333,
+        "PMS": 0.6340263222719705,
+        "SER": 1.0
+      }
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "language": "ko",
+      "metrics": {
+        "N": 12,
+        "N_valid": 12,
+        "N_semantic_valid": 12,
+        "RDF_VR": 1.0,
+        "RDF_ER": 0.0,
+        "Spec_VR": 1.0,
+        "Spec_ER": 0.0,
+        "Vocab_VR": 1.0,
+        "Vocab_ER": 0.0,
+        "EMR": 0.3333333333333333,
+        "PMS": 0.6361044146368344,
+        "SER": 1.0
+      }
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "language": "en",
+      "metrics": {
+        "N": 12,
+        "N_valid": 12,
+        "N_semantic_valid": 12,
+        "RDF_VR": 1.0,
+        "RDF_ER": 0.0,
+        "Spec_VR": 1.0,
+        "Spec_ER": 0.0,
+        "Vocab_VR": 1.0,
+        "Vocab_ER": 0.0,
+        "EMR": 0.4166666666666667,
+        "PMS": 0.7479755109988419,
+        "SER": 1.0
+      }
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "language": "ko",
+      "metrics": {
+        "N": 12,
+        "N_valid": 12,
+        "N_semantic_valid": 12,
+        "RDF_VR": 1.0,
+        "RDF_ER": 0.0,
+        "Spec_VR": 1.0,
+        "Spec_ER": 0.0,
+        "Vocab_VR": 1.0,
+        "Vocab_ER": 0.0,
+        "EMR": 0.5,
+        "PMS": 0.7237648859862276,
+        "SER": 0.9166666666666666
+      }
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "language": "en",
+      "metrics": {
+        "N": 12,
+        "N_valid": 11,
+        "N_semantic_valid": 11,
+        "RDF_VR": 0.9166666666666666,
+        "RDF_ER": 0.08333333333333333,
+        "Spec_VR": 1.0,
+        "Spec_ER": 0.0,
+        "Vocab_VR": 1.0,
+        "Vocab_ER": 0.0,
+        "EMR": 0.45454545454545453,
+        "PMS": 0.6908239789336179,
+        "SER": 1.0
+      }
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "language": "ko",
+      "metrics": {
+        "N": 12,
+        "N_valid": 11,
+        "N_semantic_valid": 11,
+        "RDF_VR": 0.9166666666666666,
+        "RDF_ER": 0.08333333333333333,
+        "Spec_VR": 1.0,
+        "Spec_ER": 0.0,
+        "Vocab_VR": 1.0,
+        "Vocab_ER": 0.0,
+        "EMR": 0.45454545454545453,
+        "PMS": 0.6832482213578603,
+        "SER": 1.0
+      }
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "language": "en",
+      "metrics": {
+        "N": 12,
+        "N_valid": 12,
+        "N_semantic_valid": 12,
+        "RDF_VR": 1.0,
+        "RDF_ER": 0.0,
+        "Spec_VR": 1.0,
+        "Spec_ER": 0.0,
+        "Vocab_VR": 1.0,
+        "Vocab_ER": 0.0,
+        "EMR": 0.3333333333333333,
+        "PMS": 0.7442368262230055,
+        "SER": 1.0
+      }
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "language": "ko",
+      "metrics": {
+        "N": 12,
+        "N_valid": 12,
+        "N_semantic_valid": 12,
+        "RDF_VR": 1.0,
+        "RDF_ER": 0.0,
+        "Spec_VR": 1.0,
+        "Spec_ER": 0.0,
+        "Vocab_VR": 1.0,
+        "Vocab_ER": 0.0,
+        "EMR": 0.3333333333333333,
+        "PMS": 0.7198173419540971,
+        "SER": 1.0
+      }
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "language": "en",
+      "metrics": {
+        "N": 12,
+        "N_valid": 12,
+        "N_semantic_valid": 12,
+        "RDF_VR": 1.0,
+        "RDF_ER": 0.0,
+        "Spec_VR": 1.0,
+        "Spec_ER": 0.0,
+        "Vocab_VR": 1.0,
+        "Vocab_ER": 0.0,
+        "EMR": 0.4166666666666667,
+        "PMS": 0.6928069861406723,
+        "SER": 1.0
+      }
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "language": "ko",
+      "metrics": {
+        "N": 12,
+        "N_valid": 12,
+        "N_semantic_valid": 12,
+        "RDF_VR": 1.0,
+        "RDF_ER": 0.0,
+        "Spec_VR": 1.0,
+        "Spec_ER": 0.0,
+        "Vocab_VR": 1.0,
+        "Vocab_ER": 0.0,
+        "EMR": 0.4166666666666667,
+        "PMS": 0.6395662453999315,
+        "SER": 1.0
+      }
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "language": "en",
+      "metrics": {
+        "N": 12,
+        "N_valid": 10,
+        "N_semantic_valid": 10,
+        "RDF_VR": 0.8333333333333334,
+        "RDF_ER": 0.16666666666666666,
+        "Spec_VR": 1.0,
+        "Spec_ER": 0.0,
+        "Vocab_VR": 1.0,
+        "Vocab_ER": 0.0,
+        "EMR": 0.5,
+        "PMS": 0.6841643695617933,
+        "SER": 1.0
+      }
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "language": "ko",
+      "metrics": {
+        "N": 12,
+        "N_valid": 12,
+        "N_semantic_valid": 12,
+        "RDF_VR": 1.0,
+        "RDF_ER": 0.0,
+        "Spec_VR": 1.0,
+        "Spec_ER": 0.0,
+        "Vocab_VR": 1.0,
+        "Vocab_ER": 0.0,
+        "EMR": 0.4166666666666667,
+        "PMS": 0.677952043932455,
+        "SER": 1.0
+      }
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "language": "en",
+      "metrics": {
+        "N": 7,
+        "N_valid": 6,
+        "N_semantic_valid": 6,
+        "RDF_VR": 0.8571428571428571,
+        "RDF_ER": 0.14285714285714285,
+        "Spec_VR": 1.0,
+        "Spec_ER": 0.0,
+        "Vocab_VR": 1.0,
+        "Vocab_ER": 0.0,
+        "EMR": 0.16666666666666666,
+        "PMS": 0.6909287125702993,
+        "SER": 1.0
+      }
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "language": "ko",
+      "metrics": {
+        "N": 6,
+        "N_valid": 6,
+        "N_semantic_valid": 6,
+        "RDF_VR": 1.0,
+        "RDF_ER": 0.0,
+        "Spec_VR": 1.0,
+        "Spec_ER": 0.0,
+        "Vocab_VR": 1.0,
+        "Vocab_ER": 0.0,
+        "EMR": 0.3333333333333333,
+        "PMS": 0.7135430916552666,
+        "SER": 1.0
+      }
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "language": "en",
+      "metrics": {
+        "N": 12,
+        "N_valid": 12,
+        "N_semantic_valid": 12,
+        "RDF_VR": 1.0,
+        "RDF_ER": 0.0,
+        "Spec_VR": 1.0,
+        "Spec_ER": 0.0,
+        "Vocab_VR": 1.0,
+        "Vocab_ER": 0.0,
+        "EMR": 0.4166666666666667,
+        "PMS": 0.6867808639903231,
+        "SER": 1.0
+      }
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "language": "ko",
+      "metrics": {
+        "N": 12,
+        "N_valid": 12,
+        "N_semantic_valid": 12,
+        "RDF_VR": 1.0,
+        "RDF_ER": 0.0,
+        "Spec_VR": 1.0,
+        "Spec_ER": 0.0,
+        "Vocab_VR": 1.0,
+        "Vocab_ER": 0.0,
+        "EMR": 0.3333333333333333,
+        "PMS": 0.6736507861529364,
+        "SER": 1.0
+      }
+    }
+  ],
+  "execution": {
+    "records": 181,
+    "cli_exit_zero": 181,
+    "timeouts": 0,
+    "upstream_validation_debug_errors": 0,
+    "source_hashes_verified": true
+  },
+  "rows": [
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "chemrof-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/000/upstream/semantic-validation-process/cohort/model000/chemrof-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "chemrof-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/001/upstream/semantic-validation-process/cohort/model000/chemrof-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "chemrof-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 90,
+        "gt_node_count": 30,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/002/upstream/semantic-validation-process/cohort/model000/chemrof-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "chemrof-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 90,
+        "gt_node_count": 30,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/003/upstream/semantic-validation-process/cohort/model000/chemrof-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "chemrof-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/004/upstream/semantic-validation-process/cohort/model001/chemrof-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "chemrof-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/005/upstream/semantic-validation-process/cohort/model001/chemrof-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "chemrof-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 90,
+        "gt_node_count": 30,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/006/upstream/semantic-validation-process/cohort/model001/chemrof-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "chemrof-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 90,
+        "gt_node_count": 30,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/007/upstream/semantic-validation-process/cohort/model001/chemrof-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "chemrof-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/008/upstream/semantic-validation-process/cohort/model002/chemrof-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "chemrof-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/009/upstream/semantic-validation-process/cohort/model002/chemrof-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "chemrof-2-ko",
+      "semantic": null,
+      "debug_error": false,
+      "structural_match": null
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "chemrof-2-en",
+      "semantic": null,
+      "debug_error": false,
+      "structural_match": null
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "chemrof-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/012/upstream/semantic-validation-process/cohort/model003/chemrof-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "chemrof-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/013/upstream/semantic-validation-process/cohort/model003/chemrof-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "chemrof-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 90,
+        "gt_node_count": 30,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/014/upstream/semantic-validation-process/cohort/model003/chemrof-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "chemrof-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 90,
+        "gt_node_count": 30,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/015/upstream/semantic-validation-process/cohort/model003/chemrof-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "chemrof-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/016/upstream/semantic-validation-process/cohort/model004/chemrof-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "chemrof-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/017/upstream/semantic-validation-process/cohort/model004/chemrof-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "chemrof-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/018/upstream/semantic-validation-process/cohort/model005/chemrof-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "chemrof-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/019/upstream/semantic-validation-process/cohort/model005/chemrof-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "chemrof-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 90,
+        "gt_node_count": 30,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/020/upstream/semantic-validation-process/cohort/model005/chemrof-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "chemrof-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 90,
+        "gt_node_count": 30,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/021/upstream/semantic-validation-process/cohort/model005/chemrof-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "chemrof-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/022/upstream/semantic-validation-process/cohort/model006/chemrof-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "chemrof-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/023/upstream/semantic-validation-process/cohort/model006/chemrof-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "chemrof-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/024/upstream/semantic-validation-process/cohort/model007/chemrof-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "chemrof-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/025/upstream/semantic-validation-process/cohort/model007/chemrof-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "chemrof-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 90,
+        "gt_node_count": 30,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/026/upstream/semantic-validation-process/cohort/model007/chemrof-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "chemrof-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 90,
+        "gt_node_count": 30,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/027/upstream/semantic-validation-process/cohort/model007/chemrof-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "dbpedia-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/028/upstream/semantic-validation-process/cohort/model000/dbpedia-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "dbpedia-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/029/upstream/semantic-validation-process/cohort/model000/dbpedia-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "dbpedia-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/030/upstream/semantic-validation-process/cohort/model000/dbpedia-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "dbpedia-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/031/upstream/semantic-validation-process/cohort/model000/dbpedia-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "dcat-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/032/upstream/semantic-validation-process/cohort/model000/dcat-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "dcat-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/033/upstream/semantic-validation-process/cohort/model000/dcat-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "dcat-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/034/upstream/semantic-validation-process/cohort/model000/dcat-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "dcat-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/035/upstream/semantic-validation-process/cohort/model000/dcat-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "epo-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 40,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/036/upstream/semantic-validation-process/cohort/model000/epo-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "epo-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 40,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/037/upstream/semantic-validation-process/cohort/model000/epo-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "epo-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 60,
+        "gt_node_count": 20,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/038/upstream/semantic-validation-process/cohort/model000/epo-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "epo-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 60,
+        "gt_node_count": 20,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/039/upstream/semantic-validation-process/cohort/model000/epo-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "invoice-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/040/upstream/semantic-validation-process/cohort/model000/invoice-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "invoice-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/041/upstream/semantic-validation-process/cohort/model000/invoice-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "invoice-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/042/upstream/semantic-validation-process/cohort/model000/invoice-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "invoice-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/043/upstream/semantic-validation-process/cohort/model000/invoice-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "snik-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 50,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/044/upstream/semantic-validation-process/cohort/model000/snik-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "snik-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 50,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/045/upstream/semantic-validation-process/cohort/model000/snik-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "snik-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/046/upstream/semantic-validation-process/cohort/model000/snik-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "id": "snik-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/047/upstream/semantic-validation-process/cohort/model000/snik-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "dbpedia-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/048/upstream/semantic-validation-process/cohort/model001/dbpedia-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "dbpedia-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/049/upstream/semantic-validation-process/cohort/model001/dbpedia-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "dbpedia-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/050/upstream/semantic-validation-process/cohort/model001/dbpedia-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "dbpedia-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/051/upstream/semantic-validation-process/cohort/model001/dbpedia-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "dcat-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/052/upstream/semantic-validation-process/cohort/model001/dcat-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "dcat-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": false,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [
+          "http://example.org/ns#NodeB1_100",
+          "http://example.org/ns#NodeB1_101",
+          "http://example.org/ns#NodeB1_102",
+          "http://example.org/ns#NodeB1_103",
+          "http://example.org/ns#NodeB1_104",
+          "http://example.org/ns#NodeB1_105",
+          "http://example.org/ns#NodeB1_106",
+          "http://example.org/ns#NodeB1_107",
+          "http://example.org/ns#NodeB1_108",
+          "http://example.org/ns#NodeB1_109"
+        ],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/053/upstream/semantic-validation-process/cohort/model001/dcat-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "dcat-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/054/upstream/semantic-validation-process/cohort/model001/dcat-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "dcat-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/055/upstream/semantic-validation-process/cohort/model001/dcat-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "epo-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 40,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/056/upstream/semantic-validation-process/cohort/model001/epo-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "epo-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 40,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/057/upstream/semantic-validation-process/cohort/model001/epo-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "epo-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 60,
+        "gt_node_count": 20,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/058/upstream/semantic-validation-process/cohort/model001/epo-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "epo-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 60,
+        "gt_node_count": 20,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/059/upstream/semantic-validation-process/cohort/model001/epo-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "invoice-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/060/upstream/semantic-validation-process/cohort/model001/invoice-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "invoice-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/061/upstream/semantic-validation-process/cohort/model001/invoice-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "invoice-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/062/upstream/semantic-validation-process/cohort/model001/invoice-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "invoice-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/063/upstream/semantic-validation-process/cohort/model001/invoice-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "snik-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 50,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/064/upstream/semantic-validation-process/cohort/model001/snik-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "snik-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 50,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/065/upstream/semantic-validation-process/cohort/model001/snik-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "snik-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/066/upstream/semantic-validation-process/cohort/model001/snik-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "anthropic/claude-opus-5.5",
+      "id": "snik-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/067/upstream/semantic-validation-process/cohort/model001/snik-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "dbpedia-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/068/upstream/semantic-validation-process/cohort/model002/dbpedia-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "dbpedia-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/069/upstream/semantic-validation-process/cohort/model002/dbpedia-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "dbpedia-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/070/upstream/semantic-validation-process/cohort/model002/dbpedia-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "dbpedia-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/071/upstream/semantic-validation-process/cohort/model002/dbpedia-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "dcat-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/072/upstream/semantic-validation-process/cohort/model002/dcat-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "dcat-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/073/upstream/semantic-validation-process/cohort/model002/dcat-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "dcat-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/074/upstream/semantic-validation-process/cohort/model002/dcat-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "dcat-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/075/upstream/semantic-validation-process/cohort/model002/dcat-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "epo-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 40,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/076/upstream/semantic-validation-process/cohort/model002/epo-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "epo-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 40,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/077/upstream/semantic-validation-process/cohort/model002/epo-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "epo-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 60,
+        "gt_node_count": 20,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/078/upstream/semantic-validation-process/cohort/model002/epo-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "epo-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 60,
+        "gt_node_count": 20,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/079/upstream/semantic-validation-process/cohort/model002/epo-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "invoice-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/080/upstream/semantic-validation-process/cohort/model002/invoice-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "invoice-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/081/upstream/semantic-validation-process/cohort/model002/invoice-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "invoice-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/082/upstream/semantic-validation-process/cohort/model002/invoice-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "invoice-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/083/upstream/semantic-validation-process/cohort/model002/invoice-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "snik-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 50,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/084/upstream/semantic-validation-process/cohort/model002/snik-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "snik-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 50,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/085/upstream/semantic-validation-process/cohort/model002/snik-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "snik-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/086/upstream/semantic-validation-process/cohort/model002/snik-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "id": "snik-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/087/upstream/semantic-validation-process/cohort/model002/snik-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "dbpedia-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/088/upstream/semantic-validation-process/cohort/model003/dbpedia-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "dbpedia-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/089/upstream/semantic-validation-process/cohort/model003/dbpedia-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "dbpedia-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/090/upstream/semantic-validation-process/cohort/model003/dbpedia-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "dbpedia-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/091/upstream/semantic-validation-process/cohort/model003/dbpedia-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "dcat-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/092/upstream/semantic-validation-process/cohort/model003/dcat-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "dcat-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/093/upstream/semantic-validation-process/cohort/model003/dcat-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "dcat-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/094/upstream/semantic-validation-process/cohort/model003/dcat-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "dcat-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/095/upstream/semantic-validation-process/cohort/model003/dcat-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "epo-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 40,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/096/upstream/semantic-validation-process/cohort/model003/epo-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "epo-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 40,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/097/upstream/semantic-validation-process/cohort/model003/epo-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "epo-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 60,
+        "gt_node_count": 20,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/098/upstream/semantic-validation-process/cohort/model003/epo-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "epo-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 60,
+        "gt_node_count": 20,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/099/upstream/semantic-validation-process/cohort/model003/epo-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "invoice-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/100/upstream/semantic-validation-process/cohort/model003/invoice-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "invoice-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/101/upstream/semantic-validation-process/cohort/model003/invoice-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "invoice-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/102/upstream/semantic-validation-process/cohort/model003/invoice-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "invoice-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/103/upstream/semantic-validation-process/cohort/model003/invoice-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "snik-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 50,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/104/upstream/semantic-validation-process/cohort/model003/snik-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "snik-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 50,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/105/upstream/semantic-validation-process/cohort/model003/snik-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "snik-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/106/upstream/semantic-validation-process/cohort/model003/snik-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "google/gemini-4-argon",
+      "id": "snik-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/107/upstream/semantic-validation-process/cohort/model003/snik-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "chemrof-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 90,
+        "gt_node_count": 30,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/108/upstream/semantic-validation-process/cohort/model004/chemrof-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "chemrof-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 90,
+        "gt_node_count": 30,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/109/upstream/semantic-validation-process/cohort/model004/chemrof-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "dbpedia-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/110/upstream/semantic-validation-process/cohort/model004/dbpedia-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "dbpedia-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/111/upstream/semantic-validation-process/cohort/model004/dbpedia-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "dbpedia-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/112/upstream/semantic-validation-process/cohort/model004/dbpedia-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "dbpedia-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/113/upstream/semantic-validation-process/cohort/model004/dbpedia-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "dcat-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/114/upstream/semantic-validation-process/cohort/model004/dcat-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "dcat-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/115/upstream/semantic-validation-process/cohort/model004/dcat-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "dcat-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/116/upstream/semantic-validation-process/cohort/model004/dcat-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "dcat-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/117/upstream/semantic-validation-process/cohort/model004/dcat-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "epo-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 40,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/118/upstream/semantic-validation-process/cohort/model004/epo-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "epo-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 40,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/119/upstream/semantic-validation-process/cohort/model004/epo-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "epo-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 60,
+        "gt_node_count": 20,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/120/upstream/semantic-validation-process/cohort/model004/epo-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "epo-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 60,
+        "gt_node_count": 20,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/121/upstream/semantic-validation-process/cohort/model004/epo-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "invoice-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/122/upstream/semantic-validation-process/cohort/model004/invoice-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "invoice-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/123/upstream/semantic-validation-process/cohort/model004/invoice-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "invoice-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/124/upstream/semantic-validation-process/cohort/model004/invoice-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "invoice-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/125/upstream/semantic-validation-process/cohort/model004/invoice-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "snik-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 50,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/126/upstream/semantic-validation-process/cohort/model004/snik-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "snik-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 50,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/127/upstream/semantic-validation-process/cohort/model004/snik-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "snik-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/128/upstream/semantic-validation-process/cohort/model004/snik-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-astra",
+      "id": "snik-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/129/upstream/semantic-validation-process/cohort/model004/snik-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "dbpedia-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/130/upstream/semantic-validation-process/cohort/model005/dbpedia-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "dbpedia-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/131/upstream/semantic-validation-process/cohort/model005/dbpedia-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "dbpedia-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/132/upstream/semantic-validation-process/cohort/model005/dbpedia-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "dbpedia-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/133/upstream/semantic-validation-process/cohort/model005/dbpedia-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "dcat-1-en",
+      "semantic": null,
+      "debug_error": false,
+      "structural_match": null
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "dcat-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/135/upstream/semantic-validation-process/cohort/model005/dcat-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "dcat-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/136/upstream/semantic-validation-process/cohort/model005/dcat-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "dcat-2-en",
+      "semantic": null,
+      "debug_error": false,
+      "structural_match": null
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "epo-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 40,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/138/upstream/semantic-validation-process/cohort/model005/epo-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "epo-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 40,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/139/upstream/semantic-validation-process/cohort/model005/epo-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "epo-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 60,
+        "gt_node_count": 20,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/140/upstream/semantic-validation-process/cohort/model005/epo-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "epo-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 60,
+        "gt_node_count": 20,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/141/upstream/semantic-validation-process/cohort/model005/epo-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "invoice-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/142/upstream/semantic-validation-process/cohort/model005/invoice-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "invoice-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/143/upstream/semantic-validation-process/cohort/model005/invoice-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "invoice-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/144/upstream/semantic-validation-process/cohort/model005/invoice-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "invoice-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/145/upstream/semantic-validation-process/cohort/model005/invoice-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "snik-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 50,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/146/upstream/semantic-validation-process/cohort/model005/snik-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "snik-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 50,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/147/upstream/semantic-validation-process/cohort/model005/snik-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "snik-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/148/upstream/semantic-validation-process/cohort/model005/snik-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "id": "snik-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/149/upstream/semantic-validation-process/cohort/model005/snik-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "chemrof-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 90,
+        "gt_node_count": 30,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/150/upstream/semantic-validation-process/cohort/model006/chemrof-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "dbpedia-1-en",
+      "semantic": null,
+      "debug_error": false,
+      "structural_match": null
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "dbpedia-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/152/upstream/semantic-validation-process/cohort/model006/dbpedia-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "dbpedia-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/153/upstream/semantic-validation-process/cohort/model006/dbpedia-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "dbpedia-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/154/upstream/semantic-validation-process/cohort/model006/dbpedia-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "dcat-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/155/upstream/semantic-validation-process/cohort/model006/dcat-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "dcat-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/156/upstream/semantic-validation-process/cohort/model006/dcat-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "dcat-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/157/upstream/semantic-validation-process/cohort/model006/dcat-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "dcat-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/158/upstream/semantic-validation-process/cohort/model006/dcat-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "epo-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 40,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/159/upstream/semantic-validation-process/cohort/model006/epo-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-flash",
+      "id": "epo-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 40,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/160/upstream/semantic-validation-process/cohort/model006/epo-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "dbpedia-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/161/upstream/semantic-validation-process/cohort/model007/dbpedia-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "dbpedia-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/162/upstream/semantic-validation-process/cohort/model007/dbpedia-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "dbpedia-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/163/upstream/semantic-validation-process/cohort/model007/dbpedia-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "dbpedia-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/164/upstream/semantic-validation-process/cohort/model007/dbpedia-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "dcat-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/165/upstream/semantic-validation-process/cohort/model007/dcat-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "dcat-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/166/upstream/semantic-validation-process/cohort/model007/dcat-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "dcat-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/167/upstream/semantic-validation-process/cohort/model007/dcat-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "dcat-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 20,
+        "gt_node_count": 0,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/168/upstream/semantic-validation-process/cohort/model007/dcat-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "epo-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 40,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/169/upstream/semantic-validation-process/cohort/model007/epo-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "epo-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 40,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/170/upstream/semantic-validation-process/cohort/model007/epo-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "epo-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 60,
+        "gt_node_count": 20,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/171/upstream/semantic-validation-process/cohort/model007/epo-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "epo-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 60,
+        "gt_node_count": 20,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/172/upstream/semantic-validation-process/cohort/model007/epo-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "invoice-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/173/upstream/semantic-validation-process/cohort/model007/invoice-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "invoice-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/174/upstream/semantic-validation-process/cohort/model007/invoice-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "invoice-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/175/upstream/semantic-validation-process/cohort/model007/invoice-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "invoice-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 0,
+        "llm_violation_focus_node_count": 0,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 30,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/176/upstream/semantic-validation-process/cohort/model007/invoice-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": true
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "snik-1-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 50,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/177/upstream/semantic-validation-process/cohort/model007/snik-1-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "snik-1-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 50,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/178/upstream/semantic-validation-process/cohort/model007/snik-1-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "snik-2-ko",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/179/upstream/semantic-validation-process/cohort/model007/snik-2-ko.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    },
+    {
+      "model": "qwen/qwen3.8-max-0902",
+      "id": "snik-2-en",
+      "semantic": {
+        "status": "success",
+        "equivalent": true,
+        "gt_violation_focus_node_count": 10,
+        "llm_violation_focus_node_count": 10,
+        "focus_nodes_only_in_gt": [],
+        "focus_nodes_only_in_llm": [],
+        "gt_data_triples": 80,
+        "gt_node_count": 10,
+        "debug_file": "/home/ubuntu/shacl-graphrag/_workspace/nl2-original-ser/results/180/upstream/semantic-validation-process/cohort/model007/snik-2-en.txt"
+      },
+      "debug_error": false,
+      "structural_match": false
+    }
+  ],
+  "limitations": [
+    "Original evaluator unmodified; exception flags separate from raw scores.",
+    "One stochastic generated graph per output, no equal-graph pairing or seed claim.",
+    "12 consumed items; not full240 benchmark.",
+    "No paid calls or regenerated model outputs.",
+    "SER denominator excludes semantic failures and validity-gated outputs.",
+    "DCAT targetless reference agreement is not evidence of useful constraint coverage.",
+    "SNIK runtime validation differs from strict meta validation.",
+    "Focus-node equality ignores differing constraint violation reasons."
+  ],
+  "custom_probe_cross_tab": [
+    {
+      "custom_status": "all_frozen_probes_agree",
+      "original_equivalent": "True",
+      "n": 105
+    },
+    {
+      "custom_status": "counterexample_observed",
+      "original_equivalent": "True",
+      "n": 13
+    },
+    {
+      "custom_status": "reference_inactive",
+      "original_equivalent": "False",
+      "n": 1
+    },
+    {
+      "custom_status": "reference_inactive",
+      "original_equivalent": "True",
+      "n": 29
+    },
+    {
+      "custom_status": "reference_inactive",
+      "original_equivalent": "validity_gated",
+      "n": 2
+    },
+    {
+      "custom_status": "reference_invalid",
+      "original_equivalent": "True",
+      "n": 28
+    },
+    {
+      "custom_status": "validation_unavailable",
+      "original_equivalent": "validity_gated",
+      "n": 3
+    }
+  ],
+  "focus_set_masking_example": {
+    "model": "anthropic/claude-haiku-5.5",
+    "id": "chemrof-2-ko",
+    "debug_file": "_workspace/nl2-original-ser/results/002/upstream/semantic-validation-process/cohort/model000/chemrof-2-ko.txt",
+    "reference_violation_components": {
+      "ClassConstraintComponent": 20,
+      "ClosedConstraintComponent": 10,
+      "NodeKindConstraintComponent": 20
+    },
+    "candidate_violation_components": {
+      "ClassConstraintComponent": 20,
+      "ClosedConstraintComponent": 10,
+      "NodeKindConstraintComponent": 10
+    },
+    "same_violating_focus_nodes": 10,
+    "original_equivalent": true,
+    "interpretation": "Different violation counts/components are invisible to focus-node-set comparison; no claim of NL task accuracy."
+  },
+  "remaining_reproduction": [
+    "Full240 original English items not generated under originalpaper models/settings.",
+    "Current181outputs reflect12consumeditems with newer8models and EN/KO, not numerical paper reproduction.",
+    "No added tests or corrected references silently substituted for originalSER.",
+    "Original source revision and dependencies must be aligned to paper before numerical reproduction."
+  ],
+  "review_job": "20261017T090638Z-nl2-original-ser-298f63"
+}

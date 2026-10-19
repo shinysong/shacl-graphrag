@@ -1,0 +1,65 @@
+{
+  "status": "reviewed_translations_and_prompts_only",
+  "pairs": 48,
+  "prompts": 96,
+  "review_job": "20261016T094308Z-nl2-expansion-translation-6c597c",
+  "builders": [
+    "/root/translate_nl2_a",
+    "/root/translate_nl2_b"
+  ],
+  "reviewers": [
+    "/root/translation_methods",
+    "/root/translation_implementation"
+  ],
+  "hashes": {
+    "research/nl2shacl/expansion-pairs.json": "a89996307819cef1bcfa9ac1796e2f7c33b6b8a9dfe9d538cd713739fd15f8f6",
+    "research/nl2shacl/expansion-selection.json": "6f3257a54f72e1582cdd6f55d38c8e654bfa12325595f992fc43cae3cf126bf8",
+    "_workspace/nl2-expansion/inputs.json": "83dd05fc041f8b52a542ca6cdc20eb844629a770eaca48d123c59a073ccdf7fc",
+    "_workspace/nl2-translation/prepare.py": "abdbd153e21538104add55303284f072752e2039339bf6c1cf96a3ff41ed72b9",
+    "_workspace/nl2-translation/input-manifest.json": "ced316ef4f1821db4df628402b798b8198afabde4663ff042f98f6151157d0a3"
+  },
+  "input_manifest": {
+    "count": 96,
+    "pairs": 48,
+    "canonical_inputs_sha256": "5bbe8b411a7b42f476bea2fdb64a254616e98dac811a9b84634a2706866c9403",
+    "inputs_file_sha256": "83dd05fc041f8b52a542ca6cdc20eb844629a770eaca48d123c59a073ccdf7fc",
+    "pairs_file_sha256": "a89996307819cef1bcfa9ac1796e2f7c33b6b8a9dfe9d538cd713739fd15f8f6",
+    "all48_description_only_pairs": true,
+    "translation_notes_excluded": true,
+    "paid_calls": 0
+  },
+  "source_ambiguities": [
+    {
+      "id": "chemrof-61",
+      "translation_note": "원문의 “non-hydrogen bond connections”는 비수소 원자 간 결합인지 수소 결합 이외의 연결인지 명확하지 않아 “비수소 결합 연결”로 옮겼다."
+    },
+    {
+      "id": "dbpedia-6",
+      "translation_note": "원문의 “between 1 and 5”는 양 끝값 포함 여부를 명시하지 않으므로 번역에서도 이를 추가하지 않았다."
+    },
+    {
+      "id": "dcat-19",
+      "translation_note": "원문 마지막 문장의 “with at most one value”가 status의 값 개수를 반복하는지 Concept의 값 개수를 제한하는지 불명확하다. 원문의 Concept 뒤 수식 위치를 유지했다."
+    },
+    {
+      "id": "invoice-12",
+      "translation_note": "원문은 필수 값을 buyer order number라고 부르지만 오류 설명에서는 supplier's order number라고 부른다. 두 표현의 불일치를 그대로 보존했다."
+    },
+    {
+      "id": "invoice-18",
+      "translation_note": "원문은 delivery note number를 supplier's order number라고도 설명한다. 두 명칭을 그대로 보존했다."
+    },
+    {
+      "id": "invoice-19",
+      "translation_note": "원문은 delivery note number에 관련된 날짜를 요구하면서 오류 설명에서는 supplier's order number의 날짜라고 부른다. 두 명칭을 그대로 보존했다."
+    }
+  ],
+  "limits": [
+    "NativeLLMtranslation/review, not humanexpertcertification",
+    "No referenceSHACL ormodeloutputs given totranslators/reviewers",
+    "Paidlaunchgates andaggregatebudgetchecks stillpending",
+    "Originalexamples/snippets/systemEnglishretained;NLdescriptiononly translated"
+  ],
+  "paid_calls": 0,
+  "registered_checks": []
+}
