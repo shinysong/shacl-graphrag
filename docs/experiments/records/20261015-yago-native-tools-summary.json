@@ -1,0 +1,799 @@
+{
+  "run": "runs/20261015T113921Z-yago-native-tools",
+  "assigned": 12,
+  "summary": {
+    "B": {
+      "assigned": 4,
+      "finished": 2,
+      "source_supported_answer": 2,
+      "wrong_answer": 0,
+      "unnecessary_unknown": 0,
+      "citation_supports_answer": 2,
+      "actual_shacl_executions": 0,
+      "episodes_checking": 0,
+      "model_calls": 40,
+      "queries": 29,
+      "checks": 1,
+      "tool_requests": 40
+    },
+    "C": {
+      "assigned": 4,
+      "finished": 0,
+      "source_supported_answer": 0,
+      "wrong_answer": 0,
+      "unnecessary_unknown": 0,
+      "citation_supports_answer": 0,
+      "actual_shacl_executions": 0,
+      "episodes_checking": 0,
+      "model_calls": 48,
+      "queries": 27,
+      "checks": 4,
+      "tool_requests": 48
+    },
+    "A": {
+      "assigned": 4,
+      "finished": 3,
+      "source_supported_answer": 1,
+      "wrong_answer": 0,
+      "unnecessary_unknown": 2,
+      "citation_supports_answer": 1,
+      "actual_shacl_executions": 0,
+      "episodes_checking": 0,
+      "model_calls": 36,
+      "queries": 26,
+      "checks": 0,
+      "tool_requests": 36
+    }
+  },
+  "errors": [
+    {
+      "tool": "query",
+      "error": "ValueError",
+      "count": 44
+    },
+    {
+      "tool": "finish",
+      "error": "ValidationRequiredForCurrentEvidence",
+      "count": 14
+    },
+    {
+      "tool": "query",
+      "error": "QueryLimit",
+      "count": 18
+    }
+  ],
+  "cost": {
+    "attempts": 124,
+    "reserved_usd": 0.2943756,
+    "reported_usd": 0.022739850000000002
+  },
+  "rows": [
+    {
+      "episode": "episode-01-B",
+      "arm": "B",
+      "subject": "http://yago-knowledge.org/resource/Abu_Nuwas",
+      "terminal": "finished",
+      "finished": true,
+      "counts": {
+        "model_calls": 7,
+        "queries": 5,
+        "checks": 1,
+        "tool_requests": 7
+      },
+      "source_supported_answer": true,
+      "wrong_answer": false,
+      "unnecessary_unknown": false,
+      "citation_supports_answer": true,
+      "invalid_citations": 0,
+      "unretrieved_citations": 0,
+      "retrieved_triples": 4,
+      "query_statuses": [
+        "ok",
+        "error",
+        "error",
+        "ok",
+        "ok"
+      ],
+      "check_statuses": [
+        "unknown"
+      ],
+      "actual_shacl_executions": 0,
+      "answer": {
+        "status": "answer",
+        "value": "http://yago-knowledge.org/resource/Ahvaz",
+        "citations": [
+          "<http://yago-knowledge.org/resource/Abu_Nuwas> <http://schema.org/birthPlace> <http://yago-knowledge.org/resource/Ahvaz> ."
+        ],
+        "explanation": "The birthplace of Abu Nuwas is reported as Ahvaz according to the YAGO dataset."
+      },
+      "reference_source_values": [
+        "http://yago-knowledge.org/resource/Ahvaz"
+      ],
+      "scope": "Post-run source consistency, not independent external truth; never fed to runtime."
+    },
+    {
+      "episode": "episode-02-B",
+      "arm": "B",
+      "subject": "http://yago-knowledge.org/resource/Anne_Hutchinson",
+      "terminal": "finished",
+      "finished": true,
+      "counts": {
+        "model_calls": 9,
+        "queries": 8,
+        "checks": 0,
+        "tool_requests": 9
+      },
+      "source_supported_answer": true,
+      "wrong_answer": false,
+      "unnecessary_unknown": false,
+      "citation_supports_answer": true,
+      "invalid_citations": 0,
+      "unretrieved_citations": 0,
+      "retrieved_triples": 5,
+      "query_statuses": [
+        "error",
+        "error",
+        "ok",
+        "error",
+        "error",
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "check_statuses": [],
+      "actual_shacl_executions": 0,
+      "answer": {
+        "status": "answer",
+        "value": "http://yago-knowledge.org/resource/Alford_Lincolnshire",
+        "citations": [
+          "<http://yago-knowledge.org/resource/Anne_Hutchinson> <http://schema.org/birthPlace> <http://yago-knowledge.org/resource/Alford_Lincolnshire> .",
+          "<http://yago-knowledge.org/resource/Anne_Hutchinson> <http://schema.org/birthDate> \"1591\"^^<http://www.w3.org/2001/XMLSchema#gYear> .",
+          "<http://yago-knowledge.org/resource/Anne_Hutchinson> <http://www.w3.org/2000/01/rdf-schema#label> \"Anne Hutchinson\"@en .",
+          "<http://yago-knowledge.org/resource/Anne_Hutchinson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://yago-knowledge.org/resource/Theologian> .",
+          "<http://yago-knowledge.org/resource/Anne_Hutchinson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://yago-knowledge.org/resource/Preacher> ."
+        ],
+        "explanation": "The birthplace of Anne Hutchinson is reported as Alford, Lincolnshire, based on the retrieved triples."
+      },
+      "reference_source_values": [
+        "http://yago-knowledge.org/resource/Alford_Lincolnshire"
+      ],
+      "scope": "Post-run source consistency, not independent external truth; never fed to runtime."
+    },
+    {
+      "episode": "episode-03-C",
+      "arm": "C",
+      "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+      "terminal": "model_turn_limit",
+      "finished": false,
+      "counts": {
+        "model_calls": 12,
+        "queries": 7,
+        "checks": 1,
+        "tool_requests": 12
+      },
+      "source_supported_answer": false,
+      "wrong_answer": false,
+      "unnecessary_unknown": false,
+      "citation_supports_answer": false,
+      "invalid_citations": 0,
+      "unretrieved_citations": 0,
+      "retrieved_triples": 0,
+      "query_statuses": [
+        "error",
+        "error",
+        "ok",
+        "ok",
+        "error",
+        "ok",
+        "ok"
+      ],
+      "check_statuses": [
+        "unknown"
+      ],
+      "actual_shacl_executions": 0,
+      "answer": {},
+      "reference_source_values": [
+        "http://yago-knowledge.org/resource/Amsterdam"
+      ],
+      "scope": "Post-run source consistency, not independent external truth; never fed to runtime."
+    },
+    {
+      "episode": "episode-04-B",
+      "arm": "B",
+      "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+      "terminal": "model_turn_limit",
+      "finished": false,
+      "counts": {
+        "model_calls": 12,
+        "queries": 8,
+        "checks": 0,
+        "tool_requests": 12
+      },
+      "source_supported_answer": false,
+      "wrong_answer": false,
+      "unnecessary_unknown": false,
+      "citation_supports_answer": false,
+      "invalid_citations": 0,
+      "unretrieved_citations": 0,
+      "retrieved_triples": 0,
+      "query_statuses": [
+        "error",
+        "error",
+        "error",
+        "error",
+        "error",
+        "error",
+        "error",
+        "error",
+        "error",
+        "error",
+        "error",
+        "error"
+      ],
+      "check_statuses": [],
+      "actual_shacl_executions": 0,
+      "answer": {},
+      "reference_source_values": [
+        "http://yago-knowledge.org/resource/Amsterdam"
+      ],
+      "scope": "Post-run source consistency, not independent external truth; never fed to runtime."
+    },
+    {
+      "episode": "episode-05-C",
+      "arm": "C",
+      "subject": "http://yago-knowledge.org/resource/Abu_Nuwas",
+      "terminal": "model_turn_limit",
+      "finished": false,
+      "counts": {
+        "model_calls": 12,
+        "queries": 5,
+        "checks": 1,
+        "tool_requests": 12
+      },
+      "source_supported_answer": false,
+      "wrong_answer": false,
+      "unnecessary_unknown": false,
+      "citation_supports_answer": false,
+      "invalid_citations": 0,
+      "unretrieved_citations": 0,
+      "retrieved_triples": 0,
+      "query_statuses": [
+        "error",
+        "error",
+        "ok",
+        "error",
+        "error"
+      ],
+      "check_statuses": [
+        "unknown"
+      ],
+      "actual_shacl_executions": 0,
+      "answer": {},
+      "reference_source_values": [
+        "http://yago-knowledge.org/resource/Ahvaz"
+      ],
+      "scope": "Post-run source consistency, not independent external truth; never fed to runtime."
+    },
+    {
+      "episode": "episode-06-C",
+      "arm": "C",
+      "subject": "http://yago-knowledge.org/resource/Annette_Salmeen",
+      "terminal": "model_turn_limit",
+      "finished": false,
+      "counts": {
+        "model_calls": 12,
+        "queries": 8,
+        "checks": 1,
+        "tool_requests": 12
+      },
+      "source_supported_answer": false,
+      "wrong_answer": false,
+      "unnecessary_unknown": false,
+      "citation_supports_answer": false,
+      "invalid_citations": 0,
+      "unretrieved_citations": 0,
+      "retrieved_triples": 0,
+      "query_statuses": [
+        "error",
+        "error",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "error",
+        "error",
+        "error"
+      ],
+      "check_statuses": [
+        "unknown"
+      ],
+      "actual_shacl_executions": 0,
+      "answer": {},
+      "reference_source_values": [
+        "http://yago-knowledge.org/resource/Ann_Arbor_Michigan"
+      ],
+      "scope": "Post-run source consistency, not independent external truth; never fed to runtime."
+    },
+    {
+      "episode": "episode-07-A",
+      "arm": "A",
+      "subject": "http://yago-knowledge.org/resource/Annette_Salmeen",
+      "terminal": "model_turn_limit",
+      "finished": false,
+      "counts": {
+        "model_calls": 12,
+        "queries": 8,
+        "checks": 0,
+        "tool_requests": 12
+      },
+      "source_supported_answer": false,
+      "wrong_answer": false,
+      "unnecessary_unknown": false,
+      "citation_supports_answer": false,
+      "invalid_citations": 0,
+      "unretrieved_citations": 0,
+      "retrieved_triples": 0,
+      "query_statuses": [
+        "error",
+        "error",
+        "ok",
+        "error",
+        "error",
+        "ok",
+        "ok",
+        "ok",
+        "error",
+        "error",
+        "error",
+        "error"
+      ],
+      "check_statuses": [],
+      "actual_shacl_executions": 0,
+      "answer": {},
+      "reference_source_values": [
+        "http://yago-knowledge.org/resource/Ann_Arbor_Michigan"
+      ],
+      "scope": "Post-run source consistency, not independent external truth; never fed to runtime."
+    },
+    {
+      "episode": "episode-08-A",
+      "arm": "A",
+      "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+      "terminal": "finished",
+      "finished": true,
+      "counts": {
+        "model_calls": 12,
+        "queries": 8,
+        "checks": 0,
+        "tool_requests": 12
+      },
+      "source_supported_answer": false,
+      "wrong_answer": false,
+      "unnecessary_unknown": true,
+      "citation_supports_answer": false,
+      "invalid_citations": 0,
+      "unretrieved_citations": 0,
+      "retrieved_triples": 0,
+      "query_statuses": [
+        "error",
+        "error",
+        "ok",
+        "error",
+        "error",
+        "ok",
+        "ok",
+        "ok",
+        "error",
+        "error",
+        "error"
+      ],
+      "check_statuses": [],
+      "actual_shacl_executions": 0,
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "citations": [],
+        "explanation": "No evidence was found in the YAGO snapshot regarding the birthplace of Anthony Sweijs. All queries related to his birthplace returned no results, indicating that the information may not be present in the available data."
+      },
+      "reference_source_values": [
+        "http://yago-knowledge.org/resource/Amsterdam"
+      ],
+      "scope": "Post-run source consistency, not independent external truth; never fed to runtime."
+    },
+    {
+      "episode": "episode-09-A",
+      "arm": "A",
+      "subject": "http://yago-knowledge.org/resource/Anne_Hutchinson",
+      "terminal": "finished",
+      "finished": true,
+      "counts": {
+        "model_calls": 3,
+        "queries": 2,
+        "checks": 0,
+        "tool_requests": 3
+      },
+      "source_supported_answer": false,
+      "wrong_answer": false,
+      "unnecessary_unknown": true,
+      "citation_supports_answer": false,
+      "invalid_citations": 0,
+      "unretrieved_citations": 0,
+      "retrieved_triples": 0,
+      "query_statuses": [
+        "error",
+        "error"
+      ],
+      "check_statuses": [],
+      "actual_shacl_executions": 0,
+      "answer": {
+        "status": "unknown",
+        "value": null,
+        "citations": [],
+        "explanation": "No valid triples could be retrieved for Anne Hutchinson's birthplace from the YAGO source."
+      },
+      "reference_source_values": [
+        "http://yago-knowledge.org/resource/Alford_Lincolnshire"
+      ],
+      "scope": "Post-run source consistency, not independent external truth; never fed to runtime."
+    },
+    {
+      "episode": "episode-10-B",
+      "arm": "B",
+      "subject": "http://yago-knowledge.org/resource/Annette_Salmeen",
+      "terminal": "model_turn_limit",
+      "finished": false,
+      "counts": {
+        "model_calls": 12,
+        "queries": 8,
+        "checks": 0,
+        "tool_requests": 12
+      },
+      "source_supported_answer": false,
+      "wrong_answer": false,
+      "unnecessary_unknown": false,
+      "citation_supports_answer": false,
+      "invalid_citations": 0,
+      "unretrieved_citations": 0,
+      "retrieved_triples": 0,
+      "query_statuses": [
+        "error",
+        "error",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "error",
+        "error",
+        "error",
+        "error",
+        "error"
+      ],
+      "check_statuses": [],
+      "actual_shacl_executions": 0,
+      "answer": {},
+      "reference_source_values": [
+        "http://yago-knowledge.org/resource/Ann_Arbor_Michigan"
+      ],
+      "scope": "Post-run source consistency, not independent external truth; never fed to runtime."
+    },
+    {
+      "episode": "episode-11-C",
+      "arm": "C",
+      "subject": "http://yago-knowledge.org/resource/Anne_Hutchinson",
+      "terminal": "model_turn_limit",
+      "finished": false,
+      "counts": {
+        "model_calls": 12,
+        "queries": 7,
+        "checks": 1,
+        "tool_requests": 12
+      },
+      "source_supported_answer": false,
+      "wrong_answer": false,
+      "unnecessary_unknown": false,
+      "citation_supports_answer": false,
+      "invalid_citations": 0,
+      "unretrieved_citations": 0,
+      "retrieved_triples": 0,
+      "query_statuses": [
+        "error",
+        "error",
+        "ok",
+        "error",
+        "error",
+        "ok",
+        "ok"
+      ],
+      "check_statuses": [
+        "unknown"
+      ],
+      "actual_shacl_executions": 0,
+      "answer": {},
+      "reference_source_values": [
+        "http://yago-knowledge.org/resource/Alford_Lincolnshire"
+      ],
+      "scope": "Post-run source consistency, not independent external truth; never fed to runtime."
+    },
+    {
+      "episode": "episode-12-A",
+      "arm": "A",
+      "subject": "http://yago-knowledge.org/resource/Abu_Nuwas",
+      "terminal": "finished",
+      "finished": true,
+      "counts": {
+        "model_calls": 9,
+        "queries": 8,
+        "checks": 0,
+        "tool_requests": 9
+      },
+      "source_supported_answer": true,
+      "wrong_answer": false,
+      "unnecessary_unknown": false,
+      "citation_supports_answer": true,
+      "invalid_citations": 0,
+      "unretrieved_citations": 0,
+      "retrieved_triples": 4,
+      "query_statuses": [
+        "error",
+        "error",
+        "ok",
+        "error",
+        "error",
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "check_statuses": [],
+      "actual_shacl_executions": 0,
+      "answer": {
+        "status": "answer",
+        "value": "http://yago-knowledge.org/resource/Ahvaz",
+        "citations": [
+          "<http://yago-knowledge.org/resource/Abu_Nuwas> <http://schema.org/birthPlace> <http://yago-knowledge.org/resource/Ahvaz> ."
+        ],
+        "explanation": "The birthplace of Abu Nuwas is reported as Ahvaz according to the retrieved data."
+      },
+      "reference_source_values": [
+        "http://yago-knowledge.org/resource/Ahvaz"
+      ],
+      "scope": "Post-run source consistency, not independent external truth; never fed to runtime."
+    }
+  ],
+  "scope": "Integration/utilization diagnostic, 4 existing real YAGO people x3 workflow policies, clean subset. Not ontology efficacy, graph engine or JSON comparison.",
+  "followup": {
+    "protocol": "yago-native-tools-1-binding-diagnostic",
+    "status": "completed",
+    "assigned": 1,
+    "scaffold": "Additional generic query-interface scaffold, not a source answer: all projected s/p/o variables must be bound. A constant subject pattern does not bind ?s. For inspection of this small snapshot, a valid generic query is SELECT ?s ?p ?o WHERE { ?s ?p ?o }. To narrow it, FILTER on a bound ?s or use VALUES ?s { <the supplied subject IRI> }. Preserve RDF types and linked-object descriptions for validation. This example changes the interface condition: it is not an unassisted free-query result. You choose queries and interpret the returned data yourself.",
+    "source_hashes": {
+      "data.ttl": "cbd8777492a91ddc67268466dae769628919dff35b851f51c047165ce967ed8d",
+      "taxonomy.ttl": "7850c4c0d80d18bfc9ef7b6564a275726f1796748788d119f77ee271278e7d09",
+      "schema.ttl": "b3f185f27c21e0e2b561dc92f7f9e3d54ccd6f4acac01e9ae97c2d42ef3b636f"
+    },
+    "comparison": "posthoc single repeated consumed subject; not replacement/independent efficacy result",
+    "code_hashes": {
+      "/home/ubuntu/shacl-graphrag/scripts/run_yago_binding_diagnostic.py": "62176785c78415542dbfc01858701a7164ad4ab25d416bef654e3294c23ccd8e",
+      "/home/ubuntu/shacl-graphrag/scripts/run_yago_tool_study.py": "78b824449c6a25ab51005b770bca13a736217ea4b4430e0ee5224e7a5e5e4246",
+      "/home/ubuntu/shacl-graphrag/scripts/yago_native_tools.py": "55fc2ca6412a6bf4f437db874016f4ab7389fc3a529f4f36c2b46dba5b7638c8"
+    },
+    "rows": [
+      {
+        "status": "model_turn_limit",
+        "counts": {
+          "model_calls": 12,
+          "queries": 2,
+          "checks": 5,
+          "tool_requests": 12
+        },
+        "arm": "C",
+        "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+        "elapsed_seconds": 15.733751116000349
+      }
+    ]
+  },
+  "total_cost": {
+    "attempts": 136,
+    "reported_usd": 0.024524700000000003,
+    "reserved_usd": 0.32394015000000004
+  },
+  "offline_validation": {
+    "scope": "Coordinator posthoc tool execution, NOT model-selected validation; source and saved answers unchanged",
+    "rows": [
+      {
+        "source": "full_existing_subset",
+        "subject": "http://yago-knowledge.org/resource/Anthony_Sweijs",
+        "result": {
+          "status": "pass",
+          "conforms": true,
+          "completeness": "unknown",
+          "issues": [],
+          "truncated": false,
+          "checked_scope": "subject and retrieved birthPlace objects; post-validation report filtering",
+          "limitations": [
+            "Conformance does not establish complete retrieval, question applicability or truth.",
+            "Source absence and retrieval omission are unresolved."
+          ],
+          "elapsed_ms": 179.70010099816136,
+          "limits": {
+            "timeout_seconds": 30,
+            "memory_bytes": 536870912,
+            "max_triples": 100,
+            "max_output_bytes": 131072
+          }
+        }
+      },
+      {
+        "source": "full_existing_subset",
+        "subject": "http://yago-knowledge.org/resource/Abu_Nuwas",
+        "result": {
+          "status": "pass",
+          "conforms": true,
+          "completeness": "unknown",
+          "issues": [],
+          "truncated": false,
+          "checked_scope": "subject and retrieved birthPlace objects; post-validation report filtering",
+          "limitations": [
+            "Conformance does not establish complete retrieval, question applicability or truth.",
+            "Source absence and retrieval omission are unresolved."
+          ],
+          "elapsed_ms": 180.06367699126713,
+          "limits": {
+            "timeout_seconds": 30,
+            "memory_bytes": 536870912,
+            "max_triples": 100,
+            "max_output_bytes": 131072
+          }
+        }
+      },
+      {
+        "source": "full_existing_subset",
+        "subject": "http://yago-knowledge.org/resource/Annette_Salmeen",
+        "result": {
+          "status": "pass",
+          "conforms": true,
+          "completeness": "unknown",
+          "issues": [],
+          "truncated": false,
+          "checked_scope": "subject and retrieved birthPlace objects; post-validation report filtering",
+          "limitations": [
+            "Conformance does not establish complete retrieval, question applicability or truth.",
+            "Source absence and retrieval omission are unresolved."
+          ],
+          "elapsed_ms": 179.48467101086862,
+          "limits": {
+            "timeout_seconds": 30,
+            "memory_bytes": 536870912,
+            "max_triples": 100,
+            "max_output_bytes": 131072
+          }
+        }
+      },
+      {
+        "source": "full_existing_subset",
+        "subject": "http://yago-knowledge.org/resource/Anne_Hutchinson",
+        "result": {
+          "status": "pass",
+          "conforms": true,
+          "completeness": "unknown",
+          "issues": [],
+          "truncated": false,
+          "checked_scope": "subject and retrieved birthPlace objects; post-validation report filtering",
+          "limitations": [
+            "Conformance does not establish complete retrieval, question applicability or truth.",
+            "Source absence and retrieval omission are unresolved."
+          ],
+          "elapsed_ms": 178.28817100962624,
+          "limits": {
+            "timeout_seconds": 30,
+            "memory_bytes": 536870912,
+            "max_triples": 100,
+            "max_output_bytes": 131072
+          }
+        }
+      },
+      {
+        "source": "posthoc_saved_llm_evidence",
+        "episode": "episode-01-B",
+        "subject": "http://yago-knowledge.org/resource/Abu_Nuwas",
+        "result": {
+          "status": "fail",
+          "conforms": false,
+          "completeness": "unknown",
+          "issues": [
+            [
+              "http://yago-knowledge.org/resource/Abu_Nuwas",
+              "http://schema.org/birthPlace",
+              "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+              "http://yago-knowledge.org/resource/Ahvaz"
+            ]
+          ],
+          "truncated": false,
+          "checked_scope": "subject and retrieved birthPlace objects; post-validation report filtering",
+          "limitations": [
+            "Conformance does not establish complete retrieval, question applicability or truth.",
+            "Source absence and retrieval omission are unresolved."
+          ],
+          "elapsed_ms": 127.42598398472182,
+          "limits": {
+            "timeout_seconds": 30,
+            "memory_bytes": 536870912,
+            "max_triples": 100,
+            "max_output_bytes": 131072
+          }
+        }
+      },
+      {
+        "source": "posthoc_saved_llm_evidence",
+        "episode": "episode-02-B",
+        "subject": "http://yago-knowledge.org/resource/Anne_Hutchinson",
+        "result": {
+          "status": "fail",
+          "conforms": false,
+          "completeness": "unknown",
+          "issues": [
+            [
+              "http://yago-knowledge.org/resource/Anne_Hutchinson",
+              "http://schema.org/birthPlace",
+              "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+              "http://yago-knowledge.org/resource/Alford_Lincolnshire"
+            ]
+          ],
+          "truncated": false,
+          "checked_scope": "subject and retrieved birthPlace objects; post-validation report filtering",
+          "limitations": [
+            "Conformance does not establish complete retrieval, question applicability or truth.",
+            "Source absence and retrieval omission are unresolved."
+          ],
+          "elapsed_ms": 127.19999998807907,
+          "limits": {
+            "timeout_seconds": 30,
+            "memory_bytes": 536870912,
+            "max_triples": 100,
+            "max_output_bytes": 131072
+          }
+        }
+      },
+      {
+        "source": "posthoc_saved_llm_evidence",
+        "episode": "episode-12-A",
+        "subject": "http://yago-knowledge.org/resource/Abu_Nuwas",
+        "result": {
+          "status": "fail",
+          "conforms": false,
+          "completeness": "unknown",
+          "issues": [
+            [
+              "http://yago-knowledge.org/resource/Abu_Nuwas",
+              "http://schema.org/birthPlace",
+              "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+              "http://yago-knowledge.org/resource/Ahvaz"
+            ]
+          ],
+          "truncated": false,
+          "checked_scope": "subject and retrieved birthPlace objects; post-validation report filtering",
+          "limitations": [
+            "Conformance does not establish complete retrieval, question applicability or truth.",
+            "Source absence and retrieval omission are unresolved."
+          ],
+          "elapsed_ms": 127.88561897468753,
+          "limits": {
+            "timeout_seconds": 30,
+            "memory_bytes": 536870912,
+            "max_triples": 100,
+            "max_output_bytes": 131072
+          }
+        }
+      }
+    ]
+  },
+  "audit": {
+    "source_original": true,
+    "old_ledger_unchanged": true,
+    "all136costs_resolved": true,
+    "event_chains_and_payloads_match": true,
+    "scope": "Source consistency only, no independent truth adjudication"
+  }
+}

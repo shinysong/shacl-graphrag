@@ -1,5 +1,7 @@
 # Lessons learned
 
+- [2026-10-15 YAGO query bindings and validation dead ends](2026-10-15-yago-query-interface.md)
+
 - [공개 정책의 관계 방향과 조회 인터페이스](2026-10-15-policy-direction-and-query-interface.md)
 
 - [2026-10-13 분석 기록의 종료 코드 표기](2026-10-13-analysis-exit-code.md)

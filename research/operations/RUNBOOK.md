@@ -68,7 +68,7 @@ when the user-authorized work needs it, followed by fresh checks.
 
 ## Limits, failed attempts and continuation
 
-Reserve a role request before dispatch. The repository tracks at most 100 logical
+Reserve a role request before dispatch. The repository tracks at most 500 logical
 role requests per UTC day and 7 per job, including retries. These counts do not
 measure internal model turns, tool calls, tokens or account-wide usage. No monetary
 Codex cap is enforced or inferred. Up to 2 independent reviewers run concurrently.

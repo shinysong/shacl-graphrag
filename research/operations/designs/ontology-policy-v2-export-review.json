@@ -1,0 +1,81 @@
+{
+  "protocol": "llm-ontology-tools-2-policy-export-review",
+  "job_id": "20261015T103200Z-ontology-policy-v2-export-ade464",
+  "status": "offline_export_verified",
+  "reviewers": {
+    "methods": {
+      "agent_id": "/root/policy_v2_methods",
+      "summary": "Ready for the proposed offline preservation checks and isolated export. The supplied implementation confines changes to the shared policy sentence and version while preserving the consumed cohort and historical artifacts. This review establishes no model-performance or domain-truth result; checks have not run.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "The brief states that source-only direction evidence was already inspected, but supplies neither the physical relation definitions nor the source records supporting that inspection. The supplied code does show the exact intended replacement and checks restoration equality.",
+          "recommendation": "Treat the semantic justification of the direction correction as unverified by this review. Preserve the existing source-only rationale separately; describe the forthcoming tests and field audit as software preservation verification rather than independent semantic validation."
+        },
+        {
+          "severity": "info",
+          "evidence": "All 18 cases receive the shared public-policy update, the manifest marks consumed_development true and new_model_results false, and the plan limits execution to unit tests plus one offline export and hash/field audit.",
+          "recommendation": "Retain these scope labels when reporting the export. There is no new answerability denominator, held-out evaluation, retrieval intervention or measured baseline in this task."
+        },
+        {
+          "severity": "warning",
+          "evidence": "The brief explicitly disclaims atomic publication and crash durability; manifest writing starts before the guarded runtime write. Initial manifest-write failure can retain an output directory without failure metadata.",
+          "recommendation": "Keep the stated partial-output limitation in the report and require completed status plus a matching runtime hash before any future consumption. Do not report export success based on directory or runtime-file existence alone."
+        }
+      ],
+      "tasks": []
+    },
+    "implementation": {
+      "agent_id": "/root/policy_v2_implementation",
+      "summary": "The supplied implementation is ready for the registered unit-tests and subsequent offline export audit. Its pinned input check, exact prefix replacement, restoration comparison and exclusive output-directory creation support the bounded preservation requirements. No tests or export were executed by this reviewer.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "info",
+          "evidence": "The exporter verifies the complete input SHA256 before creating an output directory, preserves all fields except the specified rule prefix and policy version, and opens runtime.json exclusively. The supplied tests cover source preservation, modified-input rejection, overwrite refusal and a simulated runtime-open failure.",
+          "recommendation": "Run the registered unit-tests, then independently verify the actual export's 18 rows, two permitted field changes, policy hashes, source/shape hashes and unchanged original input bytes. Actual input contents and test results remain unverified in this packet-only review."
+        },
+        {
+          "severity": "warning",
+          "evidence": "The initial manifest write is outside the exception handler, and storage failures can prevent failure metadata from being saved. A failure during the completed-manifest write can also leave a failed manifest containing a runtime hash. The brief explicitly excludes atomic publication and crash durability.",
+          "recommendation": "Retain incomplete owned directories without overwriting them. Any future consumer must require both completed status and a matching runtime hash; neither file existence nor hash presence alone establishes a successful export."
+        },
+        {
+          "severity": "info",
+          "evidence": "The implementation uses whole-file JSON loading, deep copies and serialization without a model client, scorer or network call. The actual input size and peak memory use on the 16 GiB host are not supplied or measured.",
+          "recommendation": "Treat host-memory sufficiency as unverified rather than a measured resource result. Keep this execution confined to the pinned development snapshot and the authorized offline checks."
+        }
+      ],
+      "tasks": []
+    }
+  },
+  "software_check": {
+    "id": "unit-tests",
+    "exit_code": 0,
+    "tests": 241,
+    "seconds": 78.121
+  },
+  "export_audit": {
+    "status": "passed",
+    "case_count": 18,
+    "v1_input_sha256": "8ad4737a54ebdda6912f067a4067a25b6aa0fcfd85f131dbacb17003e558a4d1",
+    "v1_builder_sha256": "d9d834851a5f7a0f0aded7fde483fca0fb3346b356e7df767747e6b9310acabf",
+    "runtime_sha256": "0231172892cbefebcef0e271ce7a923e2865c13cb998fdc849fc5a529862058f",
+    "only_allowed_changes": true,
+    "all_manifest_case_hashes_match": true,
+    "paid_ledger_attempts": 253,
+    "new_model_results": false,
+    "scope": "Coordinator independent field/hash audit; not independent semantic or model validation."
+  },
+  "source_direction_rationale": "research/operations/designs/structured-lookup-v2-review.json#source_direction_audit",
+  "limitations": [
+    "Consumed synthetic development inputs; no new LLM evaluation.",
+    "Source direction rationale audited separately by coordinator, not independently validated by these packet-only reviewers.",
+    "No atomic publication or crash durability; future consumer must require completed status AND matching runtime hash.",
+    "Initial metadata write failure may leave only a directory; failed outputs must not be overwritten.",
+    "Peak memory not measured. Structured lookup adapter not implemented."
+  ],
+  "paid_calls_this_tick": 0,
+  "next_step": "Separately reviewed structured lookup adapter implementation with frozen type equality, repeated properties, ordering, size limits and C-check bridge."
+}

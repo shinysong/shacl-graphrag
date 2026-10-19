@@ -1,0 +1,129 @@
+{
+  "protocol": "llm-ontology-tools-2-review",
+  "status": "ready_for_offline_implementation_only",
+  "design_sha256": "6312d6a069969b39d52afc7cc922a42708e1602eebc64f0b0654f088f4ffe6f1",
+  "job_id": "20261015T093228Z-structured-lookup-v2-design-667100",
+  "reviewers": {
+    "methods": {
+      "agent_id": "/root/lookup_v2_methods",
+      "summary": "Ready as a bounded offline design handoff. The proposal preserves historical outcomes and model interpretation responsibility, and does not claim implementation, validation efficacy, or new paid authorization. Source-direction verification and all implementation acceptance checks remain unverified from this packet; registered checks have not run.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "The policy correction is based on declared relation meanings, and the proposal explicitly requires confirming wording against source records before v2 generation. The supplied generic examples establish intended direction but do not independently verify actual source layout.",
+          "recommendation": "Before generation, record source-only examples for both relations and verify upward and negative-control traversal without scorer references. Preserve old hashes and the exact policy diff."
+        },
+        {
+          "severity": "warning",
+          "evidence": "The adapter specifies conjunctive literal equality, original scalar types, and bounded SELECT followed by whole-record retrieval, but does not yet define numeric equality across RDF datatypes, ordering at the record cap, or representation of repeated properties. These choices can change retrieved evidence even when filters look identical.",
+          "recommendation": "In implementation, freeze typed equality and full-record serialization semantics, deduplicate record subjects before applying the limit, and use stable record ordering. Include multivalued-property and cross-type counterexamples in independent fixture parity tests."
+        },
+        {
+          "severity": "info",
+          "evidence": "The comparison expressly identifies an interface/scaffolding package, consumed development reuse, unequal expressivity, unknown coverage, and optional-check utilization distinct from efficacy. Checker integration is explicitly deferred until its interpretation/query bridge is specified.",
+          "recommendation": "Retain these boundaries in the implementation handoff. A valid but inappropriate filter, a non-truncated incomplete subset, or a passing declared-interpretation check must not become evidence of correct question interpretation or source completeness."
+        }
+      ],
+      "tasks": [
+        {
+          "owner": "implementation coordinator",
+          "deliverable": "Freeze equality, repeated-property serialization, unique-record limiting, and deterministic ordering semantics in the new implementation job.",
+          "verification": "Independent authored graph fixtures cover numeric and boolean distinctions, repeated properties, duplicate SELECT matches, conflicting filters, and cap-boundary behavior; no new model-accuracy claim."
+        },
+        {
+          "owner": "implementation coordinator",
+          "deliverable": "Record source-only verification of the relation-direction correction before generating v2 inputs.",
+          "verification": "Both relation directions and negative controls match source subject/object layout; v1 bytes remain unchanged and old/new policy hashes and diff are saved."
+        }
+      ]
+    },
+    "implementation": {
+      "agent_id": "/root/lookup_v2_implementation",
+      "summary": "Ready as a design-only offline handoff. The proposed adapter is implementable without question-driven routing and preserves model-selected wrong filters. No source, frozen artifact hashes, runtime behavior or test results were independently inspected; implementation and C-tool integration still require a new review job.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "The contract specifies scalar equality, original datatypes, whole records and a bounded result set, but does not fix numeric equality semantics, repeated property serialization or deterministic selection order when the cap is reached.",
+          "recommendation": "Before coding, define boolean versus numeric equality, integer versus decimal matching, multivalued properties and stable record ordering. Use an independent fixture oracle that implements these declared semantics rather than repeating compiler logic."
+        },
+        {
+          "severity": "warning",
+          "evidence": "The packet requires resource limits across selection and materialization, but contains no verified worker limits or measurements for the 16GiB host. Returning outgoing triples can exceed byte limits even for one matching record.",
+          "recommendation": "Treat resource feasibility as unverified. Test oversized single records, deadline termination and output truncation; never present an incomplete record as a whole record without an explicit partial/error state."
+        },
+        {
+          "severity": "info",
+          "evidence": "Versioned policy changes, refusal to overwrite historical inputs and source-only confirmation are explicitly required. Actual source layouts, v1 hashes and native SHACL preservation are outside this packet and remain unverified.",
+          "recommendation": "In the implementation job, independently verify direction from source records and compare frozen input and shape bytes before and after export. Keep new exporter and adapter code separate from preserved v1 behavior."
+        },
+        {
+          "severity": "info",
+          "evidence": "Paid execution is disabled, the checker bridge is explicitly deferred, and existing unit-tests have not run. No implementation or new efficacy result is claimed.",
+          "recommendation": "Record the existing regression result only as a regression gate. Require adapter fixtures and a specified model-declaration/query bridge before C integration; retain failed executions and do not infer authorization for paid retries."
+        }
+      ],
+      "tasks": [
+        {
+          "owner": "main implementation agent in a new offline review job",
+          "deliverable": "Extend the versioned adapter specification with exact scalar equality, multivalued-property serialization, deterministic capped ordering and incomplete-record output behavior; implement these in new adapter/exporter files without changing v1 behavior.",
+          "verification": "Authored fixtures distinguish booleans from numbers, exercise integer/decimal matching and repeated properties, reproduce capped selection, and force a single-record byte overflow with an explicit partial/error outcome. Source paths and actual test results remain to be established in that job."
+        }
+      ]
+    }
+  },
+  "existing_regression_check": {
+    "id": "unit-tests",
+    "exit_code": 0,
+    "tests": 237,
+    "seconds": 77.5,
+    "scope": "Existing software only; v2 not implemented"
+  },
+  "source_direction_audit": {
+    "input_sha256": "8ad4737a54ebdda6912f067a4067a25b6aa0fcfd85f131dbacb17003e558a4d1",
+    "case_id_for_source_location_only": "case01",
+    "examples": [
+      {
+        "record_id": "b1",
+        "relation": "part_of",
+        "subject": "part-A",
+        "object": "assembly",
+        "declared_meaning": "subject is part of object",
+        "upward_step_from_declared_meaning": [
+          "part-A",
+          "assembly"
+        ],
+        "reverse_is_not_upward": [
+          "assembly",
+          "part-A"
+        ]
+      },
+      {
+        "record_id": "b2",
+        "relation": "contains",
+        "subject": "product-X",
+        "object": "assembly",
+        "declared_meaning": "subject contains object",
+        "upward_step_from_declared_meaning": [
+          "assembly",
+          "product-X"
+        ],
+        "reverse_is_not_upward": [
+          "product-X",
+          "assembly"
+        ]
+      }
+    ],
+    "scope": "Read runtime source and physical relation definitions only; no scorer references or answers. Demonstrates consistency with authored source conventions, not independent external manufacturing truth. No v2 inputs generated."
+  },
+  "implementation_prerequisites": [
+    "Freeze strict scalar equality, RDF numeric datatype behavior, repeated-property representation and stable unique-record ordering before limits.",
+    "Test oversized single record and require explicit incomplete/error state rather than silent partial record.",
+    "Freeze C interpretation/generated-query bridge; compiler syntax success does not establish question semantics.",
+    "Apply only an explicit relation-direction sentence replacement when exporting v2. Candidate prose references other policies for context; preserve original remaining policy clauses byte-for-byte and verify the actual diff.",
+    "Preserve v1 historical bytes and scores. New exporter/adapter and any changed checks require a fresh native review job."
+  ],
+  "paid_calls_this_tick": 0,
+  "new_llm_results": false
+}

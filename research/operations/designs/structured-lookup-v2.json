@@ -1,0 +1,134 @@
+{
+  "protocol": "llm-ontology-tools-2-design",
+  "status": "review_candidate_offline_only",
+  "paid_execution": "disabled; completed v1 campaign authorization does not enable this design",
+  "motivation": {
+    "observed_v1": "54 consumed development episodes; C invoked zero checks and obtained nonempty rows in zero episodes. Cannot estimate validation efficacy. Input impact policy reversed the wrong relation.",
+    "objective": "Separate query-interface usability from subsequent optional validator use while preserving LLM responsibility for interpretation, filters, evidence and final decisions."
+  },
+  "immutable_history": {
+    "preserve": [
+      "scripts/prepare_ontology_tool_cases.py v1 behavior",
+      "published v1 runtime snapshots and references",
+      "all v1 calls, failures, budgets and scores"
+    ],
+    "new_version_rule": "Future v2 exporter creates a new directory and protocol ID, refuses overwrites, records old/new public policy hashes and exact policy diff. No historical answer or score replacement; any re-use is consumed development."
+  },
+  "public_policy_correction": {
+    "old": "Follow current BOM membership transitively from part to containing products, reversing part_of edges.",
+    "new": "Starting at a part, follow part_of from subject to object and contains from object to subject to reach containing assemblies or products. Apply the same published activity/date/inclusion/scope policies. Return only the products requested in the question.",
+    "basis": "Declared public relation meanings and source subject/object layout; not a repair chosen from expected answers.",
+    "scope": "Only the relation-direction clause changes. Current/exported v1 files remain unchanged. Confirm wording against source records independently before v2 generation.",
+    "generic_direction_examples": [
+      {
+        "relation": "part_of",
+        "subject": "component-Q",
+        "object": "module-R",
+        "upward_step": [
+          "component-Q",
+          "module-R"
+        ]
+      },
+      {
+        "relation": "contains",
+        "subject": "product-S",
+        "object": "module-R",
+        "upward_step": [
+          "module-R",
+          "product-S"
+        ]
+      }
+    ],
+    "negative_control": "Do not traverse contains from subject to object when seeking containing products; direction choice and requested endpoints remain observable."
+  },
+  "runtime_tool_contract": {
+    "name": "lookup_records",
+    "implementation_status": "not_implemented",
+    "input": {
+      "kind": {
+        "type": "string",
+        "enum": [
+          "bom",
+          "candidate",
+          "change",
+          "dependency",
+          "entity",
+          "relationship",
+          "exception"
+        ]
+      },
+      "filters": {
+        "type": "array",
+        "maxItems": 8,
+        "items": {
+          "field": "published property name from global allowlist",
+          "operator": "eq only in initial adapter",
+          "value": "JSON scalar string, number or boolean; no objects, raw SPARQL or IRIs"
+        }
+      },
+      "limit": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 100
+      }
+    },
+    "semantics": [
+      "Conjunctive equality over literal properties on the same record. kind selects physical record type, not inferred workflow.",
+      "Return whole matching records with actual ID, fields and scalar types; missing fields stay absent. No caller-selected projection initially.",
+      "An empty filters array returns records of that kind up to the cap; model chooses whether broad inspection is warranted.",
+      "Do not infer active status, role, date, unit conversion, graph direction, source completeness or decision policy. Do not auto-correct valid but inappropriate filters.",
+      "Dates remain strings in this adapter; model may retrieve records then assess time policy itself. No hidden current-date default.",
+      "Explicitly choose behavior for duplicate filters: conjunction; conflicting values may produce zero rows, not automatic repair.",
+      "Unknown kinds/fields/operators or invalid types yield request-schema error only. Valid wrong roles/IDs must execute normally and preserve empty/wrong results."
+    ],
+    "compiler": [
+      "Use a fixed, typed read-only SELECT pattern; serialize scalar literals through RDF library primitives, never interpolate raw model fragments.",
+      "Resolve field IRIs exclusively from published allowlist; preserve original scalar datatypes. No eval, template selection by question, URL/file path or SERVICE access.",
+      "Return matching record subject IDs from bounded SELECT; retrieve outgoing triples only for those records within the same bounded worker.",
+      "Reuse existing local worker resource restrictions and independently test that full record materialization also stays within deadline/memory/output caps."
+    ],
+    "output": [
+      "status",
+      "records",
+      "source_ids",
+      "generated_query",
+      "requested_limit",
+      "returned_count",
+      "truncated",
+      "coverage=unknown",
+      "source_snapshot_hash",
+      "schema/policy_version",
+      "error_type when applicable"
+    ],
+    "truncation": "Fetch one extra matching record to detect cap where feasible; any output-byte/cell cap must also signal truncation. A non-truncated subset does not establish question coverage.",
+    "tool_choice": "LLM decides kind, filters, further calls, optional checking and final answer; no scorer task ID or reference-driven router."
+  },
+  "comparison": {
+    "first_stage": "Offline adapter tests only. No new model study has been authorized or executed by this heartbeat.",
+    "future_factorial": "Cross query interface (free SPARQL vs lookup_records) with existing A/B/C information/check availability on v2 inputs. Predeclare assignment count, order, budgets and stop rules before any future paid execution.",
+    "matching": "All arms share corrected public policies, physical schema, source bytes, accessible fields, resource caps and neutral serialization examples. B/C retain identical extra ontology information; only C has optional validation.",
+    "causal_limit": "Structured lookup constrains query search space, returns full records and removes raw syntax generation; this is an interface/scaffolding package, not a pure syntax ablation. Free SPARQL has greater expressivity. Restrict claims accordingly and report generated-query/algebra capabilities.",
+    "graph_limit": "Adapter has no path traversal, join, aggregate or OWL inference. Multi-record reasoning remains LLM work. This is not a graph advantage benchmark.",
+    "checks": "Optional check availability and realized use are distinct. Zero calls is an orchestration outcome, not a null effect of SHACL. A forced-check diagnostic, if later used, must be a separately named condition.",
+    "query_check_bridge": "Before C integration, specify how model-declared interpretation and generated query are passed to existing contract checker. Successful compilation checks syntax only; it must not certify intended-question semantics.",
+    "evidence_check_bridge": "Only retrieved IDs may enter existing selected-record SHACL tool. Full record retrieval changes evidence visibility, so quantify missing fields and compare information received."
+  },
+  "offline_acceptance": [
+    "Public policy direction examples verified independently from scorer references; v1 source and published input hashes unchanged.",
+    "Exact structural argument validation; booleans distinct from integers; invalid limit, nonfinite number, unknown field and injection-like string tests.",
+    "Known record examples across all seven physical kinds; typed literal round trips and missing-property behavior.",
+    "Valid wrong role and wrong subject queries return their actual rows/empty results without repair or invented policy decisions.",
+    "Generated-query parity against independently constructed direct graph filtering on authored software fixtures; not model accuracy.",
+    "Deadline, memory, record and output limits cover selection plus outgoing-record materialization; truncation and worker termination retained.",
+    "Runtime has no scorer/reference paths or task labels; freeze/source/policy hashes recorded and unexpected fields rejected.",
+    "Scripted tool traces explicitly labelled software fixtures; no claimed new LLM results or check efficacy."
+  ],
+  "analysis_requirements": [
+    "Assigned episodes and unfinished outcomes retained.",
+    "Interpretation, syntax/argument errors, successful retrieval, source absence, retrieval omission, applicable evidence, check invocation, unsupported checks and final answer assessed separately.",
+    "Status agreement without necessary evidence remains separate from grounded success. Added unsupported caveats are audited separately from merely required caveat presence.",
+    "Count all model-requested tools, processed tools, guard rejections and actually executed worker operations separately; v1 overflow sentinel is not an executed eleventh tool.",
+    "Measure cost and model/tool turns without claiming equal realized effort; same policy facts should be accessible before interpretations."
+  ],
+  "next_step": "Implement versioned policy exporter plus generic lookup adapter and software fixtures under a new native review job; keep paid calls stopped. No edits to v1 runner or raw artifacts in this design tick."
+}

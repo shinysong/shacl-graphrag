@@ -1,0 +1,144 @@
+{
+  "jobs": [
+    {
+      "job": "20261015T113559Z-yago-native-tools-execution-adff86",
+      "reviewers": {
+        "methods": {
+          "summary": "Ready for the registered checks and, if both review gates and checks pass, the bounded YAGO tool-integration run. The supplied design supports descriptive execution and tool-use observations, not efficacy or factual-truth claims.",
+          "decision": "ready",
+          "findings": [
+            {
+              "severity": "warning",
+              "evidence": "The packet specifies four consumed people, clean evidence only, three workflow policies and identical schema information in all arms.",
+              "recommendation": "Report all 12 assigned episodes, including unfinished episodes, wrong answers and unnecessary unknown responses. Treat arm differences as descriptive observations on this reused cohort; mandatory validation completion is not evidence of better answers."
+            },
+            {
+              "severity": "warning",
+              "evidence": "Validation filters results to the subject and retrieved birthplace objects; the packet states that empty results cannot distinguish source absence from retrieval omission and that conformance does not establish completeness.",
+              "recommendation": "Keep checker execution, selected-evidence conformance, citation applicability and source-supported final-answer correctness separate. Use only the later source audit to classify retrieval omissions, and never revise saved runtime answers from that audit."
+            },
+            {
+              "severity": "warning",
+              "evidence": "Gateway internals, query guards, inspect implementation, wrappers, prompt text and tests are omitted. Registered checks remain pending. The runner assigns 12 rows in metadata but builds jobs from every manifest cohort entry.",
+              "recommendation": "Treat omitted internals and test results as unverified by this review. Before the single paid launch, verify the frozen manifest contains exactly four intended subjects and the planned job list has 12 episodes, confirm unresolved-cost and review gates, and retain the registered check results."
+            }
+          ],
+          "tasks": []
+        },
+        "implementation": {
+          "summary": "The supplied runner and worker excerpts support a bounded integration diagnostic with frozen sources, explicit workflow enforcement and no runtime answer oracle. Ready for the registered checks; this review does not verify omitted internals or test results.",
+          "decision": "ready",
+          "findings": [
+            {
+              "severity": "info",
+              "evidence": "Input hashes and the original schema hash are checked before execution. Query results must be actual source triples. Arm C records only pass/fail validation for the current accumulated evidence version, and successful queries advance that version.",
+              "recommendation": "Preserve the frozen inputs, query failures, validation reports and final decisions; score factual and citation correctness separately after execution."
+            },
+            {
+              "severity": "warning",
+              "evidence": "Gateway generation/accounting, query guards, inspect filtering, tool schemas, prompt and subprocess wrappers are omitted. Their correctness, network restriction, resource enforcement and actual peak memory remain unverified. Registered checks have not run in this review.",
+              "recommendation": "Require the registered unit-tests before paid execution and retain the stated soft-deadline and unmeasured-memory limitations."
+            },
+            {
+              "severity": "warning",
+              "evidence": "The runner records assigned=12 but constructs jobs from every manifest cohort entry without an explicit four-person assertion. A raised episode exception preserves call artifacts and a stopped run record but may leave no episode result.json or completed row.",
+              "recommendation": "Before launch verify exactly four allowlisted people and twelve planned jobs; when reporting, reconcile all planned episodes with completed rows and preserved partial episode directories so stopped episodes remain in the denominator."
+            },
+            {
+              "severity": "info",
+              "evidence": "The reservation code checks unresolved costs, nonrefunded reservation totals and combined old/new daily reservations; main refuses a campaign rerun after any recorded attempt. The old ledger is read only in the supplied code.",
+              "recommendation": "Retain single-operator launch discipline and inspect ledger state before the authorized one-time execution."
+            }
+          ],
+          "tasks": []
+        }
+      },
+      "check": {
+        "command": [
+          "uv",
+          "run",
+          "--locked",
+          "python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests"
+        ],
+        "exit_code": 0,
+        "scope": "local software check; not a benchmark"
+      }
+    },
+    {
+      "job": "20261015T114417Z-yago-binding-diagnostic-19dfd1",
+      "reviewers": {
+        "methods": {
+          "summary": "Ready as a bounded posthoc interface integration diagnostic, conditional on the registered checks and existing budget safeguards; the supplied packet supports no efficacy inference.",
+          "decision": "ready",
+          "findings": [
+            {
+              "severity": "warning",
+              "evidence": "The packet specifies one repeated first-person C episode and a GUIDE that adds both variable-binding examples and advice to preserve linked-object descriptions for validation.",
+              "recommendation": "Report the entire scaffold as the intervention and preserve the original episode separately. A changed outcome cannot isolate variable binding, ontology benefit, or population accuracy from one consumed case."
+            },
+            {
+              "severity": "warning",
+              "evidence": "The packet states that inherited runner internals are omitted and unverified and that fresh 253 tests are required. The supplied wrapper checks remaining call allowance and unresolved reservations, while monetary enforcement is attributed to the inherited Gateway.",
+              "recommendation": "Keep inherited monetary, query, and validation protections explicitly unverified by this review. Require the registered checks before the separate launch and retain stopped episodes, unresolved costs, and actual validation outcomes in reporting."
+            },
+            {
+              "severity": "info",
+              "evidence": "The proposed analysis concerns execution rather than accuracy generalization, and the supplied GUIDE contains generic query patterns without answer values.",
+              "recommendation": "Keep source support, retrieval completeness, validation execution, final decisions, and external correctness distinct; a completed episode or conforming selected evidence does not establish an externally true answer."
+            }
+          ],
+          "tasks": []
+        },
+        "implementation": {
+          "summary": "The supplied wrapper is feasible as a single posthoc binding-scaffold diagnostic. Its exclusive guard prevents a duplicate wrapper launch, and its preflight rejects insufficient call headroom or unresolved reservations. Implementation readiness remains conditional on the registered checks and the inherited gateway guarantees described in the packet.",
+          "decision": "ready",
+          "findings": [
+            {
+              "severity": "warning",
+              "evidence": "Only the wrapper and two guard tests are supplied. Source-byte preservation, monetary enforcement, per-episode limits, worker isolation and the stated 512 MiB and timeout settings belong to omitted inherited code. No checks were executed in this review.",
+              "recommendation": "Run the registered unit-tests before launch and retain the existing runner review and ledger evidence. Treat inherited behavior and host resource suitability as unverified by this scoped review."
+            },
+            {
+              "severity": "warning",
+              "evidence": "The exclusive guard is created before the run record, and Gateway construction occurs outside the try/finally. A setup failure can therefore consume the one-shot guard or leave a running record without a recorded terminal error.",
+              "recommendation": "Preserve any such interrupted artifacts and reconcile them manually before considering another authorized attempt; do not remove the guard or silently retry."
+            },
+            {
+              "severity": "info",
+              "evidence": "The wrapper records the scaffold, source hashes and code hashes and labels the run as a repeated consumed subject. At the packet-reported 124 attempts, the requested 12-call headroom remains within the 144-call ceiling.",
+              "recommendation": "Report this episode separately from the original twelve and preserve failed queries, validation outcomes and final errors without treating the scaffold as independent efficacy evidence."
+            }
+          ],
+          "tasks": []
+        }
+      },
+      "check": {
+        "command": [
+          "uv",
+          "run",
+          "--locked",
+          "python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests"
+        ],
+        "exit_code": 0,
+        "scope": "local software check; not a benchmark"
+      }
+    }
+  ],
+  "main_run": "20261015T113921Z-yago-native-tools",
+  "followup_run": "20261015T114730Z-yago-binding-diagnostic",
+  "scope": "Posthoc source consistency and integration; no independent truth or efficacy claim",
+  "new_model_calls": 136,
+  "reported_usd": 0.0245247,
+  "software_tests": 253,
+  "next": "Offline query-interface diagnostics and unresolved termination; no more paid runs from remaining budget"
+}

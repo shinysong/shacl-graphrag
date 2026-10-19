@@ -6,6 +6,9 @@
 - [shacl-test 도구 리뷰 — RDF 사례와 검증 보고서를 반복 검사하는 방법](2026-10-16-review-shacl-test.md)
 - [Shapes from Examples 리뷰 — 그래프 사례에서 검증 규칙을 학습하는 이론](2026-10-16-review-shapes-from-examples.md)
 
+- [2026-10-15 YAGO 조회 실패와 검증에 필요한 주변 정보](2026-10-15-yago-native-tools.md)
+
+
 - [2026-10-15 LLM 도구 선택과 조회 인터페이스](2026-10-15-llm-ontology-tools.md)
 
 - [2026-10-14 업무 질문과 자료 채택 기준](2026-10-14-business-questions.md)

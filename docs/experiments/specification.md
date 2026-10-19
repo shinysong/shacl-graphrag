@@ -1,6 +1,8 @@
 # 온톨로지 활용 실험 명세
 
-최신 LLM 주도 실험은 [조회·의미 설명·검증 도구 비교 명세](llm-ontology-tools-study.md)를 따른다. 기존 규칙 기반 업무 실험과 구분한다.
+최신 YAGO 연결 실험은 [YAGO 원본 데이터의 LLM 조회·검증 연결](yago-native-tools-study.md)을 따른다.
+
+기존 LLM 주도 실험은 [조회·의미 설명·검증 도구 비교 명세](llm-ontology-tools-study.md)를 따른다. 기존 규칙 기반 업무 실험과 구분한다.
 
 ## 금융·제조업 여섯 업무 질문
 
