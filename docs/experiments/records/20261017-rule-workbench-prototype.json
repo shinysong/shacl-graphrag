@@ -1,0 +1,92 @@
+{
+  "kind": "local_software_prototype_not_research_benchmark",
+  "review_job": "20261017T113839Z-rule-workbench-v3-c9d20e",
+  "features": [
+    "CSV/XLSX/SQLite imports",
+    "PostgreSQL readonly connector (mock verified)",
+    "PDF/Markdown text and draft candidates",
+    "five explicit human-confirmed rule templates",
+    "actual RDFLib/pySHACL execution",
+    "current-result freshness guard",
+    "previous-run status comparison",
+    "JSON import/export, Excel, ZIP, snapshot Turtle"
+  ],
+  "source_hashes": {
+    "rule_workbench/exports.py": "8ece152f4fd34df65f45d41ded725a70fac27f39e824861628325a79ae75b1ea",
+    "rule_workbench/extractors.py": "687f527e4f4c349ad88b6c8f388ef1007a486328a2510b8f71cf46704bceaa0e",
+    "rule_workbench/connectors.py": "6a848d978bcde83185de41a9365864424981739b507c96017e1d7430cc6704a9",
+    "rule_workbench/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rule_workbench/core.py": "9c99f483ca6da6845187692a68916909bac602c4d31de73704dc3a37a14ba98c",
+    "tests/test_workbench_connectors.py": "27936b1d7ab656297c2b994b59232e16c99093a996e8e641868a9b4b04733739",
+    "tests/test_workbench_ui.py": "4172202f5d7d668e3b4574463c79a60c9f7b38176adb121a4fcdb1db49d9af78",
+    "tests/test_workbench_core.py": "393db6d0f4507fcd4b008decf29083528d73502206e49512e6ef271d015332c1",
+    "apps/rule_workbench.py": "ddfc977f9d039f2556a6bb3ffe2bdd0eef401c8a69a17528d8161d43bb7f57b6",
+    "scripts/rule_workbench.py": "88f2c4fc06fa6569642d42c807e3cc4a4900e14f389d3119af687b8739b880a1",
+    "pyproject.toml": "231c7c586abc0b61bcbb4cd617b06f122c55f03d8a1153a9446037273c1afaae",
+    "uv.lock": "8a551ab305de197d4d82d3e5465650d5e80c58bbc1b07c3ffa56cffeb6ac8d8e"
+  },
+  "tests": {
+    "scoped_tests": 24,
+    "exit_code": 0
+  },
+  "browser": {
+    "checks": [
+      {
+        "width": 1440,
+        "mode": "light",
+        "document_overflow": false
+      },
+      {
+        "width": 390,
+        "mode": "light",
+        "document_overflow": false
+      },
+      {
+        "width": 390,
+        "mode": "dark",
+        "document_overflow": false
+      }
+    ],
+    "actual_csv_xlsx_sqlite_upload": true,
+    "actual_pdf_md_upload": true,
+    "json_download_verified": true,
+    "demo_execution": true,
+    "page_errors": []
+  },
+  "cycle": {
+    "pdf_real_extraction": true,
+    "csv_xlsx_sqlite_real_import": true,
+    "full_json_roundtrip_counts": {
+      "pass": 7,
+      "violation": 3,
+      "unknown": 2,
+      "not_applicable": 0
+    },
+    "exported_shacl_violation_pairs_match": true,
+    "matched_violations": 3,
+    "representative_load": {
+      "row_checks": 960,
+      "seconds": 0.27050701703410596
+    },
+    "postgresql": "mock tests only",
+    "paid_model_calls": 0
+  },
+  "docs": {
+    "mkdocs_strict_exit": 0,
+    "chirpy_exit": 127,
+    "chirpy_blocker": "bundle command not found"
+  },
+  "runtime": {
+    "bind": "127.0.0.1",
+    "port": 8501,
+    "public_deployment": false
+  },
+  "paid_model_calls": 0,
+  "limitations": [
+    "Line candidates are not automatic natural-language rule interpretation; no LLM or OCR.",
+    "SHACL export is a snapshot projection with eligible targets, not a general ontology; unknowns stored separately.",
+    "PostgreSQL live integration unverified; mocked read-only transaction tests passed.",
+    "Row-position change comparison does not prove entity identity across snapshots.",
+    "No multiuser auth or persistent server-side workspace; export before replacing/closing session."
+  ]
+}

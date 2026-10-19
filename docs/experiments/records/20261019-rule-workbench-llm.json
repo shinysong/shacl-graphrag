@@ -1,0 +1,176 @@
+{
+  "scope": "Synthetic software integration examples, not extraction benchmark or security guarantee",
+  "runs": [
+    {
+      "case": "supplier",
+      "model": "anthropic/claude-haiku-5.5",
+      "candidate_count": 3,
+      "confirmed": 3,
+      "before_review": {
+        "pass": 0,
+        "violation": 0,
+        "unknown": 3,
+        "not_applicable": 0
+      },
+      "after_review": {
+        "pass": 7,
+        "violation": 3,
+        "unknown": 2,
+        "not_applicable": 0
+      },
+      "roundtrip_counts_equal": true,
+      "exported_shacl_conforms": false,
+      "artifact": "_workspace/rule-workbench-llm/artifacts/0-supplier"
+    },
+    {
+      "case": "supplier",
+      "model": "openai/gpt-6-luna",
+      "candidate_count": 3,
+      "confirmed": 3,
+      "before_review": {
+        "pass": 0,
+        "violation": 0,
+        "unknown": 3,
+        "not_applicable": 0
+      },
+      "after_review": {
+        "pass": 7,
+        "violation": 3,
+        "unknown": 2,
+        "not_applicable": 0
+      },
+      "roundtrip_counts_equal": true,
+      "exported_shacl_conforms": false,
+      "artifact": "_workspace/rule-workbench-llm/artifacts/1-supplier"
+    },
+    {
+      "case": "finance",
+      "model": "anthropic/claude-haiku-5.5",
+      "candidate_count": 4,
+      "confirmed": 4,
+      "before_review": {
+        "pass": 0,
+        "violation": 0,
+        "unknown": 4,
+        "not_applicable": 0
+      },
+      "after_review": {
+        "pass": 4,
+        "violation": 4,
+        "unknown": 0,
+        "not_applicable": 0
+      },
+      "roundtrip_counts_equal": true,
+      "exported_shacl_conforms": false,
+      "artifact": "_workspace/rule-workbench-llm/artifacts/2-finance"
+    },
+    {
+      "case": "finance",
+      "model": "openai/gpt-6-luna",
+      "candidate_count": 4,
+      "confirmed": 4,
+      "before_review": {
+        "pass": 0,
+        "violation": 0,
+        "unknown": 4,
+        "not_applicable": 0
+      },
+      "after_review": {
+        "pass": 4,
+        "violation": 4,
+        "unknown": 0,
+        "not_applicable": 0
+      },
+      "roundtrip_counts_equal": true,
+      "exported_shacl_conforms": false,
+      "artifact": "_workspace/rule-workbench-llm/artifacts/3-finance"
+    },
+    {
+      "case": "unsupported_and_injection",
+      "model": "anthropic/claude-haiku-5.5",
+      "candidate_count": 2,
+      "confirmed": 0,
+      "before_review": {
+        "pass": 0,
+        "violation": 0,
+        "unknown": 2,
+        "not_applicable": 0
+      },
+      "after_review": {
+        "pass": 0,
+        "violation": 0,
+        "unknown": 2,
+        "not_applicable": 0
+      },
+      "roundtrip_counts_equal": true,
+      "exported_shacl_conforms": true,
+      "artifact": "_workspace/rule-workbench-llm/artifacts/4-unsupported_and_injection"
+    },
+    {
+      "case": "unsupported_and_injection",
+      "model": "openai/gpt-6-luna",
+      "candidate_count": 1,
+      "confirmed": 0,
+      "before_review": {
+        "pass": 0,
+        "violation": 0,
+        "unknown": 1,
+        "not_applicable": 0
+      },
+      "after_review": {
+        "pass": 0,
+        "violation": 0,
+        "unknown": 1,
+        "not_applicable": 0
+      },
+      "roundtrip_counts_equal": true,
+      "exported_shacl_conforms": true,
+      "artifact": "_workspace/rule-workbench-llm/artifacts/5-unsupported_and_injection"
+    }
+  ],
+  "budget": {
+    "configured": true,
+    "attempts": 6,
+    "max_calls": 20,
+    "reserved_usd": 0.0177583,
+    "reported_usd": 0.002886625,
+    "unknown_cost_attempts": 0,
+    "max_usd": 2,
+    "deadline_utc": "2026-10-19T08:24:42.593375+00:00"
+  },
+  "total_candidates": 17,
+  "total_confirmed_for_demo": 14,
+  "source_model_outputs_unchanged": true,
+  "date": "2026-10-19",
+  "native_review_job": "20261019T002737Z-workbench-llm-boundary-81be56",
+  "tests": {
+    "count": 43,
+    "exit_code": 0,
+    "initial_failure": "Incorrect5doclimit test expectation corrected to8accepted9rejected; oldfailurelog preserved"
+  },
+  "browser": {
+    "cached_llm_ui": true,
+    "exported_draft_rules": 3,
+    "metadata_preserved": true,
+    "page_errors": [],
+    "overflow": false,
+    "screenshots": [
+      "/home/ubuntu/shacl-graphrag/_workspace/rule-workbench-llm/llm-1440-light.png",
+      "/home/ubuntu/shacl-graphrag/_workspace/rule-workbench-llm/llm-390-light.png",
+      "/home/ubuntu/shacl-graphrag/_workspace/rule-workbench-llm/llm-390-dark.png"
+    ]
+  },
+  "docs": {
+    "mkdocs_strict_exit": 0,
+    "chirpy_exit": 127,
+    "chirpy_limitation": "bundle not installed"
+  },
+  "limitations": [
+    "Synthetic integration cases, not representative benchmark",
+    "Coordinator confirmed14rules aftersource review; nohumanparticipant evaluation",
+    "3unsupported drafts include1injection-textcandidate fromHaiku;Lunaomittedinjection",
+    "UnsupportedemptySHACL graphconforms vacuously, projectreportsunknown",
+    "No livePostgres, OCR, autonomousapproval or arbitrarygeneratedcode",
+    "No publication/push"
+  ]
+}

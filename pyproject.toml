@@ -17,10 +17,19 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+  "pytest>=8",
   "ruff>=0.6.0",
 ]
 docs = [
     "mkdocs>=1.6,<2",
+]
+workbench = [
+    "jsonschema>=4.26.0",
+    "openpyxl>=3.1.5",
+    "psycopg[binary]>=3.3.6",
+    "pypdf>=6.21.1",
+    "sqlalchemy>=2.1.5",
+    "streamlit>=1.66.0",
 ]
 
 [tool.uv]

@@ -1,0 +1,529 @@
+{
+  "date": "2026-10-19",
+  "scope": "Original synthetic software integration, not domain accuracy/generalization",
+  "sources": {
+    "manufacturing": {
+      "url": "https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver17",
+      "sha256": "b8dd565dee53f2629eb18f2331eb60fc267a4b556389c5bcc59c5ea2fab4fecb",
+      "use": "Schema inspiration only; generated original synthetic records, no source dataset copying"
+    },
+    "healthcare": {
+      "url": "https://hl7.org/fhir/R4/encounter.html",
+      "sha256": "9a30d0a4abf826c5b05e6b35a008a81fd4caa5999aadcf96695a4ed6b9691a19",
+      "use": "Schema inspiration only; generated original synthetic records, no source dataset copying"
+    },
+    "finance": {
+      "url": "https://docs.stripe.com/api/payment_intents/object",
+      "sha256": "0e079d9142d8e64c52242adac9bb6d6195735292a8144f0e015190210cbfc7c4",
+      "use": "Schema inspiration only; generated original synthetic records, no source dataset copying"
+    },
+    "ecommerce": {
+      "url": "https://raw.githubusercontent.com/microsoft/sql-server-samples/master/samples/databases/wide-world-importers/README.md",
+      "sha256": "9a52a00d92a16941cf864254c2473fcfbd7bcf4175537ec6b7c0a60c8377fc68",
+      "use": "Schema inspiration only; generated original synthetic records, no source dataset copying"
+    }
+  },
+  "primary_rows": 800,
+  "total_rows": 1020,
+  "offline_format_runs": 16,
+  "unique_authored_rule_row_entries": 5604,
+  "offline": [
+    {
+      "domain": "manufacturing",
+      "tables": {
+        "WorkOrders": 200,
+        "Products": 24,
+        "Routing": 24
+      },
+      "expected_entries": 1401,
+      "runs": [
+        {
+          "format": "json",
+          "counts": {
+            "pass": 1350,
+            "violation": 30,
+            "unknown": 21,
+            "not_applicable": 0
+          },
+          "result_entries": 1401,
+          "differences": [],
+          "roundtrip_equal": true,
+          "seconds": 0.44845162299998265
+        },
+        {
+          "format": "csv",
+          "counts": {
+            "pass": 1350,
+            "violation": 30,
+            "unknown": 21,
+            "not_applicable": 0
+          },
+          "result_entries": 1401,
+          "differences": [],
+          "roundtrip_equal": true,
+          "seconds": 0.44381178700041346
+        },
+        {
+          "format": "xlsx",
+          "counts": {
+            "pass": 1350,
+            "violation": 30,
+            "unknown": 21,
+            "not_applicable": 0
+          },
+          "result_entries": 1401,
+          "differences": [],
+          "roundtrip_equal": true,
+          "seconds": 0.47250596600042627
+        },
+        {
+          "format": "sqlite",
+          "counts": {
+            "pass": 1350,
+            "violation": 30,
+            "unknown": 21,
+            "not_applicable": 0
+          },
+          "result_entries": 1401,
+          "differences": [],
+          "roundtrip_equal": true,
+          "seconds": 0.44400076100009755
+        }
+      ],
+      "all_match": true,
+      "source_hashes": {
+        "policy.md": "0cce397aecc0bf2da63918de4c3f28d1125b6622523e439d92c308815a490cce",
+        "Products.csv": "c60f29d89191c910676f86071df027e773b0a38f893c21cbe9288432d0d4caae",
+        "Routing.csv": "9c61ec14bf6c532ab5c5a72fa798bf74cd19d9c2502bb4c756f2d455b852e102",
+        "draft-project.json": "0d6ae2c869b3332f275dcd7b6d7a99fd91226c443eae2b0ba0a69d70346a2484",
+        "baseline-project.json": "11028e2854540924ff37e90ac4a61f956dd16520935c3f63dba7c729a21d737f",
+        "WorkOrders.csv": "4201dff9f2042cd2ec4e2c2a9817a19f8d85848b3f0d590ba442380110a4551d",
+        "expectations.json": "19058a0d130767d87195ed542803f827101f2b3f315dca234b763d4ec4a5c2ce",
+        "data.sqlite": "81cab3a7a3a612647560588f1eec89b1b8587b298b49b5927bf37c14f8e2ce23",
+        "data.xlsx": "0d541027e511d4c3f9dc1fd2cd62d1148cbafd0b57a244f79794a557e8af2bae",
+        "confirmed-project.json": "d8b18170b0a79de65eccffd9ff7f1000ac922d88b6a93ede01f9ceb28990b40a",
+        "metadata.json": "1cae030a854383d1419a14a9eb9516a3d42bdde59b1abdddaf2f768e6ac07df4"
+      }
+    },
+    {
+      "domain": "healthcare",
+      "tables": {
+        "Encounters": 200,
+        "Patients": 40,
+        "Practitioners": 12
+      },
+      "expected_entries": 1401,
+      "runs": [
+        {
+          "format": "json",
+          "counts": {
+            "pass": 1350,
+            "violation": 30,
+            "unknown": 21,
+            "not_applicable": 0
+          },
+          "result_entries": 1401,
+          "differences": [],
+          "roundtrip_equal": true,
+          "seconds": 0.4430719490001138
+        },
+        {
+          "format": "csv",
+          "counts": {
+            "pass": 1350,
+            "violation": 30,
+            "unknown": 21,
+            "not_applicable": 0
+          },
+          "result_entries": 1401,
+          "differences": [],
+          "roundtrip_equal": true,
+          "seconds": 0.4725180469999941
+        },
+        {
+          "format": "xlsx",
+          "counts": {
+            "pass": 1350,
+            "violation": 30,
+            "unknown": 21,
+            "not_applicable": 0
+          },
+          "result_entries": 1401,
+          "differences": [],
+          "roundtrip_equal": true,
+          "seconds": 0.477139537000312
+        },
+        {
+          "format": "sqlite",
+          "counts": {
+            "pass": 1350,
+            "violation": 30,
+            "unknown": 21,
+            "not_applicable": 0
+          },
+          "result_entries": 1401,
+          "differences": [],
+          "roundtrip_equal": true,
+          "seconds": 0.4459157509995748
+        }
+      ],
+      "all_match": true,
+      "source_hashes": {
+        "policy.md": "89af6681f31728e5c534a0c2fcde86fd653556e4c62ec2b22fa9a1e4e117c308",
+        "Patients.csv": "f07bf9eb216424548cfba6d26d5eab283bb0dd287ff5db80222811a3d361339a",
+        "Encounters.csv": "d390d2ecac7704434b644c3cf1b39533ce78fd67855eb592c40e474d72719521",
+        "Practitioners.csv": "99bce15950542c2b778a43d61695fee82bc923dfda9a876522b02704ff06e355",
+        "draft-project.json": "80dc3f5793ca050b8493dafd130d2c03d15f3be3d66aa42973288f9ec10dab72",
+        "baseline-project.json": "abc22b8adb08cc98b8a7e642aaff4e79bbe0dc8c2e7fc1114ff1507368bce538",
+        "expectations.json": "9a7634b1b90409a9cc70483a83b0c1c9cf35b2ad8dfb620d5253d4e0749bff6f",
+        "data.sqlite": "a80d2eddcd7a2e688bdbb10fd3dbaf6409ce233f187ac7da8fbd17dd082533c0",
+        "data.xlsx": "3320905581658862e640b86c009364c1dc6e0f741a820db2c31a9e8b0a66da5b",
+        "confirmed-project.json": "a96a09cc4c90a8c2149144879ca98dd125dedb89ce6ad83907097cf620ad9bf7",
+        "metadata.json": "d2312313571124f6c14e990c1ef930497dca29233570d11caa3a95e9bf626f02"
+      }
+    },
+    {
+      "domain": "finance",
+      "tables": {
+        "Payments": 200,
+        "Accounts": 20,
+        "Counterparties": 30
+      },
+      "expected_entries": 1401,
+      "runs": [
+        {
+          "format": "json",
+          "counts": {
+            "pass": 1350,
+            "violation": 30,
+            "unknown": 21,
+            "not_applicable": 0
+          },
+          "result_entries": 1401,
+          "differences": [],
+          "roundtrip_equal": true,
+          "seconds": 0.4704639409997071
+        },
+        {
+          "format": "csv",
+          "counts": {
+            "pass": 1350,
+            "violation": 30,
+            "unknown": 21,
+            "not_applicable": 0
+          },
+          "result_entries": 1401,
+          "differences": [],
+          "roundtrip_equal": true,
+          "seconds": 0.47497880599985365
+        },
+        {
+          "format": "xlsx",
+          "counts": {
+            "pass": 1350,
+            "violation": 30,
+            "unknown": 21,
+            "not_applicable": 0
+          },
+          "result_entries": 1401,
+          "differences": [],
+          "roundtrip_equal": true,
+          "seconds": 0.44965320200026326
+        },
+        {
+          "format": "sqlite",
+          "counts": {
+            "pass": 1350,
+            "violation": 30,
+            "unknown": 21,
+            "not_applicable": 0
+          },
+          "result_entries": 1401,
+          "differences": [],
+          "roundtrip_equal": true,
+          "seconds": 0.46942947400020785
+        }
+      ],
+      "all_match": true,
+      "source_hashes": {
+        "policy.md": "426343c246e1cb3c874f7c266c2b32760f7faac2ecb21cad7bd93b007719f4c8",
+        "draft-project.json": "ecb98fc12ce8c17adf7b9445b92d1f5868c80a3eb048adf7d95df34e8b14442e",
+        "Accounts.csv": "92149770aeee313150c842f7b70e525acfcbc08b761a19f2cbcd5c6b9a08a16a",
+        "baseline-project.json": "1fb50a10343add19903471a8d0f959ba9a232b661026c638c73ce5a0bb0b7eb3",
+        "Payments.csv": "c00478ff8776352382f18d34bc17efdc2e3ca9ad5f385f3fd6f2587ba887b167",
+        "expectations.json": "e6b3e319640159f61b54e3ab597128d6b485fd83bb00467b8ccaeb33cbb8be44",
+        "data.sqlite": "4f5aa2ffafb8524c3e851dffbe6c16974797aab136c7ae5f5a66d27b796aac99",
+        "data.xlsx": "fc2210e1addb1030657f824d6ba419d666aac9cce9a3da4be42e9d09e84dd8c3",
+        "confirmed-project.json": "cb6fdb3361a2f195719aac01705498b9fa37c00d895f40d9952301f1d7b4389f",
+        "Counterparties.csv": "514a996da2693a3a8f6a1cc46f207f1e6b8328f27823c0879911aa32f0bb315a",
+        "metadata.json": "3e82e50bc6704dcc279fc1609f86953d1fc5b1a09fa282e908a520dab28e0c7d"
+      }
+    },
+    {
+      "domain": "ecommerce",
+      "tables": {
+        "Orders": 200,
+        "Customers": 40,
+        "Products": 30
+      },
+      "expected_entries": 1401,
+      "runs": [
+        {
+          "format": "json",
+          "counts": {
+            "pass": 1350,
+            "violation": 30,
+            "unknown": 21,
+            "not_applicable": 0
+          },
+          "result_entries": 1401,
+          "differences": [],
+          "roundtrip_equal": true,
+          "seconds": 0.47416554699975677
+        },
+        {
+          "format": "csv",
+          "counts": {
+            "pass": 1350,
+            "violation": 30,
+            "unknown": 21,
+            "not_applicable": 0
+          },
+          "result_entries": 1401,
+          "differences": [],
+          "roundtrip_equal": true,
+          "seconds": 0.44250527399981365
+        },
+        {
+          "format": "xlsx",
+          "counts": {
+            "pass": 1350,
+            "violation": 30,
+            "unknown": 21,
+            "not_applicable": 0
+          },
+          "result_entries": 1401,
+          "differences": [],
+          "roundtrip_equal": true,
+          "seconds": 0.5092002179999326
+        },
+        {
+          "format": "sqlite",
+          "counts": {
+            "pass": 1350,
+            "violation": 30,
+            "unknown": 21,
+            "not_applicable": 0
+          },
+          "result_entries": 1401,
+          "differences": [],
+          "roundtrip_equal": true,
+          "seconds": 0.46889144100032354
+        }
+      ],
+      "all_match": true,
+      "source_hashes": {
+        "policy.md": "a2e5e6f33002a858925701169cd9817399a4a672a5bb4e2f6ba9b0f038a0445f",
+        "Products.csv": "521df8888c1d294a27e66ee65e47b5788f8ac510eb93775640f731a9747a6574",
+        "draft-project.json": "93e025441c1b94b4378861be49116a6a59075fb53c36f2de3552454d340fdb16",
+        "baseline-project.json": "8beb25b8940ce0bf07bdaf0a70e3493698692eb3f432c5013f9e5541b5de6ad1",
+        "expectations.json": "6f6e4dd80eb0e5d6696ca1b7afb42c2b01480019666e555c1ef22314b702c3d6",
+        "Orders.csv": "d23f497fd9f2f6b223d11935c58cff17a63ef95a9600e7f19635e8c9b2a99ffa",
+        "data.sqlite": "1976b658e92068f0dbcc7a2923972cda4bede83b6cdb824c3c487a89391415a1",
+        "data.xlsx": "3546fb28b63bec734a78f35ae48308f7bb6d40c2a0b6c98fa323289d6a4c1dff",
+        "confirmed-project.json": "323bfcf247fce415f844b7c271c23e75fd12d30e6ef69dfe83b0a821173a3cec",
+        "Customers.csv": "0e443668b46064819f3aa4599ee591a894785df13b9e9402a3d4b07b2ac23123",
+        "metadata.json": "2532a7321c2e8388412b0cef85820de6e7f3430ce68aac6abe683d84d26e3834"
+      }
+    }
+  ],
+  "llm": [
+    {
+      "domain": "ecommerce",
+      "model": "anthropic/claude-haiku-5.5",
+      "candidates": 8,
+      "confirmed_for_demo": 7,
+      "unsupported_drafts": 1,
+      "counts": {
+        "pass": 1350,
+        "violation": 30,
+        "unknown": 21,
+        "not_applicable": 0
+      },
+      "row_status_differences": 0,
+      "roundtrip_counts_equal": true,
+      "cost_usd": 0.0010523,
+      "questions": 4
+    },
+    {
+      "domain": "ecommerce",
+      "model": "openai/gpt-6-luna",
+      "candidates": 8,
+      "confirmed_for_demo": 7,
+      "unsupported_drafts": 1,
+      "counts": {
+        "pass": 1350,
+        "violation": 30,
+        "unknown": 21,
+        "not_applicable": 0
+      },
+      "row_status_differences": 0,
+      "roundtrip_counts_equal": true,
+      "cost_usd": 0.000657925,
+      "questions": 0
+    },
+    {
+      "domain": "finance",
+      "model": "anthropic/claude-haiku-5.5",
+      "candidates": 8,
+      "confirmed_for_demo": 7,
+      "unsupported_drafts": 1,
+      "counts": {
+        "pass": 1350,
+        "violation": 30,
+        "unknown": 21,
+        "not_applicable": 0
+      },
+      "row_status_differences": 0,
+      "roundtrip_counts_equal": true,
+      "cost_usd": 0.0013999,
+      "questions": 8
+    },
+    {
+      "domain": "finance",
+      "model": "openai/gpt-6-luna",
+      "candidates": 8,
+      "confirmed_for_demo": 7,
+      "unsupported_drafts": 1,
+      "counts": {
+        "pass": 1350,
+        "violation": 30,
+        "unknown": 21,
+        "not_applicable": 0
+      },
+      "row_status_differences": 0,
+      "roundtrip_counts_equal": true,
+      "cost_usd": 0.000616925,
+      "questions": 0
+    },
+    {
+      "domain": "healthcare",
+      "model": "anthropic/claude-haiku-5.5",
+      "candidates": 8,
+      "confirmed_for_demo": 7,
+      "unsupported_drafts": 1,
+      "counts": {
+        "pass": 1350,
+        "violation": 30,
+        "unknown": 21,
+        "not_applicable": 0
+      },
+      "row_status_differences": 0,
+      "roundtrip_counts_equal": true,
+      "cost_usd": 0.0010853,
+      "questions": 4
+    },
+    {
+      "domain": "healthcare",
+      "model": "openai/gpt-6-luna",
+      "candidates": 8,
+      "confirmed_for_demo": 7,
+      "unsupported_drafts": 1,
+      "counts": {
+        "pass": 1350,
+        "violation": 30,
+        "unknown": 21,
+        "not_applicable": 0
+      },
+      "row_status_differences": 0,
+      "roundtrip_counts_equal": true,
+      "cost_usd": 0.000687925,
+      "questions": 0
+    },
+    {
+      "domain": "manufacturing",
+      "model": "anthropic/claude-haiku-5.5",
+      "candidates": 8,
+      "confirmed_for_demo": 7,
+      "unsupported_drafts": 1,
+      "counts": {
+        "pass": 1350,
+        "violation": 30,
+        "unknown": 21,
+        "not_applicable": 0
+      },
+      "row_status_differences": 0,
+      "roundtrip_counts_equal": true,
+      "cost_usd": 0.0014796,
+      "questions": 4
+    },
+    {
+      "domain": "manufacturing",
+      "model": "openai/gpt-6-luna",
+      "candidates": 8,
+      "confirmed_for_demo": 7,
+      "unsupported_drafts": 1,
+      "counts": {
+        "pass": 1350,
+        "violation": 30,
+        "unknown": 21,
+        "not_applicable": 0
+      },
+      "row_status_differences": 0,
+      "roundtrip_counts_equal": true,
+      "cost_usd": 0.000713675,
+      "questions": 1
+    }
+  ],
+  "llm_new_calls": 8,
+  "llm_reported_usd": "0.007693550",
+  "cumulative_workbench_budget": {
+    "configured": true,
+    "attempts": 14,
+    "max_calls": 20,
+    "reserved_usd": 0.0426171,
+    "reported_usd": 0.010580175,
+    "unknown_cost_attempts": 0,
+    "max_usd": 2,
+    "deadline_utc": "2026-10-19T08:24:42.593375+00:00"
+  },
+  "unit_tests": {
+    "count": 46,
+    "exit_code": 0
+  },
+  "browser": {
+    "domains": [
+      {
+        "domain": "manufacturing",
+        "ui_completed": true,
+        "pass_count_visible": 1350
+      },
+      {
+        "domain": "healthcare",
+        "ui_completed": true,
+        "pass_count_visible": 1350
+      },
+      {
+        "domain": "finance",
+        "ui_completed": true,
+        "pass_count_visible": 1350
+      },
+      {
+        "domain": "ecommerce",
+        "ui_completed": true,
+        "pass_count_visible": 1350
+      }
+    ],
+    "page_errors": []
+  },
+  "review_job": "20261019T005116Z-workbench-domains-format-map-c9d323",
+  "limits": [
+    "No public real records copied",
+    "Common primitive checks and authored policy limits, not clinical/regulatory rules",
+    "Unsupported conditionals remain drafts, not checked",
+    "Explicit fixture tablebinding, not automatic schema matching",
+    "No source rows or expected labels sent toLLM",
+    "No independent humanparticipant study",
+    "No publication/push"
+  ]
+}

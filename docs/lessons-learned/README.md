@@ -37,3 +37,7 @@
 - [2026-10-14 전체 결과 검증의 누락 방지](2026-10-14-lifecycle-coverage.md)
 
 - [2026-10-14 공통 규칙 실험의 검토 분량](2026-10-14-shared-semantics-review.md)
+
+- [2026-10-17 Workbench export boundaries](2026-10-17-workbench-export-boundaries.md)
+- [2026-10-19 Connector display names and source identity](2026-10-19-workbench-table-identity.md)
+- [2026-10-19 CLI filename and package imports](2026-10-19-workbench-cli-module-shadowing.md)
