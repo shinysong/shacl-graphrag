@@ -1,0 +1,157 @@
+{
+  "job_id": "20261015T180243Z-workflow-role-extension-47c8d0",
+  "reviewers": {
+    "methods": "/root/role_extension_methods",
+    "implementation": "/root/role_extension_implementation"
+  },
+  "checks": {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests"
+    ],
+    "exit_code": 0,
+    "scope": "local software check; not a benchmark"
+  },
+  "phases": {
+    "plan": {
+      "summary": "Verify frozen offline role dependency registration runner/tests, unchanged two evaluators and original record. Role policy enforcement is absent; this subtask observes model extension only.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "Existing evaluators and source record omitted from packet; setup file sizes are descriptive only.",
+          "recommendation": "Mark omissions unverified; coordinator checks hashes. Preserve source partial coverage and authored expectations separately."
+        }
+      ],
+      "tasks": [
+        {
+          "owner": "native reviewers",
+          "deliverable": "Independent methods and implementation reviews",
+          "verification": "No blockers before registered unit-tests."
+        },
+        {
+          "owner": "main",
+          "deliverable": "Observed four-case outputs and immutable-source audit",
+          "verification": "No model calls or live workflow changes; report missing-link unknown even when structural SHACL conforms."
+        }
+      ]
+    },
+    "methods": {
+      "summary": "Ready for the registered offline checks. The four authored cases test dependency registration and partial-coverage propagation on a consumed projection, with separate status scoring and explicit limits on policy, truth, and maintenance claims. This review does not verify execution or the omitted evaluators and source record.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "The brief omits existing evaluator implementations and the consumed source record. run() records a single source_manifest snapshot; mapping_edits.evaluator_source_edits is a literal zero rather than a measured comparison.",
+          "recommendation": "Before reporting unchanged evaluators and original records, retain the promised coordinator pre/post hash comparison. Treat runtime behavior and source provenance as unverified until those checks and registered tests complete."
+        },
+        {
+          "severity": "warning",
+          "evidence": "The design requests runner/tests setup bytes and lines separately from model additions, but run() includes the record, evaluators, and runner in paths without the test file.",
+          "recommendation": "Include the test-file size in the coordinator's setup accounting, or explicitly mark that component unmeasured. Keep these counts separate from the two nodes, two edges, and one candidate added; do not infer maintenance effort."
+        },
+        {
+          "severity": "info",
+          "evidence": "score() is applied after evaluator execution; omitted_link expects unknown, and the design expressly excludes conditional role requirements. The test checks the missing dependency yields no_path_partial_coverage.",
+          "recommendation": "Report agreement with authored expectations as a software diagnostic. Preserve the missing-link unknown and avoid interpreting structural conformance as proof of complete role requirements."
+        }
+      ],
+      "tasks": []
+    },
+    "implementation": {
+      "summary": "The supplied runner and tests support a bounded offline dependency-registration exercise with separate authored scoring and explicit unknown results for missing dependencies. No implementation blocker is evident in this packet. Registered checks have not run; evaluator behavior and original inputs remain unverified.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "Evaluator implementations and the consumed input record are omitted. The runner records current hashes, but its hard-coded evaluator_source_edits value does not itself prove evaluator immutability. Native structural SHACL execution is counted from evaluator output fields.",
+          "recommendation": "Complete the coordinator's stated pre/post hash audit and registered unit-tests before reporting unchanged evaluators, observed statuses or actual SHACL execution. Preserve the recorded hashes and outputs."
+        },
+        {
+          "severity": "info",
+          "evidence": "build_cases deep-copies the source projection, authors two nodes and two edges, and removes only the added request-to-packet edge in the omission control. score is called after each evaluator and authored expectations are not inserted into evaluator inputs. Tests explicitly require unknown, an empty witness and no_path_partial_coverage for the omitted dependency.",
+          "recommendation": "Keep these authored expectations separate from observed outputs and retain the stated distinction between dependency registration and conditional role-policy enforcement."
+        },
+        {
+          "severity": "warning",
+          "evidence": "The runner captures evaluator and runner sizes, but does not capture test-file size in its source manifest. Host resource usage is unmeasured; the small bounded input suggests modest work but omitted evaluators prevent verification of memory behavior.",
+          "recommendation": "Use a separately recorded test-file size if reporting combined runner/tests setup size, and label 16GiB suitability as an unverified resource assumption rather than a measured result."
+        }
+      ],
+      "tasks": []
+    },
+    "synthesis": {
+      "summary": "Both independent reviewers ready with no blockers. Proceed on unchanged source; retain omitted evaluators/source as reviewer-unverified. Coordinator measures test footprint and pre/post hashes outside runner; no implementation edits.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "The brief omits existing evaluator implementations and the consumed source record. run() records a single source_manifest snapshot; mapping_edits.evaluator_source_edits is a literal zero rather than a measured comparison.",
+          "recommendation": "Before reporting unchanged evaluators and original records, retain the promised coordinator pre/post hash comparison. Treat runtime behavior and source provenance as unverified until those checks and registered tests complete."
+        },
+        {
+          "severity": "warning",
+          "evidence": "The design requests runner/tests setup bytes and lines separately from model additions, but run() includes the record, evaluators, and runner in paths without the test file.",
+          "recommendation": "Include the test-file size in the coordinator's setup accounting, or explicitly mark that component unmeasured. Keep these counts separate from the two nodes, two edges, and one candidate added; do not infer maintenance effort."
+        },
+        {
+          "severity": "info",
+          "evidence": "score() is applied after evaluator execution; omitted_link expects unknown, and the design expressly excludes conditional role requirements. The test checks the missing dependency yields no_path_partial_coverage.",
+          "recommendation": "Report agreement with authored expectations as a software diagnostic. Preserve the missing-link unknown and avoid interpreting structural conformance as proof of complete role requirements."
+        },
+        {
+          "severity": "warning",
+          "evidence": "Evaluator implementations and the consumed input record are omitted. The runner records current hashes, but its hard-coded evaluator_source_edits value does not itself prove evaluator immutability. Native structural SHACL execution is counted from evaluator output fields.",
+          "recommendation": "Complete the coordinator's stated pre/post hash audit and registered unit-tests before reporting unchanged evaluators, observed statuses or actual SHACL execution. Preserve the recorded hashes and outputs."
+        },
+        {
+          "severity": "info",
+          "evidence": "build_cases deep-copies the source projection, authors two nodes and two edges, and removes only the added request-to-packet edge in the omission control. score is called after each evaluator and authored expectations are not inserted into evaluator inputs. Tests explicitly require unknown, an empty witness and no_path_partial_coverage for the omitted dependency.",
+          "recommendation": "Keep these authored expectations separate from observed outputs and retain the stated distinction between dependency registration and conditional role-policy enforcement."
+        },
+        {
+          "severity": "warning",
+          "evidence": "The runner captures evaluator and runner sizes, but does not capture test-file size in its source manifest. Host resource usage is unmeasured; the small bounded input suggests modest work but omitted evaluators prevent verification of memory behavior.",
+          "recommendation": "Use a separately recorded test-file size if reporting combined runner/tests setup size, and label 16GiB suitability as an unverified resource assumption rather than a measured result."
+        }
+      ],
+      "tasks": [
+        {
+          "owner": "main",
+          "deliverable": "Registered unit-tests plus actual four-case output and source audit",
+          "verification": "Exact exit code; source manifest comparison, test bytes/lines and explicit missing-link unknown despite conformance. No role enforcement or labor claim."
+        }
+      ]
+    },
+    "analysis": {
+      "summary": "unit-tests exit code 0: 278 tests passed in 82.956s. Four authored/consumed input variants ran both unchanged evaluators, 11 candidate outputs per arm; statuses/reasons/witnesses agree. Four actual RDF SHACL invocations all conformed, including missing-link case returning unknown impact.",
+      "decision": "observe",
+      "findings": [
+        {
+          "severity": "info",
+          "evidence": "Coordinator before/after hashes of both evaluators, original record and original YAGO SHACL are equal. Model extension adds two nodes, two edges and one candidate; test footprint recorded separately.",
+          "recommendation": "Treat this as dependency registration without evaluator edits in either arm; not a conditional role-policy change or RDF maintenance benefit."
+        },
+        {
+          "severity": "warning",
+          "evidence": "Consumed source, authored hypothetical nodes and expectations, supplied partial coverage. Omitted evaluator/source details were not independently reviewed in this packet. Builder smoke and reviewed run reuse same examples.",
+          "recommendation": "Preserve separate runs and limitations; do not count as independent research trials or claim human labor improvement."
+        }
+      ],
+      "tasks": [
+        {
+          "owner": "main",
+          "deliverable": "Next bounded conditional role-requirement policy comparison",
+          "verification": "Explicit data-change condition and required-role semantics, missing-role/unknown-condition controls; no live gates or paid API. Avoid further pure topology parity."
+        }
+      ]
+    }
+  }
+}

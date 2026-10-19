@@ -1,0 +1,31 @@
+{
+  "protocol": "workflow-role-extension-1",
+  "scope": "Offline dependency-registration subtask of adding a data-steward review. This does not implement conditional role requirements or approval eligibility.",
+  "inputs": "Consumed five-node real projection, plus explicitly hypothetical steward request/review and edges; original records unchanged.",
+  "change_task": "Register the additional review and trace whether a packet or methods-request change requires its recheck.",
+  "arms": [
+    "unchanged indexed Python evaluator",
+    "unchanged RDFLib traversal with actual structural pySHACL"
+  ],
+  "planned_cases": [
+    "baseline packet change",
+    "added steward dependency and packet change",
+    "omitted steward request-to-packet edge, partial coverage",
+    "methods-request change with added steward dependency"
+  ],
+  "measurements": [
+    "full before/after input differences",
+    "source hashes proving evaluators unchanged",
+    "status/reason/witness results",
+    "new experiment runner/tests setup bytes and lines separate from model additions"
+  ],
+  "limits": [
+    "No declarative JSON policy arm",
+    "No human effort measurement",
+    "No automatic role assignment or policy enforcement",
+    "No real steward review performed",
+    "No new LLM/API calls",
+    "Structural SHACL cannot detect an undeclared required dependency"
+  ],
+  "next": "A separate conditional role-requirement policy would be necessary before claiming workflow rule-change support; do not equate model extension with that policy."
+}

@@ -1,0 +1,140 @@
+{
+  "protocol": "workflow-required-roles-1",
+  "scope": "Offline conditional role-presence check, not execution authorization; all new inputs authored, not measured real review completions. No LLM/data benchmark.",
+  "rule_change": "v1 requires methods and implementation; v2 additionally requires data-steward when data_change=true.",
+  "arms": [
+    "coded Python requirements",
+    "declarative JSON rules",
+    "RDF data and actual SHACL conditional membership constraints compiled from JSON rules"
+  ],
+  "precedence": [
+    "invalid input -> invalid/unknown",
+    "unknown condition used by policy -> unknown",
+    "all required roles witnessed -> satisfied even partial",
+    "missing required role + complete coverage -> missing",
+    "missing required role + partial coverage -> unknown"
+  ],
+  "cases": [
+    {
+      "id": "data_missing_steward",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "complete"
+      },
+      "authored_expected": {
+        "v1": "satisfied",
+        "v2": "missing"
+      }
+    },
+    {
+      "id": "data_with_steward",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation",
+          "data-steward"
+        ],
+        "coverage": "complete"
+      },
+      "authored_expected": {
+        "v1": "satisfied",
+        "v2": "satisfied"
+      }
+    },
+    {
+      "id": "nondata_no_steward",
+      "input": {
+        "data_change": false,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "complete"
+      },
+      "authored_expected": {
+        "v1": "satisfied",
+        "v2": "satisfied"
+      }
+    },
+    {
+      "id": "unknown_condition",
+      "input": {
+        "data_change": null,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "complete"
+      },
+      "authored_expected": {
+        "v1": "satisfied",
+        "v2": "unknown"
+      }
+    },
+    {
+      "id": "partial_missing",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "partial"
+      },
+      "authored_expected": {
+        "v1": "satisfied",
+        "v2": "unknown"
+      }
+    },
+    {
+      "id": "partial_witnessed",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation",
+          "data-steward"
+        ],
+        "coverage": "partial"
+      },
+      "authored_expected": {
+        "v1": "satisfied",
+        "v2": "satisfied"
+      }
+    },
+    {
+      "id": "missing_base",
+      "input": {
+        "data_change": false,
+        "completed_roles": [
+          "methods"
+        ],
+        "coverage": "complete"
+      },
+      "authored_expected": {
+        "v1": "missing",
+        "v2": "missing"
+      }
+    }
+  ],
+  "limits": [
+    "Completion/coverage/condition facts supplied, not authenticated",
+    "No approval state, distinct reviewer identity, current artifact binding, freshness or blocker checks",
+    "No live research runner gate change",
+    "No proof of RDF maintenance benefit; JSON and RDF share policy representation/compiler setup counted separately",
+    "Coded v1/v2 coexist, not measured sequential developer editing",
+    "No hidden source detection or automatic ontology learning"
+  ],
+  "measurements": [
+    "Full inputs, outputs and separate authored expectations",
+    "Policy v1/v2 exact JSON difference",
+    "Source hashes and static setup footprint, not labor",
+    "Actual SHACL invocation and conformance versus preflight unknown"
+  ],
+  "next": "Integrate with existing binding/freshness checks only after explicitly defining composition and identifying useful evidence; do not repeat parity alone."
+}

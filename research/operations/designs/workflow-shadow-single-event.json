@@ -1,0 +1,15 @@
+{
+  "protocol": "workflow-shadow-single-event-1",
+  "parent": "workflow-shadow-contract-1",
+  "scope": "Executable read-only Python reference for a single replacement against a frozen snapshot; no event sequence, ledger, replay, snapshot updates, SHACL or LLM. This subset avoids unresolved mutable-event transition semantics; full contract is not claimed implemented.",
+  "operation": "Trace each candidate along dependent->prerequisite paths to changed node. Known path => stale; absent path + complete coverage => unaffected; absent path + partial => unknown. Reject invalid input/version mismatch without modification. Stale is recheck obligation, not false fact or execution denial.",
+  "evidence": "Input derived from verified historical two-review projection; change is hypothetical and explicitly labelled. No historical request/result is modified.",
+  "cases": [
+    "packet replacement, real partial projection",
+    "methods-request replacement, real partial projection",
+    "same methods-request replacement with authored complete-coverage control, not real coverage"
+  ],
+  "claims": "One reference evaluator, not JSON/RDF comparison or maintenance productivity evidence. Unit tests are software checks.",
+  "next": "Compare against independent RDF implementation only after baseline executable behavior is reviewed. Mutable replay engine remains deferred.",
+  "authorization": "Offline only; no paid calls, live gates, infra, push or scheduler change."
+}

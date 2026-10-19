@@ -1,0 +1,85 @@
+{
+  "protocol": "workflow-shadow-contract-1",
+  "status": "contract_and_verified_projection_only_no_evaluator",
+  "parent": "workflow-change-design-1",
+  "scope": "First bounded common operation: impact of version replacement on recorded dependencies. Role/exception execution, temporal policy evaluation and live enforcement deferred; no general rule language implemented.",
+  "input": {
+    "snapshot": "nodes and edges, at most 100 nodes/200 edges; UTF-8 serialized payload <=128KiB",
+    "node": "unique nonempty id, kind, immutable nonempty version string; exact Unicode codepoint equality, no trimming/coercion; duplicate ids rejected even if equal",
+    "edge": "dependent and prerequisite ids, both resolve to unique nodes in snapshot; same pair duplicates collapse; versions inherited from immutable endpoint nodes",
+    "coverage": "status complete or partial; complete must explicitly cover all dependency edges needed for every listed candidate in this snapshot; cannot infer complete from absent edges",
+    "candidates": "unique subset of node IDs to classify, maximum100",
+    "event": "one replacement {event_id, sequence, node_id, old_version, new_version}; old/new nonempty unequal strings, sequence positive integer (bool rejected); ledger next_sequence and accepted-event hashes supplied"
+  },
+  "operation": {
+    "edge_direction": "dependent -> prerequisite. Reverse reachability from changed node finds dependent candidates. Changed node itself included when a candidate.",
+    "closure": "Visited-set finite traversal, including cycles. No depth truncation; input above bound is unknown, never partial allow. Return deterministic sorted results and at least one stable shortest witness path for every stale candidate, tie break lexicographic IDs.",
+    "classification": "stale if an explicit path reaches changed old-version node; unaffected only if no path AND coverage complete; otherwise unknown. Stale means prior binding requires recheck, not false source fact or approval denial.",
+    "precedence": "Invalid schema, unknown event target or version conflict -> all candidates unknown. For valid snapshot/event, known path gives stale even under partial coverage; non-reachable candidates unknown under partial coverage. This impact classification is NOT the earlier approval probe allow/deny/unknown contract.",
+    "comparison": "All arms receive identical snapshot, event, coverage and candidates. A indexed Python, B generic declarative JSON, C RDF traversal plus SHACL preflight; record actual checker invocation separately. No SHACL superiority attribution from shared input guard or traversal."
+  },
+  "event_ordering": {
+    "first": "Require sequence==next_sequence and old_version==snapshot node version before evaluation. State change only in a new output snapshot; retain original.",
+    "duplicate": "Exact previously accepted event_id plus same canonical payload hash returns saved result with replay=true and no second update. Same id/different payload -> unknown conflict.",
+    "out_of_order": "Sequence below/above next_sequence with unseen id -> unknown order conflict; no automatic replay/reorder or last-writer-wins.",
+    "canonical_hash": "SHA256 of UTF-8 JSON with sorted keys, separators comma/colon, ensure_ascii=False, no newline, no floats permitted in event. Persist algorithm identifier. Existing research_ops packet hash uses its historical encoding and must not be recomputed with this new encoding."
+  },
+  "output": {
+    "fields": [
+      "protocol",
+      "snapshot_hash",
+      "event_id",
+      "event_status",
+      "replay",
+      "candidate_results",
+      "coverage",
+      "limits",
+      "actual_checker_executed",
+      "errors"
+    ],
+    "candidate_result": "{id, impact: stale|unaffected|unknown, reasons:[code], witness_path:[ids]}; path empty except stale; all supplied candidates appear, even failure",
+    "provenance": "Source projection keeps source file hashes and explicit JSON pointers; hash integrity does not authenticate reviewer identity or establish evidence completeness.",
+    "no_allow": "No output grants execution or modifies any live review; host atomic version check is outside this shadow contract."
+  },
+  "authored_acceptance_examples": [
+    {
+      "case": "recorded_packet_replacement",
+      "input": "verified 5node/4edge projection; replace packet version; candidates both reviews",
+      "expected": "both stale via request->packet witnesses despite partial coverage",
+      "meaning": "authored expected result from declared graph, NOT executed or independently observed business outcome"
+    },
+    {
+      "case": "request_replacement_partial",
+      "input": "replace methods-request; candidates both reviews; partial coverage",
+      "expected": "methods stale, implementation unknown; absence of path is not proof of independence"
+    },
+    {
+      "case": "same_graph_complete_control",
+      "input": "same graph with manually declared complete coverage for this synthetic control only; replace methods-request",
+      "expected": "methods stale, implementation unaffected; never relabel real projection complete"
+    },
+    {
+      "case": "cycle",
+      "input": "authored cycle connected to changed node",
+      "expected": "finite traversal; reached candidates stale"
+    },
+    {
+      "case": "missing_endpoint_or_version_conflict",
+      "input": "invalid reference or mismatched old_version",
+      "expected": "all candidates unknown, no snapshot mutation"
+    },
+    {
+      "case": "duplicate_and_out_of_order",
+      "input": "authored accepted event followed by exact duplicate, conflicting duplicate, future sequence",
+      "expected": "saved result replay only for exact duplicate; conflicts unknown; no hidden retry"
+    }
+  ],
+  "future_execution_bounds": {
+    "cases": "six authored groups above, expand concrete rows and freeze before execution; current tick zero evaluator cases run",
+    "repair": "first implementation attempt preserved, maximum one repair attempt per arm per bounded trial; unresolved failures retained",
+    "timing": "separate setup, editing, tests, waiting using timestamped operator logs; no inference of human productivity",
+    "resource": "local offline fixtures only; no untrusted service; start with 5node/4edge projection; hard input caps before RDF conversion; worker deadline and memory budget must be separately implemented/tested before running larger input"
+  },
+  "next_step": "Implement this one impact operation and concrete acceptance fixtures under fresh review; record first-attempt outcomes. No more conceptual scope expansion needed before a small executable shadow check.",
+  "authorization": "No live gates, paid models, raw QA answers, infrastructure, new schedule, publishing or ledger resets."
+}

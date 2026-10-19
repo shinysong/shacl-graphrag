@@ -1,0 +1,157 @@
+{
+  "job_id": "20261015T190305Z-workflow-required-roles-4b5a09",
+  "reviewers": {
+    "methods": "/root/required_role_methods",
+    "implementation": "/root/required_role_implementation"
+  },
+  "checks": {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests"
+    ],
+    "exit_code": 0,
+    "scope": "local software check; not a benchmark"
+  },
+  "phases": {
+    "plan": {
+      "summary": "Review new offline conditional required-role policy runner and evaluator before observed run. Seven authored inputs, two policy versions, three implementations; external JSON policies used by generic JSON and SHACL compiler.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "Tests omitted from reviewer packet, coordinator read them. Supplied role completion is not approval/authentication/freshness; partial and unknown handling shared Python contract.",
+          "recommendation": "Separate membership SHACL execution from Python preflight and interpret only software behavior, no RDF benefit or maintenance-labor claim."
+        }
+      ],
+      "tasks": [
+        {
+          "owner": "native reviewers",
+          "deliverable": "Independent methods and implementation reviews",
+          "verification": "No blockers before registered unit-tests."
+        },
+        {
+          "owner": "main",
+          "deliverable": "42 saved outputs with policy delta, source hashes, actual validator invocation counts",
+          "verification": "Score authored expectations after execution; preserve failures, unknown cases, original files; no API/live gating."
+        }
+      ]
+    },
+    "methods": {
+      "summary": "Ready for the registered offline software check. The supplied protocol bounds the deliverable to 42 authored policy-presence outputs and distinguishes shared Python handling from actual SHACL membership checking. The JSON and SHACL arms use the same declared policies, with no runtime access to authored expectations. No methodological blocker was identified within this narrow scope; execution and tests remain unverified.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "The seven design cases cover conditional activation, unknown condition, partial evidence and a missing base role, but do not include invalid inputs, validator exceptions or broader policy grammar variations. The packet explicitly omits the six tests and says registered checks are pending.",
+          "recommendation": "Report observed results as coverage of these seven authored cases. Keep any claim about invalid-input handling, exception preservation or generalized compiler correctness tied to separately observed registered checks; do not infer those properties from 42-case parity alone."
+        },
+        {
+          "severity": "info",
+          "evidence": "The protocol declares unknown-condition precedence, and evaluate_rdf returns before pySHACL when a conditional policy sees data_change=null. _finish also converts failed membership under partial coverage to unknown. Supplied completion and coverage facts are explicitly unauthenticated.",
+          "recommendation": "Preserve separate decision, actual_shacl_executed and shacl_conforms fields in reporting. Describe SHACL as testing membership on the constructed supplied evidence, while attributing condition uncertainty and partial-evidence interpretation to the shared application contract."
+        },
+        {
+          "severity": "info",
+          "evidence": "The runner evaluates input copies and scores authored_expected only afterward. All 42 rows reuse seven authored inputs across two policy versions and three implementations, and both coded versions coexist.",
+          "recommendation": "Retain the seven-input denominator and paired nature of comparisons. Treat the policy delta and source footprints as implementation artifacts, with no independent-trial, measured maintenance-effort or RDF-superiority inference."
+        }
+      ],
+      "tasks": []
+    },
+    "implementation": {
+      "summary": "The supplied evaluator and runner are implementable for the declared seven authored cases and two policies. Conditional SHACL membership is delegated to pySHACL for preflight-eligible inputs; authored expectations are used only after evaluation. No blocking implementation issue was identified by static review.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "info",
+          "evidence": "The SHACL compiler requires each base role and expresses each conditional role as data_change=false OR the role being witnessed. Strict Boolean preflight and unknown-condition handling make this equivalent to the supplied JSON and coded policies for known inputs. Missing membership under partial coverage is converted to unknown by shared Python logic.",
+          "recommendation": "Report membership conformance separately from final decisions and shared preflight behavior. From the supplied design, 13 of the 14 RDF rows should invoke SHACL; the v2 unknown-condition row should not. Treat these as expected counts until execution."
+        },
+        {
+          "severity": "warning",
+          "evidence": "Tests, installed dependency versions, actual file bytes/hashes, and observed runs were not supplied. The runner records source hashes at run time, but this review cannot establish their equality to frozen repository sources. Resource requirements are unmeasured; the tiny graphs suggest bounded use but no 16GiB-host measurement is available.",
+          "recommendation": "Complete the registered unit-tests check, verify frozen source provenance, and inspect all 42 saved rows, immutability indicators, exception outcomes, and SHACL invocation metadata. Preserve unsuccessful attempts; do not describe this static review as a passed check."
+        },
+        {
+          "severity": "info",
+          "evidence": "The runner makes no network/model calls, reads actual external JSON policies, and opens its output exclusively. It hashes the evaluator, runner, policies, design and test file. The evaluator contains no retry loop or scorer-driven repair, and exceptions in SHACL evaluation become unknown outcomes.",
+          "recommendation": "Retain the existing output-preservation behavior and limit interpretation to supplied-role presence. Static source sizes and coexisting coded versions do not measure maintenance work, approval validity, or live gate safety."
+        }
+      ],
+      "tasks": []
+    },
+    "synthesis": {
+      "summary": "Both independent native reviews ready, no blockers. Run registered tests and frozen seven-input paired study; no source changes. Preserve unverified omissions and separate expected from observed validator counts.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "The seven design cases cover conditional activation, unknown condition, partial evidence and a missing base role, but do not include invalid inputs, validator exceptions or broader policy grammar variations. The packet explicitly omits the six tests and says registered checks are pending.",
+          "recommendation": "Report observed results as coverage of these seven authored cases. Keep any claim about invalid-input handling, exception preservation or generalized compiler correctness tied to separately observed registered checks; do not infer those properties from 42-case parity alone."
+        },
+        {
+          "severity": "info",
+          "evidence": "The protocol declares unknown-condition precedence, and evaluate_rdf returns before pySHACL when a conditional policy sees data_change=null. _finish also converts failed membership under partial coverage to unknown. Supplied completion and coverage facts are explicitly unauthenticated.",
+          "recommendation": "Preserve separate decision, actual_shacl_executed and shacl_conforms fields in reporting. Describe SHACL as testing membership on the constructed supplied evidence, while attributing condition uncertainty and partial-evidence interpretation to the shared application contract."
+        },
+        {
+          "severity": "info",
+          "evidence": "The runner evaluates input copies and scores authored_expected only afterward. All 42 rows reuse seven authored inputs across two policy versions and three implementations, and both coded versions coexist.",
+          "recommendation": "Retain the seven-input denominator and paired nature of comparisons. Treat the policy delta and source footprints as implementation artifacts, with no independent-trial, measured maintenance-effort or RDF-superiority inference."
+        },
+        {
+          "severity": "info",
+          "evidence": "The SHACL compiler requires each base role and expresses each conditional role as data_change=false OR the role being witnessed. Strict Boolean preflight and unknown-condition handling make this equivalent to the supplied JSON and coded policies for known inputs. Missing membership under partial coverage is converted to unknown by shared Python logic.",
+          "recommendation": "Report membership conformance separately from final decisions and shared preflight behavior. From the supplied design, 13 of the 14 RDF rows should invoke SHACL; the v2 unknown-condition row should not. Treat these as expected counts until execution."
+        },
+        {
+          "severity": "warning",
+          "evidence": "Tests, installed dependency versions, actual file bytes/hashes, and observed runs were not supplied. The runner records source hashes at run time, but this review cannot establish their equality to frozen repository sources. Resource requirements are unmeasured; the tiny graphs suggest bounded use but no 16GiB-host measurement is available.",
+          "recommendation": "Complete the registered unit-tests check, verify frozen source provenance, and inspect all 42 saved rows, immutability indicators, exception outcomes, and SHACL invocation metadata. Preserve unsuccessful attempts; do not describe this static review as a passed check."
+        },
+        {
+          "severity": "info",
+          "evidence": "The runner makes no network/model calls, reads actual external JSON policies, and opens its output exclusively. It hashes the evaluator, runner, policies, design and test file. The evaluator contains no retry loop or scorer-driven repair, and exceptions in SHACL evaluation become unknown outcomes.",
+          "recommendation": "Retain the existing output-preservation behavior and limit interpretation to supplied-role presence. Static source sizes and coexisting coded versions do not measure maintenance work, approval validity, or live gate safety."
+        }
+      ],
+      "tasks": [
+        {
+          "owner": "main",
+          "deliverable": "Observed unit-tests and 42 policy-presence rows",
+          "verification": "Exact check exit code, manifests unchanged, 7input denominator and actual SHACL counts; no approval or maintenance claim."
+        }
+      ]
+    },
+    "analysis": {
+      "summary": "unit-tests exit code 0: 284 tests passed in 83.663s. Seven authored inputs x2 policies x3 arms gave42 paired rows, all authored expectations matched and inputs unchanged. Perarm9satisfied3missing2unknown. Actual SHACL13invocations:9conform4nonconform;1unknown-condition row skipped.",
+      "decision": "observe",
+      "findings": [
+        {
+          "severity": "info",
+          "evidence": "v1->v2 adds one conditional role rule in actual external JSON. Data-changing complete record without steward shifts satisfied->missing; non-data task remains satisfied. Partial missing roles yield unknown despite SHACLnonconformance; unknown condition skipsSHACL.",
+          "recommendation": "Attribute membership constraints to SHACL and uncertainty semantics to sharedPython; role-presencecheck is not approval/freshness/authentication."
+        },
+        {
+          "severity": "warning",
+          "evidence": "Seven authored inputs, coexisting codedversions, staticfootprints only. Tests omitted fromreviewpacket; mainread andregisteredchecks passed. Initial lint failure preserved beforefrozenreview.",
+          "recommendation": "No newrealdata/model efficacy, maintenance-labor or RDFsuperiority claim. Keep samepolicyJSON comparator in furtherwork."
+        }
+      ],
+      "tasks": [
+        {
+          "owner": "main",
+          "deliverable": "Future explicit composition of required-role, evidence-binding and stale-dependency checks",
+          "verification": "Define precedence and preserve unknown/blockers before smallofflineintegration; no live gate or paid calls; avoid more standalone parity as research."
+        }
+      ]
+    }
+  }
+}

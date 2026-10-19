@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "scope": "Read-only projection of two recorded native reviews; no raw prose, model answers or secrets. Not an independent audit of source truth.",
+  "source_job": "20261015T125036Z-workflow-binding-probe-3769ac",
+  "source_state_sha256": "b2d8e8e088f68f3f3818dc7d54cc63561c7eef42aab5aa945c32f489e714bcd6",
+  "nodes": [
+    {
+      "id": "packet",
+      "kind": "packet",
+      "version": "a7dd9623b21a0eeac195f28f94e2964f6c499ec08c6a5f78415368624c3a36b0",
+      "version_scheme": "research_ops sorted-json SHA256, not raw file bytes"
+    },
+    {
+      "id": "methods-request",
+      "kind": "request",
+      "version": "db2e663f1a4da7f2cc7939228456402c158998acb304051e715abaf9de7945b4"
+    },
+    {
+      "id": "methods-review",
+      "kind": "review",
+      "version": "40309158ad1beedafd383e4b1e7e0f2772623fbd5bb1ca23c42d7b4dbb950edb",
+      "phase": "methods",
+      "status": "completed",
+      "decision": "ready",
+      "agent_id": "/root/workflow_binding_methods",
+      "attribution": "operator supplied, not authenticated"
+    },
+    {
+      "id": "implementation-request",
+      "kind": "request",
+      "version": "c7b4a081b13f4fd10d68a6edfee3e6bb4b8421507bf1913cf86193afa6c10f89"
+    },
+    {
+      "id": "implementation-review",
+      "kind": "review",
+      "version": "6b7ccdfc7abe49d6a9700e5ab723b687d85f026c016787ad6adae0b31ef13060",
+      "phase": "implementation",
+      "status": "completed",
+      "decision": "ready",
+      "agent_id": "/root/workflow_binding_implementation",
+      "attribution": "operator supplied, not authenticated"
+    }
+  ],
+  "edges": [
+    {
+      "dependent": "methods-review",
+      "prerequisite": "methods-request",
+      "basis": "state.steps.methods.request_sha256 binds recorded request; provenance.json matches",
+      "semantic_scope": "recorded binding, not proof reviewer read every input"
+    },
+    {
+      "dependent": "methods-request",
+      "prerequisite": "packet",
+      "basis": "request.packet_sha256",
+      "semantic_scope": "whole packet identity, not fine-grained relevance"
+    },
+    {
+      "dependent": "implementation-review",
+      "prerequisite": "implementation-request",
+      "basis": "state.steps.implementation.request_sha256 binds recorded request; provenance.json matches",
+      "semantic_scope": "recorded binding, not proof reviewer read every input"
+    },
+    {
+      "dependent": "implementation-request",
+      "prerequisite": "packet",
+      "basis": "request.packet_sha256",
+      "semantic_scope": "whole packet identity, not fine-grained relevance"
+    }
+  ],
+  "field_mappings": [
+    {
+      "source_pointer": "/steps/methods/result_sha256",
+      "target": "methods-review.version",
+      "verification": "matches result_path file SHA256"
+    },
+    {
+      "source_pointer": "/steps/methods/request_sha256",
+      "target": "methods-request.version",
+      "verification": "matches request_path file SHA256 and provenance binding"
+    },
+    {
+      "source_pointer": "/steps/implementation/result_sha256",
+      "target": "implementation-review.version",
+      "verification": "matches result_path file SHA256"
+    },
+    {
+      "source_pointer": "/steps/implementation/request_sha256",
+      "target": "implementation-request.version",
+      "verification": "matches request_path file SHA256 and provenance binding"
+    }
+  ],
+  "coverage": {
+    "status": "partial",
+    "reason": "Only request binding edges are projected; complete decision and semantic dependency coverage is not asserted."
+  },
+  "source_files": {
+    "state.json": "b2d8e8e088f68f3f3818dc7d54cc63561c7eef42aab5aa945c32f489e714bcd6",
+    "packet.json": "637c8058aabe52758c0abd537e7262b650afd069ad67e765b3dd2d4fe015f0af",
+    "methods/attempt-1/request.json": "db2e663f1a4da7f2cc7939228456402c158998acb304051e715abaf9de7945b4",
+    "methods/attempt-1/result.json": "40309158ad1beedafd383e4b1e7e0f2772623fbd5bb1ca23c42d7b4dbb950edb",
+    "implementation/attempt-1/request.json": "c7b4a081b13f4fd10d68a6edfee3e6bb4b8421507bf1913cf86193afa6c10f89",
+    "implementation/attempt-1/result.json": "6b7ccdfc7abe49d6a9700e5ab723b687d85f026c016787ad6adae0b31ef13060",
+    "methods/attempt-1/provenance.json": "d1cc44cfdf8fe3a5a9c0287c031458ba2b6425370857377700790070e442869a",
+    "implementation/attempt-1/provenance.json": "57433ddff66e6622ce47b88b4cfe315f4b10b4192c75132ce05fe24bcdc3b42b"
+  }
+}

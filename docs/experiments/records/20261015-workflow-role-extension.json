@@ -1,0 +1,813 @@
+{
+  "protocol": "workflow-role-extension-1",
+  "cases": [
+    {
+      "id": "baseline",
+      "input": {
+        "snapshot": {
+          "nodes": [
+            {
+              "id": "packet",
+              "version": "a7dd9623b21a0eeac195f28f94e2964f6c499ec08c6a5f78415368624c3a36b0"
+            },
+            {
+              "id": "methods-request",
+              "version": "db2e663f1a4da7f2cc7939228456402c158998acb304051e715abaf9de7945b4"
+            },
+            {
+              "id": "methods-review",
+              "version": "40309158ad1beedafd383e4b1e7e0f2772623fbd5bb1ca23c42d7b4dbb950edb"
+            },
+            {
+              "id": "implementation-request",
+              "version": "c7b4a081b13f4fd10d68a6edfee3e6bb4b8421507bf1913cf86193afa6c10f89"
+            },
+            {
+              "id": "implementation-review",
+              "version": "6b7ccdfc7abe49d6a9700e5ab723b687d85f026c016787ad6adae0b31ef13060"
+            }
+          ],
+          "edges": [
+            {
+              "dependent": "methods-review",
+              "prerequisite": "methods-request"
+            },
+            {
+              "dependent": "methods-request",
+              "prerequisite": "packet"
+            },
+            {
+              "dependent": "implementation-review",
+              "prerequisite": "implementation-request"
+            },
+            {
+              "dependent": "implementation-request",
+              "prerequisite": "packet"
+            }
+          ],
+          "coverage": "partial"
+        },
+        "candidates": [
+          "methods-review",
+          "implementation-review"
+        ],
+        "change": {
+          "node_id": "packet",
+          "old_version": "a7dd9623b21a0eeac195f28f94e2964f6c499ec08c6a5f78415368624c3a36b0",
+          "new_version": "hypothetical-new-version"
+        }
+      },
+      "arms": {
+        "python": {
+          "output": {
+            "protocol": "workflow-shadow-single-event-1",
+            "status": "evaluated",
+            "snapshot_hash": "f46d88f41955e264ff77f58ef53bafe0622500d2577872bf98e629f85e80d2f7",
+            "candidate_results": [
+              {
+                "id": "implementation-review",
+                "impact": "stale",
+                "reasons": [
+                  "recorded_dependency_path"
+                ],
+                "witness_path": [
+                  "implementation-review",
+                  "implementation-request",
+                  "packet"
+                ]
+              },
+              {
+                "id": "methods-review",
+                "impact": "stale",
+                "reasons": [
+                  "recorded_dependency_path"
+                ],
+                "witness_path": [
+                  "methods-review",
+                  "methods-request",
+                  "packet"
+                ]
+              }
+            ],
+            "errors": [],
+            "evaluator": "python_reference",
+            "actual_shacl_executed": false
+          },
+          "score": {
+            "authored_expected_status": {
+              "methods-review": "stale",
+              "implementation-review": "stale"
+            },
+            "status_map_matches": true,
+            "matching_candidate_count": 2,
+            "expected_candidate_count": 2
+          },
+          "input_unchanged": true
+        },
+        "rdf": {
+          "output": {
+            "protocol": "workflow-shadow-single-event-1",
+            "status": "evaluated",
+            "snapshot_hash": "f46d88f41955e264ff77f58ef53bafe0622500d2577872bf98e629f85e80d2f7",
+            "candidate_results": [
+              {
+                "id": "implementation-review",
+                "impact": "stale",
+                "reasons": [
+                  "recorded_dependency_path"
+                ],
+                "witness_path": [
+                  "implementation-review",
+                  "implementation-request",
+                  "packet"
+                ]
+              },
+              {
+                "id": "methods-review",
+                "impact": "stale",
+                "reasons": [
+                  "recorded_dependency_path"
+                ],
+                "witness_path": [
+                  "methods-review",
+                  "methods-request",
+                  "packet"
+                ]
+              }
+            ],
+            "errors": [],
+            "evaluator": "rdf_pyshacl",
+            "actual_shacl_executed": true,
+            "shacl_conforms": true
+          },
+          "score": {
+            "authored_expected_status": {
+              "methods-review": "stale",
+              "implementation-review": "stale"
+            },
+            "status_map_matches": true,
+            "matching_candidate_count": 2,
+            "expected_candidate_count": 2
+          },
+          "input_unchanged": true
+        }
+      }
+    },
+    {
+      "id": "added_role",
+      "input": {
+        "snapshot": {
+          "nodes": [
+            {
+              "id": "packet",
+              "version": "a7dd9623b21a0eeac195f28f94e2964f6c499ec08c6a5f78415368624c3a36b0"
+            },
+            {
+              "id": "methods-request",
+              "version": "db2e663f1a4da7f2cc7939228456402c158998acb304051e715abaf9de7945b4"
+            },
+            {
+              "id": "methods-review",
+              "version": "40309158ad1beedafd383e4b1e7e0f2772623fbd5bb1ca23c42d7b4dbb950edb"
+            },
+            {
+              "id": "implementation-request",
+              "version": "c7b4a081b13f4fd10d68a6edfee3e6bb4b8421507bf1913cf86193afa6c10f89"
+            },
+            {
+              "id": "implementation-review",
+              "version": "6b7ccdfc7abe49d6a9700e5ab723b687d85f026c016787ad6adae0b31ef13060"
+            },
+            {
+              "id": "data-steward-request",
+              "version": "authored-v1"
+            },
+            {
+              "id": "data-steward-review",
+              "version": "authored-v1"
+            }
+          ],
+          "edges": [
+            {
+              "dependent": "methods-review",
+              "prerequisite": "methods-request"
+            },
+            {
+              "dependent": "methods-request",
+              "prerequisite": "packet"
+            },
+            {
+              "dependent": "implementation-review",
+              "prerequisite": "implementation-request"
+            },
+            {
+              "dependent": "implementation-request",
+              "prerequisite": "packet"
+            },
+            {
+              "dependent": "data-steward-review",
+              "prerequisite": "data-steward-request"
+            },
+            {
+              "dependent": "data-steward-request",
+              "prerequisite": "packet"
+            }
+          ],
+          "coverage": "partial"
+        },
+        "candidates": [
+          "methods-review",
+          "implementation-review",
+          "data-steward-review"
+        ],
+        "change": {
+          "node_id": "packet",
+          "old_version": "a7dd9623b21a0eeac195f28f94e2964f6c499ec08c6a5f78415368624c3a36b0",
+          "new_version": "hypothetical-new-version"
+        }
+      },
+      "arms": {
+        "python": {
+          "output": {
+            "protocol": "workflow-shadow-single-event-1",
+            "status": "evaluated",
+            "snapshot_hash": "cb6afa8db74da1415d0e51885933f28002a9657dbdf7582d8dcd7e7d71ec517f",
+            "candidate_results": [
+              {
+                "id": "data-steward-review",
+                "impact": "stale",
+                "reasons": [
+                  "recorded_dependency_path"
+                ],
+                "witness_path": [
+                  "data-steward-review",
+                  "data-steward-request",
+                  "packet"
+                ]
+              },
+              {
+                "id": "implementation-review",
+                "impact": "stale",
+                "reasons": [
+                  "recorded_dependency_path"
+                ],
+                "witness_path": [
+                  "implementation-review",
+                  "implementation-request",
+                  "packet"
+                ]
+              },
+              {
+                "id": "methods-review",
+                "impact": "stale",
+                "reasons": [
+                  "recorded_dependency_path"
+                ],
+                "witness_path": [
+                  "methods-review",
+                  "methods-request",
+                  "packet"
+                ]
+              }
+            ],
+            "errors": [],
+            "evaluator": "python_reference",
+            "actual_shacl_executed": false
+          },
+          "score": {
+            "authored_expected_status": {
+              "methods-review": "stale",
+              "implementation-review": "stale",
+              "data-steward-review": "stale"
+            },
+            "status_map_matches": true,
+            "matching_candidate_count": 3,
+            "expected_candidate_count": 3
+          },
+          "input_unchanged": true
+        },
+        "rdf": {
+          "output": {
+            "protocol": "workflow-shadow-single-event-1",
+            "status": "evaluated",
+            "snapshot_hash": "cb6afa8db74da1415d0e51885933f28002a9657dbdf7582d8dcd7e7d71ec517f",
+            "candidate_results": [
+              {
+                "id": "data-steward-review",
+                "impact": "stale",
+                "reasons": [
+                  "recorded_dependency_path"
+                ],
+                "witness_path": [
+                  "data-steward-review",
+                  "data-steward-request",
+                  "packet"
+                ]
+              },
+              {
+                "id": "implementation-review",
+                "impact": "stale",
+                "reasons": [
+                  "recorded_dependency_path"
+                ],
+                "witness_path": [
+                  "implementation-review",
+                  "implementation-request",
+                  "packet"
+                ]
+              },
+              {
+                "id": "methods-review",
+                "impact": "stale",
+                "reasons": [
+                  "recorded_dependency_path"
+                ],
+                "witness_path": [
+                  "methods-review",
+                  "methods-request",
+                  "packet"
+                ]
+              }
+            ],
+            "errors": [],
+            "evaluator": "rdf_pyshacl",
+            "actual_shacl_executed": true,
+            "shacl_conforms": true
+          },
+          "score": {
+            "authored_expected_status": {
+              "methods-review": "stale",
+              "implementation-review": "stale",
+              "data-steward-review": "stale"
+            },
+            "status_map_matches": true,
+            "matching_candidate_count": 3,
+            "expected_candidate_count": 3
+          },
+          "input_unchanged": true
+        }
+      }
+    },
+    {
+      "id": "omitted_link",
+      "input": {
+        "snapshot": {
+          "nodes": [
+            {
+              "id": "packet",
+              "version": "a7dd9623b21a0eeac195f28f94e2964f6c499ec08c6a5f78415368624c3a36b0"
+            },
+            {
+              "id": "methods-request",
+              "version": "db2e663f1a4da7f2cc7939228456402c158998acb304051e715abaf9de7945b4"
+            },
+            {
+              "id": "methods-review",
+              "version": "40309158ad1beedafd383e4b1e7e0f2772623fbd5bb1ca23c42d7b4dbb950edb"
+            },
+            {
+              "id": "implementation-request",
+              "version": "c7b4a081b13f4fd10d68a6edfee3e6bb4b8421507bf1913cf86193afa6c10f89"
+            },
+            {
+              "id": "implementation-review",
+              "version": "6b7ccdfc7abe49d6a9700e5ab723b687d85f026c016787ad6adae0b31ef13060"
+            },
+            {
+              "id": "data-steward-request",
+              "version": "authored-v1"
+            },
+            {
+              "id": "data-steward-review",
+              "version": "authored-v1"
+            }
+          ],
+          "edges": [
+            {
+              "dependent": "methods-review",
+              "prerequisite": "methods-request"
+            },
+            {
+              "dependent": "methods-request",
+              "prerequisite": "packet"
+            },
+            {
+              "dependent": "implementation-review",
+              "prerequisite": "implementation-request"
+            },
+            {
+              "dependent": "implementation-request",
+              "prerequisite": "packet"
+            },
+            {
+              "dependent": "data-steward-review",
+              "prerequisite": "data-steward-request"
+            }
+          ],
+          "coverage": "partial"
+        },
+        "candidates": [
+          "methods-review",
+          "implementation-review",
+          "data-steward-review"
+        ],
+        "change": {
+          "node_id": "packet",
+          "old_version": "a7dd9623b21a0eeac195f28f94e2964f6c499ec08c6a5f78415368624c3a36b0",
+          "new_version": "hypothetical-new-version"
+        }
+      },
+      "arms": {
+        "python": {
+          "output": {
+            "protocol": "workflow-shadow-single-event-1",
+            "status": "evaluated",
+            "snapshot_hash": "b2e2fa77c946a7167c4209870808b6ae298b4e962a85cb849c20522172f7fc32",
+            "candidate_results": [
+              {
+                "id": "data-steward-review",
+                "impact": "unknown",
+                "reasons": [
+                  "no_path_partial_coverage"
+                ],
+                "witness_path": []
+              },
+              {
+                "id": "implementation-review",
+                "impact": "stale",
+                "reasons": [
+                  "recorded_dependency_path"
+                ],
+                "witness_path": [
+                  "implementation-review",
+                  "implementation-request",
+                  "packet"
+                ]
+              },
+              {
+                "id": "methods-review",
+                "impact": "stale",
+                "reasons": [
+                  "recorded_dependency_path"
+                ],
+                "witness_path": [
+                  "methods-review",
+                  "methods-request",
+                  "packet"
+                ]
+              }
+            ],
+            "errors": [],
+            "evaluator": "python_reference",
+            "actual_shacl_executed": false
+          },
+          "score": {
+            "authored_expected_status": {
+              "methods-review": "stale",
+              "implementation-review": "stale",
+              "data-steward-review": "unknown"
+            },
+            "status_map_matches": true,
+            "matching_candidate_count": 3,
+            "expected_candidate_count": 3
+          },
+          "input_unchanged": true
+        },
+        "rdf": {
+          "output": {
+            "protocol": "workflow-shadow-single-event-1",
+            "status": "evaluated",
+            "snapshot_hash": "b2e2fa77c946a7167c4209870808b6ae298b4e962a85cb849c20522172f7fc32",
+            "candidate_results": [
+              {
+                "id": "data-steward-review",
+                "impact": "unknown",
+                "reasons": [
+                  "no_path_partial_coverage"
+                ],
+                "witness_path": []
+              },
+              {
+                "id": "implementation-review",
+                "impact": "stale",
+                "reasons": [
+                  "recorded_dependency_path"
+                ],
+                "witness_path": [
+                  "implementation-review",
+                  "implementation-request",
+                  "packet"
+                ]
+              },
+              {
+                "id": "methods-review",
+                "impact": "stale",
+                "reasons": [
+                  "recorded_dependency_path"
+                ],
+                "witness_path": [
+                  "methods-review",
+                  "methods-request",
+                  "packet"
+                ]
+              }
+            ],
+            "errors": [],
+            "evaluator": "rdf_pyshacl",
+            "actual_shacl_executed": true,
+            "shacl_conforms": true
+          },
+          "score": {
+            "authored_expected_status": {
+              "methods-review": "stale",
+              "implementation-review": "stale",
+              "data-steward-review": "unknown"
+            },
+            "status_map_matches": true,
+            "matching_candidate_count": 3,
+            "expected_candidate_count": 3
+          },
+          "input_unchanged": true
+        }
+      }
+    },
+    {
+      "id": "methods_change",
+      "input": {
+        "snapshot": {
+          "nodes": [
+            {
+              "id": "packet",
+              "version": "a7dd9623b21a0eeac195f28f94e2964f6c499ec08c6a5f78415368624c3a36b0"
+            },
+            {
+              "id": "methods-request",
+              "version": "db2e663f1a4da7f2cc7939228456402c158998acb304051e715abaf9de7945b4"
+            },
+            {
+              "id": "methods-review",
+              "version": "40309158ad1beedafd383e4b1e7e0f2772623fbd5bb1ca23c42d7b4dbb950edb"
+            },
+            {
+              "id": "implementation-request",
+              "version": "c7b4a081b13f4fd10d68a6edfee3e6bb4b8421507bf1913cf86193afa6c10f89"
+            },
+            {
+              "id": "implementation-review",
+              "version": "6b7ccdfc7abe49d6a9700e5ab723b687d85f026c016787ad6adae0b31ef13060"
+            },
+            {
+              "id": "data-steward-request",
+              "version": "authored-v1"
+            },
+            {
+              "id": "data-steward-review",
+              "version": "authored-v1"
+            }
+          ],
+          "edges": [
+            {
+              "dependent": "methods-review",
+              "prerequisite": "methods-request"
+            },
+            {
+              "dependent": "methods-request",
+              "prerequisite": "packet"
+            },
+            {
+              "dependent": "implementation-review",
+              "prerequisite": "implementation-request"
+            },
+            {
+              "dependent": "implementation-request",
+              "prerequisite": "packet"
+            },
+            {
+              "dependent": "data-steward-review",
+              "prerequisite": "data-steward-request"
+            },
+            {
+              "dependent": "data-steward-request",
+              "prerequisite": "packet"
+            }
+          ],
+          "coverage": "partial"
+        },
+        "candidates": [
+          "methods-review",
+          "implementation-review",
+          "data-steward-review"
+        ],
+        "change": {
+          "node_id": "methods-request",
+          "old_version": "db2e663f1a4da7f2cc7939228456402c158998acb304051e715abaf9de7945b4",
+          "new_version": "hypothetical-new-version"
+        }
+      },
+      "arms": {
+        "python": {
+          "output": {
+            "protocol": "workflow-shadow-single-event-1",
+            "status": "evaluated",
+            "snapshot_hash": "cb6afa8db74da1415d0e51885933f28002a9657dbdf7582d8dcd7e7d71ec517f",
+            "candidate_results": [
+              {
+                "id": "data-steward-review",
+                "impact": "unknown",
+                "reasons": [
+                  "no_path_partial_coverage"
+                ],
+                "witness_path": []
+              },
+              {
+                "id": "implementation-review",
+                "impact": "unknown",
+                "reasons": [
+                  "no_path_partial_coverage"
+                ],
+                "witness_path": []
+              },
+              {
+                "id": "methods-review",
+                "impact": "stale",
+                "reasons": [
+                  "recorded_dependency_path"
+                ],
+                "witness_path": [
+                  "methods-review",
+                  "methods-request"
+                ]
+              }
+            ],
+            "errors": [],
+            "evaluator": "python_reference",
+            "actual_shacl_executed": false
+          },
+          "score": {
+            "authored_expected_status": {
+              "methods-review": "stale",
+              "implementation-review": "unknown",
+              "data-steward-review": "unknown"
+            },
+            "status_map_matches": true,
+            "matching_candidate_count": 3,
+            "expected_candidate_count": 3
+          },
+          "input_unchanged": true
+        },
+        "rdf": {
+          "output": {
+            "protocol": "workflow-shadow-single-event-1",
+            "status": "evaluated",
+            "snapshot_hash": "cb6afa8db74da1415d0e51885933f28002a9657dbdf7582d8dcd7e7d71ec517f",
+            "candidate_results": [
+              {
+                "id": "data-steward-review",
+                "impact": "unknown",
+                "reasons": [
+                  "no_path_partial_coverage"
+                ],
+                "witness_path": []
+              },
+              {
+                "id": "implementation-review",
+                "impact": "unknown",
+                "reasons": [
+                  "no_path_partial_coverage"
+                ],
+                "witness_path": []
+              },
+              {
+                "id": "methods-review",
+                "impact": "stale",
+                "reasons": [
+                  "recorded_dependency_path"
+                ],
+                "witness_path": [
+                  "methods-review",
+                  "methods-request"
+                ]
+              }
+            ],
+            "errors": [],
+            "evaluator": "rdf_pyshacl",
+            "actual_shacl_executed": true,
+            "shacl_conforms": true
+          },
+          "score": {
+            "authored_expected_status": {
+              "methods-review": "stale",
+              "implementation-review": "unknown",
+              "data-steward-review": "unknown"
+            },
+            "status_map_matches": true,
+            "matching_candidate_count": 3,
+            "expected_candidate_count": 3
+          },
+          "input_unchanged": true
+        }
+      }
+    }
+  ],
+  "arm_counts": {
+    "python": {
+      "evaluations": 4,
+      "candidate_outputs": 11,
+      "actual_shacl_invocations": 0,
+      "shacl_conformed": 0
+    },
+    "rdf": {
+      "evaluations": 4,
+      "candidate_outputs": 11,
+      "actual_shacl_invocations": 4,
+      "shacl_conformed": 4
+    }
+  },
+  "source_manifest": {
+    "docs/experiments/records/20261015-workflow-shadow-single.json": {
+      "sha256": "5b58b86dccb879fd33a488c79d0d6b93fc0a91cb33020602830b5e1f779ae1d7",
+      "bytes": 9597,
+      "lines": 292
+    },
+    "scripts/workflow_shadow_impact.py": {
+      "sha256": "d0fd8a3260f8e37e23c8c1acd4a1b7b3c2e1e8d68b6c3c86e55bcd1f420b19e4",
+      "bytes": 6986,
+      "lines": 184
+    },
+    "scripts/workflow_shadow_rdf.py": {
+      "sha256": "d86f5186ed1bbd00f3b180dc391707176b3a6733761eb9ae78239dfe79d8e47e",
+      "bytes": 4754,
+      "lines": 103
+    },
+    "scripts/run_workflow_role_extension.py": {
+      "sha256": "d8def4e6fb6eb3bde6b3be540aa014857ef9fc7ad3e678586b04b8efb234c1b4",
+      "bytes": 5308,
+      "lines": 108
+    }
+  },
+  "setup_size_interpretation": "File bytes and lines describe existing evaluator and runner setup; not labor or maintenance time.",
+  "mapping_edits": {
+    "added_nodes": 2,
+    "added_edges": 2,
+    "added_candidates": 1,
+    "omission_control_removed_edges": 1,
+    "evaluator_source_edits": 0
+  },
+  "scope": "Authored hypothetical dependency registration on a consumed real projection. No real reviews/data added or source versions updated. No automated role selection or authorization rule; role gating is NOT implemented.",
+  "limitations": [
+    "Coverage remains supplied and partial in every case.",
+    "Status agreement is with authored expectations, not external truth.",
+    "SHACL checks converted structure, not source completeness.",
+    "No maintenance labor, RDF superiority, or independent benchmark claim."
+  ],
+  "paid_calls": 0,
+  "coordinator_audit": {
+    "before_sha256": {
+      "scripts/workflow_shadow_impact.py": "d0fd8a3260f8e37e23c8c1acd4a1b7b3c2e1e8d68b6c3c86e55bcd1f420b19e4",
+      "scripts/workflow_shadow_rdf.py": "d86f5186ed1bbd00f3b180dc391707176b3a6733761eb9ae78239dfe79d8e47e",
+      "docs/experiments/records/20261015-workflow-shadow-single.json": "5b58b86dccb879fd33a488c79d0d6b93fc0a91cb33020602830b5e1f779ae1d7",
+      "experiments/yago/schema.ttl": "b3f185f27c21e0e2b561dc92f7f9e3d54ccd6f4acac01e9ae97c2d42ef3b636f"
+    },
+    "after_sha256": {
+      "scripts/workflow_shadow_impact.py": "d0fd8a3260f8e37e23c8c1acd4a1b7b3c2e1e8d68b6c3c86e55bcd1f420b19e4",
+      "scripts/workflow_shadow_rdf.py": "d86f5186ed1bbd00f3b180dc391707176b3a6733761eb9ae78239dfe79d8e47e",
+      "docs/experiments/records/20261015-workflow-shadow-single.json": "5b58b86dccb879fd33a488c79d0d6b93fc0a91cb33020602830b5e1f779ae1d7",
+      "experiments/yago/schema.ttl": "b3f185f27c21e0e2b561dc92f7f9e3d54ccd6f4acac01e9ae97c2d42ef3b636f"
+    },
+    "unchanged": true,
+    "added_model_data": {
+      "nodes": [
+        {
+          "id": "data-steward-request",
+          "version": "authored-v1"
+        },
+        {
+          "id": "data-steward-review",
+          "version": "authored-v1"
+        }
+      ],
+      "edges": [
+        {
+          "dependent": "data-steward-review",
+          "prerequisite": "data-steward-request"
+        },
+        {
+          "dependent": "data-steward-request",
+          "prerequisite": "packet"
+        }
+      ],
+      "candidates": [
+        "data-steward-review"
+      ],
+      "coverage_changed": false
+    },
+    "test_file": {
+      "path": "tests/test_workflow_role_extension.py",
+      "bytes": 2178,
+      "lines": 46,
+      "sha256": "96ff6cbaa0327d16943e5a1e299e5fd9940a9030b019bb4ae06d41bc2845431e"
+    },
+    "interpretation": "Static footprint only, not measured setup effort; conditional mandatory role policy absent. Prior builder smoke run retained separately; neither execution is an independent trial."
+  },
+  "review_job": "20261015T180243Z-workflow-role-extension-47c8d0"
+}

@@ -1,0 +1,130 @@
+{
+  "protocol": "workflow-change-design-1",
+  "status": "design_only_not_executed",
+  "objective": "Evaluate modification correctness and integration burden when roles, exceptions, evidence dependencies and policy versions change in a small decision workflow; not equal-rule output accuracy as the primary research contribution.",
+  "current_tick": "Offline design and independent review only. No application, paid model calls, historical replay or policy change executed.",
+  "grounding": {
+    "candidate": "Existing repository research-review workflow, used only as an offline shadow example; do not change live reviewer gates, request caps or approval rules.",
+    "observed": "RUNBOOK requires separate methods and implementation reviewers; research_ops.evidence_for rejects review blockers and requires registered checks before analysis.",
+    "limitation": "This is an engineering case study in this repository, not manufacturing/finance transfer or representative agent deployment."
+  },
+  "architecture": {
+    "flow": [
+      "Proposed change",
+      "Versioned objects, role assignments, policy and dependency snapshot",
+      "Decision plus explanation and affected review IDs",
+      "Human review of proposed action",
+      "Host rechecks snapshot before any real execution"
+    ],
+    "agent": "Future LLM may interpret proposed changes and select lookups; interpretation errors are separately scored. Current study design authorizes no new model execution.",
+    "graph_roles": {
+      "business": "Objects and responsibilities",
+      "execution": "Allowed transitions",
+      "evidence": "Which immutable review relied on which snapshot"
+    },
+    "scope": "Shadow evaluation only; no actual approval or execution. No UI or full platform required in this phase."
+  },
+  "arms": [
+    {
+      "id": "A",
+      "name": "Explicit Python policies over indexed JSON",
+      "strength": "Shared policy functions and indexed relationships; no duplicated configuration straw baseline."
+    },
+    {
+      "id": "B",
+      "name": "Declarative JSON policy and dependency model",
+      "strength": "Generic evaluator with versioned rules, roles and relation definitions; same information and explanatory output."
+    },
+    {
+      "id": "C",
+      "name": "Declarative RDF model with SHACL and explicit traversal",
+      "strength": "Same rules and supplied relations as B; SHACL validates stated conditions, traversal identifies dependencies; no automatic business truth or scheduler inferred."
+    }
+  ],
+  "attribution": "A versus B tests policy/model externalization as a package; B versus C tests representation/tooling within a matched semantic envelope. Do not attribute A-C differences to RDF alone. Any unsupported construct is recorded; do not silently reduce expressiveness.",
+  "change_tasks": [
+    {
+      "id": "role_add",
+      "change": "Require an additional data-steward review for jobs marked data-changing.",
+      "expected_invariants": [
+        "Only explicitly data-changing jobs require the extra role",
+        "Existing independent reviewer and blocker gates still hold",
+        "Absent classification yields unknown, not implicit exemption"
+      ],
+      "negative_control": "Non-data-changing job needs no extra role."
+    },
+    {
+      "id": "scoped_exception",
+      "change": "Allow a named formatting check to be omitted for explicitly documentation-only jobs under a new policy version.",
+      "expected_invariants": [
+        "No reviewer blocker can be waived",
+        "No omission for mixed or unclassified jobs",
+        "Every exception cites its policy version and reason"
+      ],
+      "negative_control": "A failing non-formatting check remains blocking."
+    },
+    {
+      "id": "shared_evidence_update",
+      "change": "Replace one declared input artifact used by multiple reviews.",
+      "expected_invariants": [
+        "Only reviews transitively dependent on the changed artifact become stale",
+        "Unrelated reviews remain valid",
+        "Missing dependency coverage yields unknown",
+        "Cycles terminate; versioned nodes and visited-set semantics are specified before implementation"
+      ],
+      "negative_control": "Unreferenced artifact change does not stale a review."
+    },
+    {
+      "id": "historical_policy",
+      "change": "Evaluate an old review with its original policy, then assess eligibility under a new policy.",
+      "expected_invariants": [
+        "Historical result is immutable",
+        "Current eligibility is a new decision with a different policy ID",
+        "Missing archived policy yields unknown",
+        "Equivalent rule content with a different ID still follows declared version binding unless migration explicitly approved"
+      ],
+      "negative_control": "Unchanged policy and snapshot reproduces the stored decision."
+    }
+  ],
+  "procedure": [
+    "Before coding, freeze a small shared abstract rule language, supported operations, typed identifiers, unknown precedence, override policy and temporal/dependency semantics for all arms.",
+    "Build baseline implementations and record initial setup/mapping effort separately from change effort. Implement no baseline with advance task-specific shortcuts.",
+    "For each task fork the same baseline; record first attempt before repairs and all later diffs. Shared-evidence task additionally has a separately labelled sequential update trace with duplicate/out-of-order events.",
+    "Freeze expected invariant tests from the public contract, reviewed independently of implementing agents. They are authored software expectations, not held-out real-world gold; runtime receives no expectation labels.",
+    "Use isolated native implementation contexts for future trials, counterbalance arm order and log context visibility. Reusing the same operator/tasks creates learning effects; do not claim a controlled human study.",
+    "Run matched semantic and negative-control checks; preserve all failures. Request a new execution review after implementations exist."
+  ],
+  "measures": {
+    "primary": [
+      "Unintended changed decisions on unaffected inputs",
+      "Missed affected reviews and unnecessary rechecks",
+      "Correct separation of historical decision and current eligibility",
+      "Policy change implemented without hidden host-code bypass"
+    ],
+    "engineering": [
+      "Files and logical components modified, split evaluator/adapter/model/policy/tests",
+      "Actual editing and verification time with interruptions labelled",
+      "Initial schema/mapping/setup cost",
+      "Failed attempts and repairs",
+      "Explanation includes traceable policy/rule/evidence IDs"
+    ],
+    "limits": "Line counts, agent turns and wall time are descriptive engineering traces, not direct human productivity or general maintainability measures. Equal outcomes are a prerequisite, not the novelty claim."
+  },
+  "failure_taxonomy": [
+    "Interpretation (future LLM only)",
+    "Mapping",
+    "Policy applicability",
+    "Query/traversal",
+    "Evidence completeness",
+    "Version freshness",
+    "Decision",
+    "Host execution race (not exercised by shadow probe)"
+  ],
+  "decision_gate": {
+    "continue": "Demonstrable reusable rules or traceable changes across tasks with acceptable setup burden; report counterexamples and implementation asymmetries.",
+    "stop_new_library": "If competent declarative JSON handles changes equally clearly with lower integration burden, retain tests and adapters as contributions rather than launch a new framework.",
+    "dynamic_ontology": "Later propose model changes from observed unmapped concepts; separate proposal, review and accepted version. Do not let automatically proposed relations establish complete evidence coverage."
+  },
+  "next_bounded_step": "Specify the shared policy and dependency contract with one real source-field mapping from the existing review ledger; offline read-only shadow export, excluding secrets and raw model answers. No live rule migration.",
+  "authorization": "No paid API, infrastructure, databases, scheduling changes, live gates or remote publication."
+}

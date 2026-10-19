@@ -1,0 +1,61 @@
+{
+  "protocol": "workflow-binding-probe-1",
+  "scope": "Offline authored contract tests, not LLM evaluation, security certification, manufacturing or finance evidence",
+  "question": "Can an existing workflow check whether an approval still binds to the current target, rule and declared evidence versions through a small adapter, and does RDF/SHACL provide a practical benefit over equivalent JSON rules?",
+  "motivation": "Prior shared-semantics experiments already found matching decisions under matched JSON/RDF rules. This probe does not repeat that as a new ontology advantage. It isolates a possible reusable contract boundary.",
+  "graphs": {
+    "data": "Business entities and relations in source systems",
+    "orchestration": "Permitted execution steps and branches",
+    "evidence": "Dependencies of a particular approval on versioned inputs; the only graph needed in this probe"
+  },
+  "candidate_interface": {
+    "check": "check(request, approval, dependencies, completeness) -> allow | deny | unknown, reason codes, actual checker execution",
+    "impact": "changed evidence IDs -> approvals with declared direct dependencies; shared infrastructure, not a SHACL advantage",
+    "caller": "An LLM or ordinary application may propose an action; a trusted host supplies current versions and enforces the result. This probe uses authored inputs and has no LLM.",
+    "authority": "A check is valid only for the supplied snapshot. It is not permission to execute later without snapshot/version rechecking. Authentication, atomic execution and provenance authenticity are outside this prototype."
+  },
+  "comparison": {
+    "arms": ["Independent Python rules over normalized JSON", "RDF conversion plus actual pySHACL validation of equivalent bindings"],
+    "shared": ["Input preflight and unknown handling", "Same declared business contract", "Same supplied versions and completeness assertion", "Direct dependency invalidation helper"],
+    "not_measured": ["OPA or Cedar runtime performance", "Human maintenance effort", "Graph database performance", "Natural language interpretation", "OWL inference", "Dynamic ontology learning"],
+    "fixtures": "Twelve authored cases with separate expected statuses, including changed target/rule/dependency, missing input, revoked approval, duplicates and explicit empty dependency set. These are software examples, not independently sampled gold.",
+    "timing": "Single local execution, descriptive only, no performance ranking",
+    "interpretation": "Agreement establishes contract implementation consistency on these examples only. A SHACL failure is not proof the underlying source fact is false."
+  },
+  "related_work": [
+    {
+      "name": "OPA agent tool calling",
+      "url": "https://www.openpolicyagent.org/docs/agent-tool-calling",
+      "overlap": "Already checks model tool requests, returns denial reasons, supports policy updates and decision logs. Tool-call checking itself is not a differentiator."
+    },
+    {
+      "name": "Cedar policy level validation",
+      "url": "https://docs.cedarpolicy.com/policies/level-validation.html",
+      "overlap": "Restricts entity dereference depth and allows relevant entity slicing with equivalent decisions under those restrictions. Selecting only relevant relational context is not new by itself."
+    },
+    {
+      "name": "SHACL Validation under Graph Updates",
+      "url": "https://arxiv.org/abs/2508.00137",
+      "overlap": "Studies static preservation of constraints under update sequences for conforming graphs. It is not a direct runtime incremental-revalidation performance result for this prototype."
+    },
+    {
+      "name": "PROV-O",
+      "url": "https://www.w3.org/TR/prov-o/",
+      "overlap": "Existing vocabulary for provenance entities, activities and derivation; evidence dependencies are not a new ontology invention."
+    }
+  ],
+  "integration_costs": [
+    "Map host object IDs and version tokens to normalized fields",
+    "Identify who owns current versions, approvals and completeness assertions",
+    "Record evidence dependencies when approving; absent dependencies cannot be recovered by SHACL",
+    "Translate or maintain policy definitions and review changes",
+    "Enforce snapshot/version consistency at actual execution"
+  ],
+  "next_evidence_gate": {
+    "before_new_library": "Integrate the same contract in two existing workflows, record actual adapter edits and independently reviewed policy-change tasks. Compare against competent JSON/OPA implementations, not a missing-check baseline.",
+    "promising": "Same decisions with demonstrably easier audited cross-system rule reuse or clearer dependency explanations, without unacceptable conversion/setup cost",
+    "negative": "If binding and impact logic remain simpler as ordinary rules, publish fixtures/adapters or contribute to existing engines instead of building another platform.",
+    "long_term": "Ontology learning and selective module extraction remain separate future work. Automatically inferred dependencies cannot be trusted as complete without a separate validation protocol."
+  },
+  "authorization": "No paid model calls, databases, infrastructure, schedule changes or publication push in this probe"
+}

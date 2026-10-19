@@ -1,0 +1,155 @@
+{
+  "job_id": "20261015T160332Z-workflow-shadow-single-ed866b",
+  "scope": "Immutable snapshot single hypothetical replacement Python reference",
+  "reviewers": {
+    "methods": "/root/shadow_single_methods",
+    "implementation": "/root/shadow_single_implementation"
+  },
+  "checks": {
+    "unit-tests": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests"
+      ],
+      "exit_code": 0,
+      "scope": "local software check; not a benchmark"
+    }
+  },
+  "phases": {
+    "plan": {
+      "summary": "Review and verify immutable single-event Python reference impact evaluator, registered unit-tests pending. No SHACL/LLM/three-arm comparison or mutable event engine.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "Actual record projection partial and original bytes omitted. Python object API allocates serialization before byte limit.",
+          "recommendation": "No complete provenance, memory isolation or graph superiority claims; hypothetical changes separate from real history."
+        }
+      ],
+      "tasks": [
+        {
+          "owner": "native reviewers",
+          "deliverable": "Independent full source/test reviews",
+          "verification": "Resolve blockers before registered checks."
+        },
+        {
+          "owner": "main",
+          "deliverable": "unit-tests and three hypothetical source-projection runs",
+          "verification": "Preserve partial/complete control labels and immutable original input; record actual outputs and limits."
+        }
+      ]
+    },
+    "methods": {
+      "summary": "Ready for registered offline checks within the restricted immutable-snapshot, single hypothetical replacement scope. The supplied implementation follows directed dependency paths, retains unknown for absent paths under partial coverage, and treats stale as a recheck signal. This review does not establish test success, source correspondence, or comparative effectiveness.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "The brief explicitly omits original private records and actual runtime input JSON. The projection helper loads an external example file whose contents are not supplied. Consequently the asserted five-node/four-edge correspondence and prepared inputs cannot be independently checked here.",
+          "recommendation": "Report source correspondence as coordinator-checked and independently unverified; retain partial coverage and hypothetical-change labels for the actual projection, and identify the complete-coverage example as an authored control."
+        },
+        {
+          "severity": "info",
+          "evidence": "The evaluator returns unaffected only when snapshot coverage is declared complete, and returns stale for a recorded path, including the changed candidate itself. The packet explicitly excludes event sequencing, updates, ledger enforcement and approval.",
+          "recommendation": "Interpret outputs only under those supplied dependency and coverage declarations. Do not interpret unaffected as proof of hidden dependency absence, stale as factual falsity, or this single-event check as evidence for a mutable workflow engine."
+        },
+        {
+          "severity": "info",
+          "evidence": "The request states that checks have not run. Supplied test code covers path direction, cycles, tie selection, partial coverage, invalid inputs, nonmutation and CLI overwrite refusal, but code inspection alone does not demonstrate their execution outcomes.",
+          "recommendation": "Run the registered unit-tests after reviewer gates and report the observed result as software verification, separately from the three hypothetical examples and any research efficacy claim."
+        }
+      ],
+      "tasks": []
+    },
+    "implementation": {
+      "summary": "Static review found no blocker for the restricted immutable-snapshot, single hypothetical replacement evaluator. Schema and version checks precede bounded graph traversal; deterministic dependency witnesses, partial-coverage unknown results, nonmutation and exclusive output creation match the stated scope. Supplied tests have not been executed in this review.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "The original source records, projected example JSON and three runtime inputs are omitted. Several supplied tests depend on that external example file. Source hashes, projection correspondence and actual runtime input contents therefore remain independently unverified.",
+          "recommendation": "Run the registered unit-tests and retain the coordinator's source-hash and projection checks alongside saved inputs and outputs. Describe the complete-coverage example as an authored control and replacements as hypothetical."
+        },
+        {
+          "severity": "warning",
+          "evidence": "evaluate serializes Python objects before enforcing MAX_BYTES, and invalid-payload candidate recovery is not separately bounded. CLI raw reads are bounded, but host memory behavior and test execution have not been measured here.",
+          "recommendation": "Keep the stated local bounded-input scope and avoid claiming hostile-object memory isolation or measured resource suitability. Preserve invalid status and unknown candidate outcomes."
+        },
+        {
+          "severity": "info",
+          "evidence": "Traversal follows dependent-to-prerequisite edges, checks the candidate itself, terminates cycles through a visited set, and treats absent paths as unaffected only with supplied complete coverage. The snapshot digest preserves list order and excludes the hypothetical change.",
+          "recommendation": "Retain full input artifacts with outputs so the change and candidate set remain reproducible; do not treat the snapshot hash as an event identifier, proof of source completeness, or SHACL execution."
+        }
+      ],
+      "tasks": []
+    },
+    "synthesis": {
+      "summary": "Both independent reviews ready, no blockers. Proceed with registered unit-tests and three bounded hypothetical cases; preserve all source/memory/scope warnings.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "The brief explicitly omits original private records and actual runtime input JSON. The projection helper loads an external example file whose contents are not supplied. Consequently the asserted five-node/four-edge correspondence and prepared inputs cannot be independently checked here.",
+          "recommendation": "Report source correspondence as coordinator-checked and independently unverified; retain partial coverage and hypothetical-change labels for the actual projection, and identify the complete-coverage example as an authored control."
+        },
+        {
+          "severity": "info",
+          "evidence": "The evaluator returns unaffected only when snapshot coverage is declared complete, and returns stale for a recorded path, including the changed candidate itself. The packet explicitly excludes event sequencing, updates, ledger enforcement and approval.",
+          "recommendation": "Interpret outputs only under those supplied dependency and coverage declarations. Do not interpret unaffected as proof of hidden dependency absence, stale as factual falsity, or this single-event check as evidence for a mutable workflow engine."
+        },
+        {
+          "severity": "info",
+          "evidence": "The request states that checks have not run. Supplied test code covers path direction, cycles, tie selection, partial coverage, invalid inputs, nonmutation and CLI overwrite refusal, but code inspection alone does not demonstrate their execution outcomes.",
+          "recommendation": "Run the registered unit-tests after reviewer gates and report the observed result as software verification, separately from the three hypothetical examples and any research efficacy claim."
+        },
+        {
+          "severity": "warning",
+          "evidence": "The original source records, projected example JSON and three runtime inputs are omitted. Several supplied tests depend on that external example file. Source hashes, projection correspondence and actual runtime input contents therefore remain independently unverified.",
+          "recommendation": "Run the registered unit-tests and retain the coordinator's source-hash and projection checks alongside saved inputs and outputs. Describe the complete-coverage example as an authored control and replacements as hypothetical."
+        },
+        {
+          "severity": "warning",
+          "evidence": "evaluate serializes Python objects before enforcing MAX_BYTES, and invalid-payload candidate recovery is not separately bounded. CLI raw reads are bounded, but host memory behavior and test execution have not been measured here.",
+          "recommendation": "Keep the stated local bounded-input scope and avoid claiming hostile-object memory isolation or measured resource suitability. Preserve invalid status and unknown candidate outcomes."
+        },
+        {
+          "severity": "info",
+          "evidence": "Traversal follows dependent-to-prerequisite edges, checks the candidate itself, terminates cycles through a visited set, and treats absent paths as unaffected only with supplied complete coverage. The snapshot digest preserves list order and excludes the hypothetical change.",
+          "recommendation": "Retain full input artifacts with outputs so the change and candidate set remain reproducible; do not treat the snapshot hash as an event identifier, proof of source completeness, or SHACL execution."
+        }
+      ],
+      "tasks": [
+        {
+          "owner": "main",
+          "deliverable": "Observed tests, full input/output record and source manifest",
+          "verification": "Actual exit codes; partial real projection vs authored complete control; no source mutation or SHACL claim."
+        }
+      ]
+    },
+    "analysis": {
+      "summary": "unit-tests exit code 0: 270 tests passed in 82.248 seconds. This is software verification, not workflow efficacy. Three separately executed hypothetical inputs produced six candidate outputs: stale/stale, unknown/stale, and authored complete-control unaffected/stale; CLI exit codes all 0. No SHACL or LLM execution.",
+      "decision": "observe",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "Recorded dependencies and supplied coverage only; one Python reference, no event history, comparison or maintenance measurements.",
+          "recommendation": "Preserve partial projection, hypothetical changes and authored complete-control labels. No source truth/production approval or memory isolation claims."
+        }
+      ],
+      "tasks": [
+        {
+          "owner": "main",
+          "deliverable": "Future independent RDF counterpart on same frozen single-event contract if continuing comparison",
+          "verification": "Actual SHACL/traversal attribution separate; no new broad schema/platform scope or paid calls."
+        }
+      ]
+    }
+  }
+}

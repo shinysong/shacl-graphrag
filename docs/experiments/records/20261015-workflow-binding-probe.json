@@ -1,0 +1,654 @@
+{
+  "protocol": "workflow-binding-probe-1",
+  "scope": "12 authored synthetic feasibility cases; 24 checks; not a benchmark",
+  "timing_scope": "single in-process calls including preflight, graph construction and validation; descriptive only",
+  "limitations": [
+    "Supplied normalized identities, versions and completeness are trusted.",
+    "No hidden-omission detection, external truth, natural-language interpretation, database, LLM or ontology inference.",
+    "Shared preflight and declared-dependency invalidation are baseline infrastructure."
+  ],
+  "cases": [
+    {
+      "name": "valid",
+      "input": {
+        "request": {
+          "target_id": "product-A",
+          "target_version": "v1",
+          "rule_version": "r1"
+        },
+        "approval": {
+          "target_id": "product-A",
+          "target_version": "v1",
+          "rule_version": "r1"
+        },
+        "dependencies": [
+          {
+            "id": "part-A",
+            "approved_version": "v1",
+            "current_version": "v1"
+          }
+        ],
+        "approved": true,
+        "complete": true
+      },
+      "expected_status": "allow",
+      "changed_ids": []
+    },
+    {
+      "name": "target_id_mismatch",
+      "input": {
+        "request": {
+          "target_id": "product-A",
+          "target_version": "v1",
+          "rule_version": "r1"
+        },
+        "approval": {
+          "target_id": "other",
+          "target_version": "v1",
+          "rule_version": "r1"
+        },
+        "dependencies": [
+          {
+            "id": "part-A",
+            "approved_version": "v1",
+            "current_version": "v1"
+          }
+        ],
+        "approved": true,
+        "complete": true
+      },
+      "expected_status": "deny",
+      "changed_ids": []
+    },
+    {
+      "name": "target_version_mismatch",
+      "input": {
+        "request": {
+          "target_id": "product-A",
+          "target_version": "v1",
+          "rule_version": "r1"
+        },
+        "approval": {
+          "target_id": "product-A",
+          "target_version": "other",
+          "rule_version": "r1"
+        },
+        "dependencies": [
+          {
+            "id": "part-A",
+            "approved_version": "v1",
+            "current_version": "v1"
+          }
+        ],
+        "approved": true,
+        "complete": true
+      },
+      "expected_status": "deny",
+      "changed_ids": []
+    },
+    {
+      "name": "rule_version_mismatch",
+      "input": {
+        "request": {
+          "target_id": "product-A",
+          "target_version": "v1",
+          "rule_version": "r1"
+        },
+        "approval": {
+          "target_id": "product-A",
+          "target_version": "v1",
+          "rule_version": "other"
+        },
+        "dependencies": [
+          {
+            "id": "part-A",
+            "approved_version": "v1",
+            "current_version": "v1"
+          }
+        ],
+        "approved": true,
+        "complete": true
+      },
+      "expected_status": "deny",
+      "changed_ids": []
+    },
+    {
+      "name": "dependency_change",
+      "input": {
+        "request": {
+          "target_id": "product-A",
+          "target_version": "v1",
+          "rule_version": "r1"
+        },
+        "approval": {
+          "target_id": "product-A",
+          "target_version": "v1",
+          "rule_version": "r1"
+        },
+        "dependencies": [
+          {
+            "id": "part-A",
+            "approved_version": "v1",
+            "current_version": "v2"
+          }
+        ],
+        "approved": true,
+        "complete": true
+      },
+      "expected_status": "deny",
+      "changed_ids": [
+        "part-A"
+      ]
+    },
+    {
+      "name": "unrelated_change",
+      "input": {
+        "request": {
+          "target_id": "product-A",
+          "target_version": "v1",
+          "rule_version": "r1"
+        },
+        "approval": {
+          "target_id": "product-A",
+          "target_version": "v1",
+          "rule_version": "r1"
+        },
+        "dependencies": [
+          {
+            "id": "part-A",
+            "approved_version": "v1",
+            "current_version": "v1"
+          }
+        ],
+        "approved": true,
+        "complete": true
+      },
+      "expected_status": "allow",
+      "changed_ids": [
+        "unrelated-part"
+      ]
+    },
+    {
+      "name": "missing_data",
+      "input": {
+        "request": {
+          "target_id": "product-A",
+          "target_version": "v1",
+          "rule_version": "r1"
+        },
+        "approval": {
+          "target_id": "product-A",
+          "rule_version": "r1"
+        },
+        "dependencies": [
+          {
+            "id": "part-A",
+            "approved_version": "v1",
+            "current_version": "v1"
+          }
+        ],
+        "approved": true,
+        "complete": true
+      },
+      "expected_status": "unknown",
+      "changed_ids": []
+    },
+    {
+      "name": "revoked_approval",
+      "input": {
+        "request": {
+          "target_id": "product-A",
+          "target_version": "v1",
+          "rule_version": "r1"
+        },
+        "approval": {
+          "target_id": "product-A",
+          "target_version": "v1",
+          "rule_version": "r1"
+        },
+        "dependencies": [
+          {
+            "id": "part-A",
+            "approved_version": "v1",
+            "current_version": "v1"
+          }
+        ],
+        "approved": false,
+        "complete": true
+      },
+      "expected_status": "deny",
+      "changed_ids": []
+    },
+    {
+      "name": "multiple_dependency_mismatch",
+      "input": {
+        "request": {
+          "target_id": "product-A",
+          "target_version": "v1",
+          "rule_version": "r1"
+        },
+        "approval": {
+          "target_id": "product-A",
+          "target_version": "v1",
+          "rule_version": "r1"
+        },
+        "dependencies": [
+          {
+            "id": "part-A",
+            "approved_version": "v1",
+            "current_version": "v2"
+          },
+          {
+            "id": "part-B",
+            "approved_version": "v1",
+            "current_version": "v2"
+          }
+        ],
+        "approved": true,
+        "complete": true
+      },
+      "expected_status": "deny",
+      "changed_ids": []
+    },
+    {
+      "name": "duplicate_identical_dependencies",
+      "input": {
+        "request": {
+          "target_id": "product-A",
+          "target_version": "v1",
+          "rule_version": "r1"
+        },
+        "approval": {
+          "target_id": "product-A",
+          "target_version": "v1",
+          "rule_version": "r1"
+        },
+        "dependencies": [
+          {
+            "id": "part-A",
+            "approved_version": "v1",
+            "current_version": "v1"
+          },
+          {
+            "id": "part-A",
+            "approved_version": "v1",
+            "current_version": "v1"
+          }
+        ],
+        "approved": true,
+        "complete": true
+      },
+      "expected_status": "allow",
+      "changed_ids": []
+    },
+    {
+      "name": "conflicting_duplicate_dependencies",
+      "input": {
+        "request": {
+          "target_id": "product-A",
+          "target_version": "v1",
+          "rule_version": "r1"
+        },
+        "approval": {
+          "target_id": "product-A",
+          "target_version": "v1",
+          "rule_version": "r1"
+        },
+        "dependencies": [
+          {
+            "id": "part-A",
+            "approved_version": "v1",
+            "current_version": "v1"
+          },
+          {
+            "id": "part-A",
+            "approved_version": "v2",
+            "current_version": "v2"
+          }
+        ],
+        "approved": true,
+        "complete": true
+      },
+      "expected_status": "deny",
+      "changed_ids": []
+    },
+    {
+      "name": "explicit_complete_empty_dependencies",
+      "input": {
+        "request": {
+          "target_id": "product-A",
+          "target_version": "v1",
+          "rule_version": "r1"
+        },
+        "approval": {
+          "target_id": "product-A",
+          "target_version": "v1",
+          "rule_version": "r1"
+        },
+        "dependencies": [],
+        "approved": true,
+        "complete": true
+      },
+      "expected_status": "allow",
+      "changed_ids": []
+    }
+  ],
+  "rows": [
+    {
+      "case": "valid",
+      "arm": "python_json",
+      "status": "allow",
+      "reason_codes": [
+        "contract_satisfied"
+      ],
+      "checker_executed": true,
+      "elapsed_seconds": 2.8044014470651746e-05,
+      "expected_status": "allow",
+      "status_agrees": true
+    },
+    {
+      "case": "valid",
+      "arm": "rdflib_pyshacl",
+      "status": "allow",
+      "reason_codes": [
+        "contract_satisfied"
+      ],
+      "checker_executed": true,
+      "elapsed_seconds": 0.03771895801764913,
+      "expected_status": "allow",
+      "status_agrees": true
+    },
+    {
+      "case": "target_id_mismatch",
+      "arm": "python_json",
+      "status": "deny",
+      "reason_codes": [
+        "target_id_mismatch"
+      ],
+      "checker_executed": true,
+      "elapsed_seconds": 1.909298589453101e-05,
+      "expected_status": "deny",
+      "status_agrees": true
+    },
+    {
+      "case": "target_id_mismatch",
+      "arm": "rdflib_pyshacl",
+      "status": "deny",
+      "reason_codes": [
+        "target_id_mismatch"
+      ],
+      "checker_executed": true,
+      "elapsed_seconds": 0.013140712981112301,
+      "expected_status": "deny",
+      "status_agrees": true
+    },
+    {
+      "case": "target_version_mismatch",
+      "arm": "python_json",
+      "status": "deny",
+      "reason_codes": [
+        "target_version_mismatch"
+      ],
+      "checker_executed": true,
+      "elapsed_seconds": 2.1271000150591135e-05,
+      "expected_status": "deny",
+      "status_agrees": true
+    },
+    {
+      "case": "target_version_mismatch",
+      "arm": "rdflib_pyshacl",
+      "status": "deny",
+      "reason_codes": [
+        "target_version_mismatch"
+      ],
+      "checker_executed": true,
+      "elapsed_seconds": 0.014023835014086217,
+      "expected_status": "deny",
+      "status_agrees": true
+    },
+    {
+      "case": "rule_version_mismatch",
+      "arm": "python_json",
+      "status": "deny",
+      "reason_codes": [
+        "rule_version_mismatch"
+      ],
+      "checker_executed": true,
+      "elapsed_seconds": 1.9006984075531363e-05,
+      "expected_status": "deny",
+      "status_agrees": true
+    },
+    {
+      "case": "rule_version_mismatch",
+      "arm": "rdflib_pyshacl",
+      "status": "deny",
+      "reason_codes": [
+        "rule_version_mismatch"
+      ],
+      "checker_executed": true,
+      "elapsed_seconds": 0.012910616002045572,
+      "expected_status": "deny",
+      "status_agrees": true
+    },
+    {
+      "case": "dependency_change",
+      "arm": "python_json",
+      "status": "deny",
+      "reason_codes": [
+        "dependency_version_mismatch"
+      ],
+      "checker_executed": true,
+      "elapsed_seconds": 1.930398866534233e-05,
+      "expected_status": "deny",
+      "status_agrees": true
+    },
+    {
+      "case": "dependency_change",
+      "arm": "rdflib_pyshacl",
+      "status": "deny",
+      "reason_codes": [
+        "dependency_version_mismatch"
+      ],
+      "checker_executed": true,
+      "elapsed_seconds": 0.013194534025387838,
+      "expected_status": "deny",
+      "status_agrees": true
+    },
+    {
+      "case": "unrelated_change",
+      "arm": "python_json",
+      "status": "allow",
+      "reason_codes": [
+        "contract_satisfied"
+      ],
+      "checker_executed": true,
+      "elapsed_seconds": 1.9899976905435324e-05,
+      "expected_status": "allow",
+      "status_agrees": true
+    },
+    {
+      "case": "unrelated_change",
+      "arm": "rdflib_pyshacl",
+      "status": "allow",
+      "reason_codes": [
+        "contract_satisfied"
+      ],
+      "checker_executed": true,
+      "elapsed_seconds": 0.013435602013487369,
+      "expected_status": "allow",
+      "status_agrees": true
+    },
+    {
+      "case": "missing_data",
+      "arm": "python_json",
+      "status": "unknown",
+      "reason_codes": [
+        "missing_evidence"
+      ],
+      "checker_executed": false,
+      "elapsed_seconds": 1.7547019524499774e-05,
+      "expected_status": "unknown",
+      "status_agrees": true
+    },
+    {
+      "case": "missing_data",
+      "arm": "rdflib_pyshacl",
+      "status": "unknown",
+      "reason_codes": [
+        "missing_evidence"
+      ],
+      "checker_executed": false,
+      "elapsed_seconds": 8.586997864767909e-06,
+      "expected_status": "unknown",
+      "status_agrees": true
+    },
+    {
+      "case": "revoked_approval",
+      "arm": "python_json",
+      "status": "deny",
+      "reason_codes": [
+        "approval_not_granted"
+      ],
+      "checker_executed": true,
+      "elapsed_seconds": 1.009801053442061e-05,
+      "expected_status": "deny",
+      "status_agrees": true
+    },
+    {
+      "case": "revoked_approval",
+      "arm": "rdflib_pyshacl",
+      "status": "deny",
+      "reason_codes": [
+        "approval_not_granted"
+      ],
+      "checker_executed": true,
+      "elapsed_seconds": 0.01242488098796457,
+      "expected_status": "deny",
+      "status_agrees": true
+    },
+    {
+      "case": "multiple_dependency_mismatch",
+      "arm": "python_json",
+      "status": "deny",
+      "reason_codes": [
+        "dependency_version_mismatch"
+      ],
+      "checker_executed": true,
+      "elapsed_seconds": 3.2790994737297297e-05,
+      "expected_status": "deny",
+      "status_agrees": true
+    },
+    {
+      "case": "multiple_dependency_mismatch",
+      "arm": "rdflib_pyshacl",
+      "status": "deny",
+      "reason_codes": [
+        "dependency_version_mismatch"
+      ],
+      "checker_executed": true,
+      "elapsed_seconds": 0.023805195989552885,
+      "expected_status": "deny",
+      "status_agrees": true
+    },
+    {
+      "case": "duplicate_identical_dependencies",
+      "arm": "python_json",
+      "status": "allow",
+      "reason_codes": [
+        "contract_satisfied"
+      ],
+      "checker_executed": true,
+      "elapsed_seconds": 2.1184008801355958e-05,
+      "expected_status": "allow",
+      "status_agrees": true
+    },
+    {
+      "case": "duplicate_identical_dependencies",
+      "arm": "rdflib_pyshacl",
+      "status": "allow",
+      "reason_codes": [
+        "contract_satisfied"
+      ],
+      "checker_executed": true,
+      "elapsed_seconds": 0.013369536987738684,
+      "expected_status": "allow",
+      "status_agrees": true
+    },
+    {
+      "case": "conflicting_duplicate_dependencies",
+      "arm": "python_json",
+      "status": "deny",
+      "reason_codes": [
+        "conflicting_dependency_records"
+      ],
+      "checker_executed": true,
+      "elapsed_seconds": 2.2068008547648787e-05,
+      "expected_status": "deny",
+      "status_agrees": true
+    },
+    {
+      "case": "conflicting_duplicate_dependencies",
+      "arm": "rdflib_pyshacl",
+      "status": "deny",
+      "reason_codes": [
+        "conflicting_dependency_records"
+      ],
+      "checker_executed": true,
+      "elapsed_seconds": 0.014480434008873999,
+      "expected_status": "deny",
+      "status_agrees": true
+    },
+    {
+      "case": "explicit_complete_empty_dependencies",
+      "arm": "python_json",
+      "status": "allow",
+      "reason_codes": [
+        "contract_satisfied"
+      ],
+      "checker_executed": true,
+      "elapsed_seconds": 1.5143014024943113e-05,
+      "expected_status": "allow",
+      "status_agrees": true
+    },
+    {
+      "case": "explicit_complete_empty_dependencies",
+      "arm": "rdflib_pyshacl",
+      "status": "allow",
+      "reason_codes": [
+        "contract_satisfied"
+      ],
+      "checker_executed": true,
+      "elapsed_seconds": 0.012308891979046166,
+      "expected_status": "allow",
+      "status_agrees": true
+    }
+  ],
+  "invalidation_examples": {
+    "declared_dependencies": {
+      "approval-A": [
+        "part-A"
+      ],
+      "approval-B": [
+        "part-B"
+      ]
+    },
+    "part_A_changed": [
+      "approval-A"
+    ],
+    "unrelated_changed": []
+  },
+  "artifact_metadata": {
+    "source_sha256": {
+      "scripts/run_workflow_binding_probe.py": "014a0f36c9ec56c36add0299666e281ce1ba78f305040d300fa345c12ba8cd2b",
+      "tests/test_workflow_binding_probe.py": "b1bbcf83e7399d7e186f931c8b873a944a6a9f83ae2917da4a3b5d3c5a446ac6",
+      "research/operations/designs/workflow-binding-probe.json": "c75808dccb33c4ff41800d7c5b2698f15c6eb1d5c2a36bf4e7a90d099474171d"
+    },
+    "dependencies": {
+      "rdflib": "7.6.0",
+      "pyshacl": "0.40.1"
+    },
+    "review_job": "20261015T125036Z-workflow-binding-probe-3769ac",
+    "paid_model_calls": 0,
+    "coordinator_audit": "12 status/reason pairs agree; each arm 4 allow, 7 deny, 1 preflight unknown; 11 actual SHACL calls"
+  }
+}

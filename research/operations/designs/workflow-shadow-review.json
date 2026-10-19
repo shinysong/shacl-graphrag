@@ -1,0 +1,171 @@
+{
+  "job_id": "20261015T150224Z-workflow-shadow-contract-2e2c59",
+  "scope": "Contract and read-only projection only; no evaluator execution",
+  "checks": {},
+  "reviewers": {
+    "methods": "/root/shadow_contract_methods",
+    "implementation": "/root/shadow_contract_implementation"
+  },
+  "phases": {
+    "plan": {
+      "summary": "Review bounded impact contract and real read-only review-binding projection; no evaluator or runtime checks, checks=[] intentionally. Source mapping byte assertions observed by coordinator only.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "Recorded request binding is not complete semantic dependency provenance; projection remains partial.",
+          "recommendation": "No-path under partial coverage must remain unknown; no execution permission from impact status."
+        }
+      ],
+      "tasks": [
+        {
+          "owner": "native reviewers",
+          "deliverable": "Independent contract methods and implementability review",
+          "verification": "Preserve all objections; explicit distinction between actual projection and authored unexecuted expectations."
+        },
+        {
+          "owner": "main",
+          "deliverable": "Frozen contract/projection/reviews and next bounded implementation handoff",
+          "verification": "No live gate/paid API changes; retain existing uncommitted files."
+        }
+      ]
+    },
+    "methods": {
+      "summary": "Ready for a fresh bounded implementation handoff. The supplied contract supports conservative impact classification on recorded dependencies and clearly separates authored expectations from measured outcomes. No evaluator execution or independent source-byte verification was observed.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "info",
+          "evidence": "The projection explicitly marks coverage partial and limits each edge to a recorded request or packet binding. The contract assigns stale to known paths and unknown to non-reachable candidates under partial coverage.",
+          "recommendation": "Preserve this distinction: packet replacement can establish recheck obligations on recorded bindings, while an absent path cannot establish independence. Do not report impact status as business truth or execution permission."
+        },
+        {
+          "severity": "warning",
+          "evidence": "Source hashes and binding assertions were checked by the coordinator; the supplied material contains projections and excerpts rather than original private files.",
+          "recommendation": "Label byte integrity and complete source-to-projection correspondence independently unverified by this reviewer. The excerpts support the stated binding mechanism but do not independently establish the concrete historical records."
+        },
+        {
+          "severity": "warning",
+          "evidence": "The first-event rule requires old_version to match the snapshot, while the duplicate rule returns a saved result after an accepted event. The input specifies accepted-event hashes, but does not specify storage of saved results or ordering of replay lookup relative to current-version checks.",
+          "recommendation": "In the fresh implementation specification, define replay lookup before current-version and next-sequence rejection for an already accepted identical event. Explicitly store the saved result and define behavior when it is unavailable. Freeze a duplicate fixture evaluated against the post-update snapshot."
+        },
+        {
+          "severity": "warning",
+          "evidence": "The contract permits state change in a new output snapshot, while versions on edges are inherited from endpoint nodes and the listed output fields omit the new snapshot and ledger transition.",
+          "recommendation": "Before executing multi-event fixtures, specify the returned snapshot and atomic ledger transition, including how prior stale review bindings persist. For the first single-event comparison, use frozen pre-event inputs and do not interpret the changed endpoint version as a completed downstream recheck."
+        }
+      ],
+      "tasks": [
+        {
+          "owner": "main",
+          "deliverable": "Fresh implementation specification with explicit replay persistence, transition outputs, and concrete frozen acceptance rows",
+          "verification": "Review exact-duplicate replay on a post-update snapshot, missing saved-result behavior, and retained stale binding semantics before multi-event execution; report current authored examples as unexecuted."
+        }
+      ]
+    },
+    "implementation": {
+      "summary": "The bounded impact operation is feasible as an offline implementation handoff. The supplied five-node projection supports the authored reachability expectations, but no evaluator, runtime check, source-byte verification or resource measurement was observed. Ready applies to the next reviewed implementation step only.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "info",
+          "evidence": "The four declared edges consistently use dependent-to-prerequisite direction. Both review nodes reach packet, while only methods-review reaches methods-request. Partial coverage correctly prevents an unaffected conclusion for implementation-review in the latter event.",
+          "recommendation": "Freeze these expectations as concrete fixtures without presenting them as executed results or complete workflow dependency discovery."
+        },
+        {
+          "severity": "warning",
+          "evidence": "Only projected hashes, coordinator verification assertions and source excerpts were supplied. Original bytes, full runner implementation and provenance files were omitted. Packet logical identity explicitly differs from raw-file identity.",
+          "recommendation": "Label independent byte verification unverified; preserve both hash schemes and the operator-supplied attribution qualification. The excerpts support binding intent, not exhaustive runtime guarantees."
+        },
+        {
+          "severity": "warning",
+          "evidence": "Duplicate replay requires a saved result, but the input describes accepted-event hashes without defining the saved-result store. Replay must precede the old-version check after an accepted replacement changes the snapshot. Snapshot hashing, event status codes and malformed candidate handling also remain prose-level details.",
+          "recommendation": "Before execution, freeze a precise ledger/result schema and precedence order, snapshot hash encoding, status/reason enums, and a failure envelope for malformed candidate inputs. Include replay against the updated snapshot and rejection without ledger mutation as fixtures. These are bounded implementation details, not observed failures."
+        },
+        {
+          "severity": "warning",
+          "evidence": "The contract specifies payload and graph bounds, stable shortest paths and one repair attempt per arm, but no implementation or concrete fixture rows exist in this packet. Deadline, memory enforcement and 16GiB-host behavior are unverified; checks=[] intentionally schedules no executable checks.",
+          "recommendation": "Apply byte limits before parsing/conversion, freeze deterministic path tie-breaking and record actual SHACL invocation separately. Preserve initial failures and repair history. Implement and test worker resource limits before larger inputs; do not infer comparative performance from the small projection."
+        }
+      ],
+      "tasks": [
+        {
+          "owner": "main implementation agent",
+          "deliverable": "Under a fresh reviewed job, add a bounded offline evaluator under scripts/, concrete fixtures under research/, and contract/run documentation under docs/experiments/. Define ledger persistence and output schema before arm execution; retain the original snapshot and source artifacts.",
+          "verification": "Freeze concrete rows from the six authored groups; add deterministic shortest-path ties, duplicate replay after update, order/version conflict with no mutation, input caps, malformed candidates and cross-arm equality checks. Register executable check IDs in the new job. No checks or evaluator outcomes are claimed here."
+        }
+      ]
+    },
+    "synthesis": {
+      "summary": "Both reviewers ready for bounded implementation handoff only. Source projection concrete; evaluator absent. Replay persistence/precedence and transition schemas remain prerequisites before multi-event execution. No runtime tests registered.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "info",
+          "evidence": "The projection explicitly marks coverage partial and limits each edge to a recorded request or packet binding. The contract assigns stale to known paths and unknown to non-reachable candidates under partial coverage.",
+          "recommendation": "Preserve this distinction: packet replacement can establish recheck obligations on recorded bindings, while an absent path cannot establish independence. Do not report impact status as business truth or execution permission."
+        },
+        {
+          "severity": "warning",
+          "evidence": "Source hashes and binding assertions were checked by the coordinator; the supplied material contains projections and excerpts rather than original private files.",
+          "recommendation": "Label byte integrity and complete source-to-projection correspondence independently unverified by this reviewer. The excerpts support the stated binding mechanism but do not independently establish the concrete historical records."
+        },
+        {
+          "severity": "warning",
+          "evidence": "The first-event rule requires old_version to match the snapshot, while the duplicate rule returns a saved result after an accepted event. The input specifies accepted-event hashes, but does not specify storage of saved results or ordering of replay lookup relative to current-version checks.",
+          "recommendation": "In the fresh implementation specification, define replay lookup before current-version and next-sequence rejection for an already accepted identical event. Explicitly store the saved result and define behavior when it is unavailable. Freeze a duplicate fixture evaluated against the post-update snapshot."
+        },
+        {
+          "severity": "warning",
+          "evidence": "The contract permits state change in a new output snapshot, while versions on edges are inherited from endpoint nodes and the listed output fields omit the new snapshot and ledger transition.",
+          "recommendation": "Before executing multi-event fixtures, specify the returned snapshot and atomic ledger transition, including how prior stale review bindings persist. For the first single-event comparison, use frozen pre-event inputs and do not interpret the changed endpoint version as a completed downstream recheck."
+        },
+        {
+          "severity": "info",
+          "evidence": "The four declared edges consistently use dependent-to-prerequisite direction. Both review nodes reach packet, while only methods-review reaches methods-request. Partial coverage correctly prevents an unaffected conclusion for implementation-review in the latter event.",
+          "recommendation": "Freeze these expectations as concrete fixtures without presenting them as executed results or complete workflow dependency discovery."
+        },
+        {
+          "severity": "warning",
+          "evidence": "Only projected hashes, coordinator verification assertions and source excerpts were supplied. Original bytes, full runner implementation and provenance files were omitted. Packet logical identity explicitly differs from raw-file identity.",
+          "recommendation": "Label independent byte verification unverified; preserve both hash schemes and the operator-supplied attribution qualification. The excerpts support binding intent, not exhaustive runtime guarantees."
+        },
+        {
+          "severity": "warning",
+          "evidence": "Duplicate replay requires a saved result, but the input describes accepted-event hashes without defining the saved-result store. Replay must precede the old-version check after an accepted replacement changes the snapshot. Snapshot hashing, event status codes and malformed candidate handling also remain prose-level details.",
+          "recommendation": "Before execution, freeze a precise ledger/result schema and precedence order, snapshot hash encoding, status/reason enums, and a failure envelope for malformed candidate inputs. Include replay against the updated snapshot and rejection without ledger mutation as fixtures. These are bounded implementation details, not observed failures."
+        },
+        {
+          "severity": "warning",
+          "evidence": "The contract specifies payload and graph bounds, stable shortest paths and one repair attempt per arm, but no implementation or concrete fixture rows exist in this packet. Deadline, memory enforcement and 16GiB-host behavior are unverified; checks=[] intentionally schedules no executable checks.",
+          "recommendation": "Apply byte limits before parsing/conversion, freeze deterministic path tie-breaking and record actual SHACL invocation separately. Preserve initial failures and repair history. Implement and test worker resource limits before larger inputs; do not infer comparative performance from the small projection."
+        }
+      ],
+      "tasks": [
+        {
+          "owner": "main",
+          "deliverable": "Implement bounded offline shadow operation in next fresh job, with explicit schemas and frozen fixtures",
+          "verification": "Resolve saved-result replay before version rejection, retain stale bindings, no failed-event mutation; preserve all review caveats. No live changes."
+        }
+      ]
+    },
+    "analysis": {
+      "summary": "No registered checks or exit codes: checks={} for contract-only work. Coordinator verified two request hashes, two result hashes, two provenance bindings and canonical packet identity, then projected five nodes/four edges with partial coverage. No impact evaluator, benchmark, LLM call or runtime test executed.",
+      "decision": "observe",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "Independent reviewers received source excerpts/projection but not original bytes; event replay and transition schema prerequisites remain.",
+          "recommendation": "Do not treat source hash audit as complete provenance or approval; resolve handoff details in next implementation review."
+        }
+      ],
+      "tasks": [
+        {
+          "owner": "main",
+          "deliverable": "Next bounded executable shadow check with explicit schema and fixtures",
+          "verification": "Fresh implementation review/test records; no live gate or paid API work."
+        }
+      ]
+    }
+  }
+}

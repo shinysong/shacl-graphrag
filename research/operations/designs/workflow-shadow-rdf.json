@@ -1,0 +1,24 @@
+{
+  "protocol": "workflow-shadow-rdf-1",
+  "parent": "workflow-shadow-single-event-1",
+  "scope": "One independent RDF traversal counterpart on three already consumed input examples; software integration only, no new trial sample or maintenance benefit measurement.",
+  "arms": {
+    "python_reference": "Prior frozen Python evaluator",
+    "rdf_pyshacl": "Shared Python input guard, RDF conversion, actual pySHACL structural check, independent traversal through RDFLib graph objects"
+  },
+  "attribution": {
+    "shared_guard": "Schema/type/version/bounds errors rejected before RDF conversion are not SHACL detections.",
+    "shacl": "Postconversion node id/version cardinality/datatype and relation target checks; largely redundant on a correct converter, does not discover hidden source dependencies or prove truth.",
+    "traversal": "Dependency reachability plus deterministic witness; Python control flow over RDFLib graph, not a graph database, OWL reasoner or LLM query generator.",
+    "coverage": "partial from original projection; complete flag only in authored control"
+  },
+  "inputs": "Use unchanged inputs from docs/experiments/records/20261015-workflow-shadow-single.json; retain original Python output history and full new outputs.",
+  "limitations": [
+    "No separate declarative JSON policy evaluator yet",
+    "No externalization or maintainability comparison",
+    "No event history/replay/state updates",
+    "In-process API not hostile-input resource isolated",
+    "No model/API/database/new infrastructure"
+  ],
+  "next_gate": "After matching behavior, evaluate one actual rule-change task with setup/adapter/policy/test edits separated; do not keep multiplying parity cases as research efficacy."
+}

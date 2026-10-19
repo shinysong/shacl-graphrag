@@ -1,0 +1,1196 @@
+{
+  "protocol": "workflow-required-roles-1",
+  "scope": "Offline conditional role-presence check, not execution authorization; all new inputs authored, not measured real review completions. No LLM/data benchmark.",
+  "policies": {
+    "v1": {
+      "version": "v1",
+      "base_roles": [
+        "methods",
+        "implementation"
+      ],
+      "conditional_roles": []
+    },
+    "v2": {
+      "version": "v2",
+      "base_roles": [
+        "methods",
+        "implementation"
+      ],
+      "conditional_roles": [
+        {
+          "field": "data_change",
+          "equals": true,
+          "role": "data-steward"
+        }
+      ]
+    }
+  },
+  "rows": [
+    {
+      "case": "data_missing_steward",
+      "policy_version": "v1",
+      "arm": "coded",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "data_missing_steward",
+      "policy_version": "v1",
+      "arm": "json",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "data_missing_steward",
+      "policy_version": "v1",
+      "arm": "rdf",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": true,
+        "shacl_conforms": true,
+        "report_text": "Validation Report\nConforms: True\n"
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "data_missing_steward",
+      "policy_version": "v2",
+      "arm": "coded",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "missing",
+        "reason": "required_roles_not_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "missing",
+        "matches": true
+      }
+    },
+    {
+      "case": "data_missing_steward",
+      "policy_version": "v2",
+      "arm": "json",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "missing",
+        "reason": "required_roles_not_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "missing",
+        "matches": true
+      }
+    },
+    {
+      "case": "data_missing_steward",
+      "policy_version": "v2",
+      "arm": "rdf",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "missing",
+        "reason": "required_roles_not_witnessed",
+        "actual_shacl_executed": true,
+        "shacl_conforms": false,
+        "report_text": "Validation Report\nConforms: False\nResults (1):\nConstraint Violation in NodeConstraintComponent (http://www.w3.org/ns/shacl#NodeConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: <urn:offline-required-roles:RequiredRoles>\n\tFocus Node: <urn:offline-required-roles:record>\n\tValue Node: <urn:offline-required-roles:record>\n\tMessage: Value does not conform to Shape [ sh:or ( [ sh:property [ sh:hasValue Literal(\"false\" = False, datatype=xsd:boolean) ; sh:path <urn:offline-required-roles:data_change> ] ] [ sh:property [ sh:hasValue Literal(\"data-steward\") ; sh:path <urn:offline-required-roles:completed_role> ] ] ) ]. See details for more information.\n\tDetails:\n\t\tConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\t\t\tSeverity: sh:Violation\n\t\t\tSource Shape: [ sh:or ( [ sh:property [ sh:hasValue Literal(\"false\" = False, datatype=xsd:boolean) ; sh:path <urn:offline-required-roles:data_change> ] ] [ sh:property [ sh:hasValue Literal(\"data-steward\") ; sh:path <urn:offline-required-roles:completed_role> ] ] ) ]\n\t\t\tFocus Node: <urn:offline-required-roles:record>\n\t\t\tValue Node: <urn:offline-required-roles:record>\n\t\t\tMessage: Node <urn:offline-required-roles:record> must conform to one or more shapes in [ sh:property [ sh:hasValue Literal(\"false\" = False, datatype=xsd:boolean) ; sh:path <urn:offline-required-roles:data_change> ] ] , [ sh:property [ sh:hasValue Literal(\"data-steward\") ; sh:path <urn:offline-required-roles:completed_role> ] ]\n"
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "missing",
+        "matches": true
+      }
+    },
+    {
+      "case": "data_with_steward",
+      "policy_version": "v1",
+      "arm": "coded",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation",
+          "data-steward"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "data_with_steward",
+      "policy_version": "v1",
+      "arm": "json",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation",
+          "data-steward"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "data_with_steward",
+      "policy_version": "v1",
+      "arm": "rdf",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation",
+          "data-steward"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": true,
+        "shacl_conforms": true,
+        "report_text": "Validation Report\nConforms: True\n"
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "data_with_steward",
+      "policy_version": "v2",
+      "arm": "coded",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation",
+          "data-steward"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "data_with_steward",
+      "policy_version": "v2",
+      "arm": "json",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation",
+          "data-steward"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "data_with_steward",
+      "policy_version": "v2",
+      "arm": "rdf",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation",
+          "data-steward"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": true,
+        "shacl_conforms": true,
+        "report_text": "Validation Report\nConforms: True\n"
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "nondata_no_steward",
+      "policy_version": "v1",
+      "arm": "coded",
+      "input": {
+        "data_change": false,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "nondata_no_steward",
+      "policy_version": "v1",
+      "arm": "json",
+      "input": {
+        "data_change": false,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "nondata_no_steward",
+      "policy_version": "v1",
+      "arm": "rdf",
+      "input": {
+        "data_change": false,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": true,
+        "shacl_conforms": true,
+        "report_text": "Validation Report\nConforms: True\n"
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "nondata_no_steward",
+      "policy_version": "v2",
+      "arm": "coded",
+      "input": {
+        "data_change": false,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "nondata_no_steward",
+      "policy_version": "v2",
+      "arm": "json",
+      "input": {
+        "data_change": false,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "nondata_no_steward",
+      "policy_version": "v2",
+      "arm": "rdf",
+      "input": {
+        "data_change": false,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": true,
+        "shacl_conforms": true,
+        "report_text": "Validation Report\nConforms: True\n"
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "unknown_condition",
+      "policy_version": "v1",
+      "arm": "coded",
+      "input": {
+        "data_change": null,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "unknown_condition",
+      "policy_version": "v1",
+      "arm": "json",
+      "input": {
+        "data_change": null,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "unknown_condition",
+      "policy_version": "v1",
+      "arm": "rdf",
+      "input": {
+        "data_change": null,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": true,
+        "shacl_conforms": true,
+        "report_text": "Validation Report\nConforms: True\n"
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "unknown_condition",
+      "policy_version": "v2",
+      "arm": "coded",
+      "input": {
+        "data_change": null,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "unknown",
+        "reason": "unknown_condition",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "unknown",
+        "matches": true
+      }
+    },
+    {
+      "case": "unknown_condition",
+      "policy_version": "v2",
+      "arm": "json",
+      "input": {
+        "data_change": null,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "unknown",
+        "reason": "unknown_condition",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "unknown",
+        "matches": true
+      }
+    },
+    {
+      "case": "unknown_condition",
+      "policy_version": "v2",
+      "arm": "rdf",
+      "input": {
+        "data_change": null,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "unknown",
+        "reason": "unknown_condition",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "unknown",
+        "matches": true
+      }
+    },
+    {
+      "case": "partial_missing",
+      "policy_version": "v1",
+      "arm": "coded",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "partial"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "partial_missing",
+      "policy_version": "v1",
+      "arm": "json",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "partial"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "partial_missing",
+      "policy_version": "v1",
+      "arm": "rdf",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "partial"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": true,
+        "shacl_conforms": true,
+        "report_text": "Validation Report\nConforms: True\n"
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "partial_missing",
+      "policy_version": "v2",
+      "arm": "coded",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "partial"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "unknown",
+        "reason": "partial_role_evidence",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "unknown",
+        "matches": true
+      }
+    },
+    {
+      "case": "partial_missing",
+      "policy_version": "v2",
+      "arm": "json",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "partial"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "unknown",
+        "reason": "partial_role_evidence",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "unknown",
+        "matches": true
+      }
+    },
+    {
+      "case": "partial_missing",
+      "policy_version": "v2",
+      "arm": "rdf",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation"
+        ],
+        "coverage": "partial"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "unknown",
+        "reason": "partial_role_evidence",
+        "actual_shacl_executed": true,
+        "shacl_conforms": false,
+        "report_text": "Validation Report\nConforms: False\nResults (1):\nConstraint Violation in NodeConstraintComponent (http://www.w3.org/ns/shacl#NodeConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: <urn:offline-required-roles:RequiredRoles>\n\tFocus Node: <urn:offline-required-roles:record>\n\tValue Node: <urn:offline-required-roles:record>\n\tMessage: Value does not conform to Shape [ sh:or ( [ sh:property [ sh:hasValue Literal(\"false\" = False, datatype=xsd:boolean) ; sh:path <urn:offline-required-roles:data_change> ] ] [ sh:property [ sh:hasValue Literal(\"data-steward\") ; sh:path <urn:offline-required-roles:completed_role> ] ] ) ]. See details for more information.\n\tDetails:\n\t\tConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\t\t\tSeverity: sh:Violation\n\t\t\tSource Shape: [ sh:or ( [ sh:property [ sh:hasValue Literal(\"false\" = False, datatype=xsd:boolean) ; sh:path <urn:offline-required-roles:data_change> ] ] [ sh:property [ sh:hasValue Literal(\"data-steward\") ; sh:path <urn:offline-required-roles:completed_role> ] ] ) ]\n\t\t\tFocus Node: <urn:offline-required-roles:record>\n\t\t\tValue Node: <urn:offline-required-roles:record>\n\t\t\tMessage: Node <urn:offline-required-roles:record> must conform to one or more shapes in [ sh:property [ sh:hasValue Literal(\"false\" = False, datatype=xsd:boolean) ; sh:path <urn:offline-required-roles:data_change> ] ] , [ sh:property [ sh:hasValue Literal(\"data-steward\") ; sh:path <urn:offline-required-roles:completed_role> ] ]\n"
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "unknown",
+        "matches": true
+      }
+    },
+    {
+      "case": "partial_witnessed",
+      "policy_version": "v1",
+      "arm": "coded",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation",
+          "data-steward"
+        ],
+        "coverage": "partial"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "partial_witnessed",
+      "policy_version": "v1",
+      "arm": "json",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation",
+          "data-steward"
+        ],
+        "coverage": "partial"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "partial_witnessed",
+      "policy_version": "v1",
+      "arm": "rdf",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation",
+          "data-steward"
+        ],
+        "coverage": "partial"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": true,
+        "shacl_conforms": true,
+        "report_text": "Validation Report\nConforms: True\n"
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "partial_witnessed",
+      "policy_version": "v2",
+      "arm": "coded",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation",
+          "data-steward"
+        ],
+        "coverage": "partial"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "partial_witnessed",
+      "policy_version": "v2",
+      "arm": "json",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation",
+          "data-steward"
+        ],
+        "coverage": "partial"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "partial_witnessed",
+      "policy_version": "v2",
+      "arm": "rdf",
+      "input": {
+        "data_change": true,
+        "completed_roles": [
+          "methods",
+          "implementation",
+          "data-steward"
+        ],
+        "coverage": "partial"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "satisfied",
+        "reason": "required_roles_witnessed",
+        "actual_shacl_executed": true,
+        "shacl_conforms": true,
+        "report_text": "Validation Report\nConforms: True\n"
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "satisfied",
+        "matches": true
+      }
+    },
+    {
+      "case": "missing_base",
+      "policy_version": "v1",
+      "arm": "coded",
+      "input": {
+        "data_change": false,
+        "completed_roles": [
+          "methods"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "missing",
+        "reason": "required_roles_not_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "missing",
+        "matches": true
+      }
+    },
+    {
+      "case": "missing_base",
+      "policy_version": "v1",
+      "arm": "json",
+      "input": {
+        "data_change": false,
+        "completed_roles": [
+          "methods"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "missing",
+        "reason": "required_roles_not_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "missing",
+        "matches": true
+      }
+    },
+    {
+      "case": "missing_base",
+      "policy_version": "v1",
+      "arm": "rdf",
+      "input": {
+        "data_change": false,
+        "completed_roles": [
+          "methods"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "missing",
+        "reason": "required_roles_not_witnessed",
+        "actual_shacl_executed": true,
+        "shacl_conforms": false,
+        "report_text": "Validation Report\nConforms: False\nResults (1):\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue Literal(\"implementation\") ; sh:path <urn:offline-required-roles:completed_role> ]\n\tFocus Node: <urn:offline-required-roles:record>\n\tResult Path: <urn:offline-required-roles:completed_role>\n\tMessage: Node <urn:offline-required-roles:record>-><urn:offline-required-roles:completed_role> does not contain a value in the set: ['Literal(\"implementation\")']\n"
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "missing",
+        "matches": true
+      }
+    },
+    {
+      "case": "missing_base",
+      "policy_version": "v2",
+      "arm": "coded",
+      "input": {
+        "data_change": false,
+        "completed_roles": [
+          "methods"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "missing",
+        "reason": "required_roles_not_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "missing",
+        "matches": true
+      }
+    },
+    {
+      "case": "missing_base",
+      "policy_version": "v2",
+      "arm": "json",
+      "input": {
+        "data_change": false,
+        "completed_roles": [
+          "methods"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "missing",
+        "reason": "required_roles_not_witnessed",
+        "actual_shacl_executed": false,
+        "shacl_conforms": null
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "missing",
+        "matches": true
+      }
+    },
+    {
+      "case": "missing_base",
+      "policy_version": "v2",
+      "arm": "rdf",
+      "input": {
+        "data_change": false,
+        "completed_roles": [
+          "methods"
+        ],
+        "coverage": "complete"
+      },
+      "output": {
+        "status": "evaluated",
+        "decision": "missing",
+        "reason": "required_roles_not_witnessed",
+        "actual_shacl_executed": true,
+        "shacl_conforms": false,
+        "report_text": "Validation Report\nConforms: False\nResults (1):\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue Literal(\"implementation\") ; sh:path <urn:offline-required-roles:completed_role> ]\n\tFocus Node: <urn:offline-required-roles:record>\n\tResult Path: <urn:offline-required-roles:completed_role>\n\tMessage: Node <urn:offline-required-roles:record>-><urn:offline-required-roles:completed_role> does not contain a value in the set: ['Literal(\"implementation\")']\n"
+      },
+      "inputs_unchanged": true,
+      "external_score": {
+        "authored_expected": "missing",
+        "matches": true
+      }
+    }
+  ],
+  "source_manifest": {
+    "research/operations/designs/workflow-required-roles.json": {
+      "sha256": "cf9e0a338f948504d1e1e6a91aa2cdcd4bbd14a54875a1368c60fcc17e545998",
+      "bytes": 3921,
+      "lines": 140
+    },
+    "research/operations/designs/workflow-required-roles-v1.json": {
+      "sha256": "048c79a0c1ac1cee89c2ed25d03bfcfa4c75e9bfabccc8eef1a416ef0d85aad7",
+      "bytes": 108,
+      "lines": 8
+    },
+    "research/operations/designs/workflow-required-roles-v2.json": {
+      "sha256": "fc878add6860db01a043280a79cded6cecc937f6d8fa2419e4d357833c03267e",
+      "bytes": 204,
+      "lines": 14
+    },
+    "scripts/run_workflow_required_roles.py": {
+      "sha256": "fa3ccff07e56f7092e55ebff30bf765a82f2d8d2f4d51602021992080f16e6f5",
+      "bytes": 2468,
+      "lines": 48
+    },
+    "scripts/workflow_required_roles.py": {
+      "sha256": "9f5bbfaebeec7fc642d506bb7a3faf9fd30edf109c98e6bf298bc09b19a48899",
+      "bytes": 6062,
+      "lines": 141
+    },
+    "tests/test_workflow_required_roles.py": {
+      "sha256": "4c5a9a5f78ea4c52d6fd983720b6c3a163232c76e02bf70f46110fb2658b2658",
+      "bytes": 4901,
+      "lines": 96
+    }
+  },
+  "limitations": [
+    "Completion/coverage/condition facts supplied, not authenticated",
+    "No approval state, distinct reviewer identity, current artifact binding, freshness or blocker checks",
+    "No live research runner gate change",
+    "No proof of RDF maintenance benefit; JSON and RDF share policy representation/compiler setup counted separately",
+    "Coded v1/v2 coexist, not measured sequential developer editing",
+    "No hidden source detection or automatic ontology learning"
+  ],
+  "footprint_interpretation": "Static setup sizes, not measured maintenance effort. Both coded versions coexist.",
+  "paid_calls": 0,
+  "observed_summary": {
+    "per_arm_decisions": {
+      "coded": {
+        "satisfied": 9,
+        "missing": 3,
+        "unknown": 2
+      },
+      "json": {
+        "satisfied": 9,
+        "missing": 3,
+        "unknown": 2
+      },
+      "rdf": {
+        "satisfied": 9,
+        "missing": 3,
+        "unknown": 2
+      }
+    },
+    "rdf_shacl": {
+      "invoked": 13,
+      "conformed": 9,
+      "nonconformed": 4,
+      "not_invoked": 1
+    },
+    "authored_inputs": 7,
+    "paired_result_rows": 42,
+    "all_authored_expectations_matched": true
+  },
+  "coordinator_audit": {
+    "reviewed_sources_unchanged": true,
+    "original_sources_unchanged": {
+      "scripts/workflow_shadow_impact.py": "d0fd8a3260f8e37e23c8c1acd4a1b7b3c2e1e8d68b6c3c86e55bcd1f420b19e4",
+      "scripts/workflow_shadow_rdf.py": "d86f5186ed1bbd00f3b180dc391707176b3a6733761eb9ae78239dfe79d8e47e",
+      "docs/experiments/records/20261015-workflow-shadow-single.json": "5b58b86dccb879fd33a488c79d0d6b93fc0a91cb33020602830b5e1f779ae1d7",
+      "experiments/yago/schema.ttl": "b3f185f27c21e0e2b561dc92f7f9e3d54ccd6f4acac01e9ae97c2d42ef3b636f"
+    },
+    "dependencies": {
+      "rdflib": "7.6.0",
+      "pyshacl": "0.40.1"
+    },
+    "policy_delta": {
+      "version": [
+        "v1",
+        "v2"
+      ],
+      "base_roles_unchanged": true,
+      "added_conditional_rule": {
+        "field": "data_change",
+        "equals": true,
+        "role": "data-steward"
+      }
+    },
+    "failure_history": "Initial builder lint failure preserved builder-lint-01.log; corrected imports and documented broad fail-unknown catch before review; no experiment failures."
+  },
+  "review_job": "20261015T190305Z-workflow-required-roles-4b5a09"
+}

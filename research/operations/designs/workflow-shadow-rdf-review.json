@@ -1,0 +1,146 @@
+{
+  "job_id": "20261015T170352Z-workflow-shadow-rdf-8bddc0",
+  "prior_incomplete_job": "20261015T170229Z-workflow-shadow-rdf-399a76",
+  "prior_failure": "Synthesis ContextLimit; 3 reservations preserved, code unchanged",
+  "reviewers": {
+    "methods": "/root/shadow_rdf_methods_v2",
+    "implementation": "/root/shadow_rdf_implementation_v2"
+  },
+  "checks": {
+    "unit-tests": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests"
+      ],
+      "exit_code": 0,
+      "scope": "local software check; not a benchmark"
+    }
+  },
+  "phases": {
+    "plan": {
+      "summary": "Review unchanged new RDF traversal source/tests in reduced packet after prior synthesis ContextLimit. Inherited helpers omitted/unverified. Registered unit-tests pending; software integration only.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "Shared preflight and omitted saved records/inherited helpers require coordinator audit; no independent source completeness claim.",
+          "recommendation": "Limit review to supplied source/tests; distinguish actual validator call and graph traversal."
+        }
+      ],
+      "tasks": [
+        {
+          "owner": "native reviewers",
+          "deliverable": "Independent reduced-packet reviews",
+          "verification": "No blockers before checks; mark omissions unverified."
+        },
+        {
+          "owner": "main",
+          "deliverable": "Registered unit-tests and three saved-case comparison",
+          "verification": "No codechanges, preserve failures/history/partialcoverage; no paid calls."
+        }
+      ]
+    },
+    "methods": {
+      "summary": "Ready for registered checks as a bounded software integration comparison. Supplied RDF code performs its own deterministic graph traversal after shared preflight and explicitly distinguishes validator invocation from conformance. No efficacy, completeness, or engine advantage is established.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "The packet explicitly omits inherited canonical/validate/envelope helpers, private source/projection, and the saved three-case record; tests and source correspondence have not been independently verified.",
+          "recommendation": "Retain these omissions as unverified and report registered check results separately; do not describe this review as certifying inherited validation or source completeness."
+        },
+        {
+          "severity": "info",
+          "evidence": "evaluate traverses graph.objects using Python BFS; SHAPES checks converted node identifiers, versions and dependency target classes. The brief correctly limits this to one reference plus RDF counterpart with redundant postconversion structural validation.",
+          "recommendation": "Preserve this attribution and the reused/authored case descriptions in reporting; successful parity does not establish independent business accuracy or RDF-specific benefit."
+        }
+      ],
+      "tasks": []
+    },
+    "implementation": {
+      "summary": "The supplied RDF converter and traversal are coherent for the declared trusted, bounded single-event integration. Traversal follows dependent-to-prerequisite edges, uses deterministic shortest-path selection, handles cycles and self-reachability, and records validator invocation separately from conformance. No blocking implementation defect was identified in the supplied source. Checks have not run.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "Shared canonical, validate and envelope implementations, saved input/output records, original private inputs and their hashes are omitted. The supplied tests reference these artifacts, so their correctness and correspondence cannot be independently verified from this packet.",
+          "recommendation": "Keep approval limited to the supplied RDF integration; retain coordinator provenance checks and run the registered unit-tests before reporting parity."
+        },
+        {
+          "severity": "info",
+          "evidence": "The implementation imports only shared preflight/envelope helpers and traverses graph.objects itself. The tests guard against invoking reference.evaluate during RDF evaluation and include direction, cycles, ties, self-reachability, malformed input, validator failure and real SHACL conversion-defect checks.",
+          "recommendation": "Describe this as an independent in-process RDF traversal with shared preflight and postconversion structural validation, without engine-performance or evidence-completeness claims."
+        },
+        {
+          "severity": "warning",
+          "evidence": "Serialization precedes the byte-limit check, graph construction materializes the snapshot, and breadth-first search stores copied paths separately for each candidate. No runtime or memory measurements are supplied, and inherited size/count bounds are unverified.",
+          "recommendation": "Retain the trusted small-fixture scope and explicitly leave 16 GiB resource sufficiency and hostile-input isolation unverified."
+        }
+      ],
+      "tasks": []
+    },
+    "synthesis": {
+      "summary": "Both reviews ready; proceed registered unit-tests and fixed saved-case comparison only. Preserve omissions, resource caveats and independent traversal/shared preflight attribution.",
+      "decision": "ready",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "The packet explicitly omits inherited canonical/validate/envelope helpers, private source/projection, and the saved three-case record; tests and source correspondence have not been independently verified.",
+          "recommendation": "Retain these omissions as unverified and report registered check results separately; do not describe this review as certifying inherited validation or source completeness."
+        },
+        {
+          "severity": "info",
+          "evidence": "evaluate traverses graph.objects using Python BFS; SHAPES checks converted node identifiers, versions and dependency target classes. The brief correctly limits this to one reference plus RDF counterpart with redundant postconversion structural validation.",
+          "recommendation": "Preserve this attribution and the reused/authored case descriptions in reporting; successful parity does not establish independent business accuracy or RDF-specific benefit."
+        },
+        {
+          "severity": "warning",
+          "evidence": "Shared canonical, validate and envelope implementations, saved input/output records, original private inputs and their hashes are omitted. The supplied tests reference these artifacts, so their correctness and correspondence cannot be independently verified from this packet.",
+          "recommendation": "Keep approval limited to the supplied RDF integration; retain coordinator provenance checks and run the registered unit-tests before reporting parity."
+        },
+        {
+          "severity": "info",
+          "evidence": "The implementation imports only shared preflight/envelope helpers and traverses graph.objects itself. The tests guard against invoking reference.evaluate during RDF evaluation and include direction, cycles, ties, self-reachability, malformed input, validator failure and real SHACL conversion-defect checks.",
+          "recommendation": "Describe this as an independent in-process RDF traversal with shared preflight and postconversion structural validation, without engine-performance or evidence-completeness claims."
+        },
+        {
+          "severity": "warning",
+          "evidence": "Serialization precedes the byte-limit check, graph construction materializes the snapshot, and breadth-first search stores copied paths separately for each candidate. No runtime or memory measurements are supplied, and inherited size/count bounds are unverified.",
+          "recommendation": "Retain the trusted small-fixture scope and explicitly leave 16 GiB resource sufficiency and hostile-input isolation unverified."
+        }
+      ],
+      "tasks": [
+        {
+          "owner": "main",
+          "deliverable": "Observed tests and three-case RDF outputs with manifests",
+          "verification": "No source changes; validate prior record hashes, output parity and actual validator calls; no maintenance claim."
+        }
+      ]
+    },
+    "analysis": {
+      "summary": "unit-tests exit code 0: 276 software tests passed in 82.970s. Three reused inputs produced six candidate outputs matching saved Python statuses/reasons/witnesses/snapshot hashes. Actual SHACL invoked three times and conformed; no new model calls, efficacy or maintenance evidence.",
+      "decision": "observe",
+      "findings": [
+        {
+          "severity": "warning",
+          "evidence": "Shared preflight plus postconversion structural validation; independent graph.objects traversal, supplied coverage. Initial test-helper failure and first-job ContextLimit retained.",
+          "recommendation": "Do not infer source completeness or graph superiority. Stop expanding parity as a research outcome; next compare actual rule-change edits."
+        }
+      ],
+      "tasks": [
+        {
+          "owner": "main",
+          "deliverable": "One bounded rule-change integration with explicit changed components and initial setup cost",
+          "verification": "Preserve old outputs and distinguish Python policy, model/adapter edits; no paid calls/live gate changes."
+        }
+      ]
+    }
+  }
+}

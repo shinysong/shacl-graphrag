@@ -1,0 +1,391 @@
+{
+  "protocol": "workflow-shadow-rdf-1",
+  "scope": "Three reused examples, six candidate outputs; same real projection with hypothetical replacements plus authored complete control. Not independent trials.",
+  "review_job": "20261015T170352Z-workflow-shadow-rdf-8bddc0",
+  "manifest": {
+    "scripts/workflow_shadow_impact.py": "d0fd8a3260f8e37e23c8c1acd4a1b7b3c2e1e8d68b6c3c86e55bcd1f420b19e4",
+    "docs/experiments/records/20261015-workflow-shadow-single.json": "5b58b86dccb879fd33a488c79d0d6b93fc0a91cb33020602830b5e1f779ae1d7",
+    "research/operations/designs/workflow-shadow-example.json": "bd0c95b325d4de2ea5fac83c666157604ea6cf5b155b1d2ea23ed36fcc5bcc42",
+    "scripts/workflow_shadow_rdf.py": "d86f5186ed1bbd00f3b180dc391707176b3a6733761eb9ae78239dfe79d8e47e",
+    "tests/test_workflow_shadow_rdf.py": "4dc5c8c1fa1960989e29aa8b851d07205039a8b8804ad6c8b07d0a83dff94970",
+    "research/operations/designs/workflow-shadow-rdf.json": "532ca77507a7d793c7642bfefc838b20bbc0fd9f584b1410b0b198372e82f474"
+  },
+  "cases": [
+    {
+      "id": "packet_replacement",
+      "source": "verified real projection with hypothetical change",
+      "input": {
+        "snapshot": {
+          "nodes": [
+            {
+              "id": "packet",
+              "version": "a7dd9623b21a0eeac195f28f94e2964f6c499ec08c6a5f78415368624c3a36b0"
+            },
+            {
+              "id": "methods-request",
+              "version": "db2e663f1a4da7f2cc7939228456402c158998acb304051e715abaf9de7945b4"
+            },
+            {
+              "id": "methods-review",
+              "version": "40309158ad1beedafd383e4b1e7e0f2772623fbd5bb1ca23c42d7b4dbb950edb"
+            },
+            {
+              "id": "implementation-request",
+              "version": "c7b4a081b13f4fd10d68a6edfee3e6bb4b8421507bf1913cf86193afa6c10f89"
+            },
+            {
+              "id": "implementation-review",
+              "version": "6b7ccdfc7abe49d6a9700e5ab723b687d85f026c016787ad6adae0b31ef13060"
+            }
+          ],
+          "edges": [
+            {
+              "dependent": "methods-review",
+              "prerequisite": "methods-request"
+            },
+            {
+              "dependent": "methods-request",
+              "prerequisite": "packet"
+            },
+            {
+              "dependent": "implementation-review",
+              "prerequisite": "implementation-request"
+            },
+            {
+              "dependent": "implementation-request",
+              "prerequisite": "packet"
+            }
+          ],
+          "coverage": "partial"
+        },
+        "candidates": [
+          "methods-review",
+          "implementation-review"
+        ],
+        "change": {
+          "node_id": "packet",
+          "old_version": "a7dd9623b21a0eeac195f28f94e2964f6c499ec08c6a5f78415368624c3a36b0",
+          "new_version": "hypothetical-new-version"
+        }
+      },
+      "prior_python_output": {
+        "protocol": "workflow-shadow-single-event-1",
+        "status": "evaluated",
+        "snapshot_hash": "f46d88f41955e264ff77f58ef53bafe0622500d2577872bf98e629f85e80d2f7",
+        "candidate_results": [
+          {
+            "id": "implementation-review",
+            "impact": "stale",
+            "reasons": [
+              "recorded_dependency_path"
+            ],
+            "witness_path": [
+              "implementation-review",
+              "implementation-request",
+              "packet"
+            ]
+          },
+          {
+            "id": "methods-review",
+            "impact": "stale",
+            "reasons": [
+              "recorded_dependency_path"
+            ],
+            "witness_path": [
+              "methods-review",
+              "methods-request",
+              "packet"
+            ]
+          }
+        ],
+        "errors": [],
+        "evaluator": "python_reference",
+        "actual_shacl_executed": false
+      },
+      "rdf_output": {
+        "protocol": "workflow-shadow-single-event-1",
+        "status": "evaluated",
+        "snapshot_hash": "f46d88f41955e264ff77f58ef53bafe0622500d2577872bf98e629f85e80d2f7",
+        "candidate_results": [
+          {
+            "id": "implementation-review",
+            "impact": "stale",
+            "reasons": [
+              "recorded_dependency_path"
+            ],
+            "witness_path": [
+              "implementation-review",
+              "implementation-request",
+              "packet"
+            ]
+          },
+          {
+            "id": "methods-review",
+            "impact": "stale",
+            "reasons": [
+              "recorded_dependency_path"
+            ],
+            "witness_path": [
+              "methods-review",
+              "methods-request",
+              "packet"
+            ]
+          }
+        ],
+        "errors": [],
+        "evaluator": "rdf_pyshacl",
+        "actual_shacl_executed": true,
+        "shacl_conforms": true
+      },
+      "matched_status_reasons_witness_hash": true,
+      "observed_validator_invocations": 1
+    },
+    {
+      "id": "methods_request_replacement",
+      "source": "verified real projection with hypothetical change",
+      "input": {
+        "snapshot": {
+          "nodes": [
+            {
+              "id": "packet",
+              "version": "a7dd9623b21a0eeac195f28f94e2964f6c499ec08c6a5f78415368624c3a36b0"
+            },
+            {
+              "id": "methods-request",
+              "version": "db2e663f1a4da7f2cc7939228456402c158998acb304051e715abaf9de7945b4"
+            },
+            {
+              "id": "methods-review",
+              "version": "40309158ad1beedafd383e4b1e7e0f2772623fbd5bb1ca23c42d7b4dbb950edb"
+            },
+            {
+              "id": "implementation-request",
+              "version": "c7b4a081b13f4fd10d68a6edfee3e6bb4b8421507bf1913cf86193afa6c10f89"
+            },
+            {
+              "id": "implementation-review",
+              "version": "6b7ccdfc7abe49d6a9700e5ab723b687d85f026c016787ad6adae0b31ef13060"
+            }
+          ],
+          "edges": [
+            {
+              "dependent": "methods-review",
+              "prerequisite": "methods-request"
+            },
+            {
+              "dependent": "methods-request",
+              "prerequisite": "packet"
+            },
+            {
+              "dependent": "implementation-review",
+              "prerequisite": "implementation-request"
+            },
+            {
+              "dependent": "implementation-request",
+              "prerequisite": "packet"
+            }
+          ],
+          "coverage": "partial"
+        },
+        "candidates": [
+          "methods-review",
+          "implementation-review"
+        ],
+        "change": {
+          "node_id": "methods-request",
+          "old_version": "db2e663f1a4da7f2cc7939228456402c158998acb304051e715abaf9de7945b4",
+          "new_version": "hypothetical-new-version"
+        }
+      },
+      "prior_python_output": {
+        "protocol": "workflow-shadow-single-event-1",
+        "status": "evaluated",
+        "snapshot_hash": "f46d88f41955e264ff77f58ef53bafe0622500d2577872bf98e629f85e80d2f7",
+        "candidate_results": [
+          {
+            "id": "implementation-review",
+            "impact": "unknown",
+            "reasons": [
+              "no_path_partial_coverage"
+            ],
+            "witness_path": []
+          },
+          {
+            "id": "methods-review",
+            "impact": "stale",
+            "reasons": [
+              "recorded_dependency_path"
+            ],
+            "witness_path": [
+              "methods-review",
+              "methods-request"
+            ]
+          }
+        ],
+        "errors": [],
+        "evaluator": "python_reference",
+        "actual_shacl_executed": false
+      },
+      "rdf_output": {
+        "protocol": "workflow-shadow-single-event-1",
+        "status": "evaluated",
+        "snapshot_hash": "f46d88f41955e264ff77f58ef53bafe0622500d2577872bf98e629f85e80d2f7",
+        "candidate_results": [
+          {
+            "id": "implementation-review",
+            "impact": "unknown",
+            "reasons": [
+              "no_path_partial_coverage"
+            ],
+            "witness_path": []
+          },
+          {
+            "id": "methods-review",
+            "impact": "stale",
+            "reasons": [
+              "recorded_dependency_path"
+            ],
+            "witness_path": [
+              "methods-review",
+              "methods-request"
+            ]
+          }
+        ],
+        "errors": [],
+        "evaluator": "rdf_pyshacl",
+        "actual_shacl_executed": true,
+        "shacl_conforms": true
+      },
+      "matched_status_reasons_witness_hash": true,
+      "observed_validator_invocations": 1
+    },
+    {
+      "id": "complete_coverage_authored_control",
+      "source": "authored complete-coverage control; not true source coverage",
+      "input": {
+        "snapshot": {
+          "nodes": [
+            {
+              "id": "packet",
+              "version": "a7dd9623b21a0eeac195f28f94e2964f6c499ec08c6a5f78415368624c3a36b0"
+            },
+            {
+              "id": "methods-request",
+              "version": "db2e663f1a4da7f2cc7939228456402c158998acb304051e715abaf9de7945b4"
+            },
+            {
+              "id": "methods-review",
+              "version": "40309158ad1beedafd383e4b1e7e0f2772623fbd5bb1ca23c42d7b4dbb950edb"
+            },
+            {
+              "id": "implementation-request",
+              "version": "c7b4a081b13f4fd10d68a6edfee3e6bb4b8421507bf1913cf86193afa6c10f89"
+            },
+            {
+              "id": "implementation-review",
+              "version": "6b7ccdfc7abe49d6a9700e5ab723b687d85f026c016787ad6adae0b31ef13060"
+            }
+          ],
+          "edges": [
+            {
+              "dependent": "methods-review",
+              "prerequisite": "methods-request"
+            },
+            {
+              "dependent": "methods-request",
+              "prerequisite": "packet"
+            },
+            {
+              "dependent": "implementation-review",
+              "prerequisite": "implementation-request"
+            },
+            {
+              "dependent": "implementation-request",
+              "prerequisite": "packet"
+            }
+          ],
+          "coverage": "complete"
+        },
+        "candidates": [
+          "methods-review",
+          "implementation-review"
+        ],
+        "change": {
+          "node_id": "methods-request",
+          "old_version": "db2e663f1a4da7f2cc7939228456402c158998acb304051e715abaf9de7945b4",
+          "new_version": "hypothetical-new-version"
+        }
+      },
+      "prior_python_output": {
+        "protocol": "workflow-shadow-single-event-1",
+        "status": "evaluated",
+        "snapshot_hash": "8d8e680c3ce59eea54767f56782f82d7f1367bbcdfa1452c8c1ee3f4a98b09f5",
+        "candidate_results": [
+          {
+            "id": "implementation-review",
+            "impact": "unaffected",
+            "reasons": [
+              "no_path_complete_coverage"
+            ],
+            "witness_path": []
+          },
+          {
+            "id": "methods-review",
+            "impact": "stale",
+            "reasons": [
+              "recorded_dependency_path"
+            ],
+            "witness_path": [
+              "methods-review",
+              "methods-request"
+            ]
+          }
+        ],
+        "errors": [],
+        "evaluator": "python_reference",
+        "actual_shacl_executed": false
+      },
+      "rdf_output": {
+        "protocol": "workflow-shadow-single-event-1",
+        "status": "evaluated",
+        "snapshot_hash": "8d8e680c3ce59eea54767f56782f82d7f1367bbcdfa1452c8c1ee3f4a98b09f5",
+        "candidate_results": [
+          {
+            "id": "implementation-review",
+            "impact": "unaffected",
+            "reasons": [
+              "no_path_complete_coverage"
+            ],
+            "witness_path": []
+          },
+          {
+            "id": "methods-review",
+            "impact": "stale",
+            "reasons": [
+              "recorded_dependency_path"
+            ],
+            "witness_path": [
+              "methods-review",
+              "methods-request"
+            ]
+          }
+        ],
+        "errors": [],
+        "evaluator": "rdf_pyshacl",
+        "actual_shacl_executed": true,
+        "shacl_conforms": true
+      },
+      "matched_status_reasons_witness_hash": true,
+      "observed_validator_invocations": 1
+    }
+  ],
+  "actual_shacl_invocations": 3,
+  "paid_model_calls": 0,
+  "limitations": [
+    "Shared preflight; independent RDF graph.objects BFS",
+    "SHACL postconversion structural checks do not certify faithful conversion, complete evidence or truth",
+    "No declarative JSON policy arm or maintenance/efficacy/DB benchmark",
+    "No mutable state/history/replay",
+    "Local trusted objects; memory isolation unverified"
+  ]
+}
