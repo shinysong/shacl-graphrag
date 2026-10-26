@@ -17,6 +17,9 @@ from rule_workbench.exports import export_bundle, export_excel, export_json, imp
 from rule_workbench.extractors import candidate_rules, extract_document
 from rule_workbench.llm import build_prompt
 from rule_workbench.transport import available_models, budget_status, generate_candidates
+from rule_workbench.linkage_ui import render_linkage
+from rule_workbench.domain_ui import render_domain_lookup
+from rule_workbench.term_ui import render_term_lookup
 
 st.set_page_config(page_title="규칙 검토실", page_icon="◈", layout="wide")
 st.markdown("""<style>
@@ -45,6 +48,7 @@ def replace_project(project):
     st.session_state.project = validate_project(project)
     st.session_state.result = None
     st.session_state.previous_result = None
+    st.session_state.pop('linkage_result', None)
     st.session_state.epoch += 1
     st.rerun()
 
@@ -116,7 +120,16 @@ b.metric("데이터 행", f'{sum(len(t["rows"]) for t in project["tables"]):,}')
 c.metric("확정 규칙", sum(r["status"] == "confirmed" for r in project["rules"]))
 d.metric("검사 상태", "최신" if fresh else "다시 검사 필요" if result else "미실행")
 
-connect_tab, document_tab, rule_tab, result_tab, export_tab = st.tabs(["데이터 연결", "규칙 문서", "규칙 검토", "검사 결과", "내보내기"])
+connect_tab, linkage_tab, domain_tab, term_tab, document_tab, rule_tab, result_tab, export_tab = st.tabs(["데이터 연결", "표 사이 연결", "표준도메인", "표준용어", "규칙 문서", "규칙 검토", "검사 결과", "내보내기"])
+
+with linkage_tab:
+    render_linkage(project, epoch)
+
+with domain_tab:
+    render_domain_lookup(project, epoch)
+
+with term_tab:
+    render_term_lookup(project, epoch)
 
 with connect_tab:
     st.subheader("검사할 데이터")

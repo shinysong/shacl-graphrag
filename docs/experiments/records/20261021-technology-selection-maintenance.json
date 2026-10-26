@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-10-21T15:45:49.425482+00:00",
+  "study": "technology-selection-1",
+  "phase": "15maintenance submissions checked",
+  "review_job": "20261021T154158Z-technology-selection-maintenance-check-753c2a",
+  "recovery_job": "20261021T154402Z-technology-selection-maintenance-summary-10d591",
+  "observed": {
+    "original_check_exit": 1,
+    "original_failure": "summary sha string.read_bytes after96persistedcases",
+    "summary_recovery_exit": 0,
+    "new_workers_in_recovery": 0,
+    "initial_submissions": 15,
+    "passed": 15,
+    "case_outputs": 96,
+    "correct_outputs": 96,
+    "corrective_arm_submissions": 0,
+    "unique_changes": 11
+  },
+  "summary": "_workspace/technology-selection/maintenance-1/check-output/summary.json",
+  "summary_sha256": "7fb39261abeffaae6417d6567481324732d2578722dae2d013351b8a31729863",
+  "shared_test_harness_nonblank_lines": {
+    "scripts/technology_selection_maintenance_worker.py": 28,
+    "scripts/check_technology_selection_maintenance.py": 62
+  },
+  "limitations": [
+    "Samecoordinator/fixedorder; no humanlabor",
+    "M2/M3/M5 identical sharedhelper changes countonce, notindependentarm implementations",
+    "M4 three localcallers onepolicyartifact, notdistributedservices",
+    "M4PythonJSONformatting inflates rawlinecount",
+    "Originalreportingfailure retained; no answerrepairs/workerretries"
+  ],
+  "next_step": "Produce paper-ready readable results/conditional choice table, editable figures and actual change walkthrough using fixedperformance+maintenance evidence. Apply Korean writing skill, independentreview then docs/sitechecks; retain failurelesson. No further benchmark reruns."
+}

@@ -1,0 +1,61 @@
+{
+  "version": "1.0-development",
+  "status": "design frozen for reference implementation review; no heldout labels generated",
+  "truth_layers": {
+    "source_observation": "Original cell, source row and provenance. Blank presence is observable; business invalidity is not implied.",
+    "declared_policy_reference": "Expected result under authored research policy. Program-derived labels are policy references, not independently expert-adjudicated retailer truth.",
+    "business_truth": "Unavailable for this public dataset; do not report external business accuracy."
+  },
+  "reference_generation": {
+    "implementation": "Separate scorer-only module must not import evaluate_retail_policies, contract, runtime model outputs or runtime adapters to compute labels.",
+    "inputs": ["immutable source rows", "versioned authored policy specification"],
+    "evidence": ["row_id", "policy", "status", "applied condition", "source columns", "policy version/hash", "source input hash"],
+    "development_verification": "Handwritten boundary cases and independent methods/implementation review. Shared semantics still means policy compliance, not independent business ground truth.",
+    "freeze_order": ["Freeze reference implementation and tests on development", "Freeze per-arm prompts/settings/runtime code/batch manifest", "Generate heldout references without inspecting outcome distributions for tuning", "Persist references outside runtime inputs", "Run arms and score saved outputs only"],
+    "corrections": "A discovered reference bug creates a new version with reason and preserves old labels/scores; report affected denominators. Never silently amend labels to agree with a model.",
+    "no_reference_repair": true
+  },
+  "common_semantics": {
+    "blank": "Absent key, null, or string representation containing only whitespace.",
+    "number": "Finite base-10 decimal from scalar representation; booleans, missing values and unparseable/nonfinite values produce unknown for numeric policies. No currency-symbol or thousands-separator normalization.",
+    "cancellation": "Case-insensitive prefix c on invoice string, without trimming nonblank invoice text. Missing invoice makes quantity_sign unknown.",
+    "customer_analysis": "Blank CustomerID violates the authored requirement. Any nonblank value passes only presence; identifier syntax and actual customer identity are outside this rule.",
+    "quantity_sign": "C-prefix quantity strictly negative, otherwise strictly positive. Zero violates; fractional magnitude is allowed for this sign-only policy. Integer validation is a different unimplemented policy.",
+    "nonnegative_price": "Finite price >=0 passes; negative violates; missing/unparseable unknown. Zero is not evidence of a legitimate commercial sale."
+  },
+  "tracks": {
+    "construction": {
+      "input": "Identical source definitions, authored policy semantics and permitted development examples; no evaluation references.",
+      "output": "Versioned interpreted policy artifact and executable implementation or direct-decision prompt.",
+      "measure": ["observed human active time if actually recorded", "model calls/tokens/cost", "attempts and failed artifacts", "development contract tests", "corrections"],
+      "historical_work": "Existing code was created during exploration. Its past construction time is not a prospectively measured baseline."
+    },
+    "execution": {
+      "end_to_end": "Run frozen arm-specific interpretation/implementation on common evaluation inputs. Interpretation mistakes remain outcomes.",
+      "matched_semantics": "Replay identical approved semantics in Python and SHACL separately; label as controlled execution comparison, not LLM construction efficacy.",
+      "cost_boundary": "Record preprocessing, model request, tool execution, postprocessing separately plus total wall time; report cold/warm setup separately.",
+      "repeat_unit": "Independent model attempts are repeats, not derived replays. Never retry failed cases silently."
+    },
+    "maintenance": {
+      "status": "future development-only changes, not executed",
+      "tasks": ["rename a column with a declared mapping", "change one numeric boundary", "add one explicit exception"],
+      "measure": ["successful change completion", "active time if observed", "artifact edits", "regressions on unchanged cases"],
+      "constraint": "Do not change heldout policy semantics after seeing its outcomes."
+    }
+  },
+  "arm_artifacts": {
+    "manual_assumption_only": ["assumption table", "sensitivity ranges", "no invented human accuracy"],
+    "human_specified_code": ["policy interpretation record", "source hash", "dependency lock", "per-case outputs", "execution errors"],
+    "llm_direct": ["common packet hash", "exact messages", "model/settings", "raw response", "parsed response", "usage/latency"],
+    "llm_ad_hoc_code": ["same policy information", "generated code/query", "tool inputs/outputs", "isolation configuration", "raw final response", "usage/latency"],
+    "llm_explicit_rules_python": ["same policy information", "generated rule artifact", "approval provenance", "compiled Python hash", "raw execution traces"],
+    "llm_explicit_rules_shacl": ["same policy information", "generated rule artifact", "approval provenance", "SHACL bytes hash", "RDF mapping hash", "raw validation reports"]
+  },
+  "fairness_and_readiness": [
+    "No arm receives extra policy examples or reviewer corrections for free; record and match intervention budgets or report a human-assisted arm separately.",
+    "Runtime source identifiers are matched before scoring; missing/failed outputs preserve the original denominator.",
+    "Frozen610rows are not yet labeled or evaluated; only development fixtures have run.",
+    "Per-arm model selection, context limits, batch size, tool budget and safe generated-code isolation remain unresolved. No paid launch until separately specified and reviewed.",
+    "Same-policy execution may yield identical accuracy; this is a valid outcome, not a failed study."
+  ]
+}

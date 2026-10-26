@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-10-20T05:32:14.548420+00:00",
+  "review_job": "20261020T053056Z-retail-scorer-6f9521",
+  "scope": "offline scorer software checks using authored cases, not system accuracy",
+  "tests_passed": 20,
+  "seconds": 0.05,
+  "exit_code": 0,
+  "source_sha256": "94221d2fa4ae411d6215e553e732a9e6c70ba1486c3e1ccbb10c282fb22df75d",
+  "heldout_read": false,
+  "paid_calls": 0,
+  "metrics": [
+    "violation precision/recall/F1 on known references",
+    "coverage all/known references",
+    "selective error known references",
+    "unsupported decisions on unknown references",
+    "explicit runtime errors",
+    "missing outputs",
+    "abstentions"
+  ],
+  "limitations": [
+    "No independent model result evaluated",
+    "No confidence intervals or invoice aggregation implemented",
+    "No human time/cost estimate measured",
+    "Input adapters must distinguish explicit runtime error from missing output; scorer rejects malformed/duplicate/unexpected keys"
+  ]
+}

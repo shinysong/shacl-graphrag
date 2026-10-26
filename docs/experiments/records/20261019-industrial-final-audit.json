@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-10-19T22:04:33.189420+00:00",
+  "kind": "offline_software_regression",
+  "review_job": "20261019T220253Z-industrial-final-audit-f91db9",
+  "test_files": [
+    "tests/test_workbench_core.py",
+    "tests/test_workbench_connectors.py",
+    "tests/test_workbench_ui.py",
+    "tests/test_workbench_linkage.py",
+    "tests/test_workbench_linkage_consistency.py",
+    "tests/test_workbench_linkage_config.py",
+    "tests/test_workbench_linkage_ui.py",
+    "tests/test_workbench_provenance_roundtrip.py",
+    "tests/test_workbench_reference_scope.py",
+    "tests/test_workbench_domain_ui.py",
+    "tests/test_workbench_term_ui.py",
+    "tests/test_domain_candidates.py",
+    "tests/test_term_candidates.py",
+    "tests/test_public_domain_profile.py",
+    "tests/test_industrial_source_snapshot.py"
+  ],
+  "passed": 139,
+  "failed": 0,
+  "duration_seconds": 5.71,
+  "pytest_exit_code": 0,
+  "registered_check_gate_exit_code": 0,
+  "registered_checks": [],
+  "execution_environment": {
+    "UV_OFFLINE": "true"
+  },
+  "new_paid_calls": 0,
+  "limitations": [
+    "Covered software behavior only; not independent business accuracy or RDF/SHACL benefit.",
+    "Historical tests overlap this run; do not sum counts as independent evidence.",
+    "No live PostgreSQL, paid model generation, new browser or site build was run.",
+    "Fixture dictionaries and authored data do not establish semantic mapping accuracy.",
+    "No measured peak memory or production readiness claim."
+  ],
+  "handoff": [
+    "Existing server8501 retains prior imports; user-visible deployment needs restart with unsaved-state preservation.",
+    "Exact term lookup retains ambiguity and requires human review; no word decomposition or automatic semantic mapping.",
+    "Working changes remain uncommitted and unpushed.",
+    "Continue only within original deadline22:27:21Z; no extension."
+  ]
+}

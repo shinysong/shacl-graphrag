@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-20T07:46:43.659869+00:00",
+  "job": "20261020T074251Z-retail-mapping-v2-234ca3",
+  "superseded_job": "20261020T074107Z-retail-mapping-578d8c",
+  "result": "V2 checks: 11 authored tests passed in0.19s; source-hash-checked first3 consumed development rows produced102triples and equivalent JSON metadata. V1 10pass/1failure retained; diagnostic preview inadvertently ran after V1 failure, not a successful gated run. Decimal lexical correction reviewed afresh; no heldout or API calls. Broader numeric lexical parity and downstream integration remain unverified.",
+  "preview": {
+    "development_rows": 3,
+    "triples": 102,
+    "project_sha256": "2c47251bb01fec0eb3f5c6d2469ba7da368c7d90b6a88439ddca916d0bf13344",
+    "ttl_sha256": "316c0f7f8eb0520147956aadfacb2a4a54d5ca3711fca5096c76f22913c9e998",
+    "normalized_sha256": "8e500d5bda4281ac09242072053e51d4c3cc2d31966dc47b51685b26eab31cdf"
+  },
+  "tests": {
+    "passed": 11,
+    "failed": 0
+  },
+  "limitations": [
+    "Software checks only, not business accuracy or ontology benefit",
+    "Mapping metadata not yet wired to all arms",
+    "Numeric JSON/RDF equivalence is value-based, not lexical",
+    "Fractional, signed-zero and exponent roundtrip coverage remains limited",
+    "Current scalar SHACL baseline is not full generated-shape execution"
+  ],
+  "paid_calls": 0
+}

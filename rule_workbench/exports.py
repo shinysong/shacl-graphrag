@@ -16,7 +16,7 @@ def _json(value):
 
 
 def _source(source):
-    allowed = {'kind', 'file', 'sheet', 'table', 'sha256', 'truncated', 'data_omitted', 'page', 'line', 'quote', 'row_count', 'loaded_rows', 'total_rows', 'retrieved_at'}
+    allowed = {'kind', 'file', 'sheet', 'table', 'sha256', 'truncated', 'redacted', 'data_omitted', 'page', 'line', 'quote', 'row_count', 'loaded_rows', 'total_rows', 'retrieved_at'}
     return {k: v for k, v in source.items() if k in allowed}
 
 

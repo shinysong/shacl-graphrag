@@ -1,0 +1,78 @@
+{
+  "study": "rule-extension-1",
+  "origin": "authored offline extension; no human participants",
+  "worker_observations": {
+    "python": {
+      "exit_code": 0,
+      "elapsed_seconds": 0.1641729240072891,
+      "maxrss_kib": 26492
+    },
+    "rdf": {
+      "exit_code": 0,
+      "elapsed_seconds": 8.393822416022886,
+      "maxrss_kib": 88144
+    }
+  },
+  "new_decisions": 384,
+  "new_reference_matches": 384,
+  "parity_pairs": 192,
+  "shared_consumer_groups": 128,
+  "legacy_outputs": 88,
+  "before_after_pairs": 44,
+  "legacy_reference_assertions": 88,
+  "historical_baseline_assertions": 88,
+  "legacy_changed_files": [],
+  "new_changed_files": [],
+  "failures": [],
+  "limits": [
+    "16 authored scenarios,2 identity/order controls; not independent domain trials",
+    "Common joins/scalar parsing/output mapping reused by both; check predicate engines differ",
+    "No raw-document extraction,actual reviewer action,GUI usability,human labor or distributed sharing measurement",
+    "Missing/duplicate document branches not exercised",
+    "Witness presence and paired equality checked; no independent completeness proof",
+    "No experimental LLM calls"
+  ],
+  "production_files": [
+    {
+      "path": "scripts/rule_extension_common.py",
+      "lines": 64,
+      "sha256": "8760b6b78908a8ed935d53b507f90f2ee476168ba23f6750f0bf1114b1da00f3"
+    },
+    {
+      "path": "scripts/rule_extension_python.py",
+      "lines": 23,
+      "sha256": "19435b109c7b5ca2108e7344d4297159607a223538b7d41c79a4cb73f12d00d1"
+    },
+    {
+      "path": "scripts/rule_extension_rdf.py",
+      "lines": 28,
+      "sha256": "d2d8e69b54197f8b6968c9b843bad5ec7f1b395f30572dad69de0d30974e2648"
+    },
+    {
+      "path": "scripts/rule_extension_service.py",
+      "lines": 26,
+      "sha256": "d127af148394520c1ec937114c41ca9f1c70c54c951ccf93e5d0c841f87a41dc"
+    },
+    {
+      "path": "research/rule-extension/policy-v1.json",
+      "lines": 1,
+      "sha256": "c56e2883ebbd661719a6ef7dd5b43b1d43c021cca66cbb2f8d93cd68c0aa6b97"
+    },
+    {
+      "path": "research/rule-extension/policy-v2.json",
+      "lines": 1,
+      "sha256": "71332a695d23d4ddf51f4ae5696ff65189a273eabe90f4dfa4e37c6823347708"
+    },
+    {
+      "path": "research/rule-extension/release-shapes-v1.ttl",
+      "lines": 11,
+      "sha256": "1401abe49d64be1d376294ff4092402e9b93edfe04aff573c943ac3626c18d41"
+    }
+  ],
+  "review_job": "20261022T025402Z-rule-extension-execution-1e3b18",
+  "policy_transition_pairs": 192,
+  "raw_results": "Local ignored _workspace/rule-extension-v1/attempt-1; portable review bundle separately generated",
+  "first_attempt": true,
+  "changed_policy_decisions": 36,
+  "changed_policy_full_answers": 144
+}

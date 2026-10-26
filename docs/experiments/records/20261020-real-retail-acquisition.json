@@ -1,0 +1,62 @@
+{
+  "created_at": "2026-10-20T04:09:19.519744+00:00",
+  "source": "https://archive.ics.uci.edu/dataset/352/online+retail",
+  "citation": "Chen, D. (2015). Online Retail. UCI. https://doi.org/10.24432/C5BW33",
+  "license": "CC BY 4.0",
+  "files": {
+    "original.zip": {
+      "sha256": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+      "bytes": 23715478
+    },
+    "original.xlsx": {
+      "sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+      "bytes": 23715344
+    },
+    "metadata.json": {
+      "sha256": "9b1a75b4ee044da8b2f108c31acf6ebf3fe5eddce75a1fe03032c6781b80f2e1",
+      "bytes": 4101
+    },
+    "column-definitions.csv": {
+      "sha256": "6d546f50764c1eae11266cd24c152774808a592c439dff930d05c5bce5b0542b",
+      "bytes": 794
+    },
+    "first-5000.csv": {
+      "sha256": "099f0aef5f7efe30494f407aad763ce8ef0fffa9c66bd1b440f09d2c6a5facef",
+      "bytes": 444368
+    }
+  },
+  "reported_full_rows": 541909,
+  "observed_sample_rows": 5000,
+  "sample_columns": [
+    "InvoiceNo",
+    "StockCode",
+    "Description",
+    "Quantity",
+    "InvoiceDate",
+    "UnitPrice",
+    "CustomerID",
+    "Country"
+  ],
+  "sample_blank_counts": {
+    "InvoiceNo": 0,
+    "StockCode": 0,
+    "Description": 12,
+    "Quantity": 0,
+    "InvoiceDate": 0,
+    "UnitPrice": 0,
+    "CustomerID": 1205,
+    "Country": 0
+  },
+  "c_prefix_rows": 70,
+  "negative_quantity_rows": 72,
+  "limits": [
+    "First5000 rows, not random or representative; full row count is source metadata, not measured.",
+    "Blank counts are document/data discrepancy candidates, not adjudicated business errors.",
+    "C prefix denotes cancellation per source; negative quantity is not automatically an error.",
+    "No human baseline time, labor reduction, LLM, SHACL comparison or multi-table join evaluated.",
+    "Project explicitly truncated; CSV alone does not carry completeness metadata."
+  ],
+  "review_job": "20261020T040828Z-real-retail-acquisition-ab5d73",
+  "execution_exit_code": 0,
+  "preview_note": "Dates normalized to ISO strings, numeric CSV cells imported as strings. Original XLSX retained; no exact cell-type/formula fidelity claim. Empty-rule project is not completed business validation."
+}

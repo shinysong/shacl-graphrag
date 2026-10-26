@@ -1,0 +1,13 @@
+@prefix ex: <urn:selection:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+ex:EqualShape a sh:NodeShape; sh:targetClass ex:equal;
+ sh:property [sh:path ex:a; sh:equals ex:b] .
+ex:QuantityShape a sh:NodeShape; sh:targetClass ex:quantity;
+ sh:property [sh:path ex:a; sh:minExclusive 0; sh:lessThanOrEquals ex:b] .
+ex:InspectionShape a sh:NodeShape; sh:targetClass ex:inspection-status;
+ sh:property [sh:path ex:a; sh:hasValue "Accepted"] .
+ex:CertificateShape a sh:NodeShape; sh:targetClass ex:certificate-status;
+ sh:property [sh:path ex:a; sh:hasValue "Active"] .
+ex:IntervalShape a sh:NodeShape; sh:targetClass ex:interval;
+ sh:property [sh:path ex:a; sh:lessThanOrEquals ex:b];
+ sh:property [sh:path ex:b; sh:lessThan ex:c] .

@@ -1,0 +1,68 @@
+{
+  "at": "2026-10-20T09:02:37.393067+00:00",
+  "job": "20261020T090045Z-retail-row-compare-709faf",
+  "result": "Run exited0:500consumeddevrows,1500decisions per arm, zero mismatches; ALL1500pass in both. No violations/unknown/errors encountered, so cannot assess their real-data detection. DirectPython 0.001989s vs SHACLwholewrapper 12.117440s, unequalwork scopes/singlefixedorder not enginebenchmark. All5batchtraces retained. No API/heldout/LLM.",
+  "run_exit_code": 0,
+  "observed": {
+    "rows": 500,
+    "decisions_per_arm": 1500,
+    "mismatches": [],
+    "counts": {
+      "python": {
+        "customer_analysis": {
+          "pass": 500
+        },
+        "quantity_sign": {
+          "pass": 500
+        },
+        "nonnegative_price": {
+          "pass": 500
+        }
+      },
+      "shacl": {
+        "customer_analysis": {
+          "pass": 500
+        },
+        "quantity_sign": {
+          "pass": 500
+        },
+        "nonnegative_price": {
+          "pass": 500
+        }
+      }
+    },
+    "timings": [
+      {
+        "python_seconds": 0.0004493830056162551,
+        "shacl_wrapper_seconds": 2.422770037999726
+      },
+      {
+        "python_seconds": 0.00036294199526309967,
+        "shacl_wrapper_seconds": 2.4063665449939435
+      },
+      {
+        "python_seconds": 0.00038797200249973685,
+        "shacl_wrapper_seconds": 2.423433566989843
+      },
+      {
+        "python_seconds": 0.00041212599899154156,
+        "shacl_wrapper_seconds": 2.422340401011752
+      },
+      {
+        "python_seconds": 0.00037661199166905135,
+        "shacl_wrapper_seconds": 2.4425295640103286
+      }
+    ],
+    "limitations": [
+      "One ordered consumed development prefix, not representative or heldout",
+      "Authored policy agreement, not external business truth",
+      "Python direct cells; SHACL time includes mapping, shapes, validation and in-memory trace serialization",
+      "One run, fixed Python-before-SHACL order; no engine-performance or maintenance-labor inference",
+      "SHACL unknown handling uses shared preprocessing outside validator",
+      "No LLM or generated artifacts"
+    ]
+  },
+  "python_total_seconds": 0.0019890349940396845,
+  "shacl_wrapper_total_seconds": 12.117440115005593,
+  "paid_calls": 0
+}

@@ -1,0 +1,147 @@
+{
+  "kind": "descriptive-source-profile",
+  "review_job": "20261019T202120Z-public-terms-source-c24f54",
+  "source_profile": {
+    "terms": {
+      "bytes": 2690413,
+      "sha256": "db3e409366f2d505a9639a912ccf75d0bb07fe1fe6c3d501dc4e1d02eb2c0506",
+      "rows": 13176,
+      "columns": [
+        "공통표준용어명",
+        "공통표준용어설명",
+        "공통표준용어영문약어명",
+        "공통표준도메인명",
+        "허용값",
+        "저장 형식",
+        "표현 형식",
+        "행정표준코드명",
+        "소관기관명",
+        "용어 이음동의어 목록",
+        "제정차수",
+        "개정구분명(폐기 또는 변경)",
+        "개정항목",
+        "개정사유"
+      ],
+      "duplicate_names": {
+        "납세자명": 2,
+        "보훈대상여부": 2,
+        "사업자명": 2,
+        "상호": 2,
+        "소유권이전일자": 2,
+        "유형자산금액": 2,
+        "중권역명": 2,
+        "측정지점명": 2
+      },
+      "revision_markers": {
+        "": 12455,
+        "변경": 716,
+        "폐기": 5
+      }
+    },
+    "words": {
+      "bytes": 446710,
+      "sha256": "34ada7694fca330bfb81c83bd5688cb35b6d77daae842914b1dfc9e744756b0e",
+      "rows": 3284,
+      "columns": [
+        "공통표준단어명",
+        "공통표준단어영문약어명",
+        "공통표준단어 영문명",
+        "공통표준단어 설명",
+        "형식단어여부",
+        "공통표준도메인분류명",
+        "이음동의어 목록",
+        "금칙어 목록",
+        "제정차수",
+        "개정구분명(폐기 또는 변경)",
+        "개정항목",
+        "개정사유"
+      ],
+      "duplicate_names": {
+        "보훈": 2,
+        "실효": 2,
+        "중권역": 2
+      },
+      "revision_markers": {
+        "": 3229,
+        "변경": 53,
+        "폐기": 2
+      }
+    },
+    "domains": {
+      "bytes": 26092,
+      "sha256": "3ba267cc9a4ea3102bb8223c8fddf8ae65e007922133b2dd94d33a6db5e616fa",
+      "rows": 129,
+      "columns": [
+        "공통표준도메인그룹명",
+        "공통표준도메인분류명",
+        "공통표준도메인명",
+        "공통표준도메인설명",
+        "데이터타입",
+        "데이터길이",
+        "데이터소수점길이",
+        "저장형식",
+        "표현형식",
+        "단위",
+        "허용값",
+        "제정차수",
+        "개정구분명(폐기 또는 변경)",
+        "개정항목",
+        "개정사유"
+      ],
+      "duplicate_names": {
+        "번호C9": 2,
+        "번호C13": 2,
+        "번호C24": 2
+      },
+      "revision_markers": {
+        "": 123,
+        "변경": 6
+      }
+    },
+    "exact_term_domain_join": {
+      "counts": {
+        "single": 13172,
+        "multiple": 4
+      },
+      "examples": {
+        "multiple": [
+          {
+            "record": 1919,
+            "term": "국제표준도서번호",
+            "domain": "번호C13",
+            "candidate_count": 2
+          },
+          {
+            "record": 5691,
+            "term": "세금계산서번호",
+            "domain": "번호C24",
+            "candidate_count": 2
+          },
+          {
+            "record": 9161,
+            "term": "전자세금계산서승인번호",
+            "domain": "번호C24",
+            "candidate_count": 2
+          },
+          {
+            "record": 12691,
+            "term": "현금영수증승인번호",
+            "domain": "번호C9",
+            "candidate_count": 2
+          }
+        ],
+        "missing": []
+      },
+      "missing_domain_names": {},
+      "scope": "Exact raw names only, all revision rows retained; not verified mappings or data defects."
+    }
+  },
+  "domain_pin_matches": true,
+  "paid_calls": 0,
+  "limitations": [
+    "Exact domain-name lookup only",
+    "All revision rows retained",
+    "Multiple candidates are not proven defects",
+    "No term/word lookup integrated in app yet"
+  ]
+}

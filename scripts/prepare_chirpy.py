@@ -33,7 +33,7 @@ def page_url(path):
 
 def rewrite_links(body, source):
     def replace(match):
-        label, target = match.groups()
+        image, label, target = match.groups()
         url = urlsplit(target)
         if url.scheme or url.netloc or target.startswith(('#', '/')):
             return match.group(0)
@@ -45,16 +45,17 @@ def rewrite_links(body, source):
         if dest.suffix == '.md':
             target = BASEURL + page_url(dest)
         else:
-            target = BASEURL + '/' + dest.relative_to(DOCS).as_posix()
+            # Chirpy adds baseurl to image src; ordinary download links need it here.
+            target = ('' if image else BASEURL) + '/' + dest.relative_to(DOCS).as_posix()
         if url.query:
             target += '?' + url.query
         if url.fragment:
             target += '#' + url.fragment
-        return f'[{label}]({target})'
+        return f'{image}[{label}]({target})'
 
     # Fenced examples are source text, not navigational links.
     sections = re.split(r'(^```.*?^```[^\n]*$)', body, flags=re.M | re.S)
-    return ''.join(section if i % 2 else re.sub(r'\[([^\]]*)\]\(([^\s)]+)\)', replace, section)
+    return ''.join(section if i % 2 else re.sub(r'(!?)\[([^\]]*)\]\(([^\s)]+)\)', replace, section)
                    for i, section in enumerate(sections))
 
 
@@ -111,6 +112,12 @@ def prepare():
         dest = OUTPUT / source.relative_to(DOCS)
         dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, dest)
+    # Only explicit public figure formats, never arbitrary workspace artifacts.
+    for source in (DOCS / 'assets').rglob('*'):
+        if source.is_file() and source.suffix.lower() in {'.svg', '.png'}:
+            dest = OUTPUT / source.relative_to(DOCS)
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(source, dest)
     for name, layout, icon, order in [('categories', 'categories', 'fas fa-stream', 6),
                                       ('archives', 'archives', 'fas fa-archive', 7)]:
         (OUTPUT / '_tabs' / f'{name}.md').write_text('---\n' + yaml.safe_dump(dict(

@@ -1,0 +1,18 @@
+@prefix ex: <urn:industrial:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:EqualityShape a sh:NodeShape ; sh:targetClass ex:EqualityCheck ;
+  sh:property [ sh:path ex:left ; sh:minCount 1 ; sh:maxCount 1 ; sh:equals ex:right ] .
+ex:QuantityShape a sh:NodeShape ; sh:targetClass ex:QuantityCheck ;
+  sh:property [ sh:path ex:quantity ; sh:minCount 1 ; sh:maxCount 1 ;
+    sh:datatype xsd:decimal ; sh:minExclusive 0 ; sh:lessThanOrEquals ex:remaining ] .
+ex:InspectionShape a sh:NodeShape ; sh:targetClass ex:InspectionCheck ;
+  sh:property [ sh:path ex:status ; sh:hasValue "Accepted" ] .
+ex:CertificateShape a sh:NodeShape ; sh:targetClass ex:CertificateCheck ;
+  sh:property [ sh:path ex:status ; sh:hasValue "Active" ] .
+# Calendar parsing and valid interval gating happen in the common adapter.
+# Ordinal integers preserve date-only ordering, without timezone coercion.
+ex:DateShape a sh:NodeShape ; sh:targetClass ex:DateCheck ;
+  sh:property [ sh:path ex:start ; sh:lessThanOrEquals ex:received ] ;
+  sh:property [ sh:path ex:received ; sh:lessThan ex:end ] .

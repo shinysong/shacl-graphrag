@@ -1,0 +1,1330 @@
+{
+  "recorded_at": "2026-10-20T15:54:51.718467+00:00",
+  "job": "20261020T155110Z-retail-boundary-llm-d70cf8",
+  "model": "openai/gpt-6-luna",
+  "result": {
+    "split_metrics": {
+      "authored_boundary_probe": {
+        "raw": {
+          "overall": {
+            "n": 36,
+            "known_reference_n": 33,
+            "confusion": {
+              "pass": {
+                "pass": 27,
+                "violation": 0,
+                "unknown": 0,
+                "error": 0,
+                "missing_output": 0
+              },
+              "violation": {
+                "pass": 0,
+                "violation": 6,
+                "unknown": 0,
+                "error": 0,
+                "missing_output": 0
+              },
+              "unknown": {
+                "pass": 0,
+                "violation": 0,
+                "unknown": 3,
+                "error": 0,
+                "missing_output": 0
+              }
+            },
+            "violation_tp": 6,
+            "violation_fp": 0,
+            "violation_fn": 0,
+            "violation_precision_known_refs": 1.0,
+            "violation_recall_known_refs": 1.0,
+            "violation_f1_known_refs": 1.0,
+            "coverage_all": 0.9166666666666666,
+            "coverage_known_refs": 1.0,
+            "selective_error_known_refs": 0.0,
+            "false_pass_n": 0,
+            "unnecessary_abstention_known_refs_n": 0,
+            "unsupported_decision_unknown_refs_n": 0,
+            "unsupported_decision_unknown_refs_rate": 0.0,
+            "runtime_error_n": 0,
+            "missing_output_n": 0,
+            "abstention_n": 3
+          },
+          "by_policy": {
+            "customer_analysis": {
+              "n": 12,
+              "known_reference_n": 12,
+              "confusion": {
+                "pass": {
+                  "pass": 11,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 1,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 1,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": 1.0,
+              "violation_recall_known_refs": 1.0,
+              "violation_f1_known_refs": 1.0,
+              "coverage_all": 1.0,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.0,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": null,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 0
+            },
+            "nonnegative_price": {
+              "n": 12,
+              "known_reference_n": 11,
+              "confusion": {
+                "pass": {
+                  "pass": 10,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 1,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 1,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 1,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": 1.0,
+              "violation_recall_known_refs": 1.0,
+              "violation_f1_known_refs": 1.0,
+              "coverage_all": 0.9166666666666666,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.0,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": 0.0,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 1
+            },
+            "quantity_sign": {
+              "n": 12,
+              "known_reference_n": 10,
+              "confusion": {
+                "pass": {
+                  "pass": 6,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 4,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 2,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 4,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": 1.0,
+              "violation_recall_known_refs": 1.0,
+              "violation_f1_known_refs": 1.0,
+              "coverage_all": 0.8333333333333334,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.0,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": 0.0,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 2
+            }
+          },
+          "notes": [
+            "Missing/error/abstention on reference violation counts as missed detection.",
+            "Unknown references excluded from binary metrics; unsupported decisions counted separately.",
+            "No human time, cost, confidence interval or external business truth inferred."
+          ]
+        },
+        "metadata": {
+          "overall": {
+            "n": 36,
+            "known_reference_n": 33,
+            "confusion": {
+              "pass": {
+                "pass": 27,
+                "violation": 0,
+                "unknown": 0,
+                "error": 0,
+                "missing_output": 0
+              },
+              "violation": {
+                "pass": 0,
+                "violation": 6,
+                "unknown": 0,
+                "error": 0,
+                "missing_output": 0
+              },
+              "unknown": {
+                "pass": 0,
+                "violation": 0,
+                "unknown": 3,
+                "error": 0,
+                "missing_output": 0
+              }
+            },
+            "violation_tp": 6,
+            "violation_fp": 0,
+            "violation_fn": 0,
+            "violation_precision_known_refs": 1.0,
+            "violation_recall_known_refs": 1.0,
+            "violation_f1_known_refs": 1.0,
+            "coverage_all": 0.9166666666666666,
+            "coverage_known_refs": 1.0,
+            "selective_error_known_refs": 0.0,
+            "false_pass_n": 0,
+            "unnecessary_abstention_known_refs_n": 0,
+            "unsupported_decision_unknown_refs_n": 0,
+            "unsupported_decision_unknown_refs_rate": 0.0,
+            "runtime_error_n": 0,
+            "missing_output_n": 0,
+            "abstention_n": 3
+          },
+          "by_policy": {
+            "customer_analysis": {
+              "n": 12,
+              "known_reference_n": 12,
+              "confusion": {
+                "pass": {
+                  "pass": 11,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 1,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 1,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": 1.0,
+              "violation_recall_known_refs": 1.0,
+              "violation_f1_known_refs": 1.0,
+              "coverage_all": 1.0,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.0,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": null,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 0
+            },
+            "nonnegative_price": {
+              "n": 12,
+              "known_reference_n": 11,
+              "confusion": {
+                "pass": {
+                  "pass": 10,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 1,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 1,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 1,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": 1.0,
+              "violation_recall_known_refs": 1.0,
+              "violation_f1_known_refs": 1.0,
+              "coverage_all": 0.9166666666666666,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.0,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": 0.0,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 1
+            },
+            "quantity_sign": {
+              "n": 12,
+              "known_reference_n": 10,
+              "confusion": {
+                "pass": {
+                  "pass": 6,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 4,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 2,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 4,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": 1.0,
+              "violation_recall_known_refs": 1.0,
+              "violation_f1_known_refs": 1.0,
+              "coverage_all": 0.8333333333333334,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.0,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": 0.0,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 2
+            }
+          },
+          "notes": [
+            "Missing/error/abstention on reference violation counts as missed detection.",
+            "Unknown references excluded from binary metrics; unsupported decisions counted separately.",
+            "No human time, cost, confidence interval or external business truth inferred."
+          ]
+        }
+      },
+      "selected_actual_development_source": {
+        "raw": {
+          "overall": {
+            "n": 6,
+            "known_reference_n": 6,
+            "confusion": {
+              "pass": {
+                "pass": 2,
+                "violation": 0,
+                "unknown": 0,
+                "error": 0,
+                "missing_output": 0
+              },
+              "violation": {
+                "pass": 0,
+                "violation": 4,
+                "unknown": 0,
+                "error": 0,
+                "missing_output": 0
+              },
+              "unknown": {
+                "pass": 0,
+                "violation": 0,
+                "unknown": 0,
+                "error": 0,
+                "missing_output": 0
+              }
+            },
+            "violation_tp": 4,
+            "violation_fp": 0,
+            "violation_fn": 0,
+            "violation_precision_known_refs": 1.0,
+            "violation_recall_known_refs": 1.0,
+            "violation_f1_known_refs": 1.0,
+            "coverage_all": 1.0,
+            "coverage_known_refs": 1.0,
+            "selective_error_known_refs": 0.0,
+            "false_pass_n": 0,
+            "unnecessary_abstention_known_refs_n": 0,
+            "unsupported_decision_unknown_refs_n": 0,
+            "unsupported_decision_unknown_refs_rate": null,
+            "runtime_error_n": 0,
+            "missing_output_n": 0,
+            "abstention_n": 0
+          },
+          "by_policy": {
+            "customer_analysis": {
+              "n": 2,
+              "known_reference_n": 2,
+              "confusion": {
+                "pass": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 2,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 2,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": 1.0,
+              "violation_recall_known_refs": 1.0,
+              "violation_f1_known_refs": 1.0,
+              "coverage_all": 1.0,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.0,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": null,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 0
+            },
+            "nonnegative_price": {
+              "n": 2,
+              "known_reference_n": 2,
+              "confusion": {
+                "pass": {
+                  "pass": 2,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 0,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": null,
+              "violation_recall_known_refs": null,
+              "violation_f1_known_refs": null,
+              "coverage_all": 1.0,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.0,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": null,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 0
+            },
+            "quantity_sign": {
+              "n": 2,
+              "known_reference_n": 2,
+              "confusion": {
+                "pass": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 2,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 2,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": 1.0,
+              "violation_recall_known_refs": 1.0,
+              "violation_f1_known_refs": 1.0,
+              "coverage_all": 1.0,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.0,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": null,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 0
+            }
+          },
+          "notes": [
+            "Missing/error/abstention on reference violation counts as missed detection.",
+            "Unknown references excluded from binary metrics; unsupported decisions counted separately.",
+            "No human time, cost, confidence interval or external business truth inferred."
+          ]
+        },
+        "metadata": {
+          "overall": {
+            "n": 6,
+            "known_reference_n": 6,
+            "confusion": {
+              "pass": {
+                "pass": 2,
+                "violation": 0,
+                "unknown": 0,
+                "error": 0,
+                "missing_output": 0
+              },
+              "violation": {
+                "pass": 0,
+                "violation": 4,
+                "unknown": 0,
+                "error": 0,
+                "missing_output": 0
+              },
+              "unknown": {
+                "pass": 0,
+                "violation": 0,
+                "unknown": 0,
+                "error": 0,
+                "missing_output": 0
+              }
+            },
+            "violation_tp": 4,
+            "violation_fp": 0,
+            "violation_fn": 0,
+            "violation_precision_known_refs": 1.0,
+            "violation_recall_known_refs": 1.0,
+            "violation_f1_known_refs": 1.0,
+            "coverage_all": 1.0,
+            "coverage_known_refs": 1.0,
+            "selective_error_known_refs": 0.0,
+            "false_pass_n": 0,
+            "unnecessary_abstention_known_refs_n": 0,
+            "unsupported_decision_unknown_refs_n": 0,
+            "unsupported_decision_unknown_refs_rate": null,
+            "runtime_error_n": 0,
+            "missing_output_n": 0,
+            "abstention_n": 0
+          },
+          "by_policy": {
+            "customer_analysis": {
+              "n": 2,
+              "known_reference_n": 2,
+              "confusion": {
+                "pass": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 2,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 2,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": 1.0,
+              "violation_recall_known_refs": 1.0,
+              "violation_f1_known_refs": 1.0,
+              "coverage_all": 1.0,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.0,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": null,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 0
+            },
+            "nonnegative_price": {
+              "n": 2,
+              "known_reference_n": 2,
+              "confusion": {
+                "pass": {
+                  "pass": 2,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 0,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": null,
+              "violation_recall_known_refs": null,
+              "violation_f1_known_refs": null,
+              "coverage_all": 1.0,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.0,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": null,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 0
+            },
+            "quantity_sign": {
+              "n": 2,
+              "known_reference_n": 2,
+              "confusion": {
+                "pass": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 2,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 2,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": 1.0,
+              "violation_recall_known_refs": 1.0,
+              "violation_f1_known_refs": 1.0,
+              "coverage_all": 1.0,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.0,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": null,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 0
+            }
+          },
+          "notes": [
+            "Missing/error/abstention on reference violation counts as missed detection.",
+            "Unknown references excluded from binary metrics; unsupported decisions counted separately.",
+            "No human time, cost, confidence interval or external business truth inferred."
+          ]
+        }
+      }
+    },
+    "predictions": {
+      "raw": [
+        {
+          "row_id": "100001",
+          "policy": "customer_analysis",
+          "status": "violation"
+        },
+        {
+          "row_id": "100001",
+          "policy": "quantity_sign",
+          "status": "violation"
+        },
+        {
+          "row_id": "100001",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "100002",
+          "policy": "customer_analysis",
+          "status": "violation"
+        },
+        {
+          "row_id": "100002",
+          "policy": "quantity_sign",
+          "status": "violation"
+        },
+        {
+          "row_id": "100002",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "100003",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "100003",
+          "policy": "quantity_sign",
+          "status": "pass"
+        },
+        {
+          "row_id": "100003",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "100004",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "100004",
+          "policy": "quantity_sign",
+          "status": "violation"
+        },
+        {
+          "row_id": "100004",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "100005",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "100005",
+          "policy": "quantity_sign",
+          "status": "violation"
+        },
+        {
+          "row_id": "100005",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "100006",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "100006",
+          "policy": "quantity_sign",
+          "status": "violation"
+        },
+        {
+          "row_id": "100006",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "100007",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "100007",
+          "policy": "quantity_sign",
+          "status": "pass"
+        },
+        {
+          "row_id": "100007",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "100008",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "100008",
+          "policy": "quantity_sign",
+          "status": "violation"
+        },
+        {
+          "row_id": "100008",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "100009",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "100009",
+          "policy": "quantity_sign",
+          "status": "unknown"
+        },
+        {
+          "row_id": "100009",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "100010",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "100010",
+          "policy": "quantity_sign",
+          "status": "unknown"
+        },
+        {
+          "row_id": "100010",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "100011",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "100011",
+          "policy": "quantity_sign",
+          "status": "pass"
+        },
+        {
+          "row_id": "100011",
+          "policy": "nonnegative_price",
+          "status": "violation"
+        },
+        {
+          "row_id": "100012",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "100012",
+          "policy": "quantity_sign",
+          "status": "pass"
+        },
+        {
+          "row_id": "100012",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "100013",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "100013",
+          "policy": "quantity_sign",
+          "status": "pass"
+        },
+        {
+          "row_id": "100013",
+          "policy": "nonnegative_price",
+          "status": "unknown"
+        },
+        {
+          "row_id": "100014",
+          "policy": "customer_analysis",
+          "status": "violation"
+        },
+        {
+          "row_id": "100014",
+          "policy": "quantity_sign",
+          "status": "pass"
+        },
+        {
+          "row_id": "100014",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        }
+      ],
+      "metadata": [
+        {
+          "row_id": "100001",
+          "policy": "customer_analysis",
+          "status": "violation"
+        },
+        {
+          "row_id": "100001",
+          "policy": "quantity_sign",
+          "status": "violation"
+        },
+        {
+          "row_id": "100001",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "100002",
+          "policy": "customer_analysis",
+          "status": "violation"
+        },
+        {
+          "row_id": "100002",
+          "policy": "quantity_sign",
+          "status": "violation"
+        },
+        {
+          "row_id": "100002",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "100003",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "100003",
+          "policy": "quantity_sign",
+          "status": "pass"
+        },
+        {
+          "row_id": "100003",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "100004",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "100004",
+          "policy": "quantity_sign",
+          "status": "violation"
+        },
+        {
+          "row_id": "100004",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "100005",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "100005",
+          "policy": "quantity_sign",
+          "status": "violation"
+        },
+        {
+          "row_id": "100005",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "100006",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "100006",
+          "policy": "quantity_sign",
+          "status": "violation"
+        },
+        {
+          "row_id": "100006",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "100007",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "100007",
+          "policy": "quantity_sign",
+          "status": "pass"
+        },
+        {
+          "row_id": "100007",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "100008",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "100008",
+          "policy": "quantity_sign",
+          "status": "violation"
+        },
+        {
+          "row_id": "100008",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "100009",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "100009",
+          "policy": "quantity_sign",
+          "status": "unknown"
+        },
+        {
+          "row_id": "100009",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "100010",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "100010",
+          "policy": "quantity_sign",
+          "status": "unknown"
+        },
+        {
+          "row_id": "100010",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "100011",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "100011",
+          "policy": "quantity_sign",
+          "status": "pass"
+        },
+        {
+          "row_id": "100011",
+          "policy": "nonnegative_price",
+          "status": "violation"
+        },
+        {
+          "row_id": "100012",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "100012",
+          "policy": "quantity_sign",
+          "status": "pass"
+        },
+        {
+          "row_id": "100012",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "100013",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "100013",
+          "policy": "quantity_sign",
+          "status": "pass"
+        },
+        {
+          "row_id": "100013",
+          "policy": "nonnegative_price",
+          "status": "unknown"
+        },
+        {
+          "row_id": "100014",
+          "policy": "customer_analysis",
+          "status": "violation"
+        },
+        {
+          "row_id": "100014",
+          "policy": "quantity_sign",
+          "status": "pass"
+        },
+        {
+          "row_id": "100014",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        }
+      ]
+    },
+    "details": [
+      {
+        "id": "100001-raw",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100001-metadata",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100002-metadata",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100002-raw",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100003-raw",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100003-metadata",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100004-metadata",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100004-raw",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100005-raw",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100005-metadata",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100006-metadata",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100006-raw",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100007-raw",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100007-metadata",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100008-metadata",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100008-raw",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100009-raw",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100009-metadata",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100010-metadata",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100010-raw",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100011-raw",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100011-metadata",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100012-metadata",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100012-raw",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100013-raw",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100013-metadata",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100014-metadata",
+        "schema_error": null,
+        "missing_keys": []
+      },
+      {
+        "id": "100014-raw",
+        "schema_error": null,
+        "missing_keys": []
+      }
+    ],
+    "planned_calls": 28,
+    "attempted_calls": 28,
+    "attempt_status": {
+      "completed": 28
+    },
+    "reported_usd": 0.006785025,
+    "reserved_usd": 0.0712992,
+    "campaign_calls": 76,
+    "campaign_reported_usd": 0.01828255,
+    "campaign_reserved_usd": 0.19454976,
+    "limits": [
+      "Purposive actual development cases and authored probes reported separately",
+      "No business truth, prevalence, heldout or RDF advantage claim",
+      "One model/repeat; three correlated decisions per row",
+      "Reference labels never supplied to generation; no repairs"
+    ]
+  },
+  "checks": {
+    "prepare_exit": 0,
+    "prelaunch_audit_exit": 0,
+    "smoke4_exit": 0,
+    "remaining24_exit": 0,
+    "evaluate_exit": 0
+  },
+  "interpretation": "Both LLM conditions match all authored-policy references:6/6 actual-source policy decisions and36/36 authored-probe decisions including3unknowns. No observed advantage from added parsing metadata. Small purposive diagnostic, not business truth or representative accuracy. Actual Python/SHACL controls already agreed42/42 offline; not reexecuted in this paid run.",
+  "next_step": "Stop expanding direct-LLM rows merely to seek differences. Next independently reviewed bounded generated-code/rule execution implementation using existing local capability (no new infrastructure), then frozen common-input comparison. Preserve76 consumedcalls and combined predecessor chain;68calls remaining ceiling, not target. No heldout until full method frozen."
+}

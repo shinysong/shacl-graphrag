@@ -248,7 +248,7 @@ def run_checks(project):
             value = row.get(rule['column']); node = _uri('table', table['id'], 'row', number)
             if kind != 'required' and _missing(value):
                 record(number, 'unknown', '검사에 필요한 값이 없습니다.'); continue
-            if kind == 'reference' and str(value) not in allowed and (target['source'].get('truncated') or target['source'].get('data_omitted')):
+            if kind == 'reference' and str(value) not in allowed and any(target['source'].get(flag) for flag in ('truncated', 'redacted', 'data_omitted')):
                 record(number, 'unknown', '참조 데이터가 일부만 있어 값의 부재를 확정할 수 없습니다.'); continue
             try:
                 if kind == 'range': literal = Literal(_number(value), datatype=XSD.decimal)

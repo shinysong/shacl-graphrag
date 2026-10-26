@@ -1,0 +1,54 @@
+{
+  "at": "2026-10-21T10:13:07.054906+00:00",
+  "study": "industrial-questions-1",
+  "phase": "RDF OWL-RL SHACL comparator implementation",
+  "review_job": "20261021T101140Z-industrial-question-rdf-0b2eb5",
+  "reviews": {
+    "methods": "ready for software checks only",
+    "implementation": "ready for software checks only"
+  },
+  "checks": {
+    "registered_empty_gate": 0,
+    "manual_handcrafted_comparisons": 0
+  },
+  "software_comparisons": 20,
+  "study_scenes_executed": 0,
+  "paid_calls": 0,
+  "versions": {
+    "rdflib": "7.6.0",
+    "owlrl": "7.6.2",
+    "pyshacl": "0.40.1"
+  },
+  "hashes": {
+    "scripts/industrial_question_rdf.py": "2a020794b96a40c538c7db23df1281f5a5ca46afa3b99e3fc1432f29f30cec9c",
+    "scripts/industrial_question_python.py": "ffb03a14d5f144535faaae2a3e3bd694ee0788d7397b6d51c99830d1b90f5fe8",
+    "scripts/check_industrial_question_rdf.py": "238cf4ed86376983ed049787ad286fe4af94206c00b5492a6b809996e90abeee",
+    "scripts/check_industrial_question_python.py": "6b00f50fc61b77071fc620844017d9c14bc3399f02a5dcd6b54b640ea5389c3c",
+    "research/industrial-questions/receipt-shapes.ttl": "c44b9ae85e1611fe17fa6cc5dea00de87c6c0c6c104888a8ba54610748888f39",
+    "research/industrial-questions/protocol-v1.json": "946d328f36566a8416afe7efe1d50b72af757cc8a1873b5a13137c05d1b452e2",
+    "research/industrial-questions/io-contract-v1.json": "24a0ac76a265ed5d134293f9cf1a88fcaee268a6fae24a62d69f62b6cd46a54e",
+    "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+  },
+  "alternative_implementations": [
+    "OWL-RL transitive candidate membership",
+    "SHACL receipt value constraints"
+  ],
+  "shared_components": [
+    "input validation and typed joins",
+    "number/date parsing and unknown gating",
+    "edge exclusions and graph completeness",
+    "BFS witness extraction with disagreement error",
+    "expiry recheck decision function"
+  ],
+  "limits": [
+    "20 handcrafted software examples, not study observations or business accuracy",
+    "No independent recheck efficacy: same Python function shared",
+    "Runner/output validation/error denominator persistence pending",
+    "Duplicate-edge and target-as-product RDF software checks still needed",
+    "No runtime performance or maintenance labor claim"
+  ],
+  "next": [
+    "Implement strict output validation and error-preserving runner; save raw outputs before independent scoring",
+    "Add missing RDF boundary checks, review then run24scene comparison against frozen expectations"
+  ]
+}

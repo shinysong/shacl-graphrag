@@ -1,0 +1,30 @@
+{
+  "id": "receipt-consistency-ui-1",
+  "completed_at": "2026-10-19T16:04:30.375706+00:00",
+  "review_job": "20261019T160115Z-receipt-consistency-ui-169596",
+  "tests_passed": 76,
+  "subtests_passed": 60,
+  "pytest_exit": 0,
+  "browser": {
+    "counts": {
+      "violates_declared_equality": 50,
+      "missing_evidence": 50,
+      "not_evaluated": 200,
+      "agrees": 700
+    },
+    "default_values_omitted": true,
+    "review_change_hides_result": true,
+    "mobile_global_overflow": false,
+    "page_errors": []
+  },
+  "reviewed_hashes_unchanged": true,
+  "limitations": [
+    "Authored 1000-row replay, not industrial accuracy or independent new observations",
+    "Default export excludes raw comparison values but retains metadata, not anonymous",
+    "Old 8501 process did not expose new imported-module option; fresh temporary8502 process verified; old server left intact, restart needed for new code",
+    "First browser timeout missing option on old process; second timeout mobile sidebar transition; third passed; scripts preserved",
+    "Temporary8502 process stopped; dark theme not verified; GUI supports one field pair"
+  ],
+  "paid_calls": 0,
+  "published": false
+}

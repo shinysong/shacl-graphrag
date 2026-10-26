@@ -1,0 +1,54 @@
+{
+  "id": "receipt-inspection-consistency-1",
+  "completed_at": "2026-10-19T15:42:58.065239+00:00",
+  "review_job": "20261019T154131Z-receipt-inspection-consistency-06f596",
+  "summary": {
+    "source_sha256": "4882ecb390bfb8256b840bc86d90a699e52e868c1ca2ba4965e62943114af14c",
+    "variants": {
+      "original_authored": {
+        "counts": {
+          "agrees": 900,
+          "not_evaluated": 100
+        },
+        "denominator": 1000,
+        "matches_development_expectation": true
+      },
+      "injected_faults": {
+        "counts": {
+          "violates_declared_equality": 50,
+          "missing_evidence": 50,
+          "not_evaluated": 200,
+          "agrees": 700
+        },
+        "denominator": 1000,
+        "matches_development_expectation": true
+      },
+      "incomplete_reference": {
+        "counts": {
+          "not_evaluated": 1000
+        },
+        "denominator": 1000,
+        "matches_development_expectation": true
+      }
+    },
+    "limitations": [
+      "Authored schema-inspired development data and explicit injected faults, not real company records.",
+      "Same 1000 receipts reused in variants; not 3000 independent observations.",
+      "Python exact equality only, no SHACL/RDF benefit, LLM or inspection approval claim.",
+      "Source digests and field mappings are supplied; no hidden omission detection."
+    ]
+  },
+  "checks": {
+    "exit_codes": [
+      0,
+      0
+    ],
+    "original_source_unchanged": true,
+    "original_source_sha256": "4882ecb390bfb8256b840bc86d90a699e52e868c1ca2ba4965e62943114af14c",
+    "frozen_hashes_unchanged": true
+  },
+  "tests_passed": 28,
+  "implementation": "Library and offline CLI; UI integration not included in this slice.",
+  "paid_calls": 0,
+  "published": false
+}

@@ -1,0 +1,34 @@
+{
+  "version": "development-v1",
+  "namespace": "urn:retail:field:",
+  "row_uri": "urn:retail:row: + percent-encoded exact row_id",
+  "class": "SourceRow",
+  "fields": [
+    "InvoiceNo",
+    "StockCode",
+    "Description",
+    "Quantity",
+    "InvoiceDate",
+    "UnitPrice",
+    "CustomerID",
+    "Country"
+  ],
+  "numeric_fields": [
+    "Quantity",
+    "UnitPrice"
+  ],
+  "typed_predicate": "namespace + exact field name; decimal for numeric fields and string for other fields. InvoiceDate remains opaque source text, not a validated date.",
+  "state_predicate": "namespace + field name + State; missing/invalid/valid. valid means parseability/presence only, not business correctness.",
+  "raw_predicate": "namespace + field name + RawJSON preserves JSON scalar representation",
+  "key_presence_predicate": "namespace + field name + KeyPresent distinguishes absent key from explicit null",
+  "unknown_handling": "No policy decisions in mapper. Missing/invalid numeric values omit typed value but preserve state and raw. Future decision adapter must apply declared policy; absence of a SHACL violation is not automatically pass on unknown inputs.",
+  "parity": "Equivalent normalized JSON metadata and mapping specification are shared in all offline arm previews. Executable decision runners remain pending.",
+  "limits": [
+    "No cancellation or policy pass/fail features computed",
+    "No OWL inference",
+    "No completeness claims",
+    "Finite JSON scalar inputs only; nonfinite strings marked invalid in numeric fields",
+    "Shared runtime blank/number preprocessing, not independent evidence of RDF advantage",
+    "Mapping tests do not establish generated-SHACL execution"
+  ]
+}

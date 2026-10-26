@@ -1,0 +1,196 @@
+{
+  "id": "technology-selection-1",
+  "version": "1-draft",
+  "scope": "New authored bounded performance/controlled-change study for two fixed typed questions. No natural-language interpretation, external business truth or general RDF engine claim. Existing industrial24scene results immutable.",
+  "matrix": {
+    "configurations": [
+      {
+        "edges": 64,
+        "depth": 1,
+        "width": 1
+      },
+      {
+        "edges": 64,
+        "depth": 3,
+        "width": 3
+      },
+      {
+        "edges": 64,
+        "depth": 6,
+        "width": 3
+      },
+      {
+        "edges": 256,
+        "depth": 1,
+        "width": 1
+      },
+      {
+        "edges": 256,
+        "depth": 3,
+        "width": 3
+      },
+      {
+        "edges": 256,
+        "depth": 6,
+        "width": 3
+      },
+      {
+        "edges": 1024,
+        "depth": 1,
+        "width": 1
+      },
+      {
+        "edges": 1024,
+        "depth": 3,
+        "width": 3
+      },
+      {
+        "edges": 1024,
+        "depth": 6,
+        "width": 3
+      },
+      {
+        "edges": 256,
+        "depth": 3,
+        "width": 1
+      },
+      {
+        "edges": 256,
+        "depth": 3,
+        "width": 8
+      }
+    ],
+    "seeds": [
+      11,
+      23
+    ],
+    "cases": 22,
+    "arms": [
+      "python_indexed",
+      "sqlite_recursive",
+      "rdf_owl_shacl"
+    ],
+    "process_repeats": 3,
+    "planned_worker_attempts": 198,
+    "query_batches": [
+      1,
+      10,
+      100
+    ],
+    "case_manifest": "research/technology-selection/cases-v1.json",
+    "run_manifest": "research/technology-selection/runs-v1.json",
+    "ordering": "Repeat outermost, manifest case order, arm order rotated by(case_index+repeat)%3. No data-dependent order. Not random performance trials.",
+    "independent_unit": "22 authored graph cases; three process repetitions are technical repeats. Seeds relabel identities/row order, not independent business samples."
+  },
+  "graph_generation": {
+    "direction": "component item/revision to parent item/revision",
+    "topology": "One root target. For depth1 root connects directly to three products X/E/F. Otherwise depth-1 internal layers each of width b; root connects to all layer1; complete bipartite edges between consecutive internal layers; last internal layer connects to each X/E/F. Fourth product U has no incoming edge. X requires current cert in scope, E explicitly exempt, F different facility.",
+    "reachable_edges": "3 if d=1; b+(d-2)*b*b+3*b otherwise",
+    "unrelated": "Exactly total_edges-reachable_edges disconnected one-edge pairs in separate namespace, none joins target/products. Thus row-count size factor is unrelated edge load at fixed topology, NOT growth of target component; report both.",
+    "identity": "Deterministic seeded permutation and row shuffle with local random.Random(seed); stable occurrence IDs assigned before shuffle. Lexicographic paths use occurrence IDs. Save full inputs/hashes before runs.",
+    "graph_count": "All initial edges active, unique; graph-completeness declaration true. Dataset generator independently checks declared counts before freeze.",
+    "depth_interpretation": "Depth1 changes layer width compared with depth3: combined simple-vs-multihop topology contrast, not pure depth effect. Depth3 vs6 atwidth3 isolates depth within this topology family. Branching experiment at256edges/depth3 useswidth1,3,8; width denotes layer size, not uniform outdegree. All topology/resource extrapolations limited to this family."
+  },
+  "semantics": {
+    "policy": "Authored receipt/recheck policy from industrial-questions, restricted new performance domain; frozen old protocol not edited.",
+    "typed_questions": "Receipt ID and target item/revision/certificate/as_of supplied explicitly. No LLM.",
+    "domain": "Nonempty exact strings, strict ISO date-only parsed to ordinal, quantities are integer units Nos with abs(value)<=2^31-1; bool/float/nonintegral quantity rejected as unknown. This integer-only performance scope is narrower than prior Decimal baseline and must be stated.",
+    "reference_resolution": "Exact ID, 0 matches missing, >1 ambiguous, exactly1 resolved. Unresolved any of3receipt references => receipt unknown and no content checks.",
+    "receipt_checks": [
+      "order/inspection/certificate each match receipt part,revision,facility (9labels)",
+      "inspection.receipt_id matches receipt.id",
+      "quantity positive and <=remaining, both Nos",
+      "inspection status Accepted true/Rejected false/other unknown",
+      "certificate status Active true/Inactive false/other unknown",
+      "valid_from<=received_at<expires, valid interval start<end; invalid/missing =>unknown"
+    ],
+    "aggregation": "Any known false ->violation, else any unknown ->unknown, else accept. Unresolved-reference labels reported separately. All known checks evaluated, not shortcircuit.",
+    "reachability": "Positive paths in active valid graph, target itself excluded even on cycles. Malformed/duplicate edge IDs excluded and complete=false. Missing path =>no only when exactlyonecomplete=True and no excludededges, otherwiseunknown. No OWL negative entailment claim.",
+    "recheck": "Shared existing recheck ordering: noncandidate no->not_required /unknown->unknown; missing unique cert->unknown; explicit product exemption or known scope mismatch->not_required; missing requirement/scope->unknown; invalid date/interval/unrecognized status->unknown; expired recognized Active/Inactive->required; validcurrentActive->not_required;elseunknown.",
+    "witness": "Shortest edge-occurrence sequence; ties lexicographically smallest sequence. Sorted adjacency BFS common across arms, charged to witness phase. OWL/SQL reachability membership must equal witness existence or execution_error; never substitute witness result for engine.",
+    "missing_evidence": "Source-absent and projection-omitted cases held separately in correctness fixture lineage; same unavailable runtime facts may yield same unknown. No hidden-omission detection claim."
+  },
+  "outputs": {
+    "service_level": "Primary comparison FULL service only: same receipt/links/product candidates/recheck/edge-witnesses plus exact per-check violated/unknown labels and supporting occurrence IDs/rule IDs. Engine-specific diagnostic counters may be separate non-scored metadata. No decision-only latency comparison claimed.",
+    "common_work": "Strict parsing, duplicate detection, edge eligibility, completeness, witness extraction and recheck shared. Common normalization supplies values and unknown markers, never precomputed pass/fail to independent rule engines.",
+    "arm_map": {
+      "python_indexed": "Build exact ID indexes/adjacency; read frozen JSON rule configuration; evaluate receipt comparisons in Python; BFS establishes candidate membership.",
+      "sqlite_recursive": "SQLite :memory: tables + indexes on record IDs and component keys. SQL predicates evaluate known receipt values; recursive CTE UNION deduplicated node reachability terminates on cycles. No Python reachability UDF, no runtime expected answers. Common witness separately.",
+      "rdf_owl_shacl": "RDFLib triples +OWL-RL transitive closure computed in preparation; pySHACL actual known-value checks, reusable parsed shapes; RDF triple membership establishes candidates. Dates/quantities normalized, not compliance booleans. Shape focus nodes map to same check IDs. No SPARQL arm claim unless explicitly separately introduced/reviewed."
+    },
+    "parity": "Independent scorer loads only saved outputs/frozen reference data after execution; no runtime imports in scorer. Canonical sorted output; witness and diagnostics agreement required alongside decisions."
+  },
+  "baseline_fixture": {
+    "receipt": "quantity5 remaining10, Accepted inspection, matching part/revision/facility, received2026-09-15",
+    "certificate": "Active valid_from2026-01-01 expires2026-10-01",
+    "as_of": "2026-10-21",
+    "expected": "accept; X,E,F candidateyes,U candidateno; Xrequired, E/F/U not_required. Expected witness from independent scorer traversal, not runtime path function."
+  },
+  "lifecycle": {
+    "clock": "perf_counter_ns monotonic; raw nanoseconds saved; no rounding before aggregation",
+    "cold": "Parent elapsed process start to result arrival reported separately; includes interpreter/import/IPC. Worker import/setup timestamps separately. Fixed interpreter/env/versions/CPU/memory/host load recorded. No OS page-cache eviction: cold-process, not cold-disk.",
+    "prepare": "Input JSON reading/parse and common normalization separately timed; per-arm structure/index/shape/closure preparation separately timed. All completed before warmup.",
+    "warmup": "Exactly1 full bundle query timed and saved as warmup, excluded from steady batches but charged in total lifecycle. No adaptive warmups.",
+    "steady": "Batch sizes1,10,100 in that order in same resident worker; every iteration recomputes full answer, no final-answer memoization. Save each answer digest and first/full distinct output; do not time JSON disk writes as query. Batch cumulative CPU/cache effect disclosed.",
+    "update_E": "Starting baseline, deactivate ALL edges whose parent is productX; mutation counts1atdepth1 orwidthotherwise. Common normalized change plus arm application/refresh timed as update. SQLtransaction and index maintenance, Pythonadjacency change, RDFasserted rebuild+freshclosure removing stale derived triples; no incremental algorithm claim for RDF. Query full bundle once after update separately timed/saved.",
+    "reset": "Restore baseline by fresh arm construction between E and C, explicit reset duration saved but excluded from deployment update cost; no silent restored caches.",
+    "update_C": "From restoredbaseline, set certificate expires2026-11-01. Apply+refresh then query full bundle. Implementation may reuse unaffected graph/closure but must record actual invalidation policy. E and C independent not cumulative.",
+    "expected_updates": "E: Xcandidate no/rechecknot_required, other products unchanged, receiptaccept. C: candidates unchanged, all rechecknot_required, receiptaccept. No runtime use of expectations.",
+    "counts": "Per completed worker1warmup+111steady+2postupdate=114bundles, plus baseline reset construction;198workers maximum22572bundle evaluations. Internal shared helper calls not independent observations."
+  },
+  "resources": {
+    "single_worker": true,
+    "worker_timeout_seconds": 12,
+    "kill_grace_seconds": 0.5,
+    "address_space_limit_mib": 1536,
+    "memory_measure": "Success worker resource.getrusage(RUSAGE_SELF).ru_maxrss (LinuxKiB) total-process highwater includes imports/allphases; not heap-only/not subtraction of peaks. Parent /proc status VmHWM samples for failures labeled observed lower bound, not exact successful RSS equivalent. RLIMIT_AS is virtual address-space cap, NOT RSS cap.",
+    "termination": "Isolated local algorithm child process new session, parent monotonic deadline, SIGTERM processgroup then SIGKILL after0.5s; no LLM workers. Explicit MemoryError labeledmemory_limit; other signals not automatically calledOOM.",
+    "campaign_timeout_seconds": 2700,
+    "deadline": "2026-10-21T20:36:57.705Z",
+    "output_cap_mib": 512,
+    "stop": "Before each worker enforce remaining campaign/deadline/artifact budget. On any worker timeout/MemoryError retain failure and continue manifest (no rerun); no larger unplanned tiers. Global cap leaves all remaining slots not_run with reason, including gaps in denominators.198*(12+0.5)=2475s maxworkerwait;2700s ceiling includesparent overhead.",
+    "pretests": "Fresh-reviewed disposable sleep/memory-failure workers verify termination/logging before study; no external service/infrastructure. These are software tests, not benchmark samples."
+  },
+  "analysis": {
+    "accuracy": "Every scheduled198slot retained; label not_run,timeout,memory_limit,execution_error,schema_error,semantic_mismatch,success separately. Correctness checks on outputs for baseline/warmup/steady/updates; distinct failed iterations cannot be hidden by final batch success.",
+    "cost": "Compare timings only for fully semantically matched worker phases; report exclusions and all failure rates next to timings. No failed result repaired/reclassified as success.",
+    "statistics": "Per case+arm median/min/max of3technical repeats. Paired ratios bycase, report all22cases; no population p-value or inference from repeated timings.2seed identity/row-order variants are sensitivity not independent domain replications.",
+    "break_even": "For correct paired cases use measured preparation +warm query batchtotal and update scenarios; report measured1/10/100 bundle totals. A linear amortization estimate uses explicit Tprep+n*Tquery assumption and is labeled modeled, never measured crossover. If no observed signchange, report no observed crossover.",
+    "memory": "Report wholeworkerpeak not phase-memory attribution. Captured timeout lowerbounds incomparable to successRSS as exact estimates.",
+    "choice_table": "Workload/topology+outputservice+hardware+implementation+metric. Conditional conclusions only. This is unrelated-load/depth/width study, not broad real-domain threshold."
+  },
+  "maintenance": {
+    "design": "5tasks x3arms=15 initial controlled submissions. Isolated frozen baseline copies per task, no cumulative edits. Baseline hashes/config/adapter sources frozen after correctness checks, before task implementation. Each submitted patch hash recorded before checks. Up to1corrective submission per task-arm, both saved; failed first attempt remains first failure. This is development intervention not held-out accuracy. Runtime never reads acceptance expected values.",
+    "tasks": [
+      {
+        "id": "M1",
+        "change": "Receipt end-date inclusive only, current recheck expiry unchanged",
+        "acceptance": "received==expires accept ifotherchecksvalid; receivedone dayafterviolation; invalidintervalunknown; recheckatendstillrequired"
+      },
+      {
+        "id": "M2",
+        "change": "Product category service_spare exempt from current-cert recheck",
+        "acceptance": "reachable in-scope expired required becomesnot_required only forservice_spare; othercategoryrequired; missingcategory preservesbaseline; candidate unchanged"
+      },
+      {
+        "id": "M3",
+        "change": "BOMedge valid_from<=as_of<valid_to",
+        "acceptance": "edgevalidatstart included, atendskipped; missing/invalidinterval excludedandcompletefalse; alternatevalidpathstillcandidateyes; oldreceiptunchanged"
+      },
+      {
+        "id": "M4",
+        "change": "Shared receipt cap8 applied to three workflow consumers A/B/C",
+        "acceptance": "q9remaining10 =>violation all3; q8accepted; q5remaining4violation; missingq unknown; same updated policy reference consumed byall3, no independent trialclaim"
+      },
+      {
+        "id": "M5",
+        "change": "Report policy_version v2 and source occurrence IDs on every evaluated receipt check",
+        "acceptance": "All evaluated checks carry stable rule ID/version and exact supporting row IDs including successfulchecks; unresolvedreference carriesavailablelink/receiptprovenance only; decisionsunchanged"
+      }
+    ],
+    "baseline_checks": "Preserve existing unmodified task fixtures, all tasks run baseline regression bundle plus declared task cases. Freeze concrete case JSON +literal expected outputs before edits; independent review beforechecks.",
+    "footprint": "Diff frozenbaseline tosubmission; countchangedfiles/nonblankaddeddeletedlines separatelycode/config/tests; record affected named semanticfunctions/shape nodes/SQL statements by manual map. Shared helper countedonceglobally and referenced in each affectedarm, not triplecounted. No LOC equals human difficulty inference.",
+    "effort": "Agent wall time/familiarity/order recorded ifavailable; not humanmaintenance effort. Declare this limit while still reporting measured operational refresh and concrete change scope."
+  },
+  "freeze_and_gates": "This protocol review does not certify implementation. Build manifests/fixtures/references +adapters/runner/scorer next, then fresh independent review before registered softwarechecks or study. No original pilots/heldout/ledgers changed. Changes to protocol require versioned preserved draft and newreview."
+}

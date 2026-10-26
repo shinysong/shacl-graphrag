@@ -1,0 +1,209 @@
+{
+  "at": "2026-10-21T10:52:45.895528+00:00",
+  "study": "industrial-questions-1",
+  "phase": "Predeclared direct-edge capability ablation",
+  "review_job": "20261021T105101Z-industrial-question-direct-90b342",
+  "checks": {
+    "empty_registered_gate": 0,
+    "manual_direct_software_check": 0,
+    "manual24execution_run": 0,
+    "manual_direct_scorer": 0,
+    "manual_saved_baseline_depth_reaggregation": 0
+  },
+  "new_executions": 24,
+  "baseline_reruns": 0,
+  "execution_schema_errors": 0,
+  "paid_calls": 0,
+  "results": {
+    "interpretation": "Authored development policy agreement only; shared adapter/recheck. No business truth or superiority claim.",
+    "arms": {
+      "asserted_only": {
+        "denominators": {
+          "receipt": 24,
+          "links": 72,
+          "candidate": 96,
+          "recheck": 96,
+          "impact_graph_completeness": 24
+        },
+        "confusions": {
+          "receipt": {
+            "accept -> accept": 10,
+            "violation -> violation": 8,
+            "unknown -> unknown": 6
+          },
+          "links": {
+            "resolved -> resolved": 68,
+            "missing -> missing": 2,
+            "ambiguous -> ambiguous": 2
+          },
+          "candidate": {
+            "yes -> yes": 34,
+            "no -> no": 20,
+            "yes -> no": 30,
+            "unknown -> unknown": 8,
+            "yes -> unknown": 4
+          },
+          "recheck": {
+            "required -> required": 7,
+            "not_required -> not_required": 68,
+            "required -> not_required": 7,
+            "unknown -> unknown": 9,
+            "unknown -> not_required": 1,
+            "not_required -> unknown": 4
+          },
+          "impact_graph_completeness": {
+            "complete -> complete": 20,
+            "partial -> partial": 4
+          }
+        },
+        "depth_confusions": {
+          "1": {
+            "candidate": {
+              "yes -> yes": 34,
+              "no -> no": 10,
+              "unknown -> unknown": 4
+            },
+            "recheck": {
+              "required -> required": 7,
+              "not_required -> not_required": 36,
+              "unknown -> unknown": 5
+            }
+          },
+          "3": {
+            "candidate": {
+              "yes -> no": 30,
+              "no -> no": 10,
+              "unknown -> unknown": 4,
+              "yes -> unknown": 4
+            },
+            "recheck": {
+              "required -> not_required": 7,
+              "not_required -> not_required": 32,
+              "unknown -> not_required": 1,
+              "unknown -> unknown": 4,
+              "not_required -> unknown": 4
+            }
+          }
+        },
+        "recheck_matrix": {
+          "required": {
+            "required": 7,
+            "not_required": 7,
+            "unknown": 0,
+            "error": 0
+          },
+          "not_required": {
+            "required": 0,
+            "not_required": 68,
+            "unknown": 4,
+            "error": 0
+          },
+          "unknown": {
+            "required": 0,
+            "not_required": 1,
+            "unknown": 9,
+            "error": 0
+          }
+        },
+        "error_scenes": {},
+        "family_prediction_counts": {
+          "complete_expired_now_valid_at_receipt": {
+            "candidate:yes": 3,
+            "recheck:required": 1,
+            "recheck:not_required": 7,
+            "candidate:no": 5
+          },
+          "unexpired_now": {
+            "candidate:yes": 3,
+            "recheck:not_required": 8,
+            "candidate:no": 5
+          },
+          "expires_exactly_as_of": {
+            "candidate:yes": 3,
+            "recheck:required": 1,
+            "recheck:not_required": 7,
+            "candidate:no": 5
+          },
+          "expired_before_receipt": {
+            "candidate:yes": 3,
+            "recheck:required": 1,
+            "recheck:not_required": 7,
+            "candidate:no": 5
+          },
+          "rejected_inspection": {
+            "candidate:yes": 3,
+            "recheck:required": 1,
+            "recheck:not_required": 7,
+            "candidate:no": 5
+          },
+          "over_remaining_quantity": {
+            "candidate:yes": 3,
+            "recheck:required": 1,
+            "recheck:not_required": 7,
+            "candidate:no": 5
+          },
+          "missing_inspection_source": {
+            "candidate:yes": 3,
+            "recheck:required": 1,
+            "recheck:not_required": 7,
+            "candidate:no": 5
+          },
+          "ambiguous_order_line": {
+            "candidate:yes": 3,
+            "recheck:required": 1,
+            "recheck:not_required": 7,
+            "candidate:no": 5
+          },
+          "missing_certificate_expiry": {
+            "candidate:yes": 3,
+            "recheck:unknown": 1,
+            "recheck:not_required": 7,
+            "candidate:no": 5
+          },
+          "component_edge_missing_source": {
+            "candidate:unknown": 6,
+            "recheck:unknown": 6,
+            "candidate:yes": 2,
+            "recheck:not_required": 2
+          },
+          "component_edge_omitted_projection": {
+            "candidate:unknown": 6,
+            "recheck:unknown": 6,
+            "candidate:yes": 2,
+            "recheck:not_required": 2
+          },
+          "certificate_wrong_revision": {
+            "candidate:yes": 3,
+            "recheck:not_required": 8,
+            "candidate:no": 5
+          }
+        }
+      }
+    }
+  },
+  "depth_label": "Scene design depth, not every product shortest path length;48product decisions per stratum",
+  "summary": {
+    "depth1_candidate_agreement": 48,
+    "depth3_candidate_agreement": 14,
+    "depth3_candidate_yes_to_no": 30,
+    "depth3_candidate_yes_to_unknown": 4,
+    "depth3_required_to_not_required": 7,
+    "depth3_unknown_to_not_required": 1,
+    "depth3_not_required_to_unknown": 4
+  },
+  "hashes": {
+    "scripts/industrial_question_direct.py": "887c03ada04c9d41aa48ebd3acf0b1af142ccd3a66f31e4c514da6aad2980f1e",
+    "scripts/run_industrial_questions.py": "64416b9ee7c4c39158977c2d936eab5f9c404bfc14322393664350df01d50297",
+    "scripts/score_industrial_questions.py": "eb51e4f0a46688c58594737f07bae2c6895dee913c899e0222a9f79bbe9afcc1",
+    "scripts/check_industrial_question_direct.py": "34ba57e3ad9bf7944658e624102efaca7125865b020b86071a0797ebbeb5ec93"
+  },
+  "scores_sha256": "d4eae8d1c2e65e3d86e42cdf1b964af1aa16ae5475330758d12d972ea090c961",
+  "limits": [
+    "Intentionally incomplete direct-only algorithm, not recommended safe workflow",
+    "Authored consumed development, no natural failure prevalence or business truth",
+    "Complete graph flag means source edge coverage only, not full reachability algorithm",
+    "Both full Python and OWL perform multihop; not RDF superiority",
+    "Shared receipt, adapter, exclusions and recheck code"
+  ],
+  "next": "Reader-facing Korean concrete-case report with editable diagram and source/code responsibility table; independent review, no new experiments needed to repeat completed results."
+}

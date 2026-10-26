@@ -1,0 +1,57 @@
+{
+  "scope": "Retail offline continuation handoff; six-arm LLM comparison remains incomplete",
+  "deadline_utc": "2026-10-20T12:50:00+00:00",
+  "measured": {
+    "dataset": "UCI352 Online Retail, consumed ordered first5000rows",
+    "authored_policy_comparison": "Run exit0,50savedbatches:5000consumeddevrows,15000unique complete decision keys perarm,0mismatches. Both customer3795pass1205violation;quantity4998pass2violation;price5000pass. No unknown/error encountered. DirectPython 0.020667s vs SHACLwrapper 121.346323s, unequalwork scopes singlefixedorder; notenginebenchmark. Prefix500 overlaps priorrun, no independentfresh cohort. Declaredpolicies not retailertruth.",
+    "evidence": "docs/experiments/records/20261020-retail-full-row-comparison.json",
+    "trace_examples": "docs/experiments/records/20261020-retail-trace-cases.json"
+  },
+  "software_completed": [
+    "Common raw/normalized arm previews",
+    "Policy-neutral RDF mapping",
+    "Authored row-graph SHACL validator with external unknown eligibility",
+    "Scorer with coverage/error/abstention",
+    "Separate declared-policy reference module",
+    "Python/Turtle parse-only intake",
+    "Terminal intake failure key expansion and guarded scoring"
+  ],
+  "not_measured": [
+    "Actual directLLM outcomes",
+    "Model-generated Python/SHACL outcomes",
+    "Human accuracy or active time",
+    "Maintenance labor/change efficacy",
+    "Heldout610 outcomes",
+    "Retailer business truth"
+  ],
+  "interpretation": [
+    "Equal authored-policy outputs do not establish equal general model performance",
+    "No incremental SHACL detection benefit observed for these three simple policies",
+    "SHACL whole-wrapper time and Python direct-loop time have different work boundaries; no general engine comparison",
+    "Known customer absence/negative quantity may need review, not confirmed source corruption",
+    "Repeated tests and derived cases are not independent experimental trials"
+  ],
+  "paid_calls_this_campaign": 0,
+  "failure_preservation": "Initial RDF decimal roundtrip failed10pass/1fail; failed log and prematurely generated diagnostic preview retained, fresh reviewed correction passed. No silent result replacement.",
+  "runtime_readiness": "Docker responds; only neo4j/ruby cached tags observed. No generated Python/SHACL isolated runtime implemented or verified. No new infra/pulls/containers.",
+  "next_experiment": {
+    "proposal": "research/retail-evaluation/direct-llm-pilot-proposal.json",
+    "scope": "24consumeddevrows x2directLLM raw/metadata conditions x1repeat,48proposedcalls, code controls",
+    "status": "Unexecuted and not paid-authorized",
+    "required_before_launch": [
+      "Current model/provider/settings/pricing verification",
+      "Bounded explicit paid scope and nonreset reservation ledger",
+      "Frozen selected IDs/messages/inputs and runner review",
+      "Scorer-only reference isolation; preserve original attempts/failures"
+    ],
+    "generated_code_arms": "Additional reviewed runtime isolation and supported artifact grammar required"
+  },
+  "remaining_action_this_window": "No further experiments or bookkeeping expansions; stop existing heartbeat at deadline without extension",
+  "publication": "No push or publication during this campaign",
+  "record_links": [
+    "docs/experiments/records/20261020-retail-rdf-mapping.json",
+    "docs/experiments/records/20261020-retail-intake-score.json",
+    "docs/experiments/records/20261020-retail-docker-inventory.json",
+    "docs/experiments/records/20261020-retail-direct-plan.json"
+  ]
+}

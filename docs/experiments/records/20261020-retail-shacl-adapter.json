@@ -1,0 +1,256 @@
+{
+  "recorded_at": "2026-10-20T17:33:14.022777+00:00",
+  "job": "20261020T173137Z-retail-shacl-adapter-4b1958",
+  "check_exit_code": 0,
+  "checks": {
+    "authored": {
+      "stage": "validation_attempted",
+      "decisions": [
+        {
+          "row_id": "check1",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "check2",
+          "policy": "customer_analysis",
+          "status": "violation"
+        },
+        {
+          "row_id": "check2",
+          "policy": "quantity_sign",
+          "status": "unknown"
+        },
+        {
+          "row_id": "check1",
+          "policy": "quantity_sign",
+          "status": "pass"
+        },
+        {
+          "row_id": "check1",
+          "policy": "nonnegative_price",
+          "status": "pass"
+        },
+        {
+          "row_id": "check2",
+          "policy": "nonnegative_price",
+          "status": "violation"
+        }
+      ],
+      "reports": {
+        "customer_analysis": {
+          "executed": true,
+          "target_count": 2,
+          "conforms": false,
+          "report_turtle": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <urn:retail:row:check2> ;\n            sh:resultMessage \"Less than 1 values on <urn:retail:row:check2>-><urn:retail:field:CustomerID>\" ;\n            sh:resultPath <urn:retail:field:CustomerID> ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:minCount 1 ;\n                    sh:path <urn:retail:field:CustomerID> ] ] .\n\n"
+        },
+        "quantity_sign": {
+          "executed": true,
+          "target_count": 1,
+          "conforms": true,
+          "report_turtle": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+        },
+        "nonnegative_price": {
+          "executed": true,
+          "target_count": 2,
+          "conforms": false,
+          "report_turtle": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <urn:retail:row:check2> ;\n            sh:resultMessage \"Value is not >= Literal(\\\"0\\\", datatype=xsd:integer)\" ;\n            sh:resultPath <urn:retail:field:UnitPrice> ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinInclusiveConstraintComponent ;\n            sh:sourceShape [ sh:minCount 1 ;\n                    sh:minInclusive 0 ;\n                    sh:path <urn:retail:field:UnitPrice> ] ;\n            sh:value -1.0 ] .\n\n"
+        }
+      },
+      "precheck_unknown": [
+        {
+          "row_id": "check2",
+          "policy": "quantity_sign",
+          "status": "unknown"
+        }
+      ]
+    },
+    "supported_wrong": {
+      "stage": "validation_attempted",
+      "decisions": [
+        {
+          "row_id": "check1",
+          "policy": "customer_analysis",
+          "status": "pass"
+        },
+        {
+          "row_id": "check2",
+          "policy": "customer_analysis",
+          "status": "violation"
+        },
+        {
+          "row_id": "check2",
+          "policy": "quantity_sign",
+          "status": "unknown"
+        },
+        {
+          "row_id": "check1",
+          "policy": "quantity_sign",
+          "status": "pass"
+        },
+        {
+          "row_id": "check1",
+          "policy": "nonnegative_price",
+          "status": "violation"
+        },
+        {
+          "row_id": "check2",
+          "policy": "nonnegative_price",
+          "status": "violation"
+        }
+      ],
+      "reports": {
+        "customer_analysis": {
+          "executed": true,
+          "target_count": 2,
+          "conforms": false,
+          "report_turtle": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <urn:retail:row:check2> ;\n            sh:resultMessage \"Less than 1 values on <urn:retail:row:check2>-><urn:retail:field:CustomerID>\" ;\n            sh:resultPath <urn:retail:field:CustomerID> ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:minCount 1 ;\n                    sh:path <urn:retail:field:CustomerID> ] ] .\n\n"
+        },
+        "quantity_sign": {
+          "executed": true,
+          "target_count": 1,
+          "conforms": true,
+          "report_turtle": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+        },
+        "nonnegative_price": {
+          "executed": true,
+          "target_count": 2,
+          "conforms": false,
+          "report_turtle": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <urn:retail:row:check1> ;\n            sh:resultMessage \"Value is not >= Literal(\\\"100\\\", datatype=xsd:integer)\" ;\n            sh:resultPath <urn:retail:field:UnitPrice> ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinInclusiveConstraintComponent ;\n            sh:sourceShape _:n9ce726b5660f40218a14e08e910d6098b2 ;\n            sh:value 1.0 ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <urn:retail:row:check2> ;\n            sh:resultMessage \"Value is not >= Literal(\\\"100\\\", datatype=xsd:integer)\" ;\n            sh:resultPath <urn:retail:field:UnitPrice> ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinInclusiveConstraintComponent ;\n            sh:sourceShape _:n9ce726b5660f40218a14e08e910d6098b2 ;\n            sh:value -1.0 ] .\n\n_:n9ce726b5660f40218a14e08e910d6098b2 sh:minCount 1 ;\n    sh:minInclusive 100 ;\n    sh:path <urn:retail:field:UnitPrice> .\n\n"
+        }
+      },
+      "precheck_unknown": [
+        {
+          "row_id": "check2",
+          "policy": "quantity_sign",
+          "status": "unknown"
+        }
+      ]
+    },
+    "target_rejected": {
+      "stage": "artifact_unsupported",
+      "reason": "predicate_outside_declared_subset",
+      "decisions": [
+        {
+          "row_id": "check1",
+          "policy": "customer_analysis",
+          "status": "error"
+        },
+        {
+          "row_id": "check1",
+          "policy": "quantity_sign",
+          "status": "error"
+        },
+        {
+          "row_id": "check1",
+          "policy": "nonnegative_price",
+          "status": "error"
+        },
+        {
+          "row_id": "check2",
+          "policy": "customer_analysis",
+          "status": "error"
+        },
+        {
+          "row_id": "check2",
+          "policy": "quantity_sign",
+          "status": "error"
+        },
+        {
+          "row_id": "check2",
+          "policy": "nonnegative_price",
+          "status": "error"
+        }
+      ],
+      "reports": {},
+      "precheck_unknown": []
+    },
+    "parse_error": {
+      "stage": "artifact_parse_error",
+      "reason": "BadSyntax",
+      "decisions": [
+        {
+          "row_id": "check1",
+          "policy": "customer_analysis",
+          "status": "error"
+        },
+        {
+          "row_id": "check1",
+          "policy": "quantity_sign",
+          "status": "error"
+        },
+        {
+          "row_id": "check1",
+          "policy": "nonnegative_price",
+          "status": "error"
+        },
+        {
+          "row_id": "check2",
+          "policy": "customer_analysis",
+          "status": "error"
+        },
+        {
+          "row_id": "check2",
+          "policy": "quantity_sign",
+          "status": "error"
+        },
+        {
+          "row_id": "check2",
+          "policy": "nonnegative_price",
+          "status": "error"
+        }
+      ],
+      "reports": {},
+      "precheck_unknown": []
+    },
+    "service_rejected": {
+      "stage": "artifact_unsupported",
+      "reason": "ValueError",
+      "decisions": [
+        {
+          "row_id": "check1",
+          "policy": "customer_analysis",
+          "status": "error"
+        },
+        {
+          "row_id": "check1",
+          "policy": "quantity_sign",
+          "status": "error"
+        },
+        {
+          "row_id": "check1",
+          "policy": "nonnegative_price",
+          "status": "error"
+        },
+        {
+          "row_id": "check2",
+          "policy": "customer_analysis",
+          "status": "error"
+        },
+        {
+          "row_id": "check2",
+          "policy": "quantity_sign",
+          "status": "error"
+        },
+        {
+          "row_id": "check2",
+          "policy": "nonnegative_price",
+          "status": "error"
+        }
+      ],
+      "reports": {},
+      "precheck_unknown": []
+    }
+  },
+  "containers_removed": 5,
+  "scope": "Authored local adapter behavior tests, no model calls",
+  "limits": [
+    "Predicate allowlist and SELECT/noSERVICE/noFROM are experimental subset, not completeSHACL",
+    "Only five authored behaviors tested; full parser/report/constraint coverage unverified",
+    "Unknown assigned by supplied eligibility precheck, not SHACL conformance",
+    "Supported wrong shape deliberately executes and retains wrong result; no gold-based rejection"
+  ],
+  "campaign_calls": 79,
+  "campaign_reported_usd": 0.023106575,
+  "next_step": "Fresh reviewed one-call generated reusable SHACL campaign using exact adapter predicate/query subset, three named roots, explicit RDF mapping and shared eligibility precheck. Reuse existing two development packets, no examples/gold in construction, preserve unsupported/parse/runtime/wrong outcomes. Use all three predecessor ledgers79 and combined144/$5 cap. Clearly label clarified construction interface and SHACL unknownprecheck intervention vs priorPython; no repair/rerun or heldout."
+}

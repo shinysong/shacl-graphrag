@@ -1,0 +1,6 @@
+# Term lookup UI
+Eligible21:00 final20:42:11Z,20:50skip ignored. One boundedGUI addition offline. Review rule_workbench/term_ui.py,term_candidates.py,apps/rule_workbench.py,tests/test_workbench_term_ui.py. Noexecution/sourceedits/secrets/otherreviews; ownresultonly.
+New표준용어tab: requires officialoriginaltermCSV4MB anddomainCSV1MB, validatespins beforecontrols/results. Explicit existingtable/column/exactname max1000chars; distinct termcount and nested domaincounts, originalfields unchanged. Allunreviewed/noapproval/rulegeneration/synonyminterpretation; businessrows excludedfromJSON, metadatafingerprint/selectionincluded. Bindingproject+bothfiles+selection+name hidesstale; missing/badfile returnsbeforeoldresults. No termword decomposition. No UIclaimofficialdataaccuracy.
+Afterready scopedUItests+termcandidates+existingdomainUI. Tests unitstublookup and AppTestfileuploaderstub for stale/badsourcepath; notactualbrowserupload. Existingapp tab/missingfiles realAppTest. Browserverification nexttick. NoAPI/push/serverrestart.
+
+V2 fixes test blocker: uploader stub now unittest.mock.patch.object context around render, restored after each AppTestscript execution. Product unchanged. Originalreviews preserved; no testsrunV1.

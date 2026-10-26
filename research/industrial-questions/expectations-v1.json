@@ -1,0 +1,254 @@
+{
+  "complete_expired_now_valid_at_receipt": {
+    "receipt": "accept",
+    "links": {
+      "order_line": "resolved",
+      "inspection": "resolved",
+      "certificate": "resolved"
+    },
+    "candidates": [
+      "yes",
+      "yes",
+      "no",
+      "yes"
+    ],
+    "rechecks": [
+      "required",
+      "not_required",
+      "not_required",
+      "not_required"
+    ],
+    "impact_graph_completeness": "complete"
+  },
+  "unexpired_now": {
+    "receipt": "accept",
+    "links": {
+      "order_line": "resolved",
+      "inspection": "resolved",
+      "certificate": "resolved"
+    },
+    "candidates": [
+      "yes",
+      "yes",
+      "no",
+      "yes"
+    ],
+    "rechecks": [
+      "not_required",
+      "not_required",
+      "not_required",
+      "not_required"
+    ],
+    "impact_graph_completeness": "complete"
+  },
+  "expires_exactly_as_of": {
+    "receipt": "accept",
+    "links": {
+      "order_line": "resolved",
+      "inspection": "resolved",
+      "certificate": "resolved"
+    },
+    "candidates": [
+      "yes",
+      "yes",
+      "no",
+      "yes"
+    ],
+    "rechecks": [
+      "required",
+      "not_required",
+      "not_required",
+      "not_required"
+    ],
+    "impact_graph_completeness": "complete"
+  },
+  "expired_before_receipt": {
+    "receipt": "violation",
+    "links": {
+      "order_line": "resolved",
+      "inspection": "resolved",
+      "certificate": "resolved"
+    },
+    "candidates": [
+      "yes",
+      "yes",
+      "no",
+      "yes"
+    ],
+    "rechecks": [
+      "required",
+      "not_required",
+      "not_required",
+      "not_required"
+    ],
+    "impact_graph_completeness": "complete"
+  },
+  "rejected_inspection": {
+    "receipt": "violation",
+    "links": {
+      "order_line": "resolved",
+      "inspection": "resolved",
+      "certificate": "resolved"
+    },
+    "candidates": [
+      "yes",
+      "yes",
+      "no",
+      "yes"
+    ],
+    "rechecks": [
+      "required",
+      "not_required",
+      "not_required",
+      "not_required"
+    ],
+    "impact_graph_completeness": "complete"
+  },
+  "over_remaining_quantity": {
+    "receipt": "violation",
+    "links": {
+      "order_line": "resolved",
+      "inspection": "resolved",
+      "certificate": "resolved"
+    },
+    "candidates": [
+      "yes",
+      "yes",
+      "no",
+      "yes"
+    ],
+    "rechecks": [
+      "required",
+      "not_required",
+      "not_required",
+      "not_required"
+    ],
+    "impact_graph_completeness": "complete"
+  },
+  "missing_inspection_source": {
+    "receipt": "unknown",
+    "links": {
+      "order_line": "resolved",
+      "inspection": "missing",
+      "certificate": "resolved"
+    },
+    "candidates": [
+      "yes",
+      "yes",
+      "no",
+      "yes"
+    ],
+    "rechecks": [
+      "required",
+      "not_required",
+      "not_required",
+      "not_required"
+    ],
+    "impact_graph_completeness": "complete"
+  },
+  "ambiguous_order_line": {
+    "receipt": "unknown",
+    "links": {
+      "order_line": "ambiguous",
+      "inspection": "resolved",
+      "certificate": "resolved"
+    },
+    "candidates": [
+      "yes",
+      "yes",
+      "no",
+      "yes"
+    ],
+    "rechecks": [
+      "required",
+      "not_required",
+      "not_required",
+      "not_required"
+    ],
+    "impact_graph_completeness": "complete"
+  },
+  "missing_certificate_expiry": {
+    "receipt": "unknown",
+    "links": {
+      "order_line": "resolved",
+      "inspection": "resolved",
+      "certificate": "resolved"
+    },
+    "candidates": [
+      "yes",
+      "yes",
+      "no",
+      "yes"
+    ],
+    "rechecks": [
+      "unknown",
+      "not_required",
+      "not_required",
+      "not_required"
+    ],
+    "impact_graph_completeness": "complete"
+  },
+  "component_edge_missing_source": {
+    "receipt": "accept",
+    "links": {
+      "order_line": "resolved",
+      "inspection": "resolved",
+      "certificate": "resolved"
+    },
+    "candidates": [
+      "unknown",
+      "yes",
+      "unknown",
+      "yes"
+    ],
+    "rechecks": [
+      "unknown",
+      "not_required",
+      "unknown",
+      "not_required"
+    ],
+    "impact_graph_completeness": "partial"
+  },
+  "component_edge_omitted_projection": {
+    "receipt": "accept",
+    "links": {
+      "order_line": "resolved",
+      "inspection": "resolved",
+      "certificate": "resolved"
+    },
+    "candidates": [
+      "unknown",
+      "yes",
+      "unknown",
+      "yes"
+    ],
+    "rechecks": [
+      "unknown",
+      "not_required",
+      "unknown",
+      "not_required"
+    ],
+    "impact_graph_completeness": "partial"
+  },
+  "certificate_wrong_revision": {
+    "receipt": "violation",
+    "links": {
+      "order_line": "resolved",
+      "inspection": "resolved",
+      "certificate": "resolved"
+    },
+    "candidates": [
+      "yes",
+      "yes",
+      "no",
+      "yes"
+    ],
+    "rechecks": [
+      "not_required",
+      "not_required",
+      "not_required",
+      "not_required"
+    ],
+    "impact_graph_completeness": "complete"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "recorded_at": "2026-10-20T16:33:12.526927+00:00",
+  "job": "20261020T163128Z-retail-python-runner-2a5bc7",
+  "check_exit_code": 0,
+  "authored_checks": {
+    "success": {
+      "expected": "completed",
+      "observed": "completed",
+      "container_absent": true,
+      "captured_bytes": 18
+    },
+    "exception": {
+      "expected": "execution_error",
+      "observed": "execution_error",
+      "container_absent": true,
+      "captured_bytes": 285
+    },
+    "timeout": {
+      "expected": "timeout",
+      "observed": "timeout",
+      "container_absent": true,
+      "captured_bytes": 0
+    },
+    "stdout_flood": {
+      "expected": "output_limit",
+      "observed": "output_limit",
+      "container_absent": true,
+      "captured_bytes": 65536
+    }
+  },
+  "scope": "Local software verification, four authored artifacts, zero model generations",
+  "limits": [
+    "10second execution deadline excludes staging/cleanup overhead",
+    "Combined captured stdout/stderr capped65536bytes; output-limit retains prefix and marks failure",
+    "Memory/PID/CPU configured but not stress tested",
+    "Normal-return check verifies exit outcome, not arbitrary response schema or semantic correctness",
+    "Current code evidence-write filesystem failure can interrupt cleanup; address before generated execution",
+    "No complete sandbox proof; inherited local argv trusted; stdlib-only no pySHACL"
+  ],
+  "paid_calls_this_tick": 0,
+  "campaign_calls": 76,
+  "campaign_reported_usd": 0.01828255,
+  "next_step": "Prepare bounded LLM-generated Python comparison on existing common development rows (ad-hoc vs reusable), review frozen prompts plus combined predecessor76 accounting and runner integration. Before generated execution ensure cleanup still runs if evidence-write fails; preserve original runner checks. No direct-decision reruns, no heldout or auto-repair. pySHACL dependency/runtime remains separate pending."
+}

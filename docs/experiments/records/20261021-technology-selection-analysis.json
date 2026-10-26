@@ -1,0 +1,147 @@
+{
+  "timestamp": "2026-10-21T15:03:08.145870+00:00",
+  "study": "technology-selection-1",
+  "phase": "paired timing/memory analysis completed",
+  "review_job": "20261021T150111Z-technology-selection-analysis-20c763",
+  "observed": {
+    "exit": 0,
+    "denominator": {
+      "planned": 198,
+      "recorded": 198,
+      "statuses": {
+        "success": 198,
+        "not_recorded": 0
+      },
+      "successful_cells": 66,
+      "paired_cases": 22
+    },
+    "selected_summary": {
+      "prepare_ms": {
+        "paired_cases": 22,
+        "minimum_counts": {
+          "python_indexed": 22
+        },
+        "sqlite_over_python_range": [
+          1.3998658799643497,
+          1.6200294318918165
+        ],
+        "rdf_over_python_range": [
+          74.72581776332015,
+          130.14250454575554
+        ]
+      },
+      "query_100_mean_ms": {
+        "paired_cases": 22,
+        "minimum_counts": {
+          "python_indexed": 22
+        },
+        "sqlite_over_python_range": [
+          2.2669654708892044,
+          5.504750885946097
+        ],
+        "rdf_over_python_range": [
+          50.95538654894084,
+          95.78181712207405
+        ]
+      },
+      "components_1_ms": {
+        "paired_cases": 22,
+        "minimum_counts": {
+          "python_indexed": 22
+        },
+        "sqlite_over_python_range": [
+          1.3423933130030163,
+          1.7656353795914945
+        ],
+        "rdf_over_python_range": [
+          58.01231923475976,
+          102.69620696002822
+        ]
+      },
+      "components_10_ms": {
+        "paired_cases": 22,
+        "minimum_counts": {
+          "python_indexed": 22
+        },
+        "sqlite_over_python_range": [
+          1.360089127834722,
+          2.37071222932071
+        ],
+        "rdf_over_python_range": [
+          57.38672725946824,
+          101.26913210506163
+        ]
+      },
+      "components_100_ms": {
+        "paired_cases": 22,
+        "minimum_counts": {
+          "python_indexed": 22
+        },
+        "sqlite_over_python_range": [
+          1.48972481220037,
+          4.1111041265539665
+        ],
+        "rdf_over_python_range": [
+          54.729390395085424,
+          92.57497473378477
+        ]
+      },
+      "update_query_E_ms": {
+        "paired_cases": 22,
+        "minimum_counts": {
+          "python_indexed": 22
+        },
+        "sqlite_over_python_range": [
+          1.1579594045858876,
+          1.320751945798702
+        ],
+        "rdf_over_python_range": [
+          50.86131046992165,
+          94.65508274531433
+        ]
+      },
+      "update_query_C_ms": {
+        "paired_cases": 22,
+        "minimum_counts": {
+          "python_indexed": 22
+        },
+        "sqlite_over_python_range": [
+          1.1909548123282945,
+          1.4352287378493638
+        ],
+        "rdf_over_python_range": [
+          52.54181266509814,
+          104.90004579994451
+        ]
+      },
+      "whole_worker_peak_mib": {
+        "paired_cases": 22,
+        "minimum_counts": {
+          "python_indexed": 22
+        },
+        "sqlite_over_python_range": [
+          1.0167928098391674,
+          1.1125737630503858
+        ],
+        "rdf_over_python_range": [
+          2.293046357615894,
+          3.174307762142533
+        ]
+      }
+    }
+  },
+  "artifacts": "_workspace/technology-selection/analysis-1/output",
+  "bindings": {
+    "_workspace/technology-selection/analysis-1/output/case-medians.csv": "8a974265ffdf1637d723288960268faa45fd4ee3bf446ee971dda7585a788830",
+    "_workspace/technology-selection/analysis-1/output/per-attempt.csv": "3bf7890f99834af945647a3e91b3cf5b2f7041d1b0095b658927affb458ed004",
+    "_workspace/technology-selection/analysis-1/output/analysis.json": "a76da90a9c05e986fd0c39e630a10766073970b091982985121b75f9f3e053ff"
+  },
+  "limitations": [
+    "22authoredcase variants/3technicalrepeats; no populationpvalues",
+    "E growth adds unrelated edges; no universal hop threshold",
+    "Component sums are measured-part arithmetic, not independent cold deployments; sequential batches/cacheeffects",
+    "Actual RDFLibOWL-RLpySHACL full checks/rebuild; no RDF DB claim or optimized incremental comparison",
+    "Humanmaintenance unmeasured"
+  ],
+  "next_step": "Write reader-facing results/choice table and figures using these actual numbers; freeze maintenance5tasks15arm submissions before isolated edits; then paper synthesis with observed boundaries and reuse artifacts. No timing reruns."
+}

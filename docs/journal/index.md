@@ -1,5 +1,13 @@
 # 연구 일지
 
+- [2026-10-22 LLM 기반 업무 질의의 의미·규칙 개입 통합 원고](2026-10-22-llm-semantic-intervention-paper.md)
+
+- [2026-10-21 같은 질문의 Python·RDF·OWL·SHACL 코드와 호출 흐름](2026-10-21-industrial-code-walkthrough.md)
+
+- [2026-10-21 입고 인수와 인증 만료 영향 분석의 구현 비교](2026-10-21-industrial-question-comparison.md)
+
+- [2026-10-21 코드 기반·표준 기반 비교의 연구 의의](2026-10-21-research-significance.md)
+
 - [NL2SHACL-Bench 리뷰 — 자연어로 만든 검증 규칙을 평가하는 전체 과정](2026-10-16-review-nl2shacl-bench.md)
 - [REGAE 리뷰 — 예시를 주고받으며 정규표현식을 만드는 도구](2026-10-16-review-regae.md)
 - [SHACL Guru 도구 리뷰 — VS Code에서 규칙을 생성하고 설명받는 과정](2026-10-16-review-shacl-guru.md)
@@ -38,3 +46,5 @@
 - [2026-10-12 블로그에서 실험으로: 연구 질문과 다음 방향](2026-10-12-research-direction.md)
 - [2026-10-12 실험 명세와 기록 방식](2026-10-12-experiment-records.md)
 - [연구 일지 양식](template.md)
+
+- [2026-10-21 동일 정책 구현의 실행 비용과 변경 범위](2026-10-21-technology-selection-paper.md)

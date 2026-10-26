@@ -1,0 +1,44 @@
+{
+ "version":"proposal-v1",
+ "status":"Unexecuted development diagnostic; not paid authorization or final benchmark protocol",
+ "question":"Does supplying shared parsing metadata change direct LLM agreement with declared retail policies, relative to raw source cells and authored code?",
+ "cohort":{
+  "source":"Existing pinned5000 consumed development rows only",
+  "project_sha256":"2c47251bb01fec0eb3f5c6d2469ba7da368c7d90b6a88439ddca916d0bf13344",
+  "selection":"For each exact numeric source row_id string, hash UTF8(seed + newline + row_id); select24 lowest SHA256 digests, ties by numeric row_id. Freeze selected IDs before new model outputs.",
+  "seed":"retail-direct-development-v1",
+  "rows":24,
+  "policies_per_row":3,
+  "limitations":"Already consumed development data, not fresh or representative. Outcome-independent selection may include few violations and no unknowns; report support instead of claiming high detection performance. Do not replace selected rows to improve metrics.",
+  "heldout":"Existing610 evaluation rows remain untouched; this pilot does not consume or label them"
+ },
+ "conditions":{
+  "raw_direct":"Original scalar cells plus the same policy text, source definitions, normalization specification, mapping specification and output schema; no computed normalized_rows",
+  "metadata_direct":"Identical input plus normalized_rows from the shared mapper; no policy verdicts or reference labels",
+  "authored_python":"Existing deterministic code on the same selected rows, not a generated-code arm",
+  "authored_shacl":"Reuse saved full-development row-graph outputs for the same selected keys; label reused trace, do not count as a fresh execution or assign inherited full-run latency to these rows"
+ },
+ "generation":{
+  "models":1,
+  "exact_model":"Pending current availability/pricing verification and separate launch review",
+  "messages":"Separate independent one-row requests; same wording/settings in the two LLM conditions except normalized_rows",
+  "settings":"Freeze exact model/provider routing/temperature/output-token limit and supported seed before launch; do not assume deterministic generation",
+  "row_order":"Ascending selected digest order",
+  "condition_order":"Alternate raw-first and metadata-first by selected-row position, single sequential request at a time",
+  "repeats":1,
+  "planned_new_calls":48,
+  "automatic_retries":0,
+  "repair":false,
+  "cost_ceiling":"Not set or authorized. Verify per-call conservative reservation and set a campaign ceiling before requesting paid launch; existing balance is not authorization. Preserve consumed failures."
+ },
+ "evaluation":{
+  "primary_unit":"row-policy decision;72 planned decisions per condition, clustered within24rows",
+  "reference":"Separate existing declared-policy scorer module, created after IDs/messages/settings are frozen; references never enter prompts or runtime",
+  "measures":["policy-wise class support and confusion","violation precision/recall/F1 with undefined denominators shown","coverage and unnecessary abstention","schema/generation/missing failures","paired raw-versus-metadata disagreement by row and policy","reported cost, conservative reservations, request latency"],
+  "paired_reporting":"Retain both outputs and classify improved/worsened/unchanged/failed; do not treat three policies on one row as independent model trials",
+  "claims":"Development diagnostic only, not evidence of RDF superiority, general Korean-language performance or retailer business truth",
+  "source_unknowns":"Unknown outcomes reflect missing or unparseable required evidence under the declared policy, distinct from model abstention"
+ },
+ "before_launch":["Freeze IDs and prompt hashes without inspecting reference distributions to tune","Verify exact model/settings and reserve bounded current paid scope","Review complete request runner and failures/cost logging","Review source-only inputs versus scorer-only references","Retain all original attempts and failures; no automatic duplicate calls"],
+ "current_action":"Offline design review only. No API calls, new infrastructure, dataset reruns or schedule extension."
+}

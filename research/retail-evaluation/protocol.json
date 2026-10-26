@@ -1,0 +1,18 @@
+{
+  "id": "retail-review-1",
+  "status": "development; no paid evaluation authorized in this session",
+  "source": "UCI352 Online Retail DOI10.24432/C5BW33 CC BY4.0",
+  "unit": "source row x declared policy; aggregate by invoice for split and uncertainty, not independent row trials",
+  "arms": ["manual_assumption_only", "human_specified_code", "llm_direct", "llm_ad_hoc_code", "llm_explicit_rules_python", "llm_explicit_rules_shacl"],
+  "fairness": ["Same source documents, policy semantics, data and output schema across execution arms.", "Ad hoc arm receives the same natural-language policies but has no persistent separately approved rule artifact.", "Separate construction from execution: matched-rule replay holds semantics fixed; end-to-end study includes interpretation errors.", "LLM arms share model/version and recorded settings initially. Token/tool/time caps declared before paid calls.", "No gold at runtime. Evaluator uses separately frozen references. Never repair model decisions from gold."],
+  "outcomes": ["pass", "violation", "unknown"],
+  "metrics": {"construction": ["active human minutes if measured", "model tokens/cost", "rule correction count", "condition/exception test agreement"], "execution": ["violation precision/recall/F1 by policy", "coverage", "error rate among determinate decisions", "false pass", "unnecessary abstention", "runtime failure", "wall time", "API cost"], "maintenance": ["change completion time", "edits", "regression failures"], "repeatability": ["decision agreement across independent repeats"]},
+  "scoring": ["Unknown on reference violation is a missed detection in overall violation recall; never remove it from denominator.", "Unknown references excluded from binary precision/recall and separately score unsupported determinate decisions.", "Coverage and risk reported jointly; no reward for blanket abstention.", "Manual times are explicit assumption ranges, not measured human performance.", "Human review queue size is a workload proxy, not observed time saving."],
+  "data_governance": ["First5000 rows already inspected: development only.", "Future evaluation excludes every invoice appearing in development and freezes selected invoice groups before tuning.", "Official descriptive metadata is not a complete business policy or error gold.", "Authored policy fixtures and real-source observations reported separately.", "Ragas optional for generated explanations/retrieval; deterministic outcome scoring primary."],
+  "policies": [
+    {"id":"customer_analysis", "origin":"authored research policy, not retailer policy", "meaning":"For customer-level analysis require a nonblank CustomerID; nonblank alone does not verify identity."},
+    {"id":"quantity_sign", "origin":"authored research policy; C cancellation marker from official metadata", "meaning":"C-prefix invoice requires negative Quantity; other invoices require positive Quantity. Missing invoice or missing/unparseable quantity is unknown. This is an assumed review convention, not established source truth."},
+    {"id":"nonnegative_price", "origin":"authored research policy, not retailer policy", "meaning":"UnitPrice must be >=0; zero allowed. Missing/unparseable price is unknown. No claim zero price is a valid sale."}
+  ],
+  "initial_step": "Offline development tests of explicit matched Python/SHACL semantics only. Not LLM evaluation or ontology superiority."
+}

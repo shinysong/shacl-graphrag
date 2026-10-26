@@ -1,0 +1,20 @@
+{
+  "version": "explicit-interface-v1",
+  "status": "Documentation for future reviewed construction; prior Python results remain unchanged",
+  "python_packet": {
+    "rows": [{"row_id": "<opaque string>", "data": {"<source column name>": "<scalar or null>"}}],
+    "source_cell_access": "packet['rows'][i]['data'][column]; source columns are not direct members of a row envelope",
+    "normalized_rows": [{"row_id": "<same opaque string>", "uri": "<mapped URI>", "fields": {"<source column name>": {"state": "valid|missing|invalid", "source_key_present": "<boolean>", "raw": "<original scalar>", "datatype": "<declared type>", "value": "<normalized scalar when valid>"}}}],
+    "output": {"decisions": [{"row_id": "<opaque string>", "policy": "<declared policy id>", "status": "pass|violation|unknown"}]},
+    "optional_output_field": "reason: string",
+    "artifact_entrypoint": "evaluate(packet)"
+  },
+  "shacl_mapping": {
+    "source": "research/retail-evaluation/rdf-mapping.json",
+    "existing_authored_adapter": "scripts/retail_row_shacl.py",
+    "unknown_precheck": "Eligibility precheck emits unknown for missing/invalid required numeric or invoice fields. This is an adapter intervention, not a SHACL conformance result.",
+    "generated_shape_scope": "Supported grammar and named root shapes require separate review before generation/execution."
+  },
+  "comparison_limit": "Prior reusable Python construction did not include this explicit interface and had empty row examples. Do not compare future clarified-interface construction as if only the output language changed.",
+  "no_repair": "No edits or automatic reexecution of prior generated Python artifacts."
+}

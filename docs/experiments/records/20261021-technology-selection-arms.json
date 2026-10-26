@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-10-21T14:03:07.019348+00:00",
+  "study": "technology-selection-1",
+  "phase": "three resident adapters checked",
+  "review_job": "20261021T140128Z-technology-selection-arms-d3a8af",
+  "observed": {
+    "check_exit": 0,
+    "literal_checks_per_arm": 14,
+    "arms": 3,
+    "full_output_parity_cases": 11,
+    "parity_outputs": 33,
+    "performance_fixture_executions": 0,
+    "paid_calls": 0
+  },
+  "bindings": {
+    "scripts/technology_selection_common.py": "684a8bae659530aaf4f3efea9c8569602f819bb599038e7c2b3558dbc2ec3e1b",
+    "scripts/technology_selection_python.py": "ba75ef1e667dc703d8c3821d0dea476b82ecf679a0c8bc2791edec1e01418a08",
+    "scripts/technology_selection_sqlite.py": "cb0e9e716ac45c0f6a2bea882d8da034e67eec614b4fb2785402c0bd906f03b5",
+    "scripts/technology_selection_rdf.py": "3da842ff4747e5f10409b05f8f9d2e38e2cb4c525f7d0e01219d9b4bcc1430ea",
+    "scripts/check_technology_selection_arms.py": "f2a35e99583ae533c8eea68f94f581158590450a4b025cc005b2b751f3e278f1",
+    "scripts/check_technology_selection_python.py": "6d065e3a36d279d11c3c33eeb5d19dae4d7b56210b72c4aab896d0767051e558",
+    "scripts/industrial_question_python.py": "ffb03a14d5f144535faaae2a3e3bd694ee0788d7397b6d51c99830d1b90f5fe8",
+    "research/technology-selection/receipt-query-v1.sql": "6397019524994a71a231249291d813102d77891ee0cf31043c6a7539d2641257",
+    "research/technology-selection/reach-query-v1.sql": "25fef748a42d453f3bcef0ead4c070d20f2b4a5bf0d266582b590218e755ab8f",
+    "research/technology-selection/receipt-shapes-v1.ttl": "132298b2b80618e20e2c447facfcf7ebbcb16e2b8bbb602b91b2b34884efdc07",
+    "research/technology-selection/python-rules-v1.json": "cead3311ed4870664b22a1da80367ea75c1f62bfab4aeb70fe75453e3e397908"
+  },
+  "limitations": [
+    "Development software checks only; shared normalization/witness/recheck, not independent business truth",
+    "All update arms rebuild; RDF fresh closure on certificate-only update too; actual costs must be retained",
+    "No performance or human labor results yet; runner/scorer source freeze and review pending"
+  ],
+  "next_step": "Implement resource-bounded single-worker runner and independent frozen-reference scorer with phase progress/partial failures, quota/deadline enforcement and source bindings; review disposable termination checks and correctness scoring before198-slot measurement. Then policy-change tasks and paper/choice table."
+}

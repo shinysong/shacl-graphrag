@@ -1,0 +1,1 @@
+Native humanize standard documentation-only roles. Diagnose then conservatively edit Korean walkthrough. Preserve code, tables, semantics and all numbers. Input _workspace/2026-10-21-003-9649/01_input_with_metrics.txt; skill _workspace/humanize-skill/codex/skills/humanize-korean. Final research reviews are a separate job. No experiments or paid calls.

@@ -1,0 +1,11 @@
+@prefix ex: <urn:rule-extension:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+ex:EqualShape a sh:NodeShape; sh:targetClass ex:equal;
+ sh:property [sh:path ex:a; sh:equals ex:b] .
+ex:DifferentShape a sh:NodeShape; sh:targetClass ex:different;
+ sh:property [sh:path ex:a; sh:disjoint ex:b] .
+ex:IntervalShape a sh:NodeShape; sh:targetClass ex:interval;
+ sh:property [sh:path ex:a; sh:lessThanOrEquals ex:b];
+ sh:property [sh:path ex:b; sh:lessThan ex:c] .
+ex:UnknownShape a sh:NodeShape; sh:targetClass ex:unknown;
+ sh:property [sh:path ex:available; sh:hasValue true; sh:severity sh:Warning] .

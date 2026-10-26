@@ -1,0 +1,88 @@
+{
+  "id": "rule-extension-1",
+  "status": "frozen-design-pending-review",
+  "authorized": "2026-10-22 human asks actual independent new-rule maintenance comparison and detailed LLM cases",
+  "scope": "Offline authored policy-document release rule, added alongside existing receipt/BOM implementations. No paid calls, no legal/operational truth or human labor claims.",
+  "new_question": "May this exact policy document revision be released on the assessment date?",
+  "input": "document{id,revision,author,status}; review{document_id,revision,reviewer,decision}; qualification{person,role,start,end}; assessment_date. Each row has occurrence_id. Lookup uses exact document/revision; qualification uses reviewer and required role.",
+  "policy": {
+    "document_status": "Approved",
+    "review_decision": "Accept",
+    "required_role": "PolicyReviewer",
+    "date_interval": "start <= assessment < end",
+    "separation": "reviewer != author"
+  },
+  "decisions": "One document matching question and one linked review and one reviewer/required-role qualification required. Absent or multiple matches yield unknown for that link, not global absence. Missing unrecognized scalar or invalid date yields unknown; explicit supported failed conditions blocked; known failure overrides unknown; otherwise eligible. Review status supports Accept/Reject, document Draft/Approved. Evidence is the exact matching/ambiguous row occurrence IDs; quote source authored-policy-v1. Do not inspect evaluation reference at runtime.",
+  "arms": [
+    "Modular Python extension: indexed joins, explicit predicates and JSON policy",
+    "RDF extension: row-to-RDF mapping, SHACL Core joins/cardinality/status/difference/date constraints and report adapter. No OWL needed for this new task"
+  ],
+  "fairness": [
+    "Common scalar parsing and exact joins may be shared only if no verdicts/comparisons are precomputed; disclose all shared responsibilities",
+    "Original technology_selection modules/configs and 198 historical outputs remain unchanged. Compose old arms with new independent extension; no monolithic Python strawman",
+    "Same per-condition diagnostics and source row witnesses, same supported/unknown semantics, no presumed ontology superiority"
+  ],
+  "matrix": {
+    "authored_scenarios": 16,
+    "consumers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "policy_versions": [
+      "v1",
+      "v2-required-role-ComplianceReviewer"
+    ],
+    "identity_order_seeds": [
+      11,
+      23
+    ],
+    "new_rule_decisions": 384,
+    "note": "16*3*2*2*2 arms=384; repetitions/renaming are not independent business trials"
+  },
+  "scenarios": [
+    "eligible",
+    "draft-document",
+    "rejected-review",
+    "self-approval",
+    "expired-qualification",
+    "future-qualification",
+    "missing-review",
+    "duplicate-review",
+    "missing-qualification",
+    "duplicate-qualification",
+    "invalid-date",
+    "missing-author",
+    "unknown-document-status",
+    "wrong-document-revision",
+    "blocked-plus-unknown",
+    "expiry-boundary"
+  ],
+  "regression": "Run original22 frozen cases once per old Python/RDF arm before and after extension in same process, 88 baseline output comparisons in total (22*2arms*2moments); compare to saved baseline and independent refs. No old campaign or paid rerun. Any regression preserved. Do not mix new384 with old88 accuracy.",
+  "sharing": "Three explicit consumers use one approved policy artifact per arm; v2 changes required role only. Record artifact hashes and all three consumer outputs. Local pinned configuration reuse, not distributed collaboration experiment.",
+  "human_review": "Generate static read-only HTML containing policy source quote, changed files/semantic sites, input/output/witnesses, v1/v2 artifact hashes. Human approval and GUI usability are not experimentally measured; no automatic approval simulation.",
+  "measure": "Before/after source bytes, new/edited files, semantic responsibility locations (ingestion/joins/policy/engine/report/integration), dependency map, first frozen execution outcomes, regressions, shared-version agreement, unsupported/missing evidence. File/LOC footprint not human effort or universal maintainability.",
+  "scorer": "Separately authored explicit scenario expectations frozen before first execution; no runtime reference access. First mismatch/failure retained; no fixing from evaluation gold. Any implementation revision fresh reviewed run with original outcome retained.",
+  "limits": {
+    "single_worker": true,
+    "timeout_seconds": 180,
+    "memory_mib": 1536,
+    "max_decisions": 384,
+    "paid_calls": 0
+  },
+  "steps": [
+    "freeze policy, cases and source baseline; independent methods review before execution",
+    "implement two modules/shapes/common parsing, composition and independent scorer; native methods+implementation review before any checks or experiment",
+    "run bounded experiment once, preserve all first outcomes",
+    "write detailed three trace cases and actual extension findings in integrated paper, Korean skill, fresh document review and builds"
+  ],
+  "clarifications": [
+    "Document selector exact id/revision; review exact document_id/revision; qualification exact reviewer/required_role. Repeated equal rows with distinct occurrence IDs remain ambiguous.",
+    "Each supported condition evaluated once its own dependencies resolve; Draft+missing review is blocked with a separate unknown review-link. No global all-links gate.",
+    "Malformed date case uses qualification.end=not-a-date; ISO endpoint scalar parsing is shared, interval comparison engine owned.",
+    "The 16 scenarios do not exercise absent/duplicate document; contract specifies unknown but branch coverage unclaimed.",
+    "RDF materializes joined operand/check nodes; common exact joins and scalar recognition are shared, not inferred by OWL. No raw-document understanding.",
+    "88 regression outputs,44 before/after pairs; historical/scorer assertions separately reported.",
+    "Both arms read one common JSON policy version. Shared JSON reuse is not RDF-exclusive. SHACL supplies predicate definitions/report vocabulary, not the whole review workflow."
+  ]
+}

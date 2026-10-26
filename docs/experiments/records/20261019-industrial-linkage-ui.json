@@ -1,0 +1,44 @@
+{
+  "id": "industrial-linkage-ui-1",
+  "completed_at": "2026-10-19T15:20:05.580893+00:00",
+  "review_job": "20261019T151516Z-industrial-linkage-ui-v2-be7e5b",
+  "preserved_blocked_job": "20261019T151327Z-industrial-linkage-ui-1a590a",
+  "implemented": [
+    "Explicit table and key selection with user review and scope declarations",
+    "Alias candidates remain unapproved; source data unchanged",
+    "Stale/invalid input suppresses old report and download",
+    "Separate default key/evidence-omitting JSON export",
+    "Preallocation evidence position and byte budgets"
+  ],
+  "checks": {
+    "pytest_exit": 0,
+    "tests_passed": 63,
+    "subtests_passed": 60,
+    "reviewed_hashes_unchanged": 4,
+    "browser": {
+      "counts": {
+        "candidate_only": 100,
+        "missing_key": 100,
+        "unmatched_in_snapshot": 100,
+        "ambiguous": 100,
+        "linked": 600
+      },
+      "default_keys_evidence_omitted": true,
+      "stale_hidden": true,
+      "invalid_input_hidden": true,
+      "mobile_global_overflow": false,
+      "page_errors": []
+    }
+  },
+  "limitations": [
+    "Schema-inspired authored data, not real company records or industrial accuracy",
+    "User checkbox records assertion, not verified identity",
+    "Aliases cannot be approved in this panel; result sidecar not reimportable configuration",
+    "Default export retains metadata, not anonymization",
+    "Evidence output limits do not bound whole-process memory",
+    "First browser attempt failed on covered checkbox input; label clicks succeeded without application changes",
+    "Light desktop/mobile checked; dark theme not checked this tick"
+  ],
+  "paid_calls": 0,
+  "published": false
+}

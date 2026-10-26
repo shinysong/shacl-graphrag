@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-10-21T14:23:10.741747+00:00",
+  "study": "technology-selection-1",
+  "phase": "per-process runner checked; campaign/scorer next",
+  "review_job": "20261021T142141Z-technology-selection-process-8940c5",
+  "observed": {
+    "check_exit": 0,
+    "disposable_checks": 7,
+    "handcrafted_python_lifecycle_bundles": 114,
+    "performance_fixture_executions": 0,
+    "paid_calls": 0
+  },
+  "raw_logs": "_workspace/technology-selection/process-1/check-output",
+  "bindings": {
+    "scripts/technology_selection_process.py": "11f1f69e8fea73725edb7e1b26f32b80aa277347df0c01e79f29ec2661b31b85",
+    "scripts/technology_selection_worker.py": "ffa8c5e1db05a6ead84b1958d18a91ab7e7c6c6e5cfbc3da50c962a219118fa2",
+    "scripts/check_technology_selection_process.py": "6604c3cd19e2b744d6ab9d57d0fcc564eafde4dd1fe8a0f77e5716fe410ed6bf"
+  },
+  "limitations": [
+    "SIGTERM-resistant escalation/descendant pipes/MemoryError pretests still pending",
+    "Perprocess limits only; campaign global quota/deadline/sourcebinding/scorer still pending",
+    "Whole-process RSS differs from virtualaddresslimit and sampledfailedVmHWM lowerbound; no performance results"
+  ],
+  "next_step": "Implement campaign global2700s/512MiB/harddeadline accounting plus sourcebindings and independent frozenreference event scorer; add reviewed SIGKILL/descendant/memory failure checks, then execute198slots preserving all failures and partial phases. Prioritize actual measurement and paper/choice table."
+}

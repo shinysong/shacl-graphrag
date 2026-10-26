@@ -1,0 +1,43 @@
+{
+  "recorded_at": "2026-10-20T17:12:57.466647+00:00",
+  "job": "20261020T171130Z-retail-shacl-runtime-14e412",
+  "script_exit_code": 0,
+  "execution_status": "completed",
+  "container_absent": true,
+  "validation": {
+    "versions": {
+      "pyshacl": "0.40.1",
+      "rdflib": "7.6.0"
+    },
+    "results": {
+      "positive": {
+        "conforms": true,
+        "report_turtle": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n"
+      },
+      "negative": {
+        "conforms": false,
+        "report_turtle": "@prefix ex: <urn:probe:> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode ex:row ;\n            sh:resultMessage \"Value is not >= Literal(\\\"0\\\", datatype=xsd:integer)\" ;\n            sh:resultPath ex:value ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinInclusiveConstraintComponent ;\n            sh:sourceShape [ sh:minInclusive 0 ;\n                    sh:path ex:value ] ;\n            sh:value -1 ] .\n\n"
+      }
+    }
+  },
+  "installed_versions": {
+    "pyshacl": "0.40.1",
+    "rdflib": "7.6.0",
+    "pyparsing": "3.3.3",
+    "prettytable": "3.18.0",
+    "wcwidth": "0.9.2",
+    "packaging": "26.3",
+    "owlrl": "7.6.2"
+  },
+  "scope": "Offline integration smoke with two authored graphs and one authored shape, no generated shapes",
+  "limits": [
+    "Host-evaluated distribution markers and default extras; smoke verifies this concrete installed stack only",
+    "Full supported generated-shape grammar not implemented or approved by this smoke",
+    "No general sandbox assurance or resource stress test",
+    "Future explicit interface is a construction intervention, prior Python artifacts/results unchanged"
+  ],
+  "paid_calls_this_tick": 0,
+  "campaign_calls": 79,
+  "campaign_reported_usd": 0.023106575,
+  "next_step": "Implement independently reviewed generated-SHACL adapter with explicit named roots, supported Core/SPARQL subset and rejection of targets/imports/JS/services; shared eligibility unknown precheck documented. Run bounded authored adapter checks then one actual generated reusable shape artifact on same two development batches with failures preserved. Clarified construction interface differs from prior Python; do not claim isolated language advantage or rerun/repair oldPython. Three predecessors79calls combined144/$5; no heldout."
+}

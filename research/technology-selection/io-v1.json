@@ -1,0 +1,97 @@
+{
+  "id": "technology-selection-1-io",
+  "runtime_file": {
+    "required_top_keys": [
+      "packet",
+      "updates"
+    ],
+    "packet_keys": [
+      "scene_id",
+      "policy_id",
+      "tables",
+      "question",
+      "coverage"
+    ],
+    "tables": [
+      "receipt",
+      "order_line",
+      "inspection",
+      "certificate",
+      "component_edge",
+      "product"
+    ],
+    "updates": "E/C operational commands with exact target IDs; no expected answers or graph-role labels"
+  },
+  "output": {
+    "required_keys": [
+      "scene_id",
+      "receipt_id",
+      "receipt",
+      "links",
+      "products",
+      "impact_graph_completeness",
+      "violated_checks",
+      "unknown_checks"
+    ],
+    "receipt": [
+      "accept",
+      "violation",
+      "unknown"
+    ],
+    "link_status": [
+      "resolved",
+      "missing",
+      "ambiguous"
+    ],
+    "candidate": [
+      "yes",
+      "no",
+      "unknown"
+    ],
+    "recheck": [
+      "required",
+      "not_required",
+      "unknown"
+    ],
+    "completeness": [
+      "complete",
+      "partial"
+    ],
+    "product_keys": [
+      "id",
+      "revision",
+      "candidate",
+      "recheck",
+      "witness"
+    ],
+    "witness": "array of edge occurrence IDs, shortest then lexicographic; products sorted by(id,revision)",
+    "check_entry": {
+      "rule_id": "stable check label",
+      "support": "sorted distinct occurrence IDs actually used; missing record contributes no invented ID"
+    },
+    "check_labels": [
+      "order-part",
+      "order-revision",
+      "order-facility",
+      "inspection-part",
+      "inspection-revision",
+      "inspection-facility",
+      "certificate-part",
+      "certificate-revision",
+      "certificate-facility",
+      "inspection-receipt",
+      "quantity",
+      "inspection-status",
+      "certificate-status",
+      "certificate-dates"
+    ],
+    "reference_failure_labels": [
+      "link-order_line",
+      "link-inspection",
+      "link-certificate"
+    ],
+    "reference_failure_support": "receipt occurrence plus all actual matching records, no resolved content checks; check entries sorted byrule_id",
+    "extras": "engine diagnostics/timings live outside canonical answer, not compared as business output"
+  },
+  "provenance": "Authored complete performance fixtures only; semantic fault fixtures/maintenance acceptance tests separately frozen before edits. No company records or heldoutclaims."
+}

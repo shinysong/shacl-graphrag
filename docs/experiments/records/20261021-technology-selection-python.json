@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-10-21T13:46:17.965672+00:00",
+  "study": "technology-selection-1",
+  "phase": "resident Python adapter software verification",
+  "review_job": "20261021T134431Z-technology-selection-python-84ee35",
+  "observed": {
+    "check_exit": 0,
+    "handcrafted_checks": 14,
+    "performance_fixture_executions": 0,
+    "api_calls": 0
+  },
+  "bindings": {
+    "scripts/technology_selection_common.py": "684a8bae659530aaf4f3efea9c8569602f819bb599038e7c2b3558dbc2ec3e1b",
+    "scripts/technology_selection_python.py": "ba75ef1e667dc703d8c3821d0dea476b82ecf679a0c8bc2791edec1e01418a08",
+    "scripts/check_technology_selection_python.py": "6d065e3a36d279d11c3c33eeb5d19dae4d7b56210b72c4aab896d0767051e558",
+    "scripts/industrial_question_python.py": "ffb03a14d5f144535faaae2a3e3bd694ee0788d7397b6d51c99830d1b90f5fe8",
+    "research/technology-selection/python-rules-v1.json": "cead3311ed4870664b22a1da80367ea75c1f62bfab4aeb70fe75453e3e397908"
+  },
+  "limitations": [
+    "Handcrafted software checks only; full boundary/tie and cross-arm parity pending",
+    "Full common normalization and adjacency rebuild on both updates; count normalization in lifecycle costs",
+    "No performance measurements or human maintenance labor measurements"
+  ],
+  "next_step": "Implement SQLite recursive CTE and RDF OWL-RL/SHACL resident arms against same normalized values and canonical output; broaden boundary/tie checks and independently review. Then resource runner/scorer and 198-slot measurement."
+}

@@ -1,0 +1,57 @@
+{
+  "protocol": "industrial-linkage-1",
+  "phase": "source-snapshot-integrity-hardening",
+  "completed_at": "2026-10-19T14:56:43.464008+00:00",
+  "review_jobs": {
+    "v1": "20261019T145200Z-industrial-source-pin-bf33ca",
+    "v2": "20261019T145349Z-industrial-source-pin-v2-620f69",
+    "v3": "20261019T145508Z-industrial-source-pin-v3-a3c64f"
+  },
+  "prior_blockers": [
+    "Manifest FIFO/unbounded read",
+    "Directory fdopen before regular-file validation"
+  ],
+  "final_review": "ready from two distinct native reviewers",
+  "pin": "research/sources/erpnext-procurement.json",
+  "source_hashes": {
+    "scripts/industrial_source_snapshot.py": "7da32f6ac968e90c3079f5d197802fac83388f5f72ff05827978d05e8fe4795c",
+    "scripts/build_industrial_linkage_demo.py": "220d8c72bac31546d35ee0e1f1c454783afbfabfbb6cec5553fda71bcad420c7",
+    "research/sources/erpnext-procurement.json": "2a10ed6d9c521c0482ce76ac32227e5b63e89f0bd72ebc6f035622647cfdf7f3",
+    "tests/test_industrial_source_snapshot.py": "2f52017bcde81436fce8e74210e73d9e1ab8cb6177e3c3ea1491a0f1def031e3"
+  },
+  "tests": {
+    "exit_code": 0,
+    "passed": 28
+  },
+  "replay": {
+    "exit_code": 0,
+    "comparison": {
+      "all_identical": true,
+      "files_compared": 12,
+      "json_files": 7,
+      "sha256": {
+        "source-manifest.json": "125e7585d2f0b0a00105b20cc9672ea993ffdb6268d628fd133de1b3f2beced6",
+        "aliases.json": "91dcf9e7a211ed5cc56e5dd9ef1d8e15d6d276e488270d02e1d3485dc7018acc",
+        "expectations.json": "d36866c4a5cb2482d70bb5d4a471e5cd312486ff0d819c40f3bf41fa97c5e2fb",
+        "summary.json": "68cbbd0718f1c513f05a736dd7f4463d30bf871ffe0242554095ca90102c4e20",
+        "reports.json": "f24d8232ff169a2e191b0a940201d55cbc33adbc2860194d23530e9f82ead7df",
+        "contract.json": "c568ccd75dc2687d24ccc0533f2209f86fda14616de908d6a9ec6b1430e599c6",
+        "quality-inspection.csv": "d3d5a50c43a43c12ca284bdaa4e4ae7fd7e7c53d7e221e56825231d79e53f1da",
+        "item.csv": "006f2e01267f6270b6736e7b3bfdf6dad87d3ec7818bfb57db6a271e874f1fb6",
+        "purchase-order-item.csv": "71e5c73c496391c810f57f8afe466251f4db5f877e873351fa3a429039e1bdad",
+        "authored-legacy-crosswalk.csv": "ce3f9ee5052e792603476e00602eb7da28b318028b9814eec9690008cfda296b",
+        "purchase-receipt-item.csv": "dea6c4d87018ee3616c39853f9068943ef5412553664a44cf53e80cbb9d19a36",
+        "project.json": "4882ecb390bfb8256b840bc86d90a699e52e868c1ca2ba4965e62943114af14c"
+      },
+      "differences": []
+    },
+    "previous": "_workspace/industrial-linkage/run-2",
+    "current": "_workspace/industrial-linkage/run-3"
+  },
+  "paid_calls": 0,
+  "limitations": [
+    "Offline local software integrity, not upstream authorship authentication.",
+    "Trusted repository pin; Linux host APIs, not portable Windows support or OS sandbox.",
+    "Same authored development data and linkage policy as first slice; no new industrial accuracy evidence."
+  ]
+}

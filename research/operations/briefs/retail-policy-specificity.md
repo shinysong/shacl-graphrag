@@ -1,0 +1,38 @@
+# Retail policy specificity design review
+
+Review research/retail-evaluation/policy-specificity-protocol-v1.json only as a prospective bounded design, not execution approval. No tests, API calls, containers or source changes. The existing seven-arm round supplied explicit policies in every arm. Reusable Python had an input-envelope failure; new protocol must retain that outcome and must not frame its clarified interface as an isolated policy gain. Two new matched Python conditions address the previously missing underspecified-policy comparator. Score against declared operational contract, not external truth. Important: operational rules may leak through common packets; exact future builders and packets need independent review before execution. Current campaign has80 consumedcalls; proposed2 calls must remain inside existing144/$5/deadline with allfour predecessor ledgers. No heldout access. Write only own review JSON. Omitted builder/raw-output details remain unverified. Methods assess fairness and estimand; implementation assess whether future gates are concrete and no current execution is implied.
+
+Frozen protocol text:
+
+```json
+{
+  "id": "retail-policy-specificity-v1",
+  "status": "prospective design only; no generated artifacts or measurements",
+  "question": "With the executable interface fixed, how does policy specificity affect generated Python agreement with a separately declared operational contract?",
+  "design": {
+    "arms": ["underspecified_policy", "explicit_policy"],
+    "artifact": "One new reusable Python artifact per arm, constructed without evaluation rows or labels; each used unchanged across the same existing development packets.",
+    "common": ["Exact model/settings", "Source column definitions", "Explicit nested row.data interface and output schema", "Same Python standard-library container runner", "Same missing/invalid parsing metadata definitions", "Same task policy identifiers", "No example decisions, scorer, previous generated code or previous failure feedback"],
+    "underspecified_instruction": "Assess customer-analysis readiness, consistency of invoice cancellation with quantity, and acceptability of recorded unit price. Implement your interpretation; use unknown where the supplied information cannot support a decision. Return one decision per row and task.",
+    "explicit_instruction": "Use the same broad instruction plus the exact frozen evaluation-contract.json operational policies.",
+    "treatment": "Presence of the operational policy definitions. Additional policy text length is part of this combined information intervention; not an isolated formalism effect.",
+    "metadata_leakage_gate": "Before execution, inspect both exact serialized construction prompts AND runtime packets. The underspecified arm must not receive policy conditions, required-field eligibility lists, rule messages, reference labels or explicit-policy text through metadata or runner packets. Common parsing metadata may expose types and parsing states, but not normative decisions. Save hashes and a field inventory; any filtering must be identical across arms except the declared construction policy treatment."
+  },
+  "evaluation": {
+    "cohorts": "Preserve separate existing 24 development rows/72 decisions, 2 purposefully selected actual rows/6 decisions and 12 authored probes/36 decisions. No heldout access.",
+    "metrics": ["Contract agreement", "Violation TP/FP/FN", "False pass", "Unnecessary unknown", "Reference-unknown agreement", "Schema/execution errors", "Missing outputs", "Construction calls/tokens/cost", "Execution time with identical measurement boundaries"],
+    "interpretation": "A mismatch in the underspecified arm is disagreement with the evaluator's chosen policy, not proof of wrong business judgment or LLM reasoning failure. Multiple plausible policies are possible when requirements are omitted.",
+    "unit": "One artifact per arm is exploratory and correlated across rows; no inferential significance, representative prevalence or general accuracy claim.",
+    "comparison": "Compare these two new arms to each other. Earlier artifacts remain historical outcomes with different interfaces, not matched controls. Do not repair, replace or rerun earlier artifacts."
+  },
+  "execution_gate": {
+    "current_tick": "Offline design review only, zero paid calls.",
+    "future": "Fresh independent methods and implementation review of actual builder/prompts/packet filtering, frozen inputs and distinct condition IDs before any generation. New policy-specificity conditions must be recorded separately, never duplicate a consumed condition or disguise a retry.",
+    "planned_generation_calls": 2,
+    "budget": "Must fit the existing 144-call/$5 nonrefunded campaign, all four predecessor ledgers and <=500 historical study calls per UTC day. Current consumed total80/$0.02410625 reported/$0.21650088 reserved. Re-audit actual totals and conservative token reservations before launch; never reset or refund.",
+    "deadline": "2026-10-20T23:04:25.396615+00:00",
+    "failure": "Preserve original artifacts and all errors; no repair, automatic retry, gold feedback or extension. If implementation cannot satisfy the leakage gate, do not execute."
+  },
+  "unmeasured": ["Human work saved", "Maintenance effort", "External retailer business truth", "RDF/SHACL superiority", "Independent fresh generalization"]
+}
+```

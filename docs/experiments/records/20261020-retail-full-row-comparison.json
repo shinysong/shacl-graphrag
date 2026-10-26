@@ -1,0 +1,253 @@
+{
+  "at": "2026-10-20T09:24:22.228288+00:00",
+  "job": "20261020T092038Z-retail-full-compare-16715e",
+  "result": "Run exit0,50savedbatches:5000consumeddevrows,15000unique complete decision keys perarm,0mismatches. Both customer3795pass1205violation;quantity4998pass2violation;price5000pass. No unknown/error encountered. DirectPython 0.020667s vs SHACLwrapper 121.346323s, unequalwork scopes singlefixedorder; notenginebenchmark. Prefix500 overlaps priorrun, no independentfresh cohort. Declaredpolicies not retailertruth.",
+  "run_exit_code": 0,
+  "cardinality_check_exit_code": 0,
+  "observed": {
+    "rows": 5000,
+    "decisions_per_arm": 15000,
+    "mismatches": [],
+    "counts": {
+      "python": {
+        "customer_analysis": {
+          "pass": 3795,
+          "violation": 1205
+        },
+        "quantity_sign": {
+          "pass": 4998,
+          "violation": 2
+        },
+        "nonnegative_price": {
+          "pass": 5000
+        }
+      },
+      "shacl": {
+        "customer_analysis": {
+          "pass": 3795,
+          "violation": 1205
+        },
+        "quantity_sign": {
+          "pass": 4998,
+          "violation": 2
+        },
+        "nonnegative_price": {
+          "pass": 5000
+        }
+      }
+    },
+    "timings": [
+      {
+        "python_seconds": 0.0004227370081935078,
+        "shacl_wrapper_seconds": 2.4001370879996102
+      },
+      {
+        "python_seconds": 0.0005100330017739907,
+        "shacl_wrapper_seconds": 2.4032716770016123
+      },
+      {
+        "python_seconds": 0.0003784700093092397,
+        "shacl_wrapper_seconds": 2.401958022994222
+      },
+      {
+        "python_seconds": 0.0004117219941690564,
+        "shacl_wrapper_seconds": 2.4076809020043584
+      },
+      {
+        "python_seconds": 0.00037005699414294213,
+        "shacl_wrapper_seconds": 2.405028075008886
+      },
+      {
+        "python_seconds": 0.0005304030055413023,
+        "shacl_wrapper_seconds": 2.4055874339974253
+      },
+      {
+        "python_seconds": 0.0005004190024919808,
+        "shacl_wrapper_seconds": 2.419932037999388
+      },
+      {
+        "python_seconds": 0.00039165301132015884,
+        "shacl_wrapper_seconds": 2.410205836989917
+      },
+      {
+        "python_seconds": 0.0005203260079724714,
+        "shacl_wrapper_seconds": 2.419748813001206
+      },
+      {
+        "python_seconds": 0.00041026399412658066,
+        "shacl_wrapper_seconds": 2.4252037719998043
+      },
+      {
+        "python_seconds": 0.00039121600275393575,
+        "shacl_wrapper_seconds": 2.412500097998418
+      },
+      {
+        "python_seconds": 0.0003809480112977326,
+        "shacl_wrapper_seconds": 2.432126932006213
+      },
+      {
+        "python_seconds": 0.0003751539916265756,
+        "shacl_wrapper_seconds": 2.4184608810028294
+      },
+      {
+        "python_seconds": 0.0004010720003861934,
+        "shacl_wrapper_seconds": 2.4248706810030853
+      },
+      {
+        "python_seconds": 0.0005257239972706884,
+        "shacl_wrapper_seconds": 2.4132385729899397
+      },
+      {
+        "python_seconds": 0.00036075299431104213,
+        "shacl_wrapper_seconds": 2.439534317003563
+      },
+      {
+        "python_seconds": 0.00040195298788603395,
+        "shacl_wrapper_seconds": 2.4310157660074765
+      },
+      {
+        "python_seconds": 0.0003795890079345554,
+        "shacl_wrapper_seconds": 2.455821937008295
+      },
+      {
+        "python_seconds": 0.0003975260042352602,
+        "shacl_wrapper_seconds": 2.439652141998522
+      },
+      {
+        "python_seconds": 0.00038912499439902604,
+        "shacl_wrapper_seconds": 2.4451480410061777
+      },
+      {
+        "python_seconds": 0.0003759680112125352,
+        "shacl_wrapper_seconds": 2.422583403007593
+      },
+      {
+        "python_seconds": 0.0004089330032002181,
+        "shacl_wrapper_seconds": 2.4198837040021317
+      },
+      {
+        "python_seconds": 0.0005279920005705208,
+        "shacl_wrapper_seconds": 2.4130715240025893
+      },
+      {
+        "python_seconds": 0.00041091600724030286,
+        "shacl_wrapper_seconds": 2.434038072999101
+      },
+      {
+        "python_seconds": 0.0003888200008077547,
+        "shacl_wrapper_seconds": 2.4350878420082154
+      },
+      {
+        "python_seconds": 0.00045992199738975614,
+        "shacl_wrapper_seconds": 2.456757480002125
+      },
+      {
+        "python_seconds": 0.0004062119987793267,
+        "shacl_wrapper_seconds": 2.4515772980084876
+      },
+      {
+        "python_seconds": 0.00037440699816215783,
+        "shacl_wrapper_seconds": 2.4363847200002056
+      },
+      {
+        "python_seconds": 0.0003551139961928129,
+        "shacl_wrapper_seconds": 2.4534000429994194
+      },
+      {
+        "python_seconds": 0.000517377004143782,
+        "shacl_wrapper_seconds": 2.4419363859924488
+      },
+      {
+        "python_seconds": 0.00039508599729742855,
+        "shacl_wrapper_seconds": 2.4426854650082532
+      },
+      {
+        "python_seconds": 0.00040969600377138704,
+        "shacl_wrapper_seconds": 2.4273792789899744
+      },
+      {
+        "python_seconds": 0.0003900980082107708,
+        "shacl_wrapper_seconds": 2.4378279029915575
+      },
+      {
+        "python_seconds": 0.00041221499850507826,
+        "shacl_wrapper_seconds": 2.4326177869952517
+      },
+      {
+        "python_seconds": 0.00040133000584319234,
+        "shacl_wrapper_seconds": 2.428341428996646
+      },
+      {
+        "python_seconds": 0.00038939200749155134,
+        "shacl_wrapper_seconds": 2.4273530459904578
+      },
+      {
+        "python_seconds": 0.0003761280095204711,
+        "shacl_wrapper_seconds": 2.4294664210028714
+      },
+      {
+        "python_seconds": 0.0003793989890255034,
+        "shacl_wrapper_seconds": 2.4326268029981293
+      },
+      {
+        "python_seconds": 0.0003942579933209345,
+        "shacl_wrapper_seconds": 2.423572173996945
+      },
+      {
+        "python_seconds": 0.00039926799945533276,
+        "shacl_wrapper_seconds": 2.4258815509965643
+      },
+      {
+        "python_seconds": 0.00038073700852692127,
+        "shacl_wrapper_seconds": 2.423224484999082
+      },
+      {
+        "python_seconds": 0.00040766000165604055,
+        "shacl_wrapper_seconds": 2.4170928560051834
+      },
+      {
+        "python_seconds": 0.0003956840082537383,
+        "shacl_wrapper_seconds": 2.4376224570005434
+      },
+      {
+        "python_seconds": 0.0003774539945879951,
+        "shacl_wrapper_seconds": 2.4278466959949583
+      },
+      {
+        "python_seconds": 0.0005306120001478121,
+        "shacl_wrapper_seconds": 2.4335000809951453
+      },
+      {
+        "python_seconds": 0.0004026649985462427,
+        "shacl_wrapper_seconds": 2.422641848999774
+      },
+      {
+        "python_seconds": 0.00040313399222213775,
+        "shacl_wrapper_seconds": 2.430375178999384
+      },
+      {
+        "python_seconds": 0.00040099800389725715,
+        "shacl_wrapper_seconds": 2.415247315002489
+      },
+      {
+        "python_seconds": 0.0003778049867833033,
+        "shacl_wrapper_seconds": 2.424975379006355
+      },
+      {
+        "python_seconds": 0.00036817700311075896,
+        "shacl_wrapper_seconds": 2.4302014709974173
+      }
+    ],
+    "limitations": [
+      "One ordered consumed development prefix, not representative or heldout",
+      "Authored policy agreement, not external business truth",
+      "Python direct cells; SHACL time includes mapping, shapes, validation and in-memory trace serialization",
+      "One run, fixed Python-before-SHACL order; no engine-performance or maintenance-labor inference",
+      "SHACL unknown handling uses shared preprocessing outside validator",
+      "No LLM or generated artifacts"
+    ]
+  },
+  "python_total_seconds": 0.0206666010490153,
+  "shacl_wrapper_total_seconds": 121.34632312601025,
+  "paid_calls": 0
+}

@@ -1,0 +1,107 @@
+{
+  "source_kind": "Authored records, schema-inspired; NOT operational ERP data.",
+  "schema_commit": "e864addb6c367688d2b264f284c2dd9b9360a97d",
+  "tables": {
+    "Item": 301,
+    "Purchase Order Item": 1000,
+    "Purchase Receipt Item": 1000,
+    "Quality Inspection": 900
+  },
+  "audited_relationship": "purchase-item",
+  "audited_source_rows": 1000,
+  "other_relationships": "Receipt and inspection projections prepared, NOT audited in this first slice.",
+  "counts": {
+    "complete_snapshot": {
+      "candidate_only": 100,
+      "missing_key": 100,
+      "unmatched_in_snapshot": 100,
+      "ambiguous": 100,
+      "linked": 600
+    },
+    "undeclared_completeness": {
+      "unknown_target_scope": 800,
+      "missing_key": 100,
+      "ambiguous": 100
+    },
+    "unreviewed_mapping": {
+      "not_reviewed": 1000
+    }
+  },
+  "matches_authored_development_labels": true,
+  "limitations": [
+    "No LLM, fuzzy matching, business rule execution, or ontology comparison.",
+    "Declared target completeness is supplied, not independently verified.",
+    "Same rows replayed under three policies; not 3,000 independent examples.",
+    "Aliases are authored operational suggestions, never auto-confirmed."
+  ],
+  "protocol": "industrial-linkage-1",
+  "phase": "first offline development slice",
+  "run": "20261019-industrial-linkage",
+  "native_review_job": "20261019T143043Z-industrial-linkage-first-206f70",
+  "checks": {
+    "workbench_pytest": {
+      "exit_code": 0,
+      "passed": 51,
+      "subtests_passed": 60
+    },
+    "builder": {
+      "exit_code": 0
+    }
+  },
+  "preserved_attempts": [
+    "Initial pytest command named nonexistent tests/test_rule_workbench.py; no tests collected, log preserved. Shell log-printing masked process exit; not reported as passed.",
+    "First builder completed summary; explicit exit capture added on second run in a distinct output directory. Original output preserved."
+  ],
+  "source_manifest": {
+    "source": "frappe/erpnext",
+    "branch": "version-15",
+    "commit": "e864addb6c367688d2b264f284c2dd9b9360a97d",
+    "retrieved_at": "2026-10-19T14:28:14.272299+00:00",
+    "records": [
+      {
+        "path": "license.txt",
+        "url": "https://raw.githubusercontent.com/frappe/erpnext/e864addb6c367688d2b264f284c2dd9b9360a97d/license.txt",
+        "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+        "bytes": 35149,
+        "saved_as": "license.txt"
+      },
+      {
+        "path": "erpnext/stock/doctype/item/item.json",
+        "url": "https://raw.githubusercontent.com/frappe/erpnext/e864addb6c367688d2b264f284c2dd9b9360a97d/erpnext/stock/doctype/item/item.json",
+        "sha256": "0cccf6792564b63375a53cb6fe00d9954092406a797fc02505220ad80534c8ce",
+        "bytes": 23360,
+        "saved_as": "item.json"
+      },
+      {
+        "path": "erpnext/buying/doctype/purchase_order_item/purchase_order_item.json",
+        "url": "https://raw.githubusercontent.com/frappe/erpnext/e864addb6c367688d2b264f284c2dd9b9360a97d/erpnext/buying/doctype/purchase_order_item/purchase_order_item.json",
+        "sha256": "a128308d73f331437adf9d7bd98770dfcac634859c5352216fca9dc3a82dbbd7",
+        "bytes": 21252,
+        "saved_as": "purchase_order_item.json"
+      },
+      {
+        "path": "erpnext/stock/doctype/purchase_receipt_item/purchase_receipt_item.json",
+        "url": "https://raw.githubusercontent.com/frappe/erpnext/e864addb6c367688d2b264f284c2dd9b9360a97d/erpnext/stock/doctype/purchase_receipt_item/purchase_receipt_item.json",
+        "sha256": "397df0b6f551978d46f5eeddf005833dff341baaaebb874009521570ac925ca4",
+        "bytes": 26320,
+        "saved_as": "purchase_receipt_item.json"
+      },
+      {
+        "path": "erpnext/stock/doctype/quality_inspection/quality_inspection.json",
+        "url": "https://raw.githubusercontent.com/frappe/erpnext/e864addb6c367688d2b264f284c2dd9b9360a97d/erpnext/stock/doctype/quality_inspection/quality_inspection.json",
+        "sha256": "ef8cc2a6a189ee203a9e8e4c2a7fe95f2149931b7a3df78a93f2cbf514f0b060",
+        "bytes": 7207,
+        "saved_as": "quality_inspection.json"
+      }
+    ],
+    "scope": "Original public ERP software schemas, NOT company operational records."
+  },
+  "review_warning": "Before generalized source acquisition, require every schema/license manifest record and enforce explicit pin policy. First run uses unchanged acquired manifest with all five records.",
+  "paid_model_calls": 0,
+  "runtime_source_hashes": {
+    "rule_workbench/linkage.py": "9c0c901e9362b45b865ef5c7f12aefc5418d7341b06c3d8fc3e61216ec378141",
+    "scripts/build_industrial_linkage_demo.py": "06de2a2824ac63ca0ed162b8e7e69f89b36370e5fffc43a6222781920ce93d06",
+    "tests/test_workbench_linkage.py": "c50521c4e288557afa0d62850108ad43ccb33ed36ad3959e34392017477a1b6b"
+  },
+  "artifact_directory": "_workspace/industrial-linkage/run-2"
+}

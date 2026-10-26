@@ -1,0 +1,86 @@
+{
+  "kind": "source_example_inspection_not_execution",
+  "source_manifest": {
+    "scope": "upstream authored software test fixtures/code, not observed company transactions",
+    "license_source": "_workspace/industrial-linkage/sources/license.txt",
+    "records": [
+      {
+        "url": "https://raw.githubusercontent.com/frappe/erpnext/e864addb6c367688d2b264f284c2dd9b9360a97d/erpnext/manufacturing/doctype/bom/test_records.json",
+        "retrieved_at": "2026-10-21T08:50:29.315561+00:00",
+        "status_code": 200,
+        "headers": {
+          "Content-Type": "text/plain; charset=utf-8",
+          "ETag": "\"4081aedd87920d8ee1bb10ea49922597d18cd206686293ad953fc283fceb8c94\""
+        },
+        "status": "saved",
+        "saved_as": "test_records.json",
+        "bytes": 4239,
+        "sha256": "4e8886b7e42e71cecdc3905cccf392fc7f931aae87fec98a891f4602a4fcad4f"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/frappe/erpnext/e864addb6c367688d2b264f284c2dd9b9360a97d/erpnext/manufacturing/doctype/bom/test_bom.py",
+        "retrieved_at": "2026-10-21T08:50:29.575870+00:00",
+        "status_code": 200,
+        "headers": {
+          "Content-Type": "text/plain; charset=utf-8",
+          "ETag": "\"cf4c449f3a71a880a0918fba7e4a89656708c526520618d163d0c9e4e1b18974\""
+        },
+        "status": "saved",
+        "saved_as": "test_bom.py",
+        "bytes": 28485,
+        "sha256": "7c87a95c1b7eafad14a87db507c7e43a2dc75c422510a70d2a6a7c7680b6309a"
+      }
+    ]
+  },
+  "framework_document": {
+    "records": [
+      {
+        "url": "https://docs.frappe.io/framework/user/en/basics/doctypes/child-doctype",
+        "retrieved_at": "2026-10-21T08:50:51.498260+00:00",
+        "status_code": 200,
+        "resolved_url": "https://docs.frappe.io/framework/user/en/basics/doctypes/child-doctype",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8"
+        },
+        "status": "saved",
+        "bytes": 1113586,
+        "sha256": "bc4ef38cf384a490a4df597c915e0f841bdb46bb309387a82d8c7608fdf6497e",
+        "magic_hex": "3c21"
+      }
+    ],
+    "failed_web_open": {
+      "url": "https://docs.frappe.io/framework-git/doctypes/child-tables",
+      "status": 404
+    },
+    "scope": "current documentation snapshot, not proof of pinned v15 implementation",
+    "license": "not yet pinned; reference only, no redistribution claim"
+  },
+  "observation": {
+    "fixture_origin": "upstream-authored software fixtures; not business transactions",
+    "bom_documents": 5,
+    "nested_component_rows": 8,
+    "nested_reference": "test_records[2].items[1] names BOM-_Test Item Home Desktop Manufactured-001; fixture[0] has that manufactured item but no explicit BOM name",
+    "duplicate_product": "Two BOM records describe _Test Variant Item; item alone is not a unique BOM revision selector",
+    "upstream_test": "test_bom.py lines39-51 asserts exploded components; inspected as source only, never executed, not new evaluation labels",
+    "join_boundary": "Nested document membership gives parent context; flattening must retain source document/field/row position. Do not infer target BOM name from naming convention or silently resolve explicit reference by item name."
+  },
+  "operational_search": {
+    "query": "manufacturing public dataset purchase receipt inspection bill of materials certificates dataset",
+    "result": "Bounded search did not yield an acquired connected operational bundle; demo packs, tenders, research references and unrelated software BOM surfaced. Not proof no public dataset exists.",
+    "selection": "Do not keep searching merely to fill time. Proceed to bounded schema-inspired authored paired evaluation while retaining real-data limitation."
+  },
+  "next_scope": {
+    "source_illustration": "Preserve upstream five-doc fixture separately; unresolved explicit BOM reference stays unresolved until authoritative identity evidence acquired.",
+    "paired_evaluation": "New clearly authored joint receipt/BOM/certificate fixtures with explicit stable identifiers, versions, same units, fixed as-of date and transparent policy. Separate linkage ambiguity, influence candidates, recheck eligibility and source completeness.",
+    "protocol_first": "Freeze policies, cases/denominators and independent scorer separation before implementation. No runtime source of expected labels. No assumed source authenticity or operational recall."
+  },
+  "paid_calls": 0,
+  "upstream_code_executed": false,
+  "review_job": "20261021T085133Z-industrial-questions-examples-88da5a",
+  "review_scope": "manual source interpretation only",
+  "clarifications": [
+    "Eight material items rows excludes one scrap row and two operations rows",
+    "Duplicate product entries do not establish chronological revisions"
+  ],
+  "recorded_at": "2026-10-21T08:53:13.804316+00:00"
+}

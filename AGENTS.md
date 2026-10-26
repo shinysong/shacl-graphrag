@@ -2,7 +2,7 @@
 
 This repo now includes small GLEIF and native-SHACL YAGO → RDF → SHACL → OpenRouter QA pilots, alongside host bootstrap scripts. It is not yet a production GraphRAG system.
 
-For session continuity, read local `MEMORY.md` if present. It is ignored by Git and must not be included in the public documentation site.
+For session continuity, read local `MEMORY.md` if present. For cross-agent baton handoff between Codex CLI (`gpt-6-astra`) and Gemini/Antigravity, read and update `_workspace/handoff.md`. Both files are ignored by Git and must not be included in the public documentation site.
 
 ## Dataset and experiment scope
 

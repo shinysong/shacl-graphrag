@@ -1,0 +1,85 @@
+{
+  "at": "2026-10-20T09:42:37.200674+00:00",
+  "job": "20261020T094052Z-retail-trace-cases-aed46c",
+  "result": "Extraction exit0, inspection exit0:4posthoc illustrations. Row2 invoice536365 qty6 pass;row624 invoice536414 CustomerIDnull presence violation;row2408 invoice536589 qty-10 androw4349 invoice536764 qty-38 violate authored non-C positive-quantity policy. Each selected violation matched saved SHACL focusNode witness; both statuses agree. Fifty batches and row source alignment checked. No newvalidation/model/API. Business explanation unavailable; do not equate violations with erroneous transactions.",
+  "run_exit_code": 0,
+  "inspection_exit_code": 0,
+  "scope": "Posthoc outcome-selected illustrations, not a new evaluation or representative sample",
+  "selection": "All quantity violations, first customer-presence violation, first quantity pass in saved batch order",
+  "source_sha256": "2c47251bb01fec0eb3f5c6d2469ba7da368c7d90b6a88439ddca916d0bf13344",
+  "source_attribution": "UCI Online Retail, Daqing Chen (2015), DOI10.24432/C5BW33, CC BY4.0",
+  "cases": [
+    {
+      "row_id": "2",
+      "policy": "quantity_sign",
+      "source_cells": {
+        "InvoiceNo": "536365",
+        "StockCode": "85123A",
+        "Description": "WHITE HANGING HEART T-LIGHT HOLDER",
+        "Quantity": "6",
+        "InvoiceDate": "2010-12-01T08:26:00",
+        "UnitPrice": "2.55",
+        "CustomerID": "17850",
+        "Country": "United Kingdom"
+      },
+      "python_status": "pass",
+      "shacl_status": "pass",
+      "witness_count": 0,
+      "batch_sha256": "edb1d60d137e88908eff907570a100e4c87d126a18723f41760c2ecf736f0a6b"
+    },
+    {
+      "row_id": "624",
+      "policy": "customer_analysis",
+      "source_cells": {
+        "InvoiceNo": "536414",
+        "StockCode": "22139",
+        "Description": null,
+        "Quantity": "56",
+        "InvoiceDate": "2010-12-01T11:52:00",
+        "UnitPrice": "0",
+        "CustomerID": null,
+        "Country": "United Kingdom"
+      },
+      "python_status": "violation",
+      "shacl_status": "violation",
+      "witness_count": 1,
+      "batch_sha256": "670b42912b89f9443d76f5a9e377e8a436081f2cea4dd9371378952d1044191b"
+    },
+    {
+      "row_id": "2408",
+      "policy": "quantity_sign",
+      "source_cells": {
+        "InvoiceNo": "536589",
+        "StockCode": "21777",
+        "Description": null,
+        "Quantity": "-10",
+        "InvoiceDate": "2010-12-01T16:50:00",
+        "UnitPrice": "0",
+        "CustomerID": null,
+        "Country": "United Kingdom"
+      },
+      "python_status": "violation",
+      "shacl_status": "violation",
+      "witness_count": 1,
+      "batch_sha256": "69aa622f896a33de1f95c5b940bc91d583082632206ac292f5e2ee40decc33db"
+    },
+    {
+      "row_id": "4349",
+      "policy": "quantity_sign",
+      "source_cells": {
+        "InvoiceNo": "536764",
+        "StockCode": "84952C",
+        "Description": null,
+        "Quantity": "-38",
+        "InvoiceDate": "2010-12-02T14:42:00",
+        "UnitPrice": "0",
+        "CustomerID": null,
+        "Country": "United Kingdom"
+      },
+      "python_status": "violation",
+      "shacl_status": "violation",
+      "witness_count": 1,
+      "batch_sha256": "6b36392e036291ef56f5671b309a2ce01dbc16c252822758af49f9dfc1b2553b"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "industrial-questions-io-1",
+  "numeric": "Accept JSON int/float except bool or decimal strings matching [+-]?[0-9]+(\\.[0-9]+)?; require finite Decimal value. Missing/null/other types invalid -> unknown. No exponent strings, whitespace or unit conversion.",
+  "dates": "Strict YYYY-MM-DD and valid calendar; expires must exceed valid_from.",
+  "output": {
+    "required": [
+      "scene_id",
+      "receipt_id",
+      "receipt",
+      "links",
+      "products",
+      "impact_graph_completeness"
+    ],
+    "receipt": [
+      "accept",
+      "violation",
+      "unknown",
+      "error"
+    ],
+    "links": {
+      "keys": [
+        "order_line",
+        "inspection",
+        "certificate"
+      ],
+      "values": [
+        "resolved",
+        "missing",
+        "ambiguous",
+        "error"
+      ]
+    },
+    "products": "Exactly four unique input (id,revision), each candidate yes/no/unknown/error, recheck required/not_required/unknown/error, witness occurrence_id array. Empty witness unless yes; yes requires nonempty path.",
+    "impact_graph_completeness": [
+      "complete",
+      "partial",
+      "error"
+    ]
+  },
+  "extra_keys": "No unknown output keys; optional diagnostics object permitted, never used to repair output.",
+  "failure": "Whole-scene input/execution/schema errors retain 1 receipt,3 links,4 candidates,4 rechecks,1 graph flag as error; scorer uses frozen input universe."
+}

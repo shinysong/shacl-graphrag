@@ -1,0 +1,35 @@
+{
+  "recorded_at": "2026-10-20T16:14:58.722341+00:00",
+  "job": "20261020T161342Z-retail-container-smoke-fa0380",
+  "superseded_review_job": "20261020T161220Z-retail-container-smoke-d99131",
+  "script_exit_code": 0,
+  "container_exit_code": 0,
+  "probe": {
+    "python_decimal": "0.3",
+    "host_workspace_absent": true,
+    "docker_socket_absent": true,
+    "secret_env_absent": true,
+    "root_write_blocked": true,
+    "temporary_write_ok": true,
+    "network_connect_blocked": true,
+    "uid": 65534
+  },
+  "cleanup": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "Error response from daemon: No such container: retail-smoke-8195274ac109\n"
+  },
+  "cleanup_interpretation": "Docker --rm removed the owned container; subsequent rm -f reports no such container. No remaining owned container indicated.",
+  "limits": [
+    "Fixed authored probe, not generated code or general sandbox proof",
+    "Memory/CPU/PID settings configured but not stress tested",
+    "No enforced streaming output limit yet; trusted small probe only",
+    "Python stdlib runtime only; pySHACL and third-party packages not staged",
+    "No new image download/build/service or API call"
+  ],
+  "review_fix": "Persist execution evidence before cleanup, record cleanup failures, partial timeout output and staging failure type. Both fresh reviews ready before execution.",
+  "paid_calls_this_tick": 0,
+  "campaign_calls": 76,
+  "campaign_reported_usd": 0.01828255,
+  "next_step": "Implement independently reviewed bounded-output/time/resource container runner using verified staged Python runtime; test authored timeout, stdout flood and execution failures before any generated code. Then freeze model construction inputs and run remaining generated-code/rule comparison without gold repair. No extra directLLM expansion or heldout access."
+}

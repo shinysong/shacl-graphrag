@@ -1,0 +1,3746 @@
+{
+  "recorded_at": "2026-10-20T16:55:26.899056+00:00",
+  "job": "20261020T165146Z-retail-generated-python-a7a346",
+  "generation_calls": 3,
+  "execution_count": 4,
+  "result": {
+    "metrics": {
+      "reusable": {
+        "random_development": {
+          "overall": {
+            "n": 72,
+            "known_reference_n": 72,
+            "confusion": {
+              "pass": {
+                "pass": 0,
+                "violation": 20,
+                "unknown": 48,
+                "error": 0,
+                "missing_output": 0
+              },
+              "violation": {
+                "pass": 0,
+                "violation": 4,
+                "unknown": 0,
+                "error": 0,
+                "missing_output": 0
+              },
+              "unknown": {
+                "pass": 0,
+                "violation": 0,
+                "unknown": 0,
+                "error": 0,
+                "missing_output": 0
+              }
+            },
+            "violation_tp": 4,
+            "violation_fp": 20,
+            "violation_fn": 0,
+            "violation_precision_known_refs": 0.16666666666666666,
+            "violation_recall_known_refs": 1.0,
+            "violation_f1_known_refs": 0.2857142857142857,
+            "coverage_all": 0.3333333333333333,
+            "coverage_known_refs": 0.3333333333333333,
+            "selective_error_known_refs": 0.8333333333333334,
+            "false_pass_n": 0,
+            "unnecessary_abstention_known_refs_n": 48,
+            "unsupported_decision_unknown_refs_n": 0,
+            "unsupported_decision_unknown_refs_rate": null,
+            "runtime_error_n": 0,
+            "missing_output_n": 0,
+            "abstention_n": 48
+          },
+          "by_policy": {
+            "customer_analysis": {
+              "n": 24,
+              "known_reference_n": 24,
+              "confusion": {
+                "pass": {
+                  "pass": 0,
+                  "violation": 20,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 4,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 4,
+              "violation_fp": 20,
+              "violation_fn": 0,
+              "violation_precision_known_refs": 0.16666666666666666,
+              "violation_recall_known_refs": 1.0,
+              "violation_f1_known_refs": 0.2857142857142857,
+              "coverage_all": 1.0,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.8333333333333334,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": null,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 0
+            },
+            "nonnegative_price": {
+              "n": 24,
+              "known_reference_n": 24,
+              "confusion": {
+                "pass": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 24,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 0,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": null,
+              "violation_recall_known_refs": null,
+              "violation_f1_known_refs": null,
+              "coverage_all": 0.0,
+              "coverage_known_refs": 0.0,
+              "selective_error_known_refs": null,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 24,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": null,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 24
+            },
+            "quantity_sign": {
+              "n": 24,
+              "known_reference_n": 24,
+              "confusion": {
+                "pass": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 24,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 0,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": null,
+              "violation_recall_known_refs": null,
+              "violation_f1_known_refs": null,
+              "coverage_all": 0.0,
+              "coverage_known_refs": 0.0,
+              "selective_error_known_refs": null,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 24,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": null,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 24
+            }
+          },
+          "notes": [
+            "Missing/error/abstention on reference violation counts as missed detection.",
+            "Unknown references excluded from binary metrics; unsupported decisions counted separately.",
+            "No human time, cost, confidence interval or external business truth inferred."
+          ]
+        },
+        "authored_boundary_probe": {
+          "overall": {
+            "n": 36,
+            "known_reference_n": 33,
+            "confusion": {
+              "pass": {
+                "pass": 0,
+                "violation": 11,
+                "unknown": 16,
+                "error": 0,
+                "missing_output": 0
+              },
+              "violation": {
+                "pass": 0,
+                "violation": 1,
+                "unknown": 5,
+                "error": 0,
+                "missing_output": 0
+              },
+              "unknown": {
+                "pass": 0,
+                "violation": 0,
+                "unknown": 3,
+                "error": 0,
+                "missing_output": 0
+              }
+            },
+            "violation_tp": 1,
+            "violation_fp": 11,
+            "violation_fn": 5,
+            "violation_precision_known_refs": 0.08333333333333333,
+            "violation_recall_known_refs": 0.16666666666666666,
+            "violation_f1_known_refs": 0.1111111111111111,
+            "coverage_all": 0.3333333333333333,
+            "coverage_known_refs": 0.36363636363636365,
+            "selective_error_known_refs": 0.9166666666666666,
+            "false_pass_n": 0,
+            "unnecessary_abstention_known_refs_n": 21,
+            "unsupported_decision_unknown_refs_n": 0,
+            "unsupported_decision_unknown_refs_rate": 0.0,
+            "runtime_error_n": 0,
+            "missing_output_n": 0,
+            "abstention_n": 24
+          },
+          "by_policy": {
+            "customer_analysis": {
+              "n": 12,
+              "known_reference_n": 12,
+              "confusion": {
+                "pass": {
+                  "pass": 0,
+                  "violation": 11,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 1,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 1,
+              "violation_fp": 11,
+              "violation_fn": 0,
+              "violation_precision_known_refs": 0.08333333333333333,
+              "violation_recall_known_refs": 1.0,
+              "violation_f1_known_refs": 0.15384615384615385,
+              "coverage_all": 1.0,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.9166666666666666,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": null,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 0
+            },
+            "nonnegative_price": {
+              "n": 12,
+              "known_reference_n": 11,
+              "confusion": {
+                "pass": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 10,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 1,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 1,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 0,
+              "violation_fp": 0,
+              "violation_fn": 1,
+              "violation_precision_known_refs": null,
+              "violation_recall_known_refs": 0.0,
+              "violation_f1_known_refs": 0.0,
+              "coverage_all": 0.0,
+              "coverage_known_refs": 0.0,
+              "selective_error_known_refs": null,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 11,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": 0.0,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 12
+            },
+            "quantity_sign": {
+              "n": 12,
+              "known_reference_n": 10,
+              "confusion": {
+                "pass": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 6,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 4,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 2,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 0,
+              "violation_fp": 0,
+              "violation_fn": 4,
+              "violation_precision_known_refs": null,
+              "violation_recall_known_refs": 0.0,
+              "violation_f1_known_refs": 0.0,
+              "coverage_all": 0.0,
+              "coverage_known_refs": 0.0,
+              "selective_error_known_refs": null,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 10,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": 0.0,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 12
+            }
+          },
+          "notes": [
+            "Missing/error/abstention on reference violation counts as missed detection.",
+            "Unknown references excluded from binary metrics; unsupported decisions counted separately.",
+            "No human time, cost, confidence interval or external business truth inferred."
+          ]
+        },
+        "selected_actual_development_source": {
+          "overall": {
+            "n": 6,
+            "known_reference_n": 6,
+            "confusion": {
+              "pass": {
+                "pass": 0,
+                "violation": 0,
+                "unknown": 2,
+                "error": 0,
+                "missing_output": 0
+              },
+              "violation": {
+                "pass": 0,
+                "violation": 2,
+                "unknown": 2,
+                "error": 0,
+                "missing_output": 0
+              },
+              "unknown": {
+                "pass": 0,
+                "violation": 0,
+                "unknown": 0,
+                "error": 0,
+                "missing_output": 0
+              }
+            },
+            "violation_tp": 2,
+            "violation_fp": 0,
+            "violation_fn": 2,
+            "violation_precision_known_refs": 1.0,
+            "violation_recall_known_refs": 0.5,
+            "violation_f1_known_refs": 0.6666666666666666,
+            "coverage_all": 0.3333333333333333,
+            "coverage_known_refs": 0.3333333333333333,
+            "selective_error_known_refs": 0.0,
+            "false_pass_n": 0,
+            "unnecessary_abstention_known_refs_n": 4,
+            "unsupported_decision_unknown_refs_n": 0,
+            "unsupported_decision_unknown_refs_rate": null,
+            "runtime_error_n": 0,
+            "missing_output_n": 0,
+            "abstention_n": 4
+          },
+          "by_policy": {
+            "customer_analysis": {
+              "n": 2,
+              "known_reference_n": 2,
+              "confusion": {
+                "pass": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 2,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 2,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": 1.0,
+              "violation_recall_known_refs": 1.0,
+              "violation_f1_known_refs": 1.0,
+              "coverage_all": 1.0,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.0,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": null,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 0
+            },
+            "nonnegative_price": {
+              "n": 2,
+              "known_reference_n": 2,
+              "confusion": {
+                "pass": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 2,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 0,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": null,
+              "violation_recall_known_refs": null,
+              "violation_f1_known_refs": null,
+              "coverage_all": 0.0,
+              "coverage_known_refs": 0.0,
+              "selective_error_known_refs": null,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 2,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": null,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 2
+            },
+            "quantity_sign": {
+              "n": 2,
+              "known_reference_n": 2,
+              "confusion": {
+                "pass": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 2,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 0,
+              "violation_fp": 0,
+              "violation_fn": 2,
+              "violation_precision_known_refs": null,
+              "violation_recall_known_refs": 0.0,
+              "violation_f1_known_refs": 0.0,
+              "coverage_all": 0.0,
+              "coverage_known_refs": 0.0,
+              "selective_error_known_refs": null,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 2,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": null,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 2
+            }
+          },
+          "notes": [
+            "Missing/error/abstention on reference violation counts as missed detection.",
+            "Unknown references excluded from binary metrics; unsupported decisions counted separately.",
+            "No human time, cost, confidence interval or external business truth inferred."
+          ]
+        }
+      },
+      "adhoc": {
+        "random_development": {
+          "overall": {
+            "n": 72,
+            "known_reference_n": 72,
+            "confusion": {
+              "pass": {
+                "pass": 68,
+                "violation": 0,
+                "unknown": 0,
+                "error": 0,
+                "missing_output": 0
+              },
+              "violation": {
+                "pass": 0,
+                "violation": 4,
+                "unknown": 0,
+                "error": 0,
+                "missing_output": 0
+              },
+              "unknown": {
+                "pass": 0,
+                "violation": 0,
+                "unknown": 0,
+                "error": 0,
+                "missing_output": 0
+              }
+            },
+            "violation_tp": 4,
+            "violation_fp": 0,
+            "violation_fn": 0,
+            "violation_precision_known_refs": 1.0,
+            "violation_recall_known_refs": 1.0,
+            "violation_f1_known_refs": 1.0,
+            "coverage_all": 1.0,
+            "coverage_known_refs": 1.0,
+            "selective_error_known_refs": 0.0,
+            "false_pass_n": 0,
+            "unnecessary_abstention_known_refs_n": 0,
+            "unsupported_decision_unknown_refs_n": 0,
+            "unsupported_decision_unknown_refs_rate": null,
+            "runtime_error_n": 0,
+            "missing_output_n": 0,
+            "abstention_n": 0
+          },
+          "by_policy": {
+            "customer_analysis": {
+              "n": 24,
+              "known_reference_n": 24,
+              "confusion": {
+                "pass": {
+                  "pass": 20,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 4,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 4,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": 1.0,
+              "violation_recall_known_refs": 1.0,
+              "violation_f1_known_refs": 1.0,
+              "coverage_all": 1.0,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.0,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": null,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 0
+            },
+            "nonnegative_price": {
+              "n": 24,
+              "known_reference_n": 24,
+              "confusion": {
+                "pass": {
+                  "pass": 24,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 0,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": null,
+              "violation_recall_known_refs": null,
+              "violation_f1_known_refs": null,
+              "coverage_all": 1.0,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.0,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": null,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 0
+            },
+            "quantity_sign": {
+              "n": 24,
+              "known_reference_n": 24,
+              "confusion": {
+                "pass": {
+                  "pass": 24,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 0,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": null,
+              "violation_recall_known_refs": null,
+              "violation_f1_known_refs": null,
+              "coverage_all": 1.0,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.0,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": null,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 0
+            }
+          },
+          "notes": [
+            "Missing/error/abstention on reference violation counts as missed detection.",
+            "Unknown references excluded from binary metrics; unsupported decisions counted separately.",
+            "No human time, cost, confidence interval or external business truth inferred."
+          ]
+        },
+        "authored_boundary_probe": {
+          "overall": {
+            "n": 36,
+            "known_reference_n": 33,
+            "confusion": {
+              "pass": {
+                "pass": 27,
+                "violation": 0,
+                "unknown": 0,
+                "error": 0,
+                "missing_output": 0
+              },
+              "violation": {
+                "pass": 0,
+                "violation": 6,
+                "unknown": 0,
+                "error": 0,
+                "missing_output": 0
+              },
+              "unknown": {
+                "pass": 0,
+                "violation": 0,
+                "unknown": 3,
+                "error": 0,
+                "missing_output": 0
+              }
+            },
+            "violation_tp": 6,
+            "violation_fp": 0,
+            "violation_fn": 0,
+            "violation_precision_known_refs": 1.0,
+            "violation_recall_known_refs": 1.0,
+            "violation_f1_known_refs": 1.0,
+            "coverage_all": 0.9166666666666666,
+            "coverage_known_refs": 1.0,
+            "selective_error_known_refs": 0.0,
+            "false_pass_n": 0,
+            "unnecessary_abstention_known_refs_n": 0,
+            "unsupported_decision_unknown_refs_n": 0,
+            "unsupported_decision_unknown_refs_rate": 0.0,
+            "runtime_error_n": 0,
+            "missing_output_n": 0,
+            "abstention_n": 3
+          },
+          "by_policy": {
+            "customer_analysis": {
+              "n": 12,
+              "known_reference_n": 12,
+              "confusion": {
+                "pass": {
+                  "pass": 11,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 1,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 1,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": 1.0,
+              "violation_recall_known_refs": 1.0,
+              "violation_f1_known_refs": 1.0,
+              "coverage_all": 1.0,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.0,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": null,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 0
+            },
+            "nonnegative_price": {
+              "n": 12,
+              "known_reference_n": 11,
+              "confusion": {
+                "pass": {
+                  "pass": 10,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 1,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 1,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 1,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": 1.0,
+              "violation_recall_known_refs": 1.0,
+              "violation_f1_known_refs": 1.0,
+              "coverage_all": 0.9166666666666666,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.0,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": 0.0,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 1
+            },
+            "quantity_sign": {
+              "n": 12,
+              "known_reference_n": 10,
+              "confusion": {
+                "pass": {
+                  "pass": 6,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 4,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 2,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 4,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": 1.0,
+              "violation_recall_known_refs": 1.0,
+              "violation_f1_known_refs": 1.0,
+              "coverage_all": 0.8333333333333334,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.0,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": 0.0,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 2
+            }
+          },
+          "notes": [
+            "Missing/error/abstention on reference violation counts as missed detection.",
+            "Unknown references excluded from binary metrics; unsupported decisions counted separately.",
+            "No human time, cost, confidence interval or external business truth inferred."
+          ]
+        },
+        "selected_actual_development_source": {
+          "overall": {
+            "n": 6,
+            "known_reference_n": 6,
+            "confusion": {
+              "pass": {
+                "pass": 2,
+                "violation": 0,
+                "unknown": 0,
+                "error": 0,
+                "missing_output": 0
+              },
+              "violation": {
+                "pass": 0,
+                "violation": 4,
+                "unknown": 0,
+                "error": 0,
+                "missing_output": 0
+              },
+              "unknown": {
+                "pass": 0,
+                "violation": 0,
+                "unknown": 0,
+                "error": 0,
+                "missing_output": 0
+              }
+            },
+            "violation_tp": 4,
+            "violation_fp": 0,
+            "violation_fn": 0,
+            "violation_precision_known_refs": 1.0,
+            "violation_recall_known_refs": 1.0,
+            "violation_f1_known_refs": 1.0,
+            "coverage_all": 1.0,
+            "coverage_known_refs": 1.0,
+            "selective_error_known_refs": 0.0,
+            "false_pass_n": 0,
+            "unnecessary_abstention_known_refs_n": 0,
+            "unsupported_decision_unknown_refs_n": 0,
+            "unsupported_decision_unknown_refs_rate": null,
+            "runtime_error_n": 0,
+            "missing_output_n": 0,
+            "abstention_n": 0
+          },
+          "by_policy": {
+            "customer_analysis": {
+              "n": 2,
+              "known_reference_n": 2,
+              "confusion": {
+                "pass": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 2,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 2,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": 1.0,
+              "violation_recall_known_refs": 1.0,
+              "violation_f1_known_refs": 1.0,
+              "coverage_all": 1.0,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.0,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": null,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 0
+            },
+            "nonnegative_price": {
+              "n": 2,
+              "known_reference_n": 2,
+              "confusion": {
+                "pass": {
+                  "pass": 2,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 0,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": null,
+              "violation_recall_known_refs": null,
+              "violation_f1_known_refs": null,
+              "coverage_all": 1.0,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.0,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": null,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 0
+            },
+            "quantity_sign": {
+              "n": 2,
+              "known_reference_n": 2,
+              "confusion": {
+                "pass": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "violation": {
+                  "pass": 0,
+                  "violation": 2,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                },
+                "unknown": {
+                  "pass": 0,
+                  "violation": 0,
+                  "unknown": 0,
+                  "error": 0,
+                  "missing_output": 0
+                }
+              },
+              "violation_tp": 2,
+              "violation_fp": 0,
+              "violation_fn": 0,
+              "violation_precision_known_refs": 1.0,
+              "violation_recall_known_refs": 1.0,
+              "violation_f1_known_refs": 1.0,
+              "coverage_all": 1.0,
+              "coverage_known_refs": 1.0,
+              "selective_error_known_refs": 0.0,
+              "false_pass_n": 0,
+              "unnecessary_abstention_known_refs_n": 0,
+              "unsupported_decision_unknown_refs_n": 0,
+              "unsupported_decision_unknown_refs_rate": null,
+              "runtime_error_n": 0,
+              "missing_output_n": 0,
+              "abstention_n": 0
+            }
+          },
+          "notes": [
+            "Missing/error/abstention on reference violation counts as missed detection.",
+            "Unknown references excluded from binary metrics; unsupported decisions counted separately.",
+            "No human time, cost, confidence interval or external business truth inferred."
+          ]
+        }
+      }
+    },
+    "predictions": {
+      "reusable": {
+        "random_development": [
+          {
+            "row_id": "789",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "789",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "789",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "3469",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "3469",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "3469",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "4703",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "4703",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "4703",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "3480",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "3480",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "3480",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "3977",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "3977",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "3977",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "2614",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "2614",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "2614",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "147",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "147",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "147",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "2360",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "2360",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "2360",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "810",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "810",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "810",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "1198",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "1198",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "1198",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "3479",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "3479",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "3479",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "3000",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "3000",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "3000",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "2216",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "2216",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "2216",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "2840",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "2840",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "2840",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "3937",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "3937",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "3937",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "1097",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "1097",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "1097",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "4173",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "4173",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "4173",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "3341",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "3341",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "3341",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "2086",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "2086",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "2086",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "1931",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "1931",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "1931",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "4961",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "4961",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "4961",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "1052",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "1052",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "1052",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "4079",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "4079",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "4079",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "1149",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "1149",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "1149",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          }
+        ],
+        "boundary_diagnostic": [
+          {
+            "row_id": "100001",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "100001",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100001",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100002",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "100002",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100002",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100003",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "100003",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100003",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100004",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "100004",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100004",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100005",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "100005",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100005",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100006",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "100006",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100006",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100007",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "100007",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100007",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100008",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "100008",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100008",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100009",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "100009",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100009",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100010",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "100010",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100010",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100011",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "100011",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100011",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100012",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "100012",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100012",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100013",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "100013",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100013",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100014",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "100014",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100014",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          }
+        ]
+      },
+      "adhoc": {
+        "random_development": [
+          {
+            "row_id": "789",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "789",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "789",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "3469",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "3469",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "3469",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "4703",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "4703",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "4703",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "3480",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "3480",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "3480",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "3977",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "3977",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "3977",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "2614",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "2614",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "2614",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "147",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "147",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "147",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "2360",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "2360",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "2360",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "810",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "810",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "810",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "1198",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "1198",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "1198",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "3479",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "3479",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "3479",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "3000",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "3000",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "3000",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "2216",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "2216",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "2216",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "2840",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "2840",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "2840",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "3937",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "3937",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "3937",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "1097",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "1097",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "1097",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "4173",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "4173",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "4173",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "3341",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "3341",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "3341",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "2086",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "2086",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "2086",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "1931",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "1931",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "1931",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "4961",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "4961",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "4961",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "1052",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "1052",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "1052",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "4079",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "4079",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "4079",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "1149",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "1149",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "1149",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          }
+        ],
+        "boundary_diagnostic": [
+          {
+            "row_id": "100001",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "100001",
+            "policy": "quantity_sign",
+            "status": "violation"
+          },
+          {
+            "row_id": "100001",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "100002",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "100002",
+            "policy": "quantity_sign",
+            "status": "violation"
+          },
+          {
+            "row_id": "100002",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "100003",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "100003",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "100003",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "100004",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "100004",
+            "policy": "quantity_sign",
+            "status": "violation"
+          },
+          {
+            "row_id": "100004",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "100005",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "100005",
+            "policy": "quantity_sign",
+            "status": "violation"
+          },
+          {
+            "row_id": "100005",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "100006",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "100006",
+            "policy": "quantity_sign",
+            "status": "violation"
+          },
+          {
+            "row_id": "100006",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "100007",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "100007",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "100007",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "100008",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "100008",
+            "policy": "quantity_sign",
+            "status": "violation"
+          },
+          {
+            "row_id": "100008",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "100009",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "100009",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100009",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "100010",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "100010",
+            "policy": "quantity_sign",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100010",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "100011",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "100011",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "100011",
+            "policy": "nonnegative_price",
+            "status": "violation"
+          },
+          {
+            "row_id": "100012",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "100012",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "100012",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          },
+          {
+            "row_id": "100013",
+            "policy": "customer_analysis",
+            "status": "pass"
+          },
+          {
+            "row_id": "100013",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "100013",
+            "policy": "nonnegative_price",
+            "status": "unknown"
+          },
+          {
+            "row_id": "100014",
+            "policy": "customer_analysis",
+            "status": "violation"
+          },
+          {
+            "row_id": "100014",
+            "policy": "quantity_sign",
+            "status": "pass"
+          },
+          {
+            "row_id": "100014",
+            "policy": "nonnegative_price",
+            "status": "pass"
+          }
+        ]
+      }
+    },
+    "details": [
+      {
+        "arm": "reusable",
+        "batch": "random_development",
+        "generation_status": "completed",
+        "intake": {
+          "raw_base64": "ZnJvbSBkZWNpbWFsIGltcG9ydCBEZWNpbWFsLCBJbnZhbGlkT3BlcmF0aW9uCmltcG9ydCByZQoKCl9OVU1CRVJfUkUgPSByZS5jb21waWxlKAogICAgciJbKy1dPyg/Oig/OlswLTldKyg/OlwuWzAtOV0qKT8pfCg/OlwuWzAtOV0rKSkoPzpbZUVdWystXT9bMC05XSspP1xaIgopCgoKZGVmIF9pc19ibGFuayhyb3csIGZpZWxkKToKICAgIGlmIGZpZWxkIG5vdCBpbiByb3cgb3Igcm93W2ZpZWxkXSBpcyBOb25lOgogICAgICAgIHJldHVybiBUcnVlCiAgICB2YWx1ZSA9IHJvd1tmaWVsZF0KICAgIHJldHVybiBpc2luc3RhbmNlKHZhbHVlLCBzdHIpIGFuZCBub3QgdmFsdWUuc3RyaXAoKQoKCmRlZiBfbnVtYmVyKHJvdywgZmllbGQpOgogICAgaWYgX2lzX2JsYW5rKHJvdywgZmllbGQpOgogICAgICAgIHJldHVybiBOb25lCgogICAgdmFsdWUgPSByb3dbZmllbGRdCiAgICBpZiBpc2luc3RhbmNlKHZhbHVlLCBib29sKSBvciBub3QgaXNpbnN0YW5jZSh2YWx1ZSwgKHN0ciwgaW50LCBmbG9hdCkpOgogICAgICAgIHJldHVybiBOb25lCgogICAgdGV4dCA9IHN0cih2YWx1ZSkuc3RyaXAoKQogICAgaWYgbm90IHRleHQgb3Igbm90IF9OVU1CRVJfUkUuZnVsbG1hdGNoKHRleHQpOgogICAgICAgIHJldHVybiBOb25lCgogICAgdHJ5OgogICAgICAgIG51bWJlciA9IERlY2ltYWwodGV4dCkKICAgIGV4Y2VwdCBJbnZhbGlkT3BlcmF0aW9uOgogICAgICAgIHJldHVybiBOb25lCgogICAgcmV0dXJuIG51bWJlciBpZiBudW1iZXIuaXNfZmluaXRlKCkgZWxzZSBOb25lCgoKZGVmIGV2YWx1YXRlKHBhY2tldCk6CiAgICByb3dzID0gcGFja2V0LmdldCgicm93cyIsIFtdKQogICAgaWYgbm90IGlzaW5zdGFuY2Uocm93cywgbGlzdCk6CiAgICAgICAgcm93cyA9IFtdCgogICAgZGVjaXNpb25zID0gW10KICAgIGZvciByb3cgaW4gcm93czoKICAgICAgICBpZiBub3QgaXNpbnN0YW5jZShyb3csIGRpY3QpOgogICAgICAgICAgICByb3cgPSB7fQoKICAgICAgICByb3dfaWQgPSByb3cuZ2V0KCJyb3dfaWQiKQoKICAgICAgICBpZiBfaXNfYmxhbmsocm93LCAiQ3VzdG9tZXJJRCIpOgogICAgICAgICAgICBkZWNpc2lvbnMuYXBwZW5kKHsKICAgICAgICAgICAgICAgICJyb3dfaWQiOiByb3dfaWQsCiAgICAgICAgICAgICAgICAicG9saWN5IjogImN1c3RvbWVyX2FuYWx5c2lzIiwKICAgICAgICAgICAgICAgICJzdGF0dXMiOiAidmlvbGF0aW9uIiwKICAgICAgICAgICAgICAgICJyZWFzb24iOiAiQ3VzdG9tZXJJRCBpcyBibGFuay4iLAogICAgICAgICAgICB9KQogICAgICAgIGVsc2U6CiAgICAgICAgICAgIGRlY2lzaW9ucy5hcHBlbmQoewogICAgICAgICAgICAgICAgInJvd19pZCI6IHJvd19pZCwKICAgICAgICAgICAgICAgICJwb2xpY3kiOiAiY3VzdG9tZXJfYW5hbHlzaXMiLAogICAgICAgICAgICAgICAgInN0YXR1cyI6ICJwYXNzIiwKICAgICAgICAgICAgICAgICJyZWFzb24iOiAiQ3VzdG9tZXJJRCBpcyBub25ibGFuazsgaWRlbnRpdHkgaXMgbm90IHZlcmlmaWVkLiIsCiAgICAgICAgICAgIH0pCgogICAgICAgIHF1YW50aXR5ID0gX251bWJlcihyb3csICJRdWFudGl0eSIpCiAgICAgICAgaWYgX2lzX2JsYW5rKHJvdywgIkludm9pY2VObyIpIG9yIHF1YW50aXR5IGlzIE5vbmU6CiAgICAgICAgICAgIGRlY2lzaW9ucy5hcHBlbmQoewogICAgICAgICAgICAgICAgInJvd19pZCI6IHJvd19pZCwKICAgICAgICAgICAgICAgICJwb2xpY3kiOiAicXVhbnRpdHlfc2lnbiIsCiAgICAgICAgICAgICAgICAic3RhdHVzIjogInVua25vd24iLAogICAgICAgICAgICAgICAgInJlYXNvbiI6ICJJbnZvaWNlTm8gb3IgcGFyc2VhYmxlIFF1YW50aXR5IGlzIG1pc3NpbmcuIiwKICAgICAgICAgICAgfSkKICAgICAgICBlbHNlOgogICAgICAgICAgICBpbnZvaWNlID0gcm93WyJJbnZvaWNlTm8iXQogICAgICAgICAgICBpc19jYW5jZWxsYXRpb24gPSAoCiAgICAgICAgICAgICAgICBpc2luc3RhbmNlKGludm9pY2UsIHN0cikgYW5kIGludm9pY2UubG93ZXIoKS5zdGFydHN3aXRoKCJjIikKICAgICAgICAgICAgKQogICAgICAgICAgICBpZiAoaXNfY2FuY2VsbGF0aW9uIGFuZCBxdWFudGl0eSA8IDApIG9yICgKICAgICAgICAgICAgICAgIG5vdCBpc19jYW5jZWxsYXRpb24gYW5kIHF1YW50aXR5ID4gMAogICAgICAgICAgICApOgogICAgICAgICAgICAgICAgZGVjaXNpb25zLmFwcGVuZCh7CiAgICAgICAgICAgICAgICAgICAgInJvd19pZCI6IHJvd19pZCwKICAgICAgICAgICAgICAgICAgICAicG9saWN5IjogInF1YW50aXR5X3NpZ24iLAogICAgICAgICAgICAgICAgICAgICJzdGF0dXMiOiAicGFzcyIsCiAgICAgICAgICAgICAgICAgICAgInJlYXNvbiI6ICJRdWFudGl0eSBoYXMgdGhlIHJlcXVpcmVkIHNpZ24gZm9yIHRoZSBpbnZvaWNlLiIsCiAgICAgICAgICAgICAgICB9KQogICAgICAgICAgICBlbHNlOgogICAgICAgICAgICAgICAgZGVjaXNpb25zLmFwcGVuZCh7CiAgICAgICAgICAgICAgICAgICAgInJvd19pZCI6IHJvd19pZCwKICAgICAgICAgICAgICAgICAgICAicG9saWN5IjogInF1YW50aXR5X3NpZ24iLAogICAgICAgICAgICAgICAgICAgICJzdGF0dXMiOiAidmlvbGF0aW9uIiwKICAgICAgICAgICAgICAgICAgICAicmVhc29uIjogIlF1YW50aXR5IGRvZXMgbm90IGhhdmUgdGhlIHJlcXVpcmVkIHNpZ24gZm9yIHRoZSBpbnZvaWNlLiIsCiAgICAgICAgICAgICAgICB9KQoKICAgICAgICBwcmljZSA9IF9udW1iZXIocm93LCAiVW5pdFByaWNlIikKICAgICAgICBpZiBwcmljZSBpcyBOb25lOgogICAgICAgICAgICBkZWNpc2lvbnMuYXBwZW5kKHsKICAgICAgICAgICAgICAgICJyb3dfaWQiOiByb3dfaWQsCiAgICAgICAgICAgICAgICAicG9saWN5IjogIm5vbm5lZ2F0aXZlX3ByaWNlIiwKICAgICAgICAgICAgICAgICJzdGF0dXMiOiAidW5rbm93biIsCiAgICAgICAgICAgICAgICAicmVhc29uIjogIlVuaXRQcmljZSBpcyBtaXNzaW5nIG9yIG5vdCBhIGZpbml0ZSBiYXNlLTEwIG51bWJlci4iLAogICAgICAgICAgICB9KQogICAgICAgIGVsaWYgcHJpY2UgPj0gMDoKICAgICAgICAgICAgZGVjaXNpb25zLmFwcGVuZCh7CiAgICAgICAgICAgICAgICAicm93X2lkIjogcm93X2lkLAogICAgICAgICAgICAgICAgInBvbGljeSI6ICJub25uZWdhdGl2ZV9wcmljZSIsCiAgICAgICAgICAgICAgICAic3RhdHVzIjogInBhc3MiLAogICAgICAgICAgICAgICAgInJlYXNvbiI6ICJVbml0UHJpY2UgaXMgbm9ubmVnYXRpdmUuIiwKICAgICAgICAgICAgfSkKICAgICAgICBlbHNlOgogICAgICAgICAgICBkZWNpc2lvbnMuYXBwZW5kKHsKICAgICAgICAgICAgICAgICJyb3dfaWQiOiByb3dfaWQsCiAgICAgICAgICAgICAgICAicG9saWN5IjogIm5vbm5lZ2F0aXZlX3ByaWNlIiwKICAgICAgICAgICAgICAgICJzdGF0dXMiOiAidmlvbGF0aW9uIiwKICAgICAgICAgICAgICAgICJyZWFzb24iOiAiVW5pdFByaWNlIGlzIG5lZ2F0aXZlLiIsCiAgICAgICAgICAgIH0pCgogICAgcmV0dXJuIHsiZGVjaXNpb25zIjogZGVjaXNpb25zfQ==",
+          "raw_sha256": "9e34ed5d6aeede3a8a28f243bbca3d6989d382a8bcbe9e357f8e35f713493863",
+          "byte_count": 3544,
+          "executed": false,
+          "execution_authorized": false,
+          "interface_checked": false,
+          "semantics_checked": false,
+          "status": "syntax_valid_pending_execution_review",
+          "reason": "no_execution_or_semantic_assurance"
+        },
+        "execution": {
+          "container_name": "retail-exec-e4c9269c790e",
+          "artifact_sha256": "9e34ed5d6aeede3a8a28f243bbca3d6989d382a8bcbe9e357f8e35f713493863",
+          "packet_sha256": "e0ed3ca76bb42f8dc7ee01685c6bcbfa4d076575cb3f103e74cbeb86b057a393",
+          "wall_limit_seconds": 10,
+          "combined_output_limit": 65536,
+          "status": "completed",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--pull=never",
+            "--name",
+            "retail-exec-e4c9269c790e",
+            "--rm",
+            "--network=none",
+            "--read-only",
+            "--user=65534:65534",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--pids-limit=32",
+            "--memory=256m",
+            "--memory-swap=256m",
+            "--cpus=1",
+            "--log-driver=none",
+            "--tmpfs=/tmp:rw,noexec,nosuid,size=16m,mode=1777",
+            "--workdir=/tmp",
+            "--mount",
+            "type=bind,src=/home/ubuntu/shacl-graphrag/_workspace/retail-llm-v1/container-smoke-v1/runtime,dst=/runtime,readonly",
+            "--env=PYTHONHOME=/runtime/usr",
+            "--env=PYTHONDONTWRITEBYTECODE=1",
+            "--env=PYTHONNOUSERSITE=1",
+            "--env=LD_LIBRARY_PATH=/runtime/lib:/runtime/lib/aarch64-linux-gnu",
+            "--entrypoint=/runtime/lib/ld-linux-aarch64.so.1",
+            "--mount",
+            "type=bind,src=/home/ubuntu/shacl-graphrag/_workspace/retail-llm-v1/generated-python-v1/executions/reusable-random_development/task,dst=/task,readonly",
+            "80259ba83f86",
+            "--library-path",
+            "/runtime/lib:/runtime/lib/aarch64-linux-gnu",
+            "/runtime/usr/bin/python3.12",
+            "-s",
+            "-B",
+            "/task/runner.py"
+          ],
+          "exit_code": 0,
+          "execution_elapsed_seconds": 0.34679813199909404,
+          "evidence_errors": [],
+          "cleanup": {
+            "exit_code": 0,
+            "stderr": "Error response from daemon: No such container: retail-exec-e4c9269c790e\n"
+          },
+          "container_absent": true
+        },
+        "response_parse": {
+          "raw": "{\"decisions\": [{\"row_id\": \"789\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"789\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"789\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"3469\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"3469\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"3469\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"4703\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"4703\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"4703\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"3480\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"3480\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"3480\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"3977\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"3977\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"3977\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"2614\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"2614\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"2614\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"147\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"147\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"147\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"2360\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"2360\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"2360\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"810\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"810\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"810\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"1198\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"1198\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"1198\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"3479\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"3479\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"3479\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"3000\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"3000\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"3000\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"2216\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"2216\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"2216\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"2840\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"2840\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"2840\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"3937\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"3937\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"3937\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"1097\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"1097\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"1097\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"4173\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"4173\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"4173\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"3341\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"3341\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"3341\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"2086\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"2086\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"2086\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"1931\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"1931\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"1931\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"4961\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"4961\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"4961\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"1052\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"1052\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"1052\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"4079\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"4079\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"4079\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"1149\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"1149\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"1149\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}]}\n",
+          "schema_error": null,
+          "predictions": [
+            {
+              "row_id": "789",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "789",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "789",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "3469",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "3469",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "3469",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "4703",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "4703",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "4703",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "3480",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "3480",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "3480",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "3977",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "3977",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "3977",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "2614",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "2614",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "2614",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "147",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "147",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "147",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "2360",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "2360",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "2360",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "810",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "810",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "810",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "1198",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "1198",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "1198",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "3479",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "3479",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "3479",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "3000",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "3000",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "3000",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "2216",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "2216",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "2216",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "2840",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "2840",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "2840",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "3937",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "3937",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "3937",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "1097",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "1097",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "1097",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "4173",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "4173",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "4173",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "3341",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "3341",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "3341",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "2086",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "2086",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "2086",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "1931",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "1931",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "1931",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "4961",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "4961",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "4961",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "1052",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "1052",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "1052",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "4079",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "4079",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "4079",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "1149",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "1149",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "1149",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            }
+          ],
+          "missing_keys": []
+        }
+      },
+      {
+        "arm": "reusable",
+        "batch": "boundary_diagnostic",
+        "generation_status": "completed",
+        "intake": {
+          "raw_base64": "ZnJvbSBkZWNpbWFsIGltcG9ydCBEZWNpbWFsLCBJbnZhbGlkT3BlcmF0aW9uCmltcG9ydCByZQoKCl9OVU1CRVJfUkUgPSByZS5jb21waWxlKAogICAgciJbKy1dPyg/Oig/OlswLTldKyg/OlwuWzAtOV0qKT8pfCg/OlwuWzAtOV0rKSkoPzpbZUVdWystXT9bMC05XSspP1xaIgopCgoKZGVmIF9pc19ibGFuayhyb3csIGZpZWxkKToKICAgIGlmIGZpZWxkIG5vdCBpbiByb3cgb3Igcm93W2ZpZWxkXSBpcyBOb25lOgogICAgICAgIHJldHVybiBUcnVlCiAgICB2YWx1ZSA9IHJvd1tmaWVsZF0KICAgIHJldHVybiBpc2luc3RhbmNlKHZhbHVlLCBzdHIpIGFuZCBub3QgdmFsdWUuc3RyaXAoKQoKCmRlZiBfbnVtYmVyKHJvdywgZmllbGQpOgogICAgaWYgX2lzX2JsYW5rKHJvdywgZmllbGQpOgogICAgICAgIHJldHVybiBOb25lCgogICAgdmFsdWUgPSByb3dbZmllbGRdCiAgICBpZiBpc2luc3RhbmNlKHZhbHVlLCBib29sKSBvciBub3QgaXNpbnN0YW5jZSh2YWx1ZSwgKHN0ciwgaW50LCBmbG9hdCkpOgogICAgICAgIHJldHVybiBOb25lCgogICAgdGV4dCA9IHN0cih2YWx1ZSkuc3RyaXAoKQogICAgaWYgbm90IHRleHQgb3Igbm90IF9OVU1CRVJfUkUuZnVsbG1hdGNoKHRleHQpOgogICAgICAgIHJldHVybiBOb25lCgogICAgdHJ5OgogICAgICAgIG51bWJlciA9IERlY2ltYWwodGV4dCkKICAgIGV4Y2VwdCBJbnZhbGlkT3BlcmF0aW9uOgogICAgICAgIHJldHVybiBOb25lCgogICAgcmV0dXJuIG51bWJlciBpZiBudW1iZXIuaXNfZmluaXRlKCkgZWxzZSBOb25lCgoKZGVmIGV2YWx1YXRlKHBhY2tldCk6CiAgICByb3dzID0gcGFja2V0LmdldCgicm93cyIsIFtdKQogICAgaWYgbm90IGlzaW5zdGFuY2Uocm93cywgbGlzdCk6CiAgICAgICAgcm93cyA9IFtdCgogICAgZGVjaXNpb25zID0gW10KICAgIGZvciByb3cgaW4gcm93czoKICAgICAgICBpZiBub3QgaXNpbnN0YW5jZShyb3csIGRpY3QpOgogICAgICAgICAgICByb3cgPSB7fQoKICAgICAgICByb3dfaWQgPSByb3cuZ2V0KCJyb3dfaWQiKQoKICAgICAgICBpZiBfaXNfYmxhbmsocm93LCAiQ3VzdG9tZXJJRCIpOgogICAgICAgICAgICBkZWNpc2lvbnMuYXBwZW5kKHsKICAgICAgICAgICAgICAgICJyb3dfaWQiOiByb3dfaWQsCiAgICAgICAgICAgICAgICAicG9saWN5IjogImN1c3RvbWVyX2FuYWx5c2lzIiwKICAgICAgICAgICAgICAgICJzdGF0dXMiOiAidmlvbGF0aW9uIiwKICAgICAgICAgICAgICAgICJyZWFzb24iOiAiQ3VzdG9tZXJJRCBpcyBibGFuay4iLAogICAgICAgICAgICB9KQogICAgICAgIGVsc2U6CiAgICAgICAgICAgIGRlY2lzaW9ucy5hcHBlbmQoewogICAgICAgICAgICAgICAgInJvd19pZCI6IHJvd19pZCwKICAgICAgICAgICAgICAgICJwb2xpY3kiOiAiY3VzdG9tZXJfYW5hbHlzaXMiLAogICAgICAgICAgICAgICAgInN0YXR1cyI6ICJwYXNzIiwKICAgICAgICAgICAgICAgICJyZWFzb24iOiAiQ3VzdG9tZXJJRCBpcyBub25ibGFuazsgaWRlbnRpdHkgaXMgbm90IHZlcmlmaWVkLiIsCiAgICAgICAgICAgIH0pCgogICAgICAgIHF1YW50aXR5ID0gX251bWJlcihyb3csICJRdWFudGl0eSIpCiAgICAgICAgaWYgX2lzX2JsYW5rKHJvdywgIkludm9pY2VObyIpIG9yIHF1YW50aXR5IGlzIE5vbmU6CiAgICAgICAgICAgIGRlY2lzaW9ucy5hcHBlbmQoewogICAgICAgICAgICAgICAgInJvd19pZCI6IHJvd19pZCwKICAgICAgICAgICAgICAgICJwb2xpY3kiOiAicXVhbnRpdHlfc2lnbiIsCiAgICAgICAgICAgICAgICAic3RhdHVzIjogInVua25vd24iLAogICAgICAgICAgICAgICAgInJlYXNvbiI6ICJJbnZvaWNlTm8gb3IgcGFyc2VhYmxlIFF1YW50aXR5IGlzIG1pc3NpbmcuIiwKICAgICAgICAgICAgfSkKICAgICAgICBlbHNlOgogICAgICAgICAgICBpbnZvaWNlID0gcm93WyJJbnZvaWNlTm8iXQogICAgICAgICAgICBpc19jYW5jZWxsYXRpb24gPSAoCiAgICAgICAgICAgICAgICBpc2luc3RhbmNlKGludm9pY2UsIHN0cikgYW5kIGludm9pY2UubG93ZXIoKS5zdGFydHN3aXRoKCJjIikKICAgICAgICAgICAgKQogICAgICAgICAgICBpZiAoaXNfY2FuY2VsbGF0aW9uIGFuZCBxdWFudGl0eSA8IDApIG9yICgKICAgICAgICAgICAgICAgIG5vdCBpc19jYW5jZWxsYXRpb24gYW5kIHF1YW50aXR5ID4gMAogICAgICAgICAgICApOgogICAgICAgICAgICAgICAgZGVjaXNpb25zLmFwcGVuZCh7CiAgICAgICAgICAgICAgICAgICAgInJvd19pZCI6IHJvd19pZCwKICAgICAgICAgICAgICAgICAgICAicG9saWN5IjogInF1YW50aXR5X3NpZ24iLAogICAgICAgICAgICAgICAgICAgICJzdGF0dXMiOiAicGFzcyIsCiAgICAgICAgICAgICAgICAgICAgInJlYXNvbiI6ICJRdWFudGl0eSBoYXMgdGhlIHJlcXVpcmVkIHNpZ24gZm9yIHRoZSBpbnZvaWNlLiIsCiAgICAgICAgICAgICAgICB9KQogICAgICAgICAgICBlbHNlOgogICAgICAgICAgICAgICAgZGVjaXNpb25zLmFwcGVuZCh7CiAgICAgICAgICAgICAgICAgICAgInJvd19pZCI6IHJvd19pZCwKICAgICAgICAgICAgICAgICAgICAicG9saWN5IjogInF1YW50aXR5X3NpZ24iLAogICAgICAgICAgICAgICAgICAgICJzdGF0dXMiOiAidmlvbGF0aW9uIiwKICAgICAgICAgICAgICAgICAgICAicmVhc29uIjogIlF1YW50aXR5IGRvZXMgbm90IGhhdmUgdGhlIHJlcXVpcmVkIHNpZ24gZm9yIHRoZSBpbnZvaWNlLiIsCiAgICAgICAgICAgICAgICB9KQoKICAgICAgICBwcmljZSA9IF9udW1iZXIocm93LCAiVW5pdFByaWNlIikKICAgICAgICBpZiBwcmljZSBpcyBOb25lOgogICAgICAgICAgICBkZWNpc2lvbnMuYXBwZW5kKHsKICAgICAgICAgICAgICAgICJyb3dfaWQiOiByb3dfaWQsCiAgICAgICAgICAgICAgICAicG9saWN5IjogIm5vbm5lZ2F0aXZlX3ByaWNlIiwKICAgICAgICAgICAgICAgICJzdGF0dXMiOiAidW5rbm93biIsCiAgICAgICAgICAgICAgICAicmVhc29uIjogIlVuaXRQcmljZSBpcyBtaXNzaW5nIG9yIG5vdCBhIGZpbml0ZSBiYXNlLTEwIG51bWJlci4iLAogICAgICAgICAgICB9KQogICAgICAgIGVsaWYgcHJpY2UgPj0gMDoKICAgICAgICAgICAgZGVjaXNpb25zLmFwcGVuZCh7CiAgICAgICAgICAgICAgICAicm93X2lkIjogcm93X2lkLAogICAgICAgICAgICAgICAgInBvbGljeSI6ICJub25uZWdhdGl2ZV9wcmljZSIsCiAgICAgICAgICAgICAgICAic3RhdHVzIjogInBhc3MiLAogICAgICAgICAgICAgICAgInJlYXNvbiI6ICJVbml0UHJpY2UgaXMgbm9ubmVnYXRpdmUuIiwKICAgICAgICAgICAgfSkKICAgICAgICBlbHNlOgogICAgICAgICAgICBkZWNpc2lvbnMuYXBwZW5kKHsKICAgICAgICAgICAgICAgICJyb3dfaWQiOiByb3dfaWQsCiAgICAgICAgICAgICAgICAicG9saWN5IjogIm5vbm5lZ2F0aXZlX3ByaWNlIiwKICAgICAgICAgICAgICAgICJzdGF0dXMiOiAidmlvbGF0aW9uIiwKICAgICAgICAgICAgICAgICJyZWFzb24iOiAiVW5pdFByaWNlIGlzIG5lZ2F0aXZlLiIsCiAgICAgICAgICAgIH0pCgogICAgcmV0dXJuIHsiZGVjaXNpb25zIjogZGVjaXNpb25zfQ==",
+          "raw_sha256": "9e34ed5d6aeede3a8a28f243bbca3d6989d382a8bcbe9e357f8e35f713493863",
+          "byte_count": 3544,
+          "executed": false,
+          "execution_authorized": false,
+          "interface_checked": false,
+          "semantics_checked": false,
+          "status": "syntax_valid_pending_execution_review",
+          "reason": "no_execution_or_semantic_assurance"
+        },
+        "execution": {
+          "container_name": "retail-exec-92104318d5c7",
+          "artifact_sha256": "9e34ed5d6aeede3a8a28f243bbca3d6989d382a8bcbe9e357f8e35f713493863",
+          "packet_sha256": "ec79e28336ee223bc85440e51b7071561ab9e5e61ae2900ba54d3bf52c1fde28",
+          "wall_limit_seconds": 10,
+          "combined_output_limit": 65536,
+          "status": "completed",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--pull=never",
+            "--name",
+            "retail-exec-92104318d5c7",
+            "--rm",
+            "--network=none",
+            "--read-only",
+            "--user=65534:65534",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--pids-limit=32",
+            "--memory=256m",
+            "--memory-swap=256m",
+            "--cpus=1",
+            "--log-driver=none",
+            "--tmpfs=/tmp:rw,noexec,nosuid,size=16m,mode=1777",
+            "--workdir=/tmp",
+            "--mount",
+            "type=bind,src=/home/ubuntu/shacl-graphrag/_workspace/retail-llm-v1/container-smoke-v1/runtime,dst=/runtime,readonly",
+            "--env=PYTHONHOME=/runtime/usr",
+            "--env=PYTHONDONTWRITEBYTECODE=1",
+            "--env=PYTHONNOUSERSITE=1",
+            "--env=LD_LIBRARY_PATH=/runtime/lib:/runtime/lib/aarch64-linux-gnu",
+            "--entrypoint=/runtime/lib/ld-linux-aarch64.so.1",
+            "--mount",
+            "type=bind,src=/home/ubuntu/shacl-graphrag/_workspace/retail-llm-v1/generated-python-v1/executions/reusable-boundary_diagnostic/task,dst=/task,readonly",
+            "80259ba83f86",
+            "--library-path",
+            "/runtime/lib:/runtime/lib/aarch64-linux-gnu",
+            "/runtime/usr/bin/python3.12",
+            "-s",
+            "-B",
+            "/task/runner.py"
+          ],
+          "exit_code": 0,
+          "execution_elapsed_seconds": 0.33214987599058077,
+          "evidence_errors": [],
+          "cleanup": {
+            "exit_code": 0,
+            "stderr": "Error response from daemon: No such container: retail-exec-92104318d5c7\n"
+          },
+          "container_absent": true
+        },
+        "response_parse": {
+          "raw": "{\"decisions\": [{\"row_id\": \"100001\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"100001\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"100001\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"100002\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"100002\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"100002\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"100003\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"100003\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"100003\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"100004\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"100004\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"100004\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"100005\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"100005\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"100005\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"100006\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"100006\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"100006\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"100007\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"100007\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"100007\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"100008\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"100008\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"100008\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"100009\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"100009\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"100009\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"100010\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"100010\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"100010\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"100011\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"100011\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"100011\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"100012\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"100012\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"100012\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"100013\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"100013\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"100013\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}, {\"row_id\": \"100014\", \"policy\": \"customer_analysis\", \"status\": \"violation\", \"reason\": \"CustomerID is blank.\"}, {\"row_id\": \"100014\", \"policy\": \"quantity_sign\", \"status\": \"unknown\", \"reason\": \"InvoiceNo or parseable Quantity is missing.\"}, {\"row_id\": \"100014\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\", \"reason\": \"UnitPrice is missing or not a finite base-10 number.\"}]}\n",
+          "schema_error": null,
+          "predictions": [
+            {
+              "row_id": "100001",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "100001",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100001",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100002",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "100002",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100002",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100003",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "100003",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100003",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100004",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "100004",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100004",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100005",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "100005",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100005",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100006",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "100006",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100006",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100007",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "100007",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100007",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100008",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "100008",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100008",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100009",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "100009",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100009",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100010",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "100010",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100010",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100011",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "100011",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100011",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100012",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "100012",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100012",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100013",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "100013",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100013",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100014",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "100014",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100014",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            }
+          ],
+          "missing_keys": []
+        }
+      },
+      {
+        "arm": "adhoc",
+        "batch": "random_development",
+        "generation_status": "completed",
+        "intake": {
+          "raw_base64": "ZnJvbSBkZWNpbWFsIGltcG9ydCBEZWNpbWFsLCBJbnZhbGlkT3BlcmF0aW9uCgoKZGVmIGV2YWx1YXRlKHBhY2tldCk6CiAgICBkZWYgaXNfYmxhbmsodmFsdWUpOgogICAgICAgIHJldHVybiB2YWx1ZSBpcyBOb25lIG9yIHN0cih2YWx1ZSkuc3RyaXAoKSA9PSAiIgoKICAgIGRlZiBmaW5pdGVfbnVtYmVyKHZhbHVlKToKICAgICAgICBpZiB2YWx1ZSBpcyBOb25lIG9yIGlzaW5zdGFuY2UodmFsdWUsIGJvb2wpOgogICAgICAgICAgICByZXR1cm4gTm9uZQogICAgICAgIGlmIG5vdCBpc2luc3RhbmNlKHZhbHVlLCAoc3RyLCBpbnQsIGZsb2F0LCBEZWNpbWFsKSk6CiAgICAgICAgICAgIHJldHVybiBOb25lCiAgICAgICAgdHJ5OgogICAgICAgICAgICBudW1iZXIgPSBEZWNpbWFsKHN0cih2YWx1ZSkpCiAgICAgICAgZXhjZXB0IChJbnZhbGlkT3BlcmF0aW9uLCBWYWx1ZUVycm9yKToKICAgICAgICAgICAgcmV0dXJuIE5vbmUKICAgICAgICByZXR1cm4gbnVtYmVyIGlmIG51bWJlci5pc19maW5pdGUoKSBlbHNlIE5vbmUKCiAgICBkZWNpc2lvbnMgPSBbXQoKICAgIGZvciByb3cgaW4gcGFja2V0WyJyb3dzIl06CiAgICAgICAgcm93X2lkID0gcm93LmdldCgicm93X2lkIikKICAgICAgICBkYXRhID0gcm93LmdldCgiZGF0YSIpIG9yIHt9CgogICAgICAgIGN1c3RvbWVyID0gZGF0YS5nZXQoIkN1c3RvbWVySUQiKQogICAgICAgIGRlY2lzaW9ucy5hcHBlbmQoewogICAgICAgICAgICAicm93X2lkIjogcm93X2lkLAogICAgICAgICAgICAicG9saWN5IjogImN1c3RvbWVyX2FuYWx5c2lzIiwKICAgICAgICAgICAgInN0YXR1cyI6ICJ2aW9sYXRpb24iIGlmIGlzX2JsYW5rKGN1c3RvbWVyKSBlbHNlICJwYXNzIiwKICAgICAgICB9KQoKICAgICAgICBpbnZvaWNlID0gZGF0YS5nZXQoIkludm9pY2VObyIpCiAgICAgICAgcXVhbnRpdHkgPSBmaW5pdGVfbnVtYmVyKGRhdGEuZ2V0KCJRdWFudGl0eSIpKQogICAgICAgIGlmIGlzX2JsYW5rKGludm9pY2UpIG9yIHF1YW50aXR5IGlzIE5vbmU6CiAgICAgICAgICAgIHF1YW50aXR5X3N0YXR1cyA9ICJ1bmtub3duIgogICAgICAgIGVsc2U6CiAgICAgICAgICAgIGNhbmNlbGxhdGlvbiA9IHN0cihpbnZvaWNlKS5sb3dlcigpLnN0YXJ0c3dpdGgoImMiKQogICAgICAgICAgICBxdWFudGl0eV9zdGF0dXMgPSAoCiAgICAgICAgICAgICAgICAicGFzcyIgaWYgKHF1YW50aXR5IDwgMCBpZiBjYW5jZWxsYXRpb24gZWxzZSBxdWFudGl0eSA+IDApCiAgICAgICAgICAgICAgICBlbHNlICJ2aW9sYXRpb24iCiAgICAgICAgICAgICkKICAgICAgICBkZWNpc2lvbnMuYXBwZW5kKHsKICAgICAgICAgICAgInJvd19pZCI6IHJvd19pZCwKICAgICAgICAgICAgInBvbGljeSI6ICJxdWFudGl0eV9zaWduIiwKICAgICAgICAgICAgInN0YXR1cyI6IHF1YW50aXR5X3N0YXR1cywKICAgICAgICB9KQoKICAgICAgICBwcmljZSA9IGZpbml0ZV9udW1iZXIoZGF0YS5nZXQoIlVuaXRQcmljZSIpKQogICAgICAgIGRlY2lzaW9ucy5hcHBlbmQoewogICAgICAgICAgICAicm93X2lkIjogcm93X2lkLAogICAgICAgICAgICAicG9saWN5IjogIm5vbm5lZ2F0aXZlX3ByaWNlIiwKICAgICAgICAgICAgInN0YXR1cyI6ICJ1bmtub3duIiBpZiBwcmljZSBpcyBOb25lIGVsc2UgKAogICAgICAgICAgICAgICAgInBhc3MiIGlmIHByaWNlID49IDAgZWxzZSAidmlvbGF0aW9uIgogICAgICAgICAgICApLAogICAgICAgIH0pCgogICAgcmV0dXJuIHsiZGVjaXNpb25zIjogZGVjaXNpb25zfQ==",
+          "raw_sha256": "d6f1ea30e3a2e6a20a394cd42761f3ff74a5f8ac292002fa7792880eddec93cf",
+          "byte_count": 1762,
+          "executed": false,
+          "execution_authorized": false,
+          "interface_checked": false,
+          "semantics_checked": false,
+          "status": "syntax_valid_pending_execution_review",
+          "reason": "no_execution_or_semantic_assurance"
+        },
+        "execution": {
+          "container_name": "retail-exec-3d4cb363e1c0",
+          "artifact_sha256": "d6f1ea30e3a2e6a20a394cd42761f3ff74a5f8ac292002fa7792880eddec93cf",
+          "packet_sha256": "e0ed3ca76bb42f8dc7ee01685c6bcbfa4d076575cb3f103e74cbeb86b057a393",
+          "wall_limit_seconds": 10,
+          "combined_output_limit": 65536,
+          "status": "completed",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--pull=never",
+            "--name",
+            "retail-exec-3d4cb363e1c0",
+            "--rm",
+            "--network=none",
+            "--read-only",
+            "--user=65534:65534",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--pids-limit=32",
+            "--memory=256m",
+            "--memory-swap=256m",
+            "--cpus=1",
+            "--log-driver=none",
+            "--tmpfs=/tmp:rw,noexec,nosuid,size=16m,mode=1777",
+            "--workdir=/tmp",
+            "--mount",
+            "type=bind,src=/home/ubuntu/shacl-graphrag/_workspace/retail-llm-v1/container-smoke-v1/runtime,dst=/runtime,readonly",
+            "--env=PYTHONHOME=/runtime/usr",
+            "--env=PYTHONDONTWRITEBYTECODE=1",
+            "--env=PYTHONNOUSERSITE=1",
+            "--env=LD_LIBRARY_PATH=/runtime/lib:/runtime/lib/aarch64-linux-gnu",
+            "--entrypoint=/runtime/lib/ld-linux-aarch64.so.1",
+            "--mount",
+            "type=bind,src=/home/ubuntu/shacl-graphrag/_workspace/retail-llm-v1/generated-python-v1/executions/adhoc-random_development/task,dst=/task,readonly",
+            "80259ba83f86",
+            "--library-path",
+            "/runtime/lib:/runtime/lib/aarch64-linux-gnu",
+            "/runtime/usr/bin/python3.12",
+            "-s",
+            "-B",
+            "/task/runner.py"
+          ],
+          "exit_code": 0,
+          "execution_elapsed_seconds": 0.34290021599736065,
+          "evidence_errors": [],
+          "cleanup": {
+            "exit_code": 0,
+            "stderr": "Error response from daemon: No such container: retail-exec-3d4cb363e1c0\n"
+          },
+          "container_absent": true
+        },
+        "response_parse": {
+          "raw": "{\"decisions\": [{\"row_id\": \"789\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"789\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"789\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"3469\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"3469\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"3469\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"4703\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"4703\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"4703\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"3480\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"3480\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"3480\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"3977\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"3977\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"3977\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"2614\", \"policy\": \"customer_analysis\", \"status\": \"violation\"}, {\"row_id\": \"2614\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"2614\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"147\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"147\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"147\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"2360\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"2360\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"2360\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"810\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"810\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"810\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"1198\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"1198\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"1198\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"3479\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"3479\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"3479\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"3000\", \"policy\": \"customer_analysis\", \"status\": \"violation\"}, {\"row_id\": \"3000\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"3000\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"2216\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"2216\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"2216\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"2840\", \"policy\": \"customer_analysis\", \"status\": \"violation\"}, {\"row_id\": \"2840\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"2840\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"3937\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"3937\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"3937\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"1097\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"1097\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"1097\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"4173\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"4173\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"4173\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"3341\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"3341\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"3341\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"2086\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"2086\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"2086\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"1931\", \"policy\": \"customer_analysis\", \"status\": \"violation\"}, {\"row_id\": \"1931\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"1931\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"4961\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"4961\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"4961\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"1052\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"1052\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"1052\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"4079\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"4079\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"4079\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"1149\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"1149\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"1149\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}]}\n",
+          "schema_error": null,
+          "predictions": [
+            {
+              "row_id": "789",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "789",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "789",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "3469",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "3469",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "3469",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "4703",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "4703",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "4703",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "3480",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "3480",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "3480",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "3977",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "3977",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "3977",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "2614",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "2614",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "2614",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "147",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "147",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "147",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "2360",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "2360",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "2360",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "810",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "810",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "810",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "1198",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "1198",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "1198",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "3479",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "3479",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "3479",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "3000",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "3000",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "3000",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "2216",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "2216",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "2216",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "2840",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "2840",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "2840",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "3937",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "3937",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "3937",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "1097",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "1097",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "1097",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "4173",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "4173",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "4173",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "3341",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "3341",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "3341",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "2086",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "2086",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "2086",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "1931",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "1931",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "1931",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "4961",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "4961",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "4961",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "1052",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "1052",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "1052",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "4079",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "4079",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "4079",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "1149",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "1149",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "1149",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            }
+          ],
+          "missing_keys": []
+        }
+      },
+      {
+        "arm": "adhoc",
+        "batch": "boundary_diagnostic",
+        "generation_status": "completed",
+        "intake": {
+          "raw_base64": "ZnJvbSBkZWNpbWFsIGltcG9ydCBEZWNpbWFsLCBJbnZhbGlkT3BlcmF0aW9uCmltcG9ydCByZQoKCl9OVU1CRVJfUEFUVEVSTiA9IHJlLmNvbXBpbGUociJbKy1dPyg/OlswLTldKyg/OlwuWzAtOV0qKT98XC5bMC05XSspKD86W2VFXVsrLV0/WzAtOV0rKT9cWiIpCgoKZGVmIF9ibGFuayh2YWx1ZSk6CiAgICByZXR1cm4gdmFsdWUgaXMgTm9uZSBvciBzdHIodmFsdWUpLnN0cmlwKCkgPT0gIiIKCgpkZWYgX251bWJlcih2YWx1ZSk6CiAgICBpZiB2YWx1ZSBpcyBOb25lIG9yIGlzaW5zdGFuY2UodmFsdWUsIGJvb2wpIG9yIG5vdCBpc2luc3RhbmNlKHZhbHVlLCAoc3RyLCBpbnQsIGZsb2F0KSk6CiAgICAgICAgcmV0dXJuIE5vbmUKICAgIHRleHQgPSBzdHIodmFsdWUpLnN0cmlwKCkKICAgIGlmIG5vdCBfTlVNQkVSX1BBVFRFUk4uZnVsbG1hdGNoKHRleHQpOgogICAgICAgIHJldHVybiBOb25lCiAgICB0cnk6CiAgICAgICAgbnVtYmVyID0gRGVjaW1hbCh0ZXh0KQogICAgZXhjZXB0IEludmFsaWRPcGVyYXRpb246CiAgICAgICAgcmV0dXJuIE5vbmUKICAgIHJldHVybiBudW1iZXIgaWYgbnVtYmVyLmlzX2Zpbml0ZSgpIGVsc2UgTm9uZQoKCmRlZiBldmFsdWF0ZShwYWNrZXQpOgogICAgZGVjaXNpb25zID0gW10KICAgIGZvciByb3cgaW4gcGFja2V0WyJyb3dzIl06CiAgICAgICAgcm93X2lkID0gcm93WyJyb3dfaWQiXQogICAgICAgIGRhdGEgPSByb3cuZ2V0KCJkYXRhIiwge30pCgogICAgICAgIGN1c3RvbWVyX3N0YXR1cyA9ICJ2aW9sYXRpb24iIGlmIF9ibGFuayhkYXRhLmdldCgiQ3VzdG9tZXJJRCIpKSBlbHNlICJwYXNzIgogICAgICAgIGRlY2lzaW9ucy5hcHBlbmQoewogICAgICAgICAgICAicm93X2lkIjogcm93X2lkLAogICAgICAgICAgICAicG9saWN5IjogImN1c3RvbWVyX2FuYWx5c2lzIiwKICAgICAgICAgICAgInN0YXR1cyI6IGN1c3RvbWVyX3N0YXR1cywKICAgICAgICB9KQoKICAgICAgICBpbnZvaWNlID0gZGF0YS5nZXQoIkludm9pY2VObyIpCiAgICAgICAgcXVhbnRpdHkgPSBfbnVtYmVyKGRhdGEuZ2V0KCJRdWFudGl0eSIpKQogICAgICAgIGlmIF9ibGFuayhpbnZvaWNlKSBvciBxdWFudGl0eSBpcyBOb25lOgogICAgICAgICAgICBxdWFudGl0eV9zdGF0dXMgPSAidW5rbm93biIKICAgICAgICBlbHNlOgogICAgICAgICAgICBjYW5jZWxsYXRpb24gPSBzdHIoaW52b2ljZSkubG93ZXIoKS5zdGFydHN3aXRoKCJjIikKICAgICAgICAgICAgcXVhbnRpdHlfc3RhdHVzID0gKAogICAgICAgICAgICAgICAgInBhc3MiIGlmIChxdWFudGl0eSA8IDAgaWYgY2FuY2VsbGF0aW9uIGVsc2UgcXVhbnRpdHkgPiAwKQogICAgICAgICAgICAgICAgZWxzZSAidmlvbGF0aW9uIgogICAgICAgICAgICApCiAgICAgICAgZGVjaXNpb25zLmFwcGVuZCh7CiAgICAgICAgICAgICJyb3dfaWQiOiByb3dfaWQsCiAgICAgICAgICAgICJwb2xpY3kiOiAicXVhbnRpdHlfc2lnbiIsCiAgICAgICAgICAgICJzdGF0dXMiOiBxdWFudGl0eV9zdGF0dXMsCiAgICAgICAgfSkKCiAgICAgICAgcHJpY2UgPSBfbnVtYmVyKGRhdGEuZ2V0KCJVbml0UHJpY2UiKSkKICAgICAgICBwcmljZV9zdGF0dXMgPSAidW5rbm93biIgaWYgcHJpY2UgaXMgTm9uZSBlbHNlICgicGFzcyIgaWYgcHJpY2UgPj0gMCBlbHNlICJ2aW9sYXRpb24iKQogICAgICAgIGRlY2lzaW9ucy5hcHBlbmQoewogICAgICAgICAgICAicm93X2lkIjogcm93X2lkLAogICAgICAgICAgICAicG9saWN5IjogIm5vbm5lZ2F0aXZlX3ByaWNlIiwKICAgICAgICAgICAgInN0YXR1cyI6IHByaWNlX3N0YXR1cywKICAgICAgICB9KQoKICAgIHJldHVybiB7ImRlY2lzaW9ucyI6IGRlY2lzaW9uc30=",
+          "raw_sha256": "15a06368923514e4ad4ee7bd8115ff6c16954b5333f7ca574e5de7065f7f767b",
+          "byte_count": 1850,
+          "executed": false,
+          "execution_authorized": false,
+          "interface_checked": false,
+          "semantics_checked": false,
+          "status": "syntax_valid_pending_execution_review",
+          "reason": "no_execution_or_semantic_assurance"
+        },
+        "execution": {
+          "container_name": "retail-exec-98cc59ce950a",
+          "artifact_sha256": "15a06368923514e4ad4ee7bd8115ff6c16954b5333f7ca574e5de7065f7f767b",
+          "packet_sha256": "ec79e28336ee223bc85440e51b7071561ab9e5e61ae2900ba54d3bf52c1fde28",
+          "wall_limit_seconds": 10,
+          "combined_output_limit": 65536,
+          "status": "completed",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--pull=never",
+            "--name",
+            "retail-exec-98cc59ce950a",
+            "--rm",
+            "--network=none",
+            "--read-only",
+            "--user=65534:65534",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--pids-limit=32",
+            "--memory=256m",
+            "--memory-swap=256m",
+            "--cpus=1",
+            "--log-driver=none",
+            "--tmpfs=/tmp:rw,noexec,nosuid,size=16m,mode=1777",
+            "--workdir=/tmp",
+            "--mount",
+            "type=bind,src=/home/ubuntu/shacl-graphrag/_workspace/retail-llm-v1/container-smoke-v1/runtime,dst=/runtime,readonly",
+            "--env=PYTHONHOME=/runtime/usr",
+            "--env=PYTHONDONTWRITEBYTECODE=1",
+            "--env=PYTHONNOUSERSITE=1",
+            "--env=LD_LIBRARY_PATH=/runtime/lib:/runtime/lib/aarch64-linux-gnu",
+            "--entrypoint=/runtime/lib/ld-linux-aarch64.so.1",
+            "--mount",
+            "type=bind,src=/home/ubuntu/shacl-graphrag/_workspace/retail-llm-v1/generated-python-v1/executions/adhoc-boundary_diagnostic/task,dst=/task,readonly",
+            "80259ba83f86",
+            "--library-path",
+            "/runtime/lib:/runtime/lib/aarch64-linux-gnu",
+            "/runtime/usr/bin/python3.12",
+            "-s",
+            "-B",
+            "/task/runner.py"
+          ],
+          "exit_code": 0,
+          "execution_elapsed_seconds": 0.3351076690014452,
+          "evidence_errors": [],
+          "cleanup": {
+            "exit_code": 0,
+            "stderr": "Error response from daemon: No such container: retail-exec-98cc59ce950a\n"
+          },
+          "container_absent": true
+        },
+        "response_parse": {
+          "raw": "{\"decisions\": [{\"row_id\": \"100001\", \"policy\": \"customer_analysis\", \"status\": \"violation\"}, {\"row_id\": \"100001\", \"policy\": \"quantity_sign\", \"status\": \"violation\"}, {\"row_id\": \"100001\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"100002\", \"policy\": \"customer_analysis\", \"status\": \"violation\"}, {\"row_id\": \"100002\", \"policy\": \"quantity_sign\", \"status\": \"violation\"}, {\"row_id\": \"100002\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"100003\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"100003\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"100003\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"100004\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"100004\", \"policy\": \"quantity_sign\", \"status\": \"violation\"}, {\"row_id\": \"100004\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"100005\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"100005\", \"policy\": \"quantity_sign\", \"status\": \"violation\"}, {\"row_id\": \"100005\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"100006\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"100006\", \"policy\": \"quantity_sign\", \"status\": \"violation\"}, {\"row_id\": \"100006\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"100007\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"100007\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"100007\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"100008\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"100008\", \"policy\": \"quantity_sign\", \"status\": \"violation\"}, {\"row_id\": \"100008\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"100009\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"100009\", \"policy\": \"quantity_sign\", \"status\": \"unknown\"}, {\"row_id\": \"100009\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"100010\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"100010\", \"policy\": \"quantity_sign\", \"status\": \"unknown\"}, {\"row_id\": \"100010\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"100011\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"100011\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"100011\", \"policy\": \"nonnegative_price\", \"status\": \"violation\"}, {\"row_id\": \"100012\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"100012\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"100012\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}, {\"row_id\": \"100013\", \"policy\": \"customer_analysis\", \"status\": \"pass\"}, {\"row_id\": \"100013\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"100013\", \"policy\": \"nonnegative_price\", \"status\": \"unknown\"}, {\"row_id\": \"100014\", \"policy\": \"customer_analysis\", \"status\": \"violation\"}, {\"row_id\": \"100014\", \"policy\": \"quantity_sign\", \"status\": \"pass\"}, {\"row_id\": \"100014\", \"policy\": \"nonnegative_price\", \"status\": \"pass\"}]}\n",
+          "schema_error": null,
+          "predictions": [
+            {
+              "row_id": "100001",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "100001",
+              "policy": "quantity_sign",
+              "status": "violation"
+            },
+            {
+              "row_id": "100001",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "100002",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "100002",
+              "policy": "quantity_sign",
+              "status": "violation"
+            },
+            {
+              "row_id": "100002",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "100003",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "100003",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "100003",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "100004",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "100004",
+              "policy": "quantity_sign",
+              "status": "violation"
+            },
+            {
+              "row_id": "100004",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "100005",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "100005",
+              "policy": "quantity_sign",
+              "status": "violation"
+            },
+            {
+              "row_id": "100005",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "100006",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "100006",
+              "policy": "quantity_sign",
+              "status": "violation"
+            },
+            {
+              "row_id": "100006",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "100007",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "100007",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "100007",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "100008",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "100008",
+              "policy": "quantity_sign",
+              "status": "violation"
+            },
+            {
+              "row_id": "100008",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "100009",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "100009",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100009",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "100010",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "100010",
+              "policy": "quantity_sign",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100010",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "100011",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "100011",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "100011",
+              "policy": "nonnegative_price",
+              "status": "violation"
+            },
+            {
+              "row_id": "100012",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "100012",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "100012",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            },
+            {
+              "row_id": "100013",
+              "policy": "customer_analysis",
+              "status": "pass"
+            },
+            {
+              "row_id": "100013",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "100013",
+              "policy": "nonnegative_price",
+              "status": "unknown"
+            },
+            {
+              "row_id": "100014",
+              "policy": "customer_analysis",
+              "status": "violation"
+            },
+            {
+              "row_id": "100014",
+              "policy": "quantity_sign",
+              "status": "pass"
+            },
+            {
+              "row_id": "100014",
+              "policy": "nonnegative_price",
+              "status": "pass"
+            }
+          ],
+          "missing_keys": []
+        }
+      }
+    ],
+    "reported_usd": 0.004824025,
+    "reserved_usd": 0.0179034,
+    "limits": [
+      "Consumed development single-model diagnostic; no business truth",
+      "Adhoc sees batch; reusable construction sees schema/policy but no rows",
+      "One reusable artifact vs two adhoc artifacts; no construction-repeat claim",
+      "No reference repairs; all failures included",
+      "SHACL generation not included"
+    ]
+  },
+  "correct_counts": {
+    "reusable": {
+      "random_development": 4,
+      "authored_boundary_probe": 4,
+      "selected_actual_development_source": 2
+    },
+    "adhoc": {
+      "random_development": 72,
+      "authored_boundary_probe": 36,
+      "selected_actual_development_source": 6
+    }
+  },
+  "campaign": {
+    "calls": 79,
+    "reported_usd": 0.023106575,
+    "reserved_usd": 0.21245316
+  },
+  "checks": {
+    "injected_evidence_write_failure": "evidence_error, container absent, exit0",
+    "prepare_exit": 0,
+    "audit_exit": 0,
+    "smoke1_exit": 0,
+    "remaining2_exit": 0,
+    "evaluate_exit": 0,
+    "all_four_execution_containers_absent": true
+  },
+  "failure_interpretation": {
+    "observation": "Reusable code reads row CustomerID/Quantity/InvoiceNo/UnitPrice directly, but actual packet wraps source values in row.data. Thus normal cells appear missing; all4executions exit0 and outputschemasvalid.",
+    "reusable_counts": "10/114 total agreement, but report72random/6purposiveactual/36authored separately",
+    "causal_limit": "Reusable construction had empty rows, adhoc saw concrete batch structure. No explicit row-envelope JSON schema was included in generation instructions. This is a construction-interface confound, not isolated rule reasoning or intrinsic reuse weakness.",
+    "action": "Original artifact unchanged; no repairs/retries. Future interface clarification must be separately versioned and reviewed."
+  },
+  "next_step": "Preserve failed reusable artifact and all79 calls. Before remaining generated-SHACL comparison, explicitly document executable input row schema (row_id plus nested data) and construction exposure; do not silently repair or rerun consumed Python outputs. Reusable failure is interface mismatch under empty-example construction, not evidence rules/reuse intrinsically weak. Next implement/review equivalent bounded SHACL runtime using installed dependencies, with explicit interface and no oracle repairs; separately label changed construction contract and unknown precheck asymmetry. No heldout access."
+}

@@ -1,5 +1,7 @@
 # 실행 기록
 
+- [2026-10-22 독립 문서 규칙 추가 비교](20261022-rule-extension.json) · [입력·정책·출력 검토 묶음](20261022-rule-extension-review-bundle.json)
+
 - [2026-10-15 YAGO 원본 데이터의 LLM 조회·검증 연결](20261015-yago-native-tools.md)
 
 실행기가 생성한 결과를 날짜순으로 모은다. 수치는 각 run의 입력과 환경에서 얻은 관찰값이다. 해석과 다음 결정은 [연구 일지](../../journal/index.md)에 남긴다.

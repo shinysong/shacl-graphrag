@@ -1,0 +1,73 @@
+{
+  "version": "development-v2",
+  "status": "Design only; no generated code or shapes may execute under this contract alone",
+  "scope": "Future controlled generation and execution evaluation; existing authored row-graph baseline is separate",
+  "tracks": {
+    "direct_decision": "LLM emits decisions per fixed batch without tool execution; shared parsing metadata means this is not raw-only LLM",
+    "ad_hoc_code": "One batch-specific Python artifact per fixed batch, discarded for reuse but retained as evidence",
+    "reusable_python": "One Python artifact built on common development materials, frozen and reused across evaluation batches",
+    "reusable_shacl": "One SHACL artifact built on the same development materials, frozen and reused across evaluation batches"
+  },
+  "fairness": {
+    "construction_input": "Same policy text, definitions, mapping specification, parsing semantics and predeclared development examples for both reusable arms; no evaluation rows or labels during construction",
+    "execution_input": "Same raw rows and normalized metadata for every automated arm; SHACL runtime additionally materializes the equivalent mapped graph without adding facts",
+    "ad_hoc_exposure": "Ad hoc code sees the current evaluation batch by definition; report this architectural difference, not equal construction exposure",
+    "primary_revision_budget": 0,
+    "retry_policy": "No automatic retry, repair or reference-based correction. Any later diagnostic is separately authorized, reviewed and reported with original attempt retained",
+    "review_boundary": "Operational review checks the harness and isolation, not correctness of model artifacts. Human semantic corrections create a separate assisted condition",
+    "cost_reporting": "Report per-batch generation versus amortized reusable construction separately, plus total cost over the complete common cohort; manual effort remains unmeasured unless prospectively logged"
+  },
+  "artifact_envelope": {
+    "required": [
+      "arm",
+      "attempt_id",
+      "format",
+      "raw_bytes_sha256",
+      "input_sha256",
+      "model_settings_sha256",
+      "raw_response_path"
+    ],
+    "python": "UTF-8 source defining evaluate(packet), returning the existing decisions schema; retain exact original source",
+    "shacl": "UTF-8 Turtle with three named policy root shapes; runner attaches targets from the public policy eligibility rules, not reference labels. Each root is executed separately",
+    "target_policy": "Model-authored target declarations are unsupported in primary SHACL scope; they are rejected as unsupported artifact, never silently removed",
+    "unknown_handling": "Shared eligibility metadata and explicit public policy contract are available to all arms. SHACL adapter emits unknown before validation where required. Python/direct outputs are not silently repaired if they mishandle unknown",
+    "limitation": "Unknown prechecks enforce part of the declared policy in the SHACL harness; measure that intervention separately rather than attribute all correctness to generated shapes",
+    "python_intake": "Syntax-only byte-preserving intake, maximum65536bytes, strictUTF8. No code-fence stripping or repair; accepted syntax is not execution approval or interface/semantic validation."
+  },
+  "outcome_layers": [
+    "generation_transport_error",
+    "generation_empty_or_truncated",
+    "artifact_parse_error",
+    "artifact_unsupported_or_isolation_rejected",
+    "execution_timeout_or_resource_error",
+    "execution_exception",
+    "response_schema_error",
+    "missing_output",
+    "valid_decision_including_semantically_wrong_decision"
+  ],
+  "evaluation": {
+    "denominator": "All predeclared row-policy keys remain in the original denominator, including failures and missing outputs",
+    "semantic_policy": "A syntactically supported but wrong artifact must execute and be scored as wrong; intake must not compare to expected answers",
+    "primary": "End-to-end results including all failures, abstention and coverage",
+    "secondary": "Conditional valid-artifact execution results reported with explicit selected denominator; never replace primary results",
+    "failure_expansion": "A reusable artifact construction failure affects every planned evaluation key for that arm; batch-specific failure affects only its declared batch",
+    "reference_access": "Scorer-only labels and reference implementation excluded from execution inputs and mounted files",
+    "ad_hoc_endpoint": "Primary score uses executable decisions returned by generated Python, with no subsequent model finalization call. Any later model-written explanation is a separate diagnostic and cannot replace primary decisions."
+  },
+  "execution_requirements": {
+    "implementation_status": "Not implemented or verified",
+    "python": "A separately reviewed OS-enforced execution boundary, not eval/exec or a subprocess timeout described as a sandbox. No network, credentials or host workspace access; readonly input, temporary output, fixed dependencies, resource and output limits",
+    "shacl": "Equivalent resource and network restrictions. No remote imports, SHACL-JS, external services or unrestricted extensions. Supported SHACL Core/SPARQL subset must be enumerated before launch; parser allowlisting alone is not an isolation boundary",
+    "limits": "Wall time, memory, output bytes, artifact bytes and dependency versions must be concrete and frozen before execution",
+    "failure_trace": "Retain raw artifact, parse/support decision, exit or timeout, stderr, actual validation report when available; distinguish attempted execution from completed validation"
+  },
+  "launch_gates": [
+    "Separately reviewed implemented isolation and adversarial development checks",
+    "Frozen supported artifact grammar and resource limits",
+    "Frozen paired batch manifest and construction example exposure",
+    "Frozen model/settings and source/artifact/dependency hashes",
+    "Explicit current paid scope and remaining ledger budget",
+    "No tuning from the untouched 610-row evaluation cohort"
+  ],
+  "paid_authorization": "None added. Current heartbeat remains offline; expired ledgers remain closed"
+}

@@ -1,0 +1,344 @@
+{
+  "scope": "Single-model consumed-development diagnostic round, not representative business accuracy",
+  "model": "openai/gpt-6-luna",
+  "cohorts": {
+    "random_development": "24 source rows hash-selected; 72 correlated policy decisions",
+    "selected_actual_development_source": "2 previously known rare source cases; 6 policy decisions, purposive",
+    "authored_boundary_probe": "12 authored probes; 36 policy decisions, not observed source faults"
+  },
+  "matrix": {
+    "authored_python": {
+      "random_development": {
+        "decisions": 72,
+        "reference_agreement": 72,
+        "violation_tp": 4,
+        "violation_fp": 0,
+        "violation_fn": 0,
+        "false_pass": 0,
+        "unnecessary_abstention": 0,
+        "unknown_reference_n": 0,
+        "error": 0,
+        "missing_output": 0
+      },
+      "selected_actual_development_source": {
+        "decisions": 6,
+        "reference_agreement": 6,
+        "violation_tp": 4,
+        "violation_fp": 0,
+        "violation_fn": 0,
+        "false_pass": 0,
+        "unnecessary_abstention": 0,
+        "unknown_reference_n": 0,
+        "error": 0,
+        "missing_output": 0
+      },
+      "authored_boundary_probe": {
+        "decisions": 36,
+        "reference_agreement": 36,
+        "violation_tp": 6,
+        "violation_fp": 0,
+        "violation_fn": 0,
+        "false_pass": 0,
+        "unnecessary_abstention": 0,
+        "unknown_reference_n": 3,
+        "error": 0,
+        "missing_output": 0
+      }
+    },
+    "authored_shacl": {
+      "random_development": {
+        "decisions": 72,
+        "reference_agreement": 72,
+        "violation_tp": 4,
+        "violation_fp": 0,
+        "violation_fn": 0,
+        "false_pass": 0,
+        "unnecessary_abstention": 0,
+        "unknown_reference_n": 0,
+        "error": 0,
+        "missing_output": 0
+      },
+      "selected_actual_development_source": {
+        "decisions": 6,
+        "reference_agreement": 6,
+        "violation_tp": 4,
+        "violation_fp": 0,
+        "violation_fn": 0,
+        "false_pass": 0,
+        "unnecessary_abstention": 0,
+        "unknown_reference_n": 0,
+        "error": 0,
+        "missing_output": 0
+      },
+      "authored_boundary_probe": {
+        "decisions": 36,
+        "reference_agreement": 36,
+        "violation_tp": 6,
+        "violation_fp": 0,
+        "violation_fn": 0,
+        "false_pass": 0,
+        "unnecessary_abstention": 0,
+        "unknown_reference_n": 3,
+        "error": 0,
+        "missing_output": 0
+      }
+    },
+    "direct_llm_raw": {
+      "random_development": {
+        "decisions": 72,
+        "reference_agreement": 72,
+        "violation_tp": 4,
+        "violation_fp": 0,
+        "violation_fn": 0,
+        "false_pass": 0,
+        "unnecessary_abstention": 0,
+        "unknown_reference_n": 0,
+        "error": 0,
+        "missing_output": 0
+      },
+      "selected_actual_development_source": {
+        "decisions": 6,
+        "reference_agreement": 6,
+        "violation_tp": 4,
+        "violation_fp": 0,
+        "violation_fn": 0,
+        "false_pass": 0,
+        "unnecessary_abstention": 0,
+        "unknown_reference_n": 0,
+        "error": 0,
+        "missing_output": 0
+      },
+      "authored_boundary_probe": {
+        "decisions": 36,
+        "reference_agreement": 36,
+        "violation_tp": 6,
+        "violation_fp": 0,
+        "violation_fn": 0,
+        "false_pass": 0,
+        "unnecessary_abstention": 0,
+        "unknown_reference_n": 3,
+        "error": 0,
+        "missing_output": 0
+      }
+    },
+    "direct_llm_metadata": {
+      "random_development": {
+        "decisions": 72,
+        "reference_agreement": 72,
+        "violation_tp": 4,
+        "violation_fp": 0,
+        "violation_fn": 0,
+        "false_pass": 0,
+        "unnecessary_abstention": 0,
+        "unknown_reference_n": 0,
+        "error": 0,
+        "missing_output": 0
+      },
+      "selected_actual_development_source": {
+        "decisions": 6,
+        "reference_agreement": 6,
+        "violation_tp": 4,
+        "violation_fp": 0,
+        "violation_fn": 0,
+        "false_pass": 0,
+        "unnecessary_abstention": 0,
+        "unknown_reference_n": 0,
+        "error": 0,
+        "missing_output": 0
+      },
+      "authored_boundary_probe": {
+        "decisions": 36,
+        "reference_agreement": 36,
+        "violation_tp": 6,
+        "violation_fp": 0,
+        "violation_fn": 0,
+        "false_pass": 0,
+        "unnecessary_abstention": 0,
+        "unknown_reference_n": 3,
+        "error": 0,
+        "missing_output": 0
+      }
+    },
+    "generated_python_adhoc": {
+      "random_development": {
+        "decisions": 72,
+        "reference_agreement": 72,
+        "violation_tp": 4,
+        "violation_fp": 0,
+        "violation_fn": 0,
+        "false_pass": 0,
+        "unnecessary_abstention": 0,
+        "unknown_reference_n": 0,
+        "error": 0,
+        "missing_output": 0
+      },
+      "selected_actual_development_source": {
+        "decisions": 6,
+        "reference_agreement": 6,
+        "violation_tp": 4,
+        "violation_fp": 0,
+        "violation_fn": 0,
+        "false_pass": 0,
+        "unnecessary_abstention": 0,
+        "unknown_reference_n": 0,
+        "error": 0,
+        "missing_output": 0
+      },
+      "authored_boundary_probe": {
+        "decisions": 36,
+        "reference_agreement": 36,
+        "violation_tp": 6,
+        "violation_fp": 0,
+        "violation_fn": 0,
+        "false_pass": 0,
+        "unnecessary_abstention": 0,
+        "unknown_reference_n": 3,
+        "error": 0,
+        "missing_output": 0
+      }
+    },
+    "generated_python_reusable": {
+      "random_development": {
+        "decisions": 72,
+        "reference_agreement": 4,
+        "violation_tp": 4,
+        "violation_fp": 20,
+        "violation_fn": 0,
+        "false_pass": 0,
+        "unnecessary_abstention": 48,
+        "unknown_reference_n": 0,
+        "error": 0,
+        "missing_output": 0
+      },
+      "selected_actual_development_source": {
+        "decisions": 6,
+        "reference_agreement": 2,
+        "violation_tp": 2,
+        "violation_fp": 0,
+        "violation_fn": 2,
+        "false_pass": 0,
+        "unnecessary_abstention": 4,
+        "unknown_reference_n": 0,
+        "error": 0,
+        "missing_output": 0
+      },
+      "authored_boundary_probe": {
+        "decisions": 36,
+        "reference_agreement": 4,
+        "violation_tp": 1,
+        "violation_fp": 11,
+        "violation_fn": 5,
+        "false_pass": 0,
+        "unnecessary_abstention": 21,
+        "unknown_reference_n": 3,
+        "error": 0,
+        "missing_output": 0
+      }
+    },
+    "generated_shacl": {
+      "random_development": {
+        "decisions": 72,
+        "reference_agreement": 72,
+        "violation_tp": 4,
+        "violation_fp": 0,
+        "violation_fn": 0,
+        "false_pass": 0,
+        "unnecessary_abstention": 0,
+        "unknown_reference_n": 0,
+        "error": 0,
+        "missing_output": 0
+      },
+      "selected_actual_development_source": {
+        "decisions": 6,
+        "reference_agreement": 6,
+        "violation_tp": 4,
+        "violation_fp": 0,
+        "violation_fn": 0,
+        "false_pass": 0,
+        "unnecessary_abstention": 0,
+        "unknown_reference_n": 0,
+        "error": 0,
+        "missing_output": 0
+      },
+      "authored_boundary_probe": {
+        "decisions": 36,
+        "reference_agreement": 36,
+        "violation_tp": 6,
+        "violation_fp": 0,
+        "violation_fn": 0,
+        "false_pass": 0,
+        "unnecessary_abstention": 0,
+        "unknown_reference_n": 3,
+        "error": 0,
+        "missing_output": 0
+      }
+    }
+  },
+  "model_cost_by_arm": {
+    "direct_llm_raw": {
+      "model_calls": 38,
+      "reported_usd": "0.008254400",
+      "nonrefunded_reserved_usd": "0.09444804",
+      "cost_role": "decision generation"
+    },
+    "direct_llm_metadata": {
+      "model_calls": 38,
+      "reported_usd": "0.010028150",
+      "nonrefunded_reserved_usd": "0.10010172",
+      "cost_role": "decision generation"
+    },
+    "generated_python_reusable": {
+      "model_calls": 1,
+      "reported_usd": "0.001498175",
+      "nonrefunded_reserved_usd": "0.00375096",
+      "cost_role": "artifact construction"
+    },
+    "generated_python_adhoc": {
+      "model_calls": 2,
+      "reported_usd": "0.003325850",
+      "nonrefunded_reserved_usd": "0.01415244",
+      "cost_role": "artifact construction"
+    },
+    "generated_shacl": {
+      "model_calls": 1,
+      "reported_usd": "0.000999675",
+      "nonrefunded_reserved_usd": "0.00404772",
+      "cost_role": "artifact construction"
+    }
+  },
+  "campaign": {
+    "calls": 80,
+    "reported_usd": "0.024106250",
+    "nonrefunded_reserved_usd": "0.21650088",
+    "transport_failures": 0
+  },
+  "interpretation": [
+    "No accuracy benefit observed from computed parsing metadata in these direct LLM samples.",
+    "Reusable Python returns schema-valid decisions but reads cells at wrong envelope level; interface assumption caused failures.",
+    "Adhoc Python sees concrete batches; reusable Python construction had empty rows and no explicit envelope schema. This is a confound.",
+    "Generated SHACL received clarified interface/subset and supplied unknown precheck. No isolated language/RDF superiority inference.",
+    "Three unknown authored decisions in SHACL arms come from eligibility preprocessing, not shape validation.",
+    "One artifact construction per reusable arm; per-row scores are not independent construction trials.",
+    "All automated arms received explicit authored policies. Adhoc here means batch-specific code, not unspecified business rules."
+  ],
+  "unmeasured": [
+    "Actual human review time/accuracy or time saved",
+    "Ambiguous/unstated-rule LLM-plus-code baseline requested in broader design",
+    "Maintenance effort, policy changes and regression burden",
+    "Untouched610row heldout evaluation and representative error prevalence",
+    "Complete end-to-end comparable latency, total Codex/operator/infrastructure cost",
+    "Cross-model or independent construction-repeat uncertainty"
+  ],
+  "cost_limits": "Reported model API costs only. Authored code construction labor and shared infrastructure are unmeasured, not free. Direct per-row calls and amortized artifact construction are different units.",
+  "sources": [
+    "_workspace/retail-llm-v1/result.json",
+    "_workspace/retail-llm-v1/boundary-v1/llm-result.json",
+    "_workspace/retail-llm-v1/boundary-v1/result.json",
+    "_workspace/retail-llm-v1/generated-python-v1/result.json",
+    "_workspace/retail-llm-v1/generated-shacl-v1/result.json",
+    "_workspace/retail-llm-v1/campaign-budget.json",
+    "_workspace/retail-llm-v1/boundary-v1/campaign-budget.json",
+    "_workspace/retail-llm-v1/generated-python-v1/campaign-budget.json",
+    "_workspace/retail-llm-v1/generated-shacl-v1/campaign-budget.json"
+  ]
+}

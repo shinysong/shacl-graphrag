@@ -1,0 +1,31 @@
+{
+  "source_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+  "source_sheet": "Online Retail",
+  "seed": "retail-review-1/invoice-holdout/v1",
+  "selection": "32 lowest seeded SHA256 invoice identifiers among all nonblank invoices absent from first5000 development rows; entire invoice groups retained",
+  "development_prefix_rows": 5000,
+  "development_invoice_count": 300,
+  "scanned_rows": 541909,
+  "missing_invoice_rows": 0,
+  "unique_invoices": 25900,
+  "eligible_invoices": 25600,
+  "expected_selected_rows": 610,
+  "limitations": [
+    "Invoice-disjoint only; products/customers/time may overlap.",
+    "Not population-weighted row sampling; no rare-error stratification.",
+    "No policy labels or outcome-driven selection; untouched input bundle.",
+    "XLSX dates normalized to ISO; source bytes preserved; source API advertised row count independently checked here."
+  ],
+  "actual_selected_rows": 610,
+  "inputs_sha256": "f1438f1fd6a4905173956812e9ab6fe7a469287ac59ada47758715267b3a97aa",
+  "timestamp": "2026-10-20T05:12:59.227357+00:00",
+  "review_job": "20261020T051044Z-retail-split-4fde8f",
+  "pytest": "4 passed in0.16s",
+  "test_exit": 0,
+  "freeze_exit": 0,
+  "metadata_row_count_comparison": {
+    "observed": 541909,
+    "official_metadata": 541909,
+    "equal": true
+  }
+}

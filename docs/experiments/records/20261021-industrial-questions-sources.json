@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "kind": "source_acquisition_not_evaluation",
+  "erpnext_commit": "e864addb6c367688d2b264f284c2dd9b9360a97d",
+  "erp_records": [
+    {
+      "url": "https://raw.githubusercontent.com/frappe/erpnext/e864addb6c367688d2b264f284c2dd9b9360a97d/erpnext/manufacturing/doctype/bom/bom.json",
+      "path": "erpnext/manufacturing/doctype/bom/bom.json",
+      "retrieved_at": "2026-10-21T08:30:24.335413+00:00",
+      "status_code": 200,
+      "status": "saved",
+      "saved_as": "bom.json",
+      "bytes": 15489,
+      "sha256": "f80193ca83df1425a5102492505e4feb0f6eae2b4c6fdd3f87d743fa7b356df9"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/frappe/erpnext/e864addb6c367688d2b264f284c2dd9b9360a97d/erpnext/manufacturing/doctype/bom_item/bom_item.json",
+      "path": "erpnext/manufacturing/doctype/bom_item/bom_item.json",
+      "retrieved_at": "2026-10-21T08:30:24.666214+00:00",
+      "status_code": 200,
+      "status": "saved",
+      "saved_as": "bom_item.json",
+      "bytes": 6443,
+      "sha256": "5d77bbafdf30dea221f05d6a5f4add6f6c2d7f389e4ac42be1bb8ba4b06d7ccb"
+    }
+  ],
+  "certification_records": [
+    {
+      "url": "https://schema.org/Certification",
+      "retrieved_at": "2026-10-21T08:30:38.570823+00:00",
+      "status_code": 200,
+      "resolved_url": "https://schema.org/Certification",
+      "status": "saved",
+      "saved_as": "certification.html",
+      "bytes": 44707,
+      "sha256": "ee2d8b8280cd952f2dfbb810a48982c443b97a1fd8451b4492210c20c62199d8"
+    },
+    {
+      "url": "https://schema.org/docs/terms.html",
+      "retrieved_at": "2026-10-21T08:30:39.077835+00:00",
+      "status_code": 200,
+      "resolved_url": "https://schema.org/docs/terms.html",
+      "status": "saved",
+      "saved_as": "schema-terms.html",
+      "bytes": 3985,
+      "sha256": "2414294b9b6a9a7cd69abb07146fab0f0a502810fca28333fcdd7c8d87d8f1b9"
+    }
+  ],
+  "findings": {
+    "bom": "BOM.item -> Item; BOM.items -> BOM Item; BOM Item.item_code -> Item; BOM Item.bom_no -> BOM. Child parent linkage still needs framework documentation before runtime joins.",
+    "certification": "Schema.org development-page snapshot documents about, certificationIdentification, issuedBy, validFrom, expires, validIn and certificationStatus. These vocabulary definitions and examples are not verified operational certificates.",
+    "missing": "No actual joined procurement/BOM/certificate transaction bundle acquired. No certification expiry -> required recheck policy provided by these schemas.",
+    "license": "ERPNext original GPL license preserved in earlier same-commit bundle; Schema.org terms snapshot states CC BY-SA3.0 for sponsor schema copyrights; HTML/example reuse scope not independently legally assessed."
+  },
+  "paid_calls": 0,
+  "experiments": 0,
+  "http_downloads": 4,
+  "all_downloads_status": 200,
+  "next_step": "Inspect pinned ERPNext BOM test/example records as authored software fixtures and seek connected public operational examples; freeze provenance and application policies before code. Avoid substituting vocabulary examples for actual industrial evidence.",
+  "review_job": "20261021T083117Z-industrial-questions-acquisition-012182",
+  "review_scope": "interpretation only, not integrity audit",
+  "encoding_notes": "_workspace/industrial-questions-v1/source-acquisition-1/encoding-notes.json",
+  "recorded_at": "2026-10-21T08:33:06.332351+00:00"
+}

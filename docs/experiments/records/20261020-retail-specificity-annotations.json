@@ -1,0 +1,658 @@
+{
+  "scope": "Saved underspecified Python artifact; all38consumed rows annotated, no new trials",
+  "categories": {
+    "customer_identifier_format_mismatch": 11,
+    "invoice_identifier_format_mismatch": 10
+  },
+  "disagreements": [
+    {
+      "row_id": "100003",
+      "cohort": "authored_boundary_probe",
+      "policy": "customer_analysis",
+      "reference_status": "pass",
+      "saved_status": "violation",
+      "primary_category": "customer_identifier_format_mismatch",
+      "observed_flags": [
+        "customer_identifier_format_mismatch"
+      ],
+      "evidence_cells": {
+        "CustomerID": "SYN-CUSTOMER",
+        "InvoiceNo": "cSYN-1",
+        "Quantity": "-1"
+      },
+      "interpretation": "Posthoc co-occurrence with statically inspected code gates; no counterfactual replay or causal estimate"
+    },
+    {
+      "row_id": "100003",
+      "cohort": "authored_boundary_probe",
+      "policy": "quantity_sign",
+      "reference_status": "pass",
+      "saved_status": "unknown",
+      "primary_category": "invoice_identifier_format_mismatch",
+      "observed_flags": [
+        "invoice_identifier_format_mismatch"
+      ],
+      "evidence_cells": {
+        "CustomerID": "SYN-CUSTOMER",
+        "InvoiceNo": "cSYN-1",
+        "Quantity": "-1"
+      },
+      "interpretation": "Posthoc co-occurrence with statically inspected code gates; no counterfactual replay or causal estimate"
+    },
+    {
+      "row_id": "100004",
+      "cohort": "authored_boundary_probe",
+      "policy": "customer_analysis",
+      "reference_status": "pass",
+      "saved_status": "violation",
+      "primary_category": "customer_identifier_format_mismatch",
+      "observed_flags": [
+        "customer_identifier_format_mismatch"
+      ],
+      "evidence_cells": {
+        "CustomerID": "SYN-CUSTOMER",
+        "InvoiceNo": "CSYN-1",
+        "Quantity": "1"
+      },
+      "interpretation": "Posthoc co-occurrence with statically inspected code gates; no counterfactual replay or causal estimate"
+    },
+    {
+      "row_id": "100004",
+      "cohort": "authored_boundary_probe",
+      "policy": "quantity_sign",
+      "reference_status": "violation",
+      "saved_status": "unknown",
+      "primary_category": "invoice_identifier_format_mismatch",
+      "observed_flags": [
+        "invoice_identifier_format_mismatch"
+      ],
+      "evidence_cells": {
+        "CustomerID": "SYN-CUSTOMER",
+        "InvoiceNo": "CSYN-1",
+        "Quantity": "1"
+      },
+      "interpretation": "Posthoc co-occurrence with statically inspected code gates; no counterfactual replay or causal estimate"
+    },
+    {
+      "row_id": "100005",
+      "cohort": "authored_boundary_probe",
+      "policy": "customer_analysis",
+      "reference_status": "pass",
+      "saved_status": "violation",
+      "primary_category": "customer_identifier_format_mismatch",
+      "observed_flags": [
+        "customer_identifier_format_mismatch"
+      ],
+      "evidence_cells": {
+        "CustomerID": "SYN-CUSTOMER",
+        "InvoiceNo": "CSYN-1",
+        "Quantity": "0"
+      },
+      "interpretation": "Posthoc co-occurrence with statically inspected code gates; no counterfactual replay or causal estimate"
+    },
+    {
+      "row_id": "100005",
+      "cohort": "authored_boundary_probe",
+      "policy": "quantity_sign",
+      "reference_status": "violation",
+      "saved_status": "unknown",
+      "primary_category": "invoice_identifier_format_mismatch",
+      "observed_flags": [
+        "invoice_identifier_format_mismatch"
+      ],
+      "evidence_cells": {
+        "CustomerID": "SYN-CUSTOMER",
+        "InvoiceNo": "CSYN-1",
+        "Quantity": "0"
+      },
+      "interpretation": "Posthoc co-occurrence with statically inspected code gates; no counterfactual replay or causal estimate"
+    },
+    {
+      "row_id": "100006",
+      "cohort": "authored_boundary_probe",
+      "policy": "customer_analysis",
+      "reference_status": "pass",
+      "saved_status": "violation",
+      "primary_category": "customer_identifier_format_mismatch",
+      "observed_flags": [
+        "customer_identifier_format_mismatch"
+      ],
+      "evidence_cells": {
+        "CustomerID": "SYN-CUSTOMER",
+        "InvoiceNo": "SYN-1",
+        "Quantity": "0"
+      },
+      "interpretation": "Posthoc co-occurrence with statically inspected code gates; no counterfactual replay or causal estimate"
+    },
+    {
+      "row_id": "100006",
+      "cohort": "authored_boundary_probe",
+      "policy": "quantity_sign",
+      "reference_status": "violation",
+      "saved_status": "unknown",
+      "primary_category": "invoice_identifier_format_mismatch",
+      "observed_flags": [
+        "invoice_identifier_format_mismatch"
+      ],
+      "evidence_cells": {
+        "CustomerID": "SYN-CUSTOMER",
+        "InvoiceNo": "SYN-1",
+        "Quantity": "0"
+      },
+      "interpretation": "Posthoc co-occurrence with statically inspected code gates; no counterfactual replay or causal estimate"
+    },
+    {
+      "row_id": "100007",
+      "cohort": "authored_boundary_probe",
+      "policy": "customer_analysis",
+      "reference_status": "pass",
+      "saved_status": "violation",
+      "primary_category": "customer_identifier_format_mismatch",
+      "observed_flags": [
+        "customer_identifier_format_mismatch"
+      ],
+      "evidence_cells": {
+        "CustomerID": "SYN-CUSTOMER",
+        "InvoiceNo": "SYN-1",
+        "Quantity": "0.5"
+      },
+      "interpretation": "Posthoc co-occurrence with statically inspected code gates; no counterfactual replay or causal estimate"
+    },
+    {
+      "row_id": "100007",
+      "cohort": "authored_boundary_probe",
+      "policy": "quantity_sign",
+      "reference_status": "pass",
+      "saved_status": "unknown",
+      "primary_category": "invoice_identifier_format_mismatch",
+      "observed_flags": [
+        "invoice_identifier_format_mismatch",
+        "fractional_quantity_additional_gate"
+      ],
+      "evidence_cells": {
+        "CustomerID": "SYN-CUSTOMER",
+        "InvoiceNo": "SYN-1",
+        "Quantity": "0.5"
+      },
+      "interpretation": "Posthoc co-occurrence with statically inspected code gates; no counterfactual replay or causal estimate"
+    },
+    {
+      "row_id": "100008",
+      "cohort": "authored_boundary_probe",
+      "policy": "customer_analysis",
+      "reference_status": "pass",
+      "saved_status": "violation",
+      "primary_category": "customer_identifier_format_mismatch",
+      "observed_flags": [
+        "customer_identifier_format_mismatch"
+      ],
+      "evidence_cells": {
+        "CustomerID": "SYN-CUSTOMER",
+        "InvoiceNo": " CSYN-1",
+        "Quantity": "-1"
+      },
+      "interpretation": "Posthoc co-occurrence with statically inspected code gates; no counterfactual replay or causal estimate"
+    },
+    {
+      "row_id": "100008",
+      "cohort": "authored_boundary_probe",
+      "policy": "quantity_sign",
+      "reference_status": "violation",
+      "saved_status": "unknown",
+      "primary_category": "invoice_identifier_format_mismatch",
+      "observed_flags": [
+        "invoice_identifier_format_mismatch"
+      ],
+      "evidence_cells": {
+        "CustomerID": "SYN-CUSTOMER",
+        "InvoiceNo": " CSYN-1",
+        "Quantity": "-1"
+      },
+      "interpretation": "Posthoc co-occurrence with statically inspected code gates; no counterfactual replay or causal estimate"
+    },
+    {
+      "row_id": "100009",
+      "cohort": "authored_boundary_probe",
+      "policy": "customer_analysis",
+      "reference_status": "pass",
+      "saved_status": "violation",
+      "primary_category": "customer_identifier_format_mismatch",
+      "observed_flags": [
+        "customer_identifier_format_mismatch"
+      ],
+      "evidence_cells": {
+        "CustomerID": "SYN-CUSTOMER",
+        "InvoiceNo": null,
+        "Quantity": "1"
+      },
+      "interpretation": "Posthoc co-occurrence with statically inspected code gates; no counterfactual replay or causal estimate"
+    },
+    {
+      "row_id": "100010",
+      "cohort": "authored_boundary_probe",
+      "policy": "customer_analysis",
+      "reference_status": "pass",
+      "saved_status": "violation",
+      "primary_category": "customer_identifier_format_mismatch",
+      "observed_flags": [
+        "customer_identifier_format_mismatch"
+      ],
+      "evidence_cells": {
+        "CustomerID": "SYN-CUSTOMER",
+        "InvoiceNo": "SYN-1",
+        "Quantity": "not-a-number"
+      },
+      "interpretation": "Posthoc co-occurrence with statically inspected code gates; no counterfactual replay or causal estimate"
+    },
+    {
+      "row_id": "100011",
+      "cohort": "authored_boundary_probe",
+      "policy": "customer_analysis",
+      "reference_status": "pass",
+      "saved_status": "violation",
+      "primary_category": "customer_identifier_format_mismatch",
+      "observed_flags": [
+        "customer_identifier_format_mismatch"
+      ],
+      "evidence_cells": {
+        "CustomerID": "SYN-CUSTOMER",
+        "InvoiceNo": "SYN-1",
+        "Quantity": "1"
+      },
+      "interpretation": "Posthoc co-occurrence with statically inspected code gates; no counterfactual replay or causal estimate"
+    },
+    {
+      "row_id": "100011",
+      "cohort": "authored_boundary_probe",
+      "policy": "quantity_sign",
+      "reference_status": "pass",
+      "saved_status": "unknown",
+      "primary_category": "invoice_identifier_format_mismatch",
+      "observed_flags": [
+        "invoice_identifier_format_mismatch"
+      ],
+      "evidence_cells": {
+        "CustomerID": "SYN-CUSTOMER",
+        "InvoiceNo": "SYN-1",
+        "Quantity": "1"
+      },
+      "interpretation": "Posthoc co-occurrence with statically inspected code gates; no counterfactual replay or causal estimate"
+    },
+    {
+      "row_id": "100012",
+      "cohort": "authored_boundary_probe",
+      "policy": "customer_analysis",
+      "reference_status": "pass",
+      "saved_status": "violation",
+      "primary_category": "customer_identifier_format_mismatch",
+      "observed_flags": [
+        "customer_identifier_format_mismatch"
+      ],
+      "evidence_cells": {
+        "CustomerID": "SYN-CUSTOMER",
+        "InvoiceNo": "SYN-1",
+        "Quantity": "1"
+      },
+      "interpretation": "Posthoc co-occurrence with statically inspected code gates; no counterfactual replay or causal estimate"
+    },
+    {
+      "row_id": "100012",
+      "cohort": "authored_boundary_probe",
+      "policy": "quantity_sign",
+      "reference_status": "pass",
+      "saved_status": "unknown",
+      "primary_category": "invoice_identifier_format_mismatch",
+      "observed_flags": [
+        "invoice_identifier_format_mismatch"
+      ],
+      "evidence_cells": {
+        "CustomerID": "SYN-CUSTOMER",
+        "InvoiceNo": "SYN-1",
+        "Quantity": "1"
+      },
+      "interpretation": "Posthoc co-occurrence with statically inspected code gates; no counterfactual replay or causal estimate"
+    },
+    {
+      "row_id": "100013",
+      "cohort": "authored_boundary_probe",
+      "policy": "customer_analysis",
+      "reference_status": "pass",
+      "saved_status": "violation",
+      "primary_category": "customer_identifier_format_mismatch",
+      "observed_flags": [
+        "customer_identifier_format_mismatch"
+      ],
+      "evidence_cells": {
+        "CustomerID": "SYN-CUSTOMER",
+        "InvoiceNo": "SYN-1",
+        "Quantity": "1"
+      },
+      "interpretation": "Posthoc co-occurrence with statically inspected code gates; no counterfactual replay or causal estimate"
+    },
+    {
+      "row_id": "100013",
+      "cohort": "authored_boundary_probe",
+      "policy": "quantity_sign",
+      "reference_status": "pass",
+      "saved_status": "unknown",
+      "primary_category": "invoice_identifier_format_mismatch",
+      "observed_flags": [
+        "invoice_identifier_format_mismatch"
+      ],
+      "evidence_cells": {
+        "CustomerID": "SYN-CUSTOMER",
+        "InvoiceNo": "SYN-1",
+        "Quantity": "1"
+      },
+      "interpretation": "Posthoc co-occurrence with statically inspected code gates; no counterfactual replay or causal estimate"
+    },
+    {
+      "row_id": "100014",
+      "cohort": "authored_boundary_probe",
+      "policy": "quantity_sign",
+      "reference_status": "pass",
+      "saved_status": "unknown",
+      "primary_category": "invoice_identifier_format_mismatch",
+      "observed_flags": [
+        "invoice_identifier_format_mismatch"
+      ],
+      "evidence_cells": {
+        "CustomerID": "   ",
+        "InvoiceNo": "SYN-1",
+        "Quantity": "1"
+      },
+      "interpretation": "Posthoc co-occurrence with statically inspected code gates; no counterfactual replay or causal estimate"
+    }
+  ],
+  "row_format_flags": [
+    {
+      "row_id": "789",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": true,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "3469",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": true,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "4703",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": true,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "3480",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": true,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "3977",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": true,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "2614",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": null,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "147",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": true,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "2360",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": true,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "810",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": true,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "1198",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": true,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "3479",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": true,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "3000",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": null,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "2216",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": true,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "2840",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": null,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "3937",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": true,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "1097",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": true,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "4173",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": true,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "3341",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": true,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "2086",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": true,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "1931",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": null,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "4961",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": true,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "1052",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": true,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "4079",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": true,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "1149",
+      "cohort": "random_development",
+      "customer_matches_inspected_format": true,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "100001",
+      "cohort": "selected_actual_development_source",
+      "customer_matches_inspected_format": null,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "100002",
+      "cohort": "selected_actual_development_source",
+      "customer_matches_inspected_format": null,
+      "invoice_matches_inspected_format": true,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "100003",
+      "cohort": "authored_boundary_probe",
+      "customer_matches_inspected_format": false,
+      "invoice_matches_inspected_format": false,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "100004",
+      "cohort": "authored_boundary_probe",
+      "customer_matches_inspected_format": false,
+      "invoice_matches_inspected_format": false,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "100005",
+      "cohort": "authored_boundary_probe",
+      "customer_matches_inspected_format": false,
+      "invoice_matches_inspected_format": false,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "100006",
+      "cohort": "authored_boundary_probe",
+      "customer_matches_inspected_format": false,
+      "invoice_matches_inspected_format": false,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "100007",
+      "cohort": "authored_boundary_probe",
+      "customer_matches_inspected_format": false,
+      "invoice_matches_inspected_format": false,
+      "fractional_quantity": true
+    },
+    {
+      "row_id": "100008",
+      "cohort": "authored_boundary_probe",
+      "customer_matches_inspected_format": false,
+      "invoice_matches_inspected_format": false,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "100009",
+      "cohort": "authored_boundary_probe",
+      "customer_matches_inspected_format": false,
+      "invoice_matches_inspected_format": false,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "100010",
+      "cohort": "authored_boundary_probe",
+      "customer_matches_inspected_format": false,
+      "invoice_matches_inspected_format": false,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "100011",
+      "cohort": "authored_boundary_probe",
+      "customer_matches_inspected_format": false,
+      "invoice_matches_inspected_format": false,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "100012",
+      "cohort": "authored_boundary_probe",
+      "customer_matches_inspected_format": false,
+      "invoice_matches_inspected_format": false,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "100013",
+      "cohort": "authored_boundary_probe",
+      "customer_matches_inspected_format": false,
+      "invoice_matches_inspected_format": false,
+      "fractional_quantity": false
+    },
+    {
+      "row_id": "100014",
+      "cohort": "authored_boundary_probe",
+      "customer_matches_inspected_format": false,
+      "invoice_matches_inspected_format": false,
+      "fractional_quantity": false
+    }
+  ],
+  "source_hashes": {
+    "_workspace/retail-llm-v1/policy-specificity-v1/result.json": "0692c161d17953351a05521a7b1911b349fc3a2494a3bacbed6868e6187a62fd",
+    "_workspace/retail-llm-v1/policy-specificity-v1/packets.json": "4ed454d9304443f970518f410e3cf98fd7fd774f557000aecf41f1a79a1b69eb",
+    "_workspace/retail-llm-v1/policy-specificity-v1/calls/call-0000/output.ttl": "9ca1eb432192892a0db5db8447589c575e0aa20228a32953f3701f301c7faeef",
+    "_workspace/retail-llm-v1/references.json": "4728434c95149d3416f0ef814c0829abb315878d463477f84c66b4aba2b1a348",
+    "_workspace/retail-llm-v1/boundary-v1/references.json": "6a18f07974a6f12e6014ec23f831cce7905b8bdd3c83a371def6ec297ac950cb",
+    "_workspace/retail-llm-v1/boundary-v1/cases.json": "d67795ef637ceac696d521a85fe1100dde86c923c21bc28cc0273e881788fb6a",
+    "_workspace/real-retail/metadata.json": "9b1a75b4ee044da8b2f108c31acf6ebf3fe5eddce75a1fe03032c6781b80f2e1",
+    "/home/ubuntu/shacl-graphrag/scripts/annotate_retail_specificity.py": "bd271b8530dbaf9d6497b1d9a9c6cb1c3042dc2d38632099fa5376c80c71c216"
+  },
+  "code_evidence": {
+    "customer_id_is_valid": "Requires 5 ASCII digits after strip; lines44-57 in saved artifact",
+    "invoice_kind": "Requires 6 digits or C+6 digits after strip; lines59-67",
+    "quantity_gate": "Also requires integral decimal; lines88-89"
+  },
+  "limitations": [
+    "Format predicates describe this inspected artifact and literal metadata interpretation, not a full source-schema validator",
+    "SYN identifiers deliberately authored for prior sign/presence probes violate source-format descriptions",
+    "The same fractional probe also fails invoice format: isolated fractional-rule effect is unmeasured",
+    "21disagreements are repeated cells/rows, not21independent failures",
+    "No cases excluded, score recalculated, gold changed, artifact repaired or rerun",
+    "No natural prevalence, external business truth, causal information benefit or RDF advantage established"
+  ]
+}

@@ -1,0 +1,15 @@
+# Two industrial questions: initial source inventory and next-step plan
+
+User authorized continuing both receipt acceptance and certification-expiry product recheck questions for eight hours every ten minutes. This is a source-readiness review, not approval to execute new experiments or paid calls. No new performance claims.
+
+Existing acquired public ERPNext commit e864addb6c367688d2b264f284c2dd9b9360a97d supplies four software schemas, not operational records. Existing builder explicitly authors 300 item rows plus a duplicate and 1000 procurement cases. Do not rebrand this as real company data. Current receipt equality evaluator checks item equality, not full acceptance. Original data and results remain immutable.
+
+Read-only review scope: research/sources/erpnext-procurement.json, scripts/build_industrial_linkage_demo.py, scripts/evaluate_receipt_inspection.py, _workspace/industrial-linkage/sources/{item,purchase_order_item,purchase_receipt_item,quality_inspection}.json, _workspace/industrial-questions-v1/initial-field-inventory.json. Do not read other reviews, secrets, heldout or scorer labels outside these authored scripts. No tests or source modifications.
+
+Observed fields: Item.default_bom links BOM; Purchase Receipt Item.quality_inspection links Quality Inspection and purchase_order links Purchase Order; Quality Inspection.reference_name is Dynamic Link controlled by reference_type, item_code links Item, status lists Accepted/Rejected. These links establish schema structure only, not valid joined business events. Item.has_expiry_date must not be interpreted as certification expiry. No BOM schema or certification source is present in this four-schema manifest; do not infer global absence in ERPNext.
+
+Next bounded work: acquire BOM/BOM Item at same pin with license/provenance/hash and inspect public certification representations/records. Preserve failed acquisitions. Seek actual connected operational examples; if unavailable clearly label schema-inspired fixtures and do not claim actual industrial accuracy. Freeze policies and development/reserved cases before execution. Do not add hidden gold, forced links or repair from expected answers. Separate item identifiers, receipt/order line identities, lot/serial/product revisions, certificate scope and as-of date. Missing/incomplete source is not rejection or no impact. Candidate paths are not legally required rechecks; expiry does not automatically imply product defect or invalid historical acceptance.
+
+Planned output axes: linkage correctness/ambiguity first; receipt acceptance policy agreement second; impact candidate precision/recall separately from required recheck eligibility and unknowns. Compare same-policy Python with appropriate RDF/OWL/SHACL; no full OWL or standard superiority claim. Human time unmeasured. Future LLM evaluation needs separately bounded new campaign, no reuse of expired ledgers.
+
+Review whether this inventory and plan are defensible. Identify blockers before next acquisition/protocol implementation. This job has no registered checks; ready means source-readiness plan only, not permission for unreviewed code/experiments.

@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-21T09:36:31.223296+00:00",
+  "study": "industrial-questions-1",
+  "phase": "authored fixture freeze",
+  "review_job": "20261021T093455Z-industrial-questions-fixtures-025ed1",
+  "reviews": {
+    "methods": "ready",
+    "implementation": "ready"
+  },
+  "checks": {
+    "registered_empty_gate": 0,
+    "manual_builder": 0,
+    "manual_artifact_integrity": 0
+  },
+  "scenes": 24,
+  "arm_executions": 0,
+  "paid_calls": 0,
+  "origin": "study_authored_record and study_authored_policy, not operational enterprise data",
+  "frozen_directory": "_workspace/industrial-questions-v1/fixtures-1/frozen",
+  "manifest_sha256": "5dc346ede6dea29b6e7e23a11d654d949e350d1f730370dbeac757886dd14822",
+  "denominators_per_future_arm": {
+    "receipt": 24,
+    "links": 72,
+    "candidate": 96,
+    "recheck": 96,
+    "impact_graph_completeness": 24
+  },
+  "limits": [
+    "Artifact integrity only, no runtime accuracy or external business truth",
+    "Expectation ledger separately authored by coordinator from policy, independently reviewed; not independent human gold",
+    "Earlier four ERP schemas pin inventory only; new acquisition bytes matched saved hashes, not source authenticity",
+    "Scalar/output contract is prospective; runtime validator not yet implemented",
+    "Other policy branches require separate software checks"
+  ],
+  "next": "Implement matched Python and RDF/OWL-RL/SHACL arms with strict input/output and saved outcomes; fresh independent review before execution."
+}

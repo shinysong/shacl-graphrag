@@ -41,3 +41,9 @@
 - [2026-10-17 Workbench export boundaries](2026-10-17-workbench-export-boundaries.md)
 - [2026-10-19 Connector display names and source identity](2026-10-19-workbench-table-identity.md)
 - [2026-10-19 CLI filename and package imports](2026-10-19-workbench-cli-module-shadowing.md)
+
+- [2026-10-19 프로젝트 복원과 자료 누락 표시](2026-10-19-project-loss-metadata.md)
+
+- [2026-10-21 Recovering a report without repeating measurements](2026-10-21-summary-recovery.md)
+
+- [2026-10-26 Separating measured results from illustrative constants](2026-10-26-measurement-claims.md)
