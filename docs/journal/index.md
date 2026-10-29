@@ -1,5 +1,10 @@
 # 연구 일지
 
+- [Wessel 외 논문 리뷰 — 배터리 전극의 식별과 생산 이력 추적](2026-10-29-review-battery-traceability.md)
+- [LG마그나 협력사 요구사항 리뷰 — 추적성·변경 승인·품질 기록의 연결](2026-10-29-review-lgmagna-traceability.md)
+- [MetalMind 논문 리뷰 — 금속 적층제조 매뉴얼에서 작업자 지원까지](2026-10-29-review-metalmind.md)
+- [이수연 외 논문 리뷰 — 반도체 특허에서 개체와 관계를 추출하는 방법](2026-10-29-review-semiconductor-patent-kg.md)
+
 - [2026-10-28 BPI 2019 원본 구매 로그의 연구 적합성](2026-10-28-bpi2019-suitability.md)
 - [2026-10-28 원천 구축과 규칙 적용의 병목 분리](2026-10-28-source-rule-diagnostics.md)
 - [2026-10-27 탐색 연구의 주장별 정리와 새 연구 전환](2026-10-27-exploration-closeout.md)
