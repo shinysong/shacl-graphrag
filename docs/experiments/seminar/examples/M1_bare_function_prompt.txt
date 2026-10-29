@@ -1,0 +1,83 @@
+<QUESTION>
+REQ_2026_01 발주 요청을 승인해도 되는지 판단하고, 차단 또는 보류 시 정확한 원인 개체(focus_node), 관계 경로(result_path), 충돌 값(value_node)을 근거로 제시하라.
+</QUESTION>
+
+<FUNCTION_CHECK_RESULT>
+{
+  "decision": "blocked",
+  "violations": [
+    "division-separation"
+  ]
+}
+</FUNCTION_CHECK_RESULT>
+
+<RAW_TABLES>
+{
+  "items_contracts": [
+    {
+      "item_id": "ITEM_101",
+      "contract_status": "Active",
+      "max_discount_rate": 0.15,
+      "min_margin_rate": 0.18
+    }
+  ],
+  "departments": [
+    {
+      "dept_id": "DEPT_REQ",
+      "parent_division_id": "DIV_SALES"
+    },
+    {
+      "dept_id": "DEPT_REV1",
+      "parent_division_id": "DIV_SALES"
+    },
+    {
+      "dept_id": "DEPT_REV2",
+      "parent_division_id": "DIV_AUDIT"
+    }
+  ],
+  "order_requests": [
+    {
+      "request_id": "REQ_2026_01",
+      "item_id": "ITEM_101",
+      "req_dept_id": "DEPT_REQ",
+      "applied_discount_rate": 0.12,
+      "achieved_margin_rate": 0.22,
+      "net_amount": 85000.0,
+      "gross_amount": 100000.0,
+      "memo_code": "MEMO-2026-0001"
+    }
+  ],
+  "reviewers": [
+    {
+      "reviewer_id": "USER_PRIMARY",
+      "belongs_to_dept_id": "DEPT_REV1",
+      "qualification_status": "Qualified"
+    },
+    {
+      "reviewer_id": "USER_AUDIT",
+      "belongs_to_dept_id": "DEPT_REV2",
+      "qualification_status": "Qualified"
+    }
+  ],
+  "approval_reviews": [
+    {
+      "review_id": "REV_01",
+      "request_id": "REQ_2026_01",
+      "reviewer_id": "USER_PRIMARY",
+      "decision": "Approve",
+      "review_role": "Primary"
+    },
+    {
+      "review_id": "REV_02",
+      "request_id": "REQ_2026_01",
+      "reviewer_id": "USER_AUDIT",
+      "decision": "Approve",
+      "review_role": "Audit"
+    }
+  ]
+}
+</RAW_TABLES>
+
+<INSTRUCTION>
+함수 판정 결과(decision)는 고정하되, 어느 개체와 경로·값 때문에 위반되었는지는 원천 테이블에서 직접 찾아 JSON으로 설명하라.
+</INSTRUCTION>

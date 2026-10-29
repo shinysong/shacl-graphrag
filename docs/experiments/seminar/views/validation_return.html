@@ -1,0 +1,58 @@
+<div class="validation-capture">
+  <div class="validation-capture-header"><span>pySHACL · 실제 실행 반환값</span><code>missing manufacturer</code></div>
+  <div class="validation-return-grid">
+    <section><h3>① conforms</h3><p class="validation-false">false</p><p>선택한 그래프가 제조사 필수 기록 조건을 충족하지 못했다.</p><p>현실에서 제조사가 없거나 사실이 거짓이라는 판정은 아니다.</p></section>
+    <section><h3>② report · RDF 그래프</h3><dl><dt>focusNode</dt><dd>ex:P1</dd><dt>resultPath</dt><dd>ex:manufacturer</dd><dt>constraint</dt><dd>sh:MinCountConstraintComponent</dd></dl><p>sh:minCount 1 · 제조사 값이 최소 하나 필요하다.</p></section>
+  </div>
+  <section class="validation-terminal"><h3>③ text · 실제 보고서 발췌</h3><pre><code>Validation Report
+Conforms: False
+Results (1):
+	Focus Node: ex:P1
+	Result Path: ex:manufacturer
+	Message: 제조사 식별자를 하나 이상 기록하세요.</code></pre></section>
+  <details><summary>전체 text 반환값</summary><pre><code>Validation Report
+Conforms: False
+Results (1):
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal(&quot;제조사 식별자를 하나 이상 기록하세요.&quot;) ; sh:minCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path ex:manufacturer ]
+	Focus Node: ex:P1
+	Result Path: ex:manufacturer
+	Message: 제조사 식별자를 하나 이상 기록하세요.
+</code></pre></details>
+  <details><summary>전체 RDF 보고서 · Turtle</summary><pre><code>@prefix ex: &lt;https://example.org/manufacturing/&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode ex:P1 ;
+            sh:resultMessage &quot;제조사 식별자를 하나 이상 기록하세요.&quot; ;
+            sh:resultPath ex:manufacturer ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:message &quot;제조사 식별자를 하나 이상 기록하세요.&quot; ;
+                    sh:minCount 1 ;
+                    sh:nodeKind sh:IRI ;
+                    sh:path ex:manufacturer ] ] .
+
+</code></pre></details>
+  <p class="validation-source">출처: scripts/seminar_manufacturing_examples.py → manufacturing/validation-return.json · inference='none'</p>
+</div>
+<style>
+.validation-capture{border:1px solid #536579;border-radius:16px;overflow:hidden;background:#f7fafc;color:#172b3a}
+.validation-capture-header{display:flex;justify-content:space-between;gap:12px;padding:14px 20px;background:#203446;color:#f5f8fc;font-size:.8em}
+.validation-return-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:18px 22px}
+.validation-capture h3{margin:0 0 8px;font-size:.9em;color:inherit}
+.validation-capture p{font-size:.72em;line-height:1.55;margin:8px 0}
+.validation-capture .validation-false{font:700 1.7em monospace;color:#a72e36;margin:8px 0}
+.validation-capture dl{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:.65em;margin:12px 0}
+.validation-capture dd{margin:0;overflow-wrap:anywhere;font-family:monospace}
+.validation-terminal{background:#112230;color:#e5edf5;padding:16px 22px}
+.validation-capture pre{margin:6px 0;background:transparent!important;color:inherit!important;font-size:.64em;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.5;box-shadow:none!important;border:0!important}
+.validation-capture pre code{color:inherit!important;background:transparent!important}
+.validation-capture details{padding:8px 22px;font-size:.8em}
+.validation-capture .validation-source{padding:0 22px 10px;font-size:.55em;color:#46576b;overflow-wrap:anywhere}
+@media(max-width:640px){.validation-return-grid{grid-template-columns:1fr}.validation-capture-header{flex-direction:column}}
+</style>

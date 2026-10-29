@@ -1,0 +1,16 @@
+# Claim closure, fresh experiment design and offline demo
+User explicitly approved closing old work by claims, fixing one new scenario, narrowing factors, developing demo; old experiments need not be reused. New work is fresh design, not new paid campaign. Existing paid stop remains. Protocol v0.1 is a design baseline, not preregistered/frozen confirmatory study. Planned development8families/32cases and evaluation32families/128cases×3arms×2repeats=768episodes are NOT generated. Demo1family/4states is authored/consumed and excluded from those samples.
+
+Authorized files for independent read-only review:
+- docs/journal/2026-10-27-exploration-closeout.md; docs/experiments/evidence-report-study.md
+- research/evidence-report-1/protocol.json and demo-template.html
+- scripts/build_evidence_report_demo.py and tests/test_evidence_report_demo.py
+- scripts/prepare_chirpy.py and mkdocs.yml (narrow new demo copy/navigation only; preserve earlier seminar changes)
+- docs/experiments/research-plan.md and docs/journal/2026-10-22-llm-semantic-intervention-paper.md (new top status notice only, rest archival)
+- supporting historical records docs/experiments/records/20261013-hybrid-comparison.md, 20261013-ontology-reasoning.md,20261015-llm-ontology-tools.md,20261015-yago-native-tools.md,20261017-nl2shacl-semantic-expansion.json,20261022-unified-rule-lifecycle.md,20261022-rule-extension.json; docs/journal/2026-10-21-technology-selection-paper.md
+- generated docs/experiments/evidence-report-demo/{index.html,demo.json,shapes.ttl} if present (builder may not yet have run)
+Do not read other review outputs, private old raw QA,gold,secrets; no source edits. Write own designated JSON only.
+
+Methods: primary C vs B tests detailed evidence bundle beyond identical computed decision; A raw secondary. Same policies/visible source, C is runtime-derived not gold. Scope deliberately no recovery/schema evolution/externaltruth/RDF benefit. Four states include E3retrieval omission/E4source absence with byte-identical visible inputs/prompts; their hidden origins must be unknowable. Family-level mean collapses duplicate unknown before state averaging; cluster over families/repeats. Proposed sample count not powered; freeze before eval, no reuse old consumed cohorts. Joint structured decision/support primary, free-text fidelity separate blinded human secondary. Model/budget/response limits/scorer unimplemented pending gates, no pretend experiment result.
+Implementation: selfcontained HTML white/Pretendard,actual offline Python/BFS and OWLRL reachability plus SHACL certificate-field validation. Business report is commoncode, not all from SHACL. compute accepts visible only; source_rows is UI context never prompt. No LLM calls or fake responses. All4case buttons/ABC prompts/showactualstoredreport/download; inpage design summary. Builder smoke assertions are development checks NOT independent scorer. Future evaluation generation absent.
+Coordinator runs targeted6software tests, builder then browser3viewports/download, MkDocsstrict/Chirpy/localsite. Registered checks empty; manual checks separate. No old experimental reruns, paid calls,push,deployment/schedule. Review blockers must be concrete within current design/prototype scope; absence of future evaluation execution is explicitly intended.

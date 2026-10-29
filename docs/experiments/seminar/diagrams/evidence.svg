@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 400" role="img" aria-labelledby="evidence-title evidence-desc" font-family="Pretendard, Noto Sans KR, sans-serif"><title id="evidence-title">시스템별 상태값을 키와 시점으로 연결</title><desc id="evidence-desc">합성 예시다. ERP 부품 상태 Approved, 계약 상태 Active, 검토자 상태 Qualified는 각각 의미가 다르다. 키로 연결하고 부서 변경 이력의 날짜를 확인해야 한다.</desc><defs><marker id="evidence-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#245dc0" stroke-width="1.5"/></marker></defs><rect width="1120" height="400" rx="12" fill="white"/>
+<text x="26" y="32" text-anchor="start" font-size="22" font-weight="700" fill="#142d49">시스템별 상태값을 키와 시점으로 연결</text>
+<text x="1090" y="32" text-anchor="end" font-size="18" font-weight="400" fill="#52677f">설명용 합성 예시 · 실제 스냅샷 아님</text>
+<rect x="20" y="62" width="330" height="175" rx="9" fill="#f4f8fd" stroke="#c7d5e5" stroke-width="1.5"/>
+<text x="36" y="93" text-anchor="start" font-size="22" font-weight="600" fill="#142d49">ERP · 부품</text>
+<text x="36" y="130" text-anchor="start" font-size="18" font-weight="400" fill="#52677f">part_id</text>
+<text x="334" y="130" text-anchor="end" font-size="20" font-weight="400" fill="#245dc0">P1</text>
+<text x="36" y="166" text-anchor="start" font-size="18" font-weight="400" fill="#52677f">status</text>
+<text x="334" y="166" text-anchor="end" font-size="20" font-weight="400" fill="#245dc0">Approved</text>
+<text x="36" y="202" text-anchor="start" font-size="18" font-weight="400" fill="#52677f">contract_id</text>
+<text x="334" y="202" text-anchor="end" font-size="20" font-weight="400" fill="#245dc0">C7</text>
+<rect x="395" y="62" width="330" height="175" rx="9" fill="#f4f8fd" stroke="#c7d5e5" stroke-width="1.5"/>
+<text x="411" y="93" text-anchor="start" font-size="22" font-weight="600" fill="#142d49">계약 시스템</text>
+<text x="411" y="130" text-anchor="start" font-size="18" font-weight="400" fill="#52677f">contract_id</text>
+<text x="709" y="130" text-anchor="end" font-size="20" font-weight="400" fill="#245dc0">C7</text>
+<text x="411" y="166" text-anchor="start" font-size="18" font-weight="400" fill="#52677f">status</text>
+<text x="709" y="166" text-anchor="end" font-size="20" font-weight="400" fill="#245dc0">Active</text>
+<text x="411" y="202" text-anchor="start" font-size="18" font-weight="400" fill="#52677f">reviewer_id</text>
+<text x="709" y="202" text-anchor="end" font-size="20" font-weight="400" fill="#245dc0">R2</text>
+<rect x="770" y="62" width="330" height="175" rx="9" fill="#f4f8fd" stroke="#c7d5e5" stroke-width="1.5"/>
+<text x="786" y="93" text-anchor="start" font-size="22" font-weight="600" fill="#142d49">검토자 명부</text>
+<text x="786" y="130" text-anchor="start" font-size="18" font-weight="400" fill="#52677f">reviewer_id</text>
+<text x="1084" y="130" text-anchor="end" font-size="20" font-weight="400" fill="#245dc0">R2</text>
+<text x="786" y="166" text-anchor="start" font-size="18" font-weight="400" fill="#52677f">status</text>
+<text x="1084" y="166" text-anchor="end" font-size="20" font-weight="400" fill="#245dc0">Qualified</text>
+<text x="786" y="202" text-anchor="start" font-size="18" font-weight="400" fill="#52677f">division</text>
+<text x="1084" y="202" text-anchor="end" font-size="20" font-weight="400" fill="#245dc0">품질팀</text>
+<path d="M350 201 L395 201" fill="none" stroke="#245dc0" stroke-width="2.5" marker-end="url(#evidence-arrow)"/>
+<path d="M725 201 L770 201" fill="none" stroke="#245dc0" stroke-width="2.5" marker-end="url(#evidence-arrow)"/>
+<text x="560" y="269" text-anchor="middle" font-size="21" font-weight="600" fill="#142d49">같은 status 열 이름 ≠ 같은 판단 기준</text>
+<rect x="20" y="288" width="1080" height="77" rx="9" fill="#f4f8fd" stroke="#c7d5e5" stroke-width="1.5"/>
+<text x="40" y="318" text-anchor="start" font-size="20" font-weight="600" fill="#142d49">R2 부서 이력</text>
+<text x="265" y="318" text-anchor="start" font-size="20" font-weight="400" fill="#52677f">2025-01-01 · 구매팀 (old)</text>
+<path d="M620 315 L700 315" fill="none" stroke="#245dc0" stroke-width="2.5" marker-end="url(#evidence-arrow)"/>
+<text x="730" y="318" text-anchor="start" font-size="20" font-weight="400" fill="#245dc0">2025-07-01 · 품질팀 (new)</text>
+<text x="40" y="349" text-anchor="start" font-size="19" font-weight="400" fill="#52677f">질문 기준일에 맞는 상태와 소속을 선택해야 한다.</text>
+</svg>

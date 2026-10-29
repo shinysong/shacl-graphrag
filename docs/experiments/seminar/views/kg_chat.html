@@ -1,0 +1,12 @@
+<div class="columns"><div class="screen"><div class="screen-bar">① 문서와 요구 조건을 프롬프트로 전달</div><section class="panel"><h3>입력</h3><p>문서: “볼트 P1은 조립품 A1에 장착된다.”</p><p>업무 조건: “P1의 제조사를 IRI로 하나 이상 기록해야 한다.”</p><h3>프롬프트 예시</h3><p>문서의 사실을 <code>data.ttl</code>로, 업무 조건을 SHACL 문법의 <code>shapes.ttl</code>로 작성해 줘.</p><p>타입은 <code>Bolt</code>, 관계는 <code>installedIn</code>과 <code>manufacturer</code>를 사용해. 제조사 값은 문서에 없으니 data에는 추가하지 마.</p></section></div><div class="screen"><div class="screen-bar">② RDF와 Shape 초안 · 기대 출력 예시</div><pre><code># data.ttl
+ex:P1 a ex:Bolt ;
+  ex:installedIn ex:A1 .
+
+# shapes.ttl
+ex:ManufacturerShape a sh:NodeShape ;
+  sh:targetNode ex:P1 ;
+  sh:property [
+    sh:path ex:manufacturer ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:IRI
+  ] .</code></pre><p>③ 파일 저장 → RDF 파싱 → pySHACL 실행<br>다음 실습에서 이 데이터와 조건을 직접 검사한다.</p></div></div><p class="small">발표자가 작성한 대화·출력 예시 · 실제 LLM 호출 아님 · 접두사는 실습 노트북에 포함</p>

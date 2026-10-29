@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 360" role="img" aria-labelledby="reachability-title reachability-desc" font-family="Pretendard, Noto Sans KR, sans-serif"><title id="reachability-title">경로 탐색은 연결된 시작점 · 끝점 쌍을 반환</title><desc id="reachability-desc">P1에서 A1을 거쳐 PRODUCT_X에 도달한다. SPARQL 속성 경로의 결과는 시작점과 끝점 쌍이며 경로 자체가 아니다.</desc><defs><marker id="reachability-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#245dc0" stroke-width="1.5"/></marker></defs><rect width="1120" height="360" rx="12" fill="white"/>
+<text x="26" y="32" text-anchor="start" font-size="22" font-weight="700" fill="#142d49">경로 탐색은 연결된 시작점 · 끝점 쌍을 반환</text>
+<rect x="70.0" y="116" width="180" height="58" rx="9" fill="#f4f8fd" stroke="#c7d5e5" stroke-width="1.5"/>
+<text x="160" y="152" text-anchor="middle" font-size="23" font-weight="600" fill="#142d49">ex:P1</text>
+<rect x="470.0" y="116" width="180" height="58" rx="9" fill="#f4f8fd" stroke="#c7d5e5" stroke-width="1.5"/>
+<text x="560" y="152" text-anchor="middle" font-size="23" font-weight="600" fill="#142d49">ex:A1</text>
+<rect x="835.0" y="116" width="250" height="58" rx="9" fill="#f4f8fd" stroke="#c7d5e5" stroke-width="1.5"/>
+<text x="960" y="152" text-anchor="middle" font-size="23" font-weight="600" fill="#142d49">ex:PRODUCT_X</text>
+<path d="M250 145 L470 145" fill="none" stroke="#245dc0" stroke-width="2.5" marker-end="url(#reachability-arrow)"/>
+<text x="360.0" y="133.0" text-anchor="middle" font-size="19" font-weight="400" fill="#245dc0">ex:installedIn</text>
+<path d="M650 145 L835 145" fill="none" stroke="#245dc0" stroke-width="2.5" marker-end="url(#reachability-arrow)"/>
+<text x="742.5" y="133.0" text-anchor="middle" font-size="19" font-weight="400" fill="#245dc0">ex:installedIn</text>
+<path d="M160 176 V245 H960 V176" fill="none" stroke="#245dc0" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#reachability-arrow)"/>
+<text x="560" y="231" text-anchor="middle" font-size="21" font-weight="400" fill="#245dc0">ex:installedIn+ · 한 번 이상 연결</text>
+<text x="28" y="340" text-anchor="start" font-size="18" font-weight="400" fill="#52677f">반환 예: (P1, A1), (P1, PRODUCT_X) · 통과한 노드 목록이나 경로 수를 뜻하지 않는다.</text>
+</svg>

@@ -1,0 +1,119 @@
+{
+  "purpose": "tiny executed teaching examples, not benchmark or external truth validation",
+  "versions": {
+    "rdflib": "7.6.0",
+    "owlrl": "7.6.2",
+    "pyshacl": "0.40.1"
+  },
+  "source_sha256": "0018c144b4f509f431b225047c6a3df00b63f7f15d000307800b5479e3adf3f8",
+  "llm_calls": 0,
+  "original_graph_unchanged": true,
+  "queries": [
+    {
+      "mode": "original",
+      "P1_is_Component": false,
+      "A1_is_Assembly": false,
+      "A1_hasPart_P1": false,
+      "manufacturer_recorded": false,
+      "conforms_two_shapes": false,
+      "violations": [
+        {
+          "focus": "https://example.org/manufacturing/P1",
+          "path": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "component": "HasValueConstraintComponent"
+        },
+        {
+          "focus": "https://example.org/manufacturing/P1",
+          "path": "https://example.org/manufacturing/manufacturer",
+          "component": "MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "mode": "rdfs",
+      "P1_is_Component": true,
+      "A1_is_Assembly": true,
+      "A1_hasPart_P1": false,
+      "manufacturer_recorded": false,
+      "conforms_two_shapes": false,
+      "violations": [
+        {
+          "focus": "https://example.org/manufacturing/P1",
+          "path": "https://example.org/manufacturing/manufacturer",
+          "component": "MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "mode": "owlrl",
+      "P1_is_Component": true,
+      "A1_is_Assembly": true,
+      "A1_hasPart_P1": true,
+      "manufacturer_recorded": false,
+      "conforms_two_shapes": false,
+      "violations": [
+        {
+          "focus": "https://example.org/manufacturing/P1",
+          "path": "https://example.org/manufacturing/manufacturer",
+          "component": "MinCountConstraintComponent"
+        }
+      ]
+    }
+  ],
+  "shape_cases": [
+    {
+      "case": "valid",
+      "added_fact": "ex:P1 ex:manufacturer ex:MakerA .",
+      "conforms": true,
+      "violations": [],
+      "real_world_truth": "not_verified"
+    },
+    {
+      "case": "missing",
+      "added_fact": "(제조사 기록 없음)",
+      "conforms": false,
+      "violations": [
+        {
+          "focus": "https://example.org/manufacturing/P1",
+          "path": "https://example.org/manufacturing/manufacturer",
+          "component": "MinCountConstraintComponent"
+        }
+      ],
+      "real_world_truth": "not_verified"
+    },
+    {
+      "case": "literal",
+      "added_fact": "ex:P1 ex:manufacturer \"MakerA\" .",
+      "conforms": false,
+      "violations": [
+        {
+          "focus": "https://example.org/manufacturing/P1",
+          "path": "https://example.org/manufacturing/manufacturer",
+          "component": "NodeKindConstraintComponent"
+        }
+      ],
+      "real_world_truth": "not_verified"
+    },
+    {
+      "case": "unverified_iri",
+      "added_fact": "ex:P1 ex:manufacturer ex:UnverifiedMaker .",
+      "conforms": true,
+      "violations": [],
+      "real_world_truth": "not_verified"
+    }
+  ],
+  "reachability": [
+    [
+      "A1",
+      "PRODUCT_X"
+    ],
+    [
+      "P1",
+      "A1"
+    ],
+    [
+      "P1",
+      "PRODUCT_X"
+    ]
+  ]
+}

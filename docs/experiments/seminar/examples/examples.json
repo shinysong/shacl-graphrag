@@ -1,0 +1,95 @@
+{
+  "purpose": "executed teaching examples; not benchmark evidence",
+  "paid_calls": 0,
+  "llm_calls": 0,
+  "versions": {
+    "rdflib": "7.6.0",
+    "pyshacl": "0.40.1"
+  },
+  "source_sha256": {
+    "seminar_examples.py": "80d178ed74180a914c11f1ee42b4c4a379f0f9044957eef5a1ff9c9d63168ca1",
+    "unified_rule_lifecycle.py": "bc852e99be05b10910f053c82785e10f68361ddf16e3c6d3675f0d857218bc48"
+  },
+  "mini_cases": [
+    {
+      "case": "within_limit",
+      "input": {
+        "discount": "0.12"
+      },
+      "conforms": true,
+      "results": []
+    },
+    {
+      "case": "over_limit",
+      "input": {
+        "discount": "0.20"
+      },
+      "conforms": false,
+      "results": [
+        {
+          "focusNode": "https://example.org/seminar/order1",
+          "resultPath": "https://example.org/seminar/discount",
+          "value": "0.20",
+          "constraint": "MaxInclusiveConstraintComponent"
+        }
+      ]
+    },
+    {
+      "case": "missing",
+      "input": {
+        "discount": null
+      },
+      "conforms": false,
+      "results": [
+        {
+          "focusNode": "https://example.org/seminar/order1",
+          "resultPath": "https://example.org/seminar/discount",
+          "value": null,
+          "constraint": "MinCountConstraintComponent"
+        }
+      ]
+    }
+  ],
+  "project_decisions": {
+    "Python": {
+      "decision": "blocked",
+      "violations": [
+        "division-separation"
+      ],
+      "missing": []
+    },
+    "SQLite": {
+      "decision": "blocked",
+      "violations": [
+        "division-separation"
+      ],
+      "missing": []
+    },
+    "SHACL": {
+      "decision": "blocked",
+      "violations": [
+        "division-separation"
+      ],
+      "missing": []
+    }
+  },
+  "project_report": {
+    "decision": "blocked",
+    "conforms": false,
+    "policy_eligible": false,
+    "violations": [
+      "division-separation"
+    ],
+    "missing": [],
+    "shacl_validation_results": [
+      {
+        "severity": "sh:Violation",
+        "message": "violation:division-separation",
+        "focus_node": "ex:departments/DEPT_REQ",
+        "result_path": "^ex:requestedByDept / ex:hasReview / ex:reviewedBy / ex:belongsToDept / ex:parentDivision",
+        "value_node": "ex:divisions/DIV_SALES",
+        "constraint_component": "sh:DisjointConstraintComponent"
+      }
+    ]
+  }
+}

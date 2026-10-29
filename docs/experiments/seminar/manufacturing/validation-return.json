@@ -1,0 +1,29 @@
+{
+  "case": "missing",
+  "inference": "none",
+  "conforms": false,
+  "data_file": "case-missing.ttl",
+  "shape_file": "manufacturer-shape.ttl",
+  "data_triples": [
+    [
+      "https://example.org/manufacturing/P1",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "https://example.org/manufacturing/Bolt"
+    ],
+    [
+      "https://example.org/manufacturing/P1",
+      "https://example.org/manufacturing/installedIn",
+      "https://example.org/manufacturing/A1"
+    ]
+  ],
+  "report_rdf_turtle": "@prefix ex: <https://example.org/manufacturing/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode ex:P1 ;\n            sh:resultMessage \"제조사 식별자를 하나 이상 기록하세요.\" ;\n            sh:resultPath ex:manufacturer ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:message \"제조사 식별자를 하나 이상 기록하세요.\" ;\n                    sh:minCount 1 ;\n                    sh:nodeKind sh:IRI ;\n                    sh:path ex:manufacturer ] ] .\n\n",
+  "report_text": "Validation Report\nConforms: False\nResults (1):\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:message Literal(\"제조사 식별자를 하나 이상 기록하세요.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path ex:manufacturer ]\n\tFocus Node: ex:P1\n\tResult Path: ex:manufacturer\n\tMessage: 제조사 식별자를 하나 이상 기록하세요.\n",
+  "violations": [
+    {
+      "focus": "https://example.org/manufacturing/P1",
+      "path": "https://example.org/manufacturing/manufacturer",
+      "component": "MinCountConstraintComponent"
+    }
+  ],
+  "interpretation": "Selected graph failed the declared constraint; external truth is not verified."
+}

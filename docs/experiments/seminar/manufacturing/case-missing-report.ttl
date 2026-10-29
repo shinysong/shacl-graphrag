@@ -1,0 +1,17 @@
+@prefix ex: <https://example.org/manufacturing/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode ex:P1 ;
+            sh:resultMessage "제조사 식별자를 하나 이상 기록하세요." ;
+            sh:resultPath ex:manufacturer ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:message "제조사 식별자를 하나 이상 기록하세요." ;
+                    sh:minCount 1 ;
+                    sh:nodeKind sh:IRI ;
+                    sh:path ex:manufacturer ] ] .
+

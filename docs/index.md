@@ -1,5 +1,15 @@
 # SHACL GraphRAG Lab
 
+## 최근 연구 상태
+
+10월 27~28일에는 기존 탐색 주장을 정리하고 상세 근거 보고서의 효과를 비교하는 새 설계를 작성했습니다. 새 LLM 평가는 아직 실행하지 않았습니다. BPI 2019 원본 로그는 실제 자료 후보로 적합성을 검사했으며 기존 제조 시나리오를 대체하기로 확정하지 않았습니다.
+
+- [최신 연구일지](journal/index.md)
+- [새 연구 설계](experiments/evidence-report-study.md) · [원천·규칙 구축과 병목 진단](experiments/source-to-rule-guide.md)
+- [세미나 자료](experiments/seminar-guide.md) · [오프라인 근거 보고서 데모](experiments/evidence-report-demo/index.html)
+
+아래 소개는 기존 파일럿의 배경과 구현 범위입니다.
+
 최신 실행: [LLM 주도 조회·온톨로지 도구](experiments/records/20261015-llm-ontology-tools.md). 54개 실제 모델 실행의 질문·쿼리·답변과 한계를 공개한다.
 
 AI가 찾은 근거를 답하기 전에 검사하면, 잘못된 답을 얼마나 줄일 수 있을까?

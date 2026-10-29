@@ -1,0 +1,15 @@
+@prefix ns1: <https://example.org/sensor/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ns1:TS1 a ns1:TemperatureSensor ;
+    ns1:observes ns1:RoomA .
+
+ns1:observes rdfs:domain ns1:Sensor ;
+    rdfs:range ns1:Room ;
+    owl:inverseOf ns1:observedBy .
+
+ns1:TemperatureSensor rdfs:subClassOf ns1:Sensor .
+
+ns1:Sensor rdfs:subClassOf ns1:Device .
+

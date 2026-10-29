@@ -1,0 +1,52 @@
+@prefix ns1: <https://example.org/sensor/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ns1:TS1 a rdfs:Resource,
+        ns1:Device,
+        ns1:Sensor,
+        ns1:TemperatureSensor ;
+    ns1:observes ns1:RoomA .
+
+rdf:type a rdf:Property ;
+    rdfs:subPropertyOf rdf:type .
+
+rdfs:domain a rdf:Property ;
+    rdfs:subPropertyOf rdfs:domain .
+
+rdfs:range a rdf:Property ;
+    rdfs:subPropertyOf rdfs:range .
+
+rdfs:subClassOf a rdf:Property ;
+    rdfs:subPropertyOf rdfs:subClassOf .
+
+rdfs:subPropertyOf a rdf:Property ;
+    rdfs:subPropertyOf rdfs:subPropertyOf .
+
+owl:inverseOf a rdf:Property ;
+    rdfs:subPropertyOf owl:inverseOf .
+
+ns1:RoomA a rdfs:Resource,
+        ns1:Room .
+
+ns1:TemperatureSensor a rdfs:Resource ;
+    rdfs:subClassOf ns1:Device,
+        ns1:Sensor .
+
+ns1:observedBy a rdfs:Resource .
+
+ns1:observes a rdf:Property,
+        rdfs:Resource ;
+    rdfs:domain ns1:Sensor ;
+    rdfs:range ns1:Room ;
+    rdfs:subPropertyOf ns1:observes ;
+    owl:inverseOf ns1:observedBy .
+
+ns1:Room a rdfs:Resource .
+
+ns1:Device a rdfs:Resource .
+
+ns1:Sensor a rdfs:Resource ;
+    rdfs:subClassOf ns1:Device .
+

@@ -1,0 +1,46 @@
+@prefix ex: <http://example.org/unified/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/unified/order_requests/REQ_2026_01> a ex:OrderRequest ;
+    ex:achievedMarginRate 0.22 ;
+    ex:appliedDiscountRate 0.12 ;
+    ex:grossAmount 100000.0 ;
+    ex:hasItem <http://example.org/unified/items_contracts/ITEM_101> ;
+    ex:hasReview <http://example.org/unified/approval_reviews/REV_01>,
+        <http://example.org/unified/approval_reviews/REV_02> ;
+    ex:memoCode "MEMO-2026-0001"^^xsd:string ;
+    ex:netAmount 85000.0 ;
+    ex:requestedByDept <http://example.org/unified/departments/DEPT_REQ> .
+
+<http://example.org/unified/approval_reviews/REV_01> a ex:ApprovalReview ;
+    ex:decision "Approve"^^xsd:string ;
+    ex:reviewRole "Primary"^^xsd:string ;
+    ex:reviewedBy <http://example.org/unified/reviewers/USER_PRIMARY> .
+
+<http://example.org/unified/approval_reviews/REV_02> a ex:ApprovalReview ;
+    ex:decision "Approve"^^xsd:string ;
+    ex:reviewRole "Audit"^^xsd:string ;
+    ex:reviewedBy <http://example.org/unified/reviewers/USER_AUDIT> .
+
+<http://example.org/unified/departments/DEPT_REQ> a ex:Department ;
+    ex:parentDivision <http://example.org/unified/divisions/DIV_SALES> .
+
+<http://example.org/unified/departments/DEPT_REV1> a ex:Department ;
+    ex:parentDivision <http://example.org/unified/divisions/DIV_SALES> .
+
+<http://example.org/unified/departments/DEPT_REV2> a ex:Department ;
+    ex:parentDivision <http://example.org/unified/divisions/DIV_AUDIT> .
+
+<http://example.org/unified/items_contracts/ITEM_101> a ex:ItemContract ;
+    ex:contractStatus "Active"^^xsd:string ;
+    ex:maxDiscountRate 0.15 ;
+    ex:minMarginRate 0.18 .
+
+<http://example.org/unified/reviewers/USER_AUDIT> a ex:Reviewer ;
+    ex:belongsToDept <http://example.org/unified/departments/DEPT_REV2> ;
+    ex:qualificationStatus "Qualified"^^xsd:string .
+
+<http://example.org/unified/reviewers/USER_PRIMARY> a ex:Reviewer ;
+    ex:belongsToDept <http://example.org/unified/departments/DEPT_REV1> ;
+    ex:qualificationStatus "Qualified"^^xsd:string .
+

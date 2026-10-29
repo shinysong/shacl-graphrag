@@ -1,5 +1,10 @@
 # 연구 일지
 
+- [2026-10-28 BPI 2019 원본 구매 로그의 연구 적합성](2026-10-28-bpi2019-suitability.md)
+- [2026-10-28 원천 구축과 규칙 적용의 병목 분리](2026-10-28-source-rule-diagnostics.md)
+- [2026-10-27 탐색 연구의 주장별 정리와 새 연구 전환](2026-10-27-exploration-closeout.md)
+- [2026-10-27 제조 사례 중심 세미나와 실행 근거 데모](2026-10-27-seminar-and-demo.md)
+
 - [2026-10-22 LLM 기반 업무 질의의 의미·규칙 개입 통합 원고](2026-10-22-llm-semantic-intervention-paper.md)
 
 - [2026-10-21 같은 질문의 Python·RDF·OWL·SHACL 코드와 호출 흐름](2026-10-21-industrial-code-walkthrough.md)

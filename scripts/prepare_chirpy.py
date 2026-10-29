@@ -108,6 +108,14 @@ def prepare():
     preview_dest = OUTPUT / preview.relative_to(DOCS)
     preview_dest.parent.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(preview, preview_dest)
+    # Public, synthetic development demo; no evaluation gold or private workspace.
+    demo = DOCS / 'experiments/evidence-report-demo'
+    if demo.exists():
+        shutil.copytree(demo, OUTPUT / 'experiments/evidence-report-demo', dirs_exist_ok=True)
+    # Public seminar files only; the standalone deck embeds its font and examples.
+    seminar = DOCS / 'experiments/seminar'
+    if seminar.exists():
+        shutil.copytree(seminar, OUTPUT / 'experiments/seminar', dirs_exist_ok=True)
     for source in DOCS.rglob('*.json'):
         dest = OUTPUT / source.relative_to(DOCS)
         dest.parent.mkdir(parents=True, exist_ok=True)

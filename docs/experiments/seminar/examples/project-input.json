@@ -1,0 +1,64 @@
+{
+  "items_contracts": [
+    {
+      "item_id": "ITEM_101",
+      "contract_status": "Active",
+      "max_discount_rate": 0.15,
+      "min_margin_rate": 0.18
+    }
+  ],
+  "departments": [
+    {
+      "dept_id": "DEPT_REQ",
+      "parent_division_id": "DIV_SALES"
+    },
+    {
+      "dept_id": "DEPT_REV1",
+      "parent_division_id": "DIV_SALES"
+    },
+    {
+      "dept_id": "DEPT_REV2",
+      "parent_division_id": "DIV_AUDIT"
+    }
+  ],
+  "order_requests": [
+    {
+      "request_id": "REQ_2026_01",
+      "item_id": "ITEM_101",
+      "req_dept_id": "DEPT_REQ",
+      "applied_discount_rate": 0.12,
+      "achieved_margin_rate": 0.22,
+      "net_amount": 85000.0,
+      "gross_amount": 100000.0,
+      "memo_code": "MEMO-2026-0001"
+    }
+  ],
+  "reviewers": [
+    {
+      "reviewer_id": "USER_PRIMARY",
+      "belongs_to_dept_id": "DEPT_REV1",
+      "qualification_status": "Qualified"
+    },
+    {
+      "reviewer_id": "USER_AUDIT",
+      "belongs_to_dept_id": "DEPT_REV2",
+      "qualification_status": "Qualified"
+    }
+  ],
+  "approval_reviews": [
+    {
+      "review_id": "REV_01",
+      "request_id": "REQ_2026_01",
+      "reviewer_id": "USER_PRIMARY",
+      "decision": "Approve",
+      "review_role": "Primary"
+    },
+    {
+      "review_id": "REV_02",
+      "request_id": "REQ_2026_01",
+      "reviewer_id": "USER_AUDIT",
+      "decision": "Approve",
+      "review_role": "Audit"
+    }
+  ]
+}

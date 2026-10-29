@@ -1,0 +1,7 @@
+<div class="columns"><section class="panel"><h3>속성명 변경과 의미 변경의 분리</h3><table><thead><tr><th>변경 예</th><th>권장 처리</th></tr></thead><tbody><tr><td>maker → manufacturer</td><td>뜻이 같다면 안정 IRI 유지 + 입력 매핑 변경</td></tr><tr><td>assembledIn → installedIn</td><td>동일 의미인지 먼저 검토; 이름만 보고 통합 금지</td></tr><tr><td>소유 → 운용</td><td>다른 역할이면 별도 속성·정의</td></tr><tr><td>설치 위치의 시점 변경</td><td>관계 레코드에 유효 기간·출처·버전 저장</td></tr></tbody></table></section><section class="panel"><h3>작은 공통 계약 + 도메인 확장</h3><pre><code>원천 필드 / 버전
+       ↓ 매핑
+안정된 관계 IRI + 역할 정의
+       ↓
+질문별 규칙·Shape + 회귀 사례
+       ↓
+영향받는 조회·소비처 확인</code></pre><p>모든 관계를 미리 표준화하기보다 반복 질문에 필요한 범위를 우선 관리한다. 유지보수 비용은 남는다.</p></section></div>

@@ -1,0 +1,52 @@
+@prefix ns1: <https://example.org/manufacturing/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ns1:P1 a rdfs:Resource,
+        ns1:Bolt,
+        ns1:Component,
+        ns1:Fastener ;
+    ns1:installedIn ns1:A1 .
+
+rdf:type a rdf:Property ;
+    rdfs:subPropertyOf rdf:type .
+
+rdfs:domain a rdf:Property ;
+    rdfs:subPropertyOf rdfs:domain .
+
+rdfs:range a rdf:Property ;
+    rdfs:subPropertyOf rdfs:range .
+
+rdfs:subClassOf a rdf:Property ;
+    rdfs:subPropertyOf rdfs:subClassOf .
+
+rdfs:subPropertyOf a rdf:Property ;
+    rdfs:subPropertyOf rdfs:subPropertyOf .
+
+owl:inverseOf a rdf:Property ;
+    rdfs:subPropertyOf owl:inverseOf .
+
+ns1:A1 a rdfs:Resource,
+        ns1:Assembly .
+
+ns1:Bolt a rdfs:Resource ;
+    rdfs:subClassOf ns1:Component,
+        ns1:Fastener .
+
+ns1:hasPart a rdfs:Resource .
+
+ns1:installedIn a rdf:Property,
+        rdfs:Resource ;
+    rdfs:domain ns1:Component ;
+    rdfs:range ns1:Assembly ;
+    rdfs:subPropertyOf ns1:installedIn ;
+    owl:inverseOf ns1:hasPart .
+
+ns1:Assembly a rdfs:Resource .
+
+ns1:Fastener a rdfs:Resource ;
+    rdfs:subClassOf ns1:Component .
+
+ns1:Component a rdfs:Resource .
+

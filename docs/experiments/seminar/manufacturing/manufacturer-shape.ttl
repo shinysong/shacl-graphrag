@@ -1,0 +1,15 @@
+@prefix ex: <https://example.org/manufacturing/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+ex:ManufacturerShape a sh:NodeShape ;
+    # 이 검사는 P1의 제조사 기록만 확인한다.
+    sh:targetNode ex:P1 ;
+    sh:property [
+        sh:path ex:manufacturer ;
+        # 값이 하나 이상이고 IRI인지 검사한다.
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:message "제조사 식별자를 하나 이상 기록하세요."
+    ] .

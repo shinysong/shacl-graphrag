@@ -1,0 +1,19 @@
+@prefix ex: <https://example.org/seminar/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode ex:order1 ;
+            sh:resultMessage "Value is not <= Literal(\"0.15\", datatype=xsd:decimal)" ;
+            sh:resultPath ex:discount ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MaxInclusiveConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:decimal ;
+                    sh:maxCount 1 ;
+                    sh:maxInclusive 0.15 ;
+                    sh:minCount 1 ;
+                    sh:path ex:discount ] ;
+            sh:value 0.20 ] .
+

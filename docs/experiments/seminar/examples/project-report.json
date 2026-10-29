@@ -1,0 +1,19 @@
+{
+  "decision": "blocked",
+  "conforms": false,
+  "policy_eligible": false,
+  "violations": [
+    "division-separation"
+  ],
+  "missing": [],
+  "shacl_validation_results": [
+    {
+      "severity": "sh:Violation",
+      "message": "violation:division-separation",
+      "focus_node": "ex:departments/DEPT_REQ",
+      "result_path": "^ex:requestedByDept / ex:hasReview / ex:reviewedBy / ex:belongsToDept / ex:parentDivision",
+      "value_node": "ex:divisions/DIV_SALES",
+      "constraint_component": "sh:DisjointConstraintComponent"
+    }
+  ]
+}

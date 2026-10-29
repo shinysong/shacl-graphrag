@@ -1,0 +1,6 @@
+<div class="columns"><section class="panel"><h3>스키마 먼저 · 편집 작업의 개념도</h3><div class="screen"><div class="screen-bar">클래스 계층 / 속성 / 개체</div><pre><code>Component
+└─ Fastener
+   └─ Bolt
+
+installedIn: Component → Assembly
+P1: Bolt → installedIn → A1</code></pre></div><p>Protégé / WebProtégé에서 클래스·속성·공리를 편집하고 저장한다.</p></section><section class="panel"><h3>행 데이터에서 그래프까지</h3><table><thead><tr><th>작업</th><th>도구·산출물</th></tr></thead><tbody><tr><td>CSV 정리·ID 맞추기</td><td>OpenRefine</td></tr><tr><td>열 → IRI·관계 매핑</td><td>RDF Transform 확장</td></tr><tr><td>반복 가능한 변환</td><td>Python + RDFLib</td></tr><tr><td>RDF·Shape 직접 작성</td><td>텍스트 편집기 + Turtle</td></tr><tr><td>조건 검사</td><td>pySHACL + 보고서</td></tr></tbody></table><p>UI는 기능 설명용 재구성이다. 설치·실행 캡처가 아니며 RDF 확장 호환성은 확인해야 한다.</p></section></div>

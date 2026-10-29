@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 380" role="img" aria-labelledby="sensorclasses-title sensorclasses-desc" font-family="Pretendard, Noto Sans KR, sans-serif"><title id="sensorclasses-title">클래스 포함 관계에서 개체 타입 도출</title><desc id="sensorclasses-desc">P1은 Bolt이고 Bolt는 Fastener, Fastener는 Component의 하위 클래스다. P1의 Component 타입은 추론된다.</desc><defs><marker id="sensorclasses-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#245dc0" stroke-width="1.5"/></marker></defs><rect width="1120" height="380" rx="12" fill="white"/>
+<text x="26" y="32" text-anchor="start" font-size="22" font-weight="700" fill="#142d49">클래스 포함 관계에서 개체 타입 도출</text>
+<rect x="55.0" y="106" width="180" height="58" rx="9" fill="#f4f8fd" stroke="#c7d5e5" stroke-width="1.5"/>
+<text x="145" y="142" text-anchor="middle" font-size="23" font-weight="600" fill="#142d49">ex:P1</text>
+<rect x="330.0" y="106" width="180" height="58" rx="9" fill="#f4f8fd" stroke="#c7d5e5" stroke-width="1.5"/>
+<text x="420" y="142" text-anchor="middle" font-size="23" font-weight="600" fill="#142d49">ex:Bolt</text>
+<rect x="595.0" y="106" width="210" height="58" rx="9" fill="#f4f8fd" stroke="#c7d5e5" stroke-width="1.5"/>
+<text x="700" y="142" text-anchor="middle" font-size="23" font-weight="600" fill="#142d49">ex:Fastener</text>
+<rect x="880.0" y="106" width="220" height="58" rx="9" fill="#f4f8fd" stroke="#c7d5e5" stroke-width="1.5"/>
+<text x="990" y="142" text-anchor="middle" font-size="23" font-weight="600" fill="#142d49">ex:Component</text>
+<path d="M235 135 L330 135" fill="none" stroke="#245dc0" stroke-width="2.5" marker-end="url(#sensorclasses-arrow)"/>
+<text x="282.5" y="123.0" text-anchor="middle" font-size="19" font-weight="400" fill="#245dc0">rdf:type</text>
+<path d="M510 135 L595 135" fill="none" stroke="#245dc0" stroke-width="2.5" marker-end="url(#sensorclasses-arrow)"/>
+<text x="552.5" y="123.0" text-anchor="middle" font-size="19" font-weight="400" fill="#245dc0">⊆</text>
+<path d="M805 135 L880 135" fill="none" stroke="#245dc0" stroke-width="2.5" marker-end="url(#sensorclasses-arrow)"/>
+<text x="842.5" y="123.0" text-anchor="middle" font-size="19" font-weight="400" fill="#245dc0">⊆</text>
+<path d="M145 166 V260 H990 V166" fill="none" stroke="#245dc0" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#sensorclasses-arrow)"/>
+<text x="560" y="247" text-anchor="middle" font-size="22" font-weight="400" fill="#245dc0">추론: ex:P1 rdf:type ex:Component</text>
+<text x="28" y="360" text-anchor="start" font-size="18" font-weight="400" fill="#52677f">⊆ = rdfs:subClassOf · 실선은 명시한 관계, 점선은 규칙으로 도출한 관계</text>
+</svg>

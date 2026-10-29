@@ -1,0 +1,442 @@
+{
+  "study": "evidence-report-1",
+  "status": "consumed_demo_only_no_model_calls",
+  "synthetic": true,
+  "cases": [
+    {
+      "id": "expired_connected",
+      "label": "만료 인증 · 연결 확인",
+      "visible": {
+        "question": "2026-10-27 현재 CERT-Q의 상태 때문에 PROD-Q를 재검토해야 하며 근거는 무엇인가요?",
+        "certificate_id": "CERT-Q",
+        "product_id": "PROD-Q",
+        "as_of": "2026-10-27",
+        "nodes": {
+          "PART-Q": "Part",
+          "ASM-Q": "Assembly",
+          "PROD-Q": "Product",
+          "PART-Z": "Part",
+          "PROD-Z": "Product"
+        },
+        "policy": {
+          "id": "R-CERT-1",
+          "version": "1",
+          "text": "만료일 당일까지 인증은 유효합니다. 인증이 유효하면 이 인증으로 인한 제품 재검토는 불필요합니다. 만료된 인증의 대상 부품에서 질문 제품까지 partOf 경로가 있으면 재검토가 필요합니다. 판정에 필요한 인증 정보나 관계 근거가 부족하면 unknown입니다. 재검토는 안전성이나 출하 승인 판정이 아닙니다."
+        },
+        "scope": "제공된 기록만 판단 근거로 사용합니다. 관계의 완전성은 보장하지 않습니다.",
+        "rows": [
+          {
+            "row_id": "r-cert",
+            "kind": "certificate",
+            "id": "CERT-Q",
+            "part": "PART-Q",
+            "expires_on": "2026-10-01"
+          },
+          {
+            "row_id": "r-bom-1",
+            "kind": "relation",
+            "subject": "PART-Q",
+            "predicate": "partOf",
+            "object": "ASM-Q"
+          },
+          {
+            "row_id": "r-bom-2",
+            "kind": "relation",
+            "subject": "ASM-Q",
+            "predicate": "partOf",
+            "object": "PROD-Q"
+          },
+          {
+            "row_id": "r-noise",
+            "kind": "relation",
+            "subject": "PART-Z",
+            "predicate": "partOf",
+            "object": "PROD-Z"
+          }
+        ]
+      },
+      "source_rows": [
+        {
+          "row_id": "r-cert",
+          "kind": "certificate",
+          "id": "CERT-Q",
+          "part": "PART-Q",
+          "expires_on": "2026-10-01"
+        },
+        {
+          "row_id": "r-bom-1",
+          "kind": "relation",
+          "subject": "PART-Q",
+          "predicate": "partOf",
+          "object": "ASM-Q"
+        },
+        {
+          "row_id": "r-bom-2",
+          "kind": "relation",
+          "subject": "ASM-Q",
+          "predicate": "partOf",
+          "object": "PROD-Q"
+        },
+        {
+          "row_id": "r-noise",
+          "kind": "relation",
+          "subject": "PART-Z",
+          "predicate": "partOf",
+          "object": "PROD-Z"
+        }
+      ],
+      "report": {
+        "decision": "required",
+        "rule_id": "R-CERT-1",
+        "support_row_ids": [
+          "r-cert",
+          "r-bom-1",
+          "r-bom-2"
+        ],
+        "path_row_ids": [
+          "r-bom-1",
+          "r-bom-2"
+        ],
+        "missing": [],
+        "reason": "만료된 인증의 대상 부품에서 질문 제품까지 연결 경로가 확인됩니다.",
+        "validation": {
+          "conforms": true,
+          "text": "Validation Report\nConforms: True\n"
+        },
+        "derivation": {
+          "python_reachable": true,
+          "owlrl_reachable": true
+        }
+      },
+      "prompts": {
+        "A": "주어진 자료와 R-CERT-1만 사용해 질문에 답하세요. 제공되지 않은 원천의 사실은 추측하지 마세요.\nJSON 객체로 decision(required/not_required/unknown), rule_id, support_row_ids 배열,\nmissing 배열, explanation(한국어)을 반환하세요. 인용은 제공된 행 ID만 사용하세요.\n{\n  \"as_of\": \"2026-10-27\",\n  \"certificate_id\": \"CERT-Q\",\n  \"nodes\": {\n    \"ASM-Q\": \"Assembly\",\n    \"PART-Q\": \"Part\",\n    \"PART-Z\": \"Part\",\n    \"PROD-Q\": \"Product\",\n    \"PROD-Z\": \"Product\"\n  },\n  \"policy\": {\n    \"id\": \"R-CERT-1\",\n    \"text\": \"만료일 당일까지 인증은 유효합니다. 인증이 유효하면 이 인증으로 인한 제품 재검토는 불필요합니다. 만료된 인증의 대상 부품에서 질문 제품까지 partOf 경로가 있으면 재검토가 필요합니다. 판정에 필요한 인증 정보나 관계 근거가 부족하면 unknown입니다. 재검토는 안전성이나 출하 승인 판정이 아닙니다.\",\n    \"version\": \"1\"\n  },\n  \"product_id\": \"PROD-Q\",\n  \"question\": \"2026-10-27 현재 CERT-Q의 상태 때문에 PROD-Q를 재검토해야 하며 근거는 무엇인가요?\",\n  \"rows\": [\n    {\n      \"expires_on\": \"2026-10-01\",\n      \"id\": \"CERT-Q\",\n      \"kind\": \"certificate\",\n      \"part\": \"PART-Q\",\n      \"row_id\": \"r-cert\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"ASM-Q\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-bom-1\",\n      \"subject\": \"PART-Q\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"PROD-Q\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-bom-2\",\n      \"subject\": \"ASM-Q\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"PROD-Z\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-noise\",\n      \"subject\": \"PART-Z\"\n    }\n  ],\n  \"scope\": \"제공된 기록만 판단 근거로 사용합니다. 관계의 완전성은 보장하지 않습니다.\"\n}",
+        "B": "주어진 자료와 R-CERT-1만 사용해 질문에 답하세요. 제공되지 않은 원천의 사실은 추측하지 마세요.\nJSON 객체로 decision(required/not_required/unknown), rule_id, support_row_ids 배열,\nmissing 배열, explanation(한국어)을 반환하세요. 인용은 제공된 행 ID만 사용하세요.\n{\n  \"as_of\": \"2026-10-27\",\n  \"certificate_id\": \"CERT-Q\",\n  \"computed_decision\": \"required\",\n  \"nodes\": {\n    \"ASM-Q\": \"Assembly\",\n    \"PART-Q\": \"Part\",\n    \"PART-Z\": \"Part\",\n    \"PROD-Q\": \"Product\",\n    \"PROD-Z\": \"Product\"\n  },\n  \"policy\": {\n    \"id\": \"R-CERT-1\",\n    \"text\": \"만료일 당일까지 인증은 유효합니다. 인증이 유효하면 이 인증으로 인한 제품 재검토는 불필요합니다. 만료된 인증의 대상 부품에서 질문 제품까지 partOf 경로가 있으면 재검토가 필요합니다. 판정에 필요한 인증 정보나 관계 근거가 부족하면 unknown입니다. 재검토는 안전성이나 출하 승인 판정이 아닙니다.\",\n    \"version\": \"1\"\n  },\n  \"product_id\": \"PROD-Q\",\n  \"question\": \"2026-10-27 현재 CERT-Q의 상태 때문에 PROD-Q를 재검토해야 하며 근거는 무엇인가요?\",\n  \"rows\": [\n    {\n      \"expires_on\": \"2026-10-01\",\n      \"id\": \"CERT-Q\",\n      \"kind\": \"certificate\",\n      \"part\": \"PART-Q\",\n      \"row_id\": \"r-cert\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"ASM-Q\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-bom-1\",\n      \"subject\": \"PART-Q\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"PROD-Q\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-bom-2\",\n      \"subject\": \"ASM-Q\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"PROD-Z\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-noise\",\n      \"subject\": \"PART-Z\"\n    }\n  ],\n  \"scope\": \"제공된 기록만 판단 근거로 사용합니다. 관계의 완전성은 보장하지 않습니다.\"\n}",
+        "C": "주어진 자료와 R-CERT-1만 사용해 질문에 답하세요. 제공되지 않은 원천의 사실은 추측하지 마세요.\nJSON 객체로 decision(required/not_required/unknown), rule_id, support_row_ids 배열,\nmissing 배열, explanation(한국어)을 반환하세요. 인용은 제공된 행 ID만 사용하세요.\n{\n  \"as_of\": \"2026-10-27\",\n  \"certificate_id\": \"CERT-Q\",\n  \"computed_decision\": \"required\",\n  \"computed_evidence\": {\n    \"missing\": [],\n    \"path_row_ids\": [\n      \"r-bom-1\",\n      \"r-bom-2\"\n    ],\n    \"reason\": \"만료된 인증의 대상 부품에서 질문 제품까지 연결 경로가 확인됩니다.\",\n    \"rule_id\": \"R-CERT-1\",\n    \"support_row_ids\": [\n      \"r-cert\",\n      \"r-bom-1\",\n      \"r-bom-2\"\n    ]\n  },\n  \"nodes\": {\n    \"ASM-Q\": \"Assembly\",\n    \"PART-Q\": \"Part\",\n    \"PART-Z\": \"Part\",\n    \"PROD-Q\": \"Product\",\n    \"PROD-Z\": \"Product\"\n  },\n  \"policy\": {\n    \"id\": \"R-CERT-1\",\n    \"text\": \"만료일 당일까지 인증은 유효합니다. 인증이 유효하면 이 인증으로 인한 제품 재검토는 불필요합니다. 만료된 인증의 대상 부품에서 질문 제품까지 partOf 경로가 있으면 재검토가 필요합니다. 판정에 필요한 인증 정보나 관계 근거가 부족하면 unknown입니다. 재검토는 안전성이나 출하 승인 판정이 아닙니다.\",\n    \"version\": \"1\"\n  },\n  \"product_id\": \"PROD-Q\",\n  \"question\": \"2026-10-27 현재 CERT-Q의 상태 때문에 PROD-Q를 재검토해야 하며 근거는 무엇인가요?\",\n  \"rows\": [\n    {\n      \"expires_on\": \"2026-10-01\",\n      \"id\": \"CERT-Q\",\n      \"kind\": \"certificate\",\n      \"part\": \"PART-Q\",\n      \"row_id\": \"r-cert\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"ASM-Q\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-bom-1\",\n      \"subject\": \"PART-Q\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"PROD-Q\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-bom-2\",\n      \"subject\": \"ASM-Q\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"PROD-Z\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-noise\",\n      \"subject\": \"PART-Z\"\n    }\n  ],\n  \"scope\": \"제공된 기록만 판단 근거로 사용합니다. 관계의 완전성은 보장하지 않습니다.\"\n}"
+      },
+      "model_output": null
+    },
+    {
+      "id": "valid_connected",
+      "label": "유효 인증 · 재검토 불필요",
+      "visible": {
+        "question": "2026-10-27 현재 CERT-Q의 상태 때문에 PROD-Q를 재검토해야 하며 근거는 무엇인가요?",
+        "certificate_id": "CERT-Q",
+        "product_id": "PROD-Q",
+        "as_of": "2026-10-27",
+        "nodes": {
+          "PART-Q": "Part",
+          "ASM-Q": "Assembly",
+          "PROD-Q": "Product",
+          "PART-Z": "Part",
+          "PROD-Z": "Product"
+        },
+        "policy": {
+          "id": "R-CERT-1",
+          "version": "1",
+          "text": "만료일 당일까지 인증은 유효합니다. 인증이 유효하면 이 인증으로 인한 제품 재검토는 불필요합니다. 만료된 인증의 대상 부품에서 질문 제품까지 partOf 경로가 있으면 재검토가 필요합니다. 판정에 필요한 인증 정보나 관계 근거가 부족하면 unknown입니다. 재검토는 안전성이나 출하 승인 판정이 아닙니다."
+        },
+        "scope": "제공된 기록만 판단 근거로 사용합니다. 관계의 완전성은 보장하지 않습니다.",
+        "rows": [
+          {
+            "row_id": "r-cert",
+            "kind": "certificate",
+            "id": "CERT-Q",
+            "part": "PART-Q",
+            "expires_on": "2026-12-31"
+          },
+          {
+            "row_id": "r-bom-1",
+            "kind": "relation",
+            "subject": "PART-Q",
+            "predicate": "partOf",
+            "object": "ASM-Q"
+          },
+          {
+            "row_id": "r-bom-2",
+            "kind": "relation",
+            "subject": "ASM-Q",
+            "predicate": "partOf",
+            "object": "PROD-Q"
+          },
+          {
+            "row_id": "r-noise",
+            "kind": "relation",
+            "subject": "PART-Z",
+            "predicate": "partOf",
+            "object": "PROD-Z"
+          }
+        ]
+      },
+      "source_rows": [
+        {
+          "row_id": "r-cert",
+          "kind": "certificate",
+          "id": "CERT-Q",
+          "part": "PART-Q",
+          "expires_on": "2026-12-31"
+        },
+        {
+          "row_id": "r-bom-1",
+          "kind": "relation",
+          "subject": "PART-Q",
+          "predicate": "partOf",
+          "object": "ASM-Q"
+        },
+        {
+          "row_id": "r-bom-2",
+          "kind": "relation",
+          "subject": "ASM-Q",
+          "predicate": "partOf",
+          "object": "PROD-Q"
+        },
+        {
+          "row_id": "r-noise",
+          "kind": "relation",
+          "subject": "PART-Z",
+          "predicate": "partOf",
+          "object": "PROD-Z"
+        }
+      ],
+      "report": {
+        "decision": "not_required",
+        "rule_id": "R-CERT-1",
+        "support_row_ids": [
+          "r-cert"
+        ],
+        "path_row_ids": [],
+        "missing": [],
+        "reason": "인증이 기준일에 유효하므로 이 인증으로 인한 재검토는 불필요합니다.",
+        "validation": {
+          "conforms": true,
+          "text": "Validation Report\nConforms: True\n"
+        },
+        "derivation": {
+          "python_reachable": true,
+          "owlrl_reachable": true
+        }
+      },
+      "prompts": {
+        "A": "주어진 자료와 R-CERT-1만 사용해 질문에 답하세요. 제공되지 않은 원천의 사실은 추측하지 마세요.\nJSON 객체로 decision(required/not_required/unknown), rule_id, support_row_ids 배열,\nmissing 배열, explanation(한국어)을 반환하세요. 인용은 제공된 행 ID만 사용하세요.\n{\n  \"as_of\": \"2026-10-27\",\n  \"certificate_id\": \"CERT-Q\",\n  \"nodes\": {\n    \"ASM-Q\": \"Assembly\",\n    \"PART-Q\": \"Part\",\n    \"PART-Z\": \"Part\",\n    \"PROD-Q\": \"Product\",\n    \"PROD-Z\": \"Product\"\n  },\n  \"policy\": {\n    \"id\": \"R-CERT-1\",\n    \"text\": \"만료일 당일까지 인증은 유효합니다. 인증이 유효하면 이 인증으로 인한 제품 재검토는 불필요합니다. 만료된 인증의 대상 부품에서 질문 제품까지 partOf 경로가 있으면 재검토가 필요합니다. 판정에 필요한 인증 정보나 관계 근거가 부족하면 unknown입니다. 재검토는 안전성이나 출하 승인 판정이 아닙니다.\",\n    \"version\": \"1\"\n  },\n  \"product_id\": \"PROD-Q\",\n  \"question\": \"2026-10-27 현재 CERT-Q의 상태 때문에 PROD-Q를 재검토해야 하며 근거는 무엇인가요?\",\n  \"rows\": [\n    {\n      \"expires_on\": \"2026-12-31\",\n      \"id\": \"CERT-Q\",\n      \"kind\": \"certificate\",\n      \"part\": \"PART-Q\",\n      \"row_id\": \"r-cert\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"ASM-Q\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-bom-1\",\n      \"subject\": \"PART-Q\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"PROD-Q\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-bom-2\",\n      \"subject\": \"ASM-Q\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"PROD-Z\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-noise\",\n      \"subject\": \"PART-Z\"\n    }\n  ],\n  \"scope\": \"제공된 기록만 판단 근거로 사용합니다. 관계의 완전성은 보장하지 않습니다.\"\n}",
+        "B": "주어진 자료와 R-CERT-1만 사용해 질문에 답하세요. 제공되지 않은 원천의 사실은 추측하지 마세요.\nJSON 객체로 decision(required/not_required/unknown), rule_id, support_row_ids 배열,\nmissing 배열, explanation(한국어)을 반환하세요. 인용은 제공된 행 ID만 사용하세요.\n{\n  \"as_of\": \"2026-10-27\",\n  \"certificate_id\": \"CERT-Q\",\n  \"computed_decision\": \"not_required\",\n  \"nodes\": {\n    \"ASM-Q\": \"Assembly\",\n    \"PART-Q\": \"Part\",\n    \"PART-Z\": \"Part\",\n    \"PROD-Q\": \"Product\",\n    \"PROD-Z\": \"Product\"\n  },\n  \"policy\": {\n    \"id\": \"R-CERT-1\",\n    \"text\": \"만료일 당일까지 인증은 유효합니다. 인증이 유효하면 이 인증으로 인한 제품 재검토는 불필요합니다. 만료된 인증의 대상 부품에서 질문 제품까지 partOf 경로가 있으면 재검토가 필요합니다. 판정에 필요한 인증 정보나 관계 근거가 부족하면 unknown입니다. 재검토는 안전성이나 출하 승인 판정이 아닙니다.\",\n    \"version\": \"1\"\n  },\n  \"product_id\": \"PROD-Q\",\n  \"question\": \"2026-10-27 현재 CERT-Q의 상태 때문에 PROD-Q를 재검토해야 하며 근거는 무엇인가요?\",\n  \"rows\": [\n    {\n      \"expires_on\": \"2026-12-31\",\n      \"id\": \"CERT-Q\",\n      \"kind\": \"certificate\",\n      \"part\": \"PART-Q\",\n      \"row_id\": \"r-cert\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"ASM-Q\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-bom-1\",\n      \"subject\": \"PART-Q\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"PROD-Q\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-bom-2\",\n      \"subject\": \"ASM-Q\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"PROD-Z\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-noise\",\n      \"subject\": \"PART-Z\"\n    }\n  ],\n  \"scope\": \"제공된 기록만 판단 근거로 사용합니다. 관계의 완전성은 보장하지 않습니다.\"\n}",
+        "C": "주어진 자료와 R-CERT-1만 사용해 질문에 답하세요. 제공되지 않은 원천의 사실은 추측하지 마세요.\nJSON 객체로 decision(required/not_required/unknown), rule_id, support_row_ids 배열,\nmissing 배열, explanation(한국어)을 반환하세요. 인용은 제공된 행 ID만 사용하세요.\n{\n  \"as_of\": \"2026-10-27\",\n  \"certificate_id\": \"CERT-Q\",\n  \"computed_decision\": \"not_required\",\n  \"computed_evidence\": {\n    \"missing\": [],\n    \"path_row_ids\": [],\n    \"reason\": \"인증이 기준일에 유효하므로 이 인증으로 인한 재검토는 불필요합니다.\",\n    \"rule_id\": \"R-CERT-1\",\n    \"support_row_ids\": [\n      \"r-cert\"\n    ]\n  },\n  \"nodes\": {\n    \"ASM-Q\": \"Assembly\",\n    \"PART-Q\": \"Part\",\n    \"PART-Z\": \"Part\",\n    \"PROD-Q\": \"Product\",\n    \"PROD-Z\": \"Product\"\n  },\n  \"policy\": {\n    \"id\": \"R-CERT-1\",\n    \"text\": \"만료일 당일까지 인증은 유효합니다. 인증이 유효하면 이 인증으로 인한 제품 재검토는 불필요합니다. 만료된 인증의 대상 부품에서 질문 제품까지 partOf 경로가 있으면 재검토가 필요합니다. 판정에 필요한 인증 정보나 관계 근거가 부족하면 unknown입니다. 재검토는 안전성이나 출하 승인 판정이 아닙니다.\",\n    \"version\": \"1\"\n  },\n  \"product_id\": \"PROD-Q\",\n  \"question\": \"2026-10-27 현재 CERT-Q의 상태 때문에 PROD-Q를 재검토해야 하며 근거는 무엇인가요?\",\n  \"rows\": [\n    {\n      \"expires_on\": \"2026-12-31\",\n      \"id\": \"CERT-Q\",\n      \"kind\": \"certificate\",\n      \"part\": \"PART-Q\",\n      \"row_id\": \"r-cert\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"ASM-Q\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-bom-1\",\n      \"subject\": \"PART-Q\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"PROD-Q\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-bom-2\",\n      \"subject\": \"ASM-Q\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"PROD-Z\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-noise\",\n      \"subject\": \"PART-Z\"\n    }\n  ],\n  \"scope\": \"제공된 기록만 판단 근거로 사용합니다. 관계의 완전성은 보장하지 않습니다.\"\n}"
+      },
+      "model_output": null
+    },
+    {
+      "id": "retrieval_omission",
+      "label": "검색에서 빠진 관계",
+      "visible": {
+        "question": "2026-10-27 현재 CERT-Q의 상태 때문에 PROD-Q를 재검토해야 하며 근거는 무엇인가요?",
+        "certificate_id": "CERT-Q",
+        "product_id": "PROD-Q",
+        "as_of": "2026-10-27",
+        "nodes": {
+          "PART-Q": "Part",
+          "ASM-Q": "Assembly",
+          "PROD-Q": "Product",
+          "PART-Z": "Part",
+          "PROD-Z": "Product"
+        },
+        "policy": {
+          "id": "R-CERT-1",
+          "version": "1",
+          "text": "만료일 당일까지 인증은 유효합니다. 인증이 유효하면 이 인증으로 인한 제품 재검토는 불필요합니다. 만료된 인증의 대상 부품에서 질문 제품까지 partOf 경로가 있으면 재검토가 필요합니다. 판정에 필요한 인증 정보나 관계 근거가 부족하면 unknown입니다. 재검토는 안전성이나 출하 승인 판정이 아닙니다."
+        },
+        "scope": "제공된 기록만 판단 근거로 사용합니다. 관계의 완전성은 보장하지 않습니다.",
+        "rows": [
+          {
+            "row_id": "r-cert",
+            "kind": "certificate",
+            "id": "CERT-Q",
+            "part": "PART-Q",
+            "expires_on": "2026-10-01"
+          },
+          {
+            "row_id": "r-bom-1",
+            "kind": "relation",
+            "subject": "PART-Q",
+            "predicate": "partOf",
+            "object": "ASM-Q"
+          },
+          {
+            "row_id": "r-noise",
+            "kind": "relation",
+            "subject": "PART-Z",
+            "predicate": "partOf",
+            "object": "PROD-Z"
+          }
+        ]
+      },
+      "source_rows": [
+        {
+          "row_id": "r-cert",
+          "kind": "certificate",
+          "id": "CERT-Q",
+          "part": "PART-Q",
+          "expires_on": "2026-10-01"
+        },
+        {
+          "row_id": "r-bom-1",
+          "kind": "relation",
+          "subject": "PART-Q",
+          "predicate": "partOf",
+          "object": "ASM-Q"
+        },
+        {
+          "row_id": "r-bom-2",
+          "kind": "relation",
+          "subject": "ASM-Q",
+          "predicate": "partOf",
+          "object": "PROD-Q"
+        },
+        {
+          "row_id": "r-noise",
+          "kind": "relation",
+          "subject": "PART-Z",
+          "predicate": "partOf",
+          "object": "PROD-Z"
+        }
+      ],
+      "report": {
+        "decision": "unknown",
+        "rule_id": "R-CERT-1",
+        "support_row_ids": [
+          "r-cert"
+        ],
+        "path_row_ids": [],
+        "missing": [
+          "인증 대상 부품에서 질문 제품까지의 완전한 partOf 경로"
+        ],
+        "reason": "제공된 관계로는 제품까지의 연결을 확인할 수 없습니다. 누락 원인은 이 자료만으로 구별하지 못합니다.",
+        "validation": {
+          "conforms": true,
+          "text": "Validation Report\nConforms: True\n"
+        },
+        "derivation": {
+          "python_reachable": false,
+          "owlrl_reachable": false
+        }
+      },
+      "prompts": {
+        "A": "주어진 자료와 R-CERT-1만 사용해 질문에 답하세요. 제공되지 않은 원천의 사실은 추측하지 마세요.\nJSON 객체로 decision(required/not_required/unknown), rule_id, support_row_ids 배열,\nmissing 배열, explanation(한국어)을 반환하세요. 인용은 제공된 행 ID만 사용하세요.\n{\n  \"as_of\": \"2026-10-27\",\n  \"certificate_id\": \"CERT-Q\",\n  \"nodes\": {\n    \"ASM-Q\": \"Assembly\",\n    \"PART-Q\": \"Part\",\n    \"PART-Z\": \"Part\",\n    \"PROD-Q\": \"Product\",\n    \"PROD-Z\": \"Product\"\n  },\n  \"policy\": {\n    \"id\": \"R-CERT-1\",\n    \"text\": \"만료일 당일까지 인증은 유효합니다. 인증이 유효하면 이 인증으로 인한 제품 재검토는 불필요합니다. 만료된 인증의 대상 부품에서 질문 제품까지 partOf 경로가 있으면 재검토가 필요합니다. 판정에 필요한 인증 정보나 관계 근거가 부족하면 unknown입니다. 재검토는 안전성이나 출하 승인 판정이 아닙니다.\",\n    \"version\": \"1\"\n  },\n  \"product_id\": \"PROD-Q\",\n  \"question\": \"2026-10-27 현재 CERT-Q의 상태 때문에 PROD-Q를 재검토해야 하며 근거는 무엇인가요?\",\n  \"rows\": [\n    {\n      \"expires_on\": \"2026-10-01\",\n      \"id\": \"CERT-Q\",\n      \"kind\": \"certificate\",\n      \"part\": \"PART-Q\",\n      \"row_id\": \"r-cert\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"ASM-Q\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-bom-1\",\n      \"subject\": \"PART-Q\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"PROD-Z\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-noise\",\n      \"subject\": \"PART-Z\"\n    }\n  ],\n  \"scope\": \"제공된 기록만 판단 근거로 사용합니다. 관계의 완전성은 보장하지 않습니다.\"\n}",
+        "B": "주어진 자료와 R-CERT-1만 사용해 질문에 답하세요. 제공되지 않은 원천의 사실은 추측하지 마세요.\nJSON 객체로 decision(required/not_required/unknown), rule_id, support_row_ids 배열,\nmissing 배열, explanation(한국어)을 반환하세요. 인용은 제공된 행 ID만 사용하세요.\n{\n  \"as_of\": \"2026-10-27\",\n  \"certificate_id\": \"CERT-Q\",\n  \"computed_decision\": \"unknown\",\n  \"nodes\": {\n    \"ASM-Q\": \"Assembly\",\n    \"PART-Q\": \"Part\",\n    \"PART-Z\": \"Part\",\n    \"PROD-Q\": \"Product\",\n    \"PROD-Z\": \"Product\"\n  },\n  \"policy\": {\n    \"id\": \"R-CERT-1\",\n    \"text\": \"만료일 당일까지 인증은 유효합니다. 인증이 유효하면 이 인증으로 인한 제품 재검토는 불필요합니다. 만료된 인증의 대상 부품에서 질문 제품까지 partOf 경로가 있으면 재검토가 필요합니다. 판정에 필요한 인증 정보나 관계 근거가 부족하면 unknown입니다. 재검토는 안전성이나 출하 승인 판정이 아닙니다.\",\n    \"version\": \"1\"\n  },\n  \"product_id\": \"PROD-Q\",\n  \"question\": \"2026-10-27 현재 CERT-Q의 상태 때문에 PROD-Q를 재검토해야 하며 근거는 무엇인가요?\",\n  \"rows\": [\n    {\n      \"expires_on\": \"2026-10-01\",\n      \"id\": \"CERT-Q\",\n      \"kind\": \"certificate\",\n      \"part\": \"PART-Q\",\n      \"row_id\": \"r-cert\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"ASM-Q\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-bom-1\",\n      \"subject\": \"PART-Q\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"PROD-Z\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-noise\",\n      \"subject\": \"PART-Z\"\n    }\n  ],\n  \"scope\": \"제공된 기록만 판단 근거로 사용합니다. 관계의 완전성은 보장하지 않습니다.\"\n}",
+        "C": "주어진 자료와 R-CERT-1만 사용해 질문에 답하세요. 제공되지 않은 원천의 사실은 추측하지 마세요.\nJSON 객체로 decision(required/not_required/unknown), rule_id, support_row_ids 배열,\nmissing 배열, explanation(한국어)을 반환하세요. 인용은 제공된 행 ID만 사용하세요.\n{\n  \"as_of\": \"2026-10-27\",\n  \"certificate_id\": \"CERT-Q\",\n  \"computed_decision\": \"unknown\",\n  \"computed_evidence\": {\n    \"missing\": [\n      \"인증 대상 부품에서 질문 제품까지의 완전한 partOf 경로\"\n    ],\n    \"path_row_ids\": [],\n    \"reason\": \"제공된 관계로는 제품까지의 연결을 확인할 수 없습니다. 누락 원인은 이 자료만으로 구별하지 못합니다.\",\n    \"rule_id\": \"R-CERT-1\",\n    \"support_row_ids\": [\n      \"r-cert\"\n    ]\n  },\n  \"nodes\": {\n    \"ASM-Q\": \"Assembly\",\n    \"PART-Q\": \"Part\",\n    \"PART-Z\": \"Part\",\n    \"PROD-Q\": \"Product\",\n    \"PROD-Z\": \"Product\"\n  },\n  \"policy\": {\n    \"id\": \"R-CERT-1\",\n    \"text\": \"만료일 당일까지 인증은 유효합니다. 인증이 유효하면 이 인증으로 인한 제품 재검토는 불필요합니다. 만료된 인증의 대상 부품에서 질문 제품까지 partOf 경로가 있으면 재검토가 필요합니다. 판정에 필요한 인증 정보나 관계 근거가 부족하면 unknown입니다. 재검토는 안전성이나 출하 승인 판정이 아닙니다.\",\n    \"version\": \"1\"\n  },\n  \"product_id\": \"PROD-Q\",\n  \"question\": \"2026-10-27 현재 CERT-Q의 상태 때문에 PROD-Q를 재검토해야 하며 근거는 무엇인가요?\",\n  \"rows\": [\n    {\n      \"expires_on\": \"2026-10-01\",\n      \"id\": \"CERT-Q\",\n      \"kind\": \"certificate\",\n      \"part\": \"PART-Q\",\n      \"row_id\": \"r-cert\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"ASM-Q\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-bom-1\",\n      \"subject\": \"PART-Q\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"PROD-Z\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-noise\",\n      \"subject\": \"PART-Z\"\n    }\n  ],\n  \"scope\": \"제공된 기록만 판단 근거로 사용합니다. 관계의 완전성은 보장하지 않습니다.\"\n}"
+      },
+      "model_output": null
+    },
+    {
+      "id": "source_absence",
+      "label": "원천에도 없는 관계",
+      "visible": {
+        "question": "2026-10-27 현재 CERT-Q의 상태 때문에 PROD-Q를 재검토해야 하며 근거는 무엇인가요?",
+        "certificate_id": "CERT-Q",
+        "product_id": "PROD-Q",
+        "as_of": "2026-10-27",
+        "nodes": {
+          "PART-Q": "Part",
+          "ASM-Q": "Assembly",
+          "PROD-Q": "Product",
+          "PART-Z": "Part",
+          "PROD-Z": "Product"
+        },
+        "policy": {
+          "id": "R-CERT-1",
+          "version": "1",
+          "text": "만료일 당일까지 인증은 유효합니다. 인증이 유효하면 이 인증으로 인한 제품 재검토는 불필요합니다. 만료된 인증의 대상 부품에서 질문 제품까지 partOf 경로가 있으면 재검토가 필요합니다. 판정에 필요한 인증 정보나 관계 근거가 부족하면 unknown입니다. 재검토는 안전성이나 출하 승인 판정이 아닙니다."
+        },
+        "scope": "제공된 기록만 판단 근거로 사용합니다. 관계의 완전성은 보장하지 않습니다.",
+        "rows": [
+          {
+            "row_id": "r-cert",
+            "kind": "certificate",
+            "id": "CERT-Q",
+            "part": "PART-Q",
+            "expires_on": "2026-10-01"
+          },
+          {
+            "row_id": "r-bom-1",
+            "kind": "relation",
+            "subject": "PART-Q",
+            "predicate": "partOf",
+            "object": "ASM-Q"
+          },
+          {
+            "row_id": "r-noise",
+            "kind": "relation",
+            "subject": "PART-Z",
+            "predicate": "partOf",
+            "object": "PROD-Z"
+          }
+        ]
+      },
+      "source_rows": [
+        {
+          "row_id": "r-cert",
+          "kind": "certificate",
+          "id": "CERT-Q",
+          "part": "PART-Q",
+          "expires_on": "2026-10-01"
+        },
+        {
+          "row_id": "r-bom-1",
+          "kind": "relation",
+          "subject": "PART-Q",
+          "predicate": "partOf",
+          "object": "ASM-Q"
+        },
+        {
+          "row_id": "r-noise",
+          "kind": "relation",
+          "subject": "PART-Z",
+          "predicate": "partOf",
+          "object": "PROD-Z"
+        }
+      ],
+      "report": {
+        "decision": "unknown",
+        "rule_id": "R-CERT-1",
+        "support_row_ids": [
+          "r-cert"
+        ],
+        "path_row_ids": [],
+        "missing": [
+          "인증 대상 부품에서 질문 제품까지의 완전한 partOf 경로"
+        ],
+        "reason": "제공된 관계로는 제품까지의 연결을 확인할 수 없습니다. 누락 원인은 이 자료만으로 구별하지 못합니다.",
+        "validation": {
+          "conforms": true,
+          "text": "Validation Report\nConforms: True\n"
+        },
+        "derivation": {
+          "python_reachable": false,
+          "owlrl_reachable": false
+        }
+      },
+      "prompts": {
+        "A": "주어진 자료와 R-CERT-1만 사용해 질문에 답하세요. 제공되지 않은 원천의 사실은 추측하지 마세요.\nJSON 객체로 decision(required/not_required/unknown), rule_id, support_row_ids 배열,\nmissing 배열, explanation(한국어)을 반환하세요. 인용은 제공된 행 ID만 사용하세요.\n{\n  \"as_of\": \"2026-10-27\",\n  \"certificate_id\": \"CERT-Q\",\n  \"nodes\": {\n    \"ASM-Q\": \"Assembly\",\n    \"PART-Q\": \"Part\",\n    \"PART-Z\": \"Part\",\n    \"PROD-Q\": \"Product\",\n    \"PROD-Z\": \"Product\"\n  },\n  \"policy\": {\n    \"id\": \"R-CERT-1\",\n    \"text\": \"만료일 당일까지 인증은 유효합니다. 인증이 유효하면 이 인증으로 인한 제품 재검토는 불필요합니다. 만료된 인증의 대상 부품에서 질문 제품까지 partOf 경로가 있으면 재검토가 필요합니다. 판정에 필요한 인증 정보나 관계 근거가 부족하면 unknown입니다. 재검토는 안전성이나 출하 승인 판정이 아닙니다.\",\n    \"version\": \"1\"\n  },\n  \"product_id\": \"PROD-Q\",\n  \"question\": \"2026-10-27 현재 CERT-Q의 상태 때문에 PROD-Q를 재검토해야 하며 근거는 무엇인가요?\",\n  \"rows\": [\n    {\n      \"expires_on\": \"2026-10-01\",\n      \"id\": \"CERT-Q\",\n      \"kind\": \"certificate\",\n      \"part\": \"PART-Q\",\n      \"row_id\": \"r-cert\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"ASM-Q\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-bom-1\",\n      \"subject\": \"PART-Q\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"PROD-Z\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-noise\",\n      \"subject\": \"PART-Z\"\n    }\n  ],\n  \"scope\": \"제공된 기록만 판단 근거로 사용합니다. 관계의 완전성은 보장하지 않습니다.\"\n}",
+        "B": "주어진 자료와 R-CERT-1만 사용해 질문에 답하세요. 제공되지 않은 원천의 사실은 추측하지 마세요.\nJSON 객체로 decision(required/not_required/unknown), rule_id, support_row_ids 배열,\nmissing 배열, explanation(한국어)을 반환하세요. 인용은 제공된 행 ID만 사용하세요.\n{\n  \"as_of\": \"2026-10-27\",\n  \"certificate_id\": \"CERT-Q\",\n  \"computed_decision\": \"unknown\",\n  \"nodes\": {\n    \"ASM-Q\": \"Assembly\",\n    \"PART-Q\": \"Part\",\n    \"PART-Z\": \"Part\",\n    \"PROD-Q\": \"Product\",\n    \"PROD-Z\": \"Product\"\n  },\n  \"policy\": {\n    \"id\": \"R-CERT-1\",\n    \"text\": \"만료일 당일까지 인증은 유효합니다. 인증이 유효하면 이 인증으로 인한 제품 재검토는 불필요합니다. 만료된 인증의 대상 부품에서 질문 제품까지 partOf 경로가 있으면 재검토가 필요합니다. 판정에 필요한 인증 정보나 관계 근거가 부족하면 unknown입니다. 재검토는 안전성이나 출하 승인 판정이 아닙니다.\",\n    \"version\": \"1\"\n  },\n  \"product_id\": \"PROD-Q\",\n  \"question\": \"2026-10-27 현재 CERT-Q의 상태 때문에 PROD-Q를 재검토해야 하며 근거는 무엇인가요?\",\n  \"rows\": [\n    {\n      \"expires_on\": \"2026-10-01\",\n      \"id\": \"CERT-Q\",\n      \"kind\": \"certificate\",\n      \"part\": \"PART-Q\",\n      \"row_id\": \"r-cert\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"ASM-Q\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-bom-1\",\n      \"subject\": \"PART-Q\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"PROD-Z\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-noise\",\n      \"subject\": \"PART-Z\"\n    }\n  ],\n  \"scope\": \"제공된 기록만 판단 근거로 사용합니다. 관계의 완전성은 보장하지 않습니다.\"\n}",
+        "C": "주어진 자료와 R-CERT-1만 사용해 질문에 답하세요. 제공되지 않은 원천의 사실은 추측하지 마세요.\nJSON 객체로 decision(required/not_required/unknown), rule_id, support_row_ids 배열,\nmissing 배열, explanation(한국어)을 반환하세요. 인용은 제공된 행 ID만 사용하세요.\n{\n  \"as_of\": \"2026-10-27\",\n  \"certificate_id\": \"CERT-Q\",\n  \"computed_decision\": \"unknown\",\n  \"computed_evidence\": {\n    \"missing\": [\n      \"인증 대상 부품에서 질문 제품까지의 완전한 partOf 경로\"\n    ],\n    \"path_row_ids\": [],\n    \"reason\": \"제공된 관계로는 제품까지의 연결을 확인할 수 없습니다. 누락 원인은 이 자료만으로 구별하지 못합니다.\",\n    \"rule_id\": \"R-CERT-1\",\n    \"support_row_ids\": [\n      \"r-cert\"\n    ]\n  },\n  \"nodes\": {\n    \"ASM-Q\": \"Assembly\",\n    \"PART-Q\": \"Part\",\n    \"PART-Z\": \"Part\",\n    \"PROD-Q\": \"Product\",\n    \"PROD-Z\": \"Product\"\n  },\n  \"policy\": {\n    \"id\": \"R-CERT-1\",\n    \"text\": \"만료일 당일까지 인증은 유효합니다. 인증이 유효하면 이 인증으로 인한 제품 재검토는 불필요합니다. 만료된 인증의 대상 부품에서 질문 제품까지 partOf 경로가 있으면 재검토가 필요합니다. 판정에 필요한 인증 정보나 관계 근거가 부족하면 unknown입니다. 재검토는 안전성이나 출하 승인 판정이 아닙니다.\",\n    \"version\": \"1\"\n  },\n  \"product_id\": \"PROD-Q\",\n  \"question\": \"2026-10-27 현재 CERT-Q의 상태 때문에 PROD-Q를 재검토해야 하며 근거는 무엇인가요?\",\n  \"rows\": [\n    {\n      \"expires_on\": \"2026-10-01\",\n      \"id\": \"CERT-Q\",\n      \"kind\": \"certificate\",\n      \"part\": \"PART-Q\",\n      \"row_id\": \"r-cert\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"ASM-Q\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-bom-1\",\n      \"subject\": \"PART-Q\"\n    },\n    {\n      \"kind\": \"relation\",\n      \"object\": \"PROD-Z\",\n      \"predicate\": \"partOf\",\n      \"row_id\": \"r-noise\",\n      \"subject\": \"PART-Z\"\n    }\n  ],\n  \"scope\": \"제공된 기록만 판단 근거로 사용합니다. 관계의 완전성은 보장하지 않습니다.\"\n}"
+      },
+      "model_output": null
+    }
+  ],
+  "paid_calls": 0,
+  "checks": [
+    "four decisions",
+    "observationally identical missing states",
+    "visible citations",
+    "expiry boundary",
+    "missing expiry",
+    "duplicate certificate rows",
+    "wrong relation role"
+  ],
+  "code_sha256": "4ac6ced4a201bfcb336c91266430868bb0512a3a3d85c5bec57770a4738ed07d",
+  "protocol_sha256": "ae408f0ea5414701619077dc5714fb715c2ed0973636615b3fd9eb6644f7efc3",
+  "template_sha256": "06884a272a4057c67685224401c714e04c1f2383e2ab3ad6c8e872f9a8e24662",
+  "font_sha256": "fad853f7f47c6c8b103171e7193fa095708cdcd70850a71d93aa5379e8a61d63",
+  "dependencies": {
+    "rdflib": "7.6.0",
+    "pyshacl": "0.40.1",
+    "owlrl": "7.6.2"
+  }
+}

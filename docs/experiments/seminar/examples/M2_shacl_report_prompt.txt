@@ -1,0 +1,29 @@
+<QUESTION>
+REQ_2026_01 발주 요청을 승인해도 되는지 판단하고, 차단 또는 보류 시 정확한 원인 개체(focus_node), 관계 경로(result_path), 충돌 값(value_node)을 근거로 제시하라.
+</QUESTION>
+
+<SHACL_VALIDATION_REPORT>
+{
+  "decision": "blocked",
+  "conforms": false,
+  "policy_eligible": false,
+  "violations": [
+    "division-separation"
+  ],
+  "missing": [],
+  "shacl_validation_results": [
+    {
+      "severity": "sh:Violation",
+      "message": "violation:division-separation",
+      "focus_node": "ex:departments/DEPT_REQ",
+      "result_path": "^ex:requestedByDept / ex:hasReview / ex:reviewedBy / ex:belongsToDept / ex:parentDivision",
+      "value_node": "ex:divisions/DIV_SALES",
+      "constraint_component": "sh:DisjointConstraintComponent"
+    }
+  ]
+}
+</SHACL_VALIDATION_REPORT>
+
+<INSTRUCTION>
+검증 보고서의 decision, focus_node, result_path, value_node를 그대로 근거로 인용하여 환각 없이 JSON 응답과 감사 설명을 생성하라.
+</INSTRUCTION>

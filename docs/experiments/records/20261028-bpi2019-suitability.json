@@ -1,0 +1,99 @@
+{
+  "scope": "Descriptive original-log suitability inspection, not model evaluation or business compliance",
+  "date": "2026-10-28",
+  "source_url": "https://icpmconference.org/2019/wp-content/uploads/sites/6/2019/01/log_IEEE.xes_.gz",
+  "doi": "10.4121/uuid:d06aff4b-79f0-45e6-8ec8-e19730c248f1",
+  "compressed_bytes": 16901365,
+  "compressed_sha256": "43edc7abe7b53c75f53f91b6720ba20878de8a3216b5202ae22a0442b92e9c9a",
+  "uncompressed_bytes": 728558522,
+  "uncompressed_sha256": "af63bc687fc4152f2123b05c3af7772b37ef3fce2d3f67f812666c9e356baae7",
+  "counts": {
+    "uncompressed_bytes": 728558522,
+    "traces": 251734,
+    "events": 1595923,
+    "duplicate_trace_ids": 0,
+    "traces_with_equal_timestamps": 19365,
+    "traces_out_of_timestamp_order": 0,
+    "traces_with_cancel_activity": 8357,
+    "traces_multiple_gr_or_ir": 17834,
+    "traces_gr_and_ir": 210370,
+    "traces_without_gr": 17255,
+    "traces_without_ir": 40355,
+    "trace_id_not_doc_underscore_item": 0,
+    "trace_missing_or_placeholder:Purchasing Document": 0,
+    "trace_missing_or_placeholder:Item": 0,
+    "trace_missing_or_placeholder:Source": 0,
+    "trace_missing_or_placeholder:Vendor": 0,
+    "trace_missing_or_placeholder:Item Category": 0,
+    "trace_missing_or_placeholder:Goods Receipt": 0,
+    "trace_missing_or_placeholder:GR-Based Inv. Verif.": 0,
+    "event_missing_or_placeholder:concept:name": 0,
+    "event_missing_or_placeholder:time:timestamp": 0,
+    "event_missing_or_placeholder:Cumulative net worth (EUR)": 0,
+    "event_missing_or_placeholder:org:resource": 399090,
+    "event_negative_amount": 0,
+    "event_zero_amount": 40270,
+    "candidate_one_gr_one_ir_one_clear_no_cancel_change_delete": 148859,
+    "purchase_document_ids": 76349,
+    "document_ids_across_multiple_sources": 0
+  },
+  "event_attributes": {
+    "User": 1595923,
+    "org:resource": 1595923,
+    "concept:name": 1595923,
+    "Cumulative net worth (EUR)": 1595923,
+    "time:timestamp": 1595923
+  },
+  "categories": {
+    "3-way match, invoice before GR": 221010,
+    "3-way match, invoice after GR": 15182,
+    "Consignment": 14498,
+    "2-way match": 1044
+  },
+  "category_flags": {
+    "[\"3-way match, invoice before GR\", \"true\", \"false\"]": 221010,
+    "[\"3-way match, invoice after GR\", \"true\", \"true\"]": 15182,
+    "[\"Consignment\", \"true\", \"false\"]": 14498,
+    "[\"2-way match\", \"false\", \"false\"]": 1044
+  },
+  "event_years": {
+    "2018": 1550468,
+    "2019": 45135,
+    "2017": 223,
+    "2001": 22,
+    "2016": 6,
+    "2015": 3,
+    "1948": 10,
+    "2020": 2,
+    "1993": 9,
+    "2008": 45
+  },
+  "definitions": {
+    "traces_multiple_gr_or_ir": "Either Record Goods Receipt count >1 or Record Invoice Receipt count >1 within one trace",
+    "traces_with_cancel_activity": "At least one activity label contains Cancel",
+    "traces_with_equal_timestamps": "Two or more events share timestamp within trace; not a causal order claim",
+    "candidate_one_gr_one_ir_one_clear_no_cancel_change_delete": "Exactly one GR, IR and Clear; no label containing Cancel/Change/Delete. Lexical candidate, not clean/compliant label",
+    "outside_2017_2019": "Exploratory screen only:97events/82traces, not error labels"
+  },
+  "verification": {
+    "exit_code": 0,
+    "compressed_sha256_match": true,
+    "uncompressed_sha256_match": true,
+    "gzip_crc_read_to_eof": true,
+    "count_reconciliation": true,
+    "fixed_utc_timestamp_values_including_global_default": 1595924,
+    "invalid_format": 0,
+    "calendar_parse": "all matched timestamps parse",
+    "namespace_note": "First scanner namespace-tolerant; second unqualified trace scan event-year total equals first full event census; scope acquired file only",
+    "resource_benchmark": false
+  },
+  "limits": [
+    "No invoice/receipt document IDs in event attributes",
+    "Cumulative amount semantics unresolved",
+    "Source absence not real-world absence",
+    "No OWL/graph advantage measurement",
+    "Full aggregate profiling and examples consumed for development",
+    "Redistribution license unverified; no raw rows published"
+  ],
+  "paid_calls": 0
+}

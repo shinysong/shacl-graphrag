@@ -1,0 +1,119 @@
+{
+  "purpose": "tiny executed teaching examples, not benchmark or external truth validation",
+  "versions": {
+    "rdflib": "7.6.0",
+    "owlrl": "7.6.2",
+    "pyshacl": "0.40.1"
+  },
+  "source_sha256": "b6a46cca0cb0a83a8ff0df5df23353e601cf3c56298487e88feb9682714226d6",
+  "llm_calls": 0,
+  "original_graph_unchanged": true,
+  "queries": [
+    {
+      "mode": "original",
+      "TS1_is_Device": false,
+      "RoomA_is_Room": false,
+      "RoomA_observedBy_TS1": false,
+      "manufacturer_recorded": false,
+      "conforms_two_shapes": false,
+      "violations": [
+        {
+          "focus": "https://example.org/sensor/TS1",
+          "path": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "component": "HasValueConstraintComponent"
+        },
+        {
+          "focus": "https://example.org/sensor/TS1",
+          "path": "https://example.org/sensor/manufacturer",
+          "component": "MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "mode": "rdfs",
+      "TS1_is_Device": true,
+      "RoomA_is_Room": true,
+      "RoomA_observedBy_TS1": false,
+      "manufacturer_recorded": false,
+      "conforms_two_shapes": false,
+      "violations": [
+        {
+          "focus": "https://example.org/sensor/TS1",
+          "path": "https://example.org/sensor/manufacturer",
+          "component": "MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "mode": "owlrl",
+      "TS1_is_Device": true,
+      "RoomA_is_Room": true,
+      "RoomA_observedBy_TS1": true,
+      "manufacturer_recorded": false,
+      "conforms_two_shapes": false,
+      "violations": [
+        {
+          "focus": "https://example.org/sensor/TS1",
+          "path": "https://example.org/sensor/manufacturer",
+          "component": "MinCountConstraintComponent"
+        }
+      ]
+    }
+  ],
+  "shape_cases": [
+    {
+      "case": "valid",
+      "added_fact": "ex:TS1 ex:manufacturer ex:MakerA .",
+      "conforms": true,
+      "violations": [],
+      "real_world_truth": "not_verified"
+    },
+    {
+      "case": "missing",
+      "added_fact": "(제조사 기록 없음)",
+      "conforms": false,
+      "violations": [
+        {
+          "focus": "https://example.org/sensor/TS1",
+          "path": "https://example.org/sensor/manufacturer",
+          "component": "MinCountConstraintComponent"
+        }
+      ],
+      "real_world_truth": "not_verified"
+    },
+    {
+      "case": "literal",
+      "added_fact": "ex:TS1 ex:manufacturer \"MakerA\" .",
+      "conforms": false,
+      "violations": [
+        {
+          "focus": "https://example.org/sensor/TS1",
+          "path": "https://example.org/sensor/manufacturer",
+          "component": "NodeKindConstraintComponent"
+        }
+      ],
+      "real_world_truth": "not_verified"
+    },
+    {
+      "case": "unverified_iri",
+      "added_fact": "ex:TS1 ex:manufacturer ex:UnverifiedMaker .",
+      "conforms": true,
+      "violations": [],
+      "real_world_truth": "not_verified"
+    }
+  ],
+  "reachability": [
+    [
+      "A",
+      "B"
+    ],
+    [
+      "A",
+      "C"
+    ],
+    [
+      "B",
+      "C"
+    ]
+  ]
+}

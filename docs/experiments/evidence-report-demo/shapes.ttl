@@ -1,0 +1,6 @@
+@prefix ex: <https://example.org/evidence-report/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+ex:CertificateShape a sh:NodeShape; sh:targetClass ex:Certificate;
+ sh:property [ sh:path ex:certifies; sh:minCount 1; sh:maxCount 1; sh:nodeKind sh:IRI ];
+ sh:property [ sh:path ex:expiresOn; sh:minCount 1; sh:maxCount 1; sh:datatype xsd:date ].

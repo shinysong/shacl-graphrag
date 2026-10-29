@@ -1,5 +1,7 @@
 # 실행 기록
 
+- [2026-10-28 BPI 2019 원본 로그 적합성 집계](20261028-bpi2019-suitability.json) · [해석과 후속 관문](../../journal/2026-10-28-bpi2019-suitability.md) — 전체 로그 기술 통계이며 모델 성능 실험이 아닙니다.
+
 - [2026-10-22 독립 문서 규칙 추가 비교](20261022-rule-extension.json) · [입력·정책·출력 검토 묶음](20261022-rule-extension-review-bundle.json)
 
 - [2026-10-15 YAGO 원본 데이터의 LLM 조회·검증 연결](20261015-yago-native-tools.md)

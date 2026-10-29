@@ -1,0 +1,5 @@
+<div class="columns"><section class="panel"><h3>실제 출력 발췌 · JSON</h3><pre><code>{
+  &quot;focus_node&quot;: &quot;ex:departments/DEPT_REQ&quot;,
+  &quot;value_node&quot;: &quot;ex:divisions/DIV_SALES&quot;,
+  &quot;constraint_component&quot;: &quot;sh:DisjointConstraintComponent&quot;
+}</code></pre></section><section class="panel"><h3>각 필드의 역할</h3><table><thead><tr><th>필드</th><th>읽는 법</th></tr></thead><tbody><tr><td>focus_node</td><td>요청 부서 DEPT_REQ가 검사 대상</td></tr><tr><td>result_path</td><td>요청→검토→검토자→부서→본부를 따라간 경로</td></tr><tr><td>value_node</td><td>겹치는 본부 DIV_SALES</td></tr><tr><td>constraint_component</td><td>두 값 집합의 겹침을 금지하는 Disjoint 검사</td></tr></tbody></table></section></div>

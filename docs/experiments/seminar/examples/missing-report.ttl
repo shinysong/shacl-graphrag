@@ -1,0 +1,18 @@
+@prefix ex: <https://example.org/seminar/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode ex:order1 ;
+            sh:resultMessage "Less than 1 values on ex:order1->ex:discount" ;
+            sh:resultPath ex:discount ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:decimal ;
+                    sh:maxCount 1 ;
+                    sh:maxInclusive 0.15 ;
+                    sh:minCount 1 ;
+                    sh:path ex:discount ] ] .
+

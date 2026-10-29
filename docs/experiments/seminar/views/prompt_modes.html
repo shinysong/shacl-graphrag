@@ -1,0 +1,8 @@
+<div class="columns"><section class="panel"><h3>입력 자료의 구성 비교</h3><table><thead><tr><th>구성</th><th>LLM 앞에 놓는 자료</th></tr></thead><tbody><tr><td>M0</td><td>질문 + 규정 + 원천 테이블</td></tr><tr><td>M1</td><td>질문 + 테이블 + 함수 판정·규칙명</td></tr><tr><td>M2</td><td>질문 + 판정·개체·경로·값 보고서</td></tr></tbody></table><p>목적: 모델이 설명에 사용할 근거가 어떤 형태로 전달되는지 확인.</p></section><div class="screen"><div class="screen-bar">M2 입력문 일부 · 구조 설명용</div><pre><code>질문: 이 요청을 승인할 수 있는가?
+
+검사 결과: blocked
+위반 규칙: division-separation
+검사 대상: DEPT_REQ
+충돌 값: DIV_SALES
+
+지시: 위 근거를 사용해 설명하라.</code></pre><p>이 화면은 프롬프트 구성이다.<br>이번 진단에서는 모델 응답을 받지 않았다.</p></div></div>

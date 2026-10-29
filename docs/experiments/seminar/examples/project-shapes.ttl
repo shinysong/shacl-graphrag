@@ -1,0 +1,87 @@
+@prefix ex: <http://example.org/unified/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:DepartmentConflictShape_R3 a sh:NodeShape ;
+    sh:property [ sh:disjoint ex:parentDivision ;
+            sh:message "violation:division-separation" ;
+            sh:path ( [ sh:inversePath ex:requestedByDept ] ex:hasReview ex:reviewedBy ex:belongsToDept ex:parentDivision ) ] ;
+    sh:targetClass ex:Department .
+
+ex:ItemContractShape_R3 a sh:NodeShape ;
+    sh:property [ sh:lessThanOrEquals ex:maxDiscountRate ;
+            sh:message "violation:discount-cap" ;
+            sh:path ( [ sh:inversePath ex:hasItem ] ex:appliedDiscountRate ) ] ;
+    sh:targetClass ex:ItemContract .
+
+ex:OrderRequestShape_R3 a sh:NodeShape ;
+    sh:property [ sh:message "missing:req-division" ;
+            sh:minCount 1 ;
+            sh:path ( ex:requestedByDept ex:parentDivision ) ;
+            sh:severity sh:Info ],
+        [ sh:message "violation:dual-role-review" ;
+            sh:path ex:hasReview ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedValueShape [ sh:property [ sh:hasValue "Qualified"^^xsd:string ;
+                            sh:path ( ex:reviewedBy ex:qualificationStatus ) ],
+                        [ sh:hasValue "Audit"^^xsd:string ;
+                            sh:path ex:reviewRole ],
+                        [ sh:hasValue "Approve"^^xsd:string ;
+                            sh:path ex:decision ] ] ],
+        [ sh:message "violation:primary-review-qualified" ;
+            sh:path ex:hasReview ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedValueShape [ sh:property [ sh:hasValue "Primary"^^xsd:string ;
+                            sh:path ex:reviewRole ],
+                        [ sh:hasValue "Approve"^^xsd:string ;
+                            sh:path ex:decision ],
+                        [ sh:hasValue "Qualified"^^xsd:string ;
+                            sh:path ( ex:reviewedBy ex:qualificationStatus ) ] ] ],
+        [ sh:message "missing:contract-active" ;
+            sh:minCount 1 ;
+            sh:path ( ex:hasItem ex:contractStatus ) ;
+            sh:severity sh:Info ],
+        [ sh:maxInclusive 100000.0 ;
+            sh:message "violation:net-amount-cap" ;
+            sh:path ex:netAmount ],
+        [ sh:lessThanOrEquals ex:achievedMarginRate ;
+            sh:message "violation:margin-floor" ;
+            sh:path ( ex:hasItem ex:minMarginRate ) ],
+        [ sh:message "missing:discount-cap-req" ;
+            sh:minCount 1 ;
+            sh:path ex:appliedDiscountRate ;
+            sh:severity sh:Info ],
+        [ sh:message "missing:net-amount-cap" ;
+            sh:minCount 1 ;
+            sh:path ex:netAmount ;
+            sh:severity sh:Info ],
+        [ sh:message "missing:rev-division" ;
+            sh:minCount 1 ;
+            sh:path ( ex:hasReview ex:reviewedBy ex:belongsToDept ex:parentDivision ) ;
+            sh:severity sh:Info ],
+        [ sh:message "missing:margin-floor-item" ;
+            sh:minCount 1 ;
+            sh:path ( ex:hasItem ex:minMarginRate ) ;
+            sh:severity sh:Info ],
+        [ sh:message "missing:margin-floor-req" ;
+            sh:minCount 1 ;
+            sh:path ex:achievedMarginRate ;
+            sh:severity sh:Info ],
+        [ sh:message "missing:discount-cap-item" ;
+            sh:minCount 1 ;
+            sh:path ( ex:hasItem ex:maxDiscountRate ) ;
+            sh:severity sh:Info ],
+        [ sh:hasValue "Active"^^xsd:string ;
+            sh:message "violation:contract-active" ;
+            sh:path ( ex:hasItem ex:contractStatus ) ],
+        [ sh:message "missing:review-qual" ;
+            sh:minCount 1 ;
+            sh:path ( ex:hasReview ex:reviewedBy ex:qualificationStatus ) ;
+            sh:severity sh:Info ],
+        [ sh:message "missing:review-presence" ;
+            sh:minCount 1 ;
+            sh:path ex:hasReview ;
+            sh:severity sh:Info ] ;
+    sh:targetClass ex:OrderRequest .
+

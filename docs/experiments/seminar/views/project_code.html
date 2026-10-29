@@ -1,0 +1,8 @@
+<pre><code>tables = make_valid_base_tables(rev1_div=&#x27;DIV_SALES&#x27;)  # 본부가 겹치는 입력
+decisions = {  # 동일한 R3 정책을 세 구현에서 검사
+    &#x27;Python&#x27;: evaluate_arm_p_python(tables, &#x27;R3&#x27;),  # Python 함수
+    &#x27;SQLite&#x27;: evaluate_arm_s_sqlite(tables, &#x27;R3&#x27;),  # SQL 조회·판정
+    &#x27;SHACL&#x27;: evaluate_arm_g_shacl(tables, &#x27;R3&#x27;),    # RDF·Shape 검사
+}
+report = extract_shacl_llm_report(tables, &#x27;R3&#x27;)  # 보고서를 JSON 필드로 정리
+prompts = build_llm_prompt_modes(tables, round_id=&#x27;R3&#x27;)  # 입력문만 생성</code></pre><table><thead><tr><th>실제 저장 출력</th><th>판정</th><th>위반</th></tr></thead><tbody><tr><td>Python = SQLite = SHACL</td><td>blocked</td><td>division-separation</td></tr></tbody></table>

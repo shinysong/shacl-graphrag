@@ -1,0 +1,15 @@
+@prefix ns1: <https://example.org/manufacturing/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ns1:P1 a ns1:Bolt ;
+    ns1:installedIn ns1:A1 .
+
+ns1:installedIn rdfs:domain ns1:Component ;
+    rdfs:range ns1:Assembly ;
+    owl:inverseOf ns1:hasPart .
+
+ns1:Bolt rdfs:subClassOf ns1:Fastener .
+
+ns1:Fastener rdfs:subClassOf ns1:Component .
+
