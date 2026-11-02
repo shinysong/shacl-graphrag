@@ -1,0 +1,7 @@
+# D exactC evidence and report
+
+Inspect scripts/run_graphrag_reports.py, unchanged scripts/graphrag_check.py, tests/test_graphrag_reports.py plus existing tests/test_graphrag_check.py, research/graphrag-evidence-1/report-attachment-v1.md. Manifest _workspace/graphrag-cycle19/manifest.json binds savedC/tokenizer/code/policy/tests. No sourcecorpus/reference/gold files supplied to runtime or checker.
+
+Execute once after reviews: uv run --locked --offline --with tokenizers==0.22.1 python -m scripts.run_graphrag_reports --manifest ... --output research/graphrag-evidence-1/report-attachment-001.120s external timeout/grace5s, preservelogs and missing24slots. Frozen24Crows, exactC envelope nested; unchanged checker report added separately,32000bytes; selected-only citations, hashbinding,nonmutation. Record actual source/report/combinedE5token counts. Combinedbudget NOT enforced, no generation/comparabletotalcontext efficacy claim. Futuregen needs sharedtotalbudget/reportallowance before execution.
+
+Attachmentstatus distinct checkerstatus/resultstatuses; faileddev017 retained witherrorreceipt. No repair/filter/veto/lookup. Software boundary tests deny Pythonfile/socket reads only during pureattach,not OSsandbox. Existingtests and4newtests passed; no actual D run yet. Manualpostrunaudit equalityCenvelope,reporthash/citations/caps,24fullIDs and countcategories. Registeredchecks empty. No nativeSHACL or QA efficacyclaim.

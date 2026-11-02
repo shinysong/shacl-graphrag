@@ -1,0 +1,59 @@
+{
+  "source": "penelope",
+  "question": {
+    "target": "SYN_penelope_06_coupon",
+    "meaning": "lack_fusion",
+    "scope": "weld"
+  },
+  "declared_complete": true,
+  "records": [
+    {
+      "id": "SYN_penelope_06_book",
+      "type": "Code",
+      "namespace": "worksheet",
+      "code": "2",
+      "meaning": "lack_fusion"
+    },
+    {
+      "id": "SYN_penelope_06_setting",
+      "type": "Setting",
+      "current": 460
+    },
+    {
+      "id": "SYN_penelope_06_bead",
+      "type": "Bead",
+      "setting": "SYN_penelope_06_setting"
+    },
+    {
+      "id": "SYN_penelope_06_obs",
+      "type": "Observation",
+      "coupon": "SYN_penelope_06_coupon",
+      "book": "SYN_penelope_06_book",
+      "bead": "SYN_penelope_06_bead",
+      "scope": "weld"
+    },
+    {
+      "id": "SYN_penelope_06_rx",
+      "type": "Code",
+      "namespace": "radiography",
+      "code": "2",
+      "meaning": "porosity"
+    },
+    {
+      "id": "SYN_penelope_06_decoy",
+      "type": "Observation",
+      "coupon": "SYN_penelope_06_coupon",
+      "book": "SYN_penelope_06_rx",
+      "bead": "SYN_penelope_06_bead",
+      "scope": "weld"
+    },
+    {
+      "id": "SYN_penelope_06_base",
+      "type": "Observation",
+      "coupon": "SYN_penelope_06_coupon",
+      "book": "SYN_penelope_06_book",
+      "bead": "SYN_penelope_06_bead",
+      "scope": "base_material"
+    }
+  ]
+}

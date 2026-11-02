@@ -1,0 +1,9 @@
+# Actual selected-B C/E execution
+
+Read scripts/run_graphrag_relations.py, frozen scripts/graphrag_relation_pack.py and scripts/graphrag_expand.py; policy research/graphrag-evidence-1/relation-packing-v1.md. Manifest _workspace/graphrag-cycle17/manifest.json binds source,B,tokenizer,code,policy,regressiontests. Source inventory {"nodes": 328, "edges": 486, "chunks": 814, "max_outgoing": 2, "source_bytes": 3282352}. No reference files runtime or review.
+
+Run once via uv run --locked --offline --with tokenizers==0.22.1 python -m scripts.run_graphrag_relations --manifest ... --output research/graphrag-evidence-1/relation-retrieval-001. 4GiB RLIMIT_AS,110s internal between-arm cutoff,120s parent timeout. No models/API; pinned E5 accounting tokenizer only. Source and B sizes small, maxoutgoing2; caps bound acceptance not materialization. Preserve timeout/failed logs,no autoretry.24B IDs equal expected manifest,48plannedarmrows. Perquestion exceptions retained; global failures count unexecuted. Append/flush C/E envelopes; compare everyfield exceptarm/backend. Bothfailed parity distinguished from successfulparity.
+
+Same B selectedseeds;1hop32candidate64k intermediate,first8traversal,4096E5/64000bytes final. Runtime records displacedseedIDs, first8excluded separately from intermediatefailure, skippedbudgetIDs. C/E matched policy with shared packing/indexing; C-B expansion+ordering, notisolatedgraphbenefit. Exploratory consumeddevelopment afterA/Bsupportobserved. No scoring/generation thiscycle.
+
+Software tests include combined first8skip/norefill, explicit laterseeddisplacement, failedcandidate accounting plus priorinterface/expansiontests; executed exit0 before review. Manual postrun audit will check48row hashes/source/tokenbounds,24orderedpayloadparity, source/code hashes and categorycounts without re-running retrieval. Registeredchecksempty. Reviewer approvals for thisactualboundedrun, not QA or source truth.

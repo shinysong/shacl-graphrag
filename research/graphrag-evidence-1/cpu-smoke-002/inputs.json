@@ -1,0 +1,51 @@
+{
+  "source_children_sha256": "274cf2d4d10e075f0664fc35d0e9bbe449c73c9e16a73985a9032e504e76a2eb",
+  "selection": "first,last,min,max unique then source order fallback; four authored queries; repeated first",
+  "inputs": [
+    {
+      "id": "11:node:PP3:10:0",
+      "kind": "passage",
+      "text": "passage: parent=node:PP3:10\n{\"archive_path\":\"ZENODO_Penelope/PP3/2. ndt_data/defects_xlocation.xlsx\",\"cell_range\":\"A10:G10\",\"cells\":[{\"cached_value\":null,\"cell\":\"A10\",\"data_type\":\"n\",\"formula\":null,\"value\":1},{\"cached_value\":null,\"cell\":\"B10\",\"data_type\":\"n\",\"formula\":null,\"value\":3},{\"cached_value\":null,\"cell\":\"C10\",\"data_type\":\"n\",\"formula\":null,\"value\":4},{\"cached_value\":null,\"cell\":\"D10\",\"data_type\":\"n\",\"formula\":null,\"value\":157},{\"cached_value\":null,\"cell\":\"E10\",\"data_type\":\"n\",\"formula\":null,\"value\":166},{\"cached_value\":null,\"cell\":\"F10\",\"data_type\":\"n\",\"formula\":null,\"value\":65385},{\"cached_value\":null,\"cell\":\"G10\",\"data_type\":\"n\",\"formula\":null,\"value\":69133}],\"coupon\":\"PP3\",\"dictionary_refs\":{\"defect\":\"PP3:defect_code:1\",\"welding_setting\":\"PP3:welding_settings_code:3\"},\"excel_row\":10,\"field_cells\":{\"bead\":\"C10\",\"defect\":\"A10\",\"sample_end\":\"G10\",\"sample_init\":\"F10\",\"welding_setting\":\"B10\",\"x_end_mm\":\"E10"
+    },
+    {
+      "id": "54:edge:PP7:9|welding_setting|PP7:welding_settings_code:1:0",
+      "kind": "passage",
+      "text": "passage: parent=edge:PP7:9|welding_setting|PP7:welding_settings_code:1\n{\"code\":1,\"edge_id\":\"PP7:9|welding_setting|PP7:welding_settings_code:1\",\"field\":\"welding_setting\",\"provenance\":{\"archive_path\":\"ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx\",\"cell\":\"B9\",\"coupon\":\"PP7\",\"sha256\":\"d95e071ac4f6a489d53a3b6ce0d5fc63506bb9d9bc592ef6eb20da8ef8c3f4a5\",\"sheet\":\"PP7\",\"target_excel_row\":3,\"target_sheet\":\"welding_settings_code\"},\"relation_type\":\"welding_settings_code\",\"subject\":\"PP7:9\",\"target\":\"PP7:welding_settings_code:1\"}"
+    },
+    {
+      "id": "36:edge:PP3:10|defect|PP3:defect_code:1:0",
+      "kind": "passage",
+      "text": "passage: parent=edge:PP3:10|defect|PP3:defect_code:1\n{\"code\":1,\"edge_id\":\"PP3:10|defect|PP3:defect_code:1\",\"field\":\"defect\",\"provenance\":{\"archive_path\":\"ZENODO_Penelope/PP3/2. ndt_data/defects_xlocation.xlsx\",\"cell\":\"A10\",\"coupon\":\"PP3\",\"sha256\":\"94236eb7cef2eff8b415c097a2d129ac22c85e0588836ab122e740ae5440a516\",\"sheet\":\"PP3\",\"target_excel_row\":2,\"target_sheet\":\"defect_code\"},\"relation_type\":\"defect_code\",\"subject\":\"PP3:10\",\"target\":\"PP3:defect_code:1\"}"
+    },
+    {
+      "id": "10:node:PP3:2:0",
+      "kind": "passage",
+      "text": "passage: parent=node:PP3:2\n{\"archive_path\":\"ZENODO_Penelope/PP3/2. ndt_data/defects_xlocation.xlsx\",\"cell_range\":\"A2:G2\",\"cells\":[{\"cached_value\":null,\"cell\":\"A2\",\"data_type\":\"n\",\"formula\":null,\"value\":2},{\"cached_value\":null,\"cell\":\"B2\",\"data_type\":\"n\",\"formula\":null,\"value\":1},{\"cached_value\":null,\"cell\":\"C2\",\"data_type\":\"n\",\"formula\":null,\"value\":1},{\"cached_value\":null,\"cell\":\"D2\",\"data_type\":\"n\",\"formula\":null,\"value\":80},{\"cached_value\":null,\"cell\":\"E2\",\"data_type\":\"n\",\"formula\":null,\"value\":314.41},{\"cached_value\":null,\"cell\":\"F2\",\"data_type\":\"n\",\"formula\":null,\"value\":49973},{\"cached_value\":null,\"cell\":\"G2\",\"data_type\":\"n\",\"formula\":null,\"value\":196402}],\"coupon\":\"PP3\",\"dictionary_refs\":{\"defect\":\"PP3:defect_code:2\",\"welding_setting\":\"PP3:welding_settings_code:1\"},\"excel_row\":2,\"field_cells\":{\"bead\":\"C2\",\"defect\":\"A2\",\"sample_end\":\"G2\",\"sample_init\":\"F2\",\"welding_setting\":\"B2\",\"x_end_mm\":\"E2\",\"x_in"
+    },
+    {
+      "id": "query-1",
+      "kind": "query",
+      "text": "query: 용접 기록의 설정 번호는 무엇인가요?"
+    },
+    {
+      "id": "query-2",
+      "kind": "query",
+      "text": "query: 검토 문서의 버전을 확인할 수 있나요?"
+    },
+    {
+      "id": "query-3",
+      "kind": "query",
+      "text": "query: What is the recorded welding setting?"
+    },
+    {
+      "id": "query-4",
+      "kind": "query",
+      "text": "query: Which record contains the defect code?"
+    },
+    {
+      "id": "repeat-first",
+      "kind": "repeat",
+      "text": "passage: parent=node:PP3:10\n{\"archive_path\":\"ZENODO_Penelope/PP3/2. ndt_data/defects_xlocation.xlsx\",\"cell_range\":\"A10:G10\",\"cells\":[{\"cached_value\":null,\"cell\":\"A10\",\"data_type\":\"n\",\"formula\":null,\"value\":1},{\"cached_value\":null,\"cell\":\"B10\",\"data_type\":\"n\",\"formula\":null,\"value\":3},{\"cached_value\":null,\"cell\":\"C10\",\"data_type\":\"n\",\"formula\":null,\"value\":4},{\"cached_value\":null,\"cell\":\"D10\",\"data_type\":\"n\",\"formula\":null,\"value\":157},{\"cached_value\":null,\"cell\":\"E10\",\"data_type\":\"n\",\"formula\":null,\"value\":166},{\"cached_value\":null,\"cell\":\"F10\",\"data_type\":\"n\",\"formula\":null,\"value\":65385},{\"cached_value\":null,\"cell\":\"G10\",\"data_type\":\"n\",\"formula\":null,\"value\":69133}],\"coupon\":\"PP3\",\"dictionary_refs\":{\"defect\":\"PP3:defect_code:1\",\"welding_setting\":\"PP3:welding_settings_code:3\"},\"excel_row\":10,\"field_cells\":{\"bead\":\"C10\",\"defect\":\"A10\",\"sample_end\":\"G10\",\"sample_init\":\"F10\",\"welding_setting\":\"B10\",\"x_end_mm\":\"E10"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "dependencies": [
+    {
+      "id": "s3_dep",
+      "maximum": 1000,
+      "minimum": 0,
+      "target": "s3_target"
+    }
+  ],
+  "edges": [
+    {
+      "from": "s3_target",
+      "to": "s3_bridge"
+    },
+    {
+      "from": "s3_bridge",
+      "to": "s3_ref"
+    }
+  ],
+  "nodes": [
+    {
+      "citation": "synthetic://source/3/record/1",
+      "entity": "s3_target",
+      "field": "end_mm",
+      "id": "s3_ref",
+      "type": "Reference",
+      "unit": "mm",
+      "value": 200,
+      "version": "v1"
+    },
+    {
+      "id": "s3_bridge",
+      "type": "Bridge"
+    }
+  ],
+  "target": {
+    "field": "end_mm",
+    "id": "s3_target",
+    "maximum": 1000,
+    "minimum": 0,
+    "unit": "mm",
+    "value": null,
+    "version": "v1"
+  }
+}

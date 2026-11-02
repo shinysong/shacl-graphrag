@@ -1,0 +1,21 @@
+@prefix p: <https://example.org/penelope/validation/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode <https://example.org/penelope/source/PP5/PP5/25> ;
+            sh:resultMessage "Node <https://example.org/penelope/source/PP5/PP5/25> must conform to one or more shapes in [ sh:not [ sh:property [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:or ( [ sh:datatype xsd:integer ] [ sh:datatype xsd:decimal ] ) ; sh:path p:x_end_mm ], [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:or ( [ sh:datatype xsd:integer ] [ sh:datatype xsd:decimal ] ) ; sh:path p:x_init_mm ] ] ] , [ sh:property [ sh:lessThanOrEquals p:x_end_mm ; sh:path p:x_init_mm ] ]" ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape p:x_init_mmOrder ;
+            sh:value <https://example.org/penelope/source/PP5/PP5/25> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://example.org/penelope/source/PP5/PP5/25> ;
+            sh:resultMessage "Node <https://example.org/penelope/source/PP5/PP5/25> must conform to one or more shapes in [ sh:not [ sh:property [ sh:datatype xsd:integer ; sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path p:sample_end ], [ sh:datatype xsd:integer ; sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path p:sample_init ] ] ] , [ sh:property [ sh:lessThanOrEquals p:sample_end ; sh:path p:sample_init ] ]" ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape p:sample_initOrder ;
+            sh:value <https://example.org/penelope/source/PP5/PP5/25> ] .
+

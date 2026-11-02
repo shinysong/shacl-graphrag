@@ -1,0 +1,81 @@
+{
+  "protocol": "actionable-evidence-1",
+  "version": "0.1",
+  "status": "design_before_implementation",
+  "date": "2026-10-29",
+  "question": "Under explicit evidence and action contracts, when do relation-based action candidates and shadow revalidation reduce unsupported data edits without withholding supported corrections?",
+  "scope": "Offline data-reconciliation and evidence-request support, not welding prescriptions, production approval, causal diagnosis or autonomous plant control.",
+  "sources": {
+    "real_descriptive": "PENELOPE v2 PP3–PP7 defects_xlocation.xlsx and shared Design_Materials_Settings.pdf, CC BY 4.0 DOI10.5281/zenodo.15083865; exact file hashes/cell provenance required in frozen extract",
+    "observations": "243 annotation rows, not243 defects or independent trials. Source audit may flag descending intervals and nominal/observed setting disagreements; neither establishes a true corrected value.",
+    "synthetic": "New authored development fixtures inspired by actual source structures; supplied repair policies explicitly researcher-authored. Never relabel these as real records or reuse prior144 as fresh evaluation."
+  },
+  "competency_questions": [
+    "Which records need reconciliation or additional evidence, and what exact fields and source locations support that request?",
+    "Does a proposed data patch have a unique applicable source reference matching entity, field meaning, unit and version?",
+    "On a copy, does the patch resolve its targeted violation without introducing relevant violations or altering unrelated records?"
+  ],
+  "architecture": [
+    "Keep original workbooks/PDF bytes immutable; normalize only the bounded required columns with explicit namespaces and provenance.",
+    "Inspect local fields using Python/SHACL constraints; derive linked evidence and action candidates via same-policy Python or SHACL-AF SPARQLRule.",
+    "Use researcher-authored action catalog and applicability checks; record observed, derived and proposed data separately.",
+    "Apply eligible patch to a copy; validate target and dependency scope before/after; preserve both reports and full diff.",
+    "Return proposed correction, request evidence or request reconciliation; never update original source or execute physical actions."
+  ],
+  "action_catalog": [
+    {
+      "id": "request_interval_review",
+      "trigger": "Observed start exceeds end under declared ascending interval contract.",
+      "output": "Request source interpretation or correction; attach both raw endpoints and cells.",
+      "forbidden": "Do not infer a swap is true merely because it conforms."
+    },
+    {
+      "id": "request_setting_reconciliation",
+      "trigger": "Observed coupon/bead setting differs from nominal design mapping with explicit scope match.",
+      "output": "Show observed and nominal values and both sources; request applicability/exception evidence.",
+      "forbidden": "Do not overwrite observed production setting with nominal design."
+    },
+    {
+      "id": "restore_reference_backed_field",
+      "trigger": "A unique separately supplied reference snapshot for the same entity/field/unit/version supports the missing or corrupted extracted field; policy explicitly authorizes extraction correction, not altering source truth.",
+      "output": "Candidate extraction-layer patch with source citation, before/after and check results.",
+      "forbidden": "No evaluation gold, guessed values, stale references, ambiguous references or unauthorized source edits."
+    },
+    {
+      "id": "request_missing_evidence",
+      "trigger": "Reference absent, conflicting, version-mismatched or applicability unknown.",
+      "output": "Name missing precondition and requested source; do not assert source absence equals real-world absence."
+    }
+  ],
+  "planned_design": {
+    "real_arm": "Descriptive audit with no accuracy denominator until independent correction truth exists; list reconciliation candidates and source provenance.",
+    "development_unit": "One new authored evidence bundle and proposed field correction; states fixed before execution and evaluated only after outputs saved.",
+    "fixture_plan": "Two field roles (bead-setting reference and interval endpoint), two dependency depths (direct and two-hop), eight evidence states =32 authored development cases. Values/IDs invented and marked synthetic.",
+    "states": ["supported_unique_current_reference", "reference_missing_in_source", "reference_present_but_omitted_from_projection", "stale_reference", "wrong_entity_or_field_role", "conflicting_references", "shape_conforming_false_reference", "patch_creates_dependency_violation"],
+    "comparators": ["direct_local_candidate", "matched_Python_relation_candidate", "SHACL_AF_relation_candidate"],
+    "postcheck_factor": ["no_postcheck", "shadow_revalidation"],
+    "planned_rows": 192,
+    "fairness": "Same input/policy for Python and SHACL-AF; direct arm lacks relation traversal by declared ablation, not claimed BM25/vector/LLM baseline. Six arms share32 cases and are paired, not192 independent samples.",
+    "unknown_pair": "Source absence and retrieval omission have byte-identical runtime projections unless a separately declared source-fetch tool is introduced. Cause remains scorer-only.",
+    "external_truth_control": "Conforming false reference may lead to formally supported but externally incorrect proposed correction. Preserve this outcome; do not claim validation detects it.",
+    "repair_boundary": "Reference evidence is runtime material acquired independently of gold, not a generator answer injected as validator feedback. Synthetic author truth is external score only."
+  },
+  "metrics": [
+    "Candidate action contract agreement, unsupported proposed edits and correct-known unnecessary withholding with explicit denominators",
+    "Source applicability errors separate from shadow constraint violations and external synthetic factual error",
+    "Target violation resolution, new relevant violations, unrelated changed fields and preservation of original bytes",
+    "Full candidate evidence and action parity of matched Python versus SHACL-AF; not only aggregate counts",
+    "Evidence requests classified by visible missing precondition, not hidden cause"
+  ],
+  "execution_contract": {
+    "api_calls": 0,
+    "python": "uv run --locked; record pySHACL/RDFLib versions",
+    "rules": "SHACL-AF SPARQLRule with advanced=True; explicit finite stages, no recursive blank-node creation; save rule and shape hashes. Decide iteration setting before run.",
+    "standards": ["https://www.w3.org/TR/shacl-af/", "https://github.com/RDFLib/pySHACL"],
+    "standard_status": "Referenced SHACL-AF publication is a W3C Working Group Note, not the SHACL Core Recommendation; execution support must be checked on pinned engine.",
+    "SWRL": "Deferred unless a required inference cannot be expressed clearly in the bounded existing stack; not an additional measured arm.",
+    "freeze": "Freeze runtime/scorer/source manifests and fixture counts before run; preserve failed attempts. Any redesign consumes current development cases, not a fresh held-out test.",
+    "review": "Independent native methods and implementation reviews before claiming completion; actual runnable implementation requires fresh review after code changes."
+  },
+  "unmeasured": ["LLM extraction/selection", "real-world correction accuracy", "human maintenance labor", "SQL engine comparison", "query latency advantage", "physical quality improvement", "autonomous action safety"]
+}

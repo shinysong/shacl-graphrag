@@ -1,0 +1,49 @@
+{
+  "id": "source-grounded-1",
+  "version": "0.1",
+  "status": "development diagnostic",
+  "sources": [
+    "penelope",
+    "hinge",
+    "bpi"
+  ],
+  "families_per_source": 8,
+  "states": [
+    "clean",
+    "semantic_decoy",
+    "broken_reference",
+    "source_absence",
+    "retrieval_omission",
+    "false_fact"
+  ],
+  "cases": 144,
+  "arms": [
+    "python",
+    "sqlite",
+    "rdflib",
+    "unqualified_python"
+  ],
+  "evaluation": "All cases are authored and consumed development. No held-out efficacy or population inference.",
+  "input": "Authored typed JSON records and supplied typed question; no automatic extraction.",
+  "output": "Sorted candidate identifiers, declared evidence completeness and selected-record conformance; no approval decision.",
+  "primary": "Matched candidate-set parity across Python, SQLite and RDFLib under identical explicit semantics.",
+  "secondary": "Qualified versus deliberately unqualified query diagnostic, Python/SHACL conformance parity, source absence/retrieval omission observational equivalence, conforming false facts.",
+  "scope": "PENELOPE code-system and inspection-scope matching; Hinge event input/output reachability; BPI item-scoped strictly-earlier receipt lookup. BPI ordering is researcher policy, not company compliance.",
+  "unknown": "Source absence and retrieval omission expose byte-identical runtime inputs within each family; their causes are scorer metadata only. Supplied completeness flags do not discover hidden omissions.",
+  "validation": "Required fields, datatype and referential typing only. No external truth, completeness, temporal rule, uniqueness or business-policy certification.",
+  "budgets": {
+    "experimental_api_calls": 0,
+    "full_source_downloads": 0
+  },
+  "claims_excluded": [
+    "RDF superiority",
+    "OWL reasoning",
+    "graph DB performance",
+    "LLM efficacy",
+    "keyword/vector RAG comparison",
+    "real factory accuracy",
+    "automatic schema extraction",
+    "causal diagnosis"
+  ],
+  "interface_boundary": "Hinge reachability includes zero hops if the supplied target itself is Product. Current 144 fixtures start at Material. Candidate queries require Code/Bead/Setting and Item classes as applicable."
+}

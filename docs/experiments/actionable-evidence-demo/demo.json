@@ -1,0 +1,3724 @@
+{
+  "study": "actionable-evidence-1",
+  "mode": "offline_saved_execution_replay",
+  "source_attribution": {
+    "source": "penelope",
+    "title": "Submerged Arc Welding Open Repository",
+    "doi": "10.5281/zenodo.15083865",
+    "authors": [
+      "Tapia Suárez, Estefanía Alexandra",
+      "Pérez Couñago, Inés",
+      "Eike Precker, Christian",
+      "Fernández Montenegro, Juan Manuel",
+      "Ruiz, Cristina"
+    ],
+    "version": "v2 (record landing page; absent in API metadata)",
+    "url": "https://zenodo.org/records/15083865",
+    "license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "rights_evidence": {
+      "id": "cc-by-4.0"
+    },
+    "metadata_url": "https://zenodo.org/api/records/15083865",
+    "metadata_sha256": "6af6d32eb8360e564580d828e9001f6775024fca045e261e0226a4b095e8d8b5",
+    "verified_date": "2026-10-29",
+    "nature": "real observed source",
+    "existing_attribution": "research/source-grounded-1/data/penelope/ATTRIBUTION.txt",
+    "existing_license_manifest": "research/source-grounded-1/licenses.json",
+    "changes": "Selected actual PP3–PP7 workbook rows transcribed to JSON with original cached values; original numeric codes/nulls retained. Added source locators, inferred design-code correspondence and conservative issue annotations. No correction or invented measurement. This is not the existing synthetic fixture dataset.",
+    "extract_license": "CC-BY-4.0"
+  },
+  "arms": [
+    {
+      "id": "direct_local_candidate",
+      "label": "한 단계 참조"
+    },
+    {
+      "id": "matched_Python_relation_candidate",
+      "label": "관계 조회 Python"
+    },
+    {
+      "id": "SHACL_AF_relation_candidate",
+      "label": "SHACL-AF 규칙"
+    }
+  ],
+  "postchecks": [
+    {
+      "id": "no_postcheck",
+      "label": "검사 결과를 보류에 미반영"
+    },
+    {
+      "id": "shadow_revalidation",
+      "label": "검사 위반 시 보류"
+    }
+  ],
+  "cases": [
+    {
+      "id": "PP5:25",
+      "kind": "real_audit",
+      "label": "실제 자료 · 구간 방향 확인",
+      "question": "PP5의 주석 구간을 그대로 사용해도 될까요?",
+      "note": "실제 자료의 기술적 점검입니다. 아래 요청은 연구자가 작성했으며 SHACL 실행 결과나 공식 수정 지침이 아닙니다.",
+      "input": {
+        "id": "PP5:25",
+        "coupon": "PP5",
+        "archive_path": "ZENODO_Penelope/PP5/2. ndt_data/defects_xlocation.xlsx",
+        "sheet": "PP5",
+        "excel_row": 25,
+        "cell_range": "A25:G25",
+        "values": {
+          "defect": 1,
+          "welding_setting": 3,
+          "bead": 3,
+          "x_init_mm": 177,
+          "x_end_mm": 160,
+          "sample_init": 73717,
+          "sample_end": 66637
+        },
+        "defect_label": "Porosity",
+        "observed_nominal_setting": [
+          27,
+          500,
+          35,
+          450,
+          1.8,
+          1.95,
+          72
+        ],
+        "design_expected_setting_code": 3,
+        "design_nominal_setting": [
+          27,
+          500,
+          35,
+          450,
+          1.8,
+          1.95,
+          72
+        ],
+        "design_provenance": "ZENODO_Penelope/PP5/Design_Materials_Settings.pdf page 2 Settings parameters",
+        "issues": [
+          "descending_mm_interval",
+          "descending_sample_interval"
+        ]
+      },
+      "relations": [
+        {
+          "from": "PP5:25",
+          "relation": "주석의 비드",
+          "to": "3"
+        },
+        {
+          "from": "PP5:25",
+          "relation": "기록된 설정 코드",
+          "to": "3"
+        }
+      ],
+      "provenance": [
+        {
+          "label": "원본 Excel",
+          "locator": "ZENODO_Penelope/PP5/2. ndt_data/defects_xlocation.xlsx · PP5!A25:G25",
+          "sha256": "afa37327d59c76956f4aad85438366b5da0d7475c5d5cc82728eda6c05e89cf9",
+          "url": "https://zenodo.org/records/15083865"
+        }
+      ],
+      "request": {
+        "title": "구간 방향과 원래 주석 확인",
+        "reason": "시작점이 끝점 이하라는 계약에서는 위치·샘플 구간이 확인 대상입니다. 역순이라는 사실만으로 오타를 확정할 수 없습니다.",
+        "items": [
+          "PP5!D25:E25의 177→160 mm 방향을 확인합니다.",
+          "PP5!F25:G25의 73717→66637 샘플 구간과 원래 주석을 확인합니다."
+        ],
+        "forbidden": [
+          "두 끝점을 임의로 바꾸지 않습니다.",
+          "용접 결함의 원인이나 재작업 방법을 단정하지 않습니다."
+        ]
+      }
+    },
+    {
+      "id": "PP7:10",
+      "kind": "real_audit",
+      "label": "실제 자료 · 설정 문서 대조",
+      "question": "PP7 비드 2의 설정을 어느 기록으로 확인해야 할까요?",
+      "note": "실제 자료의 기술적 점검입니다. 아래 요청은 연구자가 작성했으며 SHACL 실행 결과나 공식 수정 지침이 아닙니다.",
+      "input": {
+        "id": "PP7:10",
+        "coupon": "PP7",
+        "archive_path": "ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx",
+        "sheet": "PP7",
+        "excel_row": 10,
+        "cell_range": "A10:G10",
+        "values": {
+          "defect": 1,
+          "welding_setting": 1,
+          "bead": 2,
+          "x_init_mm": 365,
+          "x_end_mm": 366,
+          "sample_init": 228179,
+          "sample_end": 228805
+        },
+        "defect_label": "Porosity",
+        "observed_nominal_setting": [
+          27,
+          450,
+          null,
+          null,
+          1.6,
+          null,
+          48
+        ],
+        "design_expected_setting_code": 2,
+        "design_nominal_setting": [
+          27,
+          550,
+          null,
+          null,
+          2.05,
+          null,
+          48
+        ],
+        "design_provenance": "ZENODO_Penelope/PP7/Design_Materials_Settings.pdf page 2 Settings parameters",
+        "issues": [
+          "worksheet_setting_differs_from_shared_design"
+        ]
+      },
+      "relations": [
+        {
+          "from": "PP7:10",
+          "relation": "주석의 비드",
+          "to": "2"
+        },
+        {
+          "from": "PP7:10",
+          "relation": "기록된 설정 코드",
+          "to": "1"
+        },
+        {
+          "from": "설계 PDF · 비드 2",
+          "relation": "명목 설정의 대응",
+          "to": "설정 코드 2"
+        }
+      ],
+      "provenance": [
+        {
+          "label": "원본 Excel",
+          "locator": "ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx · PP7!A10:G10",
+          "sha256": "d95e071ac4f6a489d53a3b6ce0d5fc63506bb9d9bc592ef6eb20da8ef8c3f4a5",
+          "url": "https://zenodo.org/records/15083865"
+        },
+        {
+          "label": "설계 문서",
+          "locator": "ZENODO_Penelope/PP7/Design_Materials_Settings.pdf page 2 Settings parameters",
+          "sha256": "c8fadf5446f44c4e7c63f16776aa42c47bece3d2d74b34fd3900c1968018b325",
+          "url": "https://zenodo.org/records/15083865"
+        }
+      ],
+      "request": {
+        "title": "실제 적용 설정과 설계 적용 범위 확인",
+        "reason": "주석은 설정 1을 가리키며 해당 설계 문서의 비드 2는 설정 2에 대응합니다. 어느 기록이 맞는지는 이 자료만으로 확정할 수 없습니다.",
+        "items": [
+          "실제 적용 설정과 예외 승인 기록을 요청합니다.",
+          "설계 문서의 적용 시점과 버전을 확인합니다.",
+          "주석 코드의 명목 설정은 450 A, 설계 대응 설정은 550 A입니다. 실제 측정 전류를 확인한 것은 아닙니다."
+        ],
+        "forbidden": [
+          "주석을 설계값으로 자동 덮어쓰지 않습니다.",
+          "전류를 550 A로 바꾸라는 공정 명령을 내리지 않습니다."
+        ]
+      }
+    },
+    {
+      "id": "c008",
+      "kind": "synthetic_replay",
+      "label": "합성 사례 · 근거가 있는 복원",
+      "question": "누락된 추출 필드에 참조값을 제안해도 될까요?",
+      "note": "연구자가 작성한 개발 사례의 저장된 실행입니다. setting은 합성 설정 코드이며 실제 공정 변경값이 아닙니다.",
+      "input": {
+        "dependencies": [
+          {
+            "id": "s1_dep",
+            "maximum": 11,
+            "minimum": 1,
+            "target": "s1_target"
+          }
+        ],
+        "edges": [
+          {
+            "from": "s1_target",
+            "to": "s1_bridge"
+          },
+          {
+            "from": "s1_bridge",
+            "to": "s1_ref"
+          }
+        ],
+        "nodes": [
+          {
+            "citation": "synthetic://source/1/record/1",
+            "entity": "s1_target",
+            "field": "setting",
+            "id": "s1_ref",
+            "type": "Reference",
+            "unit": "code",
+            "value": 2,
+            "version": "v1"
+          },
+          {
+            "id": "s1_bridge",
+            "type": "Bridge"
+          }
+        ],
+        "target": {
+          "field": "setting",
+          "id": "s1_target",
+          "maximum": 11,
+          "minimum": 1,
+          "unit": "code",
+          "value": null,
+          "version": "v1"
+        }
+      },
+      "runtime": {
+        "dependencies": [
+          {
+            "id": "s1_dep",
+            "maximum": 11,
+            "minimum": 1,
+            "target": "s1_target"
+          }
+        ],
+        "edges": [
+          {
+            "from": "s1_target",
+            "to": "s1_bridge"
+          },
+          {
+            "from": "s1_bridge",
+            "to": "s1_ref"
+          }
+        ],
+        "nodes": [
+          {
+            "citation": "synthetic://source/1/record/1",
+            "entity": "s1_target",
+            "field": "setting",
+            "id": "s1_ref",
+            "type": "Reference",
+            "unit": "code",
+            "value": 2,
+            "version": "v1"
+          },
+          {
+            "id": "s1_bridge",
+            "type": "Bridge"
+          }
+        ],
+        "target": {
+          "field": "setting",
+          "id": "s1_target",
+          "maximum": 11,
+          "minimum": 1,
+          "unit": "code",
+          "value": null,
+          "version": "v1"
+        }
+      },
+      "outputs": {
+        "direct_local_candidate|no_postcheck": {
+          "after": null,
+          "after_report": null,
+          "arm": "direct_local_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": null,
+          "candidate_citations": [],
+          "candidate_patch": null,
+          "candidate_reference_ids": [],
+          "diagnostics": {
+            "applicable_reference_count": 0,
+            "original_graph_triples": 20,
+            "rule_derived_reference_ids": [],
+            "shadow_rule_derived_reference_ids": null
+          },
+          "diff": [],
+          "disposition": "request_evidence",
+          "input_file_sha256": "6fbbf3eb42400a02c09e28729dc028fa2ddedcf02b1db00238f37f5e5801999a",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "8561f0735aa452cb977c0a9c4460dc52f4c43446a86e87d0b5628f08e73040e3",
+          "original_unchanged": true,
+          "postcheck": "no_postcheck",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        },
+        "direct_local_candidate|shadow_revalidation": {
+          "after": null,
+          "after_report": null,
+          "arm": "direct_local_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": null,
+          "candidate_citations": [],
+          "candidate_patch": null,
+          "candidate_reference_ids": [],
+          "diagnostics": {
+            "applicable_reference_count": 0,
+            "original_graph_triples": 20,
+            "rule_derived_reference_ids": [],
+            "shadow_rule_derived_reference_ids": null
+          },
+          "diff": [],
+          "disposition": "request_evidence",
+          "input_file_sha256": "6fbbf3eb42400a02c09e28729dc028fa2ddedcf02b1db00238f37f5e5801999a",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "8561f0735aa452cb977c0a9c4460dc52f4c43446a86e87d0b5628f08e73040e3",
+          "original_unchanged": true,
+          "postcheck": "shadow_revalidation",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        },
+        "matched_Python_relation_candidate|no_postcheck": {
+          "after": {
+            "python": {
+              "conforms": true,
+              "results": []
+            },
+            "shacl": {
+              "conforms": true,
+              "results": []
+            },
+            "validators_agree": true
+          },
+          "after_report": {
+            "python": {
+              "conforms": true,
+              "results": []
+            },
+            "shacl": {
+              "conforms": true,
+              "results": []
+            },
+            "validators_agree": true
+          },
+          "arm": "matched_Python_relation_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": {
+            "citations": [
+              "synthetic://source/1/record/1"
+            ],
+            "patch": {
+              "field": "setting",
+              "new": 2,
+              "old": null,
+              "target": "s1_target"
+            },
+            "reference_ids": [
+              "s1_ref"
+            ]
+          },
+          "candidate_citations": [
+            "synthetic://source/1/record/1"
+          ],
+          "candidate_patch": {
+            "field": "setting",
+            "new": 2,
+            "old": null,
+            "target": "s1_target"
+          },
+          "candidate_reference_ids": [
+            "s1_ref"
+          ],
+          "diagnostics": {
+            "applicable_reference_count": 1,
+            "original_graph_triples": 20,
+            "rule_derived_reference_ids": [],
+            "shadow_rule_derived_reference_ids": null
+          },
+          "diff": [
+            {
+              "new": 2,
+              "old": null,
+              "path": "/target/value"
+            }
+          ],
+          "disposition": "propose_patch",
+          "input_file_sha256": "6fbbf3eb42400a02c09e28729dc028fa2ddedcf02b1db00238f37f5e5801999a",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "8561f0735aa452cb977c0a9c4460dc52f4c43446a86e87d0b5628f08e73040e3",
+          "original_unchanged": true,
+          "postcheck": "no_postcheck",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        },
+        "matched_Python_relation_candidate|shadow_revalidation": {
+          "after": {
+            "python": {
+              "conforms": true,
+              "results": []
+            },
+            "shacl": {
+              "conforms": true,
+              "results": []
+            },
+            "validators_agree": true
+          },
+          "after_report": {
+            "python": {
+              "conforms": true,
+              "results": []
+            },
+            "shacl": {
+              "conforms": true,
+              "results": []
+            },
+            "validators_agree": true
+          },
+          "arm": "matched_Python_relation_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": {
+            "citations": [
+              "synthetic://source/1/record/1"
+            ],
+            "patch": {
+              "field": "setting",
+              "new": 2,
+              "old": null,
+              "target": "s1_target"
+            },
+            "reference_ids": [
+              "s1_ref"
+            ]
+          },
+          "candidate_citations": [
+            "synthetic://source/1/record/1"
+          ],
+          "candidate_patch": {
+            "field": "setting",
+            "new": 2,
+            "old": null,
+            "target": "s1_target"
+          },
+          "candidate_reference_ids": [
+            "s1_ref"
+          ],
+          "diagnostics": {
+            "applicable_reference_count": 1,
+            "original_graph_triples": 20,
+            "rule_derived_reference_ids": [],
+            "shadow_rule_derived_reference_ids": null
+          },
+          "diff": [
+            {
+              "new": 2,
+              "old": null,
+              "path": "/target/value"
+            }
+          ],
+          "disposition": "propose_patch",
+          "input_file_sha256": "6fbbf3eb42400a02c09e28729dc028fa2ddedcf02b1db00238f37f5e5801999a",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "8561f0735aa452cb977c0a9c4460dc52f4c43446a86e87d0b5628f08e73040e3",
+          "original_unchanged": true,
+          "postcheck": "shadow_revalidation",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        },
+        "SHACL_AF_relation_candidate|no_postcheck": {
+          "after": {
+            "python": {
+              "conforms": true,
+              "results": []
+            },
+            "shacl": {
+              "conforms": true,
+              "results": []
+            },
+            "validators_agree": true
+          },
+          "after_report": {
+            "python": {
+              "conforms": true,
+              "results": []
+            },
+            "shacl": {
+              "conforms": true,
+              "results": []
+            },
+            "validators_agree": true
+          },
+          "arm": "SHACL_AF_relation_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": {
+            "citations": [
+              "synthetic://source/1/record/1"
+            ],
+            "patch": {
+              "field": "setting",
+              "new": 2,
+              "old": null,
+              "target": "s1_target"
+            },
+            "reference_ids": [
+              "s1_ref"
+            ]
+          },
+          "candidate_citations": [
+            "synthetic://source/1/record/1"
+          ],
+          "candidate_patch": {
+            "field": "setting",
+            "new": 2,
+            "old": null,
+            "target": "s1_target"
+          },
+          "candidate_reference_ids": [
+            "s1_ref"
+          ],
+          "diagnostics": {
+            "applicable_reference_count": 1,
+            "original_graph_triples": 20,
+            "rule_derived_reference_ids": [
+              "s1_ref"
+            ],
+            "shadow_rule_derived_reference_ids": [
+              "s1_ref"
+            ]
+          },
+          "diff": [
+            {
+              "new": 2,
+              "old": null,
+              "path": "/target/value"
+            }
+          ],
+          "disposition": "propose_patch",
+          "input_file_sha256": "6fbbf3eb42400a02c09e28729dc028fa2ddedcf02b1db00238f37f5e5801999a",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "8561f0735aa452cb977c0a9c4460dc52f4c43446a86e87d0b5628f08e73040e3",
+          "original_unchanged": true,
+          "postcheck": "no_postcheck",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        },
+        "SHACL_AF_relation_candidate|shadow_revalidation": {
+          "after": {
+            "python": {
+              "conforms": true,
+              "results": []
+            },
+            "shacl": {
+              "conforms": true,
+              "results": []
+            },
+            "validators_agree": true
+          },
+          "after_report": {
+            "python": {
+              "conforms": true,
+              "results": []
+            },
+            "shacl": {
+              "conforms": true,
+              "results": []
+            },
+            "validators_agree": true
+          },
+          "arm": "SHACL_AF_relation_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": {
+            "citations": [
+              "synthetic://source/1/record/1"
+            ],
+            "patch": {
+              "field": "setting",
+              "new": 2,
+              "old": null,
+              "target": "s1_target"
+            },
+            "reference_ids": [
+              "s1_ref"
+            ]
+          },
+          "candidate_citations": [
+            "synthetic://source/1/record/1"
+          ],
+          "candidate_patch": {
+            "field": "setting",
+            "new": 2,
+            "old": null,
+            "target": "s1_target"
+          },
+          "candidate_reference_ids": [
+            "s1_ref"
+          ],
+          "diagnostics": {
+            "applicable_reference_count": 1,
+            "original_graph_triples": 20,
+            "rule_derived_reference_ids": [
+              "s1_ref"
+            ],
+            "shadow_rule_derived_reference_ids": [
+              "s1_ref"
+            ]
+          },
+          "diff": [
+            {
+              "new": 2,
+              "old": null,
+              "path": "/target/value"
+            }
+          ],
+          "disposition": "propose_patch",
+          "input_file_sha256": "6fbbf3eb42400a02c09e28729dc028fa2ddedcf02b1db00238f37f5e5801999a",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "8561f0735aa452cb977c0a9c4460dc52f4c43446a86e87d0b5628f08e73040e3",
+          "original_unchanged": true,
+          "postcheck": "shadow_revalidation",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        }
+      },
+      "evaluation": {
+        "case_id": "c008",
+        "family": 1,
+        "field": "setting",
+        "depth": 2,
+        "state": "supported_unique_current_reference",
+        "reference_applicable": true,
+        "contract_eligible": true,
+        "correct_known_eligible": true,
+        "expected_candidate_value": 2,
+        "external_truth": 2,
+        "expected_refs": [
+          "s1_ref"
+        ],
+        "provenance": "Authored synthetic development expectation, not observed factory truth"
+      },
+      "relations": [
+        {
+          "from": "s1_target",
+          "relation": "참조 관계",
+          "to": "s1_bridge"
+        },
+        {
+          "from": "s1_bridge",
+          "relation": "참조 관계",
+          "to": "s1_ref"
+        },
+        {
+          "from": "s1_ref",
+          "relation": "참조값 · 출처",
+          "to": "2 · synthetic://source/1/record/1"
+        }
+      ],
+      "provenance": [
+        {
+          "label": "합성 입력",
+          "locator": "fixtures/runtime/c008.json",
+          "sha256": "6fbbf3eb42400a02c09e28729dc028fa2ddedcf02b1db00238f37f5e5801999a"
+        },
+        {
+          "label": "저장된 전체 실행 출력",
+          "locator": "runs/run-001/outputs.jsonl",
+          "sha256": "c3377fd99e549a9ab7b212cb929cbda2bc3576a5186e1f4387247263650e35b3"
+        }
+      ]
+    },
+    {
+      "id": "c015",
+      "kind": "synthetic_replay",
+      "label": "합성 사례 · 의존 조건 위반",
+      "question": "누락된 추출 필드에 참조값을 제안해도 될까요?",
+      "note": "연구자가 작성한 개발 사례의 저장된 실행입니다. setting은 합성 설정 코드이며 실제 공정 변경값이 아닙니다.",
+      "input": {
+        "dependencies": [
+          {
+            "id": "s1_dep",
+            "maximum": 1,
+            "minimum": 1,
+            "target": "s1_target"
+          }
+        ],
+        "edges": [
+          {
+            "from": "s1_target",
+            "to": "s1_bridge"
+          },
+          {
+            "from": "s1_bridge",
+            "to": "s1_ref"
+          }
+        ],
+        "nodes": [
+          {
+            "citation": "synthetic://source/1/record/1",
+            "entity": "s1_target",
+            "field": "setting",
+            "id": "s1_ref",
+            "type": "Reference",
+            "unit": "code",
+            "value": 2,
+            "version": "v1"
+          },
+          {
+            "id": "s1_bridge",
+            "type": "Bridge"
+          }
+        ],
+        "target": {
+          "field": "setting",
+          "id": "s1_target",
+          "maximum": 11,
+          "minimum": 1,
+          "unit": "code",
+          "value": null,
+          "version": "v1"
+        }
+      },
+      "runtime": {
+        "dependencies": [
+          {
+            "id": "s1_dep",
+            "maximum": 1,
+            "minimum": 1,
+            "target": "s1_target"
+          }
+        ],
+        "edges": [
+          {
+            "from": "s1_target",
+            "to": "s1_bridge"
+          },
+          {
+            "from": "s1_bridge",
+            "to": "s1_ref"
+          }
+        ],
+        "nodes": [
+          {
+            "citation": "synthetic://source/1/record/1",
+            "entity": "s1_target",
+            "field": "setting",
+            "id": "s1_ref",
+            "type": "Reference",
+            "unit": "code",
+            "value": 2,
+            "version": "v1"
+          },
+          {
+            "id": "s1_bridge",
+            "type": "Bridge"
+          }
+        ],
+        "target": {
+          "field": "setting",
+          "id": "s1_target",
+          "maximum": 11,
+          "minimum": 1,
+          "unit": "code",
+          "value": null,
+          "version": "v1"
+        }
+      },
+      "outputs": {
+        "direct_local_candidate|no_postcheck": {
+          "after": null,
+          "after_report": null,
+          "arm": "direct_local_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": null,
+          "candidate_citations": [],
+          "candidate_patch": null,
+          "candidate_reference_ids": [],
+          "diagnostics": {
+            "applicable_reference_count": 0,
+            "original_graph_triples": 20,
+            "rule_derived_reference_ids": [],
+            "shadow_rule_derived_reference_ids": null
+          },
+          "diff": [],
+          "disposition": "request_evidence",
+          "input_file_sha256": "0e7f9fd02a23b448272674e3a1c9194f76ae45af441c5b4dcacb67fcf72603f8",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "a7e7d7170fb4b3100e9946d44be60365c8d0ebb2261f0ec52430308330c2675b",
+          "original_unchanged": true,
+          "postcheck": "no_postcheck",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        },
+        "direct_local_candidate|shadow_revalidation": {
+          "after": null,
+          "after_report": null,
+          "arm": "direct_local_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": null,
+          "candidate_citations": [],
+          "candidate_patch": null,
+          "candidate_reference_ids": [],
+          "diagnostics": {
+            "applicable_reference_count": 0,
+            "original_graph_triples": 20,
+            "rule_derived_reference_ids": [],
+            "shadow_rule_derived_reference_ids": null
+          },
+          "diff": [],
+          "disposition": "request_evidence",
+          "input_file_sha256": "0e7f9fd02a23b448272674e3a1c9194f76ae45af441c5b4dcacb67fcf72603f8",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "a7e7d7170fb4b3100e9946d44be60365c8d0ebb2261f0ec52430308330c2675b",
+          "original_unchanged": true,
+          "postcheck": "shadow_revalidation",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        },
+        "matched_Python_relation_candidate|no_postcheck": {
+          "after": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_bounds"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_bounds"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "after_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_bounds"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_bounds"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "arm": "matched_Python_relation_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": {
+            "citations": [
+              "synthetic://source/1/record/1"
+            ],
+            "patch": {
+              "field": "setting",
+              "new": 2,
+              "old": null,
+              "target": "s1_target"
+            },
+            "reference_ids": [
+              "s1_ref"
+            ]
+          },
+          "candidate_citations": [
+            "synthetic://source/1/record/1"
+          ],
+          "candidate_patch": {
+            "field": "setting",
+            "new": 2,
+            "old": null,
+            "target": "s1_target"
+          },
+          "candidate_reference_ids": [
+            "s1_ref"
+          ],
+          "diagnostics": {
+            "applicable_reference_count": 1,
+            "original_graph_triples": 20,
+            "rule_derived_reference_ids": [],
+            "shadow_rule_derived_reference_ids": null
+          },
+          "diff": [
+            {
+              "new": 2,
+              "old": null,
+              "path": "/target/value"
+            }
+          ],
+          "disposition": "propose_patch",
+          "input_file_sha256": "0e7f9fd02a23b448272674e3a1c9194f76ae45af441c5b4dcacb67fcf72603f8",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "a7e7d7170fb4b3100e9946d44be60365c8d0ebb2261f0ec52430308330c2675b",
+          "original_unchanged": true,
+          "postcheck": "no_postcheck",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        },
+        "matched_Python_relation_candidate|shadow_revalidation": {
+          "after": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_bounds"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_bounds"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "after_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_bounds"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_bounds"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "arm": "matched_Python_relation_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": {
+            "citations": [
+              "synthetic://source/1/record/1"
+            ],
+            "patch": {
+              "field": "setting",
+              "new": 2,
+              "old": null,
+              "target": "s1_target"
+            },
+            "reference_ids": [
+              "s1_ref"
+            ]
+          },
+          "candidate_citations": [
+            "synthetic://source/1/record/1"
+          ],
+          "candidate_patch": {
+            "field": "setting",
+            "new": 2,
+            "old": null,
+            "target": "s1_target"
+          },
+          "candidate_reference_ids": [
+            "s1_ref"
+          ],
+          "diagnostics": {
+            "applicable_reference_count": 1,
+            "original_graph_triples": 20,
+            "rule_derived_reference_ids": [],
+            "shadow_rule_derived_reference_ids": null
+          },
+          "diff": [
+            {
+              "new": 2,
+              "old": null,
+              "path": "/target/value"
+            }
+          ],
+          "disposition": "request_reconciliation",
+          "input_file_sha256": "0e7f9fd02a23b448272674e3a1c9194f76ae45af441c5b4dcacb67fcf72603f8",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "a7e7d7170fb4b3100e9946d44be60365c8d0ebb2261f0ec52430308330c2675b",
+          "original_unchanged": true,
+          "postcheck": "shadow_revalidation",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        },
+        "SHACL_AF_relation_candidate|no_postcheck": {
+          "after": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_bounds"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_bounds"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "after_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_bounds"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_bounds"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "arm": "SHACL_AF_relation_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": {
+            "citations": [
+              "synthetic://source/1/record/1"
+            ],
+            "patch": {
+              "field": "setting",
+              "new": 2,
+              "old": null,
+              "target": "s1_target"
+            },
+            "reference_ids": [
+              "s1_ref"
+            ]
+          },
+          "candidate_citations": [
+            "synthetic://source/1/record/1"
+          ],
+          "candidate_patch": {
+            "field": "setting",
+            "new": 2,
+            "old": null,
+            "target": "s1_target"
+          },
+          "candidate_reference_ids": [
+            "s1_ref"
+          ],
+          "diagnostics": {
+            "applicable_reference_count": 1,
+            "original_graph_triples": 20,
+            "rule_derived_reference_ids": [
+              "s1_ref"
+            ],
+            "shadow_rule_derived_reference_ids": [
+              "s1_ref"
+            ]
+          },
+          "diff": [
+            {
+              "new": 2,
+              "old": null,
+              "path": "/target/value"
+            }
+          ],
+          "disposition": "propose_patch",
+          "input_file_sha256": "0e7f9fd02a23b448272674e3a1c9194f76ae45af441c5b4dcacb67fcf72603f8",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "a7e7d7170fb4b3100e9946d44be60365c8d0ebb2261f0ec52430308330c2675b",
+          "original_unchanged": true,
+          "postcheck": "no_postcheck",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        },
+        "SHACL_AF_relation_candidate|shadow_revalidation": {
+          "after": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_bounds"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_bounds"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "after_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_bounds"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_bounds"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "arm": "SHACL_AF_relation_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": {
+            "citations": [
+              "synthetic://source/1/record/1"
+            ],
+            "patch": {
+              "field": "setting",
+              "new": 2,
+              "old": null,
+              "target": "s1_target"
+            },
+            "reference_ids": [
+              "s1_ref"
+            ]
+          },
+          "candidate_citations": [
+            "synthetic://source/1/record/1"
+          ],
+          "candidate_patch": {
+            "field": "setting",
+            "new": 2,
+            "old": null,
+            "target": "s1_target"
+          },
+          "candidate_reference_ids": [
+            "s1_ref"
+          ],
+          "diagnostics": {
+            "applicable_reference_count": 1,
+            "original_graph_triples": 20,
+            "rule_derived_reference_ids": [
+              "s1_ref"
+            ],
+            "shadow_rule_derived_reference_ids": [
+              "s1_ref"
+            ]
+          },
+          "diff": [
+            {
+              "new": 2,
+              "old": null,
+              "path": "/target/value"
+            }
+          ],
+          "disposition": "request_reconciliation",
+          "input_file_sha256": "0e7f9fd02a23b448272674e3a1c9194f76ae45af441c5b4dcacb67fcf72603f8",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "a7e7d7170fb4b3100e9946d44be60365c8d0ebb2261f0ec52430308330c2675b",
+          "original_unchanged": true,
+          "postcheck": "shadow_revalidation",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        }
+      },
+      "evaluation": {
+        "case_id": "c015",
+        "family": 1,
+        "field": "setting",
+        "depth": 2,
+        "state": "patch_creates_dependency_violation",
+        "reference_applicable": true,
+        "contract_eligible": false,
+        "correct_known_eligible": false,
+        "expected_candidate_value": 2,
+        "external_truth": 2,
+        "expected_refs": [
+          "s1_ref"
+        ],
+        "provenance": "Authored synthetic development expectation, not observed factory truth"
+      },
+      "relations": [
+        {
+          "from": "s1_target",
+          "relation": "참조 관계",
+          "to": "s1_bridge"
+        },
+        {
+          "from": "s1_bridge",
+          "relation": "참조 관계",
+          "to": "s1_ref"
+        },
+        {
+          "from": "s1_ref",
+          "relation": "참조값 · 출처",
+          "to": "2 · synthetic://source/1/record/1"
+        }
+      ],
+      "provenance": [
+        {
+          "label": "합성 입력",
+          "locator": "fixtures/runtime/c015.json",
+          "sha256": "0e7f9fd02a23b448272674e3a1c9194f76ae45af441c5b4dcacb67fcf72603f8"
+        },
+        {
+          "label": "저장된 전체 실행 출력",
+          "locator": "runs/run-001/outputs.jsonl",
+          "sha256": "c3377fd99e549a9ab7b212cb929cbda2bc3576a5186e1f4387247263650e35b3"
+        }
+      ]
+    },
+    {
+      "id": "c014",
+      "kind": "synthetic_replay",
+      "label": "합성 사례 · 검사를 통과한 거짓 근거",
+      "question": "누락된 추출 필드에 참조값을 제안해도 될까요?",
+      "note": "연구자가 작성한 개발 사례의 저장된 실행입니다. setting은 합성 설정 코드이며 실제 공정 변경값이 아닙니다.",
+      "input": {
+        "dependencies": [
+          {
+            "id": "s1_dep",
+            "maximum": 11,
+            "minimum": 1,
+            "target": "s1_target"
+          }
+        ],
+        "edges": [
+          {
+            "from": "s1_target",
+            "to": "s1_bridge"
+          },
+          {
+            "from": "s1_bridge",
+            "to": "s1_ref"
+          }
+        ],
+        "nodes": [
+          {
+            "citation": "synthetic://source/1/record/1",
+            "entity": "s1_target",
+            "field": "setting",
+            "id": "s1_ref",
+            "type": "Reference",
+            "unit": "code",
+            "value": 3,
+            "version": "v1"
+          },
+          {
+            "id": "s1_bridge",
+            "type": "Bridge"
+          }
+        ],
+        "target": {
+          "field": "setting",
+          "id": "s1_target",
+          "maximum": 11,
+          "minimum": 1,
+          "unit": "code",
+          "value": null,
+          "version": "v1"
+        }
+      },
+      "runtime": {
+        "dependencies": [
+          {
+            "id": "s1_dep",
+            "maximum": 11,
+            "minimum": 1,
+            "target": "s1_target"
+          }
+        ],
+        "edges": [
+          {
+            "from": "s1_target",
+            "to": "s1_bridge"
+          },
+          {
+            "from": "s1_bridge",
+            "to": "s1_ref"
+          }
+        ],
+        "nodes": [
+          {
+            "citation": "synthetic://source/1/record/1",
+            "entity": "s1_target",
+            "field": "setting",
+            "id": "s1_ref",
+            "type": "Reference",
+            "unit": "code",
+            "value": 3,
+            "version": "v1"
+          },
+          {
+            "id": "s1_bridge",
+            "type": "Bridge"
+          }
+        ],
+        "target": {
+          "field": "setting",
+          "id": "s1_target",
+          "maximum": 11,
+          "minimum": 1,
+          "unit": "code",
+          "value": null,
+          "version": "v1"
+        }
+      },
+      "outputs": {
+        "direct_local_candidate|no_postcheck": {
+          "after": null,
+          "after_report": null,
+          "arm": "direct_local_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": null,
+          "candidate_citations": [],
+          "candidate_patch": null,
+          "candidate_reference_ids": [],
+          "diagnostics": {
+            "applicable_reference_count": 0,
+            "original_graph_triples": 20,
+            "rule_derived_reference_ids": [],
+            "shadow_rule_derived_reference_ids": null
+          },
+          "diff": [],
+          "disposition": "request_evidence",
+          "input_file_sha256": "e489bfc79ee773240fea3ed9eb6d8b87e4765fc77d98932a3fb43bf6ca2a3f20",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "c37889fb335fc1a2adb3cb0dd7e34a508a9c57d24bc99311e8080651ad4a57f5",
+          "original_unchanged": true,
+          "postcheck": "no_postcheck",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        },
+        "direct_local_candidate|shadow_revalidation": {
+          "after": null,
+          "after_report": null,
+          "arm": "direct_local_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": null,
+          "candidate_citations": [],
+          "candidate_patch": null,
+          "candidate_reference_ids": [],
+          "diagnostics": {
+            "applicable_reference_count": 0,
+            "original_graph_triples": 20,
+            "rule_derived_reference_ids": [],
+            "shadow_rule_derived_reference_ids": null
+          },
+          "diff": [],
+          "disposition": "request_evidence",
+          "input_file_sha256": "e489bfc79ee773240fea3ed9eb6d8b87e4765fc77d98932a3fb43bf6ca2a3f20",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "c37889fb335fc1a2adb3cb0dd7e34a508a9c57d24bc99311e8080651ad4a57f5",
+          "original_unchanged": true,
+          "postcheck": "shadow_revalidation",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        },
+        "matched_Python_relation_candidate|no_postcheck": {
+          "after": {
+            "python": {
+              "conforms": true,
+              "results": []
+            },
+            "shacl": {
+              "conforms": true,
+              "results": []
+            },
+            "validators_agree": true
+          },
+          "after_report": {
+            "python": {
+              "conforms": true,
+              "results": []
+            },
+            "shacl": {
+              "conforms": true,
+              "results": []
+            },
+            "validators_agree": true
+          },
+          "arm": "matched_Python_relation_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": {
+            "citations": [
+              "synthetic://source/1/record/1"
+            ],
+            "patch": {
+              "field": "setting",
+              "new": 3,
+              "old": null,
+              "target": "s1_target"
+            },
+            "reference_ids": [
+              "s1_ref"
+            ]
+          },
+          "candidate_citations": [
+            "synthetic://source/1/record/1"
+          ],
+          "candidate_patch": {
+            "field": "setting",
+            "new": 3,
+            "old": null,
+            "target": "s1_target"
+          },
+          "candidate_reference_ids": [
+            "s1_ref"
+          ],
+          "diagnostics": {
+            "applicable_reference_count": 1,
+            "original_graph_triples": 20,
+            "rule_derived_reference_ids": [],
+            "shadow_rule_derived_reference_ids": null
+          },
+          "diff": [
+            {
+              "new": 3,
+              "old": null,
+              "path": "/target/value"
+            }
+          ],
+          "disposition": "propose_patch",
+          "input_file_sha256": "e489bfc79ee773240fea3ed9eb6d8b87e4765fc77d98932a3fb43bf6ca2a3f20",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "c37889fb335fc1a2adb3cb0dd7e34a508a9c57d24bc99311e8080651ad4a57f5",
+          "original_unchanged": true,
+          "postcheck": "no_postcheck",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        },
+        "matched_Python_relation_candidate|shadow_revalidation": {
+          "after": {
+            "python": {
+              "conforms": true,
+              "results": []
+            },
+            "shacl": {
+              "conforms": true,
+              "results": []
+            },
+            "validators_agree": true
+          },
+          "after_report": {
+            "python": {
+              "conforms": true,
+              "results": []
+            },
+            "shacl": {
+              "conforms": true,
+              "results": []
+            },
+            "validators_agree": true
+          },
+          "arm": "matched_Python_relation_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": {
+            "citations": [
+              "synthetic://source/1/record/1"
+            ],
+            "patch": {
+              "field": "setting",
+              "new": 3,
+              "old": null,
+              "target": "s1_target"
+            },
+            "reference_ids": [
+              "s1_ref"
+            ]
+          },
+          "candidate_citations": [
+            "synthetic://source/1/record/1"
+          ],
+          "candidate_patch": {
+            "field": "setting",
+            "new": 3,
+            "old": null,
+            "target": "s1_target"
+          },
+          "candidate_reference_ids": [
+            "s1_ref"
+          ],
+          "diagnostics": {
+            "applicable_reference_count": 1,
+            "original_graph_triples": 20,
+            "rule_derived_reference_ids": [],
+            "shadow_rule_derived_reference_ids": null
+          },
+          "diff": [
+            {
+              "new": 3,
+              "old": null,
+              "path": "/target/value"
+            }
+          ],
+          "disposition": "propose_patch",
+          "input_file_sha256": "e489bfc79ee773240fea3ed9eb6d8b87e4765fc77d98932a3fb43bf6ca2a3f20",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "c37889fb335fc1a2adb3cb0dd7e34a508a9c57d24bc99311e8080651ad4a57f5",
+          "original_unchanged": true,
+          "postcheck": "shadow_revalidation",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        },
+        "SHACL_AF_relation_candidate|no_postcheck": {
+          "after": {
+            "python": {
+              "conforms": true,
+              "results": []
+            },
+            "shacl": {
+              "conforms": true,
+              "results": []
+            },
+            "validators_agree": true
+          },
+          "after_report": {
+            "python": {
+              "conforms": true,
+              "results": []
+            },
+            "shacl": {
+              "conforms": true,
+              "results": []
+            },
+            "validators_agree": true
+          },
+          "arm": "SHACL_AF_relation_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": {
+            "citations": [
+              "synthetic://source/1/record/1"
+            ],
+            "patch": {
+              "field": "setting",
+              "new": 3,
+              "old": null,
+              "target": "s1_target"
+            },
+            "reference_ids": [
+              "s1_ref"
+            ]
+          },
+          "candidate_citations": [
+            "synthetic://source/1/record/1"
+          ],
+          "candidate_patch": {
+            "field": "setting",
+            "new": 3,
+            "old": null,
+            "target": "s1_target"
+          },
+          "candidate_reference_ids": [
+            "s1_ref"
+          ],
+          "diagnostics": {
+            "applicable_reference_count": 1,
+            "original_graph_triples": 20,
+            "rule_derived_reference_ids": [
+              "s1_ref"
+            ],
+            "shadow_rule_derived_reference_ids": [
+              "s1_ref"
+            ]
+          },
+          "diff": [
+            {
+              "new": 3,
+              "old": null,
+              "path": "/target/value"
+            }
+          ],
+          "disposition": "propose_patch",
+          "input_file_sha256": "e489bfc79ee773240fea3ed9eb6d8b87e4765fc77d98932a3fb43bf6ca2a3f20",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "c37889fb335fc1a2adb3cb0dd7e34a508a9c57d24bc99311e8080651ad4a57f5",
+          "original_unchanged": true,
+          "postcheck": "no_postcheck",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        },
+        "SHACL_AF_relation_candidate|shadow_revalidation": {
+          "after": {
+            "python": {
+              "conforms": true,
+              "results": []
+            },
+            "shacl": {
+              "conforms": true,
+              "results": []
+            },
+            "validators_agree": true
+          },
+          "after_report": {
+            "python": {
+              "conforms": true,
+              "results": []
+            },
+            "shacl": {
+              "conforms": true,
+              "results": []
+            },
+            "validators_agree": true
+          },
+          "arm": "SHACL_AF_relation_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": {
+            "citations": [
+              "synthetic://source/1/record/1"
+            ],
+            "patch": {
+              "field": "setting",
+              "new": 3,
+              "old": null,
+              "target": "s1_target"
+            },
+            "reference_ids": [
+              "s1_ref"
+            ]
+          },
+          "candidate_citations": [
+            "synthetic://source/1/record/1"
+          ],
+          "candidate_patch": {
+            "field": "setting",
+            "new": 3,
+            "old": null,
+            "target": "s1_target"
+          },
+          "candidate_reference_ids": [
+            "s1_ref"
+          ],
+          "diagnostics": {
+            "applicable_reference_count": 1,
+            "original_graph_triples": 20,
+            "rule_derived_reference_ids": [
+              "s1_ref"
+            ],
+            "shadow_rule_derived_reference_ids": [
+              "s1_ref"
+            ]
+          },
+          "diff": [
+            {
+              "new": 3,
+              "old": null,
+              "path": "/target/value"
+            }
+          ],
+          "disposition": "propose_patch",
+          "input_file_sha256": "e489bfc79ee773240fea3ed9eb6d8b87e4765fc77d98932a3fb43bf6ca2a3f20",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "c37889fb335fc1a2adb3cb0dd7e34a508a9c57d24bc99311e8080651ad4a57f5",
+          "original_unchanged": true,
+          "postcheck": "shadow_revalidation",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        }
+      },
+      "evaluation": {
+        "case_id": "c014",
+        "family": 1,
+        "field": "setting",
+        "depth": 2,
+        "state": "shape_conforming_false_reference",
+        "reference_applicable": true,
+        "contract_eligible": true,
+        "correct_known_eligible": false,
+        "expected_candidate_value": 3,
+        "external_truth": 2,
+        "expected_refs": [
+          "s1_ref"
+        ],
+        "provenance": "Authored synthetic development expectation, not observed factory truth"
+      },
+      "relations": [
+        {
+          "from": "s1_target",
+          "relation": "참조 관계",
+          "to": "s1_bridge"
+        },
+        {
+          "from": "s1_bridge",
+          "relation": "참조 관계",
+          "to": "s1_ref"
+        },
+        {
+          "from": "s1_ref",
+          "relation": "참조값 · 출처",
+          "to": "3 · synthetic://source/1/record/1"
+        }
+      ],
+      "provenance": [
+        {
+          "label": "합성 입력",
+          "locator": "fixtures/runtime/c014.json",
+          "sha256": "e489bfc79ee773240fea3ed9eb6d8b87e4765fc77d98932a3fb43bf6ca2a3f20"
+        },
+        {
+          "label": "저장된 전체 실행 출력",
+          "locator": "runs/run-001/outputs.jsonl",
+          "sha256": "c3377fd99e549a9ab7b212cb929cbda2bc3576a5186e1f4387247263650e35b3"
+        }
+      ]
+    },
+    {
+      "id": "c009",
+      "kind": "synthetic_replay",
+      "label": "합성 사례 · 근거 부족",
+      "question": "누락된 추출 필드에 참조값을 제안해도 될까요?",
+      "note": "연구자가 작성한 개발 사례의 저장된 실행입니다. setting은 합성 설정 코드이며 실제 공정 변경값이 아닙니다.",
+      "input": {
+        "dependencies": [
+          {
+            "id": "s1_dep",
+            "maximum": 11,
+            "minimum": 1,
+            "target": "s1_target"
+          }
+        ],
+        "edges": [
+          {
+            "from": "s1_target",
+            "to": "s1_bridge"
+          }
+        ],
+        "nodes": [
+          {
+            "id": "s1_bridge",
+            "type": "Bridge"
+          }
+        ],
+        "target": {
+          "field": "setting",
+          "id": "s1_target",
+          "maximum": 11,
+          "minimum": 1,
+          "unit": "code",
+          "value": null,
+          "version": "v1"
+        }
+      },
+      "runtime": {
+        "dependencies": [
+          {
+            "id": "s1_dep",
+            "maximum": 11,
+            "minimum": 1,
+            "target": "s1_target"
+          }
+        ],
+        "edges": [
+          {
+            "from": "s1_target",
+            "to": "s1_bridge"
+          }
+        ],
+        "nodes": [
+          {
+            "id": "s1_bridge",
+            "type": "Bridge"
+          }
+        ],
+        "target": {
+          "field": "setting",
+          "id": "s1_target",
+          "maximum": 11,
+          "minimum": 1,
+          "unit": "code",
+          "value": null,
+          "version": "v1"
+        }
+      },
+      "outputs": {
+        "direct_local_candidate|no_postcheck": {
+          "after": null,
+          "after_report": null,
+          "arm": "direct_local_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": null,
+          "candidate_citations": [],
+          "candidate_patch": null,
+          "candidate_reference_ids": [],
+          "diagnostics": {
+            "applicable_reference_count": 0,
+            "original_graph_triples": 12,
+            "rule_derived_reference_ids": [],
+            "shadow_rule_derived_reference_ids": null
+          },
+          "diff": [],
+          "disposition": "request_evidence",
+          "input_file_sha256": "b8f2b4a59ec9b75e62e6181a83af9ed362e75b1ec962e60b3b851ff696e72000",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "3833e6b9093cb87a4a790bf381baa00a06fe99620a061978203a2648e05ed5ce",
+          "original_unchanged": true,
+          "postcheck": "no_postcheck",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        },
+        "direct_local_candidate|shadow_revalidation": {
+          "after": null,
+          "after_report": null,
+          "arm": "direct_local_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": null,
+          "candidate_citations": [],
+          "candidate_patch": null,
+          "candidate_reference_ids": [],
+          "diagnostics": {
+            "applicable_reference_count": 0,
+            "original_graph_triples": 12,
+            "rule_derived_reference_ids": [],
+            "shadow_rule_derived_reference_ids": null
+          },
+          "diff": [],
+          "disposition": "request_evidence",
+          "input_file_sha256": "b8f2b4a59ec9b75e62e6181a83af9ed362e75b1ec962e60b3b851ff696e72000",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "3833e6b9093cb87a4a790bf381baa00a06fe99620a061978203a2648e05ed5ce",
+          "original_unchanged": true,
+          "postcheck": "shadow_revalidation",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        },
+        "matched_Python_relation_candidate|no_postcheck": {
+          "after": null,
+          "after_report": null,
+          "arm": "matched_Python_relation_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": null,
+          "candidate_citations": [],
+          "candidate_patch": null,
+          "candidate_reference_ids": [],
+          "diagnostics": {
+            "applicable_reference_count": 0,
+            "original_graph_triples": 12,
+            "rule_derived_reference_ids": [],
+            "shadow_rule_derived_reference_ids": null
+          },
+          "diff": [],
+          "disposition": "request_evidence",
+          "input_file_sha256": "b8f2b4a59ec9b75e62e6181a83af9ed362e75b1ec962e60b3b851ff696e72000",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "3833e6b9093cb87a4a790bf381baa00a06fe99620a061978203a2648e05ed5ce",
+          "original_unchanged": true,
+          "postcheck": "no_postcheck",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        },
+        "matched_Python_relation_candidate|shadow_revalidation": {
+          "after": null,
+          "after_report": null,
+          "arm": "matched_Python_relation_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": null,
+          "candidate_citations": [],
+          "candidate_patch": null,
+          "candidate_reference_ids": [],
+          "diagnostics": {
+            "applicable_reference_count": 0,
+            "original_graph_triples": 12,
+            "rule_derived_reference_ids": [],
+            "shadow_rule_derived_reference_ids": null
+          },
+          "diff": [],
+          "disposition": "request_evidence",
+          "input_file_sha256": "b8f2b4a59ec9b75e62e6181a83af9ed362e75b1ec962e60b3b851ff696e72000",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "3833e6b9093cb87a4a790bf381baa00a06fe99620a061978203a2648e05ed5ce",
+          "original_unchanged": true,
+          "postcheck": "shadow_revalidation",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        },
+        "SHACL_AF_relation_candidate|no_postcheck": {
+          "after": null,
+          "after_report": null,
+          "arm": "SHACL_AF_relation_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": null,
+          "candidate_citations": [],
+          "candidate_patch": null,
+          "candidate_reference_ids": [],
+          "diagnostics": {
+            "applicable_reference_count": 0,
+            "original_graph_triples": 12,
+            "rule_derived_reference_ids": [],
+            "shadow_rule_derived_reference_ids": null
+          },
+          "diff": [],
+          "disposition": "request_evidence",
+          "input_file_sha256": "b8f2b4a59ec9b75e62e6181a83af9ed362e75b1ec962e60b3b851ff696e72000",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "3833e6b9093cb87a4a790bf381baa00a06fe99620a061978203a2648e05ed5ce",
+          "original_unchanged": true,
+          "postcheck": "no_postcheck",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        },
+        "SHACL_AF_relation_candidate|shadow_revalidation": {
+          "after": null,
+          "after_report": null,
+          "arm": "SHACL_AF_relation_candidate",
+          "before": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "before_report": {
+            "python": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "shacl": {
+              "conforms": false,
+              "results": [
+                {
+                  "focus": "urn:actionable-evidence:record:s1_dep",
+                  "message": "dependency_value_required"
+                },
+                {
+                  "focus": "urn:actionable-evidence:record:s1_target",
+                  "message": "target_value_required_integer"
+                }
+              ]
+            },
+            "validators_agree": true
+          },
+          "candidate": null,
+          "candidate_citations": [],
+          "candidate_patch": null,
+          "candidate_reference_ids": [],
+          "diagnostics": {
+            "applicable_reference_count": 0,
+            "original_graph_triples": 12,
+            "rule_derived_reference_ids": [],
+            "shadow_rule_derived_reference_ids": null
+          },
+          "diff": [],
+          "disposition": "request_evidence",
+          "input_file_sha256": "b8f2b4a59ec9b75e62e6181a83af9ed362e75b1ec962e60b3b851ff696e72000",
+          "input_hash_encoding": "canonical-json-utf8",
+          "input_sha256": "3833e6b9093cb87a4a790bf381baa00a06fe99620a061978203a2648e05ed5ce",
+          "original_unchanged": true,
+          "postcheck": "shadow_revalidation",
+          "provenance": {
+            "sha256": {
+              "research/actionable-evidence-1/implementation-contract.md": "e29b6572eb6bec97762afd020ceac99557db00a01235b1c48ce21bc74b203aef",
+              "research/actionable-evidence-1/rules.ttl": "2017eb761d6877d19c389547193efa6dffcc3826ffb76888c7e996658dc8e7db",
+              "research/actionable-evidence-1/shapes.ttl": "00d7f00b7cdb6367ca690fe708c2fb8a46df0218d517a7dea0ba5bc06a0028bd",
+              "scripts/actionable_evidence/runtime.py": "9c95eab96bf0b4054519d647d25b964aac84422661f1952d45345e0919bd0cf1",
+              "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9"
+            },
+            "versions": {
+              "pyshacl": "0.40.1",
+              "rdflib": "7.6.0"
+            }
+          },
+          "status": "ok"
+        }
+      },
+      "evaluation": {
+        "case_id": "c009",
+        "family": 1,
+        "field": "setting",
+        "depth": 2,
+        "state": "reference_missing_in_source",
+        "reference_applicable": false,
+        "contract_eligible": false,
+        "correct_known_eligible": false,
+        "expected_candidate_value": null,
+        "external_truth": 2,
+        "expected_refs": [],
+        "provenance": "Authored synthetic development expectation, not observed factory truth"
+      },
+      "relations": [
+        {
+          "from": "s1_target",
+          "relation": "참조 관계",
+          "to": "s1_bridge"
+        }
+      ],
+      "provenance": [
+        {
+          "label": "합성 입력",
+          "locator": "fixtures/runtime/c009.json",
+          "sha256": "b8f2b4a59ec9b75e62e6181a83af9ed362e75b1ec962e60b3b851ff696e72000"
+        },
+        {
+          "label": "저장된 전체 실행 출력",
+          "locator": "runs/run-001/outputs.jsonl",
+          "sha256": "c3377fd99e549a9ab7b212cb929cbda2bc3576a5186e1f4387247263650e35b3"
+        }
+      ],
+      "paired_missing_case": {
+        "id": "c010",
+        "same_runtime_bytes": true,
+        "note": "원천 누락과 검색 누락의 평가 라벨은 다르지만 보이는 입력은 같습니다. 실행기는 두 원인을 구분하지 않습니다."
+      }
+    }
+  ],
+  "provenance": {
+    "research/actionable-evidence-1/source/penelope-annotations.json": "4e22fe8240728d13882bc1c1e5c1e8efc45c167ab5a4f87f98e72c6a0c96483c",
+    "research/actionable-evidence-1/runs/run-001/outputs.jsonl": "c3377fd99e549a9ab7b212cb929cbda2bc3576a5186e1f4387247263650e35b3",
+    "research/actionable-evidence-1/runs/run-001/evaluation.json": "672e5088d849cbc3e34f850e7c4fcf017e1580d0c319792cc2c41a5f25b06a46",
+    "research/actionable-evidence-1/runs/run-001/freeze.json": "9947002fc060be354cd07a69faf59a4e9df8327c4e0a8ae194c70e6a1bdc0e43",
+    "research/actionable-evidence-1/fixtures/scorer.json": "ac2081a66aa5a3e7f0739a42270086bf5ee54c5a1727cea33721d8bc38dd1e4d",
+    "research/actionable-evidence-1/demo-contract.md": "7009cc46022fa0bbcf54066fc33dae1cfe11c5a7e2737b90a02f7d23df7e555c",
+    "scripts/build_actionable_demo.py": "e5937c4c35001d89f317bd00e3cd42527c6225cf9f7480056b61918c7592d584"
+  },
+  "verification": {
+    "full_grid_rows": 192,
+    "selected_real_cases": 2,
+    "selected_synthetic_cases": 4,
+    "selected_saved_outputs": 24,
+    "live_execution": false,
+    "api_calls": 0
+  }
+}

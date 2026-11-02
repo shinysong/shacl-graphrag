@@ -112,6 +112,15 @@ def prepare():
     demo = DOCS / 'experiments/evidence-report-demo'
     if demo.exists():
         shutil.copytree(demo, OUTPUT / 'experiments/evidence-report-demo', dirs_exist_ok=True)
+    # Explicit public provenance demo: consumed development labels are intentionally
+    # displayed separately from runtime input. Never copy the private workspace.
+    actionable = DOCS / 'experiments/actionable-evidence-demo'
+    if actionable.exists():
+        target = OUTPUT / 'experiments/actionable-evidence-demo'
+        target.mkdir(parents=True, exist_ok=True)
+        for name in ('index.html', 'style.css', 'app.js', 'data.js', 'demo.json',
+                     'build-manifest.json', 'Pretendard-Regular.woff2', 'OFL.txt'):
+            shutil.copyfile(actionable / name, target / name)
     # Public seminar files only; the standalone deck embeds its font and examples.
     seminar = DOCS / 'experiments/seminar'
     if seminar.exists():

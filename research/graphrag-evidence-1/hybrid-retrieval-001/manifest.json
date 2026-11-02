@@ -1,0 +1,32 @@
+{
+  "paths": {
+    "source": "research/graphrag-evidence-1/dense-retrieval-001/frozen/source-corpus-v1.json",
+    "children": "research/graphrag-evidence-1/dense-retrieval-001/frozen/children.json",
+    "questions": "research/graphrag-evidence-1/dense-retrieval-001/frozen/development-questions.json",
+    "scores": "research/graphrag-evidence-1/hybrid-rerank-001/results.json",
+    "candidates": "research/graphrag-evidence-1/hybrid-preparation-001/candidates.jsonl",
+    "tokenizer": "_workspace/graphrag-cycle3/sources/e5-tokenizer.json"
+  },
+  "hashes": {
+    "research/graphrag-evidence-1/dense-retrieval-001/frozen/source-corpus-v1.json": "900bb25d15bcb4dbab89076d3a1372d84762829dcd645bae7c17bc60b9693ac8",
+    "research/graphrag-evidence-1/dense-retrieval-001/frozen/children.json": "274cf2d4d10e075f0664fc35d0e9bbe449c73c9e16a73985a9032e504e76a2eb",
+    "research/graphrag-evidence-1/dense-retrieval-001/frozen/development-questions.json": "f7d12a0414e8a2e7099b2525fbac11a1c460adf3a9322a7b6e93cb6a97b57212",
+    "research/graphrag-evidence-1/hybrid-rerank-001/results.json": "67c623191d1cc1933805ae7331f67e9c0a1c250aa1ddbf021c8e4471bc3c067f",
+    "research/graphrag-evidence-1/hybrid-preparation-001/candidates.jsonl": "840ceb5225c7edf5a1a4f3190f6fbaf5143537247fec49751116b491d97905af",
+    "_workspace/graphrag-cycle3/sources/e5-tokenizer.json": "0b44a9d7b51c3c62626640cda0e2c2f70fdacdc25bbbd68038369d14ebdf4c39",
+    "research/graphrag-evidence-1/hybrid-rerank-001/manifest.json": "dc2e3b85035ce234c3b9c3b4d8dff8cc2621788d28a4dcf474455c633fd3556d",
+    "research/graphrag-evidence-1/hybrid-rerank-001/execution-receipt.json": "cfd08077c6cbd9ac28e0108d8aad2b2847727e5d6c803de5df3961cb002c5491",
+    "scripts/pack_graphrag_hybrid.py": "5a8d04ecaefc029cf0fc9aa880d77b798ff08dcfcacad62b37ebeb0872f08b38",
+    "scripts/graphrag_dense.py": "cfcf51f7ca96a9bb274c5a814e2a7e7fce572f83522053642e8cd9fb7b04c7d7",
+    "scripts/build_graphrag_search.py": "562e82e5323403f3323e4f595e8b2f62631d0073496ebf24e5527d5aeec14886",
+    "scripts/graphrag_expand.py": "93e748eebd72a64f69f1af2a560dd68dbbb4c28700d604875f9f93fc26fde216"
+  },
+  "policy": {
+    "max_child_per_parent": true,
+    "parent_k": 8,
+    "token_cap": 4096,
+    "byte_cap": 64000,
+    "skip_then_continue": true,
+    "seed_policy": "selected evidence only; no discarded parents as downstream seeds"
+  }
+}

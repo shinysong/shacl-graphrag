@@ -1,0 +1,45 @@
+{
+  "dependencies": [
+    {
+      "id": "s1_dep",
+      "maximum": 11,
+      "minimum": 1,
+      "target": "s1_target"
+    }
+  ],
+  "edges": [
+    {
+      "from": "s1_target",
+      "to": "s1_bridge"
+    },
+    {
+      "from": "s1_bridge",
+      "to": "s1_ref"
+    }
+  ],
+  "nodes": [
+    {
+      "citation": "synthetic://source/1/record/1",
+      "entity": "s1_other",
+      "field": "end_mm",
+      "id": "s1_ref",
+      "type": "Reference",
+      "unit": "code",
+      "value": 2,
+      "version": "v1"
+    },
+    {
+      "id": "s1_bridge",
+      "type": "Bridge"
+    }
+  ],
+  "target": {
+    "field": "setting",
+    "id": "s1_target",
+    "maximum": 11,
+    "minimum": 1,
+    "unit": "code",
+    "value": null,
+    "version": "v1"
+  }
+}

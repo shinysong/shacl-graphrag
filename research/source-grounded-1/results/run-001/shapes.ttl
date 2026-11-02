@@ -1,0 +1,79 @@
+@prefix ex: <urn:source-grounded:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:BeadShape a sh:NodeShape ;
+    sh:property [ sh:class ex:Setting ;
+            sh:minCount 1 ;
+            sh:path ex:setting ] ;
+    sh:targetClass ex:Bead .
+
+ex:CodeShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:path ex:code ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:path ex:meaning ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:path ex:namespace ] ;
+    sh:targetClass ex:Code .
+
+ex:EventShape a sh:NodeShape ;
+    sh:property [ sh:class ex:Node ;
+            sh:minCount 1 ;
+            sh:path ex:input ],
+        [ sh:class ex:Node ;
+            sh:minCount 1 ;
+            sh:path ex:output ] ;
+    sh:targetClass ex:Event .
+
+ex:InvoiceShape a sh:NodeShape ;
+    sh:property [ sh:class ex:Item ;
+            sh:minCount 1 ;
+            sh:path ex:item ],
+        [ sh:datatype xsd:integer ;
+            sh:minCount 1 ;
+            sh:path ex:time ] ;
+    sh:targetClass ex:Invoice .
+
+ex:ItemShape a sh:NodeShape ;
+    sh:targetClass ex:Item .
+
+ex:MaterialShape a sh:NodeShape ;
+    sh:targetClass ex:Material .
+
+ex:ObservationShape a sh:NodeShape ;
+    sh:property [ sh:class ex:Bead ;
+            sh:minCount 1 ;
+            sh:path ex:bead ],
+        [ sh:class ex:Code ;
+            sh:minCount 1 ;
+            sh:path ex:book ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:path ex:coupon ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:path ex:scope ] ;
+    sh:targetClass ex:Observation .
+
+ex:ProductShape a sh:NodeShape ;
+    sh:targetClass ex:Product .
+
+ex:ReceiptShape a sh:NodeShape ;
+    sh:property [ sh:class ex:Item ;
+            sh:minCount 1 ;
+            sh:path ex:item ],
+        [ sh:datatype xsd:integer ;
+            sh:minCount 1 ;
+            sh:path ex:time ] ;
+    sh:targetClass ex:Receipt .
+
+ex:SettingShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:integer ;
+            sh:minCount 1 ;
+            sh:path ex:current ] ;
+    sh:targetClass ex:Setting .
+

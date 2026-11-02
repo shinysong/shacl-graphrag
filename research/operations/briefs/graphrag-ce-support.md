@@ -1,0 +1,7 @@
+# Offline saved C/E support comparison
+
+Run unchanged scripts/score_graphrag_support.py separately for research/graphrag-evidence-1/relation-retrieval-001/C.jsonl and E.jsonl, outputs support-score-c-001 and support-score-e-001. Same source-corpus-v1.json, development-references.json, support-scoring-v1.md as A/B. Frozen current bindings _workspace/graphrag-cycle18/bindings.json; all oldA/B identity hashes verified, reference extraction hash matches corpus derivation and original extraction bytes. References permitted ONLY for this consumed-development offline scoring, never runtime or models.
+
+Full24reference denominator,18present6bundleabsent null; dev017 budgeterror remains incomplete within18present, no successful-only denominator. Each input23successful+1failed. Compare savedA0/18 B1/18, no rerun or tuning. C/E parity shares indexing/packing and not independent truth. C-B changes expansion+ordering selected after observeddevelopment results, notisolatedgraphbenefit. No generatedanswers/QAaccuracy or SHACL claim.
+
+Two unchanged scorer calls after readyreviews; manual audit savedscore manifest hashes, all24question IDs, reference-set completeness and retrieval failure, perquestion comparison. Generic scorer does not enforce top-levelsource lineage or independentlyproveabsence; external current-source bindings only. Registeredchecks empty, no sourcecodechanges/newtests/modelcalls/publication.

@@ -1,0 +1,35 @@
+{
+  "source": "bpi",
+  "question": {
+    "target": "SYN_bpi_00_item"
+  },
+  "declared_complete": true,
+  "records": [
+    {
+      "id": "SYN_bpi_00_item",
+      "type": "Item"
+    },
+    {
+      "id": "SYN_bpi_00_gr",
+      "type": "Receipt",
+      "item": "SYN_bpi_00_item",
+      "time": 10
+    },
+    {
+      "id": "SYN_bpi_00_ir",
+      "type": "Invoice",
+      "item": "SYN_bpi_00_item",
+      "time": 20
+    },
+    {
+      "id": "SYN_bpi_00_other_item",
+      "type": "Item"
+    },
+    {
+      "id": "SYN_bpi_00_decoy",
+      "type": "Invoice",
+      "item": "SYN_bpi_00_other_item",
+      "time": 30
+    }
+  ]
+}

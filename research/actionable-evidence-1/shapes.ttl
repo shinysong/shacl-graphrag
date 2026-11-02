@@ -1,0 +1,18 @@
+@prefix ex: <urn:actionable-evidence:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+ex:TargetShape a sh:NodeShape ; sh:targetClass ex:Target ;
+  sh:property [ sh:path ex:value ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:message "target_value_required_integer" ] ;
+  sh:sparql [ a sh:SPARQLConstraint ; sh:message "target_bounds" ; sh:select """
+    PREFIX ex: <urn:actionable-evidence:>
+    SELECT $this WHERE { $this ex:value ?v ; ex:minimum ?lo ; ex:maximum ?hi . FILTER (?v < ?lo || ?v > ?hi) }
+  """ ] .
+ex:DependencyShape a sh:NodeShape ; sh:targetClass ex:Dependency ;
+  sh:sparql [ a sh:SPARQLConstraint ; sh:message "dependency_value_required" ; sh:select """
+    PREFIX ex: <urn:actionable-evidence:>
+    SELECT $this WHERE { $this ex:target ?target . FILTER NOT EXISTS { ?target ex:value ?v } }
+  """ ] ;
+  sh:sparql [ a sh:SPARQLConstraint ; sh:message "dependency_bounds" ; sh:select """
+    PREFIX ex: <urn:actionable-evidence:>
+    SELECT $this WHERE { $this ex:target ?target ; ex:minimum ?lo ; ex:maximum ?hi . ?target ex:value ?v . FILTER (?v < ?lo || ?v > ?hi) }
+  """ ] .

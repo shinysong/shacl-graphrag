@@ -1,0 +1,16 @@
+@prefix ex: <urn:source-grounded:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode ex:SYN_penelope_00_bead ;
+            sh:resultMessage "Less than 1 values on ex:SYN_penelope_00_bead->ex:setting" ;
+            sh:resultPath ex:setting ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:class ex:Setting ;
+                    sh:minCount 1 ;
+                    sh:path ex:setting ] ] .
+

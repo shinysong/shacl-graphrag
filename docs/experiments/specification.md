@@ -1,5 +1,11 @@
 # 온톨로지 활용 실험 명세
 
+- [벡터 검색·관계 확장·의미 검증의 근거 확보 비교 — 실행 전 설계](graphrag-evidence-study.md)
+
+- [제조 기록의 확인 요청과 수정 전후 검증 설계](actionable-evidence-study.md)
+
+최신 공개 자료 기반 합성 개발 진단은 [PENELOPE·Hinge·BPI의 관계 조회와 검증](source-grounded-study.md)을 따릅니다. 144개 작성 사례에서 Python·SQLite·RDFLib를 대조했으며 실제 공장·LLM 성능 평가와 구분합니다.
+
 워크플로우 적용 가능성은 [승인과 근거 버전의 일치 검사](workflow-binding-study.md)에서 별도로 점검한다. 사람이 작성한 12개 소프트웨어 사례이며 LLM 평가와 구분한다.
 
 산업 자료 연결의 개발용 검사는 [발주와 부품 마스터 연결](../setup/workbench-industrial-linkage.md)을 따른다. 공개 ERP 스키마를 참고한 작성 데이터이며 실제 기업 데이터나 LLM 평가와 구분한다.
@@ -289,3 +295,8 @@ uv run --locked python scripts/run_yago_pilot.py
 uv run --locked python scripts/run_yago_selective.py --split development --validate-only
 uv run --locked python scripts/run_yago_selective.py
 ```
+
+
+## Vector retrieval refinement
+
+[벡터 검색의 표현·청킹 개선 비교](vector-retrieval-refinement.md)는 기존 A–E를 보존한 별도 개발 비교입니다. 검색 표현 변경과 노드 후보 제한을 구분하며 답변 생성이나 DB 엔진 성능을 평가하지 않습니다.

@@ -1,0 +1,15 @@
+@prefix ex: <urn:actionable-evidence:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+ex:ApplicableReferences a sh:NodeShape ;
+  sh:targetClass ex:Target ;
+  sh:rule [ a sh:SPARQLRule ; sh:construct """
+    PREFIX ex: <urn:actionable-evidence:>
+    CONSTRUCT { $this ex:applicableReference ?reference }
+    WHERE {
+      { $this ex:edge ?reference }
+      UNION { $this ex:edge ?bridge . ?bridge a ex:Bridge ; ex:edge ?reference }
+      $this ex:field ?field ; ex:unit ?unit ; ex:version ?version .
+      ?reference a ex:Reference ; ex:entity $this ; ex:field ?field ;
+        ex:unit ?unit ; ex:version ?version .
+    }
+  """ ] .

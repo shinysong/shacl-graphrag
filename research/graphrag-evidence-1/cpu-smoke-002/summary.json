@@ -1,0 +1,121 @@
+{
+  "scope": "nine-input CPU execution smoke only",
+  "status": "passed",
+  "versions": {
+    "numpy": "2.3.4",
+    "onnxruntime": "1.23.2",
+    "tokenizers": "0.22.1"
+  },
+  "providers": [
+    "CPUExecutionProvider"
+  ],
+  "checks": {
+    "shape": true,
+    "finite": true,
+    "unit_norms": true,
+    "repeat_agrees": true
+  },
+  "model_sha256": "ca456c06b3a9505ddfd9131408916dd79290368331e7d76bb621f1cba6bc8665",
+  "tokenizer_sha256": "0b44a9d7b51c3c62626640cda0e2c2f70fdacdc25bbbd68038369d14ebdf4c39",
+  "input_sha256": "9af3c49d8a1a5b6c725731dddac74e5258261fad697d70bf36c5fa29acc61804",
+  "source_children_sha256": "274cf2d4d10e075f0664fc35d0e9bbe449c73c9e16a73985a9032e504e76a2eb",
+  "script_sha256": "acf609675ee74f6a83e11571cd44d73883e7f4875d16a6d1a3ab191f1ff64b76",
+  "protocol_sha256": "5535209756d527f70d9f9234d70ba93c85e2716c7727eb6ee1167920fd797c78",
+  "embeddings_sha256": "f44100ec5f5ff681001413fd142a95347504456fb885065287bf75c62e17e0ea",
+  "lengths": [
+    506,
+    273,
+    243,
+    512,
+    16,
+    14,
+    14,
+    13,
+    506
+  ],
+  "norms": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "maximum_repeat_difference": 0.0,
+  "input_metadata": [
+    {
+      "name": "input_ids",
+      "shape": [
+        "batch_size",
+        "sequence_length"
+      ],
+      "type": "tensor(int64)"
+    },
+    {
+      "name": "attention_mask",
+      "shape": [
+        "batch_size",
+        "sequence_length"
+      ],
+      "type": "tensor(int64)"
+    },
+    {
+      "name": "token_type_ids",
+      "shape": [
+        "batch_size",
+        "sequence_length"
+      ],
+      "type": "tensor(int64)"
+    }
+  ],
+  "output_metadata": [
+    {
+      "name": "last_hidden_state",
+      "shape": [
+        "batch_size",
+        "sequence_length",
+        384
+      ],
+      "type": "tensor(float)"
+    }
+  ],
+  "load_seconds": 0.6123838350176811,
+  "batches": [
+    {
+      "start": 0,
+      "size": 2,
+      "padded_tokens": 506,
+      "seconds": 0.8036886819172651
+    },
+    {
+      "start": 2,
+      "size": 2,
+      "padded_tokens": 512,
+      "seconds": 0.7932913389522582
+    },
+    {
+      "start": 4,
+      "size": 2,
+      "padded_tokens": 16,
+      "seconds": 0.02188335999380797
+    },
+    {
+      "start": 6,
+      "size": 2,
+      "padded_tokens": 14,
+      "seconds": 0.01947709999512881
+    },
+    {
+      "start": 8,
+      "size": 1,
+      "padded_tokens": 506,
+      "seconds": 0.39885377895552665
+    }
+  ],
+  "paid_calls": 0,
+  "total_process_observed_seconds": 3.5129280640976503,
+  "process_peak_rss_kib": 1190612
+}

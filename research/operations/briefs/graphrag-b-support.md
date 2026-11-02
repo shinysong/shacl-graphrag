@@ -1,0 +1,9 @@
+# B saved evidence support scoring
+
+Run unchanged scripts/score_graphrag_support.py on research/graphrag-evidence-1/hybrid-retrieval-001/retrieval.jsonl into support-score-b-001. Source source-corpus-v1.json, references development-references.json, policy support-scoring-v1.md under same base. Compare saved support-score-001/scores.json (A0/18). These are consumed development references allowed ONLY for this offline scoring, never runtime or model inputs. No retrieval, model, repair or tuning.
+
+Review exact frozen scorer/policy/source and bindings in _workspace/graphrag-cycle15/bindings.json. Initial ad hoc preflight incorrectly compared extraction hash to derived corpus hash; preserved preflight-failure.json. Correct check compares reference.source_sha256, corpus.derivation.source_sha256 and actual extraction hash; independently checks corpus identity against old A scoring. No scorer change.
+
+24 full cases,18 source-present and6 absent-from-supplied-bundle. Complete support requires source-exact endpoint nodes according to frozen admissible sets. Edge-only insufficient; embedded dictionary_refs allows explicit edge omission. Absent support null. No generated answers so no QA accuracy/abstention/hallucination. B minus A is composite hybrid plus rerank; not isolated reranker effect or graph benefit. Same packing caps; actual used evidence differs. Low-diversity consumed cohort, no general benchmark claim. Generic scorer does not enforce reference top-level source hash or independently prove absence; external fixed-source lineage checks only.
+
+After ready reviews, one unchanged offline score, verify full24, exact manifests/hashes and independently enumerate admissible node sets from selected payloads. Preserve failures. No source code changes, paid calls, push/deploy. Registered checks empty; manual scoring/audit reported separately.

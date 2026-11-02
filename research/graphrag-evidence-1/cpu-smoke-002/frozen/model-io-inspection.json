@@ -1,0 +1,39 @@
+{
+  "inputs": [
+    {
+      "name": "input_ids",
+      "shape": [
+        "batch_size",
+        "sequence_length"
+      ],
+      "type": "tensor(int64)"
+    },
+    {
+      "name": "attention_mask",
+      "shape": [
+        "batch_size",
+        "sequence_length"
+      ],
+      "type": "tensor(int64)"
+    },
+    {
+      "name": "token_type_ids",
+      "shape": [
+        "batch_size",
+        "sequence_length"
+      ],
+      "type": "tensor(int64)"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "last_hidden_state",
+      "shape": [
+        "batch_size",
+        "sequence_length",
+        384
+      ],
+      "type": "tensor(float)"
+    }
+  ]
+}

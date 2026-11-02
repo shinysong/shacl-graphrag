@@ -1,0 +1,15 @@
+Validation Report
+Conforms: False
+Results (2):
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: p:sample_initOrder
+	Focus Node: <https://example.org/penelope/source/PP5/PP5/25>
+	Value Node: <https://example.org/penelope/source/PP5/PP5/25>
+	Message: Node <https://example.org/penelope/source/PP5/PP5/25> must conform to one or more shapes in [ sh:not [ sh:property [ sh:datatype xsd:integer ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path p:sample_end ], [ sh:datatype xsd:integer ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path p:sample_init ] ] ] , [ sh:property [ sh:lessThanOrEquals p:sample_end ; sh:path p:sample_init ] ]
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: p:x_init_mmOrder
+	Focus Node: <https://example.org/penelope/source/PP5/PP5/25>
+	Value Node: <https://example.org/penelope/source/PP5/PP5/25>
+	Message: Node <https://example.org/penelope/source/PP5/PP5/25> must conform to one or more shapes in [ sh:not [ sh:property [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:or ( [ sh:datatype xsd:integer ] [ sh:datatype xsd:decimal ] ) ; sh:path p:x_end_mm ], [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:or ( [ sh:datatype xsd:integer ] [ sh:datatype xsd:decimal ] ) ; sh:path p:x_init_mm ] ] ] , [ sh:property [ sh:lessThanOrEquals p:x_end_mm ; sh:path p:x_init_mm ] ]

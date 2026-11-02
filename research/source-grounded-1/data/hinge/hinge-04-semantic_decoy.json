@@ -1,0 +1,38 @@
+{
+  "source": "hinge",
+  "question": {
+    "target": "SYN_hinge_04_n0"
+  },
+  "declared_complete": true,
+  "records": [
+    {
+      "id": "SYN_hinge_04_n0",
+      "type": "Material"
+    },
+    {
+      "id": "SYN_hinge_04_n1",
+      "type": "Product"
+    },
+    {
+      "id": "SYN_hinge_04_e0",
+      "type": "Event",
+      "input": "SYN_hinge_04_n0",
+      "output": "SYN_hinge_04_n1"
+    },
+    {
+      "id": "SYN_hinge_04_other",
+      "type": "Material"
+    },
+    {
+      "id": "SYN_hinge_04_decoy",
+      "type": "Product"
+    },
+    {
+      "id": "SYN_hinge_04_other_event",
+      "type": "Event",
+      "input": "SYN_hinge_04_other",
+      "output": "SYN_hinge_04_decoy",
+      "with_role": "SYN_hinge_04_n0"
+    }
+  ]
+}

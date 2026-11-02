@@ -1,0 +1,45 @@
+{
+  "status": "pre-reranker contract only; full B execution remains gated",
+  "lexical": {
+    "corpus": "all 1483 bound child search_text strings, including E5 prefix; one child is one document",
+    "token_regex": "[^\\W\\d_]+|\\d+",
+    "casefold": true,
+    "normalization": "none beyond casefold",
+    "query_terms": "sorted unique tokens",
+    "document_length": "token count with repetitions",
+    "N": "all children including empty documents",
+    "df": "number of children containing token",
+    "avgdl": "sum document lengths / N including empty documents",
+    "k1": 1.2,
+    "b": 0.75,
+    "idf": "ln(1+(N-df+0.5)/(df+0.5))",
+    "score": "sum idf*tf*2.2/(tf+1.2*(0.25+0.75*dl/avgdl)) over unique query terms present in document",
+    "empty_average": "all lexical scores zero",
+    "eligibility": "finite scores strictly >0",
+    "order": "score descending then child_id ascending",
+    "top_k": 10
+  },
+  "dense": {
+    "input": "recompute float32 child_vectors @ each query_vector from bound A arrays in their original order; no encoding",
+    "runtime": "numpy2.3.4",
+    "order": "score descending then child_id ascending",
+    "eligibility": "all finite scores including zero and negative",
+    "top_k": 10
+  },
+  "union": {
+    "deduplicate": "child_id",
+    "execution_order": "child_id ascending",
+    "max_candidates": 20,
+    "fill_after_overlap": false
+  },
+  "failure": {
+    "invalid_inputs": "raise; eventual runner must retain failed question, never silently drop denominator",
+    "empty_or_duplicate_corpus": "error",
+    "nonfinite_or_boolean_dense": "error",
+    "empty_lexical": "dense candidates retained",
+    "nonfinite_lexical": "error"
+  },
+  "packing": "future reranked union uses hash-bound rank_pack with child_k equal union count,parent_k8,4096 E5 accounting token/64000 byte caps; not executed here",
+  "runtime_gate": "Model custom-code review, pinned loader/dependencies, bounded CPU smoke, generator budget and new execution review still pending",
+  "gold_access": false
+}

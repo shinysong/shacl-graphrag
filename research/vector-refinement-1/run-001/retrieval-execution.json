@@ -1,0 +1,24 @@
+{
+  "command": [
+    "uv",
+    "run",
+    "--locked",
+    "--offline",
+    "--with",
+    "numpy==2.3.4",
+    "--with",
+    "onnxruntime==1.23.2",
+    "--with",
+    "tokenizers==0.22.1",
+    "python",
+    "scripts/run_graphrag_vector_refinement.py",
+    "--output",
+    "research/vector-refinement-1/run-001",
+    "--model",
+    "_workspace/graphrag-cycle5/model/model.onnx",
+    "--tokenizer",
+    "_workspace/graphrag-cycle3/sources/e5-tokenizer.json"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 58.124456465942785
+}

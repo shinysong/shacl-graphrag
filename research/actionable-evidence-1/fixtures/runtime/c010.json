@@ -1,0 +1,31 @@
+{
+  "dependencies": [
+    {
+      "id": "s1_dep",
+      "maximum": 11,
+      "minimum": 1,
+      "target": "s1_target"
+    }
+  ],
+  "edges": [
+    {
+      "from": "s1_target",
+      "to": "s1_bridge"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "s1_bridge",
+      "type": "Bridge"
+    }
+  ],
+  "target": {
+    "field": "setting",
+    "id": "s1_target",
+    "maximum": 11,
+    "minimum": 1,
+    "unit": "code",
+    "value": null,
+    "version": "v1"
+  }
+}

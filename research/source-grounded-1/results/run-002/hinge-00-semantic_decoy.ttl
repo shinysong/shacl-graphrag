@@ -1,0 +1,25 @@
+@prefix ex: <urn:source-grounded:> .
+
+ex:SYN_hinge_00_e0 a ex:Event,
+        ex:Node ;
+    ex:input ex:SYN_hinge_00_n0 ;
+    ex:output ex:SYN_hinge_00_n1 .
+
+ex:SYN_hinge_00_other_event a ex:Event,
+        ex:Node ;
+    ex:input ex:SYN_hinge_00_other ;
+    ex:output ex:SYN_hinge_00_decoy ;
+    ex:with_role ex:SYN_hinge_00_n0 .
+
+ex:SYN_hinge_00_decoy a ex:Node,
+        ex:Product .
+
+ex:SYN_hinge_00_n1 a ex:Node,
+        ex:Product .
+
+ex:SYN_hinge_00_other a ex:Material,
+        ex:Node .
+
+ex:SYN_hinge_00_n0 a ex:Material,
+        ex:Node .
+

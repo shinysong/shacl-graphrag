@@ -1,0 +1,47 @@
+{
+  "source": "hinge",
+  "question": {
+    "target": "SYN_hinge_06_n0"
+  },
+  "declared_complete": true,
+  "records": [
+    {
+      "id": "SYN_hinge_06_n0",
+      "type": "Material"
+    },
+    {
+      "id": "SYN_hinge_06_n1",
+      "type": "Material"
+    },
+    {
+      "id": "SYN_hinge_06_n2",
+      "type": "Material"
+    },
+    {
+      "id": "SYN_hinge_06_n3",
+      "type": "Product"
+    },
+    {
+      "id": "SYN_hinge_06_e0",
+      "type": "Event",
+      "input": "SYN_hinge_06_other",
+      "output": "SYN_hinge_06_n1"
+    },
+    {
+      "id": "SYN_hinge_06_e1",
+      "type": "Event",
+      "input": "SYN_hinge_06_n1",
+      "output": "SYN_hinge_06_n2"
+    },
+    {
+      "id": "SYN_hinge_06_e2",
+      "type": "Event",
+      "input": "SYN_hinge_06_n2",
+      "output": "SYN_hinge_06_n3"
+    },
+    {
+      "id": "SYN_hinge_06_other",
+      "type": "Material"
+    }
+  ]
+}

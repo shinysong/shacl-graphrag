@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>근거와 확인 요청 | 오프라인 데모</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 이동</a>
+<main id="main">
+  <header>
+    <p class="eyebrow">ACTIONABLE EVIDENCE · OFFLINE</p>
+    <h1>근거에서 확인 요청까지</h1>
+    <p class="intro">원자료의 확인 요청과 합성 사례의 저장된 실행 결과를 살펴봅니다.</p>
+    <p class="notice">저장된 실행 재생입니다. 브라우저에서 추론·검증을 실행하거나 원자료를 수정하지 않습니다.</p>
+  </header>
+  <section class="controls" aria-label="사례와 비교 조건">
+    <div class="case-control"><label for="case-select">사례</label><select id="case-select"></select></div>
+    <div><label for="arm-select">후보 생성 조건</label><select id="arm-select"></select></div>
+    <div><label for="postcheck-select">사후 점검 조건</label><select id="postcheck-select"></select></div>
+    <button id="replay" type="button">저장된 흐름 따라가기</button>
+  </section>
+  <p id="playback-status" role="status" aria-live="polite">모든 단계가 표시되어 있습니다.</p>
+  <section class="case-heading" aria-labelledby="case-title">
+    <span id="case-kind" class="badge"></span><h2 id="case-title"></h2>
+    <p id="question"></p><p id="case-note" class="muted"></p>
+  </section>
+  <nav class="flow" aria-label="검토 흐름"><a href="#input-panel">입력</a><span aria-hidden="true">→</span><a href="#relations-panel">관계 근거</a><span aria-hidden="true">→</span><a href="#candidate-panel">후보·요청</a><span aria-hidden="true">→</span><a href="#report-panel">점검 기록</a><span aria-hidden="true">→</span><a href="#decision-panel">최종 상태</a></nav>
+  <div class="panels">
+    <section id="input-panel" class="panel" aria-labelledby="input-title">
+      <p class="step">01 / 입력</p><h2 id="input-title">원자료와 실행 입력</h2>
+      <div id="input-table" class="table-wrap"></div>
+      <details id="source-details"><summary>원자료 JSON</summary><pre id="source-json"></pre></details>
+      <details id="runtime-details"><summary id="input-json-label">실행 입력 JSON · 평가 라벨 제외</summary><pre id="input-json"></pre></details>
+    </section>
+    <section id="relations-panel" class="panel" aria-labelledby="relations-title">
+      <p class="step">02 / 관계 근거</p><h2 id="relations-title">연결된 기록</h2><div id="relations"></div>
+    </section>
+    <section id="candidate-panel" class="panel" aria-labelledby="candidate-title">
+      <p class="step">03 / 후보·요청</p><h2 id="candidate-title">후보와 근거</h2><div id="candidate-summary"></div>
+      <details id="candidate-details"><summary>후보 JSON</summary><pre id="candidate-json"></pre></details>
+    </section>
+    <section id="report-panel" class="panel" aria-labelledby="report-title">
+      <p class="step">04 / 점검 기록</p><h2 id="report-title">변경 전후 점검</h2>
+      <p id="report-note"></p><div id="report-content" class="reports">
+        <article><h3>변경 전</h3><p id="before-conforms" class="verdict"></p><div id="before-summary"></div><details><summary>변경 전 보고서 JSON</summary><pre id="before-json"></pre></details></article>
+        <article><h3>변경 후</h3><p id="after-conforms" class="verdict"></p><div id="after-summary"></div><details><summary>변경 후 보고서 JSON</summary><pre id="after-json"></pre></details></article>
+      </div>
+    </section>
+    <section id="decision-panel" class="panel" aria-labelledby="decision-title">
+      <p class="step">05 / 최종 상태</p><h2 id="decision-title">저장된 판단</h2><p id="disposition" class="disposition"></p><p id="disposition-label"></p><div id="decision-summary"></div>
+      <details id="output-details"><summary>저장된 출력 JSON · 전체</summary><pre id="output-json"></pre></details>
+    </section>
+  </div>
+  <aside id="evaluation-panel" class="evaluation" aria-labelledby="evaluation-title">
+    <p class="eyebrow">실행 경로 밖의 평가</p><h2 id="evaluation-title">사후 합성 평가</h2>
+    <p>아래 라벨은 실행 후 비교에만 사용합니다. 후보 생성·검증·최종 판단의 입력이 아닙니다. 규칙에 맞는 기록도 외부 기대값과 다를 수 있습니다.</p>
+    <div id="evaluation-summary"></div><details><summary>사후 평가 JSON</summary><pre id="evaluation-json"></pre></details>
+  </aside>
+  <section class="provenance" aria-labelledby="provenance-title"><h2 id="provenance-title">출처와 기록 위치</h2><div id="provenance"></div><details><summary>데모 전체 출처 정보</summary><pre id="global-provenance"></pre></details></section>
+  <footer><div id="attribution"></div><details><summary>전체 저작자·라이선스 정보</summary><pre id="attribution-json"></pre></details><p>합성 사례의 결과와 실제 자료의 확인 요청은 서로 다른 기록입니다. 원자료의 오류나 변경 승인을 뜻하지 않습니다.</p></footer>
+  <noscript>이 데모의 저장된 기록을 보려면 JavaScript를 켜 주세요. 네트워크 연결은 필요하지 않습니다.</noscript>
+</main>
+</body>
+</html>

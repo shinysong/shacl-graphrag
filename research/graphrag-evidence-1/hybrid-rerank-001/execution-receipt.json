@@ -1,0 +1,58 @@
+{
+  "argv": [
+    "timeout",
+    "--kill-after=5s",
+    "900s",
+    "uv",
+    "run",
+    "--no-project",
+    "--isolated",
+    "--offline",
+    "--with",
+    "torch==2.5.1",
+    "--with",
+    "transformers==4.39.1",
+    "--with",
+    "tokenizers==0.15.2",
+    "--with",
+    "numpy==1.26.4",
+    "--with",
+    "safetensors==0.4.5",
+    "python",
+    "scripts/run_graphrag_rerank.py",
+    "--manifest",
+    "_workspace/graphrag-cycle13/manifest.json",
+    "--output",
+    "research/graphrag-evidence-1/hybrid-rerank-001"
+  ],
+  "exit_code": 0,
+  "parent_elapsed_seconds": 437.96466242999304,
+  "timeout_exit": false,
+  "planned_questions": 24,
+  "status": "completed",
+  "verified_complete_questions": 24,
+  "child_summary": {
+    "status": "completed",
+    "model_executed": true,
+    "paid_calls": 0,
+    "effective": {
+      "dtype": "float32",
+      "device": "cpu",
+      "attention": "eager",
+      "eval": true,
+      "threads": 2,
+      "interop": 1,
+      "address_space_limit": [
+        8589934592,
+        8589934592
+      ]
+    },
+    "planned_questions": 24,
+    "ok": 24,
+    "failures": 0,
+    "scored_pairs": 453,
+    "elapsed_seconds": 437.2817250980297,
+    "process_peak_rss_kib": 2359744
+  },
+  "failed_or_unverified_questions": 0
+}

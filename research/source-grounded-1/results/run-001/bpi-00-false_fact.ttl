@@ -1,0 +1,16 @@
+@prefix ex: <urn:source-grounded:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:SYN_bpi_00_gr a ex:Node,
+        ex:Receipt ;
+    ex:item ex:SYN_bpi_00_item ;
+    ex:time 40 .
+
+ex:SYN_bpi_00_ir a ex:Invoice,
+        ex:Node ;
+    ex:item ex:SYN_bpi_00_item ;
+    ex:time 20 .
+
+ex:SYN_bpi_00_item a ex:Item,
+        ex:Node .
+

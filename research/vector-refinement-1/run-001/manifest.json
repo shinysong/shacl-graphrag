@@ -1,0 +1,25 @@
+{
+  "files": {
+    "research/graphrag-evidence-1/source-corpus-v1.json": "900bb25d15bcb4dbab89076d3a1372d84762829dcd645bae7c17bc60b9693ac8",
+    "research/graphrag-evidence-1/dense-retrieval-001/frozen/development-questions.json": "f7d12a0414e8a2e7099b2525fbac11a1c460adf3a9322a7b6e93cb6a97b57212",
+    "research/graphrag-evidence-1/dense-retrieval-001/query-vectors.npy": "7e3c1cbd13026766b29ab07872437d71e4225db2ddbd8e81dde1938fb0d65aed",
+    "/home/ubuntu/shacl-graphrag/scripts/run_graphrag_vector_refinement.py": "a6de56351294d46a03de77dafbd5bcd4c570451b8ae46e811e1dbaf3837ee723",
+    "scripts/graphrag_semantic_projection.py": "b8c4599838ab0404475fe834087a8675b104ef418bf2306753083b5157eddd9c",
+    "scripts/graphrag_dense.py": "cfcf51f7ca96a9bb274c5a814e2a7e7fce572f83522053642e8cd9fb7b04c7d7",
+    "scripts/build_graphrag_search.py": "562e82e5323403f3323e4f595e8b2f62631d0073496ebf24e5527d5aeec14886",
+    "scripts/graphrag_expand.py": "93e748eebd72a64f69f1af2a560dd68dbbb4c28700d604875f9f93fc26fde216",
+    "research/vector-refinement-1/protocol.md": "970fc8ba1fb35ed29d25c78e27a0b2b2c6e3fc2f240c27530c8019c81f5eec85"
+  },
+  "model_sha256": "ca456c06b3a9505ddfd9131408916dd79290368331e7d76bb621f1cba6bc8665",
+  "tokenizer_sha256": "0b44a9d7b51c3c62626640cda0e2c2f70fdacdc25bbbd68038369d14ebdf4c39",
+  "config": {
+    "child_k": 20,
+    "parent_k": 8,
+    "accounting_token_cap": 4096,
+    "byte_cap": 64000,
+    "A1": "all projected parents",
+    "A2": "node parents only",
+    "query_vectors": "reuse original A exactly",
+    "max_seconds": 900
+  }
+}

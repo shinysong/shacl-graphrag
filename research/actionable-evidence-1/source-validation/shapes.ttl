@@ -1,0 +1,52 @@
+@prefix p: <https://example.org/penelope/validation/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# SHACL Core only. Order obligations apply only to present, typed pairs.
+p:AnnotationShape a sh:NodeShape ; sh:targetClass p:Annotation ;
+ sh:property p:defectShape ;
+ sh:property p:welding_settingShape ;
+ sh:property p:beadShape ;
+ sh:property p:x_init_mmShape ;
+ sh:property p:x_end_mmShape ;
+ sh:property p:sample_initShape ;
+ sh:property p:sample_endShape .
+
+p:defectShape a sh:PropertyShape ; sh:path p:defect ; sh:minCount 1 ; sh:maxCount 1 ;
+ sh:nodeKind sh:IRI ; sh:class p:DefectCode ; sh:equals p:expected_defect .
+
+p:welding_settingShape a sh:PropertyShape ; sh:path p:welding_setting ; sh:minCount 1 ; sh:maxCount 1 ;
+ sh:nodeKind sh:IRI ; sh:class p:SettingCode ; sh:equals p:expected_welding_setting .
+
+p:beadShape a sh:PropertyShape ; sh:path p:bead ; sh:minCount 1 ; sh:maxCount 1 ;
+ sh:datatype xsd:integer .
+
+p:x_init_mmShape a sh:PropertyShape ; sh:path p:x_init_mm ; sh:minCount 1 ; sh:maxCount 1 ;
+ sh:or ( [ sh:datatype xsd:integer ] [ sh:datatype xsd:decimal ] ) .
+
+p:x_end_mmShape a sh:PropertyShape ; sh:path p:x_end_mm ; sh:minCount 1 ; sh:maxCount 1 ;
+ sh:or ( [ sh:datatype xsd:integer ] [ sh:datatype xsd:decimal ] ) .
+
+p:sample_initShape a sh:PropertyShape ; sh:path p:sample_init ; sh:minCount 1 ; sh:maxCount 1 ;
+ sh:datatype xsd:integer .
+
+p:sample_endShape a sh:PropertyShape ; sh:path p:sample_end ; sh:minCount 1 ; sh:maxCount 1 ;
+ sh:datatype xsd:integer .
+
+p:x_init_mmOrder a sh:NodeShape ; sh:targetClass p:Annotation ;
+ p:normalizedField "x_init_mm" ; p:normalizedKind "order" ;
+ sh:or (
+  [ sh:not [ sh:property
+    [ sh:path p:x_init_mm ; sh:minCount 1 ; sh:maxCount 1 ; sh:or ( [ sh:datatype xsd:integer ] [ sh:datatype xsd:decimal ] ) ],
+    [ sh:path p:x_end_mm ; sh:minCount 1 ; sh:maxCount 1 ; sh:or ( [ sh:datatype xsd:integer ] [ sh:datatype xsd:decimal ] ) ] ] ]
+  [ sh:property [ sh:path p:x_init_mm ; sh:lessThanOrEquals p:x_end_mm ] ]
+ ) .
+
+p:sample_initOrder a sh:NodeShape ; sh:targetClass p:Annotation ;
+ p:normalizedField "sample_init" ; p:normalizedKind "order" ;
+ sh:or (
+  [ sh:not [ sh:property
+    [ sh:path p:sample_init ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ],
+    [ sh:path p:sample_end ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ] ] ]
+  [ sh:property [ sh:path p:sample_init ; sh:lessThanOrEquals p:sample_end ] ]
+ ) .

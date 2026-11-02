@@ -1,0 +1,24 @@
+@prefix ex: <urn:source-grounded:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:SYN_penelope_00_obs a ex:Node,
+        ex:Observation ;
+    ex:bead ex:SYN_penelope_00_bead ;
+    ex:book ex:SYN_penelope_00_book ;
+    ex:coupon "SYN_penelope_00_coupon" ;
+    ex:scope "weld" .
+
+ex:SYN_penelope_00_bead a ex:Bead,
+        ex:Node ;
+    ex:setting ex:SYN_penelope_00_setting .
+
+ex:SYN_penelope_00_book a ex:Code,
+        ex:Node ;
+    ex:code "2" ;
+    ex:meaning "lack_fusion" ;
+    ex:namespace "worksheet" .
+
+ex:SYN_penelope_00_setting a ex:Node,
+        ex:Setting ;
+    ex:current 400 .
+

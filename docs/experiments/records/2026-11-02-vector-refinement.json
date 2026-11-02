@@ -1,0 +1,267 @@
+{
+  "experiment": "vector-refinement-1",
+  "status": "completed_retrieval_development",
+  "paid_calls": 0,
+  "generation_calls": 0,
+  "comparison": {
+    "scope": "Consumed development retrieval-only; no generation or DB-engine comparison",
+    "summary": {
+      "A": {
+        "reference_questions": 24,
+        "saved_envelopes": 24,
+        "source_present": 18,
+        "complete_support": 0,
+        "source_absent_separate": 6,
+        "retrieval_state_counts": {
+          "valid_saved_evidence": 24
+        },
+        "by_present_task": {
+          "defect_label": {
+            "denominator": 6,
+            "complete": 0
+          },
+          "nominal_idc": {
+            "denominator": 6,
+            "complete": 0
+          },
+          "recorded_setting": {
+            "denominator": 6,
+            "complete": 0
+          }
+        },
+        "answer_accuracy": null,
+        "scope": "authored support contracts on consumed development; no external truth"
+      },
+      "B": {
+        "reference_questions": 24,
+        "saved_envelopes": 24,
+        "source_present": 18,
+        "complete_support": 1,
+        "source_absent_separate": 6,
+        "retrieval_state_counts": {
+          "valid_saved_evidence": 24
+        },
+        "by_present_task": {
+          "defect_label": {
+            "denominator": 6,
+            "complete": 0
+          },
+          "nominal_idc": {
+            "denominator": 6,
+            "complete": 0
+          },
+          "recorded_setting": {
+            "denominator": 6,
+            "complete": 1
+          }
+        },
+        "answer_accuracy": null,
+        "scope": "authored support contracts on consumed development; no external truth"
+      },
+      "C": {
+        "reference_questions": 24,
+        "saved_envelopes": 24,
+        "source_present": 18,
+        "complete_support": 7,
+        "source_absent_separate": 6,
+        "retrieval_state_counts": {
+          "retrieval_failure": 1,
+          "valid_saved_evidence": 23
+        },
+        "by_present_task": {
+          "defect_label": {
+            "denominator": 6,
+            "complete": 4
+          },
+          "nominal_idc": {
+            "denominator": 6,
+            "complete": 2
+          },
+          "recorded_setting": {
+            "denominator": 6,
+            "complete": 1
+          }
+        },
+        "answer_accuracy": null,
+        "scope": "authored support contracts on consumed development; no external truth"
+      },
+      "E": {
+        "reference_questions": 24,
+        "saved_envelopes": 24,
+        "source_present": 18,
+        "complete_support": 7,
+        "source_absent_separate": 6,
+        "retrieval_state_counts": {
+          "retrieval_failure": 1,
+          "valid_saved_evidence": 23
+        },
+        "by_present_task": {
+          "defect_label": {
+            "denominator": 6,
+            "complete": 4
+          },
+          "nominal_idc": {
+            "denominator": 6,
+            "complete": 2
+          },
+          "recorded_setting": {
+            "denominator": 6,
+            "complete": 1
+          }
+        },
+        "answer_accuracy": null,
+        "scope": "authored support contracts on consumed development; no external truth"
+      },
+      "A1": {
+        "reference_questions": 24,
+        "saved_envelopes": 24,
+        "source_present": 18,
+        "complete_support": 5,
+        "source_absent_separate": 6,
+        "retrieval_state_counts": {
+          "valid_saved_evidence": 24
+        },
+        "by_present_task": {
+          "defect_label": {
+            "denominator": 6,
+            "complete": 0
+          },
+          "nominal_idc": {
+            "denominator": 6,
+            "complete": 0
+          },
+          "recorded_setting": {
+            "denominator": 6,
+            "complete": 5
+          }
+        },
+        "answer_accuracy": null,
+        "scope": "authored support contracts on consumed development; no external truth"
+      },
+      "A2": {
+        "reference_questions": 24,
+        "saved_envelopes": 24,
+        "source_present": 18,
+        "complete_support": 5,
+        "source_absent_separate": 6,
+        "retrieval_state_counts": {
+          "valid_saved_evidence": 24
+        },
+        "by_present_task": {
+          "defect_label": {
+            "denominator": 6,
+            "complete": 0
+          },
+          "nominal_idc": {
+            "denominator": 6,
+            "complete": 0
+          },
+          "recorded_setting": {
+            "denominator": 6,
+            "complete": 5
+          }
+        },
+        "answer_accuracy": null,
+        "scope": "authored support contracts on consumed development; no external truth"
+      }
+    },
+    "paired_changes": {
+      "A->A1": {
+        "gained": [
+          "dev-001",
+          "dev-005",
+          "dev-013",
+          "dev-017",
+          "dev-021"
+        ],
+        "lost": []
+      },
+      "A1->A2": {
+        "gained": [],
+        "lost": []
+      },
+      "B->A1": {
+        "gained": [
+          "dev-001",
+          "dev-005",
+          "dev-013",
+          "dev-017"
+        ],
+        "lost": []
+      },
+      "C->A1": {
+        "gained": [
+          "dev-001",
+          "dev-005",
+          "dev-013",
+          "dev-017"
+        ],
+        "lost": [
+          "dev-006",
+          "dev-007",
+          "dev-011",
+          "dev-014",
+          "dev-019",
+          "dev-023"
+        ]
+      },
+      "C->A2": {
+        "gained": [
+          "dev-001",
+          "dev-005",
+          "dev-013",
+          "dev-017"
+        ],
+        "lost": [
+          "dev-006",
+          "dev-007",
+          "dev-011",
+          "dev-014",
+          "dev-019",
+          "dev-023"
+        ]
+      }
+    },
+    "saved_score_hashes": {
+      "research/graphrag-evidence-1/support-score-001/scores.json": "fa232933f2461f3cc25c78e7a402969ce402d12fa1a07ed479f0fbdef509bb68",
+      "research/graphrag-evidence-1/support-score-b-001/scores.json": "e75e4e0ddf97fb87cc73a193ad699f9b4191ed94963fdf7abc5135b133dc964d",
+      "research/graphrag-evidence-1/support-score-c-001/scores.json": "f816fc51e63b598c71e0a3ed9032ab781ebea1494866b506a8ee2190309a1298",
+      "research/graphrag-evidence-1/support-score-e-001/scores.json": "f816fc51e63b598c71e0a3ed9032ab781ebea1494866b506a8ee2190309a1298",
+      "research/vector-refinement-1/score-a1-001/scores.json": "f1407c46879fb8bd287a3a9dec5d1fb3b1e8bd737052a752665cc6f279493e8a",
+      "research/vector-refinement-1/score-a2-001/scores.json": "3c4bb0e063e02c96991a673d92a653c650679e7fe8a07548b7a1b02047395c6b"
+    },
+    "note": "A1 changes representation+segmentation; A2 additionally excludes edge candidates; historical C/E not rerun on new retrieval."
+  },
+  "runtime": {
+    "status": "completed",
+    "paid_calls": 0,
+    "generation_calls": 0,
+    "scope": "Consumed development; search projection and candidate eligibility, not DB engines",
+    "children": 814,
+    "parents": 814,
+    "node_children": 328,
+    "max_tokens": 174,
+    "arms": {
+      "A1": {
+        "saved": 24,
+        "ok": 24
+      },
+      "A2": {
+        "saved": 24,
+        "ok": 24
+      }
+    },
+    "vector_sha256": "91c17446ccf8bb02130207e24cdda8d14a9c092774f9dd0f9e510cb027c10ae6",
+    "elapsed_seconds": 57.76349772897083
+  },
+  "artifact_hashes": {
+    "research/vector-refinement-1/protocol.md": "970fc8ba1fb35ed29d25c78e27a0b2b2c6e3fc2f240c27530c8019c81f5eec85",
+    "research/vector-refinement-1/comparison.json": "fed59e6a9907c0ba5b46fd594de4762f5648cdc77637db3a28a3b89c4bba4d5c",
+    "research/vector-refinement-1/run-001/manifest.json": "480294b1f4eb5d85bbee4a41ef02dcbc56013dc38d9d5812b5812ca27d605967",
+    "research/vector-refinement-1/run-001/summary.json": "51fda466bde12534bf5deb65c34e1969bd85c3165bf106b700b5000397157358",
+    "research/vector-refinement-1/run-001/audit.json": "c5fd46699490224d39868d62f6c5d9f199faa7cfa201cec8d89bd3114eba3bfe",
+    "research/vector-refinement-1/score-a1-001/scores.json": "f1407c46879fb8bd287a3a9dec5d1fb3b1e8bd737052a752665cc6f279493e8a",
+    "research/vector-refinement-1/score-a2-001/scores.json": "3c4bb0e063e02c96991a673d92a653c650679e7fe8a07548b7a1b02047395c6b"
+  },
+  "site_published": false
+}

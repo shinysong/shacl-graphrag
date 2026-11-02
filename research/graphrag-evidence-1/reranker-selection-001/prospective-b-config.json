@@ -1,0 +1,54 @@
+{
+  "status": "prospective_not_executed",
+  "model_id": "Alibaba-NLP/gte-multilingual-reranker-base",
+  "model_revision": "8215cf04918ba6f7b6a62bb44238ce2953d8831c",
+  "code_repository": "Alibaba-NLP/new-impl",
+  "code_revision": "40ced75c3017eb27626c9d4ea981bde21a2662f4",
+  "weight_bytes": 611934706,
+  "weight_sha256": "10ebaa49322dd7e01a13a91c49810939e3f91f231aceaa47fdf0cab3083954f6",
+  "tokenizer_sha256": "d6f76fe13d42f80dcee0cb86a1aeb5f14f8909bb8a8782f7a4a4ad76697ef164",
+  "license_declaration": "apache-2.0",
+  "korean_in_language_metadata": true,
+  "runtime": "pending pinned CPU smoke; no weight execution yet",
+  "lexical": {
+    "algorithm": "BM25",
+    "k1": 1.2,
+    "b": 0.75,
+    "token_regex": "[^\\W\\d_]+|\\d+",
+    "casefold": true,
+    "query_term_duplicates": "count_once",
+    "idf": "ln(1+(N-df+0.5)/(df+0.5))",
+    "input": "same child search_text including existing prefix",
+    "top_k": 10
+  },
+  "dense": {
+    "reuse": "unchanged pinned A saved vectors",
+    "top_k": 10
+  },
+  "candidate_union": {
+    "deduplicate": "child_id",
+    "maximum": 20,
+    "fill_after_overlap": false
+  },
+  "rerank": {
+    "input": "original question and complete child search_text as text pair",
+    "max_pair_tokens": 1024,
+    "truncate": false,
+    "score": "raw single relevance logit descending; ties child_id ascending",
+    "batch_size": 1,
+    "device": "cpu",
+    "dtype": "float32",
+    "max_candidates": 20
+  },
+  "parent_aggregation": "max child score, ties parent_id; top8",
+  "packing": {
+    "accounting_tokenizer": "same pinned E5 as A; not generator tokenizer",
+    "token_cap": 4096,
+    "byte_cap": 64000,
+    "whole_parent": true,
+    "skip_then_continue": true
+  },
+  "interpretation": "B-A is a composite retrieval mix and reranking intervention, not isolated reranker benefit; same final budgets, not equal compute cost",
+  "gold_access": false,
+  "next_gate": "review pinned custom implementation, acquire bounded weights and freeze CPU runtime; smoke before B"
+}

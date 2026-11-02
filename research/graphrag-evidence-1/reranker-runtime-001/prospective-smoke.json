@@ -1,0 +1,48 @@
+{
+  "status": "prospective_smoke_not_executed",
+  "platform": "aarch64",
+  "runtime": {
+    "torch": "2.5.1",
+    "transformers": "4.39.1",
+    "tokenizers": "0.15.2",
+    "numpy": "1.26.4",
+    "safetensors": "0.4.5"
+  },
+  "cuda_build": null,
+  "code_revision": "40ced75c3017eb27626c9d4ea981bde21a2662f4",
+  "files": {
+    "_workspace/graphrag-cycle8/sources/new-impl-configuration.py": "3411088045ffb8a9a0aa9936eae275896b39983a2ee5b08f091b44e6289e4fe4",
+    "_workspace/graphrag-cycle8/sources/new-impl-modeling.py": "374670b416fcc82f081c9cd28b5fd61c2bd91bbe18eb4798fcc48a81f9c250a0",
+    "_workspace/graphrag-cycle8/sources/gte-config.json": "995730781d157e147c13ccdfe0eb20a0875c486b6c4de8c97f0bbd845549dbc0",
+    "_workspace/graphrag-cycle8/sources/gte-tokenizer.json": "d6f76fe13d42f80dcee0cb86a1aeb5f14f8909bb8a8782f7a4a4ad76697ef164"
+  },
+  "weights": {
+    "revision": "8215cf04918ba6f7b6a62bb44238ce2953d8831c",
+    "bytes": 611934706,
+    "sha256": "10ebaa49322dd7e01a13a91c49810939e3f91f231aceaa47fdf0cab3083954f6",
+    "acquired": false
+  },
+  "loading": "copy unchanged pinned configuration/modeling into isolated local package; direct NewConfig/NewForSequenceClassification import, no AutoModel/remote loading; local safetensors load_file and strict load_state_dict; all hashes verified before custom imports",
+  "device": "cpu",
+  "dtype": "float32",
+  "attention": "eager, use_memory_efficient_attention=False,unpad_inputs=False",
+  "mode": "eval plus torch.inference_mode; no training/labels",
+  "threads": {
+    "intra": 2,
+    "interop": 1
+  },
+  "pair_encoding": "pinned tokenizer.encode(question,child search_text) with special tokens, no padding/truncation; ids/mask/types as int64; type vocab1 maps types tozero in source",
+  "max_tokens": 1024,
+  "batch_size": 1,
+  "smoke_inputs": "first original question paired with shortest child then longest child by GTE pair token count, ties child_id; repeat both once =4encodings; no relevance selection",
+  "acceptance": "all four finite shape[1,1] logits; absolute repeat differences <=1e-5; not semantic quality",
+  "limits": {
+    "external_wall_timeout_seconds": 180,
+    "kill_grace_seconds": 5,
+    "address_space_bytes": 8589934592,
+    "download_max_bytes": 650000000,
+    "download_timeout_seconds": 180
+  },
+  "failure": "no automatic retries; save stdout/stderr/status; timeout/nonzero/missing summary failure preserved; manually scoped correction separate attempt",
+  "remaining_gate": "implement exact loader/probe and independent code review before model execution; current review is runtime readiness only"
+}

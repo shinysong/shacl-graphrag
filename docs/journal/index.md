@@ -1,5 +1,25 @@
 # 연구 일지
 
+- [2026-11-02 벡터 검색의 표현·청킹 개선 비교](../experiments/vector-retrieval-refinement.md)
+
+- [2026-11-01 벡터 검색과 관계 확장의 근거 확보 비교](2026-11-01-graphrag-retrieval-closeout.md)
+
+- [2026-11-01 관계 조회의 동일성과 선택 근거의 검사 경계](2026-11-01-graphrag-interface-check.md)
+
+- [2026-11-01 GraphRAG 비교를 위한 원천 관계와 질문 범위](2026-11-01-graphrag-source-contract.md)
+
+- [2026-10-29 근거 기반 조치 연구의 현재 결과와 다음 사례](2026-10-29-actionable-claims.md)
+
+- [2026-10-29 실제 검사표에서 SHACL 보고서까지](2026-10-29-source-to-shacl.md)
+
+- [2026-10-29 제조 기록의 확인 요청과 수정안 재생](2026-10-29-actionable-evidence-demo.md)
+
+- [2026-10-29 제조 기록의 확인 요청과 근거 기반 수정안](../experiments/actionable-evidence-study.md)
+
+- [Meyers 외 논문 리뷰 — 제조 데이터를 연결하는 지식 그래프와 외부 계산](2026-10-29-review-meyers-manufacturing.md)
+
+- [2026-10-29 공개 자료 라이선스 확인과 합성 관계 조회의 첫 실행](../experiments/source-grounded-study.md)
+
 - [Wessel 외 논문 리뷰 — 배터리 전극의 식별과 생산 이력 추적](2026-10-29-review-battery-traceability.md)
 - [LG마그나 협력사 요구사항 리뷰 — 추적성·변경 승인·품질 기록의 연결](2026-10-29-review-lgmagna-traceability.md)
 - [MetalMind 논문 리뷰 — 금속 적층제조 매뉴얼에서 작업자 지원까지](2026-10-29-review-metalmind.md)
