@@ -1,5 +1,14 @@
 # 연구 일지
 
+- [의료 온톨로지 RAG 리뷰 — Neo4j와 n10s를 이용한 검색·분류 실험](2026-11-05-review-clinical-ontology-rag.md)
+- [OWL과 SHACL 의미론 리뷰 — 추론한 그래프를 무엇으로 검증할 것인가](2026-11-05-review-owl-shacl-semantics.md)
+- [PolicyKG 리뷰 — 정책 문장의 의무·허용·금지를 SHACL로 옮기기](2026-11-05-review-policykg.md)
+- [RAG vs. GraphRAG 리뷰 — 상세 질문·관계 질문·답 없는 질문의 차이](2026-11-05-review-rag-vs-graphrag.md)
+- [rdf2pg 리뷰 — 같은 지식 그래프를 RDF와 속성 그래프로 조회하기](2026-11-05-review-rdf2pg.md)
+- [SHACL 업데이트 검증 리뷰 — 데이터를 바꾸기 전에 제약 보존을 판단하기](2026-11-05-review-shacl-updates.md)
+- [GraphRAG-Bench 리뷰 — 질문 난도와 검색·생성 비용을 나눠 보는 평가](2026-11-05-review-when-graphs-rag.md)
+- [xpSHACL 리뷰 — 검증 실패를 사람이 이해할 수 있는 설명으로 바꾸기](2026-11-05-review-xpshacl.md)
+
 - [2026-11-02 벡터 검색의 표현·청킹 개선 비교](../experiments/vector-retrieval-refinement.md)
 
 - [2026-11-01 벡터 검색과 관계 확장의 근거 확보 비교](2026-11-01-graphrag-retrieval-closeout.md)
