@@ -273,7 +273,7 @@ class NativeOpsTests(unittest.TestCase):
         for forbidden in ('import httpx', 'import openai', 'OPENROUTER_API_KEY', 'codex exec'):
             self.assertNotIn(forbidden, source)
         self.assertNotEqual(ops.WORK, ROOT / '_workspace/research-ops')
-        self.assertEqual(set(ops.CHECKS), {'unit-tests', 'e0-local'})
+        self.assertEqual(set(ops.CHECKS), {'factory-lab-tests', 'unit-tests', 'e0-local'})
 
     def test_unknown_commands_and_legacy_live_are_not_available(self):
         with patch.object(sys, 'argv', ['research_ops.py', 'run', 'foo', '--live']), self.assertRaises(SystemExit):

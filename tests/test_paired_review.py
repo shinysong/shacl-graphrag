@@ -7,7 +7,9 @@ from scripts import run_paired_review as r
 
 class Paired(unittest.TestCase):
  def setUp(self):
-  self.c=json.loads(Path('_workspace/paired-campaign-20261104/config.json').read_text())
+  p=Path('_workspace/paired-campaign-20261104/config.json')
+  if not p.exists():p=Path('research/answer-evidence-1/paired-campaign-config-v1.json')
+  self.c=json.loads(p.read_text())
   self.p=self.c['providers'][0];self.t=datetime(2026,11,4,23,tzinfo=timezone.utc)
  def response(self,payload,content=None,cost='0.0001',finish='stop'):
   p=next(x for x in self.c['providers'] if x['model']==payload['model'])
