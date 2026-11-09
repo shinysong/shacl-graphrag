@@ -1,0 +1,414 @@
+{
+  "protocol": "backend-reasoning-review-1",
+  "date": "2026-11-06",
+  "status": "bounded_experiments_and_report_complete",
+  "lineage": "Existing consumed328-node486-edge source; selected7nodes4edges for queries/inference; full3999triple export followup. Authoredhierarchy and metadata controls distinct. Prior LLM outputs unchanged.",
+  "runs": [
+    {
+      "run": "live-001",
+      "evaluation": "research/backend-reasoning-review-1/live-001/evaluation.json",
+      "evaluation_sha256": "f82f3d0b0e8159d83e00019328d8ac11a82074cfd3541134fcc9cb4221adfc22",
+      "summary": {
+        "planned": 40,
+        "observed": 40,
+        "unobserved": 0,
+        "reference_sha256": "fb0154ae753e03334fe7c50df27d88b9407b03794134284934b43e253df97ab9",
+        "counts": {
+          "completed": 36,
+          "unsupported": 4
+        },
+        "matching": 40,
+        "scope": "Manually frozen development binding references; no natural-language QA accuracy or independent domain truth."
+      }
+    },
+    {
+      "run": "inference-live-001",
+      "evaluation": "research/backend-reasoning-review-1/inference-live-001/evaluation.json",
+      "evaluation_sha256": "ce1205649afa0737566c8605d6fdd6bfe09a1ccc3bccc725e8e6570a82e4ca47",
+      "summary": {
+        "planned": 224,
+        "observed": 224,
+        "unobserved": 0,
+        "by_arm": {
+          "asserted": {
+            "observed": 32,
+            "completed": 32,
+            "matching_current_reference": 20
+          },
+          "external_rdfs": {
+            "observed": 32,
+            "completed": 32,
+            "matching_current_reference": 32
+          },
+          "n10s_native": {
+            "observed": 32,
+            "completed": 32,
+            "matching_current_reference": 32
+          },
+          "neo4j_shared_closure": {
+            "observed": 32,
+            "completed": 32,
+            "matching_current_reference": 32
+          },
+          "neptune_shared_closure": {
+            "observed": 32,
+            "completed": 32,
+            "matching_current_reference": 32
+          },
+          "python_rules": {
+            "observed": 32,
+            "completed": 32,
+            "matching_current_reference": 32
+          },
+          "stale_base_rdfs": {
+            "observed": 32,
+            "completed": 32,
+            "matching_current_reference": 26
+          }
+        },
+        "reference_sha256": "c8aecb5e892e8353e7dcfaa5bbd7fe418d5059f308f935a4a8cfc8527dbcd9d8",
+        "interpretation": "Current authored schema query membership; asserted ablation and stale snapshot intentionally can differ. Not external truth, human maintenance benefit or general OWL equivalence."
+      }
+    },
+    {
+      "run": "updates-live-001",
+      "evaluation": "research/backend-reasoning-review-1/updates-live-001/evaluation.json",
+      "evaluation_sha256": "45d2c28e4c59039dc9b13507a8b02d811e5b6eac9b77a872753ef68d933feeaf",
+      "summary": {
+        "planned": 160,
+        "observed": 160,
+        "unobserved": 0,
+        "by_arm": {
+          "python_current": {
+            "planned": 32,
+            "completed": 32,
+            "matching_current_reference": 32
+          },
+          "stale_offline": {
+            "planned": 32,
+            "completed": 32,
+            "matching_current_reference": 28
+          },
+          "n10s_live_update": {
+            "planned": 32,
+            "completed": 32,
+            "matching_current_reference": 32
+          },
+          "neptune_recomputed": {
+            "planned": 32,
+            "completed": 32,
+            "matching_current_reference": 32
+          },
+          "neptune_stale": {
+            "planned": 32,
+            "completed": 32,
+            "matching_current_reference": 28
+          }
+        },
+        "reference_sha256": "c8aecb5e892e8353e7dcfaa5bbd7fe418d5059f308f935a4a8cfc8527dbcd9d8",
+        "event_mapping": {
+          "initial": "two_supports",
+          "delete_primary": "remove_primary",
+          "delete_alternate": "remove_both_annotation_supports",
+          "restore_paths": "two_supports",
+          "delete_fact": "remove_source_edge",
+          "restore_fact": "two_supports",
+          "delete_schema": "missing_schema",
+          "restore_schema": "two_supports"
+        },
+        "interpretation": "Repeated quiescent authoredchanges on consumed development source IDs, not independent samples, benchmark, LLM answers or fullOWL reasoner comparison."
+      }
+    },
+    {
+      "run": "rdf-import-live-001",
+      "evaluation": "research/backend-reasoning-review-1/rdf-import-live-001/evaluation.json",
+      "evaluation_sha256": "727e68228f6a3b283746cdb61f013684979f818c14a33a2ec99b46b3299035f2",
+      "summary": {
+        "planned": 20,
+        "observed": 20,
+        "completed": 20,
+        "unobserved": 0,
+        "interpretation": "Small configured RDF-to-LPG import/export diagnostic. Exact URI/literal-term comparison for this bundle only, no general invertibility/performance/QA claim. Authored fixtures separate from source projection."
+      }
+    },
+    {
+      "run": "import-followup-live-001",
+      "evaluation": "research/backend-reasoning-review-1/import-followup-live-001/evaluation.json",
+      "evaluation_sha256": "3b086af5924e7831dd5bdc5c017eb9e7843bc56eae8a67fb498ec8944c272787",
+      "summary": {
+        "planned": 10,
+        "observed": 10,
+        "completed": 10,
+        "unobserved": 0,
+        "interpretation": "Small configured RDF-to-LPG import/export diagnostic. Exact URI/literal-term comparison for this bundle only, no general invertibility/performance/QA claim. Authored fixtures separate from source projection."
+      }
+    },
+    {
+      "run": "advisory-replay-001",
+      "evaluation": "research/backend-reasoning-review-1/advisory-replay-001/evaluation.json",
+      "evaluation_sha256": "4ea43ff52246d8f3266054773292bf402b5218ef8cdbe9ea3a0c11c6c26d76c2",
+      "summary": {
+        "planned_checker_slots": 336,
+        "observed_checker_slots": 336,
+        "unobserved": 0,
+        "policy_pairs": 168,
+        "agreeing_pairs": 168,
+        "summary": {
+          "saved_backend_output/python": {
+            "planned": 160,
+            "completed": 160,
+            "reports_requesting_review": 32,
+            "query_set_mismatch_with_review": 8,
+            "matching_query_set_with_review": 24,
+            "query_set_mismatch_without_review": 0
+          },
+          "saved_backend_output/shacl": {
+            "planned": 160,
+            "completed": 160,
+            "reports_requesting_review": 32,
+            "query_set_mismatch_with_review": 8,
+            "matching_query_set_with_review": 24,
+            "query_set_mismatch_without_review": 0
+          },
+          "authored_metadata_control/python": {
+            "planned": 8,
+            "completed": 8,
+            "reports_requesting_review": 6,
+            "query_set_mismatch_with_review": 3,
+            "matching_query_set_with_review": 3,
+            "query_set_mismatch_without_review": 1
+          },
+          "authored_metadata_control/shacl": {
+            "planned": 8,
+            "completed": 8,
+            "reports_requesting_review": 6,
+            "query_set_mismatch_with_review": 3,
+            "matching_query_set_with_review": 3,
+            "query_set_mismatch_without_review": 1
+          }
+        },
+        "interpretation": "Offline replay, same metadata policy, no new answers or model calls. Version warning is not factual-error finding. Query-set matches use consumed authored reference; not external truth. Matching outputs flagged are review burden, not actual abstention because no veto. Authored metadata controls separate."
+      }
+    },
+    {
+      "run": "advisory-scope-001",
+      "evaluation": "research/backend-reasoning-review-1/advisory-scope-001/evaluation.json",
+      "evaluation_sha256": "1244b27f1b613eabde57bb3b0e64f165f19db5abb25799a13e05abda086779c0",
+      "summary": {
+        "planned_checker_slots": 960,
+        "observed": 960,
+        "pairs": 480,
+        "agreeing_pairs": 480,
+        "summary": {
+          "global/python": {
+            "planned": 160,
+            "completed": 160,
+            "review_flags": 32,
+            "mismatch_with_review": 8,
+            "matching_with_review": 24,
+            "mismatch_without_review": 0
+          },
+          "global/shacl": {
+            "planned": 160,
+            "completed": 160,
+            "review_flags": 32,
+            "mismatch_with_review": 8,
+            "matching_with_review": 24,
+            "mismatch_without_review": 0
+          },
+          "declared_family/python": {
+            "planned": 160,
+            "completed": 160,
+            "review_flags": 20,
+            "mismatch_with_review": 8,
+            "matching_with_review": 12,
+            "mismatch_without_review": 0
+          },
+          "declared_family/shacl": {
+            "planned": 160,
+            "completed": 160,
+            "review_flags": 20,
+            "mismatch_with_review": 8,
+            "matching_with_review": 12,
+            "mismatch_without_review": 0
+          },
+          "swapped_family_control/python": {
+            "planned": 160,
+            "completed": 160,
+            "review_flags": 20,
+            "mismatch_with_review": 4,
+            "matching_with_review": 16,
+            "mismatch_without_review": 4
+          },
+          "swapped_family_control/shacl": {
+            "planned": 160,
+            "completed": 160,
+            "review_flags": 20,
+            "mismatch_with_review": 4,
+            "matching_with_review": 16,
+            "mismatch_without_review": 4
+          }
+        },
+        "interpretation": "Derived replay on same160controlledbackendoutputs. Typedfamilymapping supplied, not learnedNLunderstanding. Metadataonly/noLLM/veto/repair. Correctflags quantify proxyreviewburden, not actual labor orabstention."
+      }
+    },
+    {
+      "run": "metadata-boundaries-001",
+      "evaluation": "research/backend-reasoning-review-1/metadata-boundaries-001/evaluation.json",
+      "evaluation_sha256": "1adbdc9ac42d5c947bda7b8d782d8abd410ddf7dbb92fd7899045ebcd1cf8510",
+      "summary": {
+        "planned": 34,
+        "observed": 34,
+        "completed_slots": 30,
+        "checker_failures": 4,
+        "paired_completed": 13,
+        "paired_agreeing": 12,
+        "scope": "Authored boundary diagnostic; exceptions not parity, unchanged historical outputs, no QA/DB/LLM."
+      }
+    },
+    {
+      "run": "advisory-strict-001",
+      "evaluation": "research/backend-reasoning-review-1/advisory-strict-001/evaluation.json",
+      "evaluation_sha256": "7f69c2c773689db61c3947f23f17fa19bd7357efe8c2248b4162b50bbd9fb26a",
+      "summary": {
+        "planned": 370,
+        "observed": 370,
+        "completed": 362,
+        "input_rejected": 8,
+        "checker_failures": 0,
+        "pairs": 185,
+        "completed_pairs": 181,
+        "agreeing_completed_pairs": 181,
+        "shared_rejected_pairs": 4,
+        "unchanged_old_pairs": 168,
+        "scope": "Post-observation contract revision on consumed inputs, no general arbitraryinput parity or QA efficacy; shared input rejections not SHACL conformance."
+      }
+    },
+    {
+      "run": "advisory-query-scope-001",
+      "evaluation": "research/backend-reasoning-review-1/advisory-query-scope-001/evaluation.json",
+      "evaluation_sha256": "b88c494a6d231379cf307b7e83162be10f7ee97ce17ab3796c9e4b3a69121700",
+      "summary": {
+        "planned_checker_slots": 640,
+        "observed": 640,
+        "pairs": 320,
+        "agreeing_pairs": 320,
+        "summary": {
+          "declared_query/python": {
+            "planned": 160,
+            "completed": 160,
+            "review_flags": 10,
+            "mismatch_with_review": 8,
+            "matching_with_review": 2,
+            "mismatch_without_review": 0
+          },
+          "declared_query/shacl": {
+            "planned": 160,
+            "completed": 160,
+            "review_flags": 10,
+            "mismatch_with_review": 8,
+            "matching_with_review": 2,
+            "mismatch_without_review": 0
+          },
+          "swapped_query_control/python": {
+            "planned": 160,
+            "completed": 160,
+            "review_flags": 10,
+            "mismatch_with_review": 0,
+            "matching_with_review": 10,
+            "mismatch_without_review": 8
+          },
+          "swapped_query_control/shacl": {
+            "planned": 160,
+            "completed": 160,
+            "review_flags": 10,
+            "mismatch_with_review": 0,
+            "matching_with_review": 10,
+            "mismatch_without_review": 8
+          }
+        },
+        "interpretation": "Derived replay on same160controlledbackendoutputs. Typed query dependency on complete controlled snapshots supplied, not learnedNLunderstanding or sourcecompleteness discovery. Metadataonly/noLLM/veto/repair. Correctflags quantify proxyreviewburden, not actual labor orabstention."
+      }
+    },
+    {
+      "run": "dependency-finite-001",
+      "evaluation": "research/backend-reasoning-review-1/dependency-finite-001/evaluation.json",
+      "evaluation_sha256": "4d6106494914fff28a47be5dee9fae5364f1e6cb3171a82e9cae8bc778947d81",
+      "summary": {
+        "dependency_groups": 3824,
+        "observed": 12288,
+        "planned": 12288,
+        "same_dependency_different_answer": 0,
+        "scope": "Finite verification of a conditional dependency property with a separate matrix algorithm; not empirical QA or general proof."
+      }
+    }
+  ],
+  "new_llm_calls": 0,
+  "inference_scope": "Selected subtype/subproperty query memberships; external owlrl.RDFS_Semantics, not fullOWL/HermiT equivalence.",
+  "backend_scope": "ActualNeptuneRDFSPARQL, actualNeo4j/n10s. PriorcustomRDFtermgraph mapping is separate from actualn10simport.",
+  "cleanup": {
+    "neptune": "stopped explicitly reported by AWS StopDBCluster error response at09:25UTC",
+    "owned_n10s_container": "removed; owneddata namespaces empty; existing userGUI container untouched",
+    "actual_aws_billing": "not measured"
+  },
+  "checks": {
+    "unit_tests": 30,
+    "initial_saved_evaluation_replays": 10,
+    "initial_manifest_artifacts": 809,
+    "independent_review_jobs": [
+      "20261106T083840Z-backend-parity-live-a249db",
+      "20261106T084740Z-backend-inference-live-846996",
+      "20261106T085954Z-backend-updates-live-437b0b",
+      "20261106T090550Z-backend-rdf-import-f0279f",
+      "20261106T091207Z-backend-import-followup-7843cd",
+      "20261106T091734Z-backend-advisory-91fcc9",
+      "20261106T092249Z-backend-advisory-scope-30f038",
+      "20261106T093642Z-backend-evidence-audit-2caa89",
+      "20261106T093921Z-backend-metadata-boundaries-67ab60",
+      "20261106T094217Z-backend-advisory-strict-194796",
+      "20261106T094751Z-backend-final-report-3d1a9c",
+      "20261106T095339Z-backend-result-replay-2107ae",
+      "20261106T100046Z-backend-query-scope-7ea4a1",
+      "20261106T100421Z-backend-dependency-finite-6bdcde",
+      "20261106T100751Z-backend-final-extension-9af46b"
+    ],
+    "mkdocs_strict_exit": 0,
+    "chirpy_exit": 0,
+    "site_preserved_pages": 156,
+    "report_browser": {
+      "width390_light": {
+        "svg": 2,
+        "js_errors": 0,
+        "overflow": false
+      },
+      "width1280_dark": {
+        "svg": 2,
+        "js_errors": 0,
+        "overflow": false
+      }
+    },
+    "demo_browser_card_comparisons": 800,
+    "demo_full_field_report_pairs": 800,
+    "finite_states": 12288,
+    "finite_dependency_groups": 3824,
+    "finite_counterexamples": 0,
+    "oracle_sanity_cases": 5
+  },
+  "limitations": [
+    "Repeated dependentdevelopmentconditions, not freshheldout or independent sample totals.",
+    "No newLLManswer/revisionefficacy or measured humanreviewlabor.",
+    "Noengineperformance ranking, fullOWLclosureequivalence, arbitraryRDFinvertibility.",
+    "Questionfamily/metadata validity supplied; no automaticNLontologyconstruction or externaltruth oracle.",
+    "Localmanifest/replayedscorers do not authenticate remoteexecution or independently validate references.",
+    "Query dependency uses completecontrolledsnapshots and explicitSC/SPqueries; finite12288state enumeration is separate from prior12288studies and doesnotprove minimality or arbitraryRDF/OWL sufficiency."
+  ],
+  "next": "Freeze fresh question/source separation and sharedgeneratorbudget before separatelyauthorized newLLMcomparison; noautomaticNeptune restart.",
+  "presentation": {
+    "html": "docs/experiments/seminar/backend-review.html",
+    "template": "research/backend-reasoning-review-1/presentation-template.html",
+    "builder": "scripts/build_backend_replay.py",
+    "source_outputs": 160,
+    "saved_report_pairs": 800,
+    "published": false
+  }
+}

@@ -1,0 +1,635 @@
+{
+  "usage": "offline evaluation only; never model/runtime/repair",
+  "status": "coordinator-authored consumed-development reference, not expert-validated truth",
+  "runtime_candidates_sha256": "23b17ee4055d8695fbcb52532ec447c74b0b861f6f97c78f73cba9ae829dc842",
+  "rows": [
+    {
+      "episode_id": "PP6-2-recorded_position-complete_selected",
+      "question_sha256": "9d01522105e14262f5a19bc63fa859023a4a331fc74ec1aa383c2e69ba446a86",
+      "selected_evidence_sha256": "9660882508150f474f8e0d0ac486e5494e3f9a5d17413f31d1542875a4f6b670",
+      "family": "recorded_position",
+      "base_question": "PP6-2-recorded_position",
+      "primary_target": {
+        "value": 106,
+        "unit": "mm",
+        "scope": "recorded worksheet position, not sample index"
+      },
+      "relation": null,
+      "source_bundle_target_present": true,
+      "selected_target_supported": true,
+      "evidence_state": "selected_complete_for_authored_target",
+      "witnesses": [
+        {
+          "source_id": "PP6:2",
+          "archive_path": "ZENODO_Penelope/PP6/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "7674d7522b4fcd40b9da4ec3f8b3843373614f39ecd6a70ab6a366d4010751d3",
+          "sheet": "PP6",
+          "cell": "D2",
+          "value": 106,
+          "role": "data"
+        },
+        {
+          "source_id": "PP6:2",
+          "archive_path": "ZENODO_Penelope/PP6/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "7674d7522b4fcd40b9da4ec3f8b3843373614f39ecd6a70ab6a366d4010751d3",
+          "sheet": "PP6",
+          "cell": "D1",
+          "value": "x_init [mm]",
+          "role": "header"
+        }
+      ],
+      "forbidden_inference": "No physical recommendation, no global absence, no measured-current claim from settings table"
+    },
+    {
+      "episode_id": "PP6-2-recorded_position-relevant_source_omitted",
+      "question_sha256": "9d01522105e14262f5a19bc63fa859023a4a331fc74ec1aa383c2e69ba446a86",
+      "selected_evidence_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "family": "recorded_position",
+      "base_question": "PP6-2-recorded_position",
+      "primary_target": {
+        "value": 106,
+        "unit": "mm",
+        "scope": "recorded worksheet position, not sample index"
+      },
+      "relation": null,
+      "source_bundle_target_present": true,
+      "selected_target_supported": false,
+      "evidence_state": "deliberate_selection_omission_not_source_absence",
+      "witnesses": [
+        {
+          "source_id": "PP6:2",
+          "archive_path": "ZENODO_Penelope/PP6/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "7674d7522b4fcd40b9da4ec3f8b3843373614f39ecd6a70ab6a366d4010751d3",
+          "sheet": "PP6",
+          "cell": "D2",
+          "value": 106,
+          "role": "data"
+        },
+        {
+          "source_id": "PP6:2",
+          "archive_path": "ZENODO_Penelope/PP6/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "7674d7522b4fcd40b9da4ec3f8b3843373614f39ecd6a70ab6a366d4010751d3",
+          "sheet": "PP6",
+          "cell": "D1",
+          "value": "x_init [mm]",
+          "role": "header"
+        }
+      ],
+      "forbidden_inference": "No physical recommendation, no global absence, no measured-current claim from settings table"
+    },
+    {
+      "episode_id": "PP6-2-defect_lookup-complete_selected",
+      "question_sha256": "4f186826083018adddb4316078cc939cb390a8750a8ade6030219619fc29581e",
+      "selected_evidence_sha256": "170d612cc4955e7913f1171c6b5a91883e0b2067c977fffc86f945a35696dbe6",
+      "family": "defect_lookup",
+      "base_question": "PP6-2-defect_lookup",
+      "primary_target": {
+        "value": "Metallic inclusion",
+        "unit": null,
+        "scope": "codebook label"
+      },
+      "relation": {
+        "anchor_source_id": "PP6:2",
+        "dictionary_source_id": "PP6:defect_code:4",
+        "anchor_field": "defect",
+        "code": 4
+      },
+      "source_bundle_target_present": true,
+      "selected_target_supported": true,
+      "evidence_state": "selected_complete_for_authored_target",
+      "witnesses": [
+        {
+          "source_id": "PP6:2",
+          "archive_path": "ZENODO_Penelope/PP6/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "7674d7522b4fcd40b9da4ec3f8b3843373614f39ecd6a70ab6a366d4010751d3",
+          "sheet": "PP6",
+          "cell": "A2",
+          "value": 4,
+          "role": "data"
+        },
+        {
+          "source_id": "PP6:defect_code:4",
+          "archive_path": "ZENODO_Penelope/PP6/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "7674d7522b4fcd40b9da4ec3f8b3843373614f39ecd6a70ab6a366d4010751d3",
+          "sheet": "defect_code",
+          "cell": "A5",
+          "value": 4,
+          "role": "data"
+        },
+        {
+          "source_id": "PP6:defect_code:4",
+          "archive_path": "ZENODO_Penelope/PP6/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "7674d7522b4fcd40b9da4ec3f8b3843373614f39ecd6a70ab6a366d4010751d3",
+          "sheet": "defect_code",
+          "cell": "B5",
+          "value": "Metallic inclusion",
+          "role": "data"
+        },
+        {
+          "source_id": "PP6:defect_code:4",
+          "archive_path": "ZENODO_Penelope/PP6/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "7674d7522b4fcd40b9da4ec3f8b3843373614f39ecd6a70ab6a366d4010751d3",
+          "sheet": "defect_code",
+          "cell": "B1",
+          "value": "Defect",
+          "role": "header"
+        }
+      ],
+      "forbidden_inference": "No physical recommendation, no global absence, no measured-current claim from settings table"
+    },
+    {
+      "episode_id": "PP6-2-defect_lookup-relevant_source_omitted",
+      "question_sha256": "4f186826083018adddb4316078cc939cb390a8750a8ade6030219619fc29581e",
+      "selected_evidence_sha256": "9660882508150f474f8e0d0ac486e5494e3f9a5d17413f31d1542875a4f6b670",
+      "family": "defect_lookup",
+      "base_question": "PP6-2-defect_lookup",
+      "primary_target": {
+        "value": "Metallic inclusion",
+        "unit": null,
+        "scope": "codebook label"
+      },
+      "relation": {
+        "anchor_source_id": "PP6:2",
+        "dictionary_source_id": "PP6:defect_code:4",
+        "anchor_field": "defect",
+        "code": 4
+      },
+      "source_bundle_target_present": true,
+      "selected_target_supported": false,
+      "evidence_state": "deliberate_selection_omission_not_source_absence",
+      "witnesses": [
+        {
+          "source_id": "PP6:2",
+          "archive_path": "ZENODO_Penelope/PP6/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "7674d7522b4fcd40b9da4ec3f8b3843373614f39ecd6a70ab6a366d4010751d3",
+          "sheet": "PP6",
+          "cell": "A2",
+          "value": 4,
+          "role": "data"
+        },
+        {
+          "source_id": "PP6:defect_code:4",
+          "archive_path": "ZENODO_Penelope/PP6/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "7674d7522b4fcd40b9da4ec3f8b3843373614f39ecd6a70ab6a366d4010751d3",
+          "sheet": "defect_code",
+          "cell": "A5",
+          "value": 4,
+          "role": "data"
+        },
+        {
+          "source_id": "PP6:defect_code:4",
+          "archive_path": "ZENODO_Penelope/PP6/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "7674d7522b4fcd40b9da4ec3f8b3843373614f39ecd6a70ab6a366d4010751d3",
+          "sheet": "defect_code",
+          "cell": "B5",
+          "value": "Metallic inclusion",
+          "role": "data"
+        },
+        {
+          "source_id": "PP6:defect_code:4",
+          "archive_path": "ZENODO_Penelope/PP6/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "7674d7522b4fcd40b9da4ec3f8b3843373614f39ecd6a70ab6a366d4010751d3",
+          "sheet": "defect_code",
+          "cell": "B1",
+          "value": "Defect",
+          "role": "header"
+        }
+      ],
+      "forbidden_inference": "No physical recommendation, no global absence, no measured-current claim from settings table"
+    },
+    {
+      "episode_id": "PP6-2-nominal_idc_lookup-complete_selected",
+      "question_sha256": "5e8385fa3e3db827e128a2d86b9a5d37076b49541364d43b912947cef96d2eca",
+      "selected_evidence_sha256": "e8ee1182698fd7526eae10a0228849799c73fbbc070c58600e0a250f477f2f10",
+      "family": "nominal_idc_lookup",
+      "base_question": "PP6-2-nominal_idc_lookup",
+      "primary_target": {
+        "value": 450,
+        "unit": "A",
+        "scope": "nominal codebook setting, not measured current"
+      },
+      "relation": {
+        "anchor_source_id": "PP6:2",
+        "dictionary_source_id": "PP6:welding_settings_code:1",
+        "anchor_field": "welding_setting",
+        "code": 1
+      },
+      "source_bundle_target_present": true,
+      "selected_target_supported": true,
+      "evidence_state": "selected_complete_for_authored_target",
+      "witnesses": [
+        {
+          "source_id": "PP6:2",
+          "archive_path": "ZENODO_Penelope/PP6/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "7674d7522b4fcd40b9da4ec3f8b3843373614f39ecd6a70ab6a366d4010751d3",
+          "sheet": "PP6",
+          "cell": "B2",
+          "value": 1,
+          "role": "data"
+        },
+        {
+          "source_id": "PP6:welding_settings_code:1",
+          "archive_path": "ZENODO_Penelope/PP6/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "7674d7522b4fcd40b9da4ec3f8b3843373614f39ecd6a70ab6a366d4010751d3",
+          "sheet": "welding_settings_code",
+          "cell": "A3",
+          "value": 1,
+          "role": "data"
+        },
+        {
+          "source_id": "PP6:welding_settings_code:1",
+          "archive_path": "ZENODO_Penelope/PP6/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "7674d7522b4fcd40b9da4ec3f8b3843373614f39ecd6a70ab6a366d4010751d3",
+          "sheet": "welding_settings_code",
+          "cell": "C3",
+          "value": 450,
+          "role": "data"
+        },
+        {
+          "source_id": "PP6:welding_settings_code:1",
+          "archive_path": "ZENODO_Penelope/PP6/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "7674d7522b4fcd40b9da4ec3f8b3843373614f39ecd6a70ab6a366d4010751d3",
+          "sheet": "welding_settings_code",
+          "cell": "C2",
+          "value": "Idc (A)",
+          "role": "header"
+        }
+      ],
+      "forbidden_inference": "No physical recommendation, no global absence, no measured-current claim from settings table"
+    },
+    {
+      "episode_id": "PP6-2-nominal_idc_lookup-relevant_source_omitted",
+      "question_sha256": "5e8385fa3e3db827e128a2d86b9a5d37076b49541364d43b912947cef96d2eca",
+      "selected_evidence_sha256": "9660882508150f474f8e0d0ac486e5494e3f9a5d17413f31d1542875a4f6b670",
+      "family": "nominal_idc_lookup",
+      "base_question": "PP6-2-nominal_idc_lookup",
+      "primary_target": {
+        "value": 450,
+        "unit": "A",
+        "scope": "nominal codebook setting, not measured current"
+      },
+      "relation": {
+        "anchor_source_id": "PP6:2",
+        "dictionary_source_id": "PP6:welding_settings_code:1",
+        "anchor_field": "welding_setting",
+        "code": 1
+      },
+      "source_bundle_target_present": true,
+      "selected_target_supported": false,
+      "evidence_state": "deliberate_selection_omission_not_source_absence",
+      "witnesses": [
+        {
+          "source_id": "PP6:2",
+          "archive_path": "ZENODO_Penelope/PP6/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "7674d7522b4fcd40b9da4ec3f8b3843373614f39ecd6a70ab6a366d4010751d3",
+          "sheet": "PP6",
+          "cell": "B2",
+          "value": 1,
+          "role": "data"
+        },
+        {
+          "source_id": "PP6:welding_settings_code:1",
+          "archive_path": "ZENODO_Penelope/PP6/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "7674d7522b4fcd40b9da4ec3f8b3843373614f39ecd6a70ab6a366d4010751d3",
+          "sheet": "welding_settings_code",
+          "cell": "A3",
+          "value": 1,
+          "role": "data"
+        },
+        {
+          "source_id": "PP6:welding_settings_code:1",
+          "archive_path": "ZENODO_Penelope/PP6/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "7674d7522b4fcd40b9da4ec3f8b3843373614f39ecd6a70ab6a366d4010751d3",
+          "sheet": "welding_settings_code",
+          "cell": "C3",
+          "value": 450,
+          "role": "data"
+        },
+        {
+          "source_id": "PP6:welding_settings_code:1",
+          "archive_path": "ZENODO_Penelope/PP6/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "7674d7522b4fcd40b9da4ec3f8b3843373614f39ecd6a70ab6a366d4010751d3",
+          "sheet": "welding_settings_code",
+          "cell": "C2",
+          "value": "Idc (A)",
+          "role": "header"
+        }
+      ],
+      "forbidden_inference": "No physical recommendation, no global absence, no measured-current claim from settings table"
+    },
+    {
+      "episode_id": "PP7-10-recorded_position-complete_selected",
+      "question_sha256": "5c501b357266b6e3771a90cb6d2430197fb05bd289be591c5b00405d81890452",
+      "selected_evidence_sha256": "e832ba5036019411ab94529b9ae0d5697c952b12b530c552207f1c6a919b1654",
+      "family": "recorded_position",
+      "base_question": "PP7-10-recorded_position",
+      "primary_target": {
+        "value": 365,
+        "unit": "mm",
+        "scope": "recorded worksheet position, not sample index"
+      },
+      "relation": null,
+      "source_bundle_target_present": true,
+      "selected_target_supported": true,
+      "evidence_state": "selected_complete_for_authored_target",
+      "witnesses": [
+        {
+          "source_id": "PP7:10",
+          "archive_path": "ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "d95e071ac4f6a489d53a3b6ce0d5fc63506bb9d9bc592ef6eb20da8ef8c3f4a5",
+          "sheet": "PP7",
+          "cell": "D10",
+          "value": 365,
+          "role": "data"
+        },
+        {
+          "source_id": "PP7:10",
+          "archive_path": "ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "d95e071ac4f6a489d53a3b6ce0d5fc63506bb9d9bc592ef6eb20da8ef8c3f4a5",
+          "sheet": "PP7",
+          "cell": "D1",
+          "value": "x_init [mm]",
+          "role": "header"
+        }
+      ],
+      "forbidden_inference": "No physical recommendation, no global absence, no measured-current claim from settings table"
+    },
+    {
+      "episode_id": "PP7-10-recorded_position-relevant_source_omitted",
+      "question_sha256": "5c501b357266b6e3771a90cb6d2430197fb05bd289be591c5b00405d81890452",
+      "selected_evidence_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "family": "recorded_position",
+      "base_question": "PP7-10-recorded_position",
+      "primary_target": {
+        "value": 365,
+        "unit": "mm",
+        "scope": "recorded worksheet position, not sample index"
+      },
+      "relation": null,
+      "source_bundle_target_present": true,
+      "selected_target_supported": false,
+      "evidence_state": "deliberate_selection_omission_not_source_absence",
+      "witnesses": [
+        {
+          "source_id": "PP7:10",
+          "archive_path": "ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "d95e071ac4f6a489d53a3b6ce0d5fc63506bb9d9bc592ef6eb20da8ef8c3f4a5",
+          "sheet": "PP7",
+          "cell": "D10",
+          "value": 365,
+          "role": "data"
+        },
+        {
+          "source_id": "PP7:10",
+          "archive_path": "ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "d95e071ac4f6a489d53a3b6ce0d5fc63506bb9d9bc592ef6eb20da8ef8c3f4a5",
+          "sheet": "PP7",
+          "cell": "D1",
+          "value": "x_init [mm]",
+          "role": "header"
+        }
+      ],
+      "forbidden_inference": "No physical recommendation, no global absence, no measured-current claim from settings table"
+    },
+    {
+      "episode_id": "PP7-10-defect_lookup-complete_selected",
+      "question_sha256": "91b259a00dd233bba81ff5fe40c0ba97be93cd62db227c43ec0048ce18b501b6",
+      "selected_evidence_sha256": "ff6d3fc08c72954f3cc464a51176a62a8baff9952a89868cd8327b5b1a5645a2",
+      "family": "defect_lookup",
+      "base_question": "PP7-10-defect_lookup",
+      "primary_target": {
+        "value": "Porosity",
+        "unit": null,
+        "scope": "codebook label"
+      },
+      "relation": {
+        "anchor_source_id": "PP7:10",
+        "dictionary_source_id": "PP7:defect_code:1",
+        "anchor_field": "defect",
+        "code": 1
+      },
+      "source_bundle_target_present": true,
+      "selected_target_supported": true,
+      "evidence_state": "selected_complete_for_authored_target",
+      "witnesses": [
+        {
+          "source_id": "PP7:10",
+          "archive_path": "ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "d95e071ac4f6a489d53a3b6ce0d5fc63506bb9d9bc592ef6eb20da8ef8c3f4a5",
+          "sheet": "PP7",
+          "cell": "A10",
+          "value": 1,
+          "role": "data"
+        },
+        {
+          "source_id": "PP7:defect_code:1",
+          "archive_path": "ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "d95e071ac4f6a489d53a3b6ce0d5fc63506bb9d9bc592ef6eb20da8ef8c3f4a5",
+          "sheet": "defect_code",
+          "cell": "A2",
+          "value": 1,
+          "role": "data"
+        },
+        {
+          "source_id": "PP7:defect_code:1",
+          "archive_path": "ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "d95e071ac4f6a489d53a3b6ce0d5fc63506bb9d9bc592ef6eb20da8ef8c3f4a5",
+          "sheet": "defect_code",
+          "cell": "B2",
+          "value": "Porosity",
+          "role": "data"
+        },
+        {
+          "source_id": "PP7:defect_code:1",
+          "archive_path": "ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "d95e071ac4f6a489d53a3b6ce0d5fc63506bb9d9bc592ef6eb20da8ef8c3f4a5",
+          "sheet": "defect_code",
+          "cell": "B1",
+          "value": "Defect",
+          "role": "header"
+        }
+      ],
+      "forbidden_inference": "No physical recommendation, no global absence, no measured-current claim from settings table"
+    },
+    {
+      "episode_id": "PP7-10-defect_lookup-relevant_source_omitted",
+      "question_sha256": "91b259a00dd233bba81ff5fe40c0ba97be93cd62db227c43ec0048ce18b501b6",
+      "selected_evidence_sha256": "e832ba5036019411ab94529b9ae0d5697c952b12b530c552207f1c6a919b1654",
+      "family": "defect_lookup",
+      "base_question": "PP7-10-defect_lookup",
+      "primary_target": {
+        "value": "Porosity",
+        "unit": null,
+        "scope": "codebook label"
+      },
+      "relation": {
+        "anchor_source_id": "PP7:10",
+        "dictionary_source_id": "PP7:defect_code:1",
+        "anchor_field": "defect",
+        "code": 1
+      },
+      "source_bundle_target_present": true,
+      "selected_target_supported": false,
+      "evidence_state": "deliberate_selection_omission_not_source_absence",
+      "witnesses": [
+        {
+          "source_id": "PP7:10",
+          "archive_path": "ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "d95e071ac4f6a489d53a3b6ce0d5fc63506bb9d9bc592ef6eb20da8ef8c3f4a5",
+          "sheet": "PP7",
+          "cell": "A10",
+          "value": 1,
+          "role": "data"
+        },
+        {
+          "source_id": "PP7:defect_code:1",
+          "archive_path": "ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "d95e071ac4f6a489d53a3b6ce0d5fc63506bb9d9bc592ef6eb20da8ef8c3f4a5",
+          "sheet": "defect_code",
+          "cell": "A2",
+          "value": 1,
+          "role": "data"
+        },
+        {
+          "source_id": "PP7:defect_code:1",
+          "archive_path": "ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "d95e071ac4f6a489d53a3b6ce0d5fc63506bb9d9bc592ef6eb20da8ef8c3f4a5",
+          "sheet": "defect_code",
+          "cell": "B2",
+          "value": "Porosity",
+          "role": "data"
+        },
+        {
+          "source_id": "PP7:defect_code:1",
+          "archive_path": "ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "d95e071ac4f6a489d53a3b6ce0d5fc63506bb9d9bc592ef6eb20da8ef8c3f4a5",
+          "sheet": "defect_code",
+          "cell": "B1",
+          "value": "Defect",
+          "role": "header"
+        }
+      ],
+      "forbidden_inference": "No physical recommendation, no global absence, no measured-current claim from settings table"
+    },
+    {
+      "episode_id": "PP7-10-nominal_idc_lookup-complete_selected",
+      "question_sha256": "7e61dae5969f43bee997bf952cb1e00d7de6f873c36a1b88506bf6f544f87fc6",
+      "selected_evidence_sha256": "10076a3a271fcec0c40bfee936dfba2c5711f6fe6550261a20d55bf6fafc2701",
+      "family": "nominal_idc_lookup",
+      "base_question": "PP7-10-nominal_idc_lookup",
+      "primary_target": {
+        "value": 450,
+        "unit": "A",
+        "scope": "nominal codebook setting, not measured current"
+      },
+      "relation": {
+        "anchor_source_id": "PP7:10",
+        "dictionary_source_id": "PP7:welding_settings_code:1",
+        "anchor_field": "welding_setting",
+        "code": 1
+      },
+      "source_bundle_target_present": true,
+      "selected_target_supported": true,
+      "evidence_state": "selected_complete_for_authored_target",
+      "witnesses": [
+        {
+          "source_id": "PP7:10",
+          "archive_path": "ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "d95e071ac4f6a489d53a3b6ce0d5fc63506bb9d9bc592ef6eb20da8ef8c3f4a5",
+          "sheet": "PP7",
+          "cell": "B10",
+          "value": 1,
+          "role": "data"
+        },
+        {
+          "source_id": "PP7:welding_settings_code:1",
+          "archive_path": "ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "d95e071ac4f6a489d53a3b6ce0d5fc63506bb9d9bc592ef6eb20da8ef8c3f4a5",
+          "sheet": "welding_settings_code",
+          "cell": "A3",
+          "value": 1,
+          "role": "data"
+        },
+        {
+          "source_id": "PP7:welding_settings_code:1",
+          "archive_path": "ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "d95e071ac4f6a489d53a3b6ce0d5fc63506bb9d9bc592ef6eb20da8ef8c3f4a5",
+          "sheet": "welding_settings_code",
+          "cell": "C3",
+          "value": 450,
+          "role": "data"
+        },
+        {
+          "source_id": "PP7:welding_settings_code:1",
+          "archive_path": "ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "d95e071ac4f6a489d53a3b6ce0d5fc63506bb9d9bc592ef6eb20da8ef8c3f4a5",
+          "sheet": "welding_settings_code",
+          "cell": "C2",
+          "value": "Idc (A)",
+          "role": "header"
+        }
+      ],
+      "forbidden_inference": "No physical recommendation, no global absence, no measured-current claim from settings table"
+    },
+    {
+      "episode_id": "PP7-10-nominal_idc_lookup-relevant_source_omitted",
+      "question_sha256": "7e61dae5969f43bee997bf952cb1e00d7de6f873c36a1b88506bf6f544f87fc6",
+      "selected_evidence_sha256": "e832ba5036019411ab94529b9ae0d5697c952b12b530c552207f1c6a919b1654",
+      "family": "nominal_idc_lookup",
+      "base_question": "PP7-10-nominal_idc_lookup",
+      "primary_target": {
+        "value": 450,
+        "unit": "A",
+        "scope": "nominal codebook setting, not measured current"
+      },
+      "relation": {
+        "anchor_source_id": "PP7:10",
+        "dictionary_source_id": "PP7:welding_settings_code:1",
+        "anchor_field": "welding_setting",
+        "code": 1
+      },
+      "source_bundle_target_present": true,
+      "selected_target_supported": false,
+      "evidence_state": "deliberate_selection_omission_not_source_absence",
+      "witnesses": [
+        {
+          "source_id": "PP7:10",
+          "archive_path": "ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "d95e071ac4f6a489d53a3b6ce0d5fc63506bb9d9bc592ef6eb20da8ef8c3f4a5",
+          "sheet": "PP7",
+          "cell": "B10",
+          "value": 1,
+          "role": "data"
+        },
+        {
+          "source_id": "PP7:welding_settings_code:1",
+          "archive_path": "ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "d95e071ac4f6a489d53a3b6ce0d5fc63506bb9d9bc592ef6eb20da8ef8c3f4a5",
+          "sheet": "welding_settings_code",
+          "cell": "A3",
+          "value": 1,
+          "role": "data"
+        },
+        {
+          "source_id": "PP7:welding_settings_code:1",
+          "archive_path": "ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "d95e071ac4f6a489d53a3b6ce0d5fc63506bb9d9bc592ef6eb20da8ef8c3f4a5",
+          "sheet": "welding_settings_code",
+          "cell": "C3",
+          "value": 450,
+          "role": "data"
+        },
+        {
+          "source_id": "PP7:welding_settings_code:1",
+          "archive_path": "ZENODO_Penelope/PP7/2. ndt_data/defects_xlocation.xlsx",
+          "workbook_sha256": "d95e071ac4f6a489d53a3b6ce0d5fc63506bb9d9bc592ef6eb20da8ef8c3f4a5",
+          "sheet": "welding_settings_code",
+          "cell": "C2",
+          "value": "Idc (A)",
+          "role": "header"
+        }
+      ],
+      "forbidden_inference": "No physical recommendation, no global absence, no measured-current claim from settings table"
+    }
+  ]
+}

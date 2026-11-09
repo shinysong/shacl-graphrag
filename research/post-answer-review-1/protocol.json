@@ -1,0 +1,24 @@
+{
+  "protocol_id": "post-answer-review-1",
+  "version": "0.1-offline-diagnostic",
+  "status": "implementation_diagnostic_not_llm_efficacy",
+  "purpose": "Advisory review at final submission or a declared intermediate checkpoint, without mandatory veto or automatic repair.",
+  "arms": {
+    "R0": "Identical draft and selected evidence; no checker report",
+    "RP": "Identical draft/evidence/projection; same-policy Python report",
+    "RS": "Identical draft/evidence/projection; pySHACL report"
+  },
+  "phase_separation": ["draft generation", "explicit atomic-claim projection", "checker report", "optional revision", "external offline evaluation"],
+  "runtime_inputs": ["typed atomic claim records", "selected source-field records with exact locators"],
+  "forbidden_runtime_inputs": ["evaluation gold", "expected outcome labels", "hidden full corpus", "other arms' answers"],
+  "implemented_checks": ["selected source membership", "selected field membership", "exact JSON scalar agreement", "exact declared unit agreement"],
+  "shared_admission": "Both engines share shape/schema validation and applicability gates; their existence is not evidence of independent semantic extraction.",
+  "statuses": {"pass":"Declared check agrees with selected evidence; not truth or completeness", "flag":"Bound value or unit differs from selected field under exact policy", "unknown":"Required source, field, value or unit unavailable", "not_applicable":"Derived claim outside atomic-recorded-value scope"},
+  "no_coercion": "Integers, floating-point values, strings and booleans remain distinct JSON lexical representations. Unit conversion and synonyms are not implemented.",
+  "unverified": ["natural-language to typed claim correctness", "whole-answer coverage", "question-to-source relevance", "derived calculations", "conflicting versions", "external factual truth", "human review usefulness", "revision effectiveness", "performance superiority"],
+  "denominators": ["all submitted drafts including parse failures", "all declared claims including unprojectable claims", "all requested checks including unknown and not-applicable", "all attempted revisions including truncations and regressions"],
+  "planned_measures": ["error detection among adjudicated in-scope errors", "unnecessary flags among adjudicated correct in-scope claims", "unknown and coverage rates", "review pointer correctness", "revision fixes and newly introduced errors", "tokens/cost/latency separately"],
+  "controls_needed_before_paid_study": ["expert or disclosed coordinator projection audit", "source-sufficient questions with documented policies", "common prompt/selected evidence/report representation", "same-budget self-review control to isolate second-pass effects", "report-only versus revision outcomes separated", "fresh independent review and bounded budget"],
+  "scope": "Current real questions and outputs are consumed development. Synthetic mutations are software diagnostics, not new real-world benchmark cases. No physical action recommendations.",
+  "paid_calls": 0
+}

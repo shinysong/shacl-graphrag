@@ -1,0 +1,437 @@
+{
+  "protocol": "manufacturing-answer-trace-1",
+  "status": "design artifact; no new answer execution",
+  "cohort": "consumed manufacturing development",
+  "source_attribution": {
+    "authors": [
+      "Tapia Suárez, Estefanía Alexandra",
+      "Pérez Couñago, Inés",
+      "Eike Precker, Christian",
+      "Fernández Montenegro, Juan Manuel",
+      "Ruiz, Cristina"
+    ],
+    "doi": "10.5281/zenodo.15083865",
+    "extract_license": "CC-BY-4.0",
+    "license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "metadata_sha256": "6af6d32eb8360e564580d828e9001f6775024fca045e261e0226a4b095e8d8b5",
+    "metadata_url": "https://zenodo.org/api/records/15083865",
+    "title": "Submerged Arc Welding Open Repository",
+    "url": "https://zenodo.org/records/15083865",
+    "version": "v2 (record landing page; absent in API metadata)"
+  },
+  "questions": [
+    {
+      "id": "Q1",
+      "question": "PP6 작업표 2행의 x_init [mm]는 얼마인가요? 해당 셀을 제시해주세요.",
+      "source_ids": [
+        "PP6:2"
+      ],
+      "basis": "retained_source",
+      "query_scope": "scalar source value only",
+      "recorded_backend_outputs": [
+        {
+          "backend": "sqlite_python",
+          "status": "completed",
+          "binding_sha256": "1dc007539bef2407044c8178e470f810fd0a21bfa702625b0aaa02637363e078",
+          "contract_hash": "5f4b8de4ce87c8db9610c73cfaa876a560b32aecb99153ad05857dc28e0621f0",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "rdflib_offline",
+          "status": "completed",
+          "binding_sha256": "1dc007539bef2407044c8178e470f810fd0a21bfa702625b0aaa02637363e078",
+          "contract_hash": "5f4b8de4ce87c8db9610c73cfaa876a560b32aecb99153ad05857dc28e0621f0",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "neo4j_cypher",
+          "status": "completed",
+          "binding_sha256": "1dc007539bef2407044c8178e470f810fd0a21bfa702625b0aaa02637363e078",
+          "contract_hash": "5f4b8de4ce87c8db9610c73cfaa876a560b32aecb99153ad05857dc28e0621f0",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "neptune_sparql",
+          "status": "completed",
+          "binding_sha256": "1dc007539bef2407044c8178e470f810fd0a21bfa702625b0aaa02637363e078",
+          "contract_hash": "5f4b8de4ce87c8db9610c73cfaa876a560b32aecb99153ad05857dc28e0621f0",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        }
+      ],
+      "remaining_answer_work": [
+        "format value with source locator"
+      ],
+      "final_answer_verified_by_backend_parity": false
+    },
+    {
+      "id": "Q2",
+      "question": "PP6 작업표 2행의 defect 코드가 가리키는 결함 이름은 무엇인가요? 작업표와 코드북의 근거를 함께 제시해주세요.",
+      "source_ids": [
+        "PP6:2",
+        "PP6:defect_code:4"
+      ],
+      "basis": "retained_source",
+      "query_scope": "same-file explicit reference and codebook label",
+      "recorded_backend_outputs": [
+        {
+          "backend": "sqlite_python",
+          "status": "completed",
+          "binding_sha256": "e86e28ef46bfd6280640a66a713e3b86c6067fbad89fd6a16ceee54bb66c0cb8",
+          "contract_hash": "5a83c7e58ee539a6d03a9736609c6d67448fed13d5a0f86a31e700b59113c51e",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "rdflib_offline",
+          "status": "completed",
+          "binding_sha256": "e86e28ef46bfd6280640a66a713e3b86c6067fbad89fd6a16ceee54bb66c0cb8",
+          "contract_hash": "5a83c7e58ee539a6d03a9736609c6d67448fed13d5a0f86a31e700b59113c51e",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "neo4j_cypher",
+          "status": "completed",
+          "binding_sha256": "e86e28ef46bfd6280640a66a713e3b86c6067fbad89fd6a16ceee54bb66c0cb8",
+          "contract_hash": "5a83c7e58ee539a6d03a9736609c6d67448fed13d5a0f86a31e700b59113c51e",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "neptune_sparql",
+          "status": "completed",
+          "binding_sha256": "e86e28ef46bfd6280640a66a713e3b86c6067fbad89fd6a16ceee54bb66c0cb8",
+          "contract_hash": "5a83c7e58ee539a6d03a9736609c6d67448fed13d5a0f86a31e700b59113c51e",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        }
+      ],
+      "remaining_answer_work": [
+        "attach both source locators"
+      ],
+      "final_answer_verified_by_backend_parity": false
+    },
+    {
+      "id": "Q3",
+      "question": "PP6 작업표 2행과 12행의 설정 번호와 코드북상 명목 Idc를 비교해주세요. 두 행의 명목 Idc 차이도 알려주세요.",
+      "source_ids": [
+        "PP6:2",
+        "PP6:12",
+        "PP6:welding_settings_code:1",
+        "PP6:welding_settings_code:3"
+      ],
+      "basis": "retained_source",
+      "query_scope": "two source operands only; arithmetic not DB-side",
+      "recorded_backend_outputs": [
+        {
+          "backend": "sqlite_python",
+          "status": "completed",
+          "binding_sha256": "b41bd8eb5ab8a4a134fb42d94cec678ad7810a0316657f59350106a06bce5bc6",
+          "contract_hash": "224be2681c881fd30ba36316135b712da137413b8dd75560d615519b5d2bd03c",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "rdflib_offline",
+          "status": "completed",
+          "binding_sha256": "b41bd8eb5ab8a4a134fb42d94cec678ad7810a0316657f59350106a06bce5bc6",
+          "contract_hash": "224be2681c881fd30ba36316135b712da137413b8dd75560d615519b5d2bd03c",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "neo4j_cypher",
+          "status": "completed",
+          "binding_sha256": "b41bd8eb5ab8a4a134fb42d94cec678ad7810a0316657f59350106a06bce5bc6",
+          "contract_hash": "224be2681c881fd30ba36316135b712da137413b8dd75560d615519b5d2bd03c",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "neptune_sparql",
+          "status": "completed",
+          "binding_sha256": "b41bd8eb5ab8a4a134fb42d94cec678ad7810a0316657f59350106a06bce5bc6",
+          "contract_hash": "224be2681c881fd30ba36316135b712da137413b8dd75560d615519b5d2bd03c",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        }
+      ],
+      "remaining_answer_work": [
+        "subtract second nominal value minus first; preserve nominal role"
+      ],
+      "final_answer_verified_by_backend_parity": false
+    },
+    {
+      "id": "Q4",
+      "question": "대상을 PP6 작업표 2행과 12행으로 한정할 때, x_init [mm]가 100 이상 250 이하이면서 코드북상 결함 이름이 Porosity인 행과 그 개수를 알려주세요.",
+      "source_ids": [
+        "PP6:2",
+        "PP6:12",
+        "PP6:defect_code:4",
+        "PP6:defect_code:1"
+      ],
+      "basis": "retained_source",
+      "query_scope": "bounded two-row candidates only; filtering/count separate",
+      "recorded_backend_outputs": [
+        {
+          "backend": "sqlite_python",
+          "status": "completed",
+          "binding_sha256": "bc246403ffc0ab2b83aa77f4318ebcd28070b7f6a6c58cfdb88fc446984e0af5",
+          "contract_hash": "60b2ccfd998b933dfb69e9b3c6893d50736f270c8436228e6885fec4a40ef623",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "rdflib_offline",
+          "status": "completed",
+          "binding_sha256": "bc246403ffc0ab2b83aa77f4318ebcd28070b7f6a6c58cfdb88fc446984e0af5",
+          "contract_hash": "60b2ccfd998b933dfb69e9b3c6893d50736f270c8436228e6885fec4a40ef623",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "neo4j_cypher",
+          "status": "completed",
+          "binding_sha256": "bc246403ffc0ab2b83aa77f4318ebcd28070b7f6a6c58cfdb88fc446984e0af5",
+          "contract_hash": "60b2ccfd998b933dfb69e9b3c6893d50736f270c8436228e6885fec4a40ef623",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "neptune_sparql",
+          "status": "completed",
+          "binding_sha256": "bc246403ffc0ab2b83aa77f4318ebcd28070b7f6a6c58cfdb88fc446984e0af5",
+          "contract_hash": "60b2ccfd998b933dfb69e9b3c6893d50736f270c8436228e6885fec4a40ef623",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        }
+      ],
+      "remaining_answer_work": [
+        "filter declared two-row universe; count; validate enumeration"
+      ],
+      "final_answer_verified_by_backend_parity": false
+    },
+    {
+      "id": "Q5",
+      "question": "PP6 작업표 2행의 x_init [mm]와 x_init [# sample]은 각각 무엇인가요? 코드북의 Idc를 이 행에서 실제 측정한 전류라고 설명할 근거도 있나요?",
+      "source_ids": [
+        "PP6:2",
+        "PP6:welding_settings_code:1"
+      ],
+      "basis": "retained_source",
+      "query_scope": "raw values; measured-versus-nominal prose not evaluated",
+      "recorded_backend_outputs": [
+        {
+          "backend": "sqlite_python",
+          "status": "completed",
+          "binding_sha256": "dcd5a64903748a3b6f889653e7a04c3258d891657c91218ad6c3a8fdcba1757f",
+          "contract_hash": "dc9ec8776f9cf44e8103c7f5250692642827ca9b185d8143049fd47bae61a8b3",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "rdflib_offline",
+          "status": "completed",
+          "binding_sha256": "dcd5a64903748a3b6f889653e7a04c3258d891657c91218ad6c3a8fdcba1757f",
+          "contract_hash": "dc9ec8776f9cf44e8103c7f5250692642827ca9b185d8143049fd47bae61a8b3",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "neo4j_cypher",
+          "status": "completed",
+          "binding_sha256": "dcd5a64903748a3b6f889653e7a04c3258d891657c91218ad6c3a8fdcba1757f",
+          "contract_hash": "dc9ec8776f9cf44e8103c7f5250692642827ca9b185d8143049fd47bae61a8b3",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "neptune_sparql",
+          "status": "completed",
+          "binding_sha256": "dcd5a64903748a3b6f889653e7a04c3258d891657c91218ad6c3a8fdcba1757f",
+          "contract_hash": "dc9ec8776f9cf44e8103c7f5250692642827ca9b185d8143049fd47bae61a8b3",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        }
+      ],
+      "remaining_answer_work": [
+        "apply supplied source-backed unit/nominal-role policy; no measured-current claim"
+      ],
+      "final_answer_verified_by_backend_parity": false
+    },
+    {
+      "id": "Q6",
+      "question": "같은 파일의 명시된 코드북만 연결한다는 공통 규칙 아래, PP6 작업표 2행의 defect를 설명할 근거로 PP6 코드북의 코드 4와 PP7 코드북의 코드 4 중 어느 것을 사용할 수 있나요? 이름이 같다는 사실만으로 둘을 대체할 수 있나요?",
+      "source_ids": [
+        "PP6:2",
+        "PP6:defect_code:4",
+        "PP7:defect_code:4"
+      ],
+      "basis": "retained_source_with_declared_policy",
+      "query_scope": "declared source identity only; policy not inferred",
+      "recorded_backend_outputs": [
+        {
+          "backend": "sqlite_python",
+          "status": "completed",
+          "binding_sha256": "b0ceffbf4274a0cfa428517e1573a90f95a80a88b048f06a9b809c5a9fab01f2",
+          "contract_hash": "b8736c9750823b9e9503f07fa0603e7ffe484feaf90e9d7d6ea0c3c85c30e6f0",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "rdflib_offline",
+          "status": "completed",
+          "binding_sha256": "b0ceffbf4274a0cfa428517e1573a90f95a80a88b048f06a9b809c5a9fab01f2",
+          "contract_hash": "b8736c9750823b9e9503f07fa0603e7ffe484feaf90e9d7d6ea0c3c85c30e6f0",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "neo4j_cypher",
+          "status": "completed",
+          "binding_sha256": "b0ceffbf4274a0cfa428517e1573a90f95a80a88b048f06a9b809c5a9fab01f2",
+          "contract_hash": "b8736c9750823b9e9503f07fa0603e7ffe484feaf90e9d7d6ea0c3c85c30e6f0",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "neptune_sparql",
+          "status": "completed",
+          "binding_sha256": "b0ceffbf4274a0cfa428517e1573a90f95a80a88b048f06a9b809c5a9fab01f2",
+          "contract_hash": "b8736c9750823b9e9503f07fa0603e7ffe484feaf90e9d7d6ea0c3c85c30e6f0",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        }
+      ],
+      "remaining_answer_work": [
+        "apply supplied same-file applicability policy; identity is not complete policy inference"
+      ],
+      "final_answer_verified_by_backend_parity": false
+    },
+    {
+      "id": "Q7",
+      "question": "가상 이력표와 시작일 포함·종료일 제외 규칙을 기준으로, 2025-06-30의 PP6 기록에 적용되는 검토 문서 버전을 골라주세요. 최신 버전과 적용 버전이 같은지도 설명해주세요.",
+      "source_ids": [],
+      "basis": "authored_synthetic_version_diagnostic",
+      "query_scope": "synthetic history excluded from real-source pass",
+      "recorded_backend_outputs": [
+        {
+          "backend": "sqlite_python",
+          "status": "unsupported",
+          "binding_sha256": null,
+          "contract_hash": "911ebe76067592325ca8ab073919f707fe797f3d46a32eb281b208f74748cfeb",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "rdflib_offline",
+          "status": "unsupported",
+          "binding_sha256": null,
+          "contract_hash": "911ebe76067592325ca8ab073919f707fe797f3d46a32eb281b208f74748cfeb",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "neo4j_cypher",
+          "status": "unsupported",
+          "binding_sha256": null,
+          "contract_hash": "911ebe76067592325ca8ab073919f707fe797f3d46a32eb281b208f74748cfeb",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "neptune_sparql",
+          "status": "unsupported",
+          "binding_sha256": null,
+          "contract_hash": "911ebe76067592325ca8ab073919f707fe797f3d46a32eb281b208f74748cfeb",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        }
+      ],
+      "remaining_answer_work": [
+        "real version history unavailable; preserve unsupported"
+      ],
+      "final_answer_verified_by_backend_parity": false
+    },
+    {
+      "id": "Q8",
+      "question": "제공된 작업표와 코드북으로 PP6 작업표 2행에 대해 확인할 수 있는 내용과 확인할 수 없는 내용을 나눠주세요. 명목 Idc, 실제 측정 전류, 적용 검토 문서 버전을 각각 판단하려면 어떤 근거가 필요한가요?",
+      "source_ids": [
+        "PP6:2",
+        "PP6:welding_settings_code:1"
+      ],
+      "basis": "bounded_evidence_review",
+      "query_scope": "missing field in selected bundle only; not global absence",
+      "recorded_backend_outputs": [
+        {
+          "backend": "sqlite_python",
+          "status": "completed",
+          "binding_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "contract_hash": "dd4bc52e6d324d04ceffb931a8f15f343c2d1dcaad084bc4a97de6f31746fc4b",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "rdflib_offline",
+          "status": "completed",
+          "binding_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "contract_hash": "dd4bc52e6d324d04ceffb931a8f15f343c2d1dcaad084bc4a97de6f31746fc4b",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "neo4j_cypher",
+          "status": "completed",
+          "binding_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "contract_hash": "dd4bc52e6d324d04ceffb931a8f15f343c2d1dcaad084bc4a97de6f31746fc4b",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "neptune_sparql",
+          "status": "completed",
+          "binding_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "contract_hash": "dd4bc52e6d324d04ceffb931a8f15f343c2d1dcaad084bc4a97de6f31746fc4b",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        }
+      ],
+      "remaining_answer_work": [
+        "empty binding does not identify source absence versus retrieval/projection loss; other requested fields not in this query"
+      ],
+      "final_answer_verified_by_backend_parity": false
+    },
+    {
+      "id": "Q9",
+      "question": "초안의 “PP6 작업표 2행의 결함은 Porosity이고 실제 측정 전류는 450 A다”를 제공된 자료와 대조해주세요. 유지·수정·판단 보류할 부분과 확인할 근거 위치를 제시해주세요.",
+      "source_ids": [
+        "PP6:2",
+        "PP6:defect_code:4",
+        "PP6:welding_settings_code:1"
+      ],
+      "basis": "retained_source_plus_authored_draft",
+      "query_scope": "authored-draft supporting values only; no prose classification",
+      "recorded_backend_outputs": [
+        {
+          "backend": "sqlite_python",
+          "status": "completed",
+          "binding_sha256": "2e94195ec737659ab25563a243f1873c310b22748e3fe14b4e14a9446fe1e238",
+          "contract_hash": "ce944b74333158d740a31d3b89c9664ee9955feaa9812b09f7f841f9c64b72d3",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "rdflib_offline",
+          "status": "completed",
+          "binding_sha256": "2e94195ec737659ab25563a243f1873c310b22748e3fe14b4e14a9446fe1e238",
+          "contract_hash": "ce944b74333158d740a31d3b89c9664ee9955feaa9812b09f7f841f9c64b72d3",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "neo4j_cypher",
+          "status": "completed",
+          "binding_sha256": "2e94195ec737659ab25563a243f1873c310b22748e3fe14b4e14a9446fe1e238",
+          "contract_hash": "ce944b74333158d740a31d3b89c9664ee9955feaa9812b09f7f841f9c64b72d3",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        },
+        {
+          "backend": "neptune_sparql",
+          "status": "completed",
+          "binding_sha256": "2e94195ec737659ab25563a243f1873c310b22748e3fe14b4e14a9446fe1e238",
+          "contract_hash": "ce944b74333158d740a31d3b89c9664ee9955feaa9812b09f7f841f9c64b72d3",
+          "source_hash": "9c0e58f32a63faa29287dbbf591474fb14b48233720760c0e4129ab4be6dc24c"
+        }
+      ],
+      "remaining_answer_work": [
+        "compare supplied authored draft claims against support; distinguish wrong label from unsupported measured role"
+      ],
+      "final_answer_verified_by_backend_parity": false
+    }
+  ],
+  "parents": [
+    {
+      "path": "research/backend-reasoning-review-1/design-001/question-map.json",
+      "sha256": "586fa8d08f83138eb13c9e277042332a3fb3e2f7aff7ba68c0c6e46ba08fd28e"
+    },
+    {
+      "path": "research/backend-reasoning-review-1/contracts-001/runtime-queries.json",
+      "sha256": "c9ea73f94f4327dff805aa6feda78fec977787236f5e4fbb6d54a57287ec9706"
+    },
+    {
+      "path": "research/backend-reasoning-review-1/live-001/results.jsonl",
+      "sha256": "3d8364fa3d05553b84ff629480be45e1a464fc8bcc565486cbe2669ee9a3083e"
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Declared atomic or codebook lookup revision v2; unmeasured interface",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "answer",
+    "status",
+    "claims",
+    "limitations",
+    "revision_log"
+  ],
+  "properties": {
+    "answer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "answered",
+        "partial",
+        "insufficient_evidence"
+      ]
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "claim_id",
+          "text",
+          "kind",
+          "source_id",
+          "field",
+          "value",
+          "unit",
+          "anchor_id",
+          "dictionary_id",
+          "lookup_kind"
+        ],
+        "properties": {
+          "claim_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "recorded",
+              "lookup",
+              "derived"
+            ]
+          },
+          "source_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "field": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "value": {
+            "type": [
+              "string",
+              "number",
+              "boolean",
+              "null"
+            ]
+          },
+          "unit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "anchor_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "dictionary_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "lookup_kind": {
+            "enum": [
+              null,
+              "defect_label",
+              "nominal_idc"
+            ]
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "revision_log": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "original_claim_id",
+          "action",
+          "reason"
+        ],
+        "properties": {
+          "original_claim_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "action": {
+            "enum": [
+              "retained",
+              "changed",
+              "removed",
+              "added"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

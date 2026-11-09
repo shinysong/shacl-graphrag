@@ -1,0 +1,2 @@
+Saved-result demo extension. From repo root: uv run --locked python research/manufacturing-model-change-1/demo-001/build.py research/manufacturing-model-change-1/demo-001/base-welding-demo.html OUTPUT.html research/manufacturing-model-change-1/subtype-live-001
+Browser probe expects preview.html alongside script; recorded checks used workspace preview. check.py original baseline path now extended: use frozen base-welding-demo.html for further verification in a new job. Not a source truth/QA audit.

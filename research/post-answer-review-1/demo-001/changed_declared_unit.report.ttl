@@ -1,0 +1,16 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode <urn:post-answer-review:check/15> ;
+            sh:resultMessage "Node <urn:post-answer-review:check/15>-><urn:post-answer-review:observed> does not contain a value in the set: ['Literal(\"\"mm\"\")']" ;
+            sh:resultPath <urn:post-answer-review:observed> ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:HasValueConstraintComponent ;
+            sh:sourceShape [ sh:hasValue "\"mm\"" ;
+                    sh:maxCount 1 ;
+                    sh:minCount 1 ;
+                    sh:path <urn:post-answer-review:observed> ] ] .
+

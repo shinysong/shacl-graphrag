@@ -1,0 +1,404 @@
+{
+  "id": "question-input-availability-v1",
+  "origin": "manual decomposition of existing question text and declared query interface; not automatic NL extraction",
+  "limits": [
+    "Availability only; not final-answer completeness, external truth, source applicability or closed-world completeness",
+    "Absent paths do not locate loss upstream; source vs retrieval diagnosed separately",
+    "Q7 actual history unsupported; do not invent from earlier synthetic history"
+  ],
+  "questions": {
+    "Q1": {
+      "obligations": [
+        {
+          "id": "value",
+          "label": "requested scalar",
+          "paths": [
+            [
+              "?v"
+            ]
+          ]
+        },
+        {
+          "id": "location",
+          "label": "record cell locator",
+          "paths": [
+            [
+              "?record_payload",
+              "archive_path"
+            ],
+            [
+              "?record_payload",
+              "sheet"
+            ],
+            [
+              "?record_payload",
+              "sha256"
+            ],
+            [
+              "?record_payload",
+              "field_cells",
+              "x_init_mm"
+            ]
+          ]
+        }
+      ]
+    },
+    "Q2": {
+      "obligations": [
+        {
+          "id": "label",
+          "label": "codebook label",
+          "paths": [
+            [
+              "?v"
+            ]
+          ]
+        },
+        {
+          "id": "relation",
+          "label": "dictionary identity",
+          "paths": [
+            [
+              "?d"
+            ]
+          ]
+        },
+        {
+          "id": "record_location",
+          "label": "record defect cell",
+          "paths": [
+            [
+              "?record_payload",
+              "archive_path"
+            ],
+            [
+              "?record_payload",
+              "sheet"
+            ],
+            [
+              "?record_payload",
+              "sha256"
+            ],
+            [
+              "?record_payload",
+              "field_cells",
+              "defect"
+            ]
+          ]
+        },
+        {
+          "id": "dictionary_location",
+          "label": "dictionary source and cells",
+          "paths": [
+            [
+              "?dictionary_payload",
+              "archive_path"
+            ],
+            [
+              "?dictionary_payload",
+              "sheet"
+            ],
+            [
+              "?dictionary_payload",
+              "sha256"
+            ],
+            [
+              "?dictionary_payload",
+              "cells"
+            ]
+          ]
+        }
+      ]
+    },
+    "Q3": {
+      "obligations": [
+        {
+          "id": "first_setting",
+          "label": "first setting number",
+          "paths": [
+            [
+              "?first_record_payload",
+              "values",
+              "welding_setting"
+            ]
+          ]
+        },
+        {
+          "id": "second_setting",
+          "label": "second setting number",
+          "paths": [
+            [
+              "?second_record_payload",
+              "values",
+              "welding_setting"
+            ]
+          ]
+        },
+        {
+          "id": "first_nominal",
+          "label": "first nominal operand",
+          "paths": [
+            [
+              "?v1"
+            ]
+          ]
+        },
+        {
+          "id": "second_nominal",
+          "label": "second nominal operand",
+          "paths": [
+            [
+              "?v2"
+            ]
+          ]
+        },
+        {
+          "id": "difference_inputs",
+          "label": "difference operands available; arithmetic not checked",
+          "paths": [
+            [
+              "?v1"
+            ],
+            [
+              "?v2"
+            ]
+          ]
+        }
+      ]
+    },
+    "Q4": {
+      "obligations": [
+        {
+          "id": "identities",
+          "label": "candidate identities; universe coverage not checked",
+          "paths": [
+            [
+              "?s"
+            ]
+          ]
+        },
+        {
+          "id": "filter_inputs",
+          "label": "filter operands; predicate not executed",
+          "paths": [
+            [
+              "?x"
+            ],
+            [
+              "?label"
+            ]
+          ]
+        }
+      ]
+    },
+    "Q5": {
+      "obligations": [
+        {
+          "id": "position",
+          "label": "position scalar",
+          "paths": [
+            [
+              "?mm"
+            ]
+          ]
+        },
+        {
+          "id": "index",
+          "label": "sample scalar",
+          "paths": [
+            [
+              "?sample"
+            ]
+          ]
+        },
+        {
+          "id": "nominal",
+          "label": "nominal scalar",
+          "paths": [
+            [
+              "?nominal"
+            ]
+          ]
+        },
+        {
+          "id": "role_context",
+          "label": "source headers for declared interpretation",
+          "paths": [
+            [
+              "?record_payload",
+              "header_rows"
+            ],
+            [
+              "?dictionary_payload",
+              "header_rows"
+            ]
+          ]
+        },
+        {
+          "id": "measured",
+          "label": "actual measured observation; absence remains local",
+          "paths": [
+            [
+              "?actual_current"
+            ]
+          ]
+        }
+      ]
+    },
+    "Q6": {
+      "obligations": [
+        {
+          "id": "linked",
+          "label": "linked dictionary identity",
+          "paths": [
+            [
+              "?d"
+            ]
+          ]
+        },
+        {
+          "id": "sources",
+          "label": "source scopes for declared applicability policy",
+          "paths": [
+            [
+              "?same"
+            ],
+            [
+              "?other"
+            ]
+          ]
+        },
+        {
+          "id": "source_locations",
+          "label": "both dictionary source locations",
+          "paths": [
+            [
+              "?dictionary_payload",
+              "archive_path"
+            ],
+            [
+              "?other_dictionary_payload",
+              "archive_path"
+            ]
+          ]
+        }
+      ]
+    },
+    "Q7": {
+      "obligations": [
+        {
+          "id": "history",
+          "label": "effective document history",
+          "paths": [
+            [
+              "?history"
+            ]
+          ]
+        },
+        {
+          "id": "version",
+          "label": "applicable version",
+          "paths": [
+            [
+              "?version"
+            ]
+          ]
+        }
+      ]
+    },
+    "Q8": {
+      "obligations": [
+        {
+          "id": "nominal",
+          "label": "nominal scalar",
+          "paths": [
+            [
+              "?nominal"
+            ]
+          ]
+        },
+        {
+          "id": "nominal_source",
+          "label": "nominal source context",
+          "paths": [
+            [
+              "?dictionary_payload",
+              "archive_path"
+            ],
+            [
+              "?dictionary_payload",
+              "header_rows"
+            ]
+          ]
+        },
+        {
+          "id": "actual",
+          "label": "actual observation not in projected evidence",
+          "paths": [
+            [
+              "?actual_current"
+            ]
+          ]
+        },
+        {
+          "id": "version",
+          "label": "applicable version not in projected evidence",
+          "paths": [
+            [
+              "?version"
+            ]
+          ]
+        }
+      ]
+    },
+    "Q9": {
+      "obligations": [
+        {
+          "id": "label",
+          "label": "source label for draft comparison",
+          "paths": [
+            [
+              "?label"
+            ]
+          ]
+        },
+        {
+          "id": "nominal",
+          "label": "nominal scalar",
+          "paths": [
+            [
+              "?nominal"
+            ]
+          ]
+        },
+        {
+          "id": "review_locations",
+          "label": "source locations for human review",
+          "paths": [
+            [
+              "?record_payload",
+              "archive_path"
+            ],
+            [
+              "?defect_dictionary_payload",
+              "archive_path"
+            ],
+            [
+              "?setting_dictionary_payload",
+              "archive_path"
+            ]
+          ]
+        },
+        {
+          "id": "actual",
+          "label": "actual measured observation not established",
+          "paths": [
+            [
+              "?actual_current"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

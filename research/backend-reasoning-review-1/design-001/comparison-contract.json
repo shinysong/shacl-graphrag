@@ -1,0 +1,98 @@
+{
+  "protocol": "backend-reasoning-review-1",
+  "status": "design_ready_for_review_not_executed",
+  "axes": {
+    "retrieval": [
+      "legacy_improved_hybrid",
+      "same_hybrid_plus_source_relations"
+    ],
+    "reasoning": [
+      "asserted_lookup_ablation",
+      "same_declared_rule_subset"
+    ],
+    "review": [
+      "shared_draft",
+      "self_review_same_draft",
+      "advisory_report_same_draft"
+    ],
+    "backend": [
+      "matched_SQL_Python",
+      "Neo4j_Cypher",
+      "Neptune_RDF_SPARQL"
+    ]
+  },
+  "stages": [
+    {
+      "id": "S1",
+      "scope": "source and meaning parity",
+      "slots": "9 question contracts x 3 backends =27 planned contracts, not27 executed/scorable answers; Q7 separate synthetic fixture, unsupported scalar evaluators retained as partial/unsupported",
+      "gate": "freeze field/value types, scope, null/multivalue, row identity, provenance and failures before import"
+    },
+    {
+      "id": "S2",
+      "scope": "inference",
+      "shared_materialization": "Same externally computed declared-subset closure loaded into both graph stores; separates store/query from inference implementation",
+      "native_capabilities": "Separate n10s on-demand path and external RDFS/OWL-RL path; only compare intersection per rule, unsupported is not incorrect",
+      "gate": "asserted/inferred distinction and dependency support deletion controls; compare query answer sets not entire OWL closure"
+    },
+    {
+      "id": "S3",
+      "scope": "answer review",
+      "gate": "new question bank and paid scope before generation; same source budget, same original draft for self/report, report has no extra lookup, same-policy Python report comparator"
+    },
+    {
+      "id": "S4",
+      "scope": "controlled changes",
+      "gate": "source/schema/rule versions and materialized stale outputs retained; no human maintenance labor claim from lines of code"
+    }
+  ],
+  "freeze_requirements": [
+    "source/schema/query/adapter/version hashes",
+    "per-question declared subset or supplied universe",
+    "scorer reference separate from runtime",
+    "canonical evidence and policy hashes",
+    "all planned row IDs before calls",
+    "actual model IDs routes token ceilings cost ledger prior to any paid launch"
+  ],
+  "result_contract": {
+    "fields": [
+      "case_id",
+      "question_type",
+      "source_hash",
+      "schema_hash",
+      "policy_hash",
+      "backend",
+      "query_language",
+      "inference_mode",
+      "status",
+      "asserted_ids",
+      "derived_ids",
+      "support_ids",
+      "selected_evidence_hash",
+      "answer_set",
+      "elapsed_ms",
+      "bytes",
+      "error"
+    ],
+    "statuses": [
+      "planned",
+      "completed",
+      "unsupported",
+      "input_failure",
+      "query_failure",
+      "timeout",
+      "dependency_not_run"
+    ],
+    "literal_policy": "Preserve original lexical value, JSON numeric kind, unit, cell and workbook. Canonical answer comparison explicitly declares numeric equivalence; no silent lexical collapse.",
+    "missing_policy": "unknown is not false; source absence distinct from retrieval omission; bounded count not global completeness",
+    "proof_policy": "Coordinator support DAG clearly labeled; not native proof from n10s or owlrl; alternative supports retained for deletion tests"
+  },
+  "reporting": [
+    "all planned/completed/failed/unsupported counts",
+    "paired cases with missing pairs retained",
+    "query timing separated from import/closure/network/report/LLM",
+    "single EC2 vs managed service timing is deployment-specific, not engine superiority",
+    "answer accuracy, citation support, unsupported certainty, unnecessary withholding, actionable pointers, declaration coverage and reviewer disagreements separate"
+  ],
+  "budget": "No new paid API authorization inferred; completed162/$10 campaign closed. Existing Neptune window ends2026-11-06T10:10:52Z; no extension or automatic restart."
+}

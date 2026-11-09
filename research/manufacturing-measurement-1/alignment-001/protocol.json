@@ -1,0 +1,12 @@
+{
+ "id":"manufacturing-alignment-001",
+ "design":"Posthoc source-consistency diagnostic, not held-out inference or verified alignment",
+ "prior_inspection":"PP6 row2 and all four bead1 rows inspected before this freeze; row2 approximately matches x/speed*(N-1)/duration with flooring",
+ "source":"Original PP6 workbook bead1 rows, original archived data1 timestamp summary, nominal setting1 speed48cm/min",
+ "candidate_family":{"rate":["declared5000","N/duration","(N-1)/duration"],"rounding":["floor","nearest_half_up","ceil"],"offset":[0,1]},
+ "query":"Each candidate predicts both stored sample indices from position_mm/(48*10/60) * rate; compare all four rows/eight endpoints",
+ "planned_candidate_endpoint_rows":144,
+ "failure_policy":"On source hash/schema/selection error emit144failed slots; no partial denominator replacement",
+ "interpretation":"Keep all18 candidate summaries, no selecting a verified mapping; arithmetic agreement cannot establish actual trajectory, calibration, slice endpoint semantics or author implementation. Nominal travel speed is read as source metadata, not an operating prescription.",
+ "no_retroactive_change":"Do not change measurement-answer-001 frozen inputs, null judgments or original answers"
+}

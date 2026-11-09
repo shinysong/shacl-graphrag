@@ -1,0 +1,168 @@
+{
+  "planned": [
+    "table_schema",
+    "current_channel",
+    "status_encoding",
+    "sampling_intervals",
+    "cross_table_index",
+    "annotation_alignment"
+  ],
+  "rows": [
+    {
+      "id": "table_schema",
+      "status": "completed",
+      "observation": {
+        "data0_rows": 12306,
+        "data1_rows": 530304,
+        "data0_fields": [
+          "process_status",
+          "pyrometer_L",
+          "pyrometer_R",
+          "pyrometer_back",
+          "wire_speed_a",
+          "wire_speed_b",
+          "x",
+          "y",
+          "z",
+          "timestamp",
+          "idx_data1"
+        ],
+        "data1_fields": [
+          "current_a",
+          "current_b",
+          "voltage_a",
+          "voltage_b",
+          "timestamp"
+        ]
+      }
+    },
+    {
+      "id": "current_channel",
+      "status": "completed",
+      "observation": {
+        "field": "data1/current_a",
+        "unit_source": "PP6 README: current of DC electrode [A]",
+        "finite_count": 530304,
+        "calibration_verified": false,
+        "not_nominal_setting": true
+      }
+    },
+    {
+      "id": "status_encoding",
+      "status": "completed",
+      "observation": {
+        "observed_values": [
+          0.0,
+          255.0
+        ],
+        "readme_declares": "boolean",
+        "literal_zero_one_only": false,
+        "interpretation": "Encoding mapping not verified; 255 is not automatically an invalid state"
+      }
+    },
+    {
+      "id": "sampling_intervals",
+      "status": "completed",
+      "observation": {
+        "data0": {
+          "rows": 12306,
+          "duration_seconds": 105.75000190734863,
+          "nonpositive_intervals": 0,
+          "median_positive_interval_seconds": 0.008340120315551758,
+          "effective_rows_minus_one_per_duration": 116.35933596276293
+        },
+        "data1": {
+          "rows": 530304,
+          "duration_seconds": 106.06998085975647,
+          "nonpositive_intervals": 0,
+          "median_positive_interval_seconds": 0.00020003318786621094,
+          "effective_rows_minus_one_per_duration": 4999.557798555235
+        },
+        "readme_rates_hz": {
+          "data0": 66.7,
+          "data1": 5000
+        },
+        "interpretation": "Observed timestamp spacing is diagnostic; no source corruption inferred"
+      }
+    },
+    {
+      "id": "cross_table_index",
+      "status": "completed",
+      "observation": {
+        "field": "data0/idx_data1",
+        "less_than_zero": 0,
+        "equal_to_data1_length": 3,
+        "greater_than_data1_length": 0,
+        "decreases": 0,
+        "interpretation": "Undocumented index may be an exclusive boundary; equality to length is not automatically invalid"
+      }
+    },
+    {
+      "id": "annotation_alignment",
+      "status": "completed",
+      "observation": {
+        "annotation": {
+          "node_id": "PP6:2",
+          "bead": 1,
+          "defect": 4,
+          "sample_end": 72493,
+          "sample_init": 66244,
+          "welding_setting": 1,
+          "x_end_mm": 116,
+          "x_init_mm": 106,
+          "workbook_sha256": "7674d7522b4fcd40b9da4ec3f8b3843373614f39ecd6a70ab6a366d4010751d3",
+          "sheet": "PP6",
+          "cell_range": "A2:G2"
+        },
+        "data0_x_range": [
+          546.78,
+          1312.01
+        ],
+        "annotation_x_interval_inside_raw_data0_range": false,
+        "candidates": [
+          {
+            "index_base": 0,
+            "end_inclusive": false,
+            "slice_start": 66244,
+            "slice_stop_exclusive": 72493,
+            "in_bounds": true,
+            "sample_count": 6249,
+            "mean_current_a_if_assumed": 456.7624816033557
+          },
+          {
+            "index_base": 0,
+            "end_inclusive": true,
+            "slice_start": 66244,
+            "slice_stop_exclusive": 72494,
+            "in_bounds": true,
+            "sample_count": 6250,
+            "mean_current_a_if_assumed": 456.7648523622047
+          },
+          {
+            "index_base": 1,
+            "end_inclusive": false,
+            "slice_start": 66243,
+            "slice_stop_exclusive": 72492,
+            "in_bounds": true,
+            "sample_count": 6249,
+            "mean_current_a_if_assumed": 456.77757260059246
+          },
+          {
+            "index_base": 1,
+            "end_inclusive": true,
+            "slice_start": 66243,
+            "slice_stop_exclusive": 72493,
+            "in_bounds": true,
+            "sample_count": 6250,
+            "mean_current_a_if_assumed": 456.78497047244093
+          }
+        ],
+        "selected_candidate": null,
+        "applicable_document_version": null,
+        "interpretation": "Filename and bead number suggest association only. Coordinate transform, index base/end convention, calibration and applicable document version remain unverified. Candidate means are conditional arithmetic, not a validated defect-interval measurement."
+      }
+    }
+  ],
+  "scope": "One deliberately selected consumed-development PP6 bead file; source sufficiency, not QA or physical-process advice",
+  "source_sha256": "39afbb59a225d520ecff08b928c39f0be26e0cd30022a28189d103dea0be3191"
+}

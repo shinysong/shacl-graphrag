@@ -1,0 +1,161 @@
+{
+  "planned": 10,
+  "observed": 10,
+  "completed": 10,
+  "unobserved": 0,
+  "checks": [
+    {
+      "case": "urn-keep",
+      "operation": "n10s_roundtrip",
+      "status": "completed",
+      "input_triples": 6,
+      "output_triples": 6,
+      "missing": [
+        [
+          "<urn:shacl-study:import:record>",
+          "<urn:shacl-study:import:alias>",
+          "\"Alpha\""
+        ],
+        [
+          "<urn:shacl-study:import:record>",
+          "<urn:shacl-study:import:alias>",
+          "\"Beta\""
+        ],
+        [
+          "<urn:shacl-study:import:record>",
+          "<urn:shacl-study:import:grade>",
+          "\"M42\"^^<urn:shacl-study:import:Grade>"
+        ],
+        [
+          "<urn:shacl-study:import:record>",
+          "<urn:shacl-study:import:label>",
+          "\"Name\"@en"
+        ],
+        [
+          "<urn:shacl-study:import:record>",
+          "<urn:shacl-study:import:label>",
+          "\"이름\"@ko"
+        ]
+      ],
+      "extra": [
+        [
+          "<urn:shacl-study:import:record>",
+          "<neo4j://graph.schema#urn:shacl-study:import:alias>",
+          "\"Alpha\""
+        ],
+        [
+          "<urn:shacl-study:import:record>",
+          "<neo4j://graph.schema#urn:shacl-study:import:alias>",
+          "\"Beta\""
+        ],
+        [
+          "<urn:shacl-study:import:record>",
+          "<neo4j://graph.schema#urn:shacl-study:import:grade>",
+          "\"M42\"^^<urn:shacl-study:import:Grade>"
+        ],
+        [
+          "<urn:shacl-study:import:record>",
+          "<neo4j://graph.schema#urn:shacl-study:import:label>",
+          "\"Name\"@en"
+        ],
+        [
+          "<urn:shacl-study:import:record>",
+          "<neo4j://graph.schema#urn:shacl-study:import:label>",
+          "\"이름\"@ko"
+        ]
+      ],
+      "exact_terms": false
+    },
+    {
+      "case": "urn-keep",
+      "operation": "neptune_roundtrip",
+      "status": "completed",
+      "input_triples": 6,
+      "output_triples": 6,
+      "missing": [],
+      "extra": [],
+      "exact_terms": true
+    },
+    {
+      "case": "urn-shorten",
+      "operation": "n10s_roundtrip",
+      "status": "completed",
+      "input_triples": 6,
+      "output_triples": 6,
+      "missing": [],
+      "extra": [],
+      "exact_terms": true
+    },
+    {
+      "case": "urn-shorten",
+      "operation": "neptune_roundtrip",
+      "status": "completed",
+      "input_triples": 6,
+      "output_triples": 6,
+      "missing": [],
+      "extra": [],
+      "exact_terms": true
+    },
+    {
+      "case": "http-keep",
+      "operation": "n10s_roundtrip",
+      "status": "completed",
+      "input_triples": 6,
+      "output_triples": 6,
+      "missing": [],
+      "extra": [],
+      "exact_terms": true
+    },
+    {
+      "case": "http-keep",
+      "operation": "neptune_roundtrip",
+      "status": "completed",
+      "input_triples": 6,
+      "output_triples": 6,
+      "missing": [],
+      "extra": [],
+      "exact_terms": true
+    },
+    {
+      "case": "http-shorten",
+      "operation": "n10s_roundtrip",
+      "status": "completed",
+      "input_triples": 6,
+      "output_triples": 6,
+      "missing": [],
+      "extra": [],
+      "exact_terms": true
+    },
+    {
+      "case": "http-shorten",
+      "operation": "neptune_roundtrip",
+      "status": "completed",
+      "input_triples": 6,
+      "output_triples": 6,
+      "missing": [],
+      "extra": [],
+      "exact_terms": true
+    },
+    {
+      "case": "full-source-shorten",
+      "operation": "n10s_roundtrip",
+      "status": "completed",
+      "input_triples": 3999,
+      "output_triples": 3999,
+      "missing": [],
+      "extra": [],
+      "exact_terms": true
+    },
+    {
+      "case": "full-source-shorten",
+      "operation": "neptune_roundtrip",
+      "status": "completed",
+      "input_triples": 3999,
+      "output_triples": 3999,
+      "missing": [],
+      "extra": [],
+      "exact_terms": true
+    }
+  ],
+  "interpretation": "Small configured RDF-to-LPG import/export diagnostic. Exact URI/literal-term comparison for this bundle only, no general invertibility/performance/QA claim. Authored fixtures separate from source projection."
+}

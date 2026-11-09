@@ -1,0 +1,29 @@
+{
+  "state": "candidate protocol; no paid launch",
+  "draft_schema": "draft-schema-v1.json",
+  "draft_prompt": "draft-system-v1.txt",
+  "revision_prompt": "revision-system-v1.txt",
+  "review_only_arms": [
+    "R0 no report",
+    "RP Python",
+    "RS pySHACL"
+  ],
+  "revision_controls": [
+    "same-draft same-evidence self-review without report",
+    "same-draft same-evidence review with normalized report"
+  ],
+  "normalization": "Remove engine identity and raw Turtle from LLM view; preserve claim/check/status/reason/source/field/locator. Keep engine-specific artifacts offline.",
+  "byte_identical_report_rule": "If RP and RS normalized reports are byte-identical, one paid revision trace may be reused only as a declared shared derived outcome, not independent measurements.",
+  "projection_boundary": "Model-declared atomic mapping must be audited for omitted natural-language claims and wrong bindings. Passing declared mappings does not certify their interpretation.",
+  "question_contract_boundary": "No automatic natural-language question interpretation has been validated. Typed anchors or domain policies must be explicitly supplied and disclosed, never extracted from evaluator targets.",
+  "budgets": "No new budget authorized. Old six-call sample estimates do not estimate this multi-stage workflow. Freeze attempts/tokens/reasoning/provider/prices/cache-write reserves before any future calls.",
+  "models": [
+    "google/gemini-3.8-flash",
+    "google/gemini-4-argon",
+    "openai/gpt-6-luna",
+    "openai/gpt-6-astra",
+    "anthropic/claude-sonnet-5.5",
+    "anthropic/claude-fable-5.1"
+  ],
+  "revision_schema": "revision-schema-v1.json"
+}

@@ -1,0 +1,23 @@
+@prefix ex: <urn:shacl-study:advisory:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode ex:result ;
+            sh:resultMessage "malformed_used_fingerprint" ;
+            sh:resultPath ex:usedHash ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:PatternConstraintComponent ;
+            sh:sourceShape ex:UsedFormat ;
+            sh:value "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode ex:result ;
+            sh:resultMessage "malformed_current_fingerprint" ;
+            sh:resultPath ex:currentHash ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:PatternConstraintComponent ;
+            sh:sourceShape ex:CurrentFormat ;
+            sh:value "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" ] .
+

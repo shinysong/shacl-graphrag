@@ -80,28 +80,73 @@ def prepare():
         url = page_url(source)
         metadata = dict(title=title, layout='page', permalink=url, toc=True, render_with_liquid=False)
         metadata['mermaid'] = bool(re.search(r'^```mermaid\s*$', body, re.M))
+        if bool(re.search(r'\$\$|\$[^$\n]+\$', body)):
+            metadata['math'] = True
         dated = re.match(r'(\d{4}-\d{2}-\d{2})-(.+)\.md$', source.name)
         if relative in TABS:
             name, icon, order = TABS[relative]
             dest = OUTPUT / '_tabs' / f'{name}.md'
             metadata.update(title=name.capitalize(), icon=icon, order=order)
         elif dated and source.parent.name in {'journal', 'lessons-learned'}:
-            metadata['title'] = re.sub(r'^\d{4}-\d{2}-\d{2}[ —–-]+', '', title)
+            clean_title = re.sub(r'^\d{4}-\d{2}-\d{2}[ —–-]+', '', title)
+            clean_title = clean_title.replace(' — ', ': ').replace('—', '·')
+            metadata['title'] = clean_title
             paragraphs = [p for p in body.split('\n\n') if len(p) > 40 and not p.startswith(('#', '|', '-', '```', '<', '상태:'))]
             if paragraphs:
-                metadata['description'] = paragraphs[0].replace('\n', ' ')
+                raw_desc = paragraphs[0].replace('\n', ' ')
+                raw_desc = re.sub(r'\*\*([^*]+)\*\*', r'\1', raw_desc)
+                raw_desc = re.sub(r'\*([^*]+)\*', r'\1', raw_desc)
+                raw_desc = re.sub(r'`([^`]+)`', r'\1', raw_desc)
+                metadata['description'] = raw_desc.replace(' — ', ': ').replace('—', '·')
+            filename = source.name
+            is_review = '-review-' in filename
+            if source.parent.name == 'lessons-learned':
+                categories = ['시행착오', '엔지니어링']
+                tags = ['lessons-learned', 'engineering']
+                pin = False
+            else:
+                pinned_slugs = {
+                    '2026-11-07-manufacturing-research-map.md',
+                    '2026-11-06-backend-inference-review.md',
+                    '2026-11-04-paired-six-model-review.md',
+                    '2026-10-22-llm-semantic-intervention-paper.md',
+                }
+                pin = filename in pinned_slugs
+
+                if is_review:
+                    categories = ['연구 일지', '문헌 리뷰']
+                    tags = ['literature-review', 'survey']
+                elif any(k in filename for k in ('manufacturing', 'welding', 'measurement', 'imported-definition', 'schema-management', 'backend-inference')):
+                    categories = ['연구 일지', '제조·백엔드 비교']
+                    tags = ['manufacturing', 'ontology', 'shacl', 'backend']
+                elif any(k in filename for k in ('hybrid', 'graphrag', 'vector')):
+                    categories = ['연구 일지', 'GraphRAG·검색']
+                    tags = ['graphrag', 'retrieval', 'hybrid']
+                elif any(k in filename for k in ('post-answer', 'paired', 'compound', 'final-answer')):
+                    categories = ['연구 일지', '사후 검토·모델 평가']
+                    tags = ['verification', 'llm-evaluation']
+                elif any(k in filename for k in ('lifecycle', 'source-to', 'bpi2019', 'industrial', 'actionable', 'traceability')):
+                    categories = ['연구 일지', '산업 데이터·규칙 생명주기']
+                    tags = ['ontology', 'shacl', 'industry']
+                else:
+                    categories = ['연구 일지', '실험 설계·파일럿']
+                    tags = ['shacl', 'research']
+
             dest = OUTPUT / '_posts' / source.name
             metadata.update(layout='post', date=dated[1] + ' 12:00:00 +0000',
-                            categories=['연구 일지' if source.parent.name == 'journal' else '시행착오'],
-                            tags=['shacl', 'research'] if source.parent.name == 'journal' else ['engineering'],
-                            pin=source.parent.name == 'journal')
+                            categories=categories,
+                            tags=tags,
+                            pin=pin,
+                            hidden=is_review)
         else:
             dest = OUTPUT / 'pages' / relative
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text('---\n' + yaml.safe_dump(metadata, allow_unicode=True, sort_keys=False)
                         + '---\n\n' + body, encoding='utf-8')
         manifest[relative] = url
-        search.append(dict(title=title, url=BASEURL + url, categories='', tags='',
+        search.append(dict(title=title, url=BASEURL + url,
+                           categories=' > '.join(metadata.get('categories', [])),
+                           tags=', '.join(metadata.get('tags', [])),
                            date=dated[1] if dated else '', content=re.sub(r'<[^>]*>', '', body)))
     # Explicit public, offline HTML artifact; never copy private workspace files.
     preview = DOCS / 'experiments/preview/index.html'

@@ -1,0 +1,1285 @@
+{
+  "planned": 72,
+  "rows": [
+    {
+      "id": "semantics-001|P01|source_only|google/gemini-3.8-flash",
+      "model": "google/gemini-3.8-flash",
+      "question_id": "P01|source_only",
+      "case": "P01",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "CycloneDX 1.4 표준 스키마에 따르면 컴포넌트의 scope 필드가 생략되었을 때 기본값(default)은 'required'로 정의되어 있습니다. 따라서 소비 도구는 해당 구성요소의 scope를 required로 해석합니다.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P01|source_plus_schema|google/gemini-3.8-flash",
+      "model": "google/gemini-3.8-flash",
+      "question_id": "P01|source_plus_schema",
+      "case": "P01",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "CycloneDX 1.4 표준 메타데이터에 따르면 scope 필드가 명시되지 않은 경우 기본값(default)은 'required'이며, BOM 소비자는 'required' 범위를 가정해야 합니다(SHOULD).",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P01|source_plus_schema|google/gemini-4-argon",
+      "model": "google/gemini-4-argon",
+      "question_id": "P01|source_plus_schema",
+      "case": "P01",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The selected component 'brick/math' (version 0.9.3) in this CycloneDX 1.4 document does not include a 'scope' field. According to the CycloneDX 1.4 standard metadata, the 'scope' field has a default value of 'required', and its specification states that if 'scope' is not specified, 'required' scope SHOULD be assumed by the consumer of the BOM. Therefore, for document interpretation by a consuming tool, the applicable scope value is 'required'.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P01|source_only|google/gemini-4-argon",
+      "model": "google/gemini-4-argon",
+      "question_id": "P01|source_only",
+      "case": "P01",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "In the provided CycloneDX 1.4 component evidence for 'brick/math', the 'scope' field is omitted. According to the CycloneDX 1.4 specification, the default value for a component's 'scope' property when not explicitly specified is 'required'. Therefore, a consuming tool interpreting this document must apply the 'required' scope.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P01|source_only|openai/gpt-6-luna",
+      "model": "openai/gpt-6-luna",
+      "question_id": "P01|source_only",
+      "case": "P01",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "CycloneDX 1.4에서 component의 scope가 생략되면 기본값은 required입니다.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P01|source_plus_schema|openai/gpt-6-luna",
+      "model": "openai/gpt-6-luna",
+      "question_id": "P01|source_plus_schema",
+      "case": "P01",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "CycloneDX 1.4 metadata says consumers SHOULD assume `required` when scope is not specified.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P01|source_plus_schema|openai/gpt-6-astra",
+      "model": "openai/gpt-6-astra",
+      "question_id": "P01|source_plus_schema",
+      "case": "P01",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "선택된 구성요소에는 scope 필드가 없습니다. CycloneDX 1.4의 scope 정의는 기본값을 required로 지정하며, scope가 생략되면 BOM 소비자가 required로 간주하는 것을 권고(SHOULD)합니다. 이는 문서 해석에 적용되는 기본값이며 실제 설치 여부를 입증하지 않습니다.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P01|source_only|openai/gpt-6-astra",
+      "model": "openai/gpt-6-astra",
+      "question_id": "P01|source_only",
+      "case": "P01",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "CycloneDX 1.4에서 구성요소의 scope가 생략되면 기본값은 required입니다. 제공된 구성요소에는 scope 필드가 없으므로 소비 도구는 required를 적용해야 합니다. 이는 문서 해석상의 기본값이며 실제 설치 여부를 입증하지 않습니다.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P01|source_only|anthropic/claude-sonnet-5.5",
+      "model": "anthropic/claude-sonnet-5.5",
+      "question_id": "P01|source_only",
+      "case": "P01",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "In CycloneDX 1.4 the component scope field is optional and defaults to \"required\" when absent. The selected component has no scope field, so a consuming tool should treat it as required. This is a document-interpretation default only and does not verify actual installation or deployment.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P01|source_plus_schema|anthropic/claude-sonnet-5.5",
+      "model": "anthropic/claude-sonnet-5.5",
+      "question_id": "P01|source_plus_schema",
+      "case": "P01",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The component has no scope field. The supplied CycloneDX 1.4 schema metadata gives scope a default of 'required' and says that if scope is not specified, 'required' SHOULD be assumed by the consumer. This is a document-interpretation default, not evidence of actual installation or deployment.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P01|source_plus_schema|anthropic/claude-fable-5.1",
+      "model": "anthropic/claude-fable-5.1",
+      "question_id": "P01|source_plus_schema",
+      "case": "P01",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The component object (brick/math 0.9.3) has no scope field. The supplied CycloneDX 1.4 schema metadata states scope defaults to 'required' and that, when scope is not specified, 'required' SHOULD be assumed by the BOM consumer. This is a document-interpretation default only; it says nothing about whether the package is actually installed in any real deployment.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P01|source_only|anthropic/claude-fable-5.1",
+      "model": "anthropic/claude-fable-5.1",
+      "question_id": "P01|source_only",
+      "case": "P01",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "CycloneDX 1.4 스키마는 component.scope가 생략된 경우 소비 도구가 'required'로 간주해야 한다고 규정합니다(기본값 required). 이 구성요소 brick/math@0.9.3에는 scope 필드가 없으므로 문서 해석상 required로 처리해야 합니다. 이는 문서 해석에 따른 판정이며, 실제 설치 상태에 대한 관찰 증거는 제공되지 않았습니다.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P02|source_plus_schema|google/gemini-4-argon",
+      "model": "google/gemini-4-argon",
+      "question_id": "P02|source_plus_schema",
+      "case": "P02",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The source BOM does not contain a top-level dependencies field (source_field_presence.dependencies is false), so the component pkg:npm/puppeteer@1.19.0 is not represented in the dependency graph. According to the CycloneDX 1.2 specification, components without dependencies must be declared as empty elements within the graph, whereas components not represented in the dependency graph may have unknown dependencies and should not be assumed dependency-free.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "semantics-001|P02|source_only|google/gemini-4-argon",
+      "model": "google/gemini-4-argon",
+      "question_id": "P02|source_only",
+      "case": "P02",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "In the provided CycloneDX 1.2 document evidence, `source_field_presence.dependencies` is `false`, indicating that the top-level `dependencies` field is completely absent from the source document. In CycloneDX, omitting the `dependencies` array or an entry for a component means dependency relationships are not stated, rather than explicitly declaring zero dependencies (which would require an entry with an empty `dependsOn` array). Therefore, the dependency status of `pkg:npm/puppeteer@1.19.0` is unknown.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "semantics-001|P02|source_only|openai/gpt-6-luna",
+      "model": "openai/gpt-6-luna",
+      "question_id": "P02|source_only",
+      "case": "P02",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "원본 문서에 dependencies 필드가 없습니다. 의존 대상이 없다고 명시한 것은 아니므로 알 수 없습니다.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "semantics-001|P02|source_plus_schema|openai/gpt-6-luna",
+      "model": "openai/gpt-6-luna",
+      "question_id": "P02|source_plus_schema",
+      "case": "P02",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "원본 문서에 dependencies 필드가 없습니다. CycloneDX 1.2에서는 의존성 없는 구성요소는 빈 dependency 항목으로 선언해야 하며, 의존성 그래프에 없는 구성요소의 의존성은 알 수 없을 수 있습니다. 따라서 의존 대상이 없다고 명시한 것은 아닙니다.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "semantics-001|P02|source_plus_schema|openai/gpt-6-astra",
+      "model": "openai/gpt-6-astra",
+      "question_id": "P02|source_plus_schema",
+      "case": "P02",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "원본 문서에 dependencies 필드가 없어 puppeteer@1.19.0의 의존성은 알 수 없습니다. CycloneDX 1.2에서는 의존 대상이 없는 구성요소를 의존성 그래프에 빈 항목으로 명시해야 하며, 그래프에 없는 구성요소를 의존성이 없는 것으로 해석해서는 안 됩니다. 이는 문서의 기록 상태에 대한 판정이며 실제 설치 환경의 의존성을 확인한 결과는 아닙니다.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "semantics-001|P02|source_only|openai/gpt-6-astra",
+      "model": "openai/gpt-6-astra",
+      "question_id": "P02|source_only",
+      "case": "P02",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "원본 문서에 dependencies 필드가 없으므로 이 구성요소의 의존성 정보는 알 수 없습니다. CycloneDX 1.2에서 의존성 기록의 부재는 의존 대상이 없다는 명시적 선언이 아닙니다. 또한 이 문서만으로 실제 설치 환경의 의존성 상태를 확인할 수 없습니다.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "semantics-001|P02|source_only|anthropic/claude-sonnet-5.5",
+      "model": "anthropic/claude-sonnet-5.5",
+      "question_id": "P02|source_only",
+      "case": "P02",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The source has no top-level dependencies field (source_field_presence.dependencies is false), so there is no dependency entry for pkg:npm/puppeteer@1.19.0. An explicit empty result would need a dependency record with an empty dependsOn list. Without that record, the document does not say the component has no dependencies; its dependency status is simply not recorded.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "semantics-001|P02|source_plus_schema|anthropic/claude-sonnet-5.5",
+      "model": "anthropic/claude-sonnet-5.5",
+      "question_id": "P02|source_plus_schema",
+      "case": "P02",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The source has no top-level dependencies field (source_field_presence.dependencies is false), so the component has no dependency graph entry. Per CycloneDX, a component with no dependencies must be declared as an empty element in the graph; components absent from the graph may have unknown dependencies, and this absence should be treated as opaque, not as dependency-free. No explicit empty declaration exists, so the status is unknown.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "semantics-001|P02|source_plus_schema|anthropic/claude-fable-5.1",
+      "model": "anthropic/claude-fable-5.1",
+      "question_id": "P02|source_plus_schema",
+      "case": "P02",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The source BOM has no top-level dependencies field (source_field_presence.dependencies=false), so the puppeteer component is not represented in any dependency graph. Per CycloneDX 1.2, only a dependency entry with an empty dependsOn would explicitly declare no dependencies; a component absent from the graph MAY have unknown dependencies and should be treated as opaque, not dependency-free. This is a document interpretation, not an observation of a deployed installation.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "semantics-001|P02|source_only|anthropic/claude-fable-5.1",
+      "model": "anthropic/claude-fable-5.1",
+      "question_id": "P02|source_only",
+      "case": "P02",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The source_field_presence states the top-level dependencies field is absent from the original CycloneDX 1.2 document, and the component object itself contains no dependency information. In CycloneDX, an explicit empty dependsOn array would state that a component has no dependencies; absence of the dependencies field entirely means dependency relationships were simply not documented. Therefore the document does not assert that puppeteer has no dependencies—its dependency status is unknown.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "semantics-001|P02|source_only|google/gemini-3.8-flash",
+      "model": "google/gemini-3.8-flash",
+      "question_id": "P02|source_only",
+      "case": "P02",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "CycloneDX 문서 내 최상위 dependencies 필드가 누락되어 있어(source_field_presence.dependencies: false), 해당 구성요소의 의존 관계가 정의되지 않았으므로 의존성 존재 여부를 알 수 없습니다.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "semantics-001|P02|source_plus_schema|google/gemini-3.8-flash",
+      "model": "google/gemini-3.8-flash",
+      "question_id": "P02|source_plus_schema",
+      "case": "P02",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "According to the CycloneDX specification, components without dependencies must be declared as empty dependency elements within the dependency graph, whereas components not represented in the graph may have unknown dependencies. As indicated by source_field_presence, the top-level dependencies field is completely absent from the document, meaning the component is not declared in a dependency graph. Therefore, its dependency status is unknown.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "semantics-001|P03|source_only|openai/gpt-6-luna",
+      "model": "openai/gpt-6-luna",
+      "question_id": "P03|source_only",
+      "case": "P03",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": false,
+      "answer": {
+        "basis": "해당 구성요소의 dependency 항목에는 dependsOn 필드가 생략되어 있습니다. 빈 배열로 의존 대상이 없다고 명시한 것은 아니므로, 문서만으로는 의존 대상이 없다고 단정할 수 없습니다.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "semantics-001|P03|source_plus_schema|openai/gpt-6-luna",
+      "model": "openai/gpt-6-luna",
+      "question_id": "P03|source_plus_schema",
+      "case": "P03",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The component is represented in the dependency graph by an entry containing its ref and no dependsOn field. CycloneDX 1.4 says components with no dependencies must be declared as empty elements in the graph, so this represents no listed direct dependencies.",
+        "classification": "explicit_empty"
+      }
+    },
+    {
+      "id": "semantics-001|P03|source_plus_schema|openai/gpt-6-astra",
+      "model": "openai/gpt-6-astra",
+      "question_id": "P03|source_plus_schema",
+      "case": "P03",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "brick/math-0.9.3.0은 dependency 그래프에 ref만 있는 빈 항목으로 명시되어 있습니다. CycloneDX 1.4에서는 자체 의존 대상이 없는 구성요소를 그래프의 빈 요소로 선언하도록 규정하므로, dependsOn 생략은 여기서 의존 대상이 없다는 문서상 선언입니다. 그래프에 구성요소 자체가 없는 경우의 ‘알 수 없음’과 다릅니다. 이는 문서의 해석이며 실제 설치 환경을 검증한 결과는 아닙니다.",
+        "classification": "explicit_empty"
+      }
+    },
+    {
+      "id": "semantics-001|P03|source_only|openai/gpt-6-astra",
+      "model": "openai/gpt-6-astra",
+      "question_id": "P03|source_only",
+      "case": "P03",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "CycloneDX 1.4에서는 dependencies 그래프에 구성요소 항목이 있고 그 항목에 dependsOn이 없으면 의존 대상이 없는 것으로 표현합니다. brick/math-0.9.3.0에 해당하는 항목이 ref만 포함하므로, 문서상 의존 대상은 명시적으로 비어 있습니다. 이는 dependency 항목 자체가 없어 의존 관계를 알 수 없는 경우와 다르며, 실제 설치 환경을 독립적으로 확인한 결과는 아닙니다.",
+        "classification": "explicit_empty"
+      }
+    },
+    {
+      "id": "semantics-001|P03|source_only|anthropic/claude-sonnet-5.5",
+      "model": "anthropic/claude-sonnet-5.5",
+      "question_id": "P03|source_only",
+      "case": "P03",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "CycloneDX 1.4 specifies that a dependency entry with no dependsOn (or an empty one) means the component has no dependencies, whereas a component with no dependency entry at all means its dependencies are unknown. Here the top-level dependencies field is present and includes {\"ref\":\"brick/math-0.9.3.0\"} without dependsOn. The document therefore explicitly states that this component has no dependencies. This is a document interpretation only, not a verified deployment observation.",
+        "classification": "explicit_empty"
+      }
+    },
+    {
+      "id": "semantics-001|P03|source_plus_schema|anthropic/claude-sonnet-5.5",
+      "model": "anthropic/claude-sonnet-5.5",
+      "question_id": "P03|source_plus_schema",
+      "case": "P03",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The dependencies list contains an entry for brick/math-0.9.3.0 (ref present) with no dependsOn. Per CycloneDX 1.4, components without their own dependencies MUST be declared as empty elements in the graph, while components absent from the graph may have unknown dependencies. Since this component is represented in the graph as an empty element, the document states it has no dependencies, rather than leaving it unknown.",
+        "classification": "explicit_empty"
+      }
+    },
+    {
+      "id": "semantics-001|P03|source_plus_schema|anthropic/claude-fable-5.1",
+      "model": "anthropic/claude-fable-5.1",
+      "question_id": "P03|source_plus_schema",
+      "case": "P03",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The dependencies array contains an entry {\"ref\":\"brick/math-0.9.3.0\"} with no dependsOn. Per CycloneDX 1.4 schema, components without their own dependencies MUST be declared as empty elements within the graph; only components absent from the graph have unknown dependencies. Since brick/math is represented in the graph as an empty element, the document asserts it has no direct dependencies. This is a document-level claim, not verified real-world deployment.",
+        "classification": "explicit_empty"
+      }
+    },
+    {
+      "id": "semantics-001|P03|source_only|anthropic/claude-fable-5.1",
+      "model": "anthropic/claude-fable-5.1",
+      "question_id": "P03|source_only",
+      "case": "P03",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": false,
+      "answer": {
+        "basis": "The dependency entry for brick/math-0.9.3.0 has only 'ref' and omits 'dependsOn'. In CycloneDX 1.4, dependsOn is optional; the spec states that absence of dependsOn means dependencies are not known/declared, whereas an explicit empty array (dependsOn: []) asserts the component has no dependencies. Since the field is omitted rather than empty, the document does not assert that brick/math has no dependencies; its dependency knowledge is unknown per the document.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "semantics-001|P03|source_only|google/gemini-3.8-flash",
+      "model": "google/gemini-3.8-flash",
+      "question_id": "P03|source_only",
+      "case": "P03",
+      "arm": "source_only",
+      "state": "output_failure",
+      "response_valid": false,
+      "correct": false,
+      "answer": null
+    },
+    {
+      "id": "semantics-001|P03|source_plus_schema|google/gemini-3.8-flash",
+      "model": "google/gemini-3.8-flash",
+      "question_id": "P03|source_plus_schema",
+      "case": "P03",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "CycloneDX 1.4 규격에 따르면 자체 의존 대상이 없는 구성요소는 의존성 그래프 내에 빈 요소(dependsOn 없이 ref만 포함)로 선언되어야 합니다. brick/math-0.9.3.0은 dependencies 목록에 ref만 선언되어 있으므로 의존 대상이 없음을 명시한 것입니다.",
+        "classification": "explicit_empty"
+      }
+    },
+    {
+      "id": "semantics-001|P03|source_plus_schema|google/gemini-4-argon",
+      "model": "google/gemini-4-argon",
+      "question_id": "P03|source_plus_schema",
+      "case": "P03",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The selected component (bom-ref 'brick/math-0.9.3.0') is explicitly present in the top-level dependencies array as {\"ref\":\"brick/math-0.9.3.0\"} without a dependsOn field. According to the CycloneDX 1.4 standard metadata for dependency, \"Components that do not have their own dependencies MUST be declared as empty elements within the graph,\" whereas only components not represented in the dependency graph may have unknown dependencies. Therefore, this entry explicitly declares that the component has no direct dependencies.",
+        "classification": "explicit_empty"
+      }
+    },
+    {
+      "id": "semantics-001|P03|source_only|google/gemini-4-argon",
+      "model": "google/gemini-4-argon",
+      "question_id": "P03|source_only",
+      "case": "P03",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "In CycloneDX 1.4, each entry in the top-level dependencies array registers a component by its bom-ref and lists its direct dependencies in dependsOn. Here, the dependency entry for brick/math-0.9.3.0 is present ({ \"ref\": \"brick/math-0.9.3.0\" }) and omits the dependsOn property. In CycloneDX, including a dependency object for a ref without dependsOn (or with an empty array) explicitly indicates that the component has no known direct dependencies within the BOM graph, rather than leaving its dependency status unrecorded.",
+        "classification": "explicit_empty"
+      }
+    },
+    {
+      "id": "semantics-001|P04|source_plus_schema|openai/gpt-6-astra",
+      "model": "openai/gpt-6-astra",
+      "question_id": "P04|source_plus_schema",
+      "case": "P04",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "선택된 구성요소의 scope 필드에 \"required\"가 명시되어 있으므로 문서 소비 도구는 required를 적용해야 합니다. 이는 문서상 scope의 해석이며 실제 설치 여부를 입증하지 않습니다.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P04|source_only|openai/gpt-6-astra",
+      "model": "openai/gpt-6-astra",
+      "question_id": "P04|source_only",
+      "case": "P04",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "선택된 구성요소의 scope 필드에 \"required\"가 명시되어 있으므로 문서 소비 도구는 required를 적용해야 합니다. 이는 문서상의 범위 해석이며 실제 설치 여부를 입증하지는 않습니다.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P04|source_only|anthropic/claude-sonnet-5.5",
+      "model": "anthropic/claude-sonnet-5.5",
+      "question_id": "P04|source_only",
+      "case": "P04",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The selected component object explicitly sets \"scope\": \"required\". In CycloneDX, this value means the component is needed for the application to function, so a consuming tool should apply required scope. This is a document interpretation only and does not verify actual installation or deployment.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P04|source_plus_schema|anthropic/claude-sonnet-5.5",
+      "model": "anthropic/claude-sonnet-5.5",
+      "question_id": "P04|source_plus_schema",
+      "case": "P04",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The component object explicitly sets \"scope\": \"required\". The CycloneDX 1.2 scope enum allows required, optional, or excluded, and consumers should assume required when scope is absent. Here it is stated directly, so a consuming tool should apply required. This is a document interpretation only, not a verification of actual installation.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P04|source_plus_schema|anthropic/claude-fable-5.1",
+      "model": "anthropic/claude-fable-5.1",
+      "question_id": "P04|source_plus_schema",
+      "case": "P04",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The component object explicitly declares \"scope\": \"required\" in the archived source (CycloneDX 1.2 enum: required/optional/excluded). The consumer should apply the stated value directly; no default assumption is needed. This is a document-level interpretation only and says nothing about actual current installation.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P04|source_only|anthropic/claude-fable-5.1",
+      "model": "anthropic/claude-fable-5.1",
+      "question_id": "P04|source_only",
+      "case": "P04",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The component object explicitly states scope: \"required\" in this CycloneDX 1.2 BOM. Under the CycloneDX specification, scope indicates whether the component is required, optional, or excluded for the described deliverable; here the source declares it required, so a consuming tool should apply the required scope. This is a document interpretation only; it does not verify actual installation.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P04|source_only|google/gemini-3.8-flash",
+      "model": "google/gemini-3.8-flash",
+      "question_id": "P04|source_only",
+      "case": "P04",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "CycloneDX 구성요소 명세의 scope 필드가 'required'로 명시적으로 선언되어 있으므로, 문서 소비 도구는 이 구성요소의 범위를 required로 해석합니다.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P04|source_plus_schema|google/gemini-3.8-flash",
+      "model": "google/gemini-3.8-flash",
+      "question_id": "P04|source_plus_schema",
+      "case": "P04",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The component explicitly defines its scope property as \"required\", which directly instructs a CycloneDX consumer tool to apply the required scope.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P04|source_plus_schema|google/gemini-4-argon",
+      "model": "google/gemini-4-argon",
+      "question_id": "P04|source_plus_schema",
+      "case": "P04",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The selected component object explicitly declares \"scope\": \"required\" in the CycloneDX 1.2 document. According to the supplied standard metadata, valid scope values are \"required\", \"optional\", and \"excluded\", so a BOM consumer must apply the explicitly specified \"required\" scope for document interpretation.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P04|source_only|google/gemini-4-argon",
+      "model": "google/gemini-4-argon",
+      "question_id": "P04|source_only",
+      "case": "P04",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The supplied CycloneDX 1.2 component object explicitly sets the \"scope\" field to \"required\". Therefore, a document consumer interpreting this SBOM should apply the \"required\" scope to component \"github.com/0xAX/notificator\" (independent of any verified real-world installation state).",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P04|source_only|openai/gpt-6-luna",
+      "model": "openai/gpt-6-luna",
+      "question_id": "P04|source_only",
+      "case": "P04",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The source component explicitly lists scope as \"required\"; this is the document’s scope value, not evidence of an actual installation.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P04|source_plus_schema|openai/gpt-6-luna",
+      "model": "openai/gpt-6-luna",
+      "question_id": "P04|source_plus_schema",
+      "case": "P04",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The component explicitly has scope \"required\", so a document consumer should interpret its scope as required. This does not establish whether it is currently installed or deployed.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P05|source_only|anthropic/claude-sonnet-5.5",
+      "model": "anthropic/claude-sonnet-5.5",
+      "question_id": "P05|source_only",
+      "case": "P05",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "In CycloneDX 1.2, a component's scope field is optional and defaults to 'required' when absent. The selected component has no scope field, so a consumer applying the spec should treat its scope as required. This is a document-level interpretation only and does not verify actual installation.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P05|source_plus_schema|anthropic/claude-sonnet-5.5",
+      "model": "anthropic/claude-sonnet-5.5",
+      "question_id": "P05|source_plus_schema",
+      "case": "P05",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The component has no scope field. The supplied CycloneDX 1.2 schema metadata says that if scope is not specified, 'required' should be assumed by the consumer of the BOM (default: required). This is a document-interpretation default, not a check of actual installation.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P05|source_plus_schema|anthropic/claude-fable-5.1",
+      "model": "anthropic/claude-fable-5.1",
+      "question_id": "P05|source_plus_schema",
+      "case": "P05",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The component object lacks a scope field. CycloneDX 1.2 schema metadata states the default is 'required' and that when scope is not specified, 'required' should be assumed by the BOM consumer. This is a document-interpretation default only; it makes no claim about actual installation.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P05|source_only|anthropic/claude-fable-5.1",
+      "model": "anthropic/claude-fable-5.1",
+      "question_id": "P05|source_only",
+      "case": "P05",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "CycloneDX 1.2 schema defines component.scope with a default of \"required\": when scope is absent, consumers should assume the component is required. The supplied puppeteer@1.19.0 component object has no scope field, so a conforming consumer applies the default \"required\". This is a document-interpretation judgment, not an observation of actual installation.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P05|source_only|google/gemini-3.8-flash",
+      "model": "google/gemini-3.8-flash",
+      "question_id": "P05|source_only",
+      "case": "P05",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "CycloneDX v1.2 규격에서 구성요소의 scope 필드는 생략 가능한 선택적 필드이며, 값이 지정되지 않은 경우 기본적으로 'required'로 취급하도록 정의되어 있습니다. 따라서 이 문서를 소비하는 도구는 scope를 'required'로 적용해야 합니다.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P05|source_plus_schema|google/gemini-3.8-flash",
+      "model": "google/gemini-3.8-flash",
+      "question_id": "P05|source_plus_schema",
+      "case": "P05",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "According to the CycloneDX 1.2 specification metadata, if the scope property is not specified for a component, consumers of the BOM should assume the default value of 'required'.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P05|source_plus_schema|google/gemini-4-argon",
+      "model": "google/gemini-4-argon",
+      "question_id": "P05|source_plus_schema",
+      "case": "P05",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The selected component (pkg:npm/puppeteer@1.19.0) omits the scope field. According to the supplied CycloneDX 1.2 standard metadata, the default value for component scope is \"required\", and if scope is not specified, \"required\" scope should be assumed by the consumer of the BOM.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P05|source_only|google/gemini-4-argon",
+      "model": "google/gemini-4-argon",
+      "question_id": "P05|source_only",
+      "case": "P05",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The selected component (puppeteer@1.19.0) omits the `scope` field in this CycloneDX 1.2 document. According to the CycloneDX 1.2 specification, when the `scope` attribute is not specified on a component, the default value is `required`. Therefore, a consuming tool interpreting this document must apply the `required` scope.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P05|source_only|openai/gpt-6-luna",
+      "model": "openai/gpt-6-luna",
+      "question_id": "P05|source_only",
+      "case": "P05",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "CycloneDX 1.2 treats an omitted component scope as required by default; this is a document-consumer interpretation, not evidence of current installation.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P05|source_plus_schema|openai/gpt-6-luna",
+      "model": "openai/gpt-6-luna",
+      "question_id": "P05|source_plus_schema",
+      "case": "P05",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "CycloneDX 1.2 metadata states that when scope is unspecified, the BOM consumer should assume required scope.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P05|source_plus_schema|openai/gpt-6-astra",
+      "model": "openai/gpt-6-astra",
+      "question_id": "P05|source_plus_schema",
+      "case": "P05",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "선택된 구성요소에는 scope 필드가 없습니다. CycloneDX 1.2의 제공된 scope 정의에 따르면, scope가 명시되지 않으면 BOM 소비 도구는 기본값인 required를 적용해야 합니다. 이는 문서 해석이며 실제 설치 여부를 입증하지 않습니다.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P05|source_only|openai/gpt-6-astra",
+      "model": "openai/gpt-6-astra",
+      "question_id": "P05|source_only",
+      "case": "P05",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "CycloneDX 1.2에서 구성요소의 scope가 생략되면 기본값은 required입니다. 따라서 소비 도구는 이 puppeteer 구성요소의 scope를 required로 해석해야 합니다. 이는 문서 해석상의 기본값이며 실제 설치 여부를 입증하지 않습니다.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "semantics-001|P06|source_plus_schema|anthropic/claude-fable-5.1",
+      "model": "anthropic/claude-fable-5.1",
+      "question_id": "P06|source_plus_schema",
+      "case": "P06",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The component's scope is explicitly \"required\" in the CycloneDX 1.2 BOM, meaning the BOM author declares it required for the described software. However, a BOM is a document interpretation of a published artifact, not an observation of a customer's current operational equipment. The supplied evidence contains no installation records, deployment telemetry, or inventory data, so actual installation on the customer's current devices cannot be confirmed from the scope value alone; independent verification is needed.",
+        "classification": "not_established"
+      }
+    },
+    {
+      "id": "semantics-001|P06|source_only|anthropic/claude-fable-5.1",
+      "model": "anthropic/claude-fable-5.1",
+      "question_id": "P06|source_only",
+      "case": "P06",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The component declares scope \"required\" in a CycloneDX 1.2 BOM. Per the CycloneDX specification, scope indicates whether the component is required for the described runtime, not an observation of any specific deployment. The SBOM is a published document describing a build/software artifact; it provides no evidence about the customer's current production equipment or actual installation state. Therefore the document alone cannot confirm real-world installation; that would require independent verification of the deployed system.",
+        "classification": "not_established"
+      }
+    },
+    {
+      "id": "semantics-001|P06|source_only|google/gemini-3.8-flash",
+      "model": "google/gemini-3.8-flash",
+      "question_id": "P06|source_only",
+      "case": "P06",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "CycloneDX SBOM 문서에 명시된 scope: required 속성은 빌드나 런타임 시 필요한 의존성이라는 문서상의 분류일 뿐입니다. 제공된 정적 문서 데이터는 실제 고객 운영 환경에 대한 실시간 배포 상태나 설치 여부를 관측하거나 보증하지 않으므로, 실제 운영 장비 설치 여부를 확정할 수 없습니다.",
+        "classification": "not_established"
+      }
+    },
+    {
+      "id": "semantics-001|P06|source_plus_schema|google/gemini-3.8-flash",
+      "model": "google/gemini-3.8-flash",
+      "question_id": "P06|source_plus_schema",
+      "case": "P06",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "A CycloneDX document and its scope declaration provide component metadata within the bill of materials, not real-world deployment or verified runtime installation status on operational systems. Therefore, actual installation cannot be established from this record alone.",
+        "classification": "not_established"
+      }
+    },
+    {
+      "id": "semantics-001|P06|source_plus_schema|google/gemini-4-argon",
+      "model": "google/gemini-4-argon",
+      "question_id": "P06|source_plus_schema",
+      "case": "P06",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "CycloneDX BOM에서 구성요소의 scope가 'required'로 지정된 것은 문서상의 구성요소 범위를 나타낼 뿐입니다. 정적 SBOM 증거만으로는 고객의 현재 운영 장비에 해당 라이브러리가 실제로 배포 및 설치되어 있는지 여부를 독립적으로 확인하거나 확정할 수 없습니다.",
+        "classification": "not_established"
+      }
+    },
+    {
+      "id": "semantics-001|P06|source_only|google/gemini-4-argon",
+      "model": "google/gemini-4-argon",
+      "question_id": "P06|source_only",
+      "case": "P06",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "While the archived CycloneDX 1.2 document specifies the component's scope as \"required\", this only indicates its declared role within the BOM definition. A static SBOM document provides no direct observation or independent verification of actual, current real-world deployment on a customer's operational equipment.",
+        "classification": "not_established"
+      }
+    },
+    {
+      "id": "semantics-001|P06|source_only|openai/gpt-6-luna",
+      "model": "openai/gpt-6-luna",
+      "question_id": "P06|source_only",
+      "case": "P06",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "아니요. BOM의 scope가 required라는 것은 해당 문서에서의 구성요소 분류일 뿐, 고객의 현재 운영 장비에 실제 설치되어 있음을 입증하지 않습니다.",
+        "classification": "not_established"
+      }
+    },
+    {
+      "id": "semantics-001|P06|source_plus_schema|openai/gpt-6-luna",
+      "model": "openai/gpt-6-luna",
+      "question_id": "P06|source_plus_schema",
+      "case": "P06",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "scope가 required라는 표기는 BOM에서 해당 구성요소의 범위를 나타낼 뿐, 고객의 현재 운영 장비에 실제 설치되어 있음을 확인하지 않습니다.",
+        "classification": "not_established"
+      }
+    },
+    {
+      "id": "semantics-001|P06|source_plus_schema|openai/gpt-6-astra",
+      "model": "openai/gpt-6-astra",
+      "question_id": "P06|source_plus_schema",
+      "case": "P06",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "아니요. scope의 required 값은 BOM에서 해당 구성요소의 범위를 필수로 선언한 것이며, 고객의 현재 운영 장비에 실제 설치되어 있음을 증명하지 않습니다. 제공된 자료는 보관된 문서의 선언일 뿐 현재 설치 상태에 대한 관측 증거가 아니므로, 실제 설치 여부를 확정하려면 해당 장비의 현행 인벤토리 등 별도 증거가 필요합니다.",
+        "classification": "not_established"
+      }
+    },
+    {
+      "id": "semantics-001|P06|source_only|openai/gpt-6-astra",
+      "model": "openai/gpt-6-astra",
+      "question_id": "P06|source_only",
+      "case": "P06",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "CycloneDX의 scope 값 required는 문서상 이 구성요소가 필수임을 나타내지만, 고객의 현재 운영 장비에 실제 설치되어 있음을 입증하지는 않습니다. 제공된 공개 예시에는 해당 장비의 현재 설치 상태를 확인한 관찰 증거가 없습니다.",
+        "classification": "not_established"
+      }
+    },
+    {
+      "id": "semantics-001|P06|source_only|anthropic/claude-sonnet-5.5",
+      "model": "anthropic/claude-sonnet-5.5",
+      "question_id": "P06|source_only",
+      "case": "P06",
+      "arm": "source_only",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The CycloneDX component record lists scope \"required\", which is a document-level declaration that the component is needed in the described software. It is not an independent observation of a customer's current production equipment. The supplied examples provide no installation evidence, so actual deployment on the device cannot be confirmed from this field alone.",
+        "classification": "not_established"
+      }
+    },
+    {
+      "id": "semantics-001|P06|source_plus_schema|anthropic/claude-sonnet-5.5",
+      "model": "anthropic/claude-sonnet-5.5",
+      "question_id": "P06|source_plus_schema",
+      "case": "P06",
+      "arm": "source_plus_schema",
+      "state": "completed",
+      "response_valid": true,
+      "correct": true,
+      "answer": {
+        "basis": "The SBOM component lists scope \"required\", which only describes how the component is classified in the document (needed for the described software). It is a document-level claim, not an observation of installation. The supplied sources provide no current deployment evidence for the customer's operating equipment, so actual installation cannot be confirmed from this field.",
+        "classification": "not_established"
+      }
+    }
+  ],
+  "pairs": [
+    {
+      "case": "P01",
+      "model": "google/gemini-3.8-flash",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P01",
+      "model": "google/gemini-4-argon",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P01",
+      "model": "openai/gpt-6-luna",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P01",
+      "model": "openai/gpt-6-astra",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P01",
+      "model": "anthropic/claude-sonnet-5.5",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P01",
+      "model": "anthropic/claude-fable-5.1",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P02",
+      "model": "google/gemini-3.8-flash",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P02",
+      "model": "google/gemini-4-argon",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P02",
+      "model": "openai/gpt-6-luna",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P02",
+      "model": "openai/gpt-6-astra",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P02",
+      "model": "anthropic/claude-sonnet-5.5",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P02",
+      "model": "anthropic/claude-fable-5.1",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P03",
+      "model": "google/gemini-3.8-flash",
+      "source_only_correct": false,
+      "source_plus_schema_correct": true,
+      "both_valid": false
+    },
+    {
+      "case": "P03",
+      "model": "google/gemini-4-argon",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P03",
+      "model": "openai/gpt-6-luna",
+      "source_only_correct": false,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P03",
+      "model": "openai/gpt-6-astra",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P03",
+      "model": "anthropic/claude-sonnet-5.5",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P03",
+      "model": "anthropic/claude-fable-5.1",
+      "source_only_correct": false,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P04",
+      "model": "google/gemini-3.8-flash",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P04",
+      "model": "google/gemini-4-argon",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P04",
+      "model": "openai/gpt-6-luna",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P04",
+      "model": "openai/gpt-6-astra",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P04",
+      "model": "anthropic/claude-sonnet-5.5",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P04",
+      "model": "anthropic/claude-fable-5.1",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P05",
+      "model": "google/gemini-3.8-flash",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P05",
+      "model": "google/gemini-4-argon",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P05",
+      "model": "openai/gpt-6-luna",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P05",
+      "model": "openai/gpt-6-astra",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P05",
+      "model": "anthropic/claude-sonnet-5.5",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P05",
+      "model": "anthropic/claude-fable-5.1",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P06",
+      "model": "google/gemini-3.8-flash",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P06",
+      "model": "google/gemini-4-argon",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P06",
+      "model": "openai/gpt-6-luna",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P06",
+      "model": "openai/gpt-6-astra",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P06",
+      "model": "anthropic/claude-sonnet-5.5",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    },
+    {
+      "case": "P06",
+      "model": "anthropic/claude-fable-5.1",
+      "source_only_correct": true,
+      "source_plus_schema_correct": true,
+      "both_valid": true
+    }
+  ],
+  "supplied_task_python_baseline": {
+    "P01": "required",
+    "P02": "unknown",
+    "P03": "explicit_empty",
+    "P04": "required",
+    "P05": "required",
+    "P06": "not_established"
+  },
+  "arm_counts": {
+    "source_only": {
+      "planned": 36,
+      "valid": 35,
+      "correct": 33
+    },
+    "source_plus_schema": {
+      "planned": 36,
+      "valid": 36,
+      "correct": 36
+    }
+  },
+  "limits": "Authored consumed development; normative metadata access treatment, not SHACL or storage effect. Basis text retained but not scored for correctness; no external expert validation or blind intent extraction."
+}

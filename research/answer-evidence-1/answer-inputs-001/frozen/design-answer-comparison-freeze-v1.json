@@ -1,0 +1,149 @@
+{
+  "version": "answer-comparison-freeze-1",
+  "status": "design_review_only_not_launch_authorization",
+  "source_variant": {
+    "primary": "research/answer-evidence-1/anchor-on-001",
+    "secondary_diagnostic": "research/answer-evidence-1/compact-run-001",
+    "decision": "Use preexisting raw-anchor baseline for proposed primary answer diagnostic. Compact remains separate, no cherry-picked best arm/question or mixed representation.",
+    "disclosure": "Representation choice made after inspecting consumed development support outcomes; NOT preregistered independent selection or fresh evaluation.",
+    "frozen_paths": {
+      "research/answer-evidence-1/anchor-on-001/rows.jsonl": "78e585a673bdb24e0f2ceb2f97f065a37df1236bc5becfa09cc59b002e90bf43",
+      "research/answer-evidence-1/anchor-on-001/manifest.json": "7065b22e1b9039226bee6d7bfa2c1044b2fc07787889d05a67fe6c47a5898935",
+      "research/answer-evidence-1/compact-run-001/rows.jsonl": "072628e406dcf9d8b2075b49f836f21edea15940a38b11c8c67713f6335222ad",
+      "research/answer-evidence-1/answer-schema-v1.json": "5dd06b8cba0faa4e5e470ca2063af2945971f532cb6f206f8ca121b4845a35d2"
+    }
+  },
+  "design": {
+    "questions": 24,
+    "arms": [
+      "B",
+      "C",
+      "D"
+    ],
+    "repeats": 1,
+    "planned_episodes": 72,
+    "claims_scope": "Exploratory source-bound answer diagnostic on consumed development; no population benchmark.",
+    "shared": "Identical model/version/provider, SYSTEM instructions, output schema, decoding settings, question, output reserve and total input cap across arms; no per-arm routing.",
+    "B": "Frozen improved retrieval selected evidence",
+    "C": "Frozen relation-expanded selected evidence",
+    "D": "Exactly C selected evidence and question plus saved scoped SHACL report; no extra source lookup or repacking.",
+    "secondary_A1": "Excluded from72episode design; adding requires new frozen scope/budget before launch.",
+    "execution_order": "Deterministic shuffled72episode manifest before calls; no outcome-dependent stopping except hard authorization/cost limits.",
+    "runtime_forbidden": [
+      "reference answers",
+      "support labels",
+      "evaluation task labels",
+      "scorer feedback",
+      "gold repair"
+    ],
+    "report_policy": "Advisory only. No mandatory veto. A record may support an answer despite irrelevant unknown binding checks. No validation result certifies truth/completeness.",
+    "no_hidden_repair": "Persist original raw response and schema failures; no repair or retry from reference feedback."
+  },
+  "output": {
+    "schema_path": "research/answer-evidence-1/answer-schema-v1.json",
+    "schema_limit": "Schema validity only; claimed status/certainty or citation ID presence is not scored as truth.",
+    "prompt_requirement": "Require every substantive factual statement in answer to appear in claims. Evaluator also inspects answer/limitations/review_requests for extra unsupported assertions; omissions do not escape scoring.",
+    "instructions_addition": "Use the declared JSON schema. Answer from provided evidence, cite exact chunk and source location for each claim, distinguish recorded and derived values. State limits precisely. Review requests are optional and must identify a concrete gap; do not invent physical actions."
+  },
+  "metrics": {
+    "task_answer_agreement": {
+      "unit": "episode",
+      "numerator": "all required target values and units agree with frozen source answer, no contradictory target assertion",
+      "denominator": "18 source-present questions per arm, including all call/schema failures as non-success",
+      "qualifier": "Reference target mapping, accepted normalization and unit conversions must be frozen offline before execution. Supplied source agreement, not external physical truth."
+    },
+    "selected_evidence_answerability": {
+      "unit": "episode",
+      "rule": "Freeze from exact selected evidence independently of model output; source-present but omitted support is not fully answerable from this arm.",
+      "denominators": "Report all24 by source present/absent and selected complete/incomplete; do not remove incomplete from primary totals."
+    },
+    "citation_support": {
+      "unit": "atomic factual claim",
+      "levels": [
+        "ID belongs to selected input",
+        "locator points to cited source cell/row",
+        "cited content supports claim meaning and unit"
+      ],
+      "denominators": "All evaluable factual claims, including uncited claims, plus episode coverage and excluded/unparseable response counts. No claims means NA, not perfectprecision.",
+      "checking": "Membership/locator mechanical where defined; semantic entailment only with frozen task-specific source rules or blinded adjudication, otherwise unmeasured."
+    },
+    "unsupported_certainty": {
+      "unit": "episode primary; claim secondary",
+      "rule": "At least one asserted factual claim not supported by selected evidence, including correct-by-memory source values absent from input. Qualified unsupported factual claims reported separately.",
+      "denominators": "All24planned episodes for observed-count lowerbound; conditional rate among evaluable responses separately. Failed/unevaluable not automatically safe."
+    },
+    "unnecessary_withholding": {
+      "unit": "episode",
+      "rule": "Model withholds required target that complete selected evidence supports. Model insufficient_evidence status alone insufficient: inspect actual claims/answer.",
+      "denominator": "Pre-frozen selected-answerable episodes; report count alongside all24 and non-evaluable subset.",
+      "failures": "No-response/schema-failure separate from model withholding; do not call infrastructure failure prudent abstention."
+    },
+    "partial_answer": {
+      "unit": "required target field",
+      "rule": "Correct supported target fields retained divided by all requested target fields with selected support; report unsupported extra fields separately, NA if none."
+    },
+    "review_pointers": {
+      "unit": "request and episode",
+      "axes": [
+        "specific target locator/entity",
+        "reason supported by a concrete selected evidence gap/conflict",
+        "relevance to answering this question"
+      ],
+      "scoring": "Each axis binary under prewritten task-specific rubric; absent requests count0 requests, not failure when none warranted. Report unnecessary requests among answerable episodes.",
+      "limit": "Operational relevance only, no expert usefulness/human benefit claim. Generic request more data does not meet specificity."
+    },
+    "report_misinterpretation": {
+      "unit": "episode",
+      "categories": [
+        "conformance treated as truth",
+        "selected-context absence treated as global source absence",
+        "irrelevant unknown used as blanket refusal",
+        "report used as new factual source beyond scope"
+      ],
+      "denominator": "All24perarm with evaluability counts; D versusC paired counts, no presumption reporthelps."
+    },
+    "failures": {
+      "unit": "planned episode",
+      "categories": [
+        "not attempted due to cap",
+        "transport failure",
+        "provider failure",
+        "truncation",
+        "schema error",
+        "completed evaluable"
+      ],
+      "policy": "Mutually exclusive primary execution status with extra flags, all72planned retained. No failures refunded or silently retried."
+    }
+  },
+  "evaluation": {
+    "offline_only": true,
+    "adjudication": "Strip arm/report indicators where feasible; source evidence can reveal condition, so report blinding limits. Rule-automatable and human-adjudicated metrics separate. No fabricated reviewer/expert ratings.",
+    "paired": "B\u2194C retrieval difference and C\u2194D report difference, samequestion. Retain discordantpairs and task-stratified counts; no independent72trial inference.",
+    "uncertainty": "Descriptive counts for authored24questions; no population significance claim.",
+    "freeze_before_calls": [
+      "target answers and normalization",
+      "exact selected-answerability labels",
+      "metric fixtures and expected scores",
+      "blinded adjudication protocol or explicit unmeasured metrics"
+    ]
+  },
+  "readiness": {
+    "model_id": null,
+    "provider_pin": null,
+    "paid_budget_usd": null,
+    "attempt_cap": null,
+    "paid_calls_authorized": 0,
+    "launch_allowed": false,
+    "token_accounting": "Existing E5 diagnostic insufficient. New schema instructions change message lengths. Re-measure actual-model tokenizer/chat framing or verified conservative admission bound including output reserve, samecaps allarms, before calls.",
+    "oversize": "Mark input-not-admitted, retain planned denominator; no arm-specific evidence deletion. Any global budget/protocol revision must be frozen before calls.",
+    "spending": "New explicit bounded authorization plus nonrefunded attempt ledger, no blank cheque; previous ledgers unchanged.",
+    "gates": [
+      "actual model/provider/settings",
+      "actual framing/input/output accounting",
+      "frozen72manifest+hashes",
+      "offline scorer fixtures",
+      "new bounded paid authorization",
+      "independent execution review"
+    ]
+  }
+}

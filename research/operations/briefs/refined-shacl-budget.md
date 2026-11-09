@@ -1,0 +1,7 @@
+# Exact evidence and report accounting
+
+Audit 24 saved selected-C SHACL/Python outputs without generation or source lookup. Keep every selected chunk and all operational checks, missing/conflict fields, citations, raw conformance and no-bindings status. Compact report only omits duplicate Python results and parity flag after asserting equality. Raw RDF reports remain archived. This is a proposed prompt serialization, not a measured QA condition.
+
+Run scripts/audit_shacl_report_budget.py with a hash-bound manifest containing original C, saved SHACL results, pinned E5 tokenizer and runner. tokenizers 0.22.1, no truncation/padding. Reproduce original evidence accounting; measure actual serialization of evidence-only, evidence wrapper, evidence plus full report and evidence plus compact report. Cap4096 E5 tokens and64000 bytes; preserve every failed or overbudget case in denominator24. Do not repack C or drop checks to meet cap. No references/gold/models/source fetches. E5 accounting excludes question/prompt overhead and is not a generator token budget. Even within-cap rows are not declared generator-ready. Compare hashes before/after. Keep proposed exact payload artifacts.
+
+Methods review: fair same-evidence interpretation, vacuous conformance and scope preserved, no generator-budget or efficacy claims. Implementation review: inspect runner for input parity, hash checks, token measurement, retained failures and compact report semantics. No source changes by reviewers. No registered checks; actual bounded offline audit follows approval.

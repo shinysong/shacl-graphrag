@@ -1,0 +1,7 @@
+# Anchor-off common-budget candidate freeze
+
+Review research/refined-hybrid-1/common-budget-candidates-001/manifest.json and candidates.json. Preparation extracted24orderedA1/B top_parent lists from existing successful source-only retrieval records, not selected chunks, no scorer/labels.14input hashes bind source/questions/upstream/tokenizer/contract/helpers/shapes/uvlock; candidate digest binds exact lists. Current cycle preparation/review/hash audit only, no packing/retrieval/SHACL/tokenizer execution.
+
+Future policy in manifest: packA1/B full-messagebudget; newlypackedB→independentadjacencyC/SQLiteE expansion,onehop32candidates64k intermediate,first8pack; preserve expansionerrors nottruncate; DnativeSHACL andPython onexactC, parityfailure retained, noC/Eoverwrite. All24x5 planned/errors; anchoroff, lateranchoron separate. Future runner absent and requires freshcode review/reboundhash beforeexecution.120souter/2GiB cap future, no paid/GPU/AWS/push/deploy. Generator_readyfalse; no actual model framing.
+
+Methods review fair intervention definitions and denominator. Implementation review manifest sufficiency/path/hash/candidate boundaries, may inspect existing named helper source if needed; nootherreviews/gold/scorer/QA/secrets or execution. Registeredchecks empty. Afterreviews coordinator independently compares candidate lists/IDs to savedparents and validates14hashes/candidatedigest; no scoring or experimental result. Future actual E parity is measured separately, never achieved by copying C.

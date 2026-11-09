@@ -1,0 +1,136 @@
+{
+  "schema_version": "explicit-anchor-contract-1",
+  "status": "proposed_before_implementation",
+  "purpose": "Shared explicit question locator diagnostic; not general natural-language understanding or graph-specific inference",
+  "runtime_inputs": [
+    "question: Unicode string encodable as strict UTF-8",
+    "source_bytes: original UTF-8 JSON corpus bytes; hashes computed by resolver, never trusted from caller"
+  ],
+  "prohibited_runtime_inputs": [
+    "scorer references",
+    "support scores",
+    "missing-node labels",
+    "expected answers",
+    "question-id lookup table"
+  ],
+  "locator": {
+    "supported_form": "Exactly one syntactically positive integer locator, with literal ASCII spaces, anchored at character zero; positive describes the integer, not semantic affirmation.",
+    "prefix": "제공된 자료 안에서 ",
+    "coupon_pattern": "PP[1-9][0-9]*",
+    "row_pattern": "[1-9][0-9]*",
+    "normalization": "none; no fuzzy matching, translation, whitespace collapse or implicit correction",
+    "extra_locator_policy": "Run re.finditer for each detector over the entire unnormalized question, without word boundaries (embedded/repeated mentions count). Exactly one match per detector is required, and each must exactly equal and occupy its corresponding named-group span, except the row detector includes the trailing 행. Other numbers without PP or 행 are ignored. Extra mentions with zero/negative values or alternative whitespace still count. An anchored zero/negative/leading-zero locator fails the anchored grammar. No alternative spelling is normalized.",
+    "interpretation_limit": "Only the explicit literal locator is extracted; tail semantics, negation, comparison, task and answerability are not interpreted. Result is a locator candidate, never a certified question interpretation.",
+    "max_question_characters": 4096,
+    "oversize_policy": "unsupported; never truncate",
+    "anchored_regex": "^제공된 자료 안에서 (?P<coupon>PP[1-9][0-9]*) 작업표 (?P<row>[1-9][0-9]*)행",
+    "regex_engine": "Python re, default Unicode mode, no flags; match includes the prefix and ends immediately after 행. Korean particles or punctuation may follow. PP1 cannot match PP10 because the next required character is an ASCII space.",
+    "extra_mention_detectors": {
+      "coupon": "PP[+-]?[0-9]+",
+      "row": "[+-]?[0-9]+\\s*행"
+    }
+  },
+  "source_resolution": {
+    "eligible_node_type": "annotation",
+    "fields": [
+      "source.coupon",
+      "source.sheet",
+      "source.excel_row"
+    ],
+    "matching": "coupon equals parsed PP identifier, sheet equals that same identifier, excel_row is an actual integer equal to parsed row; booleans excluded",
+    "identity": "Return original node_id and its unique node chunk_id from _index; never infer identity from a suffix. Source locators retain original archive_path, sheet, coupon and excel_row. Bundle SHA-256 identifies the exact input bytes; it does not certify authenticity.",
+    "unique_scope": "Exactly one match in the entire supplied source bundle; duplicate workbooks or versions remain ambiguous even if values agree",
+    "validation": "Parse source_bytes with strict UTF-8, reject duplicate JSON object keys and NaN/Infinity constants; require JSON object. Call scripts/graphrag_expand.py::_index on the entire corpus before matching. Its node/edge/chunk identity, reference, unique chunk and text/source consistency checks must pass. Any structural failure including nonannotation records makes source_invalid.",
+    "annotation_metadata": "For EVERY node with node_type annotation, require source object, coupon string fullmatching PP[1-9][0-9]*, sheet nonempty string, archive_path nonempty string, excel_row positive built-in integer excluding bool. Missing or mistyped fields invalidate the whole source, even on nonmatching annotations. Nonannotation nodes need no locator metadata beyond _index structural requirements.",
+    "candidate_order": "Sort matching annotations lexicographically by node_id using Python Unicode string ordering; node IDs are unique. All candidate arrays have identical length/order, including ambiguous results."
+  },
+  "outcomes": [
+    "resolved_unique",
+    "locator_unsupported",
+    "source_not_found",
+    "source_ambiguous",
+    "source_invalid"
+  ],
+  "output": {
+    "status": "string: one of outcomes",
+    "reason": "string: exactly the reason assigned by status_precedence",
+    "contract_version": "string: schema_version value",
+    "question_sha256": "64 lowercase hex characters: SHA-256 of question.encode(UTF-8), no normalization or trailing newline added",
+    "source_sha256": "64 lowercase hex characters: SHA-256 of original source_bytes, including existing whitespace/newlines; computed even if source parsing is skipped",
+    "matched_span_start": "integer or null: zero-based Unicode code-point index, inclusive",
+    "matched_span_end": "integer or null: zero-based Unicode code-point index, exclusive",
+    "matched_text": "string or null: exact question[start:end] of full anchored match including prefix",
+    "candidate_node_ids": "array of original node_id strings, sorted as candidate_order",
+    "candidate_chunk_ids": "array of original chunk_id strings, one per corresponding candidate",
+    "source_locators": "array of objects, one per candidate: node_id string, chunk_id string, archive_path string, sheet string, coupon string, excel_row positive integer"
+  },
+  "output_semantics": "resolved_unique confirms only a unique literal locator match; does not certify user intent, fact truth, relevant task, applicable policy or evidence completeness",
+  "development_diagnostic": {
+    "questions": "All existing 24 consumed development question texts, no task-specific subset",
+    "controls": [
+      "absent PP/row",
+      "zero or negative row",
+      "two PP locators",
+      "two row mentions",
+      "duplicate source locator across files",
+      "missing eligible-row metadata",
+      "unsupported paraphrase",
+      "oversize question",
+      "valid unique locator",
+      "tail that negates or compares the literal locator",
+      "PP1 versus PP10",
+      "embedded or repeated PP token in tail",
+      "extra zero/negative row and variable whitespace",
+      "numbers without locator marker",
+      "leading-zero locator",
+      "nonannotation structural error versus absent nonannotation locator metadata",
+      "malformed unrelated annotation",
+      "unsupported question with invalid source (question status wins)",
+      "non-ASCII span and exact-byte hashes",
+      "stable ordering of ambiguous candidates"
+    ],
+    "tail_control_expectation": "Even a unique literal match in a negated/comparative tail remains only a candidate, never an interpreted or answered question; future semantic gating is separate",
+    "measurements": [
+      "outcome counts on all 24",
+      "span and source-locator agreement",
+      "control behavior",
+      "all failures and ambiguity",
+      "source/input/code hashes"
+    ],
+    "not_measured": [
+      "natural-language generalization",
+      "answer accuracy",
+      "external truth",
+      "retrieval improvement",
+      "maintenance labor"
+    ]
+  },
+  "future_retrieval_intervention": {
+    "enabled_now": false,
+    "original_runs": "Frozen and never overwritten",
+    "shared_information": "Expose the same literal locator candidate to A1, B, C, D and E; retain source access equality",
+    "seed_policy": "For resolved_unique only: prepend the original anchor chunk to the saved base top-eight parent list, stable-deduplicate, keep first eight; apply identical packing policy. Others retain base retrieval with explicit locator status.",
+    "branching": "A1 uses A1 base ranking; B uses B base ranking; C and E consume the same newly packed B evidence. D uses exact new C evidence and its newly generated scoped report, never an old report.",
+    "no_report_feedback": "D report cannot change C selection or trigger extra lookup",
+    "budget_gate": "Before execution freeze a new common full-message budget including system/question/report reserve and declared tokenizer. E5-only diagnostics must remain explicitly surrogate, with generator_ready=false.",
+    "claim_boundary": "Anchoring changes query preprocessing and seed selection; any gain is not evidence of RDF/graph superiority. SQL/Python gets the same locator and traversal policy.",
+    "evaluation": "New run IDs, unchanged offline scorer, all failures and overbudget cases retained; no failed-case-only denominator. Development tuning does not create fresh held-out evidence."
+  },
+  "execution_authorization": {
+    "paid_calls": 0,
+    "aws_creation": false,
+    "push_deploy": false,
+    "this_cycle": "contract and review only; no locator or retrieval execution"
+  },
+  "status_precedence": [
+    "Invalid caller types or question not strict-UTF-8 encodable: raise input-contract error, no result record.",
+    "Question length above 4096 Unicode code points: locator_unsupported / question_too_long; do not parse source.",
+    "Anchored regex fails: locator_unsupported / locator_syntax; do not parse source.",
+    "Extra-mention count or span check fails: locator_unsupported / locator_mentions; do not parse source.",
+    "Recognized locator then any source parse/index/metadata validation failure: source_invalid / source_validation; no partial candidates.",
+    "Zero matches: source_not_found / no_match_in_bundle.",
+    "One match: resolved_unique / unique_literal_candidate.",
+    "More than one match: source_ambiguous / multiple_matches_in_bundle."
+  ],
+  "output_conventions": "locator_unsupported always has null span/text, even if extra-mention detection failed after a prefix match. Recognized locators retain spans/text for every source outcome. source_invalid and source_not_found have empty candidate arrays. resolved_unique has one entry in each array; source_ambiguous returns every match. No timestamps, exception text or unlisted result fields. Parsing may fail fast within source_validation because all failures share the same stable reason."
+}

@@ -1,0 +1,672 @@
+{
+  "planned": 36,
+  "arm_counts": {
+    "self_review": {
+      "planned": 18,
+      "completed": 17,
+      "correct": 17,
+      "correct_draft_harmed": 1,
+      "wrong_valid_draft_corrected": 2,
+      "failed_draft_to_correct": 1
+    },
+    "shacl_review": {
+      "planned": 18,
+      "completed": 17,
+      "correct": 17,
+      "correct_draft_harmed": 0,
+      "wrong_valid_draft_corrected": 2,
+      "failed_draft_to_correct": 0
+    }
+  },
+  "pairs": [
+    {
+      "case": "P01",
+      "model": "google/gemini-3.8-flash",
+      "self_correct": true,
+      "shacl_correct": true
+    },
+    {
+      "case": "P01",
+      "model": "google/gemini-4-argon",
+      "self_correct": true,
+      "shacl_correct": true
+    },
+    {
+      "case": "P01",
+      "model": "openai/gpt-6-luna",
+      "self_correct": true,
+      "shacl_correct": true
+    },
+    {
+      "case": "P01",
+      "model": "openai/gpt-6-astra",
+      "self_correct": true,
+      "shacl_correct": true
+    },
+    {
+      "case": "P01",
+      "model": "anthropic/claude-sonnet-5.5",
+      "self_correct": true,
+      "shacl_correct": true
+    },
+    {
+      "case": "P01",
+      "model": "anthropic/claude-fable-5.1",
+      "self_correct": true,
+      "shacl_correct": true
+    },
+    {
+      "case": "P02",
+      "model": "google/gemini-3.8-flash",
+      "self_correct": true,
+      "shacl_correct": true
+    },
+    {
+      "case": "P02",
+      "model": "google/gemini-4-argon",
+      "self_correct": true,
+      "shacl_correct": true
+    },
+    {
+      "case": "P02",
+      "model": "openai/gpt-6-luna",
+      "self_correct": true,
+      "shacl_correct": true
+    },
+    {
+      "case": "P02",
+      "model": "openai/gpt-6-astra",
+      "self_correct": true,
+      "shacl_correct": true
+    },
+    {
+      "case": "P02",
+      "model": "anthropic/claude-sonnet-5.5",
+      "self_correct": true,
+      "shacl_correct": true
+    },
+    {
+      "case": "P02",
+      "model": "anthropic/claude-fable-5.1",
+      "self_correct": true,
+      "shacl_correct": true
+    },
+    {
+      "case": "P03",
+      "model": "google/gemini-3.8-flash",
+      "self_correct": true,
+      "shacl_correct": false
+    },
+    {
+      "case": "P03",
+      "model": "google/gemini-4-argon",
+      "self_correct": true,
+      "shacl_correct": true
+    },
+    {
+      "case": "P03",
+      "model": "openai/gpt-6-luna",
+      "self_correct": true,
+      "shacl_correct": true
+    },
+    {
+      "case": "P03",
+      "model": "openai/gpt-6-astra",
+      "self_correct": true,
+      "shacl_correct": true
+    },
+    {
+      "case": "P03",
+      "model": "anthropic/claude-sonnet-5.5",
+      "self_correct": false,
+      "shacl_correct": true
+    },
+    {
+      "case": "P03",
+      "model": "anthropic/claude-fable-5.1",
+      "self_correct": true,
+      "shacl_correct": true
+    }
+  ],
+  "rows": [
+    {
+      "id": "review-001|P01|self_review|google/gemini-3.8-flash|google/gemini-3.8-flash",
+      "model": "google/gemini-3.8-flash",
+      "question_id": "P01|self_review|google/gemini-3.8-flash",
+      "case": "P01",
+      "arm": "self_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "CycloneDX 1.4 표준 메타데이터에 따르면 scope 필드가 지정되지 않은 경우 소비 도구는 기본값인 'required'를 적용해야 합니다.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "review-001|P01|shacl_review|google/gemini-3.8-flash|google/gemini-3.8-flash",
+      "model": "google/gemini-3.8-flash",
+      "question_id": "P01|shacl_review|google/gemini-3.8-flash",
+      "case": "P01",
+      "arm": "shacl_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "제공된 CycloneDX 1.4 스키마 메타데이터에 따르면 scope 속성이 지정되지 않은 경우 소비 도구는 기본값인 'required'로 간주해야 합니다. 대상 구성요소에 scope 필드가 명시되어 있지 않으므로 'required'가 적용됩니다.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "review-001|P01|shacl_review|google/gemini-4-argon|google/gemini-4-argon",
+      "model": "google/gemini-4-argon",
+      "question_id": "P01|shacl_review|google/gemini-4-argon",
+      "case": "P01",
+      "arm": "shacl_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "In the provided CycloneDX 1.4 component evidence for 'brick/math', the 'scope' field is omitted. According to the supplied CycloneDX 1.4 standard metadata, the default value for a component's 'scope' property is 'required', and if scope is not specified, 'required' scope should be assumed by the consumer of the BOM. This is a document-level interpretation and does not verify actual real-world installation.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "review-001|P01|self_review|google/gemini-4-argon|google/gemini-4-argon",
+      "model": "google/gemini-4-argon",
+      "question_id": "P01|self_review|google/gemini-4-argon",
+      "case": "P01",
+      "arm": "self_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "The selected component 'brick/math' (version 0.9.3) in the CycloneDX 1.4 document omits the 'scope' field. According to the supplied CycloneDX 1.4 standard metadata, the 'scope' property has a default value of 'required', and if 'scope' is not specified, the 'required' scope SHOULD be assumed by the consumer of the BOM. Therefore, for document interpretation, a consuming tool should apply 'required'.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "review-001|P01|self_review|openai/gpt-6-luna|openai/gpt-6-luna",
+      "model": "openai/gpt-6-luna",
+      "question_id": "P01|self_review|openai/gpt-6-luna",
+      "case": "P01",
+      "arm": "self_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "CycloneDX 1.4 metadata states that when scope is omitted, consumers SHOULD assume required.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "review-001|P01|shacl_review|openai/gpt-6-luna|openai/gpt-6-luna",
+      "model": "openai/gpt-6-luna",
+      "question_id": "P01|shacl_review|openai/gpt-6-luna",
+      "case": "P01",
+      "arm": "shacl_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "CycloneDX 1.4 metadata says consumers SHOULD assume a required scope when the component’s scope is omitted.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "review-001|P01|shacl_review|openai/gpt-6-astra|openai/gpt-6-astra",
+      "model": "openai/gpt-6-astra",
+      "question_id": "P01|shacl_review|openai/gpt-6-astra",
+      "case": "P01",
+      "arm": "shacl_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "제공된 CycloneDX 1.4 메타데이터는 scope의 기본값을 required로 정하고, 생략 시 BOM 소비자가 required로 간주하도록 권고(SHOULD)합니다. 선택된 구성요소에는 scope 필드가 없으므로 적용할 기본값은 required입니다. 이는 문서 해석이며 실제 설치 여부를 입증하지 않습니다.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "review-001|P01|self_review|openai/gpt-6-astra|openai/gpt-6-astra",
+      "model": "openai/gpt-6-astra",
+      "question_id": "P01|self_review|openai/gpt-6-astra",
+      "case": "P01",
+      "arm": "self_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "CycloneDX 1.4의 scope 메타데이터는 기본값을 required로 정의하고, scope가 생략되면 소비 도구가 required로 가정하도록 권고합니다(SHOULD). 제공된 구성요소에는 scope 필드가 없으므로 required로 해석합니다. 이는 문서 해석상의 기본값이며 실제 설치 여부를 입증하지 않습니다.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "review-001|P01|self_review|anthropic/claude-sonnet-5.5|anthropic/claude-sonnet-5.5",
+      "model": "anthropic/claude-sonnet-5.5",
+      "question_id": "P01|self_review|anthropic/claude-sonnet-5.5",
+      "case": "P01",
+      "arm": "self_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "The selected component has no scope field. The supplied CycloneDX 1.4 schema metadata defines scope with default \"required\" and says that if scope is not specified, 'required' SHOULD be assumed by the BOM consumer. This is a document-interpretation default only, not a verification of actual installation or deployment.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "review-001|P01|shacl_review|anthropic/claude-sonnet-5.5|anthropic/claude-sonnet-5.5",
+      "model": "anthropic/claude-sonnet-5.5",
+      "question_id": "P01|shacl_review|anthropic/claude-sonnet-5.5",
+      "case": "P01",
+      "arm": "shacl_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "The selected component has no scope field. The supplied CycloneDX 1.4 schema metadata says scope defaults to \"required\", and that consumers SHOULD assume 'required' when scope is not specified. This is a document-interpretation default only and does not verify actual installation or deployment.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "review-001|P01|shacl_review|anthropic/claude-fable-5.1|anthropic/claude-fable-5.1",
+      "model": "anthropic/claude-fable-5.1",
+      "question_id": "P01|shacl_review|anthropic/claude-fable-5.1",
+      "case": "P01",
+      "arm": "shacl_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "CycloneDX 1.4 스키마 메타데이터는 scope가 지정되지 않은 경우 BOM 소비자가 'required'를 가정해야(SHOULD) 하며 기본값이 required라고 명시합니다. 선택된 구성요소 brick/math@0.9.3에는 scope 필드가 없으므로 문서 해석상 소비 도구는 required를 적용해야 합니다. 초안은 이 근거와 일치하며 문서 해석과 실제 설치 관찰을 구분하고 있으므로 유지합니다. 실제 배포 상태에 대한 관찰 증거는 제공되지 않았습니다.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "review-001|P01|self_review|anthropic/claude-fable-5.1|anthropic/claude-fable-5.1",
+      "model": "anthropic/claude-fable-5.1",
+      "question_id": "P01|self_review|anthropic/claude-fable-5.1",
+      "case": "P01",
+      "arm": "self_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "CycloneDX 1.4 스키마의 scope 정의에 따르면 scope가 지정되지 않은 경우 소비 도구는 'required'를 가정해야 합니다(default: required, SHOULD). 제공된 구성요소 brick/math@0.9.3 객체에는 scope 필드가 없으므로 문서 해석상 required로 처리해야 합니다. 이는 문서 해석에 따른 판정이며 실제 설치 상태에 대한 관찰 증거는 아닙니다. 초안은 타당하므로 유지합니다.",
+        "classification": "required"
+      }
+    },
+    {
+      "id": "review-001|P02|shacl_review|google/gemini-4-argon|google/gemini-4-argon",
+      "model": "google/gemini-4-argon",
+      "question_id": "P02|shacl_review|google/gemini-4-argon",
+      "case": "P02",
+      "arm": "shacl_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "In the provided CycloneDX 1.2 source evidence, `source_field_presence.dependencies` is `false`, indicating that the top-level `dependencies` array is absent from the original document. Per the supplied CycloneDX 1.2 standard metadata, components without dependencies must be declared as empty elements within the dependency graph, whereas components not represented in the dependency graph may have unknown dependencies and should not be assumed dependency-free. Because `pkg:npm/puppeteer@1.19.0` is not represented in a dependency graph, its dependency status in this document is `unknown`.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "review-001|P02|self_review|google/gemini-4-argon|google/gemini-4-argon",
+      "model": "google/gemini-4-argon",
+      "question_id": "P02|self_review|google/gemini-4-argon",
+      "case": "P02",
+      "arm": "self_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "In the supplied CycloneDX 1.2 evidence, `source_field_presence.dependencies` is `false`, meaning the top-level `dependencies` field is absent from the original document. According to the supplied CycloneDX 1.2 standard metadata, components without dependencies must be declared as empty elements within the dependency graph, whereas components not represented in the dependency graph may have unknown dependencies and should be treated as opaque rather than dependency-free. Because `pkg:npm/puppeteer@1.19.0` is not represented in a dependency graph, its dependency status in this document is `unknown`.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "review-001|P02|self_review|openai/gpt-6-luna|openai/gpt-6-luna",
+      "model": "openai/gpt-6-luna",
+      "question_id": "P02|self_review|openai/gpt-6-luna",
+      "case": "P02",
+      "arm": "self_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "원본 문서에 dependencies 필드가 없습니다. 이는 의존 대상이 없다고 명시한 것이 아니므로 의존성은 알 수 없습니다.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "review-001|P02|shacl_review|openai/gpt-6-luna|openai/gpt-6-luna",
+      "model": "openai/gpt-6-luna",
+      "question_id": "P02|shacl_review|openai/gpt-6-luna",
+      "case": "P02",
+      "arm": "shacl_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "원본에 dependencies 필드가 없고, 표준상 의존성이 없는 구성요소는 빈 의존성 요소로 명시해야 합니다. 따라서 의존 대상이 없다고 명시한 것이 아니라 알 수 없습니다.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "review-001|P02|shacl_review|openai/gpt-6-astra|openai/gpt-6-astra",
+      "model": "openai/gpt-6-astra",
+      "question_id": "P02|shacl_review|openai/gpt-6-astra",
+      "case": "P02",
+      "arm": "shacl_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "원본 문서에 dependencies 필드가 없으므로 이 구성요소의 의존성 정보는 알 수 없습니다. CycloneDX 1.2에서 의존성 그래프에 기록되지 않은 구성요소는 의존성이 없는 것으로 간주하지 않으며, 의존 대상이 없음을 명시하려면 그래프에 빈 항목으로 선언해야 합니다. 이 문서는 실제 설치 환경의 의존성 상태를 검증한 증거도 아닙니다.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "review-001|P02|self_review|openai/gpt-6-astra|openai/gpt-6-astra",
+      "model": "openai/gpt-6-astra",
+      "question_id": "P02|self_review|openai/gpt-6-astra",
+      "case": "P02",
+      "arm": "self_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "원본 문서에 dependencies 필드가 없으므로 이 구성요소의 의존성 정보는 알 수 없습니다. CycloneDX 1.2에서는 의존 대상이 없는 구성요소를 의존성 그래프에 빈 항목으로 명시해야 하며, 그래프에 기록되지 않았다는 사실을 의존 대상이 없다는 뜻으로 해석해서는 안 됩니다. 이 문서는 현재 실제 설치 환경의 의존성 상태를 검증하는 증거도 아닙니다.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "review-001|P02|self_review|anthropic/claude-sonnet-5.5|anthropic/claude-sonnet-5.5",
+      "model": "anthropic/claude-sonnet-5.5",
+      "question_id": "P02|self_review|anthropic/claude-sonnet-5.5",
+      "case": "P02",
+      "arm": "self_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "The source has no dependencies field (source_field_presence.dependencies is false), so pkg:npm/puppeteer@1.19.0 has no dependency-graph entry. CycloneDX says components with no dependencies MUST be declared as empty elements, and components absent from the graph MAY have unknown dependencies, which should not be read as dependency-free. No explicit empty record exists, so the draft's classification of unknown is justified.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "review-001|P02|shacl_review|anthropic/claude-sonnet-5.5|anthropic/claude-sonnet-5.5",
+      "model": "anthropic/claude-sonnet-5.5",
+      "question_id": "P02|shacl_review|anthropic/claude-sonnet-5.5",
+      "case": "P02",
+      "arm": "shacl_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "The source has no dependencies field (source_field_presence.dependencies is false), so pkg:npm/puppeteer@1.19.0 has no dependency-graph entry. CycloneDX requires components with no dependencies to be declared as empty elements in the graph, so an explicit empty declaration would need an entry with no dependsOn. Components missing from the graph may have unknown dependencies, and absence should not be read as dependency-free. The document therefore does not state that there are no dependencies; their status is unknown.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "review-001|P02|shacl_review|anthropic/claude-fable-5.1|anthropic/claude-fable-5.1",
+      "model": "anthropic/claude-fable-5.1",
+      "question_id": "P02|shacl_review|anthropic/claude-fable-5.1",
+      "case": "P02",
+      "arm": "shacl_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "The supplied source_field_presence shows the top-level dependencies field is absent from the original CycloneDX 1.2 document, and the puppeteer component object carries no dependency data. Per the supplied schema metadata, components with no dependencies MUST be declared as empty entries in the dependency graph; components not represented in the graph MAY have unknown dependencies and should be treated as opaque, not dependency-free. Since no graph exists, the document does not assert an explicit empty dependency set; the dependency status is unknown. The saved draft is correct and is preserved.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "review-001|P02|self_review|anthropic/claude-fable-5.1|anthropic/claude-fable-5.1",
+      "model": "anthropic/claude-fable-5.1",
+      "question_id": "P02|self_review|anthropic/claude-fable-5.1",
+      "case": "P02",
+      "arm": "self_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "The draft is correct. source_field_presence shows the top-level dependencies field is absent from the original CycloneDX 1.2 document, so puppeteer is not represented in any dependency graph. The supplied schema metadata states that components not represented in the dependency graph MAY have unknown dependencies and that implementations should treat this as opaque, not as an indicator of being dependency-free. Only an explicit dependency entry with an empty dependsOn would assert no dependencies. Therefore the document does not state that puppeteer has no dependencies; its dependency status is unknown.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "review-001|P02|self_review|google/gemini-3.8-flash|google/gemini-3.8-flash",
+      "model": "google/gemini-3.8-flash",
+      "question_id": "P02|self_review|google/gemini-3.8-flash",
+      "case": "P02",
+      "arm": "self_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "CycloneDX 규격상 의존성 그래프에 포함되지 않은 구성요소는 의존성 유무를 단정할 수 없으며 불투명(unknown)한 것으로 간주됩니다. 해당 문서에는 최상위 dependencies 필드가 부재(source_field_presence.dependencies: false)하여 의존성 상태를 알 수 없습니다.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "review-001|P02|shacl_review|google/gemini-3.8-flash|google/gemini-3.8-flash",
+      "model": "google/gemini-3.8-flash",
+      "question_id": "P02|shacl_review|google/gemini-3.8-flash",
+      "case": "P02",
+      "arm": "shacl_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "CycloneDX 표준에 따르면 의존성이 없는 구성요소는 의존성 그래프 내에 빈 요소로 명시되어야 하며, 그래프에 나타나지 않는 구성요소는 의존성을 알 수 없음(unknown)으로 간주합니다. 제공된 문서에는 최상위 dependencies 필드가 부재하므로(source_field_presence.dependencies: false), 해당 구성요소의 의존성 상태는 unknown입니다.",
+        "classification": "unknown"
+      }
+    },
+    {
+      "id": "review-001|P03|self_review|openai/gpt-6-luna|openai/gpt-6-luna",
+      "model": "openai/gpt-6-luna",
+      "question_id": "P03|self_review|openai/gpt-6-luna",
+      "case": "P03",
+      "arm": "self_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": false,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "표준 메타데이터에 따르면 자체 의존성이 없는 구성요소는 그래프에서 빈 요소로 선언되어야 합니다. brick/math 항목이 그래프에 있고 dependsOn이 없으므로, 이 문서는 의존 대상이 없음을 나타냅니다.",
+        "classification": "explicit_empty"
+      }
+    },
+    {
+      "id": "review-001|P03|shacl_review|openai/gpt-6-luna|openai/gpt-6-luna",
+      "model": "openai/gpt-6-luna",
+      "question_id": "P03|shacl_review|openai/gpt-6-luna",
+      "case": "P03",
+      "arm": "shacl_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": false,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "CycloneDX 1.4 says components with no dependencies must be declared as empty elements in the dependency graph. This component has a dependency entry containing its ref and no dependsOn targets, so the document represents it as having no direct dependency targets.",
+        "classification": "explicit_empty"
+      }
+    },
+    {
+      "id": "review-001|P03|shacl_review|openai/gpt-6-astra|openai/gpt-6-astra",
+      "model": "openai/gpt-6-astra",
+      "question_id": "P03|shacl_review|openai/gpt-6-astra",
+      "case": "P03",
+      "arm": "shacl_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "CycloneDX 1.4 메타데이터는 자체 의존 대상이 없는 구성요소를 의존성 그래프의 빈 항목으로 선언하도록 규정합니다. brick/math-0.9.3.0의 항목은 ref만 포함하며, dependsOn은 필수 필드가 아닙니다. 따라서 문서상 의존 대상이 명시적으로 없는 것으로 해석합니다. 이는 그래프에 항목 자체가 없어 의존 관계가 불명확한 경우와 다르며, 실제 설치 환경을 독립적으로 검증한 결과는 아닙니다.",
+        "classification": "explicit_empty"
+      }
+    },
+    {
+      "id": "review-001|P03|self_review|openai/gpt-6-astra|openai/gpt-6-astra",
+      "model": "openai/gpt-6-astra",
+      "question_id": "P03|self_review|openai/gpt-6-astra",
+      "case": "P03",
+      "arm": "self_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "brick/math-0.9.3.0의 dependency 항목은 ref만 포함합니다. 제공된 CycloneDX 1.4 메타데이터는 자체 의존 대상이 없는 구성요소를 그래프의 빈 요소로 선언하도록 규정하며, dependsOn은 필수 필드가 아닙니다. 따라서 이 항목은 문서상 의존 대상이 없음을 명시한 것으로 해석합니다. 그래프에 구성요소 항목 자체가 없어 의존 관계를 알 수 없는 경우와 다릅니다. 이는 문서 해석이며 현재 설치 환경을 독립적으로 검증한 결과는 아닙니다.",
+        "classification": "explicit_empty"
+      }
+    },
+    {
+      "id": "review-001|P03|self_review|anthropic/claude-sonnet-5.5|anthropic/claude-sonnet-5.5",
+      "model": "anthropic/claude-sonnet-5.5",
+      "question_id": "P03|self_review|anthropic/claude-sonnet-5.5",
+      "case": "P03",
+      "arm": "self_review",
+      "state": "output_failure",
+      "correct": false,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "The top-level dependencies list contains {\"ref\":\"brick/math-0.9.3.0\"} with no dependsOn. The CycloneDX 1.4 metadata says components without their own dependencies MUST be declared as empty elements in the graph, while components absent from the graph MAY have unknown dependencies. This component is represented in the graph with an empty entry, so the document states it has no dependencies. This is a document interpretation, not verification of any real deployment.",
+        "classification": "explicit_empty",
+        "reasoning": null
+      }
+    },
+    {
+      "id": "review-001|P03|shacl_review|anthropic/claude-sonnet-5.5|anthropic/claude-sonnet-5.5",
+      "model": "anthropic/claude-sonnet-5.5",
+      "question_id": "P03|shacl_review|anthropic/claude-sonnet-5.5",
+      "case": "P03",
+      "arm": "shacl_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "The top-level dependencies field is present and contains an entry {\"ref\":\"brick/math-0.9.3.0\"} with no dependsOn. Under the CycloneDX 1.4 schema, components without their own dependencies must be declared as empty elements in the graph, while components absent from the graph may have unknown dependencies. This component is represented, so the document states it has no dependencies. This is a document interpretation, not verified deployment observation.",
+        "classification": "explicit_empty"
+      }
+    },
+    {
+      "id": "review-001|P03|shacl_review|anthropic/claude-fable-5.1|anthropic/claude-fable-5.1",
+      "model": "anthropic/claude-fable-5.1",
+      "question_id": "P03|shacl_review|anthropic/claude-fable-5.1",
+      "case": "P03",
+      "arm": "shacl_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": false,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "The supplied dependencies field contains an entry {\"ref\":\"brick/math-0.9.3.0\"} with no dependsOn. The supplied CycloneDX 1.4 schema text states that components without their own dependencies MUST be declared as empty elements within the graph, and that only components not represented in the graph may have unknown dependencies. Since brick/math is represented as an empty element, the document declares it has no direct dependencies. The draft's claim that omission of dependsOn signals unknown dependencies contradicts the supplied schema description, so the draft is corrected. This is document interpretation only, not a verified deployment fact.",
+        "classification": "explicit_empty"
+      }
+    },
+    {
+      "id": "review-001|P03|self_review|anthropic/claude-fable-5.1|anthropic/claude-fable-5.1",
+      "model": "anthropic/claude-fable-5.1",
+      "question_id": "P03|self_review|anthropic/claude-fable-5.1",
+      "case": "P03",
+      "arm": "self_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": false,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "The draft is incorrect. The CycloneDX 1.4 dependency schema says components without their own dependencies MUST be declared as empty elements within the graph, and only components NOT represented in the graph MAY have unknown dependencies. brick/math-0.9.3.0 is present in the dependencies array as an entry with only 'ref' and no dependsOn — i.e., an empty element in the graph. Per the 1.4 schema, this is the prescribed way to declare that the component has no dependencies; the schema does not distinguish an omitted dependsOn from an empty array. So the document asserts no dependencies (consistent with brick/math having none in this Composer tree), rather than leaving them unknown. This is a document interpretation, not a deployment verification.",
+        "classification": "explicit_empty"
+      }
+    },
+    {
+      "id": "review-001|P03|self_review|google/gemini-3.8-flash|google/gemini-3.8-flash",
+      "model": "google/gemini-3.8-flash",
+      "question_id": "P03|self_review|google/gemini-3.8-flash",
+      "case": "P03",
+      "arm": "self_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": false,
+      "draft_status": "output_failure",
+      "answer": {
+        "basis": "CycloneDX 표준 메타데이터에 따르면 의존 대상이 없는 구성요소는 의존성 그래프 내에 빈 요소(empty element)로 선언되어야 합니다(MUST). 반면 그래프에 아예 표현되지 않은 구성요소에 대해서만 의존성을 알 수 없음(unknown)으로 간주합니다. 해당 구성요소는 dependencies 목록에 ref만 포함된 빈 요소 형태로 선언되었으므로, 문서상 의존 대상이 없음을 명시(explicit_empty)한 것입니다.",
+        "classification": "explicit_empty"
+      }
+    },
+    {
+      "id": "review-001|P03|shacl_review|google/gemini-3.8-flash|google/gemini-3.8-flash",
+      "model": "google/gemini-3.8-flash",
+      "question_id": "P03|shacl_review|google/gemini-3.8-flash",
+      "case": "P03",
+      "arm": "shacl_review",
+      "state": "output_failure",
+      "correct": false,
+      "draft_correct": false,
+      "draft_status": "output_failure",
+      "answer": null
+    },
+    {
+      "id": "review-001|P03|shacl_review|google/gemini-4-argon|google/gemini-4-argon",
+      "model": "google/gemini-4-argon",
+      "question_id": "P03|shacl_review|google/gemini-4-argon",
+      "case": "P03",
+      "arm": "shacl_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "The component `brick/math-0.9.3.0` is present in the top-level `dependencies` array as `{\"ref\": \"brick/math-0.9.3.0\"}` without a `dependsOn` field. According to the CycloneDX 1.4 `dependency` specification, \"Components that do not have their own dependencies MUST be declared as empty elements within the graph,\" whereas components omitted from the dependency graph may have unknown dependencies. Therefore, this document explicitly declares that the component has no direct dependencies.",
+        "classification": "explicit_empty"
+      }
+    },
+    {
+      "id": "review-001|P03|self_review|google/gemini-4-argon|google/gemini-4-argon",
+      "model": "google/gemini-4-argon",
+      "question_id": "P03|self_review|google/gemini-4-argon",
+      "case": "P03",
+      "arm": "self_review",
+      "state": "completed",
+      "correct": true,
+      "draft_correct": true,
+      "draft_status": "completed",
+      "answer": {
+        "basis": "According to the CycloneDX 1.4 specification, components that do not have their own dependencies MUST be declared as empty elements within the dependency graph, whereas components omitted from the graph MAY have unknown dependencies. In the supplied BOM, the component \"brick/math-0.9.3.0\" is explicitly present in the top-level dependencies array as {\"ref\": \"brick/math-0.9.3.0\"} without a \"dependsOn\" field. Therefore, the document explicitly declares that this component has no direct dependencies.",
+        "classification": "explicit_empty"
+      }
+    }
+  ],
+  "limits": "Posthoc three-case development subset selected after P03 errors. Both conditions receive same source and normative policy, share original draft, common additional2048outputcap. No independent draft replicas, explanationtruth, externaltruth or maintenanceeffort measurement."
+}

@@ -1,0 +1,9 @@
+Validation Report
+Conforms: False
+Results (1):
+Constraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:hasValue Literal(""mm"") ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path <urn:post-answer-review:observed> ]
+	Focus Node: <urn:post-answer-review:check/15>
+	Result Path: <urn:post-answer-review:observed>
+	Message: Node <urn:post-answer-review:check/15>-><urn:post-answer-review:observed> does not contain a value in the set: ['Literal(""mm"")']

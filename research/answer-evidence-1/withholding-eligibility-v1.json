@@ -1,0 +1,12 @@
+{
+  "version": "withholding-eligibility-1",
+  "scope": "Offline accounting of externally supplied adjudications only; no NLP extractor, source truth oracle, runtime repair or model call.",
+  "unit": "Requested target field, identified uniquely by episode and field. This component is field-level only, not the primary episode score.",
+  "selected_support": "Freeze before generation: true if selected evidence supports one answer under declared task policy; false for absent support or unresolved conflict with no precedence; null if unresolved adjudication. Source-present elsewhere does not make selected_support true.",
+  "withheld": "For completed outputs only, separately adjudicate whether model declined or omitted the requested target. Wrong asserted answers are false here and remain errors in separate agreement/support metrics. Null means not adjudicated; failed/nonattempted outputs must be null.",
+  "eligibility": "selected_support true => eligible; false => not_applicable regardless of affirmative/refusal behavior; null => eligibility unknown. For eligible fields, no means adjudicated not withheld; yes means withheld; null or noncompleted means not_evaluable.",
+  "partial": "Assess each requested field separately. A supported voltage may be eligible while absent current is ineligible. Do not convert field averages into episode accuracy.",
+  "denominators": "All planned fields retained. Observed yes / all eligible is only a lower bound with eligible unknown count. Also report yes / (yes+no), null if zero denominator. Unknown eligibility and all execution-status counts remain explicit.",
+  "normalization": "Recorded-value agreement compares a declared source value, unit and record/time scope. It never establishes physical truth. No free-form coercion, unit conversion or numeric tolerance is implemented in this component.",
+  "examples_v1_warning_resolution": "Prior no-versus-NA ambiguity is resolved by selected-support eligibility, not whether a refusal appeared. The conflict example has no unique supported numeric answer and is ineligible for numeric-target withholding; describing a conflict can be scored separately. Original v1 examples preserved."
+}

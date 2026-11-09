@@ -1,0 +1,32 @@
+{
+  "paths": {
+    "source": "research/graphrag-evidence-1/dense-retrieval-001/frozen/source-corpus-v1.json",
+    "children": "research/vector-refinement-1/run-001/children.json",
+    "questions": "research/graphrag-evidence-1/dense-retrieval-001/frozen/development-questions.json",
+    "scores": "research/refined-hybrid-1/rerank-001/results.json",
+    "candidates": "research/refined-hybrid-1/candidates-002/candidates.jsonl",
+    "tokenizer": "_workspace/graphrag-cycle3/sources/e5-tokenizer.json"
+  },
+  "hashes": {
+    "research/graphrag-evidence-1/dense-retrieval-001/frozen/source-corpus-v1.json": "900bb25d15bcb4dbab89076d3a1372d84762829dcd645bae7c17bc60b9693ac8",
+    "research/vector-refinement-1/run-001/children.json": "3ba88214a88e0c08145490bf48870ac9c0d6f3ab9271d0d874f5dfb408e3684b",
+    "research/graphrag-evidence-1/dense-retrieval-001/frozen/development-questions.json": "f7d12a0414e8a2e7099b2525fbac11a1c460adf3a9322a7b6e93cb6a97b57212",
+    "research/refined-hybrid-1/rerank-001/results.json": "9da8785999e08ff262a439981078aa9964429e367ae5110cc1612a43e19a4088",
+    "research/refined-hybrid-1/candidates-002/candidates.jsonl": "cf357dfb1667dc81b24b8d72dfb9994bd9b1cfe507d7c332dc953794277a6e69",
+    "_workspace/graphrag-cycle3/sources/e5-tokenizer.json": "0b44a9d7b51c3c62626640cda0e2c2f70fdacdc25bbbd68038369d14ebdf4c39",
+    "scripts/pack_refined_hybrid.py": "3dc0997c40132cf91dde1e0fb4bc193e78e5b9fe21c86f2c6776cacc10e79d6c",
+    "scripts/graphrag_dense.py": "cfcf51f7ca96a9bb274c5a814e2a7e7fce572f83522053642e8cd9fb7b04c7d7",
+    "scripts/build_graphrag_search.py": "562e82e5323403f3323e4f595e8b2f62631d0073496ebf24e5527d5aeec14886",
+    "scripts/graphrag_expand.py": "93e748eebd72a64f69f1af2a560dd68dbbb4c28700d604875f9f93fc26fde216",
+    "research/refined-hybrid-1/rerank-001/manifest.json": "56cdcfae3ead13fe2088b6330a11dfcb790b3dc37150aa68d52da7b39a593a6b",
+    "_workspace/rag-backends-continuation-20261102/rerank-execution.json": "6257f3aa608a1e7a0bf98d3ea61e1ac5f0eb5246f4545927f129451062767e25"
+  },
+  "policy": {
+    "max_child_per_parent": true,
+    "parent_k": 8,
+    "token_cap": 4096,
+    "byte_cap": 64000,
+    "skip_then_continue": true,
+    "seed_policy": "selected evidence only; no discarded parents as downstream seeds"
+  }
+}

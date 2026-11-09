@@ -1,0 +1,445 @@
+{
+  "planned_slots": 162,
+  "attempted": 154,
+  "states": {
+    "completed": 145,
+    "output_failure": 9,
+    "dependency_not_run": 8
+  },
+  "unresolved_attempts": 0,
+  "reported_total_complete": true,
+  "reported_usd": "5.584621875",
+  "gross_reserved_usd": "29.41399821",
+  "budget_consumed_usd": "7.972082270",
+  "stop_reason": null,
+  "models": {
+    "google/gemini-3.8-flash": {
+      "planned": 27,
+      "states": {
+        "completed": 24,
+        "output_failure": 1,
+        "dependency_not_run": 2
+      },
+      "by_phase": {
+        "draft": {
+          "completed": 8,
+          "output_failure": 1
+        },
+        "self_review": {
+          "completed": 8,
+          "dependency_not_run": 1
+        },
+        "report": {
+          "completed": 8,
+          "dependency_not_run": 1
+        }
+      },
+      "complete_answer_triples": 8
+    },
+    "google/gemini-4-argon": {
+      "planned": 27,
+      "states": {
+        "completed": 27
+      },
+      "by_phase": {
+        "draft": {
+          "completed": 9
+        },
+        "self_review": {
+          "completed": 9
+        },
+        "report": {
+          "completed": 9
+        }
+      },
+      "complete_answer_triples": 9
+    },
+    "openai/gpt-6-luna": {
+      "planned": 27,
+      "states": {
+        "completed": 24,
+        "output_failure": 1,
+        "dependency_not_run": 2
+      },
+      "by_phase": {
+        "draft": {
+          "completed": 8,
+          "output_failure": 1
+        },
+        "self_review": {
+          "completed": 8,
+          "dependency_not_run": 1
+        },
+        "report": {
+          "completed": 8,
+          "dependency_not_run": 1
+        }
+      },
+      "complete_answer_triples": 8
+    },
+    "openai/gpt-6-astra": {
+      "planned": 27,
+      "states": {
+        "completed": 25,
+        "output_failure": 2
+      },
+      "by_phase": {
+        "draft": {
+          "completed": 9
+        },
+        "self_review": {
+          "completed": 8,
+          "output_failure": 1
+        },
+        "report": {
+          "completed": 8,
+          "output_failure": 1
+        }
+      },
+      "complete_answer_triples": 8
+    },
+    "anthropic/claude-sonnet-5.5": {
+      "planned": 27,
+      "states": {
+        "completed": 23,
+        "output_failure": 2,
+        "dependency_not_run": 2
+      },
+      "by_phase": {
+        "draft": {
+          "completed": 8,
+          "output_failure": 1
+        },
+        "self_review": {
+          "completed": 8,
+          "dependency_not_run": 1
+        },
+        "report": {
+          "completed": 7,
+          "dependency_not_run": 1,
+          "output_failure": 1
+        }
+      },
+      "complete_answer_triples": 7
+    },
+    "anthropic/claude-fable-5.1": {
+      "planned": 27,
+      "states": {
+        "completed": 22,
+        "output_failure": 3,
+        "dependency_not_run": 2
+      },
+      "by_phase": {
+        "draft": {
+          "completed": 8,
+          "output_failure": 1
+        },
+        "self_review": {
+          "completed": 7,
+          "dependency_not_run": 1,
+          "output_failure": 1
+        },
+        "report": {
+          "completed": 7,
+          "dependency_not_run": 1,
+          "output_failure": 1
+        }
+      },
+      "complete_answer_triples": 7
+    }
+  },
+  "transmitted_review_original_draft_bindings": 100,
+  "transmitted_self_report_pairs": 50,
+  "python_shacl_message_parity": [
+    {
+      "question_id": "Q1",
+      "model": "google/gemini-3.8-flash",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q1",
+      "model": "google/gemini-4-argon",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q1",
+      "model": "openai/gpt-6-luna",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q1",
+      "model": "openai/gpt-6-astra",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q1",
+      "model": "anthropic/claude-sonnet-5.5",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q1",
+      "model": "anthropic/claude-fable-5.1",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q2",
+      "model": "google/gemini-3.8-flash",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q2",
+      "model": "google/gemini-4-argon",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q2",
+      "model": "openai/gpt-6-luna",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q2",
+      "model": "openai/gpt-6-astra",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q2",
+      "model": "anthropic/claude-fable-5.1",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q3",
+      "model": "google/gemini-3.8-flash",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q3",
+      "model": "google/gemini-4-argon",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q3",
+      "model": "openai/gpt-6-luna",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q3",
+      "model": "openai/gpt-6-astra",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q3",
+      "model": "anthropic/claude-sonnet-5.5",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q3",
+      "model": "anthropic/claude-fable-5.1",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q4",
+      "model": "google/gemini-3.8-flash",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q4",
+      "model": "google/gemini-4-argon",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q4",
+      "model": "openai/gpt-6-luna",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q4",
+      "model": "openai/gpt-6-astra",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q4",
+      "model": "anthropic/claude-sonnet-5.5",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q4",
+      "model": "anthropic/claude-fable-5.1",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q5",
+      "model": "google/gemini-3.8-flash",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q5",
+      "model": "google/gemini-4-argon",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q5",
+      "model": "openai/gpt-6-luna",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q5",
+      "model": "openai/gpt-6-astra",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q5",
+      "model": "anthropic/claude-sonnet-5.5",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q5",
+      "model": "anthropic/claude-fable-5.1",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q6",
+      "model": "google/gemini-3.8-flash",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q6",
+      "model": "google/gemini-4-argon",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q6",
+      "model": "openai/gpt-6-luna",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q6",
+      "model": "openai/gpt-6-astra",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q6",
+      "model": "anthropic/claude-sonnet-5.5",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q6",
+      "model": "anthropic/claude-fable-5.1",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q7",
+      "model": "google/gemini-3.8-flash",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q7",
+      "model": "google/gemini-4-argon",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q7",
+      "model": "openai/gpt-6-luna",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q7",
+      "model": "openai/gpt-6-astra",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q7",
+      "model": "anthropic/claude-sonnet-5.5",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q7",
+      "model": "anthropic/claude-fable-5.1",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q8",
+      "model": "google/gemini-4-argon",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q8",
+      "model": "openai/gpt-6-astra",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q8",
+      "model": "anthropic/claude-sonnet-5.5",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q9",
+      "model": "google/gemini-3.8-flash",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q9",
+      "model": "google/gemini-4-argon",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q9",
+      "model": "openai/gpt-6-luna",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q9",
+      "model": "openai/gpt-6-astra",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q9",
+      "model": "anthropic/claude-sonnet-5.5",
+      "same_normalized_message": true
+    },
+    {
+      "question_id": "Q9",
+      "model": "anthropic/claude-fable-5.1",
+      "same_normalized_message": true
+    }
+  ],
+  "supplied_report_checks": {
+    "claim_state:completed": 199,
+    "pass": 854,
+    "unknown": 52,
+    "claim_state:input_failure": 8,
+    "flag": 9,
+    "not_applicable": 16
+  },
+  "posthoc_python_declared_claim_checks": {
+    "draft": {
+      "claim_state:completed": 199,
+      "check:pass": 854,
+      "check:unknown": 52,
+      "claim_state:input_failure": 8,
+      "check:flag": 9,
+      "check:not_applicable": 16
+    },
+    "self_review": {
+      "claim_state:completed": 184,
+      "check:pass": 807,
+      "check:not_applicable": 13,
+      "check:unknown": 43,
+      "claim_state:input_failure": 8,
+      "check:flag": 9
+    },
+    "report": {
+      "claim_state:completed": 177,
+      "check:pass": 798,
+      "check:unknown": 43,
+      "claim_state:input_failure": 8,
+      "check:flag": 1,
+      "check:not_applicable": 11
+    }
+  },
+  "limits": [
+    "software/trace audit, not answer correctness",
+    "posthoc Python check counts are dependent and declared-contract agreement, not factual truth",
+    "identical normalized messages do not constitute independently measured Python-generator arm",
+    "no gold/runtime repair, no fresh heldout benchmark"
+  ]
+}

@@ -1,0 +1,230 @@
+[
+  {
+    "id": "Q1",
+    "question_type": "Q1",
+    "scope": "scalar source value only",
+    "patterns": [
+      [
+        "<urn:shacl-study:backend:PP6%3A2>",
+        "<urn:shacl-study:backend:field%3Ax_init_mm>",
+        "?v"
+      ]
+    ],
+    "project": [
+      "?v"
+    ]
+  },
+  {
+    "id": "Q2",
+    "question_type": "Q2",
+    "scope": "same-file explicit reference and codebook label",
+    "patterns": [
+      [
+        "<urn:shacl-study:backend:PP6%3A2>",
+        "<urn:shacl-study:backend:relation%3Adefect>",
+        "?d"
+      ],
+      [
+        "?d",
+        "<urn:shacl-study:backend:field%3ADefect>",
+        "?v"
+      ]
+    ],
+    "project": [
+      "?d",
+      "?v"
+    ]
+  },
+  {
+    "id": "Q3",
+    "question_type": "Q3",
+    "scope": "two source operands only; arithmetic not DB-side",
+    "patterns": [
+      [
+        "<urn:shacl-study:backend:PP6%3A2>",
+        "<urn:shacl-study:backend:relation%3Awelding_setting>",
+        "?d1"
+      ],
+      [
+        "<urn:shacl-study:backend:PP6%3A12>",
+        "<urn:shacl-study:backend:relation%3Awelding_setting>",
+        "?d2"
+      ],
+      [
+        "?d1",
+        "<urn:shacl-study:backend:field%3AIdc%20%28A%29>",
+        "?v1"
+      ],
+      [
+        "?d2",
+        "<urn:shacl-study:backend:field%3AIdc%20%28A%29>",
+        "?v2"
+      ]
+    ],
+    "project": [
+      "?d1",
+      "?d2",
+      "?v1",
+      "?v2"
+    ]
+  },
+  {
+    "id": "Q4",
+    "question_type": "Q4",
+    "scope": "bounded two-row candidates only; filtering/count separate",
+    "patterns": [
+      [
+        "?s",
+        "<urn:shacl-study:backend:field%3Ax_init_mm>",
+        "?x"
+      ],
+      [
+        "?s",
+        "<urn:shacl-study:backend:relation%3Adefect>",
+        "?d"
+      ],
+      [
+        "?d",
+        "<urn:shacl-study:backend:field%3ADefect>",
+        "?label"
+      ]
+    ],
+    "project": [
+      "?s",
+      "?x",
+      "?d",
+      "?label"
+    ]
+  },
+  {
+    "id": "Q5",
+    "question_type": "Q5",
+    "scope": "raw values; measured-versus-nominal prose not evaluated",
+    "patterns": [
+      [
+        "<urn:shacl-study:backend:PP6%3A2>",
+        "<urn:shacl-study:backend:field%3Ax_init_mm>",
+        "?mm"
+      ],
+      [
+        "<urn:shacl-study:backend:PP6%3A2>",
+        "<urn:shacl-study:backend:field%3Asample_init>",
+        "?sample"
+      ],
+      [
+        "<urn:shacl-study:backend:PP6%3A2>",
+        "<urn:shacl-study:backend:relation%3Awelding_setting>",
+        "?d"
+      ],
+      [
+        "?d",
+        "<urn:shacl-study:backend:field%3AIdc%20%28A%29>",
+        "?nominal"
+      ]
+    ],
+    "project": [
+      "?mm",
+      "?sample",
+      "?nominal"
+    ]
+  },
+  {
+    "id": "Q6",
+    "question_type": "Q6",
+    "scope": "declared source identity only; policy not inferred",
+    "patterns": [
+      [
+        "<urn:shacl-study:backend:PP6%3A2>",
+        "<urn:shacl-study:backend:relation%3Adefect>",
+        "?d"
+      ],
+      [
+        "?d",
+        "<urn:shacl-study:backend:field%3Acoupon>",
+        "?same"
+      ],
+      [
+        "<urn:shacl-study:backend:PP7%3Adefect_code%3A4>",
+        "<urn:shacl-study:backend:field%3Acoupon>",
+        "?other"
+      ]
+    ],
+    "project": [
+      "?d",
+      "?same",
+      "?other"
+    ]
+  },
+  {
+    "id": "Q7",
+    "question_type": "Q7",
+    "scope": "synthetic history excluded from real-source pass",
+    "unsupported": "No real version history in selected source; do not invent it"
+  },
+  {
+    "id": "Q8",
+    "question_type": "Q8",
+    "scope": "missing field in selected bundle only; not global absence",
+    "patterns": [
+      [
+        "<urn:shacl-study:backend:PP6%3A2>",
+        "<urn:shacl-study:backend:field%3Aactual_measured_current>",
+        "?value"
+      ]
+    ],
+    "project": [
+      "?value"
+    ]
+  },
+  {
+    "id": "Q9",
+    "question_type": "Q9",
+    "scope": "authored-draft supporting values only; no prose classification",
+    "patterns": [
+      [
+        "<urn:shacl-study:backend:PP6%3A2>",
+        "<urn:shacl-study:backend:relation%3Adefect>",
+        "?d"
+      ],
+      [
+        "?d",
+        "<urn:shacl-study:backend:field%3ADefect>",
+        "?label"
+      ],
+      [
+        "<urn:shacl-study:backend:PP6%3A2>",
+        "<urn:shacl-study:backend:relation%3Awelding_setting>",
+        "?w"
+      ],
+      [
+        "?w",
+        "<urn:shacl-study:backend:field%3AIdc%20%28A%29>",
+        "?nominal"
+      ]
+    ],
+    "project": [
+      "?label",
+      "?nominal"
+    ]
+  },
+  {
+    "id": "BGP_REUSE",
+    "question_type": "compiler_control",
+    "scope": "same fact matched twice; must permit edge reuse",
+    "patterns": [
+      [
+        "<urn:shacl-study:backend:PP6%3A2>",
+        "<urn:shacl-study:backend:field%3Ax_init_mm>",
+        "?v"
+      ],
+      [
+        "<urn:shacl-study:backend:PP6%3A2>",
+        "<urn:shacl-study:backend:field%3Ax_init_mm>",
+        "?v"
+      ]
+    ],
+    "project": [
+      "?v"
+    ]
+  }
+]

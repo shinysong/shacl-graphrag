@@ -1,0 +1,23 @@
+@prefix ex: <urn:shacl-study:advisory:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode ex:result ;
+            sh:resultMessage "fingerprint_disagreement_review_scope" ;
+            sh:resultPath ex:usedHash ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:EqualsConstraintComponent ;
+            sh:sourceShape ex:VersionAgreement ;
+            sh:value "31c7378169d61474f621b693cf3df58304702c35ba05ec6bc5bdb2de8bcccbca" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode ex:result ;
+            sh:resultMessage "fingerprint_disagreement_review_scope" ;
+            sh:resultPath ex:usedHash ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:EqualsConstraintComponent ;
+            sh:sourceShape ex:VersionAgreement ;
+            sh:value "9b6de69a2ace027e7277f5438cb745e2e040da1901d4e9398540a2aef36c82b0" ] .
+

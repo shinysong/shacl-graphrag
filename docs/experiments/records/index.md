@@ -1,9 +1,12 @@
 # 실행 기록
 
+- [2026-11-04 6개 모델 대상 사후 답변 검토](20261104-paired-six-model-review.json) · [해석과 비교 결과](../../journal/2026-11-04-paired-six-model-review.md) — 9개 질문 유형 × 6개 모델, 자체 검토 대비 SHACL 보고서 검토의 편차 비교
+- [2026-11-04 복합 질문 및 답변 검토 입력 확장](20261104-compound-answer-review.json) · [해석](../../journal/2026-11-04-compound-answer-review.md)
+- [2026-11-03 최종 답변 비교와 SHACL 보고서](20261103-final-answer-comparison.json) · [해석](../../journal/2026-11-03-final-answer-comparison.md)
+- [2026-11-02 하이브리드 검색과 관계 조회 근거](20261102-refined-hybrid-evidence.json) · [해석](../../journal/2026-11-02-refined-hybrid-backends.md)
+- [2026-10-22 4단계 통합 규칙 생명주기 검증](20261022-unified-rule-lifecycle.md) · [통합 논문 원고](../../journal/2026-10-22-llm-semantic-intervention-paper.md) — Stage A~D 오프라인 검증 (CEM 100%, 오승인 0%, 조인 수정 0줄, 슬롯 자동 공급 100%)
 - [2026-10-28 BPI 2019 원본 로그 적합성 집계](20261028-bpi2019-suitability.json) · [해석과 후속 관문](../../journal/2026-10-28-bpi2019-suitability.md) — 전체 로그 기술 통계이며 모델 성능 실험이 아닙니다.
-
 - [2026-10-22 독립 문서 규칙 추가 비교](20261022-rule-extension.json) · [입력·정책·출력 검토 묶음](20261022-rule-extension-review-bundle.json)
-
 - [2026-10-15 YAGO 원본 데이터의 LLM 조회·검증 연결](20261015-yago-native-tools.md)
 
 실행기가 생성한 결과를 날짜순으로 모은다. 수치는 각 run의 입력과 환경에서 얻은 관찰값이다. 해석과 다음 결정은 [연구 일지](../../journal/index.md)에 남긴다.
@@ -62,3 +65,5 @@
 - [20261012T071247495865Z-e0-129aec82](20261012T071247495865Z-e0-129aec82.md) — passed
 
 - [20261012T070907787564Z-e0-674d84f2](20261012T070907787564Z-e0-674d84f2.md) — passed
+
+- [2026-11-06 Neo4j·Neptune 추론과 최종 검토](20261106-backend-inference-review.json)

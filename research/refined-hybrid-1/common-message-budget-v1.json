@@ -1,0 +1,72 @@
+{
+  "schema_version": "common-message-budget-1",
+  "status": "proposed_offline_surrogate_only",
+  "purpose": "Separate full-message repacking from explicit anchor intervention before any generator experiment.",
+  "arms": [
+    "A1",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "measurement": {
+    "serialization": "scripts.graphrag_check.canonical_bytes on the complete two-message array; no trailing newline; same SYSTEM and user question/evidence/validation fields as scripts/graphrag_input_contract.py",
+    "tokenizer_path": "_workspace/graphrag-cycle3/sources/e5-tokenizer.json",
+    "tokenizer_sha256": "0b44a9d7b51c3c62626640cda0e2c2f70fdacdc25bbbd68038369d14ebdf4c39",
+    "runtime": "tokenizers 0.22.1; no_padding/no_truncation; len(encode(text).ids), including tokenizer special tokens",
+    "generator_ready": false,
+    "generation_executed": false,
+    "limit": "E5 serialized-JSON accounting is not generator tokenizer/chat framing or model context capacity."
+  },
+  "caps": {
+    "full_message_tokens": 4096,
+    "base_message_tokens": 3072,
+    "report_increment_tokens": 1024,
+    "full_message_bytes": 64000,
+    "base_message_bytes": 48000,
+    "report_increment_bytes": 16000,
+    "rationale": "Predeclared engineering allocation: 3/4 base and 1/4 report. Not optimized or claimed sufficient from outcomes. Caps fixed for all questions/arms; no outcome-adaptive tuning."
+  },
+  "base_packing": {
+    "input": "Question text and ordered original source chunks from a separately frozen candidate policy. No scorer, task labels, references, expected answer or report supplied to packer. Question ID is lineage only.",
+    "message": "Two-message array with unchanged SYSTEM; canonical user object {question: original string, evidence: selected original chunks, validation: null}.",
+    "policy": "First eight eligible candidate chunks only, original order. For each, serialize entire tentative base message and count tokens/bytes. Accept only if both base caps satisfied; otherwise record skipped-budget ID and continue within the eight. Never refill from later candidates. Never truncate or rewrite chunk fields or question.",
+    "empty": "Measure empty-evidence base first. If overhead exceeds base caps return overhead_budget_error. If no candidate fits return evidence_budget_error; preserve empty result and all skips, never label it successful evidence.",
+    "error": "Malformed candidate/identity, duplicate IDs or upstream error stays input/upstream error with no successful partial result. Reject more than eight at this interface; caller retains excluded-after-eight candidates in trace."
+  },
+  "report_phase": {
+    "selection": "Freeze C evidence before validation; E must match C under the same policy and D copies exact C. A1/B/C/E carry validation:null and do not spend the reserved report allocation on extra evidence.",
+    "report": "Generate native SHACL and matched Python checks from exact selected C only, with the existing binding scope. Compact report keeps raw_conforms, results, applicable_bindings, coverage, no_bindings_status unchanged. No source lookup or recomputation to change C.",
+    "accounting": "Measure full D message directly. Also compute D count minus the corresponding C base-message count for tokens and bytes. Require full caps AND incremental caps. Do not assume separately tokenized components add linearly.",
+    "overflow": "If report increment or full D exceeds caps, mark D report_budget_error and retain full report/full serialized D artifact and counts. No check omission, report truncation, C repacking, extra retrieval or fallback to C. C and E results remain recorded.",
+    "checker_error": "Preserve validation_execution_error on D, no conformant substitute; retain C/E and exact evidence hash.",
+    "no_checks": "Raw conforms=true with zero bindings remains operational unknown; never use as positive eligibility."
+  },
+  "comparisons": {
+    "stage_1": "Repack frozen existing candidate lists with anchor disabled. This isolates budget-accounting change from locator insertion; historical runs stay frozen.",
+    "stage_2": "Separate future run with same caps/candidate policy and shared explicit anchor enabled across A1/B/C/E, D exact new C. Compare paired anchor-off vs anchor-on on all 24.",
+    "policy_gate": "Each stage needs a fresh implementation/review/run manifest binding exact candidate lists, upstream algorithms, source, questions, code, contract and tokenizer hashes before execution. This contract alone does not fix or authorize candidate reconstruction or relation traversal.",
+    "baseline_limit": "Repacking changes evidence selection and is a development intervention; not a new dense model, database benefit or generator answer evaluation."
+  },
+  "denominators": {
+    "planned": "All 24 consumed development questions times five arms per stage, including upstream, overhead, evidence, report and validation errors. Record unprocessed separately.",
+    "paired_analysis": "Report arm-specific full denominators and paired changes. Never restrict headline comparison to all-arms-fit subset. No generation for oversized/error rows.",
+    "scoring": "Any later support scorer stays offline unchanged and cannot feed packing, anchor lookup or checks. No gold repair."
+  },
+  "required_records": [
+    "ordered candidate/eligible/excluded/skipped/selected IDs",
+    "exact source chunks and selected evidence hash",
+    "base and full serialized bytes/hash/token/byte counts",
+    "report and incremental accounting",
+    "status/error and complete planned/processed IDs",
+    "original and frozen input/code/tokenizer hashes"
+  ],
+  "actual_generation_gate": [
+    "Named model and pinned tokenizer/chat template or verified provider accounting",
+    "Input plus output reservation within model context under same total budget for every arm",
+    "New explicit paid scope if required; current paid calls authorized 0",
+    "Fresh reviews and source-only no-gold experiment manifest"
+  ],
+  "this_cycle": "Contract review and JSON/hash verification only; no packing/retrieval/model execution",
+  "next_implementation": "Pure common base-message packer and report-budget accounting with boundary controls; candidate generation remains external and frozen."
+}

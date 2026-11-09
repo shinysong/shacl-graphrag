@@ -1,0 +1,6 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ex: <urn:binding:> .
+ex:ComparisonShape a sh:NodeShape ;
+  sh:targetClass ex:Comparison ;
+  sh:property [ sh:path ex:left ; sh:minCount 1 ; sh:maxCount 1 ; sh:equals ex:right ] ;
+  sh:property [ sh:path ex:right ; sh:minCount 1 ; sh:maxCount 1 ] .

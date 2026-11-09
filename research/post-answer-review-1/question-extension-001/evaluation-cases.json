@@ -1,0 +1,462 @@
+[
+  {
+    "case_id": "case-001",
+    "question_type": "Q1",
+    "control": "correct",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-002",
+    "question_type": "Q1",
+    "control": "wrong_value",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [
+        "0:value_agreement"
+      ],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-003",
+    "question_type": "Q1",
+    "control": "selected_source_missing",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [],
+      "unknown": [
+        "0:source_binding",
+        "0:field_binding",
+        "0:value_agreement",
+        "0:unit_agreement"
+      ],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-004",
+    "question_type": "Q2",
+    "control": "correct",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-005",
+    "question_type": "Q2",
+    "control": "wrong_label",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [
+        "0:lookup_value"
+      ],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-006",
+    "question_type": "Q2",
+    "control": "dictionary_omitted",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [],
+      "unknown": [
+        "0:dictionary_key",
+        "0:lookup_value",
+        "0:workbook_hash",
+        "0:workbook_path",
+        "0:declared_header"
+      ],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-007",
+    "question_type": "Q3",
+    "control": "correct",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-008",
+    "question_type": "Q3",
+    "control": "reversed_subtraction",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [
+        "2:signed_difference"
+      ],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-009",
+    "question_type": "Q3",
+    "control": "right_operand_omitted",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [],
+      "unknown": [
+        "0:signed_difference",
+        "0:difference_unit"
+      ],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-010",
+    "question_type": "Q4",
+    "control": "correct",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-011",
+    "question_type": "Q4",
+    "control": "wrong_member_same_count",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [
+        "0:missing_member",
+        "0:extra_member"
+      ],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-012",
+    "question_type": "Q4",
+    "control": "wrong_count",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [
+        "0:matching_count",
+        "0:list_count_consistency"
+      ],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-013",
+    "question_type": "Q4",
+    "control": "bounded_member_evidence_omitted",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [],
+      "unknown": [
+        "0:missing_member",
+        "0:extra_member",
+        "0:matching_count"
+      ],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-014",
+    "question_type": "Q4",
+    "control": "empty_result_with_complete_declared_scope",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-015",
+    "question_type": "Q5",
+    "control": "correct_units_and_role",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-016",
+    "question_type": "Q5",
+    "control": "sample_index_as_mm",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [
+        "0:value_agreement"
+      ],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-017",
+    "question_type": "Q5",
+    "control": "nominal_called_measured",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [
+        "0:declared_role"
+      ],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-018",
+    "question_type": "Q5",
+    "control": "role_catalog_missing",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [],
+      "unknown": [
+        "0:declared_role"
+      ],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-019",
+    "question_type": "Q6",
+    "control": "same_file",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-020",
+    "question_type": "Q6",
+    "control": "same_code_name_wrong_file",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [
+        "0:declared_reference",
+        "0:workbook_hash",
+        "0:workbook_path"
+      ],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-021",
+    "question_type": "Q7",
+    "control": "interior_date",
+    "basis": "wholly authored synthetic history",
+    "expected": {
+      "flag": [],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-022",
+    "question_type": "Q7",
+    "control": "latest_misapplied",
+    "basis": "wholly authored synthetic history",
+    "expected": {
+      "flag": [
+        "0:selected_binding"
+      ],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-023",
+    "question_type": "Q7",
+    "control": "exact_boundary",
+    "basis": "wholly authored synthetic history",
+    "expected": {
+      "flag": [],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-024",
+    "question_type": "Q7",
+    "control": "wrong_scope_distractor",
+    "basis": "wholly authored synthetic history",
+    "expected": {
+      "flag": [],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-025",
+    "question_type": "Q7",
+    "control": "overlap_acknowledged",
+    "basis": "wholly authored synthetic history",
+    "expected": {
+      "flag": [],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-026",
+    "question_type": "Q7",
+    "control": "overlap_ignored",
+    "basis": "wholly authored synthetic history",
+    "expected": {
+      "flag": [
+        "0:temporal_state"
+      ],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-027",
+    "question_type": "Q7",
+    "control": "history_unavailable",
+    "basis": "wholly authored synthetic history",
+    "expected": {
+      "flag": [],
+      "unknown": [
+        "0:temporal_state",
+        "0:selected_binding",
+        "0:missing_latest",
+        "0:extra_latest"
+      ],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-028",
+    "question_type": "Q7",
+    "control": "end_boundary_no_match",
+    "basis": "wholly authored synthetic history",
+    "expected": {
+      "flag": [],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-029",
+    "question_type": "Q7",
+    "control": "tied_latest_set",
+    "basis": "wholly authored synthetic history",
+    "expected": {
+      "flag": [],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-030",
+    "question_type": "Q7",
+    "control": "invalid_date",
+    "basis": "authored malformed synthetic history",
+    "expected": {
+      "flag": [],
+      "unknown": [],
+      "input_failure": true
+    }
+  },
+  {
+    "case_id": "case-031",
+    "question_type": "Q8",
+    "control": "supported_setting_missing_measurement",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [],
+      "unknown": [
+        "1:declared_role"
+      ],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-032",
+    "question_type": "Q8",
+    "control": "version_field_unavailable_in_selected_record",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [],
+      "unknown": [
+        "0:field_binding",
+        "0:value_agreement",
+        "0:unit_agreement"
+      ],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-033",
+    "question_type": "Q9",
+    "control": "all_correct_draft",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-034",
+    "question_type": "Q9",
+    "control": "wrong_label_and_measured_claim",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [
+        "0:lookup_value",
+        "1:declared_role"
+      ],
+      "unknown": [],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-035",
+    "question_type": "Q9",
+    "control": "partly_supported_draft",
+    "basis": "retained source plus authored structured claim",
+    "expected": {
+      "flag": [],
+      "unknown": [
+        "0:dictionary_key",
+        "0:lookup_value",
+        "0:workbook_hash",
+        "0:workbook_path",
+        "0:declared_header"
+      ],
+      "input_failure": false
+    }
+  },
+  {
+    "case_id": "case-036",
+    "question_type": "Q9",
+    "control": "dishonest_role_projection_blindspot",
+    "basis": "authored text/typed-role mismatch; passing typed checks is known unverified NLP blindspot",
+    "expected": {
+      "flag": [],
+      "unknown": [],
+      "input_failure": false
+    }
+  }
+]

@@ -1,0 +1,48 @@
+{
+  "inputs": {
+    "questions": "research/graphrag-evidence-1/development-questions.json",
+    "source": "research/graphrag-evidence-1/source-corpus-v1.json",
+    "resolver": "scripts/graphrag_explicit_anchor.py",
+    "validator": "scripts/graphrag_expand.py",
+    "contract": "research/refined-hybrid-1/explicit-anchor-contract-v1.json",
+    "runner": "scripts/run_explicit_anchor_diagnostic.py"
+  },
+  "input_hashes": {
+    "questions": "f7d12a0414e8a2e7099b2525fbac11a1c460adf3a9322a7b6e93cb6a97b57212",
+    "source": "900bb25d15bcb4dbab89076d3a1372d84762829dcd645bae7c17bc60b9693ac8",
+    "resolver": "c7817945696db0ce30ed84f9fd36058e4e84cabf06a0ed97b5dd2999830571e4",
+    "validator": "93e748eebd72a64f69f1af2a560dd68dbbb4c28700d604875f9f93fc26fde216",
+    "contract": "296ee509c7d383b4b496fa771eea8cac5e3c63a769f6bf507b2d7c0fe3bca091",
+    "runner": "896879d1537a5b130f46801e155aff58a1bf9d2a9463c9ce6087a1ef0d0cdc8e"
+  },
+  "planned_question_ids": [
+    "dev-001",
+    "dev-002",
+    "dev-003",
+    "dev-004",
+    "dev-005",
+    "dev-006",
+    "dev-007",
+    "dev-008",
+    "dev-009",
+    "dev-010",
+    "dev-011",
+    "dev-012",
+    "dev-013",
+    "dev-014",
+    "dev-015",
+    "dev-016",
+    "dev-017",
+    "dev-018",
+    "dev-019",
+    "dev-020",
+    "dev-021",
+    "dev-022",
+    "dev-023",
+    "dev-024"
+  ],
+  "consumed_development": true,
+  "scorer_used": false,
+  "retrieval_run": false,
+  "paid_calls": 0
+}

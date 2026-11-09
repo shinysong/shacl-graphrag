@@ -1,0 +1,4 @@
+# Approved paired-review campaign design
+Read only _workspace/postreview-continuation-20261104/approved-execution-design.json, paid-authorization.json and current-price-envelope.json; scripts/postreview_messages_v3.py may be inspected. Do not read raw historical QA outputs, secrets, evaluation references or the other reviewer. Do not modify source or run paid/network calls.
+
+Review design and missing launch gates, NOT paid launch permission. User has now approved162attempts/10USD, deadline remains22:46:27UTC with only minutes left. Existing message builder is offline only. Coordinator will not call without implemented/reviewed admission. Review whether protocol and handoff honestly preserve boundaries, costs, failures and same original draft. Return ready only for design audit if appropriate; record remaining launch blockers explicitly as warnings rather than pretending runner exists. No source/test checks registered: plan-only review.

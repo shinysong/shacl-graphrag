@@ -1,0 +1,111 @@
+{
+  "name": "rag-retrieval-2f64391eec38",
+  "commands": [
+    {
+      "argv": [
+        "docker",
+        "run",
+        "-d",
+        "--pull",
+        "never",
+        "--name",
+        "rag-retrieval-2f64391eec38",
+        "--label",
+        "research-owner=rag-retrieval-2f64391eec38",
+        "--cpus",
+        "2",
+        "--memory",
+        "2g",
+        "--memory-swap",
+        "2g",
+        "-p",
+        "127.0.0.1:17474:7474",
+        "-e",
+        "NEO4J_AUTH=none",
+        "-e",
+        "NEO4J_server_memory_heap_initial__size=512m",
+        "-e",
+        "NEO4J_server_memory_heap_max__size=512m",
+        "-e",
+        "NEO4J_server_memory_pagecache_size=256m",
+        "sha256:f1e52d4dc6da122468c4a3c1050a4f5e117f6d3268625237c34d49166f0d6082"
+      ],
+      "exit_code": 0,
+      "stdout": "25833cde90565f8fe5dfc29c20460952cb7d0582dd3c068100a2376d19dece66\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "25833cde90565f8fe5dfc29c20460952cb7d0582dd3c068100a2376d19dece66"
+      ],
+      "exit_code": 0,
+      "stdout": "[\n    {\n        \"Id\": \"25833cde90565f8fe5dfc29c20460952cb7d0582dd3c068100a2376d19dece66\",\n        \"Created\": \"2026-11-02T09:34:23.024282202Z\",\n        \"Path\": \"tini\",\n        \"Args\": [\n            \"-g\",\n            \"--\",\n            \"/startup/docker-entrypoint.sh\",\n            \"neo4j\"\n        ],\n        \"State\": {\n            \"Status\": \"running\",\n            \"Running\": true,\n            \"Paused\": false,\n            \"Restarting\": false,\n            \"OOMKilled\": false,\n            \"Dead\": false,\n            \"Pid\": 174557,\n            \"ExitCode\": 0,\n            \"Error\": \"\",\n            \"StartedAt\": \"2026-11-02T09:34:23.093652023Z\",\n            \"FinishedAt\": \"0001-01-01T00:00:00Z\"\n        },\n        \"Image\": \"sha256:f1e52d4dc6da122468c4a3c1050a4f5e117f6d3268625237c34d49166f0d6082\",\n        \"ResolvConfPath\": \"/var/lib/docker/containers/25833cde90565f8fe5dfc29c20460952cb7d0582dd3c068100a2376d19dece66/resolv.conf\",\n        \"HostnamePath\": \"/var/lib/docker/containers/25833cde90565f8fe5dfc29c20460952cb7d0582dd3c068100a2376d19dece66/hostname\",\n        \"HostsPath\": \"/var/lib/docker/containers/25833cde90565f8fe5dfc29c20460952cb7d0582dd3c068100a2376d19dece66/hosts\",\n        \"LogPath\": \"/var/lib/docker/containers/25833cde90565f8fe5dfc29c20460952cb7d0582dd3c068100a2376d19dece66/25833cde90565f8fe5dfc29c20460952cb7d0582dd3c068100a2376d19dece66-json.log\",\n        \"Name\": \"/rag-retrieval-2f64391eec38\",\n        \"RestartCount\": 0,\n        \"Driver\": \"overlayfs\",\n        \"Platform\": \"linux\",\n        \"MountLabel\": \"\",\n        \"ProcessLabel\": \"\",\n        \"AppArmorProfile\": \"docker-default\",\n        \"ExecIDs\": null,\n        \"HostConfig\": {\n            \"Binds\": null,\n            \"ContainerIDFile\": \"\",\n            \"LogConfig\": {\n                \"Type\": \"json-file\",\n                \"Config\": {}\n            },\n            \"NetworkMode\": \"bridge\",\n            \"PortBindings\": {\n                \"7474/tcp\": [\n                    {\n                        \"HostIp\": \"127.0.0.1\",\n                        \"HostPort\": \"17474\"\n                    }\n                ]\n            },\n            \"RestartPolicy\": {\n                \"Name\": \"no\",\n                \"MaximumRetryCount\": 0\n            },\n            \"AutoRemove\": false,\n            \"VolumeDriver\": \"\",\n            \"VolumesFrom\": null,\n            \"ConsoleSize\": [\n                0,\n                0\n            ],\n            \"CapAdd\": null,\n            \"CapDrop\": null,\n            \"CgroupnsMode\": \"private\",\n            \"Dns\": null,\n            \"DnsOptions\": [],\n            \"DnsSearch\": [],\n            \"ExtraHosts\": null,\n            \"GroupAdd\": null,\n            \"IpcMode\": \"private\",\n            \"Cgroup\": \"\",\n            \"Links\": null,\n            \"OomScoreAdj\": 0,\n            \"PidMode\": \"\",\n            \"Privileged\": false,\n            \"PublishAllPorts\": false,\n            \"ReadonlyRootfs\": false,\n            \"SecurityOpt\": null,\n            \"UTSMode\": \"\",\n            \"UsernsMode\": \"\",\n            \"ShmSize\": 67108864,\n            \"Runtime\": \"runc\",\n            \"Isolation\": \"\",\n            \"CpuShares\": 0,\n            \"Memory\": 2147483648,\n            \"NanoCpus\": 2000000000,\n            \"CgroupParent\": \"\",\n            \"BlkioWeight\": 0,\n            \"BlkioWeightDevice\": [],\n            \"BlkioDeviceReadBps\": [],\n            \"BlkioDeviceWriteBps\": [],\n            \"BlkioDeviceReadIOps\": [],\n            \"BlkioDeviceWriteIOps\": [],\n            \"CpuPeriod\": 0,\n            \"CpuQuota\": 0,\n            \"CpuRealtimePeriod\": 0,\n            \"CpuRealtimeRuntime\": 0,\n            \"CpusetCpus\": \"\",\n            \"CpusetMems\": \"\",\n            \"Devices\": [],\n            \"DeviceCgroupRules\": null,\n            \"DeviceRequests\": null,\n            \"MemoryReservation\": 0,\n            \"MemorySwap\": 2147483648,\n            \"MemorySwappiness\": null,\n            \"OomKillDisable\": null,\n            \"PidsLimit\": null,\n            \"Ulimits\": [],\n            \"CpuCount\": 0,\n            \"CpuPercent\": 0,\n            \"IOMaximumIOps\": 0,\n            \"IOMaximumBandwidth\": 0,\n            \"MaskedPaths\": [\n                \"/proc/acpi\",\n                \"/proc/asound\",\n                \"/proc/interrupts\",\n                \"/proc/kcore\",\n                \"/proc/keys\",\n                \"/proc/latency_stats\",\n                \"/proc/sched_debug\",\n                \"/proc/scsi\",\n                \"/proc/timer_list\",\n                \"/proc/timer_stats\",\n                \"/sys/devices/virtual/powercap\",\n                \"/sys/firmware\"\n            ],\n            \"ReadonlyPaths\": [\n                \"/proc/bus\",\n                \"/proc/fs\",\n                \"/proc/irq\",\n                \"/proc/sys\",\n                \"/proc/sysrq-trigger\"\n            ]\n        },\n        \"Storage\": {\n            \"RootFS\": {\n                \"Snapshot\": {\n                    \"Name\": \"overlayfs\"\n                }\n            }\n        },\n        \"Mounts\": [\n            {\n                \"Type\": \"volume\",\n                \"Name\": \"0ba45227cf26019ae0b8a6a2760494dffbba3b3ca0eebe6de261fdf033df867e\",\n                \"Source\": \"/var/lib/docker/volumes/0ba45227cf26019ae0b8a6a2760494dffbba3b3ca0eebe6de261fdf033df867e/_data\",\n                \"Destination\": \"/data\",\n                \"Driver\": \"local\",\n                \"Mode\": \"\",\n                \"RW\": true,\n                \"Propagation\": \"\"\n            },\n            {\n                \"Type\": \"volume\",\n                \"Name\": \"191a88613dbc2898ccf85e54dcdf37244f41a720ae20fabc97297b0dd8368e13\",\n                \"Source\": \"/var/lib/docker/volumes/191a88613dbc2898ccf85e54dcdf37244f41a720ae20fabc97297b0dd8368e13/_data\",\n                \"Destination\": \"/logs\",\n                \"Driver\": \"local\",\n                \"Mode\": \"\",\n                \"RW\": true,\n                \"Propagation\": \"\"\n            }\n        ],\n        \"Config\": {\n            \"Hostname\": \"25833cde9056\",\n            \"Domainname\": \"\",\n            \"User\": \"\",\n            \"AttachStdin\": false,\n            \"AttachStdout\": false,\n            \"AttachStderr\": false,\n            \"ExposedPorts\": {\n                \"7473/tcp\": {},\n                \"7474/tcp\": {},\n                \"7687/tcp\": {}\n            },\n            \"Tty\": false,\n            \"OpenStdin\": false,\n            \"StdinOnce\": false,\n            \"Env\": [\n                \"NEO4J_AUTH=none\",\n                \"NEO4J_server_memory_heap_initial__size=512m\",\n                \"NEO4J_server_memory_heap_max__size=512m\",\n                \"NEO4J_server_memory_pagecache_size=256m\",\n                \"PATH=/var/lib/neo4j/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\",\n                \"JAVA_HOME=/opt/java/openjdk\",\n                \"NEO4J_SHA256=d279ae6a9b38034280681a558b0cd222dce89f87cc3d9867f1f7bd28ef5ebc30\",\n                \"NEO4J_TARBALL=neo4j-community-5.26.32-unix.tar.gz\",\n                \"NEO4J_EDITION=community\",\n                \"NEO4J_HOME=/var/lib/neo4j\",\n                \"LANG=C.UTF-8\"\n            ],\n            \"Cmd\": [\n                \"neo4j\"\n            ],\n            \"Image\": \"sha256:f1e52d4dc6da122468c4a3c1050a4f5e117f6d3268625237c34d49166f0d6082\",\n            \"Volumes\": {\n                \"/data\": {},\n                \"/logs\": {}\n            },\n            \"WorkingDir\": \"/var/lib/neo4j\",\n            \"Entrypoint\": [\n                \"tini\",\n                \"-g\",\n                \"--\",\n                \"/startup/docker-entrypoint.sh\"\n            ],\n            \"Labels\": {\n                \"research-owner\": \"rag-retrieval-2f64391eec38\"\n            }\n        },\n        \"NetworkSettings\": {\n            \"SandboxID\": \"559caf4d60fd7762148e9329102b44640bcf55a5e90cd7bb6f4fa02f14bfa703\",\n            \"SandboxKey\": \"/var/run/docker/netns/559caf4d60fd\",\n            \"Ports\": {\n                \"7473/tcp\": null,\n                \"7474/tcp\": [\n                    {\n                        \"HostIp\": \"127.0.0.1\",\n                        \"HostPort\": \"17474\"\n                    }\n                ],\n                \"7687/tcp\": null\n            },\n            \"Networks\": {\n                \"bridge\": {\n                    \"IPAMConfig\": null,\n                    \"Links\": null,\n                    \"Aliases\": null,\n                    \"DriverOpts\": null,\n                    \"GwPriority\": 0,\n                    \"NetworkID\": \"e24a22f34531bf029e8d97bdb7ffaaecf67d85b2cd642a85d9cd82f72d5fa27a\",\n                    \"EndpointID\": \"9466d12f324d5082855c5f2b3d26b338e7d5f6abac0951a5077e6b3d5f19357a\",\n                    \"Gateway\": \"172.17.0.1\",\n                    \"IPAddress\": \"172.17.0.2\",\n                    \"MacAddress\": \"ae:70:3d:78:68:cb\",\n                    \"IPPrefixLen\": 16,\n                    \"IPv6Gateway\": \"\",\n                    \"GlobalIPv6Address\": \"\",\n                    \"GlobalIPv6PrefixLen\": 0,\n                    \"DNSNames\": null\n                }\n            }\n        },\n        \"ImageManifestDescriptor\": {\n            \"mediaType\": \"application/vnd.oci.image.manifest.v1+json\",\n            \"digest\": \"sha256:1fea426c20cfe8c48577bba879b51769eeaf5c27db0b7441433077b3d89f5986\",\n            \"size\": 1957,\n            \"annotations\": {\n                \"com.docker.official-images.bashbrew.arch\": \"arm64v8\",\n                \"org.opencontainers.image.base.digest\": \"sha256:a2ca65377c251208de42e1a2722cb949211236c161b634f6f3663754e2d06850\",\n                \"org.opencontainers.image.base.name\": \"debian:trixie-slim\",\n                \"org.opencontainers.image.created\": \"2026-10-12T17:53:02Z\",\n                \"org.opencontainers.image.revision\": \"3abe11cd8b22f68279adf33ba879c73e10581802\",\n                \"org.opencontainers.image.source\": \"https://github.com/neo4j/docker-neo4j-publish.git#3abe11cd8b22f68279adf33ba879c73e10581802:5.26.32/trixie/community\",\n                \"org.opencontainers.image.url\": \"https://hub.docker.com/_/neo4j\",\n                \"org.opencontainers.image.version\": \"5.26.32-community-trixie\"\n            },\n            \"platform\": {\n                \"architecture\": \"arm64\",\n                \"os\": \"linux\",\n                \"variant\": \"v8\"\n            }\n        }\n    }\n]\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "timeout",
+        "--kill-after=5s",
+        "120s",
+        "uv",
+        "run",
+        "--locked",
+        "--offline",
+        "--with",
+        "tokenizers==0.22.1",
+        "python",
+        "-m",
+        "scripts.run_neo4j_retrieval",
+        "--manifest",
+        "_workspace/rag-backends-continuation-20261102/neo4j-retrieval-manifest.json",
+        "--output",
+        "research/refined-hybrid-1/neo4j-retrieval-001",
+        "--endpoint",
+        "http://127.0.0.1:17474",
+        "--namespace",
+        "rag-retrieval-2f64391eec38"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"status\": \"completed\", \"planned_questions\": 24, \"paid_calls\": 0, \"version\": [{\"name\": \"Neo4j Kernel\", \"versions\": [\"5.26.32\"], \"edition\": \"community\"}], \"namespace_cleanup\": true, \"ok\": 24, \"failed_or_unexecuted\": 0}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "docker",
+        "logs",
+        "25833cde90565f8fe5dfc29c20460952cb7d0582dd3c068100a2376d19dece66"
+      ],
+      "exit_code": 0,
+      "stdout": "2026-11-02 09:34:26.612+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'\n2026-11-02 09:34:26.626+0000 INFO  Starting...\n2026-11-02 09:34:27.532+0000 INFO  This instance is ServerId{0e90b653} (0e90b653-d1ef-4ef3-b90c-825565508765)\n2026-11-02 09:34:28.638+0000 INFO  ======== Neo4j 5.26.32 ========\n2026-11-02 09:34:30.684+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/\n2026-11-02 09:34:30.723+0000 INFO  Bolt enabled on 0.0.0.0:7687.\n2026-11-02 09:34:32.173+0000 INFO  HTTP enabled on 0.0.0.0:7474.\n2026-11-02 09:34:32.173+0000 INFO  Remote interface available at http://localhost:7474/\n2026-11-02 09:34:32.176+0000 INFO  id: 1CCBBFDCA2A7CAE017D65C4B4C743319B829B77C895C7E31600A48B61A22B171\n2026-11-02 09:34:32.176+0000 INFO  name: system\n2026-11-02 09:34:32.177+0000 INFO  creationDate: 2026-11-02T09:34:29.623Z\n2026-11-02 09:34:32.177+0000 INFO  Started.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-fv",
+        "25833cde90565f8fe5dfc29c20460952cb7d0582dd3c068100a2376d19dece66"
+      ],
+      "exit_code": 0,
+      "stdout": "25833cde90565f8fe5dfc29c20460952cb7d0582dd3c068100a2376d19dece66\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "docker",
+        "ps",
+        "-aq",
+        "--filter",
+        "id=25833cde90565f8fe5dfc29c20460952cb7d0582dd3c068100a2376d19dece66"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "runner_exit": 0,
+  "cleanup_exit": 0,
+  "removed": true
+}

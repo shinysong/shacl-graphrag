@@ -1,0 +1,95 @@
+{
+  "state": "candidate protocol only; no paid launch or efficacy result",
+  "prior_design_preserved": "revision-design-v1.json",
+  "draft_schema": "draft-schema-v2.json",
+  "draft_prompt": "draft-system-v2.txt",
+  "revision_schema": "revision-schema-v2.json",
+  "preparer": "scripts/postreview_mixed.py",
+  "claim_kinds": [
+    "recorded",
+    "lookup",
+    "derived"
+  ],
+  "declared_lookup_templates": [
+    "defect_label",
+    "nominal_idc"
+  ],
+  "review_stage": "after shared draft, advisory before optional revision",
+  "conditions": [
+    "unchanged draft reference (zero additional calls)",
+    "same-draft same-evidence self-review",
+    "same-draft same-evidence normalized advisory report review"
+  ],
+  "backend_axis": "Python and pySHACL run on identical packets; identical normalized messages are one LLM treatment, not separate independent outcomes",
+  "source_policy": "same selected source snapshots in draft and both revisions; no report-triggered lookup or hidden full-source access",
+  "gold_policy": "reference answers, source-sufficiency labels and adjudications stay outside runtime; no gold repairs",
+  "budget_policy": {
+    "paid_calls_authorized": 0,
+    "same_total_generator_limit_required": true,
+    "report_and_response_schema_count_toward_input": true,
+    "output_and_reasoning_reserve_required": true,
+    "no_context_trimming_to_fit_one_arm_only": true,
+    "provider_tokenizer_and_cache_write_costs": "not yet frozen or verified",
+    "ineligible_admission": "retain in planned denominator; do not silently substitute cases"
+  },
+  "sequence_failure_policy": {
+    "draft_failed": "retain whole planned workflow; mark both dependent revisions not_attempted_due_to_draft_failure",
+    "one_revision_failed": "retain that failure independently, never substitute sibling answer",
+    "schema_valid_wrong_answer": "retain as outcome",
+    "retries": "none without explicit bounded authorization; failures never refunded",
+    "report_generation_failed": "retain report error and dependent revision not_attempted_due_to_report_failure; self-review remains independently preparable after common schema admission"
+  },
+  "evaluation_dimensions": [
+    {
+      "name": "primary requested facts",
+      "unit": "predeclared question target; source-grounded independent adjudication",
+      "limits": "not checker conformance; no truth beyond supplied source scope"
+    },
+    {
+      "name": "projection fidelity",
+      "unit": "natural-language propositions versus declared claims, including omitted/compound/misclassified claims",
+      "limits": "must not infer complete coverage from empty or all-pass declarations"
+    },
+    {
+      "name": "citation applicability",
+      "unit": "claim/source/locator intent, including metadata versus content",
+      "limits": "literal pointer-value mismatch is only a review cue"
+    },
+    {
+      "name": "unsupported certainty",
+      "unit": "assertion without sufficient selected evidence",
+      "limits": "source-wide absence and retrieval omission separate"
+    },
+    {
+      "name": "unnecessary withholding",
+      "unit": "predeclared eligible requested fact",
+      "limits": "wrong asserted answers counted separately"
+    },
+    {
+      "name": "report usefulness",
+      "unit": "question-relevant review pointers, irrelevant warnings, correct warnings and unreviewable cases",
+      "limits": "human review time and usefulness need actual human study"
+    },
+    {
+      "name": "revision transitions",
+      "unit": "same-draft paired corrected errors, introduced errors, unjustified removals and unchanged cases",
+      "limits": "declared revision_log is audited against actual outputs, not taken as truth"
+    }
+  ],
+  "scope_limits": [
+    "consumed source development candidates; no fresh heldout claim",
+    "manual two-template semantics; not automatic schema/ontology generation",
+    "wrong claim kind or anchor may bypass checks; separate fidelity audit",
+    "no SWRL/physical prescriptions, Neptune resources or deployment",
+    "no report efficacy claim before actual authorized generation and independent scoring"
+  ],
+  "future_human_input": [
+    "new bounded paid scope if model execution requested",
+    "independent domain expert review remains unmeasured"
+  ],
+  "self_review_preparation": "schema admission only, no checker execution; checker-invalid bindings can remain unchanged in self-review input",
+  "evaluation_limits": [
+    "common total budget estimates report-access treatment, not pure content effect isolated from added prompt length",
+    "same-row questions and evidence variants are dependent development observations"
+  ]
+}

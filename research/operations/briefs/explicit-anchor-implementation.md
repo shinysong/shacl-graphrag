@@ -1,0 +1,7 @@
+# Literal locator implementation
+
+Scope: implement and test source-only literal candidate resolution following the unchanged research/refined-hybrid-1/explicit-anchor-contract-v1.json. Code scripts/graphrag_explicit_anchor.py; tests tests/test_graphrag_explicit_anchor.py. No scorer, gold, IDs inferred from suffixes, source calls or retrieval changes. Prior cycle contract-only authorization applies to that completed freeze; current bounded implementation cycle is within ongoing offline user scope.
+
+Pure resolve(question, source_bytes) uses exact syntax and whole-bundle _index validation plus all-annotation metadata validation. Unsupported expressions leave source validity unassessed. Candidate resolution does not understand tail negation/comparison. Other numbers do not select a task or answer. Original IDs and raw-byte hashes retained; ambiguous source records remain multiple. Future anchoring and generation remain disabled pending common full-message budget.
+
+Independent methods review: boundary and claims; implementation review: code and tests versus contract. Read only these files and scripts/graphrag_expand.py; no historical QA/scorer references. Registered checks empty; after review manually run uv run --locked python -m unittest discover -s tests -p test_graphrag_explicit_anchor.py -v (timeout 60s). This cycle software controls only; the all-24 consumed question/source diagnostic is a next step. No paid calls, AWS, push or deployment. Freeze code/test/contract/validator hashes with actual test log and preserve failures.

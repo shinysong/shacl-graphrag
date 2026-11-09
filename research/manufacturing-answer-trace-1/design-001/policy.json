@@ -1,0 +1,43 @@
+{
+  "id": "manufacturing-answer-policy-v1",
+  "origin": "authored experiment interpretation of supplied questions and headers; not automatically learned ontology",
+  "Q4": {
+    "universe": [
+      "PP6:2",
+      "PP6:12"
+    ],
+    "lower": 100,
+    "upper": 250,
+    "label": "Porosity",
+    "origin": "explicit question bounded universe and predicate"
+  },
+  "Q5": {
+    "roles": {
+      "?mm": {
+        "unit": "mm",
+        "role": "position"
+      },
+      "?sample": {
+        "unit": "sample index",
+        "role": "index"
+      },
+      "?nominal": {
+        "unit": "A",
+        "role": "nominal setting"
+      }
+    },
+    "origin": "original headers plus declared codebook-versus-measured interpretation; does not prove physical truth"
+  },
+  "Q6": {
+    "same_workbook_only": true,
+    "target_workbook": "PP6",
+    "origin": "explicit question policy, not universal manufacturing rule"
+  },
+  "Q9": {
+    "authored_draft": {
+      "defect_label": "Porosity",
+      "actual_measured_current": 450
+    },
+    "origin": "question-supplied artificial draft, not actual model mistake"
+  }
+}

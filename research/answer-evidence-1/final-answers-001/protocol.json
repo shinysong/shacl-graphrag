@@ -1,0 +1,19 @@
+{
+ "id":"answer-campaign-20261103", "authorization":{"max_attempts":72,"max_usd":1,"deadline":"2026-11-03T21:13:15+00:00"},
+ "population":"24 consumed development questions, one B/C/D answer each; no independent benchmark or preregistered efficacy claim",
+ "inputs":"Unchanged answer-inputs-001; same source access and retrieval budgets; D exact C evidence with advisory SHACL report. Original byte budget and new common generator cap are separate.",
+ "generator":{"model":"openai/gpt-4o-mini","provider":"OpenAI only","temperature":0,"seed":20261103,"input_cap":16384,"output_cap":2048,"response_format":"json_object","retry":false,"fallback":false,"max_price_per_million":{"prompt":0.15,"completion":0.6}},
+ "cost":"Reserve $0.01 before each attempt, never refund. Max 72 reservations=$0.72; prompt/output bound costs $0.0036864 at pinned ceiling. Unknown costs stop. No automatic restart. Existing campaign ledgers untouched.",
+ "tokenizer":"tiktoken 0.12.0 o200k_base with chat framing estimate; independent conservative UTF8 serialized-message bytes plus 4096 allowance <=16384. Provider-reported counts checked afterwards. No claim exact pre-call token counts.",
+ "scoring":{
+   "procedure":"Post-generation coordinator adjudication only; unblinded, exploratory, not domain-expert or independent human validation. No evaluation targets or references imported by generator.",
+   "primary_target":"Compare the requested recorded setting, nominal Idc (not measured current), defect label, or review version against frozen evaluation-targets-001. Faithful translation allowed. Correct value must concern the requested record/field; stray value matches do not count. Ambiguous interpretations remain not_evaluable.",
+   "target_outcome":["correct","wrong","withheld","not_evaluable"],
+   "withholding":"Only selected-support=true fields eligible; response failure remains unknown, not safe withholding. Report yes/all eligible lowerbound and yes/evaluable conditional denominator together. Source-present retrieval omission and bundle absence separate.",
+   "citations":"Mechanical selected-ID membership is separate from exact locator resolution and claim entailment. Assess factual claims including answer text, not just claims array; repeats counted once per proposition, contradictory claims separately. Unsupported certainty includes global absence, measured-current assertion from nominal setting, and validation-as-truth. Unknown entailment retained.",
+   "review_pointers":"Separately record concrete review target plus reason, evidential basis, relevance; asking for missing evidence is not a physical prescription. Presence alone is not utility.",
+   "report_effect":"Paired C/D primary outcomes, unsupported certainty, unnecessary withholding and relevant review pointers; no forced veto. Small consumed cohort, one sample/model, report-induced context-length difference, unblinded adjudication preclude general efficacy claims.",
+   "denominators":"72 planned, 24 per arm, all failure types and unattempted retained. Also source-present subset and selected-support eligibility. Software checks are not QA outcomes. No collapsing errors into abstentions. Report missing semantic adjudications explicitly."
+ },
+ "later":"Neptune actual execution awaits account/region/duration/costcap. Natural-language shape generation and SWRL/action recommendations outside this campaign."
+}

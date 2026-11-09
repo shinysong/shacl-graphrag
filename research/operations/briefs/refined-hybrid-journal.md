@@ -1,0 +1,7 @@
+# Consolidated refined hybrid research record
+
+Review docs/journal/2026-11-02-refined-hybrid-backends.md and machine ledger docs/experiments/records/20261102-refined-hybrid-evidence.json. The ledger binds nine saved summaries and computed paired changes; original files are accessible for implementation audit. Main research remains consumed development, no QA generation, no superiority claims. Keep actual Neo4j and simulated Neptune distinct,52missing selectedtargets separate from source absence,9vacuous raw passes separate from positive validation, E5wholemessages separate from actualgeneratorfit. Commonquestion18present+6sourcebundleabsent; no denom dropping. Diagram editable Mermaid with adjacent prose fallback. New journal index link. No push/deploy.
+
+Humanize light run _workspace/2026-11-02-002-3df6: five local wording edits, gate0 change0.49%, selfcheck6/6. Numbers/code/links/diagram preserved; published-body copy omits authoring summary block, ignoredfinal retains it. This is writing verification, not experiment evidence.
+
+Methods review claims and scope using packet. Implementation review checks article against ledger and actual linked source artifacts; no source changes. Registeredchecks empty. After review run uv locked docs mkdocs strict and build_site.sh; if Ruby/bundle unavailable preserve failure and distinguish prepared Chirpy source from rendered/published site. Do not claim diagram browser rendering without observation. No new infrastructure authorized for site build.

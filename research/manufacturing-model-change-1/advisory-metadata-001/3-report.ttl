@@ -1,0 +1,17 @@
+@prefix e: <urn:manufacturing-review:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode e:packet ;
+            sh:resultMessage "unsupported_returned_value" ;
+            sh:resultPath e:unsupported_count ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MaxInclusiveConstraintComponent ;
+            sh:sourceShape [ sh:maxInclusive 0 ;
+                    sh:message "unsupported_returned_value" ;
+                    sh:path e:unsupported_count ] ;
+            sh:value 1 ] .
+

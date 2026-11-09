@@ -1,0 +1,32 @@
+{
+  "provenance": "Entirely authored synthetic diagnostic, not actual PP6 document history",
+  "policy": {
+    "scope_match": "record.scope == document.scope",
+    "interval": "valid_from <= record.date < valid_to",
+    "selection": "one applicable document required; overlapping matches ambiguous, no match unknown; latest label is not precedence"
+  },
+  "record": {
+    "scope": "PP6",
+    "date": "2025-06-30"
+  },
+  "documents": [
+    {
+      "version": "v1",
+      "scope": "PP6",
+      "valid_from": "2025-01-01",
+      "valid_to": "2025-07-01"
+    },
+    {
+      "version": "v2",
+      "scope": "PP6",
+      "valid_from": "2025-07-01",
+      "valid_to": "2026-01-01"
+    }
+  ],
+  "diagnostic_variants": [
+    "base nonoverlapping",
+    "remove history",
+    "move v2 start to2025-06-01 to create explicit overlap"
+  ],
+  "warning": "variants are designs only, not measured outcomes; do not pass variant labels as runtime hints"
+}

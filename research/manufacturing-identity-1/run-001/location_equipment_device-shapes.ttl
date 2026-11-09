@@ -1,0 +1,24 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+owl:Class rdfs:subClassOf rdfs:Class .
+
+owl:DatatypeProperty rdfs:subClassOf rdf:Property .
+
+<urn:manufacturing-identity-review:GroupShape> a sh:NodeShape ;
+    sh:property <urn:manufacturing-identity-review:GroupLocation> ;
+    sh:targetClass <urn:manufacturing-identity-review:Group> .
+
+<urn:manufacturing-identity-review:RecordShape> a sh:NodeShape ;
+    sh:property <urn:manufacturing-identity-review:RecordLocation> ;
+    sh:targetClass <urn:manufacturing-identity-review:Record> .
+
+<urn:manufacturing-identity-review:GroupLocation> sh:maxCount 1 ;
+    sh:path <urn:manufacturing-identity-review:location> .
+
+<urn:manufacturing-identity-review:RecordLocation> sh:minCount 1 ;
+    sh:path <urn:manufacturing-identity-review:location> .
+

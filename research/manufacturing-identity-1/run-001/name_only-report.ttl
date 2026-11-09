@@ -1,0 +1,13 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode <urn:manufacturing-identity-review:group:9e7fb46d8a28f3abdd688517018cdb93880b3c4dc0bf3a0a1c76eb11dc506f5d> ;
+            sh:resultMessage "More than 1 values on <urn:manufacturing-identity-review:group:9e7fb46d8a28f3abdd688517018cdb93880b3c4dc0bf3a0a1c76eb11dc506f5d>-><urn:manufacturing-identity-review:location>" ;
+            sh:resultPath <urn:manufacturing-identity-review:location> ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+            sh:sourceShape <urn:manufacturing-identity-review:GroupLocation> ] .
+

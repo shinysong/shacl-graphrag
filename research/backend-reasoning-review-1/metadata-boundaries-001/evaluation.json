@@ -1,0 +1,426 @@
+{
+  "planned": 34,
+  "observed": 34,
+  "completed_slots": 30,
+  "checker_failures": 4,
+  "paired_completed": 13,
+  "paired_agreeing": 12,
+  "pairs": [
+    {
+      "id": "canonical_same",
+      "both_completed": true,
+      "codes_agree": true,
+      "python": {
+        "checker": "python",
+        "codes": [],
+        "id": "canonical_same",
+        "review_requested": false,
+        "status": "completed"
+      },
+      "shacl": {
+        "checker": "shacl",
+        "codes": [],
+        "conforms": true,
+        "id": "canonical_same",
+        "review_requested": false,
+        "status": "completed"
+      }
+    },
+    {
+      "id": "empty",
+      "both_completed": true,
+      "codes_agree": true,
+      "python": {
+        "checker": "python",
+        "codes": [
+          "malformed_current_fingerprint",
+          "malformed_used_fingerprint"
+        ],
+        "id": "empty",
+        "review_requested": true,
+        "status": "completed"
+      },
+      "shacl": {
+        "checker": "shacl",
+        "codes": [
+          "malformed_current_fingerprint",
+          "malformed_used_fingerprint"
+        ],
+        "conforms": false,
+        "id": "empty",
+        "review_requested": true,
+        "status": "completed"
+      }
+    },
+    {
+      "id": "short",
+      "both_completed": true,
+      "codes_agree": true,
+      "python": {
+        "checker": "python",
+        "codes": [
+          "malformed_current_fingerprint",
+          "malformed_used_fingerprint"
+        ],
+        "id": "short",
+        "review_requested": true,
+        "status": "completed"
+      },
+      "shacl": {
+        "checker": "shacl",
+        "codes": [
+          "malformed_current_fingerprint",
+          "malformed_used_fingerprint"
+        ],
+        "conforms": false,
+        "id": "short",
+        "review_requested": true,
+        "status": "completed"
+      }
+    },
+    {
+      "id": "long",
+      "both_completed": true,
+      "codes_agree": true,
+      "python": {
+        "checker": "python",
+        "codes": [
+          "malformed_current_fingerprint",
+          "malformed_used_fingerprint"
+        ],
+        "id": "long",
+        "review_requested": true,
+        "status": "completed"
+      },
+      "shacl": {
+        "checker": "shacl",
+        "codes": [
+          "malformed_current_fingerprint",
+          "malformed_used_fingerprint"
+        ],
+        "conforms": false,
+        "id": "long",
+        "review_requested": true,
+        "status": "completed"
+      }
+    },
+    {
+      "id": "uppercase",
+      "both_completed": true,
+      "codes_agree": true,
+      "python": {
+        "checker": "python",
+        "codes": [
+          "malformed_current_fingerprint",
+          "malformed_used_fingerprint"
+        ],
+        "id": "uppercase",
+        "review_requested": true,
+        "status": "completed"
+      },
+      "shacl": {
+        "checker": "shacl",
+        "codes": [
+          "malformed_current_fingerprint",
+          "malformed_used_fingerprint"
+        ],
+        "conforms": false,
+        "id": "uppercase",
+        "review_requested": true,
+        "status": "completed"
+      }
+    },
+    {
+      "id": "lf_suffix",
+      "both_completed": true,
+      "codes_agree": false,
+      "python": {
+        "checker": "python",
+        "codes": [
+          "malformed_current_fingerprint",
+          "malformed_used_fingerprint"
+        ],
+        "id": "lf_suffix",
+        "review_requested": true,
+        "status": "completed"
+      },
+      "shacl": {
+        "checker": "shacl",
+        "codes": [],
+        "conforms": true,
+        "id": "lf_suffix",
+        "review_requested": false,
+        "status": "completed"
+      }
+    },
+    {
+      "id": "crlf_suffix",
+      "both_completed": true,
+      "codes_agree": true,
+      "python": {
+        "checker": "python",
+        "codes": [
+          "malformed_current_fingerprint",
+          "malformed_used_fingerprint"
+        ],
+        "id": "crlf_suffix",
+        "review_requested": true,
+        "status": "completed"
+      },
+      "shacl": {
+        "checker": "shacl",
+        "codes": [
+          "malformed_current_fingerprint",
+          "malformed_used_fingerprint"
+        ],
+        "conforms": false,
+        "id": "crlf_suffix",
+        "review_requested": true,
+        "status": "completed"
+      }
+    },
+    {
+      "id": "lf_prefix",
+      "both_completed": true,
+      "codes_agree": true,
+      "python": {
+        "checker": "python",
+        "codes": [
+          "malformed_current_fingerprint",
+          "malformed_used_fingerprint"
+        ],
+        "id": "lf_prefix",
+        "review_requested": true,
+        "status": "completed"
+      },
+      "shacl": {
+        "checker": "shacl",
+        "codes": [
+          "malformed_current_fingerprint",
+          "malformed_used_fingerprint"
+        ],
+        "conforms": false,
+        "id": "lf_prefix",
+        "review_requested": true,
+        "status": "completed"
+      }
+    },
+    {
+      "id": "space_suffix",
+      "both_completed": true,
+      "codes_agree": true,
+      "python": {
+        "checker": "python",
+        "codes": [
+          "malformed_current_fingerprint",
+          "malformed_used_fingerprint"
+        ],
+        "id": "space_suffix",
+        "review_requested": true,
+        "status": "completed"
+      },
+      "shacl": {
+        "checker": "shacl",
+        "codes": [
+          "malformed_current_fingerprint",
+          "malformed_used_fingerprint"
+        ],
+        "conforms": false,
+        "id": "space_suffix",
+        "review_requested": true,
+        "status": "completed"
+      }
+    },
+    {
+      "id": "unicode",
+      "both_completed": true,
+      "codes_agree": true,
+      "python": {
+        "checker": "python",
+        "codes": [
+          "malformed_current_fingerprint",
+          "malformed_used_fingerprint"
+        ],
+        "id": "unicode",
+        "review_requested": true,
+        "status": "completed"
+      },
+      "shacl": {
+        "checker": "shacl",
+        "codes": [
+          "malformed_current_fingerprint",
+          "malformed_used_fingerprint"
+        ],
+        "conforms": false,
+        "id": "unicode",
+        "review_requested": true,
+        "status": "completed"
+      }
+    },
+    {
+      "id": "integer",
+      "both_completed": false,
+      "codes_agree": false,
+      "python": {
+        "checker": "python",
+        "error": "TypeError: expected string or bytes-like object, got 'int'",
+        "id": "integer",
+        "status": "checker_failure"
+      },
+      "shacl": {
+        "checker": "shacl",
+        "codes": [
+          "malformed_current_fingerprint",
+          "malformed_used_fingerprint"
+        ],
+        "conforms": false,
+        "id": "integer",
+        "review_requested": true,
+        "status": "completed"
+      }
+    },
+    {
+      "id": "boolean",
+      "both_completed": false,
+      "codes_agree": false,
+      "python": {
+        "checker": "python",
+        "error": "TypeError: expected string or bytes-like object, got 'bool'",
+        "id": "boolean",
+        "status": "checker_failure"
+      },
+      "shacl": {
+        "checker": "shacl",
+        "codes": [
+          "malformed_current_fingerprint",
+          "malformed_used_fingerprint"
+        ],
+        "conforms": false,
+        "id": "boolean",
+        "review_requested": true,
+        "status": "completed"
+      }
+    },
+    {
+      "id": "list",
+      "both_completed": false,
+      "codes_agree": false,
+      "python": {
+        "checker": "python",
+        "error": "TypeError: expected string or bytes-like object, got 'list'",
+        "id": "list",
+        "status": "checker_failure"
+      },
+      "shacl": {
+        "checker": "shacl",
+        "codes": [
+          "malformed_current_fingerprint",
+          "malformed_used_fingerprint"
+        ],
+        "conforms": false,
+        "id": "list",
+        "review_requested": true,
+        "status": "completed"
+      }
+    },
+    {
+      "id": "dictionary",
+      "both_completed": false,
+      "codes_agree": false,
+      "python": {
+        "checker": "python",
+        "error": "TypeError: expected string or bytes-like object, got 'dict'",
+        "id": "dictionary",
+        "status": "checker_failure"
+      },
+      "shacl": {
+        "checker": "shacl",
+        "codes": [
+          "malformed_current_fingerprint",
+          "malformed_used_fingerprint"
+        ],
+        "conforms": false,
+        "id": "dictionary",
+        "review_requested": true,
+        "status": "completed"
+      }
+    },
+    {
+      "id": "canonical_different",
+      "both_completed": true,
+      "codes_agree": true,
+      "python": {
+        "checker": "python",
+        "codes": [
+          "fingerprint_disagreement_review_scope"
+        ],
+        "id": "canonical_different",
+        "review_requested": true,
+        "status": "completed"
+      },
+      "shacl": {
+        "checker": "shacl",
+        "codes": [
+          "fingerprint_disagreement_review_scope"
+        ],
+        "conforms": false,
+        "id": "canonical_different",
+        "review_requested": true,
+        "status": "completed"
+      }
+    },
+    {
+      "id": "missing_both",
+      "both_completed": true,
+      "codes_agree": true,
+      "python": {
+        "checker": "python",
+        "codes": [
+          "missing_current_fingerprint",
+          "missing_used_fingerprint"
+        ],
+        "id": "missing_both",
+        "review_requested": true,
+        "status": "completed"
+      },
+      "shacl": {
+        "checker": "shacl",
+        "codes": [
+          "missing_current_fingerprint",
+          "missing_used_fingerprint"
+        ],
+        "conforms": false,
+        "id": "missing_both",
+        "review_requested": true,
+        "status": "completed"
+      }
+    },
+    {
+      "id": "missing_current",
+      "both_completed": true,
+      "codes_agree": true,
+      "python": {
+        "checker": "python",
+        "codes": [
+          "fingerprint_disagreement_review_scope",
+          "missing_current_fingerprint"
+        ],
+        "id": "missing_current",
+        "review_requested": true,
+        "status": "completed"
+      },
+      "shacl": {
+        "checker": "shacl",
+        "codes": [
+          "fingerprint_disagreement_review_scope",
+          "missing_current_fingerprint"
+        ],
+        "conforms": false,
+        "id": "missing_current",
+        "review_requested": true,
+        "status": "completed"
+      }
+    }
+  ],
+  "scope": "Authored boundary diagnostic; exceptions not parity, unchanged historical outputs, no QA/DB/LLM."
+}

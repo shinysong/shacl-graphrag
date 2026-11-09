@@ -1,0 +1,58 @@
+@prefix ex: <urn:postreview-native:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+owl:Class rdfs:subClassOf rdfs:Class .
+
+owl:DatatypeProperty rdfs:subClassOf rdf:Property .
+
+<urn:postreview-native:shape/declared_header> a sh:NodeShape ;
+    sh:sparql <urn:postreview-native:constraint/declared_header> ;
+    sh:targetClass ex:LookupClaim .
+
+<urn:postreview-native:shape/declared_reference> a sh:NodeShape ;
+    sh:sparql <urn:postreview-native:constraint/declared_reference> ;
+    sh:targetClass ex:LookupClaim .
+
+<urn:postreview-native:shape/dictionary_key> a sh:NodeShape ;
+    sh:sparql <urn:postreview-native:constraint/dictionary_key> ;
+    sh:targetClass ex:LookupClaim .
+
+<urn:postreview-native:shape/lookup_value> a sh:NodeShape ;
+    sh:sparql <urn:postreview-native:constraint/lookup_value> ;
+    sh:targetClass ex:LookupClaim .
+
+<urn:postreview-native:shape/workbook_hash> a sh:NodeShape ;
+    sh:sparql <urn:postreview-native:constraint/workbook_hash> ;
+    sh:targetClass ex:LookupClaim .
+
+<urn:postreview-native:shape/workbook_path> a sh:NodeShape ;
+    sh:sparql <urn:postreview-native:constraint/workbook_path> ;
+    sh:targetClass ex:LookupClaim .
+
+<urn:postreview-native:constraint/declared_header> a sh:SPARQLConstraint ;
+    sh:message "declared_header" ;
+    sh:select "SELECT $this ?left ?right WHERE { $this <urn:postreview-native:dictionary>/<urn:postreview-native:header> ?left . $this <urn:postreview-native:policy>/<urn:postreview-native:expectedHeader> ?right . FILTER (!sameTerm(?left, ?right)) }" .
+
+<urn:postreview-native:constraint/declared_reference> a sh:SPARQLConstraint ;
+    sh:message "declared_reference" ;
+    sh:select "SELECT $this ?left ?right WHERE { $this <urn:postreview-native:anchor>/<urn:postreview-native:declaredDictionary> ?left . $this <urn:postreview-native:dictionary> ?right . FILTER (!sameTerm(?left, ?right)) }" .
+
+<urn:postreview-native:constraint/dictionary_key> a sh:SPARQLConstraint ;
+    sh:message "dictionary_key" ;
+    sh:select "SELECT $this ?left ?right WHERE { $this <urn:postreview-native:anchor>/<urn:postreview-native:anchorKey> ?left . $this <urn:postreview-native:dictionary>/<urn:postreview-native:code> ?right . FILTER (!sameTerm(?left, ?right)) }" .
+
+<urn:postreview-native:constraint/lookup_value> a sh:SPARQLConstraint ;
+    sh:message "lookup_value" ;
+    sh:select "SELECT $this ?left ?right WHERE { $this <urn:postreview-native:claimedValue> ?left . $this <urn:postreview-native:dictionary>/<urn:postreview-native:lookupValue> ?right . FILTER (!sameTerm(?left, ?right)) }" .
+
+<urn:postreview-native:constraint/workbook_hash> a sh:SPARQLConstraint ;
+    sh:message "workbook_hash" ;
+    sh:select "SELECT $this ?left ?right WHERE { $this <urn:postreview-native:anchor>/<urn:postreview-native:workbookHash> ?left . $this <urn:postreview-native:dictionary>/<urn:postreview-native:workbookHash> ?right . FILTER (!sameTerm(?left, ?right)) }" .
+
+<urn:postreview-native:constraint/workbook_path> a sh:SPARQLConstraint ;
+    sh:message "workbook_path" ;
+    sh:select "SELECT $this ?left ?right WHERE { $this <urn:postreview-native:anchor>/<urn:postreview-native:workbookPath> ?left . $this <urn:postreview-native:dictionary>/<urn:postreview-native:workbookPath> ?right . FILTER (!sameTerm(?left, ?right)) }" .
+

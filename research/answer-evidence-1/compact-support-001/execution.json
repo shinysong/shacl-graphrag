@@ -1,0 +1,113 @@
+[
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--offline",
+      "python",
+      "-m",
+      "scripts.adapt_common_budget_support",
+      "--run",
+      "research/answer-evidence-1/compact-run-001",
+      "--output",
+      "research/answer-evidence-1/compact-support-001/envelopes"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--offline",
+      "python",
+      "scripts/score_graphrag_support.py",
+      "--source",
+      "research/graphrag-evidence-1/source-corpus-v1.json",
+      "--references",
+      "research/graphrag-evidence-1/development-references.json",
+      "--retrieval",
+      "research/answer-evidence-1/compact-support-001/envelopes/A1.jsonl",
+      "--output",
+      "research/answer-evidence-1/compact-support-001/A1"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--offline",
+      "python",
+      "scripts/score_graphrag_support.py",
+      "--source",
+      "research/graphrag-evidence-1/source-corpus-v1.json",
+      "--references",
+      "research/graphrag-evidence-1/development-references.json",
+      "--retrieval",
+      "research/answer-evidence-1/compact-support-001/envelopes/B.jsonl",
+      "--output",
+      "research/answer-evidence-1/compact-support-001/B"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--offline",
+      "python",
+      "scripts/score_graphrag_support.py",
+      "--source",
+      "research/graphrag-evidence-1/source-corpus-v1.json",
+      "--references",
+      "research/graphrag-evidence-1/development-references.json",
+      "--retrieval",
+      "research/answer-evidence-1/compact-support-001/envelopes/C.jsonl",
+      "--output",
+      "research/answer-evidence-1/compact-support-001/C"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--offline",
+      "python",
+      "scripts/score_graphrag_support.py",
+      "--source",
+      "research/graphrag-evidence-1/source-corpus-v1.json",
+      "--references",
+      "research/graphrag-evidence-1/development-references.json",
+      "--retrieval",
+      "research/answer-evidence-1/compact-support-001/envelopes/D.jsonl",
+      "--output",
+      "research/answer-evidence-1/compact-support-001/D"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--offline",
+      "python",
+      "scripts/score_graphrag_support.py",
+      "--source",
+      "research/graphrag-evidence-1/source-corpus-v1.json",
+      "--references",
+      "research/graphrag-evidence-1/development-references.json",
+      "--retrieval",
+      "research/answer-evidence-1/compact-support-001/envelopes/E.jsonl",
+      "--output",
+      "research/answer-evidence-1/compact-support-001/E"
+    ],
+    "exit_code": 0
+  }
+]

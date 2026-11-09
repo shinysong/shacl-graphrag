@@ -1,0 +1,185 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+owl:Class rdfs:subClassOf rdfs:Class .
+
+owl:DatatypeProperty rdfs:subClassOf rdf:Property .
+
+<urn:post-answer-review:shape/0> a sh:NodeShape ;
+    sh:property [ sh:in ( "\"node:PP6:2\"" "\"node:PP6:12\"" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/0> .
+
+<urn:post-answer-review:shape/1> a sh:NodeShape ;
+    sh:property [ sh:in ( "\"bead\"" "\"defect\"" "\"sample_end\"" "\"sample_init\"" "\"welding_setting\"" "\"x_end_mm\"" "\"x_init_mm\"" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/1> .
+
+<urn:post-answer-review:shape/10> a sh:NodeShape ;
+    sh:property [ sh:hasValue "1" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/10> .
+
+<urn:post-answer-review:shape/12> a sh:NodeShape ;
+    sh:property [ sh:in ( "\"node:PP6:2\"" "\"node:PP6:12\"" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/12> .
+
+<urn:post-answer-review:shape/13> a sh:NodeShape ;
+    sh:property [ sh:in ( "\"bead\"" "\"defect\"" "\"sample_end\"" "\"sample_init\"" "\"welding_setting\"" "\"x_end_mm\"" "\"x_init_mm\"" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/13> .
+
+<urn:post-answer-review:shape/14> a sh:NodeShape ;
+    sh:property [ sh:hasValue "106" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/14> .
+
+<urn:post-answer-review:shape/15> a sh:NodeShape ;
+    sh:property [ sh:hasValue "\"mm\"" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/15> .
+
+<urn:post-answer-review:shape/16> a sh:NodeShape ;
+    sh:property [ sh:in ( "\"node:PP6:2\"" "\"node:PP6:12\"" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/16> .
+
+<urn:post-answer-review:shape/17> a sh:NodeShape ;
+    sh:property [ sh:in ( "\"bead\"" "\"defect\"" "\"sample_end\"" "\"sample_init\"" "\"welding_setting\"" "\"x_end_mm\"" "\"x_init_mm\"" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/17> .
+
+<urn:post-answer-review:shape/18> a sh:NodeShape ;
+    sh:property [ sh:hasValue "116" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/18> .
+
+<urn:post-answer-review:shape/19> a sh:NodeShape ;
+    sh:property [ sh:hasValue "\"mm\"" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/19> .
+
+<urn:post-answer-review:shape/2> a sh:NodeShape ;
+    sh:property [ sh:hasValue "999" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/2> .
+
+<urn:post-answer-review:shape/20> a sh:NodeShape ;
+    sh:property [ sh:in ( "\"node:PP6:2\"" "\"node:PP6:12\"" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/20> .
+
+<urn:post-answer-review:shape/21> a sh:NodeShape ;
+    sh:property [ sh:in ( "\"bead\"" "\"defect\"" "\"sample_end\"" "\"sample_init\"" "\"welding_setting\"" "\"x_end_mm\"" "\"x_init_mm\"" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/21> .
+
+<urn:post-answer-review:shape/22> a sh:NodeShape ;
+    sh:property [ sh:hasValue "66244" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/22> .
+
+<urn:post-answer-review:shape/23> a sh:NodeShape ;
+    sh:property [ sh:hasValue "\"# sample\"" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/23> .
+
+<urn:post-answer-review:shape/24> a sh:NodeShape ;
+    sh:property [ sh:in ( "\"node:PP6:2\"" "\"node:PP6:12\"" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/24> .
+
+<urn:post-answer-review:shape/25> a sh:NodeShape ;
+    sh:property [ sh:in ( "\"bead\"" "\"defect\"" "\"sample_end\"" "\"sample_init\"" "\"welding_setting\"" "\"x_end_mm\"" "\"x_init_mm\"" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/25> .
+
+<urn:post-answer-review:shape/26> a sh:NodeShape ;
+    sh:property [ sh:hasValue "72493" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/26> .
+
+<urn:post-answer-review:shape/27> a sh:NodeShape ;
+    sh:property [ sh:hasValue "\"# sample\"" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/27> .
+
+<urn:post-answer-review:shape/4> a sh:NodeShape ;
+    sh:property [ sh:in ( "\"node:PP6:2\"" "\"node:PP6:12\"" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/4> .
+
+<urn:post-answer-review:shape/5> a sh:NodeShape ;
+    sh:property [ sh:in ( "\"bead\"" "\"defect\"" "\"sample_end\"" "\"sample_init\"" "\"welding_setting\"" "\"x_end_mm\"" "\"x_init_mm\"" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/5> .
+
+<urn:post-answer-review:shape/6> a sh:NodeShape ;
+    sh:property [ sh:hasValue "1" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/6> .
+
+<urn:post-answer-review:shape/8> a sh:NodeShape ;
+    sh:property [ sh:in ( "\"node:PP6:2\"" "\"node:PP6:12\"" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/8> .
+
+<urn:post-answer-review:shape/9> a sh:NodeShape ;
+    sh:property [ sh:in ( "\"bead\"" "\"defect\"" "\"sample_end\"" "\"sample_init\"" "\"welding_setting\"" "\"x_end_mm\"" "\"x_init_mm\"" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <urn:post-answer-review:observed> ] ;
+    sh:targetNode <urn:post-answer-review:check/9> .
+

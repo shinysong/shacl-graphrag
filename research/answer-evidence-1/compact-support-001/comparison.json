@@ -1,0 +1,2457 @@
+{
+  "A1": {
+    "before": {
+      "reference_questions": 24,
+      "saved_envelopes": 24,
+      "source_present": 18,
+      "complete_support": 10,
+      "source_absent_separate": 6,
+      "retrieval_state_counts": {
+        "valid_saved_evidence": 24
+      },
+      "by_present_task": {
+        "defect_label": {
+          "denominator": 6,
+          "complete": 4
+        },
+        "nominal_idc": {
+          "denominator": 6,
+          "complete": 0
+        },
+        "recorded_setting": {
+          "denominator": 6,
+          "complete": 6
+        }
+      },
+      "answer_accuracy": null,
+      "scope": "authored support contracts on consumed development; no external truth"
+    },
+    "after": {
+      "reference_questions": 24,
+      "saved_envelopes": 24,
+      "source_present": 18,
+      "complete_support": 11,
+      "source_absent_separate": 6,
+      "retrieval_state_counts": {
+        "valid_saved_evidence": 24
+      },
+      "by_present_task": {
+        "defect_label": {
+          "denominator": 6,
+          "complete": 4
+        },
+        "nominal_idc": {
+          "denominator": 6,
+          "complete": 1
+        },
+        "recorded_setting": {
+          "denominator": 6,
+          "complete": 6
+        }
+      },
+      "answer_accuracy": null,
+      "scope": "authored support contracts on consumed development; no external truth"
+    },
+    "gains": [
+      "dev-002"
+    ],
+    "losses": [],
+    "paired": [
+      {
+        "question_id": "dev-001",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP3:2",
+          "edge:PP3:37|welding_setting|PP3:welding_settings_code:4",
+          "edge:PP3:64|welding_setting|PP3:welding_settings_code:9",
+          "edge:PP3:39|welding_setting|PP3:welding_settings_code:4"
+        ],
+        "new_ids": [
+          "node:PP3:2",
+          "edge:PP3:37|welding_setting|PP3:welding_settings_code:4",
+          "edge:PP3:64|welding_setting|PP3:welding_settings_code:9",
+          "edge:PP3:39|welding_setting|PP3:welding_settings_code:4"
+        ]
+      },
+      {
+        "question_id": "dev-002",
+        "before": false,
+        "after": true,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP3:2"
+        ],
+        "new_ids": [
+          "node:PP3:2",
+          "node:PP3:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-003",
+        "before": true,
+        "after": true,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP3:2",
+          "node:PP3:defect_code:1",
+          "node:PP3:defect_code:2"
+        ],
+        "new_ids": [
+          "node:PP3:2",
+          "node:PP3:defect_code:1",
+          "node:PP3:defect_code:2",
+          "edge:PP3:39|defect|PP3:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-004",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP3:2",
+          "node:PP3:defect_code:1",
+          "node:PP3:defect_code:2"
+        ],
+        "new_ids": [
+          "node:PP3:2",
+          "node:PP3:defect_code:1",
+          "node:PP3:defect_code:2",
+          "node:PP7:defect_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-005",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP4:2",
+          "edge:PP4:2|welding_setting|PP4:welding_settings_code:1"
+        ],
+        "new_ids": [
+          "node:PP4:2",
+          "edge:PP4:2|welding_setting|PP4:welding_settings_code:1",
+          "node:PP5:4"
+        ]
+      },
+      {
+        "question_id": "dev-006",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP4:2"
+        ],
+        "new_ids": [
+          "node:PP4:2",
+          "node:PP4:welding_settings_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-007",
+        "before": true,
+        "after": true,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP4:2",
+          "node:PP4:defect_code:1",
+          "edge:PP4:2|defect|PP4:defect_code:1",
+          "edge:PP5:42|defect|PP5:defect_code:4"
+        ],
+        "new_ids": [
+          "node:PP4:2",
+          "node:PP4:defect_code:1",
+          "edge:PP4:2|defect|PP4:defect_code:1",
+          "edge:PP5:42|defect|PP5:defect_code:4",
+          "edge:PP5:43|defect|PP5:defect_code:4"
+        ]
+      },
+      {
+        "question_id": "dev-008",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP4:2",
+          "node:PP4:defect_code:1",
+          "node:PP4:defect_code:2"
+        ],
+        "new_ids": [
+          "node:PP4:2",
+          "node:PP4:defect_code:1",
+          "node:PP4:defect_code:2",
+          "node:PP3:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-009",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP5:2",
+          "node:PP3:5"
+        ],
+        "new_ids": [
+          "node:PP5:2",
+          "node:PP3:5",
+          "edge:PP5:29|welding_setting|PP5:welding_settings_code:3"
+        ]
+      },
+      {
+        "question_id": "dev-010",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP5:2"
+        ],
+        "new_ids": [
+          "node:PP5:2",
+          "node:PP5:welding_settings_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-011",
+        "before": true,
+        "after": true,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP5:2",
+          "node:PP5:defect_code:1",
+          "edge:PP5:43|defect|PP5:defect_code:4",
+          "edge:PP5:42|defect|PP5:defect_code:4"
+        ],
+        "new_ids": [
+          "node:PP5:2",
+          "node:PP5:defect_code:1",
+          "edge:PP5:43|defect|PP5:defect_code:4",
+          "edge:PP5:42|defect|PP5:defect_code:4",
+          "edge:PP5:39|defect|PP5:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-012",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP5:2",
+          "node:PP5:defect_code:1",
+          "node:PP5:defect_code:2"
+        ],
+        "new_ids": [
+          "node:PP5:2",
+          "node:PP5:defect_code:1",
+          "node:PP3:5"
+        ]
+      },
+      {
+        "question_id": "dev-013",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP6:2",
+          "node:PP3:6"
+        ],
+        "new_ids": [
+          "node:PP6:2",
+          "node:PP3:6",
+          "edge:PP6:102|welding_setting|PP6:welding_settings_code:11"
+        ]
+      },
+      {
+        "question_id": "dev-014",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP6:2"
+        ],
+        "new_ids": [
+          "node:PP6:2",
+          "node:PP3:welding_settings_code:4"
+        ]
+      },
+      {
+        "question_id": "dev-015",
+        "before": false,
+        "after": false,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP6:2",
+          "node:PP6:defect_code:1",
+          "edge:PP6:39|defect|PP6:defect_code:4",
+          "edge:PP6:36|defect|PP6:defect_code:1"
+        ],
+        "new_ids": [
+          "node:PP6:2",
+          "node:PP6:defect_code:1",
+          "edge:PP6:39|defect|PP6:defect_code:4",
+          "edge:PP6:36|defect|PP6:defect_code:1",
+          "edge:PP6:38|defect|PP6:defect_code:4"
+        ]
+      },
+      {
+        "question_id": "dev-016",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP6:2",
+          "node:PP6:defect_code:1",
+          "node:PP6:defect_code:2"
+        ],
+        "new_ids": [
+          "node:PP6:2",
+          "node:PP6:defect_code:1",
+          "node:PP3:6"
+        ]
+      },
+      {
+        "question_id": "dev-017",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:2",
+          "node:PP7:7"
+        ],
+        "new_ids": [
+          "node:PP7:2",
+          "node:PP7:7",
+          "edge:PP7:12|welding_setting|PP7:welding_settings_code:9"
+        ]
+      },
+      {
+        "question_id": "dev-018",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:2"
+        ],
+        "new_ids": [
+          "node:PP7:2",
+          "node:PP3:welding_settings_code:5"
+        ]
+      },
+      {
+        "question_id": "dev-019",
+        "before": true,
+        "after": true,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:2",
+          "node:PP7:defect_code:1",
+          "node:PP7:defect_code:6"
+        ],
+        "new_ids": [
+          "node:PP7:2",
+          "node:PP7:defect_code:1",
+          "node:PP7:defect_code:6",
+          "edge:PP7:12|defect|PP7:defect_code:3"
+        ]
+      },
+      {
+        "question_id": "dev-020",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:2",
+          "node:PP7:defect_code:1",
+          "node:PP7:defect_code:2"
+        ],
+        "new_ids": [
+          "node:PP7:2",
+          "node:PP7:defect_code:1",
+          "node:PP7:defect_code:2",
+          "node:PP3:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-021",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:10",
+          "edge:PP7:11|welding_setting|PP7:welding_settings_code:9",
+          "edge:PP7:10|welding_setting|PP7:welding_settings_code:1",
+          "edge:PP7:13|welding_setting|PP7:welding_settings_code:9"
+        ],
+        "new_ids": [
+          "node:PP7:10",
+          "edge:PP7:11|welding_setting|PP7:welding_settings_code:9",
+          "edge:PP7:10|welding_setting|PP7:welding_settings_code:1",
+          "edge:PP7:13|welding_setting|PP7:welding_settings_code:9"
+        ]
+      },
+      {
+        "question_id": "dev-022",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:10"
+        ],
+        "new_ids": [
+          "node:PP7:10",
+          "node:PP7:welding_settings_code:10"
+        ]
+      },
+      {
+        "question_id": "dev-023",
+        "before": false,
+        "after": false,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:10",
+          "edge:PP7:11|defect|PP7:defect_code:6",
+          "edge:PP7:10|defect|PP7:defect_code:1",
+          "node:PP7:defect_code:6"
+        ],
+        "new_ids": [
+          "node:PP7:10",
+          "edge:PP7:11|defect|PP7:defect_code:6",
+          "edge:PP7:10|defect|PP7:defect_code:1",
+          "node:PP7:defect_code:6",
+          "edge:PP7:12|defect|PP7:defect_code:3"
+        ]
+      },
+      {
+        "question_id": "dev-024",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|defect|PP7:defect_code:1",
+          "node:PP7:defect_code:1",
+          "edge:PP7:11|welding_setting|PP7:welding_settings_code:9"
+        ],
+        "new_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|defect|PP7:defect_code:1",
+          "node:PP7:defect_code:1",
+          "edge:PP7:11|welding_setting|PP7:welding_settings_code:9"
+        ]
+      }
+    ]
+  },
+  "B": {
+    "before": {
+      "reference_questions": 24,
+      "saved_envelopes": 24,
+      "source_present": 18,
+      "complete_support": 9,
+      "source_absent_separate": 6,
+      "retrieval_state_counts": {
+        "valid_saved_evidence": 24
+      },
+      "by_present_task": {
+        "defect_label": {
+          "denominator": 6,
+          "complete": 3
+        },
+        "nominal_idc": {
+          "denominator": 6,
+          "complete": 0
+        },
+        "recorded_setting": {
+          "denominator": 6,
+          "complete": 6
+        }
+      },
+      "answer_accuracy": null,
+      "scope": "authored support contracts on consumed development; no external truth"
+    },
+    "after": {
+      "reference_questions": 24,
+      "saved_envelopes": 24,
+      "source_present": 18,
+      "complete_support": 7,
+      "source_absent_separate": 6,
+      "retrieval_state_counts": {
+        "valid_saved_evidence": 24
+      },
+      "by_present_task": {
+        "defect_label": {
+          "denominator": 6,
+          "complete": 1
+        },
+        "nominal_idc": {
+          "denominator": 6,
+          "complete": 0
+        },
+        "recorded_setting": {
+          "denominator": 6,
+          "complete": 6
+        }
+      },
+      "answer_accuracy": null,
+      "scope": "authored support contracts on consumed development; no external truth"
+    },
+    "gains": [],
+    "losses": [
+      "dev-007",
+      "dev-019"
+    ],
+    "paired": [
+      {
+        "question_id": "dev-001",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP3:2",
+          "node:PP3:3"
+        ],
+        "new_ids": [
+          "node:PP3:2",
+          "node:PP3:3",
+          "edge:PP3:2|welding_setting|PP3:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-002",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP3:2"
+        ],
+        "new_ids": [
+          "node:PP3:2",
+          "node:PP3:welding_settings_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-003",
+        "before": true,
+        "after": true,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP3:2",
+          "node:PP3:defect_code:2",
+          "node:PP3:defect_code:1"
+        ],
+        "new_ids": [
+          "node:PP3:2",
+          "node:PP3:defect_code:2",
+          "node:PP3:defect_code:1",
+          "edge:PP3:3|defect|PP3:defect_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-004",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP3:2",
+          "node:PP3:3"
+        ],
+        "new_ids": [
+          "node:PP3:2",
+          "node:PP3:3",
+          "edge:PP3:2|defect|PP3:defect_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-005",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP4:2",
+          "edge:PP4:2|welding_setting|PP4:welding_settings_code:1",
+          "edge:PP5:4|welding_setting|PP5:welding_settings_code:2"
+        ],
+        "new_ids": [
+          "node:PP4:2",
+          "node:PP4:welding_settings_code:2",
+          "edge:PP4:2|welding_setting|PP4:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-006",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP4:2"
+        ],
+        "new_ids": [
+          "node:PP4:2",
+          "node:PP4:welding_settings_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-007",
+        "before": true,
+        "after": false,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP4:2",
+          "node:PP4:defect_code:2",
+          "node:PP4:defect_code:1"
+        ],
+        "new_ids": [
+          "node:PP4:2",
+          "node:PP4:defect_code:2",
+          "node:PP5:4"
+        ]
+      },
+      {
+        "question_id": "dev-008",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP4:2",
+          "node:PP5:4"
+        ],
+        "new_ids": [
+          "node:PP4:2",
+          "node:PP5:4",
+          "edge:PP4:2|defect|PP4:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-009",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP5:2",
+          "node:PP5:5"
+        ],
+        "new_ids": [
+          "node:PP5:2",
+          "node:PP5:5",
+          "edge:PP5:4|welding_setting|PP5:welding_settings_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-010",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP5:2"
+        ],
+        "new_ids": [
+          "node:PP5:2",
+          "node:PP5:welding_settings_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-011",
+        "before": false,
+        "after": false,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP5:2",
+          "node:PP5:14"
+        ],
+        "new_ids": [
+          "node:PP5:2",
+          "node:PP5:14",
+          "node:PP5:defect_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-012",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP5:2",
+          "edge:PP5:4|welding_setting|PP5:welding_settings_code:2",
+          "edge:PP5:3|welding_setting|PP5:welding_settings_code:2",
+          "edge:PP5:5|welding_setting|PP5:welding_settings_code:2"
+        ],
+        "new_ids": [
+          "node:PP5:2",
+          "edge:PP5:4|welding_setting|PP5:welding_settings_code:2",
+          "node:PP5:5"
+        ]
+      },
+      {
+        "question_id": "dev-013",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP6:2",
+          "node:PP3:3"
+        ],
+        "new_ids": [
+          "node:PP6:2",
+          "node:PP3:3",
+          "edge:PP6:2|welding_setting|PP6:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-014",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP6:2"
+        ],
+        "new_ids": [
+          "node:PP6:2",
+          "node:PP6:welding_settings_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-015",
+        "before": false,
+        "after": false,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP6:2",
+          "node:PP3:6"
+        ],
+        "new_ids": [
+          "node:PP6:2",
+          "node:PP3:6",
+          "node:PP6:defect_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-016",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP6:2",
+          "node:PP6:12"
+        ],
+        "new_ids": [
+          "node:PP6:2",
+          "node:PP6:12",
+          "edge:PP6:2|welding_setting|PP6:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-017",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:2",
+          "node:PP7:7"
+        ],
+        "new_ids": [
+          "node:PP7:2",
+          "node:PP7:welding_settings_code:5"
+        ]
+      },
+      {
+        "question_id": "dev-018",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:2"
+        ],
+        "new_ids": [
+          "node:PP7:2",
+          "node:PP7:welding_settings_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-019",
+        "before": true,
+        "after": false,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:2",
+          "node:PP7:defect_code:2",
+          "node:PP7:defect_code:1"
+        ],
+        "new_ids": [
+          "node:PP7:2",
+          "node:PP7:defect_code:2",
+          "node:PP5:7"
+        ]
+      },
+      {
+        "question_id": "dev-020",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:2",
+          "node:PP7:7"
+        ],
+        "new_ids": [
+          "node:PP7:2",
+          "node:PP7:7",
+          "edge:PP7:2|welding_setting|PP7:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-021",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|welding_setting|PP7:welding_settings_code:1",
+          "edge:PP7:11|welding_setting|PP7:welding_settings_code:9",
+          "edge:PP7:13|welding_setting|PP7:welding_settings_code:9"
+        ],
+        "new_ids": [
+          "node:PP7:10",
+          "node:PP7:welding_settings_code:8",
+          "edge:PP7:10|welding_setting|PP7:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-022",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:10"
+        ],
+        "new_ids": [
+          "node:PP7:10",
+          "node:PP7:welding_settings_code:8"
+        ]
+      },
+      {
+        "question_id": "dev-023",
+        "before": false,
+        "after": false,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|defect|PP7:defect_code:1",
+          "edge:PP7:9|defect|PP7:defect_code:1",
+          "node:PP7:defect_code:6"
+        ],
+        "new_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|defect|PP7:defect_code:1",
+          "node:PP5:46",
+          "edge:PP7:9|defect|PP7:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-024",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|welding_setting|PP7:welding_settings_code:1",
+          "edge:PP7:10|defect|PP7:defect_code:1",
+          "edge:PP7:13|welding_setting|PP7:welding_settings_code:9"
+        ],
+        "new_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|welding_setting|PP7:welding_settings_code:1",
+          "edge:PP7:10|defect|PP7:defect_code:1",
+          "edge:PP7:13|welding_setting|PP7:welding_settings_code:9"
+        ]
+      }
+    ]
+  },
+  "C": {
+    "before": {
+      "reference_questions": 24,
+      "saved_envelopes": 24,
+      "source_present": 18,
+      "complete_support": 10,
+      "source_absent_separate": 6,
+      "retrieval_state_counts": {
+        "valid_saved_evidence": 24
+      },
+      "by_present_task": {
+        "defect_label": {
+          "denominator": 6,
+          "complete": 4
+        },
+        "nominal_idc": {
+          "denominator": 6,
+          "complete": 0
+        },
+        "recorded_setting": {
+          "denominator": 6,
+          "complete": 6
+        }
+      },
+      "answer_accuracy": null,
+      "scope": "authored support contracts on consumed development; no external truth"
+    },
+    "after": {
+      "reference_questions": 24,
+      "saved_envelopes": 24,
+      "source_present": 18,
+      "complete_support": 8,
+      "source_absent_separate": 6,
+      "retrieval_state_counts": {
+        "valid_saved_evidence": 24
+      },
+      "by_present_task": {
+        "defect_label": {
+          "denominator": 6,
+          "complete": 2
+        },
+        "nominal_idc": {
+          "denominator": 6,
+          "complete": 0
+        },
+        "recorded_setting": {
+          "denominator": 6,
+          "complete": 6
+        }
+      },
+      "answer_accuracy": null,
+      "scope": "authored support contracts on consumed development; no external truth"
+    },
+    "gains": [],
+    "losses": [
+      "dev-007",
+      "dev-019"
+    ],
+    "paired": [
+      {
+        "question_id": "dev-001",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP3:2",
+          "node:PP3:3"
+        ],
+        "new_ids": [
+          "node:PP3:2",
+          "node:PP3:3",
+          "edge:PP3:2|welding_setting|PP3:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-002",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP3:2",
+          "edge:PP3:2|defect|PP3:defect_code:2",
+          "node:PP3:defect_code:2",
+          "edge:PP3:2|welding_setting|PP3:welding_settings_code:1"
+        ],
+        "new_ids": [
+          "node:PP3:2",
+          "node:PP3:welding_settings_code:2",
+          "edge:PP3:2|defect|PP3:defect_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-003",
+        "before": true,
+        "after": true,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP3:2",
+          "node:PP3:defect_code:2",
+          "node:PP3:defect_code:1"
+        ],
+        "new_ids": [
+          "node:PP3:2",
+          "node:PP3:defect_code:2",
+          "node:PP3:defect_code:1",
+          "edge:PP3:3|defect|PP3:defect_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-004",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP3:2",
+          "node:PP3:3"
+        ],
+        "new_ids": [
+          "node:PP3:2",
+          "node:PP3:3",
+          "edge:PP3:2|defect|PP3:defect_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-005",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP4:2",
+          "edge:PP4:2|welding_setting|PP4:welding_settings_code:1",
+          "edge:PP5:4|welding_setting|PP5:welding_settings_code:2",
+          "edge:PP4:2|defect|PP4:defect_code:1"
+        ],
+        "new_ids": [
+          "node:PP4:2",
+          "node:PP4:welding_settings_code:2",
+          "edge:PP4:2|welding_setting|PP4:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-006",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP4:2",
+          "edge:PP4:2|defect|PP4:defect_code:1",
+          "node:PP4:defect_code:1",
+          "edge:PP4:2|welding_setting|PP4:welding_settings_code:1"
+        ],
+        "new_ids": [
+          "node:PP4:2",
+          "node:PP4:welding_settings_code:2",
+          "edge:PP4:2|defect|PP4:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-007",
+        "before": true,
+        "after": false,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP4:2",
+          "node:PP4:defect_code:2",
+          "node:PP4:defect_code:1"
+        ],
+        "new_ids": [
+          "node:PP4:2",
+          "node:PP4:defect_code:2",
+          "node:PP5:4"
+        ]
+      },
+      {
+        "question_id": "dev-008",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP4:2",
+          "node:PP5:4"
+        ],
+        "new_ids": [
+          "node:PP4:2",
+          "node:PP5:4",
+          "edge:PP4:2|defect|PP4:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-009",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP5:2",
+          "node:PP5:5"
+        ],
+        "new_ids": [
+          "node:PP5:2",
+          "node:PP5:5",
+          "edge:PP5:4|welding_setting|PP5:welding_settings_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-010",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP5:2",
+          "edge:PP5:2|defect|PP5:defect_code:1",
+          "node:PP5:defect_code:1",
+          "edge:PP5:2|welding_setting|PP5:welding_settings_code:1"
+        ],
+        "new_ids": [
+          "node:PP5:2",
+          "node:PP5:welding_settings_code:2",
+          "edge:PP5:2|defect|PP5:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-011",
+        "before": false,
+        "after": false,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP5:2",
+          "node:PP5:14"
+        ],
+        "new_ids": [
+          "node:PP5:2",
+          "node:PP5:14",
+          "node:PP5:defect_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-012",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP5:2",
+          "edge:PP5:4|welding_setting|PP5:welding_settings_code:2",
+          "edge:PP5:3|welding_setting|PP5:welding_settings_code:2",
+          "edge:PP5:5|welding_setting|PP5:welding_settings_code:2"
+        ],
+        "new_ids": [
+          "node:PP5:2",
+          "edge:PP5:4|welding_setting|PP5:welding_settings_code:2",
+          "node:PP5:4"
+        ]
+      },
+      {
+        "question_id": "dev-013",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP6:2",
+          "node:PP3:3"
+        ],
+        "new_ids": [
+          "node:PP6:2",
+          "node:PP3:3",
+          "edge:PP6:2|welding_setting|PP6:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-014",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP6:2",
+          "edge:PP6:2|defect|PP6:defect_code:4",
+          "node:PP6:defect_code:4",
+          "edge:PP6:2|welding_setting|PP6:welding_settings_code:1"
+        ],
+        "new_ids": [
+          "node:PP6:2",
+          "node:PP6:welding_settings_code:2",
+          "edge:PP6:2|defect|PP6:defect_code:4"
+        ]
+      },
+      {
+        "question_id": "dev-015",
+        "before": false,
+        "after": false,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP6:2",
+          "node:PP3:6"
+        ],
+        "new_ids": [
+          "node:PP6:2",
+          "node:PP3:6",
+          "node:PP6:defect_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-016",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP6:2",
+          "node:PP6:12"
+        ],
+        "new_ids": [
+          "node:PP6:2",
+          "node:PP6:12",
+          "edge:PP6:2|welding_setting|PP6:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-017",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:2",
+          "node:PP7:7"
+        ],
+        "new_ids": [
+          "node:PP7:2",
+          "node:PP7:welding_settings_code:5",
+          "edge:PP7:2|defect|PP7:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-018",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:2",
+          "edge:PP7:2|defect|PP7:defect_code:1",
+          "node:PP7:defect_code:1",
+          "edge:PP7:2|welding_setting|PP7:welding_settings_code:1"
+        ],
+        "new_ids": [
+          "node:PP7:2",
+          "node:PP7:welding_settings_code:2",
+          "edge:PP7:2|defect|PP7:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-019",
+        "before": true,
+        "after": false,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:2",
+          "node:PP7:defect_code:2",
+          "node:PP7:defect_code:1"
+        ],
+        "new_ids": [
+          "node:PP7:2",
+          "node:PP7:defect_code:2",
+          "node:PP5:7"
+        ]
+      },
+      {
+        "question_id": "dev-020",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:2",
+          "node:PP7:7"
+        ],
+        "new_ids": [
+          "node:PP7:2",
+          "node:PP7:7",
+          "edge:PP7:2|welding_setting|PP7:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-021",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|welding_setting|PP7:welding_settings_code:1",
+          "edge:PP7:11|welding_setting|PP7:welding_settings_code:9",
+          "edge:PP7:13|welding_setting|PP7:welding_settings_code:9"
+        ],
+        "new_ids": [
+          "node:PP7:10",
+          "node:PP7:welding_settings_code:8",
+          "edge:PP7:10|welding_setting|PP7:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-022",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|defect|PP7:defect_code:1",
+          "node:PP7:defect_code:1",
+          "edge:PP7:10|welding_setting|PP7:welding_settings_code:1"
+        ],
+        "new_ids": [
+          "node:PP7:10",
+          "node:PP7:welding_settings_code:8",
+          "edge:PP7:10|defect|PP7:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-023",
+        "before": true,
+        "after": true,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|defect|PP7:defect_code:1",
+          "node:PP7:defect_code:1",
+          "edge:PP7:9|defect|PP7:defect_code:1"
+        ],
+        "new_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|defect|PP7:defect_code:1",
+          "node:PP7:defect_code:1",
+          "edge:PP7:9|defect|PP7:defect_code:1",
+          "edge:PP5:46|defect|PP5:defect_code:4"
+        ]
+      },
+      {
+        "question_id": "dev-024",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|welding_setting|PP7:welding_settings_code:1",
+          "edge:PP7:10|defect|PP7:defect_code:1",
+          "node:PP7:defect_code:1"
+        ],
+        "new_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|welding_setting|PP7:welding_settings_code:1",
+          "node:PP7:welding_settings_code:1"
+        ]
+      }
+    ]
+  },
+  "D": {
+    "before": {
+      "reference_questions": 24,
+      "saved_envelopes": 24,
+      "source_present": 18,
+      "complete_support": 10,
+      "source_absent_separate": 6,
+      "retrieval_state_counts": {
+        "valid_saved_evidence": 24
+      },
+      "by_present_task": {
+        "defect_label": {
+          "denominator": 6,
+          "complete": 4
+        },
+        "nominal_idc": {
+          "denominator": 6,
+          "complete": 0
+        },
+        "recorded_setting": {
+          "denominator": 6,
+          "complete": 6
+        }
+      },
+      "answer_accuracy": null,
+      "scope": "authored support contracts on consumed development; no external truth"
+    },
+    "after": {
+      "reference_questions": 24,
+      "saved_envelopes": 24,
+      "source_present": 18,
+      "complete_support": 8,
+      "source_absent_separate": 6,
+      "retrieval_state_counts": {
+        "valid_saved_evidence": 24
+      },
+      "by_present_task": {
+        "defect_label": {
+          "denominator": 6,
+          "complete": 2
+        },
+        "nominal_idc": {
+          "denominator": 6,
+          "complete": 0
+        },
+        "recorded_setting": {
+          "denominator": 6,
+          "complete": 6
+        }
+      },
+      "answer_accuracy": null,
+      "scope": "authored support contracts on consumed development; no external truth"
+    },
+    "gains": [],
+    "losses": [
+      "dev-007",
+      "dev-019"
+    ],
+    "paired": [
+      {
+        "question_id": "dev-001",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP3:2",
+          "node:PP3:3"
+        ],
+        "new_ids": [
+          "node:PP3:2",
+          "node:PP3:3",
+          "edge:PP3:2|welding_setting|PP3:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-002",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP3:2",
+          "edge:PP3:2|defect|PP3:defect_code:2",
+          "node:PP3:defect_code:2",
+          "edge:PP3:2|welding_setting|PP3:welding_settings_code:1"
+        ],
+        "new_ids": [
+          "node:PP3:2",
+          "node:PP3:welding_settings_code:2",
+          "edge:PP3:2|defect|PP3:defect_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-003",
+        "before": true,
+        "after": true,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP3:2",
+          "node:PP3:defect_code:2",
+          "node:PP3:defect_code:1"
+        ],
+        "new_ids": [
+          "node:PP3:2",
+          "node:PP3:defect_code:2",
+          "node:PP3:defect_code:1",
+          "edge:PP3:3|defect|PP3:defect_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-004",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP3:2",
+          "node:PP3:3"
+        ],
+        "new_ids": [
+          "node:PP3:2",
+          "node:PP3:3",
+          "edge:PP3:2|defect|PP3:defect_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-005",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP4:2",
+          "edge:PP4:2|welding_setting|PP4:welding_settings_code:1",
+          "edge:PP5:4|welding_setting|PP5:welding_settings_code:2",
+          "edge:PP4:2|defect|PP4:defect_code:1"
+        ],
+        "new_ids": [
+          "node:PP4:2",
+          "node:PP4:welding_settings_code:2",
+          "edge:PP4:2|welding_setting|PP4:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-006",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP4:2",
+          "edge:PP4:2|defect|PP4:defect_code:1",
+          "node:PP4:defect_code:1",
+          "edge:PP4:2|welding_setting|PP4:welding_settings_code:1"
+        ],
+        "new_ids": [
+          "node:PP4:2",
+          "node:PP4:welding_settings_code:2",
+          "edge:PP4:2|defect|PP4:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-007",
+        "before": true,
+        "after": false,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP4:2",
+          "node:PP4:defect_code:2",
+          "node:PP4:defect_code:1"
+        ],
+        "new_ids": [
+          "node:PP4:2",
+          "node:PP4:defect_code:2",
+          "node:PP5:4"
+        ]
+      },
+      {
+        "question_id": "dev-008",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP4:2",
+          "node:PP5:4"
+        ],
+        "new_ids": [
+          "node:PP4:2",
+          "node:PP5:4",
+          "edge:PP4:2|defect|PP4:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-009",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP5:2",
+          "node:PP5:5"
+        ],
+        "new_ids": [
+          "node:PP5:2",
+          "node:PP5:5",
+          "edge:PP5:4|welding_setting|PP5:welding_settings_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-010",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP5:2",
+          "edge:PP5:2|defect|PP5:defect_code:1",
+          "node:PP5:defect_code:1",
+          "edge:PP5:2|welding_setting|PP5:welding_settings_code:1"
+        ],
+        "new_ids": [
+          "node:PP5:2",
+          "node:PP5:welding_settings_code:2",
+          "edge:PP5:2|defect|PP5:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-011",
+        "before": false,
+        "after": false,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP5:2",
+          "node:PP5:14"
+        ],
+        "new_ids": [
+          "node:PP5:2",
+          "node:PP5:14",
+          "node:PP5:defect_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-012",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP5:2",
+          "edge:PP5:4|welding_setting|PP5:welding_settings_code:2",
+          "edge:PP5:3|welding_setting|PP5:welding_settings_code:2",
+          "edge:PP5:5|welding_setting|PP5:welding_settings_code:2"
+        ],
+        "new_ids": [
+          "node:PP5:2",
+          "edge:PP5:4|welding_setting|PP5:welding_settings_code:2",
+          "node:PP5:4"
+        ]
+      },
+      {
+        "question_id": "dev-013",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP6:2",
+          "node:PP3:3"
+        ],
+        "new_ids": [
+          "node:PP6:2",
+          "node:PP3:3",
+          "edge:PP6:2|welding_setting|PP6:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-014",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP6:2",
+          "edge:PP6:2|defect|PP6:defect_code:4",
+          "node:PP6:defect_code:4",
+          "edge:PP6:2|welding_setting|PP6:welding_settings_code:1"
+        ],
+        "new_ids": [
+          "node:PP6:2",
+          "node:PP6:welding_settings_code:2",
+          "edge:PP6:2|defect|PP6:defect_code:4"
+        ]
+      },
+      {
+        "question_id": "dev-015",
+        "before": false,
+        "after": false,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP6:2",
+          "node:PP3:6"
+        ],
+        "new_ids": [
+          "node:PP6:2",
+          "node:PP3:6",
+          "node:PP6:defect_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-016",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP6:2",
+          "node:PP6:12"
+        ],
+        "new_ids": [
+          "node:PP6:2",
+          "node:PP6:12",
+          "edge:PP6:2|welding_setting|PP6:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-017",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:2",
+          "node:PP7:7"
+        ],
+        "new_ids": [
+          "node:PP7:2",
+          "node:PP7:welding_settings_code:5",
+          "edge:PP7:2|defect|PP7:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-018",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:2",
+          "edge:PP7:2|defect|PP7:defect_code:1",
+          "node:PP7:defect_code:1",
+          "edge:PP7:2|welding_setting|PP7:welding_settings_code:1"
+        ],
+        "new_ids": [
+          "node:PP7:2",
+          "node:PP7:welding_settings_code:2",
+          "edge:PP7:2|defect|PP7:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-019",
+        "before": true,
+        "after": false,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:2",
+          "node:PP7:defect_code:2",
+          "node:PP7:defect_code:1"
+        ],
+        "new_ids": [
+          "node:PP7:2",
+          "node:PP7:defect_code:2",
+          "node:PP5:7"
+        ]
+      },
+      {
+        "question_id": "dev-020",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:2",
+          "node:PP7:7"
+        ],
+        "new_ids": [
+          "node:PP7:2",
+          "node:PP7:7",
+          "edge:PP7:2|welding_setting|PP7:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-021",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|welding_setting|PP7:welding_settings_code:1",
+          "edge:PP7:11|welding_setting|PP7:welding_settings_code:9",
+          "edge:PP7:13|welding_setting|PP7:welding_settings_code:9"
+        ],
+        "new_ids": [
+          "node:PP7:10",
+          "node:PP7:welding_settings_code:8",
+          "edge:PP7:10|welding_setting|PP7:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-022",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|defect|PP7:defect_code:1",
+          "node:PP7:defect_code:1",
+          "edge:PP7:10|welding_setting|PP7:welding_settings_code:1"
+        ],
+        "new_ids": [
+          "node:PP7:10",
+          "node:PP7:welding_settings_code:8",
+          "edge:PP7:10|defect|PP7:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-023",
+        "before": true,
+        "after": true,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|defect|PP7:defect_code:1",
+          "node:PP7:defect_code:1",
+          "edge:PP7:9|defect|PP7:defect_code:1"
+        ],
+        "new_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|defect|PP7:defect_code:1",
+          "node:PP7:defect_code:1",
+          "edge:PP7:9|defect|PP7:defect_code:1",
+          "edge:PP5:46|defect|PP5:defect_code:4"
+        ]
+      },
+      {
+        "question_id": "dev-024",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|welding_setting|PP7:welding_settings_code:1",
+          "edge:PP7:10|defect|PP7:defect_code:1",
+          "node:PP7:defect_code:1"
+        ],
+        "new_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|welding_setting|PP7:welding_settings_code:1",
+          "node:PP7:welding_settings_code:1"
+        ]
+      }
+    ]
+  },
+  "E": {
+    "before": {
+      "reference_questions": 24,
+      "saved_envelopes": 24,
+      "source_present": 18,
+      "complete_support": 10,
+      "source_absent_separate": 6,
+      "retrieval_state_counts": {
+        "valid_saved_evidence": 24
+      },
+      "by_present_task": {
+        "defect_label": {
+          "denominator": 6,
+          "complete": 4
+        },
+        "nominal_idc": {
+          "denominator": 6,
+          "complete": 0
+        },
+        "recorded_setting": {
+          "denominator": 6,
+          "complete": 6
+        }
+      },
+      "answer_accuracy": null,
+      "scope": "authored support contracts on consumed development; no external truth"
+    },
+    "after": {
+      "reference_questions": 24,
+      "saved_envelopes": 24,
+      "source_present": 18,
+      "complete_support": 8,
+      "source_absent_separate": 6,
+      "retrieval_state_counts": {
+        "valid_saved_evidence": 24
+      },
+      "by_present_task": {
+        "defect_label": {
+          "denominator": 6,
+          "complete": 2
+        },
+        "nominal_idc": {
+          "denominator": 6,
+          "complete": 0
+        },
+        "recorded_setting": {
+          "denominator": 6,
+          "complete": 6
+        }
+      },
+      "answer_accuracy": null,
+      "scope": "authored support contracts on consumed development; no external truth"
+    },
+    "gains": [],
+    "losses": [
+      "dev-007",
+      "dev-019"
+    ],
+    "paired": [
+      {
+        "question_id": "dev-001",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP3:2",
+          "node:PP3:3"
+        ],
+        "new_ids": [
+          "node:PP3:2",
+          "node:PP3:3",
+          "edge:PP3:2|welding_setting|PP3:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-002",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP3:2",
+          "edge:PP3:2|defect|PP3:defect_code:2",
+          "node:PP3:defect_code:2",
+          "edge:PP3:2|welding_setting|PP3:welding_settings_code:1"
+        ],
+        "new_ids": [
+          "node:PP3:2",
+          "node:PP3:welding_settings_code:2",
+          "edge:PP3:2|defect|PP3:defect_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-003",
+        "before": true,
+        "after": true,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP3:2",
+          "node:PP3:defect_code:2",
+          "node:PP3:defect_code:1"
+        ],
+        "new_ids": [
+          "node:PP3:2",
+          "node:PP3:defect_code:2",
+          "node:PP3:defect_code:1",
+          "edge:PP3:3|defect|PP3:defect_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-004",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP3:2",
+          "node:PP3:3"
+        ],
+        "new_ids": [
+          "node:PP3:2",
+          "node:PP3:3",
+          "edge:PP3:2|defect|PP3:defect_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-005",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP4:2",
+          "edge:PP4:2|welding_setting|PP4:welding_settings_code:1",
+          "edge:PP5:4|welding_setting|PP5:welding_settings_code:2",
+          "edge:PP4:2|defect|PP4:defect_code:1"
+        ],
+        "new_ids": [
+          "node:PP4:2",
+          "node:PP4:welding_settings_code:2",
+          "edge:PP4:2|welding_setting|PP4:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-006",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP4:2",
+          "edge:PP4:2|defect|PP4:defect_code:1",
+          "node:PP4:defect_code:1",
+          "edge:PP4:2|welding_setting|PP4:welding_settings_code:1"
+        ],
+        "new_ids": [
+          "node:PP4:2",
+          "node:PP4:welding_settings_code:2",
+          "edge:PP4:2|defect|PP4:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-007",
+        "before": true,
+        "after": false,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP4:2",
+          "node:PP4:defect_code:2",
+          "node:PP4:defect_code:1"
+        ],
+        "new_ids": [
+          "node:PP4:2",
+          "node:PP4:defect_code:2",
+          "node:PP5:4"
+        ]
+      },
+      {
+        "question_id": "dev-008",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP4:2",
+          "node:PP5:4"
+        ],
+        "new_ids": [
+          "node:PP4:2",
+          "node:PP5:4",
+          "edge:PP4:2|defect|PP4:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-009",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP5:2",
+          "node:PP5:5"
+        ],
+        "new_ids": [
+          "node:PP5:2",
+          "node:PP5:5",
+          "edge:PP5:4|welding_setting|PP5:welding_settings_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-010",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP5:2",
+          "edge:PP5:2|defect|PP5:defect_code:1",
+          "node:PP5:defect_code:1",
+          "edge:PP5:2|welding_setting|PP5:welding_settings_code:1"
+        ],
+        "new_ids": [
+          "node:PP5:2",
+          "node:PP5:welding_settings_code:2",
+          "edge:PP5:2|defect|PP5:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-011",
+        "before": false,
+        "after": false,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP5:2",
+          "node:PP5:14"
+        ],
+        "new_ids": [
+          "node:PP5:2",
+          "node:PP5:14",
+          "node:PP5:defect_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-012",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP5:2",
+          "edge:PP5:4|welding_setting|PP5:welding_settings_code:2",
+          "edge:PP5:3|welding_setting|PP5:welding_settings_code:2",
+          "edge:PP5:5|welding_setting|PP5:welding_settings_code:2"
+        ],
+        "new_ids": [
+          "node:PP5:2",
+          "edge:PP5:4|welding_setting|PP5:welding_settings_code:2",
+          "node:PP5:4"
+        ]
+      },
+      {
+        "question_id": "dev-013",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP6:2",
+          "node:PP3:3"
+        ],
+        "new_ids": [
+          "node:PP6:2",
+          "node:PP3:3",
+          "edge:PP6:2|welding_setting|PP6:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-014",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP6:2",
+          "edge:PP6:2|defect|PP6:defect_code:4",
+          "node:PP6:defect_code:4",
+          "edge:PP6:2|welding_setting|PP6:welding_settings_code:1"
+        ],
+        "new_ids": [
+          "node:PP6:2",
+          "node:PP6:welding_settings_code:2",
+          "edge:PP6:2|defect|PP6:defect_code:4"
+        ]
+      },
+      {
+        "question_id": "dev-015",
+        "before": false,
+        "after": false,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP6:2",
+          "node:PP3:6"
+        ],
+        "new_ids": [
+          "node:PP6:2",
+          "node:PP3:6",
+          "node:PP6:defect_code:2"
+        ]
+      },
+      {
+        "question_id": "dev-016",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP6:2",
+          "node:PP6:12"
+        ],
+        "new_ids": [
+          "node:PP6:2",
+          "node:PP6:12",
+          "edge:PP6:2|welding_setting|PP6:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-017",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:2",
+          "node:PP7:7"
+        ],
+        "new_ids": [
+          "node:PP7:2",
+          "node:PP7:welding_settings_code:5",
+          "edge:PP7:2|defect|PP7:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-018",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:2",
+          "edge:PP7:2|defect|PP7:defect_code:1",
+          "node:PP7:defect_code:1",
+          "edge:PP7:2|welding_setting|PP7:welding_settings_code:1"
+        ],
+        "new_ids": [
+          "node:PP7:2",
+          "node:PP7:welding_settings_code:2",
+          "edge:PP7:2|defect|PP7:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-019",
+        "before": true,
+        "after": false,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:2",
+          "node:PP7:defect_code:2",
+          "node:PP7:defect_code:1"
+        ],
+        "new_ids": [
+          "node:PP7:2",
+          "node:PP7:defect_code:2",
+          "node:PP5:7"
+        ]
+      },
+      {
+        "question_id": "dev-020",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:2",
+          "node:PP7:7"
+        ],
+        "new_ids": [
+          "node:PP7:2",
+          "node:PP7:7",
+          "edge:PP7:2|welding_setting|PP7:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-021",
+        "before": true,
+        "after": true,
+        "task": "recorded_setting",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|welding_setting|PP7:welding_settings_code:1",
+          "edge:PP7:11|welding_setting|PP7:welding_settings_code:9",
+          "edge:PP7:13|welding_setting|PP7:welding_settings_code:9"
+        ],
+        "new_ids": [
+          "node:PP7:10",
+          "node:PP7:welding_settings_code:8",
+          "edge:PP7:10|welding_setting|PP7:welding_settings_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-022",
+        "before": false,
+        "after": false,
+        "task": "nominal_idc",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|defect|PP7:defect_code:1",
+          "node:PP7:defect_code:1",
+          "edge:PP7:10|welding_setting|PP7:welding_settings_code:1"
+        ],
+        "new_ids": [
+          "node:PP7:10",
+          "node:PP7:welding_settings_code:8",
+          "edge:PP7:10|defect|PP7:defect_code:1"
+        ]
+      },
+      {
+        "question_id": "dev-023",
+        "before": true,
+        "after": true,
+        "task": "defect_label",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|defect|PP7:defect_code:1",
+          "node:PP7:defect_code:1",
+          "edge:PP7:9|defect|PP7:defect_code:1"
+        ],
+        "new_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|defect|PP7:defect_code:1",
+          "node:PP7:defect_code:1",
+          "edge:PP7:9|defect|PP7:defect_code:1",
+          "edge:PP5:46|defect|PP5:defect_code:4"
+        ]
+      },
+      {
+        "question_id": "dev-024",
+        "before": null,
+        "after": null,
+        "task": "review_version",
+        "old_state": "valid_saved_evidence",
+        "new_state": "valid_saved_evidence",
+        "old_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|welding_setting|PP7:welding_settings_code:1",
+          "edge:PP7:10|defect|PP7:defect_code:1",
+          "node:PP7:defect_code:1"
+        ],
+        "new_ids": [
+          "node:PP7:10",
+          "edge:PP7:10|welding_setting|PP7:welding_settings_code:1",
+          "node:PP7:welding_settings_code:1"
+        ]
+      }
+    ]
+  }
+}

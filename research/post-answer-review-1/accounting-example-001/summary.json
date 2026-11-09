@@ -1,0 +1,180 @@
+{
+  "input_sha256": "e13304eea9c7e60fc880a0c5eff9ff494e30237f0e36dd9fcb88e3a6c171b4c2",
+  "groups": {
+    "fixture": {
+      "planned_workflows": 2,
+      "support_eligible_planned": 1,
+      "execution": {
+        "draft": {
+          "succeeded": 2,
+          "failed": 0,
+          "not_attempted": 0
+        },
+        "self_review": {
+          "succeeded": 2,
+          "failed": 0,
+          "not_attempted": 0
+        },
+        "report": {
+          "succeeded": 2,
+          "failed": 0,
+          "not_attempted": 0
+        }
+      },
+      "annotators": {
+        "authored-fixture": {
+          "phases": {
+            "draft": {
+              "scored": 2,
+              "successful_unscored": 0,
+              "support_eligible_scored": 1,
+              "unnecessary_withholding": 0,
+              "axes": {
+                "target_value": {
+                  "differs_or_offtarget": 1,
+                  "withheld": 1
+                },
+                "unit": {
+                  "matches_reference": 2
+                },
+                "selected_evidence_support": {
+                  "unsupported": 1,
+                  "no_assertion": 1
+                },
+                "nominal_or_measured_scope": {
+                  "nominal_correct": 2
+                },
+                "citation_intent": {
+                  "content": 2
+                },
+                "citation_applicability": {
+                  "supports_intended_proposition": 2
+                },
+                "projection": {
+                  "faithful": 2
+                },
+                "review_pointer": {
+                  "relevant_and_valid": 2
+                }
+              }
+            },
+            "self_review": {
+              "scored": 0,
+              "successful_unscored": 2,
+              "support_eligible_scored": 0,
+              "unnecessary_withholding": 0,
+              "axes": {
+                "target_value": {},
+                "unit": {},
+                "selected_evidence_support": {},
+                "nominal_or_measured_scope": {},
+                "citation_intent": {},
+                "citation_applicability": {},
+                "projection": {},
+                "review_pointer": {}
+              }
+            },
+            "report": {
+              "scored": 2,
+              "successful_unscored": 0,
+              "support_eligible_scored": 1,
+              "unnecessary_withholding": 1,
+              "axes": {
+                "target_value": {
+                  "withheld": 1,
+                  "matches_reference": 1
+                },
+                "unit": {
+                  "matches_reference": 2
+                },
+                "selected_evidence_support": {
+                  "no_assertion": 1,
+                  "unsupported": 1
+                },
+                "nominal_or_measured_scope": {
+                  "nominal_correct": 2
+                },
+                "citation_intent": {
+                  "content": 2
+                },
+                "citation_applicability": {
+                  "supports_intended_proposition": 2
+                },
+                "projection": {
+                  "faithful": 2
+                },
+                "review_pointer": {
+                  "relevant_and_valid": 2
+                }
+              }
+            }
+          },
+          "transitions": {
+            "self_review": {
+              "planned_pairs": 2,
+              "scored_pairs": 0,
+              "not_scored_pairs": 2,
+              "target": {},
+              "axis_pairs": {
+                "target_value": {},
+                "unit": {},
+                "selected_evidence_support": {},
+                "nominal_or_measured_scope": {},
+                "citation_intent": {},
+                "citation_applicability": {},
+                "projection": {},
+                "review_pointer": {}
+              }
+            },
+            "report": {
+              "planned_pairs": 2,
+              "scored_pairs": 2,
+              "not_scored_pairs": 0,
+              "target": {
+                "wrong_to_withheld": 1,
+                "withheld_to_matching": 1
+              },
+              "axis_pairs": {
+                "target_value": {
+                  "differs_or_offtarget -> withheld": 1,
+                  "withheld -> matches_reference": 1
+                },
+                "unit": {
+                  "matches_reference -> matches_reference": 2
+                },
+                "selected_evidence_support": {
+                  "unsupported -> no_assertion": 1,
+                  "no_assertion -> unsupported": 1
+                },
+                "nominal_or_measured_scope": {
+                  "nominal_correct -> nominal_correct": 2
+                },
+                "citation_intent": {
+                  "content -> content": 2
+                },
+                "citation_applicability": {
+                  "supports_intended_proposition -> supports_intended_proposition": 2
+                },
+                "projection": {
+                  "faithful -> faithful": 2
+                },
+                "review_pointer": {
+                  "relevant_and_valid -> relevant_and_valid": 2
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "disagreements": [],
+  "consensus_performed": false,
+  "limits": [
+    "externally supplied labels, no automatic semantic scoring or human identity verification",
+    "source agreement is not external truth",
+    "no confidence intervals or model ranking",
+    "planned failures retained separately from withholding",
+    "no runtime or repair use"
+  ]
+}

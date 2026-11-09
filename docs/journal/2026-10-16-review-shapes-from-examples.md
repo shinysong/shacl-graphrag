@@ -1,4 +1,4 @@
-# Shapes from Examples 리뷰 — 그래프 사례에서 검증 규칙을 학습하는 이론
+# Shapes from Examples 리뷰: 그래프 사례에서 검증 규칙을 학습하는 이론
 
 데이터에 맞는 규칙을 사람이 처음부터 작성하는 대신, 통과해야 하는 사례와 실패해야 하는 사례를 알려주면 규칙을 찾을 수 있을까. *Shapes from Examples: Foundations of Shape Learning in Recursive SHACL*은 이 질문을 수학적으로 다룬다. ISWC 2026 채택 논문의 arXiv v2를 기준으로 읽었다.
 

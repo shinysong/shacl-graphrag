@@ -1,0 +1,51 @@
+{
+  "state": "candidate offline rubric, no scored model outcomes",
+  "runtime_boundary": "Never expose references, witnesses beyond selected context, condition labels or adjudications to generation, repair, checker policy selection or stopping. Freeze all outputs before evaluation.",
+  "reference_scope": "coordinator-authored source-grounded targets in two consumed worksheet rows; not physical truth or domain expert validation",
+  "units": {
+    "primary": "one requested target per base question and context, not number of claims emitted",
+    "secondary": "separately segmented natural-language propositions and claim/citation pairs; emitted structured claims are not assumed complete",
+    "dependence": "12 contexts derive from six base questions and two anchors; no independent n=12 inference, significance or population rank"
+  },
+  "axes": {
+    "target_value": ["matches_reference", "differs_or_offtarget", "withheld", "unadjudicable"],
+    "unit": ["matches_reference", "wrong", "missing", "not_applicable", "unadjudicable"],
+    "selected_evidence_support": ["supported", "unsupported", "ambiguous", "no_assertion"],
+    "nominal_or_measured_scope": ["nominal_correct", "incorrectly_measured", "unspecified", "not_applicable", "unadjudicable"],
+    "citation_intent": ["content", "location_metadata", "mixed", "unclear", "missing"],
+    "citation_applicability": ["supports_intended_proposition", "does_not_support", "ambiguous", "missing"],
+    "projection": ["faithful", "omitted_proposition", "wrong_binding", "wrong_kind", "compound_scalar", "unadjudicable"],
+    "review_pointer": ["relevant_and_valid", "irrelevant", "misleading", "unadjudicable", "not_applicable"]
+  },
+  "interpretation": [
+    "A reference-matching value without sufficient selected evidence remains matching on target_value and unsupported on selected_evidence_support; do not rewrite it as a factual error or supported success.",
+    "Metadata citation text such as A2 is not expected to equal the content of cell A2; inspect the intended proposition.",
+    "A wrong original-source fact shared by claim and evidence may conform. Reference matching here is only bounded source agreement.",
+    "Primary withholding is unnecessary only when selected_target_supported is true. Extra supported code values can be partial useful content but do not count as answering the missing label/current target.",
+    "Unknown judgement remains unknown; do not force binary labels or invent expert consensus.",
+    "Revision log is self-report: match actual original and revised propositions, preserve splits/merges as ambiguous where unmappable. Current schema alone does not establish identity or truthful reasons."
+  ],
+  "pairing": {
+    "within_model": "one shared draft for self-review and report; unchanged draft is zero-additional-call reference",
+    "across_models": "model-specific drafts differ; report changes within each model before any cross-model descriptive comparison",
+    "transitions": ["wrong_to_matching", "matching_to_wrong", "matching_to_withheld", "wrong_to_withheld", "withheld_to_matching_supported", "withheld_to_asserted_unsupported", "unchanged", "unadjudicable_or_unexecuted"],
+    "transition_axes": "value, support, unit and scope transitions remain separate; wrong-to-withheld is not wrong-to-correct",
+    "independent_backend_measurements": false
+  },
+  "denominators": {
+    "planned": "Every planned model x context workflow retained; show planned, draft attempted/succeeded/failed and each revision attempted/succeeded/failed/not-attempted separately.",
+    "draft_failure": "Both dependent revisions not attempted due to draft failure, never silently excluded.",
+    "report_failure": "Report branch not attempted due to report failure; self-review eligible independently after common admission.",
+    "conditional": "Scored valid outputs and completed pairs are secondary conditional denominators, always shown alongside the full plan.",
+    "withholding": "Count unnecessary withholding over selected-support eligible planned cases and additionally eligible scored cases; failure is a separate outcome, never withholding.",
+    "retries": "No automatic retries; any separately authorized retry preserves original attempt and nonrefunded reservation."
+  },
+  "human_adjudication": {
+    "status": "not performed",
+    "blinding": "randomized evaluation IDs without model/arm labels for answer assessment; mapping separately retained; style may reveal model so no perfect blindness claim",
+    "report_utility": "report access cannot be hidden from its reader; keep distinct from blinded answer evaluation",
+    "audit": "two independent annotations, disagreements retained; later consensus separate; source witness and exact answer span required",
+    "translation_and_normalization": "obvious numeric formatting and label translations require recorded semantic judgement; do not reuse strict JSON-token checker as answer-quality scorer"
+  },
+  "no_results_claim": ["no accuracy or efficacy", "no human time reduction", "no fresh heldout benchmark", "no six-model rank", "no SHACL-specific superiority"]
+}

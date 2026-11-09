@@ -1,0 +1,10 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <urn:shacl-study:advisory:> .
+ex:ResultShape a sh:NodeShape ; sh:targetClass ex:Result ;
+ sh:property ex:UsedRequired, ex:CurrentRequired, ex:UsedFormat, ex:CurrentFormat, ex:VersionAgreement .
+ex:UsedRequired sh:path ex:usedHash ; sh:minCount 1 ; sh:message "missing_used_fingerprint" .
+ex:CurrentRequired sh:path ex:currentHash ; sh:minCount 1 ; sh:message "missing_current_fingerprint" .
+ex:UsedFormat sh:path ex:usedHash ; sh:pattern "^[0-9a-f]{64}$" ; sh:message "malformed_used_fingerprint" .
+ex:CurrentFormat sh:path ex:currentHash ; sh:pattern "^[0-9a-f]{64}$" ; sh:message "malformed_current_fingerprint" .
+ex:VersionAgreement sh:path ex:usedHash ; sh:equals ex:currentHash ; sh:message "fingerprint_disagreement_review_scope" .

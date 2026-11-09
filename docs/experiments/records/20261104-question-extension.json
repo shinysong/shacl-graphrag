@@ -1,0 +1,82 @@
+{
+  "protocol": "post-answer-review-1",
+  "run": "question-extension-001",
+  "date": "2026-11-04",
+  "status": "offline_typed_contract_diagnostic_complete",
+  "review_job": "20261104T080801Z-question-extension-checks-449f31",
+  "summary": {
+    "authored_cases": 36,
+    "cases_by_question_type": {
+      "Q1": 3,
+      "Q2": 3,
+      "Q3": 3,
+      "Q4": 5,
+      "Q5": 4,
+      "Q6": 2,
+      "Q7": 10,
+      "Q8": 2,
+      "Q9": 4
+    },
+    "planned_engine_runs": 72,
+    "execution_counts": {
+      "completed": 70,
+      "input_failure": 2
+    },
+    "checks_passed": 108,
+    "checks_total": 108,
+    "new_model_calls": 0,
+    "actual_model_outputs_evaluated": 0,
+    "source_attribution": {
+      "authors": [
+        "Tapia Suárez, Estefanía Alexandra",
+        "Pérez Couñago, Inés",
+        "Eike Precker, Christian",
+        "Fernández Montenegro, Juan Manuel",
+        "Ruiz, Cristina"
+      ],
+      "doi": "10.5281/zenodo.15083865",
+      "extract_license": "CC-BY-4.0",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "metadata_sha256": "6af6d32eb8360e564580d828e9001f6775024fca045e261e0226a4b095e8d8b5",
+      "metadata_url": "https://zenodo.org/api/records/15083865",
+      "title": "Submerged Arc Welding Open Repository",
+      "url": "https://zenodo.org/records/15083865",
+      "version": "v2 (record landing page; absent in API metadata)"
+    },
+    "limits": [
+      "consumed-development source plus authored claims, not natural question benchmark",
+      "synthetic version history separate from real source",
+      "shared projection and completeness declarations",
+      "Q8 checks missing declared evidence, not global absence or automatic review prose",
+      "Q9 authored-draft checks, not model revision efficacy; dishonest role projection may pass",
+      "no codebook/aggregate/temporal rule inferred automatically"
+    ]
+  },
+  "verification": "research/post-answer-review-1/question-extension-001/coordinator-verification.json",
+  "implementation": [
+    "scripts/postreview_extended.py",
+    "scripts/run_question_extension.py",
+    "tests/test_postreview_extended.py"
+  ],
+  "coverage": {
+    "Q1": "Existing atomic scalar checks",
+    "Q2": "Existing declared lookup/source path checks",
+    "Q3": "Two declared operands plus signed right-minus-left arithmetic",
+    "Q4": "Bounded declared-universe membership and counts",
+    "Q5": "Atomic units and supplied role equality",
+    "Q6": "Same-workbook reference/hash/path applicability",
+    "Q7": "Synthetic scoped half-open temporal intervals and latest-in-supplied-history ties",
+    "Q8": "Declared selected-evidence availability only, not generated gap explanations",
+    "Q9": "Authored compound draft checks; unparsed prose/typed-role mismatch remains a blindspot"
+  },
+  "not_measured": [
+    "Natural-language question-to-contract extraction",
+    "Actual model-generated final-answer/revision efficacy",
+    "Human review benefit",
+    "Real temporal history",
+    "Neptune or engine performance"
+  ],
+  "next_step": "Freeze compound-subtarget scoring and paired model conditions; new generation requires separately bounded paid authorization. No inherited216-call plan.",
+  "new_model_calls": 0
+}

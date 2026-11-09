@@ -1,0 +1,49 @@
+{
+  "version": "answer-evaluation-accounting-1",
+  "scope": "Offline accounting contract; no semantic adjudication implemented",
+  "execution_statuses": [
+    "not_attempted",
+    "input_not_admitted",
+    "transport_failure",
+    "provider_failure",
+    "truncated",
+    "schema_error",
+    "completed"
+  ],
+  "precedence": "Validate state consistency first; before dispatch distinguish input rejection from other not-attempted. After dispatch preserve terminal transport/provider/truncation before schema; only completed transport response may be schema_error/completed.",
+  "attempt_accounting": "dispatch_attempted true consumes one attempt reservation, including transport errors with unknown provider receipt. No refund. Non-dispatched episodes consume no call attempt; remain in planned denominator. Monetary reservations/actual cost ledger is separate, not implemented here.",
+  "evaluability": "Independent per metric: evaluated, not_evaluable(reason), not_applicable(reason), pending. completed does NOT mean semantically evaluable. Original invalid/truncated outputs retained; diagnostic review cannot change primary execution status.",
+  "primary_outcome_denominators": {
+    "task_agreement": "All source-present planned episodes. Noncompleted response contributes zero observed successes, explicitly failure category, not inferred wrong model answer. Completed but unadjudicated contributes zero observed successes and unknown count; this is observed-success lowerbound, not final accuracy.",
+    "unsupported_certainty": "Observed unsupported episodes / all planned is lowerbound only; report evaluated denominator conditional rate and all unknown counts. Never score nonresponse as safe.",
+    "withholding": "Observed unjustified withholding / all selected-answerable planned is lowerbound; conditional evaluable rate also. Failed/unevaluable responses stay unknown, not model withholding.",
+    "partial_fields": "Freeze support-eligible target fields per episode before generation. Observed correct fields / all such planned fields, failed/unevaluable contributes zero observed correct but explicit unknown field count. Separate conditional evaluable field rate; no zero denominator ratio.",
+    "citation": "Unique factual propositions, not output repetitions. Report evaluated supported/total evaluated propositions plus uncited and unevaluable counts; zero propositions gives NA.",
+    "review_requests": "Do not penalize absence when no review warranted; report emitted request counts, axis ratings, unnecessary requests and evaluability separately."
+  },
+  "atomic_claim_policy": {
+    "inventory": "Collect factual propositions from answer, claims, limitations and review_requests, including quoted factual assertions endorsed by response. Preserve all text spans.",
+    "identity": [
+      "subject",
+      "predicate",
+      "object/value",
+      "unit",
+      "time/scope",
+      "polarity",
+      "recorded/derived status"
+    ],
+    "dedup": "Identical normalized proposition across fields counts once; retain every occurrence. Normalization only from frozen task rules or recorded adjudication, no model-based silent merging.",
+    "certainty": "Any asserted occurrence makes proposition asserted; conflicting values/polarities remain separate. Qualified repeat cannot cancel asserted occurrence.",
+    "citations": "Retain occurrence-to-citation mapping. Proposition supported only if an applicable cited selected location supports its content; any unselected or misleading citation also separately counted. Do not create a citation by joining unrelated repeated text.",
+    "unresolved": "If semantic identity or entailment cannot be judged with frozen rules/adjudication, mark metric not_evaluable; no lexical guess claimed as semantics."
+  },
+  "status_fixture_scope": "Authored software cases only, not model outcomes; only execution status and attempt consumption mechanically tested this cycle.",
+  "future_gates": [
+    "task-specific target mappings and units",
+    "claim normalization/adjudication fixtures",
+    "per-metric aggregation implementation",
+    "actual-model framing and outputreserve",
+    "explicit paid authorization",
+    "fresh execution review"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "policies": {
+    "whole_file": {
+      "queries": 1192,
+      "changed_answers": 166,
+      "flagged": 1192,
+      "changed_missed": 0,
+      "unchanged_flagged": 1026
+    },
+    "node_projected_fields": {
+      "queries": 1192,
+      "changed_answers": 166,
+      "flagged": 200,
+      "changed_missed": 0,
+      "unchanged_flagged": 34
+    },
+    "question_field": {
+      "queries": 1192,
+      "changed_answers": 166,
+      "flagged": 166,
+      "changed_missed": 0,
+      "unchanged_flagged": 0
+    }
+  },
+  "scope": "Two declared lookup types per key from both inspected snapshots; dependent development queries, not representative user workload",
+  "assumptions": [
+    "Complete selected definition snapshots and correct declared field dependencies",
+    "External imported models excluded; not_defined_in_selected_file is not global absence",
+    "Field policy exactness follows construction for these direct lookups, not learned applicability",
+    "No repair, paid model calls, SHACL execution, engine performance or human labor measurement"
+  ]
+}

@@ -20,6 +20,7 @@ SPEC = ROOT / 'research/operations'
 WORK = ROOT / '_workspace/research-ops-codex'
 PHASES = ('plan', 'methods', 'implementation', 'synthesis', 'analysis')
 CHECKS = {
+    'factory-lab-tests': ['uv', 'run', '--locked', 'python', '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_factory_lab.py'],
     'unit-tests': ['uv', 'run', '--locked', 'python', '-m', 'unittest', 'discover', '-s', 'tests'],
     'e0-local': ['uv', 'run', '--locked', 'python', 'scripts/run_validation_experiment.py', '--local-only'],
 }

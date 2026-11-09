@@ -1,0 +1,11 @@
+@prefix e: <urn:manufacturing-review:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+e:Snapshot a sh:NodeShape; sh:targetClass e:Review;
+ sh:property [sh:path e:selected_hash; sh:equals e:required_hash; sh:message "snapshot_mismatch"] .
+e:Support a sh:NodeShape; sh:targetClass e:Review;
+ sh:property [sh:path e:unsupported_count; sh:maxInclusive 0; sh:message "unsupported_returned_value"] .
+e:Execution a sh:NodeShape; sh:targetClass e:Review;
+ sh:property [sh:path e:execution_status; sh:hasValue "completed"; sh:message "execution_unavailable"] .
+e:Context a sh:NodeShape; sh:targetClass e:Review; sh:message "full_context_unverified";
+ sh:or ( [sh:property [sh:path e:requires_full_context; sh:hasValue false]]
+         [sh:property [sh:path e:unloaded_count; sh:maxInclusive 0]] ) .

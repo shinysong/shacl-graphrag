@@ -1,0 +1,165 @@
+{
+  "version": "answer-adjudication-examples-2",
+  "scope": "Ten authored miniature examples, not source corpus, model outputs, measured accuracy or an implemented semantic scorer. Never passed to runtime generator. v2 clarifies recorded-value language and field eligibility; still explanatory, not full scorer fixtures.",
+  "evaluation_unit": "Expected labels describe focal propositions only. Whole-response rating requires inventory of all factual propositions and adjudication; these examples are not a complete scoring rubric.",
+  "label_policy": "not_applicable excludes inapplicable metric; not_evaluable retains uncertainty. Partial/mixed labels require proposition/field breakdown before aggregation.",
+  "review_request_axes": [
+    "specific_target",
+    "specific_reason",
+    "traceable_selected_evidence",
+    "relevant_to_question",
+    "unnecessary_request"
+  ],
+  "review_policy": "Rate axes separately after adjudication; no automatic total usefulness score. Missing request when unwarranted is not a failure.",
+  "cases": [
+    {
+      "id": "supported_recorded",
+      "context": "Selected cell X1 states recorded voltage 20 V.",
+      "response": "Recorded voltage is 20 V [X1].",
+      "expected_focal_labels": {
+        "source_agreement": "yes",
+        "selected_support": "yes",
+        "unsupported_certainty": "no",
+        "unnecessary_withholding": "no"
+      },
+      "rationale": "A recorded value is not an independently verified physical measurement.",
+      "focal_target": "recorded voltage",
+      "selected_target_support": true
+    },
+    {
+      "id": "true_but_unselected",
+      "context": "Full frozen source X1 states 20 V; selected context lacks X1 and any voltage.",
+      "response": "Recorded voltage is 20 V.",
+      "expected_focal_labels": {
+        "source_agreement": "yes",
+        "selected_support": "no",
+        "unsupported_certainty": "yes",
+        "unnecessary_withholding": "not_applicable"
+      },
+      "rationale": "Agreement with the frozen source does not supply missing runtime evidence.",
+      "focal_target": "recorded voltage",
+      "selected_target_support": false
+    },
+    {
+      "id": "wrong_with_valid_locator",
+      "context": "Selected X1 states 20 V.",
+      "response": "Recorded voltage is 30 V [X1].",
+      "expected_focal_labels": {
+        "source_agreement": "no",
+        "selected_support": "no",
+        "unsupported_certainty": "yes",
+        "unnecessary_withholding": "no"
+      },
+      "rationale": "Selected chunk membership and valid locator do not establish entailment.",
+      "focal_target": "recorded voltage",
+      "selected_target_support": true
+    },
+    {
+      "id": "irrelevant_violation_refusal",
+      "context": "Selected X1 states 20 V. Report flags an unrelated missing material reference; no conflict affects X1.",
+      "response": "I cannot report voltage because validation failed.",
+      "expected_focal_labels": {
+        "source_agreement": "not_applicable",
+        "selected_support": "not_applicable",
+        "unsupported_certainty": "not_evaluable",
+        "unnecessary_withholding": "yes"
+      },
+      "rationale": "Report is advisory; inability assertion needs separate semantic inventory, not a safe label.",
+      "focal_target": "recorded voltage",
+      "selected_target_support": true
+    },
+    {
+      "id": "partial_answer",
+      "context": "Question asks voltage and current. Selected X1 states 20 V; current unavailable.",
+      "response": "Recorded voltage is 20 V [X1]. Current is absent from the selected evidence.",
+      "expected_focal_labels": {
+        "source_agreement": "yes_for_voltage",
+        "selected_support": "yes_for_voltage",
+        "unsupported_certainty": "no",
+        "unnecessary_withholding": "no"
+      },
+      "rationale": "Retain known field; absence claim is scoped to selected context, not all source.",
+      "focal_target": "recorded voltage",
+      "selected_target_support": true
+    },
+    {
+      "id": "unsupported_global_absence",
+      "context": "Selected context lacks current; full source has current elsewhere.",
+      "response": "The source contains no current value.",
+      "expected_focal_labels": {
+        "source_agreement": "no",
+        "selected_support": "no",
+        "unsupported_certainty": "yes",
+        "unnecessary_withholding": "not_applicable"
+      },
+      "rationale": "Do not turn retrieval omission into source absence.",
+      "focal_target": "recorded current",
+      "selected_target_support": false
+    },
+    {
+      "id": "conformance_as_truth",
+      "context": "Selected X1 states 20 V and report conforms. No external measurement is supplied.",
+      "response": "SHACL proves the actual physical voltage is 20 V.",
+      "expected_focal_labels": {
+        "source_agreement": "not_evaluable",
+        "selected_support": "no",
+        "unsupported_certainty": "yes",
+        "unnecessary_withholding": "no"
+      },
+      "rationale": "Conformance does not verify external physical truth.",
+      "focal_target": "recorded voltage",
+      "selected_target_support": true
+    },
+    {
+      "id": "specific_review",
+      "context": "Selected X1 states 20 V, X2 states 30 V for the same record/time; neither has precedence.",
+      "response": "The two recorded voltage values conflict [X1, X2]. Please verify which source version applies before selecting one.",
+      "expected_focal_labels": {
+        "source_agreement": "yes_conflict_description",
+        "selected_support": "yes",
+        "unsupported_certainty": "no",
+        "unnecessary_withholding": "not_applicable"
+      },
+      "rationale": "Specific target/reason/evidence pointers support review usefulness; this is authored expectation, not measured usefulness. No unique recorded voltage is supported; numeric-target withholding is not applicable.",
+      "focal_target": "recorded voltage",
+      "selected_target_support": false
+    },
+    {
+      "id": "qualified_repeat",
+      "context": "Selected X1 states 20 V. Answer asserts 30 V, then repeats perhaps 30 V.",
+      "response": "Recorded voltage is 30 V. It may be 30 V.",
+      "expected_focal_labels": {
+        "source_agreement": "no",
+        "selected_support": "no",
+        "unsupported_certainty": "yes",
+        "unnecessary_withholding": "no"
+      },
+      "rationale": "One normalized proposition, two spans; strongest certainty asserted.",
+      "focal_target": "recorded voltage",
+      "selected_target_support": true
+    },
+    {
+      "id": "conflicting_output",
+      "context": "Selected X1 states 20 V.",
+      "response": "Recorded voltage is 20 V [X1]. Recorded voltage is 30 V [X1].",
+      "expected_focal_labels": {
+        "source_agreement": "mixed",
+        "selected_support": "mixed",
+        "unsupported_certainty": "yes",
+        "unnecessary_withholding": "no"
+      },
+      "rationale": "Two conflicting propositions remain separate; correct occurrence cannot erase wrong occurrence.",
+      "focal_target": "recorded voltage",
+      "selected_target_support": true
+    }
+  ],
+  "limitations": [
+    "No natural-language normalization implemented",
+    "No independent human adjudication performed",
+    "No model or paid calls",
+    "No new task-specific numeric tolerances or real-data gold",
+    "No runtime repair or compulsory veto"
+  ],
+  "supersedes_for_explanation": "adjudication-examples-v1.json retained unchanged",
+  "eligibility_contract": "withholding-eligibility-v1.json"
+}

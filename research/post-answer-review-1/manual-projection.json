@@ -1,0 +1,131 @@
+{
+  "projection_method": "coordinator manual transcription, unblinded, not expert validated or automatic",
+  "answer_sha256": "73e698193bc8a4160e54c880b184267bc231b8781306be52655926d721b318f9",
+  "claims": [
+    {
+      "claim_id": "c0.defect",
+      "kind": "recorded",
+      "source_id": "node:PP6:2",
+      "field": "defect",
+      "value": 4,
+      "unit": null
+    },
+    {
+      "claim_id": "c0.welding_setting",
+      "kind": "recorded",
+      "source_id": "node:PP6:2",
+      "field": "welding_setting",
+      "value": 1,
+      "unit": null
+    },
+    {
+      "claim_id": "c0.bead",
+      "kind": "recorded",
+      "source_id": "node:PP6:2",
+      "field": "bead",
+      "value": 1,
+      "unit": null
+    },
+    {
+      "claim_id": "c0.x_init_mm",
+      "kind": "recorded",
+      "source_id": "node:PP6:2",
+      "field": "x_init_mm",
+      "value": 106,
+      "unit": "mm"
+    },
+    {
+      "claim_id": "c0.x_end_mm",
+      "kind": "recorded",
+      "source_id": "node:PP6:2",
+      "field": "x_end_mm",
+      "value": 116,
+      "unit": "mm"
+    },
+    {
+      "claim_id": "c0.sample_init",
+      "kind": "recorded",
+      "source_id": "node:PP6:2",
+      "field": "sample_init",
+      "value": 66244,
+      "unit": "# sample"
+    },
+    {
+      "claim_id": "c0.sample_end",
+      "kind": "recorded",
+      "source_id": "node:PP6:2",
+      "field": "sample_end",
+      "value": 72493,
+      "unit": "# sample"
+    },
+    {
+      "claim_id": "c1",
+      "kind": "derived",
+      "source_id": "node:PP6:2",
+      "field": null,
+      "value": null,
+      "unit": null
+    },
+    {
+      "claim_id": "c2",
+      "kind": "derived",
+      "source_id": "node:PP6:2",
+      "field": null,
+      "value": null,
+      "unit": null
+    }
+  ],
+  "mapping": [
+    {
+      "projected_claim_id": "c0.defect",
+      "original_claim_index": 0,
+      "normalization": "worksheet field alias; sample -> # sample; millimeters -> mm; no numeric conversion"
+    },
+    {
+      "projected_claim_id": "c0.welding_setting",
+      "original_claim_index": 0,
+      "normalization": "worksheet field alias; sample -> # sample; millimeters -> mm; no numeric conversion"
+    },
+    {
+      "projected_claim_id": "c0.bead",
+      "original_claim_index": 0,
+      "normalization": "worksheet field alias; sample -> # sample; millimeters -> mm; no numeric conversion"
+    },
+    {
+      "projected_claim_id": "c0.x_init_mm",
+      "original_claim_index": 0,
+      "normalization": "worksheet field alias; sample -> # sample; millimeters -> mm; no numeric conversion"
+    },
+    {
+      "projected_claim_id": "c0.x_end_mm",
+      "original_claim_index": 0,
+      "normalization": "worksheet field alias; sample -> # sample; millimeters -> mm; no numeric conversion"
+    },
+    {
+      "projected_claim_id": "c0.sample_init",
+      "original_claim_index": 0,
+      "normalization": "worksheet field alias; sample -> # sample; millimeters -> mm; no numeric conversion"
+    },
+    {
+      "projected_claim_id": "c0.sample_end",
+      "original_claim_index": 0,
+      "normalization": "worksheet field alias; sample -> # sample; millimeters -> mm; no numeric conversion"
+    },
+    {
+      "projected_claim_id": "c1",
+      "original_claim_index": 1,
+      "normalization": "worksheet field alias; sample -> # sample; millimeters -> mm; no numeric conversion"
+    },
+    {
+      "projected_claim_id": "c2",
+      "original_claim_index": 2,
+      "normalization": "worksheet field alias; sample -> # sample; millimeters -> mm; no numeric conversion"
+    }
+  ],
+  "unprojected_answer_parts": [
+    "free-text answer narrative",
+    "limitations",
+    "review_requests"
+  ],
+  "scope": "Seven atomic recorded values plus two derived claims (not applicable). Whole-answer coverage and projection accuracy unmeasured."
+}

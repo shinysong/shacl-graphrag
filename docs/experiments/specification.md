@@ -1,5 +1,9 @@
 # 온톨로지 활용 실험 명세
 
+- [선택 근거의 RDF 경로 검사 — 기존 진단 재사용](../journal/2026-11-04-post-answer-native-paths.md)
+- [사후 검토 보고서의 비교 설계](../journal/2026-11-04-post-answer-feedback-design.md)
+- [최종 답변과 근거를 검토하는 SHACL 실험 — 오프라인 진단](../journal/2026-11-04-post-answer-review.md)
+
 - [벡터 검색·관계 확장·의미 검증의 근거 확보 비교 — 실행 전 설계](graphrag-evidence-study.md)
 
 - [제조 기록의 확인 요청과 수정 전후 검증 설계](actionable-evidence-study.md)
@@ -300,3 +304,40 @@ uv run --locked python scripts/run_yago_selective.py
 ## Vector retrieval refinement
 
 [벡터 검색의 표현·청킹 개선 비교](vector-retrieval-refinement.md)는 기존 A–E를 보존한 별도 개발 비교입니다. 검색 표현 변경과 노드 후보 제한을 구분하며 답변 생성이나 DB 엔진 성능을 평가하지 않습니다.
+
+
+## Final-answer comparison — answer-evidence-1
+
+The 2026-11-03 bounded run executed 24 consumed development questions × B/C/D (72 attempts) with unchanged source-only messages. D adds an advisory SHACL report to exact C evidence. Model/provider, caps, failures, raw answer text and unblinded adjudication limits are frozen under `research/answer-evidence-1/final-answers-001/`. See [the run interpretation](../journal/2026-11-03-final-answer-comparison.md). The original retrieval protocol and failed answer remain preserved; this is not a fresh held-out benchmark.
+
+
+## Compound answer review — post-answer-review-1
+
+The 2026-11-04 offline extension separates workflow executions from dependent subtarget scores, preserves exact selected-source JSON through optional packing, and routes model-declared claims to existing Python/SHACL checks. Shared-draft messages branch into self-review and compact advisory-report review with identical original draft and context. Authored rehearsal inputs are not model outcomes. See [the preparation record](../journal/2026-11-04-compound-answer-review.md). The proposed nine-question, six-model, three-phase campaign remains unexecuted pending bounded paid approval and launch admission.
+
+
+## Paired six-model final review — post-answer-review-1
+
+The 2026-11-04 campaign freezes nine consumed-development question types × six models × actual draft/self-review/advisory SHACL-report review, one repeat and162 planned slots. Reviews branch from the same actual draft and source context; no gold repair, forced veto or additional source lookup. Model-declared bindings are not verified question interpretations. Common requested output cap is2048 including provider-counted reasoning; actual reasoning/input/cost differ. Full input/reference/output/ledger hashes and two independent masked-label native annotations are archived in `research/post-answer-review-1/paired-six-model-001/`. Both annotations remain separate; no expert or consensus claim. See [the result](../journal/2026-11-04-paired-six-model-review.md). Failures and dependent skips remain in the162 planned denominator, and paired analysis requires all three outputs. Python parity is offline normalized-message equivalence, not an independent generator arm. Neptune and natural-language schema generation are excluded.
+
+## Manufacturing answer provenance — manufacturing-answer-trace-1
+
+The 2026-11-07 extension keeps the consumed seven-node/four-edge manufacturing subset and nine questions. It separates query projection, selected-evidence packaging, manually declared input-path availability, backend execution and final-answer evaluation. Historical results are immutable. The corrected projection first runs on SQLite/Python and RDFLib, then on actual owned Neo4j/Cypher and Neptune/SPARQL under a bounded resource window. Q7 remains unsupported because the selected actual source has no applicable document-version history. Q8 intentionally adds source-supported nominal current; measured current is not inferred from it.
+
+A posthoc checker compares full bindings, legacy projections and selected payloads against the retained source; it never repairs runtime outputs. Input-path checks do not establish source applicability, truth or population completeness. Evidence cards preserve declared cell/header/provenance fields, not the entire source object. New model answer quality and the incremental effect of a SHACL report are not measured in this extension. See the [run record](records/20261107-manufacturing-answer-trace.md) and [interpretation and demo](../journal/2026-11-07-manufacturing-evidence-review.md).
+
+## Manufacturing identity review — manufacturing-identity-1
+
+A separate exploratory diagnostic uses all 100 rows of the pinned Fujitsu published ManufacturingRCA CSV, CC BY 4.0. Authenticity as operational rather than synthetic incident data is unverified. After source inspection, three grouping policies are declared: Equipment; Location+Equipment; Location+Equipment+Device. Identical selected fields feed Python unique-location checks and pySHACL minCount/maxCount checks. No inference, automatic identity merge, physical action or model calls occur. A multiple-location finding is an advisory review pointer, not evidence of incorrect identity. Adding Location to the grouping key eliminates mixed-location groups by construction; it is not an accuracy improvement.
+
+Retain all three planned policy outcomes. Acquisition/CSV parsing failures yield three input-error records when output storage is writable; per-policy audit or artifact-write failures preserve phase and exception. Directory creation or final result-write failure can still abort and is not guaranteed durable. The source, parsed identity fields, transformations, license and code hashes are retained in `research/manufacturing-identity-1/run-001/`. Source-inspected records are development data, not fresh held-out cases.
+
+## Published manufacturing model versions — manufacturing-model-change-1
+
+Two pinned OPC Foundation MachineTool NodeSet XML releases (1.01.1 and 1.02.0) supply actual published schema changes, not plant operating history. Preserve original MIT 1.00 headers and hashes. Numeric NodeIds and aliases resolve through each file's namespace table. Compare only node class, qualified BrowseName, explicit parent/DataType and reference rows with direction; values, descriptions, other attributes and imported model definitions are excluded. A common locator does not prove an unchanged definition, and a namespace-index change does not alone prove changed identity. No standards-defect or compatibility judgment is made.
+
+A second offline replay declares two direct lookups per key in the inspected two-snapshot union: BrowseName and direct references. The 1,192 dependent development queries are not a prospective user workload. Compare whole-file, node-projection and question-field recheck policies using identical complete snapshots. Retain changed answers, flags, missed changes and unchanged answers flagged. Field-level exactness follows construction with correct declared dependencies; no learned applicability, physical impact, human labor, DB traffic, SHACL or LLM benefit is established. See [the interpretation](../journal/2026-11-07-manufacturing-model-versions.md) and `research/manufacturing-model-change-1/`.
+
+### Manufacturing version-qualified lookup follow-up (2026-11-07)
+
+`research/manufacturing-model-change-1/version-query-offline-001/` retains 2 inspected MachineTool snapshots × 6 explicitly version-bound questions × SQLite/RDFLib = 24 planned/emitted/completed rows. Twelve adapter pairs agree. A separate posthoc XML reader checks the two recorded raw-source hashes and the selected fields of all 24 saved outputs. Exact source-file anchors are experiment reproducibility policy, not OPC UA RequiredModels compatibility rules. Explicit stored references are JSON values followed by target lookup; no reverse completion, inferred hierarchy, imported-model closure or native graph traversal measurement. A referenced target without a definition in the selected file remains locally undefined, not globally nonexistent. Independent source-error controls retain 12 source-failed slots out of 24; the absent-namespace control is not a two-defined-node collision test. No new LLM calls or actual graph-DB execution for this model follow-up. Preserve the separate earlier actual manufacturing workbook backend run and all consumed development cohorts.

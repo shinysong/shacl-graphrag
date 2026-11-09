@@ -1,0 +1,14 @@
+<section id="import-context-demo" style="max-width:1200px;margin:30px auto;padding:20px;border:1px solid #8c9baa;border-radius:12px">
+<h2>외부 정의를 읽었을 때 달라지는 질문</h2>
+<p>이 부분은 저장된 오프라인 후속 결과다. 앞선 실제 DB 비교에 새 정의를 다시 적재한 결과가 아니다. 기존 MachineTool 타입을 묻는 248개 질문은 IA 추가 후에도 그대로였다. 기존 객체의 전체 타입을 묻는 300개 후속 질문에서는 4개가 달라졌다. 질문 유형을 바꾼 개발 진단이며 새로운 평가용 표본은 아니다.</p>
+<p>1,200개 슬롯 완료 · Python/OWL-RL 600쌍 일치 · 실제 설비가 아닌 모델 객체 선언</p>
+<label for="ic-case">달라진 4개 질문 </label><select id="ic-case" style="max-width:100%;font:inherit"></select>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px"><div><h3>MachineTool 파일만</h3><pre id="ic-before" style="white-space:pre-wrap;overflow-wrap:anywhere"></pre></div><div><h3>지정한 IA 파일 추가</h3><pre id="ic-after" style="white-space:pre-wrap;overflow-wrap:anywhere"></pre></div></div>
+<h3>추가 타입의 원문 관계 경로</h3><p>각 추가 타입에 대한 경로 하나를 보여준다. 첫 연결은 HasTypeDefinition, 이후 연결은 상위 타입 방향의 HasSubtype이다. 참조된 식별자가 나와도 그 대상의 전체 정의를 읽었다는 뜻은 아니다.</p>
+<div id="ic-paths"></div>
+<p>각 버전에서 미정의 경계의 수는 20→20, 25→25로 같았지만 IA 정의 두 개가 해소되고 다른 외부 정의 두 개가 드러났다. 개수만으로 자료의 범위가 그대로라고 판단하지 않는다.</p>
+<details><summary>원본 해시와 이 질문의 저장 결과</summary><pre id="ic-raw" style="white-space:pre-wrap;overflow-wrap:anywhere"></pre></details>
+<p><a href="../../journal/2026-11-07-imported-definition-context/">자료 범위와 추론 결과 해석</a> · <a href="measurement-review.html">실제 LLM 답변 검토</a></p>
+</section>
+<script type="application/json" id="ic-data">__IMPORT_DATA__</script>
+<script>(()=>{'use strict';const d=JSON.parse(document.getElementById('ic-data').textContent),sel=document.getElementById('ic-case');d.cases.forEach((c,i)=>{const o=document.createElement('option');o.value=i;o.textContent=(c.source_index===0?'1.01.1':'1.02.0')+' · '+c.name+' · '+JSON.parse(c.object)[1];sel.append(o)});function show(){const c=d.cases[Number(sel.value)];document.getElementById('ic-before').textContent=c.before.join('\n');document.getElementById('ic-after').textContent=c.after.join('\n');document.getElementById('ic-raw').textContent=JSON.stringify(c,null,2);const parent=document.getElementById('ic-paths');parent.replaceChildren();for(const p of c.paths){const box=document.createElement('div');box.style.cssText='border:1px solid #8c9baa;padding:12px;margin:12px 0;overflow-wrap:anywhere';for(const [i,n] of p.nodes.entries()){if(i){const arrow=document.createElement('p');arrow.textContent='↓ '+(i===1?'HasTypeDefinition':'상위 타입');box.append(arrow)}const text=document.createElement('p');text.style.fontWeight='600';text.textContent=n.label+' · '+JSON.parse(n.key).join(' ') +(n.definition_loaded?'':' · 정의 미로딩');box.append(text)}parent.append(box)}}sel.addEventListener('change',show);show()})();</script>

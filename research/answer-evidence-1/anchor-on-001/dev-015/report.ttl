@@ -1,0 +1,72 @@
+@prefix ex: <urn:binding:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode <urn:binding:pair:2:0> ;
+            sh:resultMessage "Less than 1 values on <urn:binding:pair:2:0>->ex:right" ;
+            sh:resultPath ex:right ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape _:n914988d72e77473bafb6b15e22ff9638b2 ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <urn:binding:pair:1:0> ;
+            sh:resultMessage "Less than 1 values on <urn:binding:pair:1:0>->ex:right" ;
+            sh:resultPath ex:right ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape _:n914988d72e77473bafb6b15e22ff9638b2 ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <urn:binding:pair:2:0> ;
+            sh:resultMessage "Less than 1 values on <urn:binding:pair:2:0>->ex:left" ;
+            sh:resultPath ex:left ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape _:n914988d72e77473bafb6b15e22ff9638b1 ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <urn:binding:pair:1:0> ;
+            sh:resultMessage "Less than 1 values on <urn:binding:pair:1:0>->ex:left" ;
+            sh:resultPath ex:left ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape _:n914988d72e77473bafb6b15e22ff9638b1 ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <urn:binding:pair:0:0> ;
+            sh:resultMessage "Less than 1 values on <urn:binding:pair:0:0>->ex:right" ;
+            sh:resultPath ex:right ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape _:n914988d72e77473bafb6b15e22ff9638b2 ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <urn:binding:pair:0:0> ;
+            sh:resultMessage "Less than 1 values on <urn:binding:pair:0:0>->ex:left" ;
+            sh:resultPath ex:left ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape _:n914988d72e77473bafb6b15e22ff9638b1 ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <urn:binding:pair:3:0> ;
+            sh:resultMessage "Less than 1 values on <urn:binding:pair:3:0>->ex:left" ;
+            sh:resultPath ex:left ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape _:n914988d72e77473bafb6b15e22ff9638b1 ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <urn:binding:pair:3:0> ;
+            sh:resultMessage "Less than 1 values on <urn:binding:pair:3:0>->ex:right" ;
+            sh:resultPath ex:right ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape _:n914988d72e77473bafb6b15e22ff9638b2 ] .
+
+_:n914988d72e77473bafb6b15e22ff9638b1 sh:equals ex:right ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path ex:left .
+
+_:n914988d72e77473bafb6b15e22ff9638b2 sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path ex:right .
+

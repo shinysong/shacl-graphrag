@@ -1,0 +1,137 @@
+{
+  "scope": "Authored software fixture only; no actual model/human outcomes",
+  "plan": [
+    {
+      "case_id": "a",
+      "model": "fixture",
+      "context_id": "q1",
+      "selected_target_supported": true
+    },
+    {
+      "case_id": "b",
+      "model": "fixture",
+      "context_id": "q2",
+      "selected_target_supported": false
+    }
+  ],
+  "outputs": [
+    {
+      "case_id": "a",
+      "phase": "draft",
+      "state": "succeeded",
+      "payload": {
+        "answer": "adraft"
+      }
+    },
+    {
+      "case_id": "a",
+      "phase": "self_review",
+      "state": "succeeded",
+      "payload": {
+        "answer": "aself_review"
+      }
+    },
+    {
+      "case_id": "a",
+      "phase": "report",
+      "state": "succeeded",
+      "payload": {
+        "answer": "areport"
+      }
+    },
+    {
+      "case_id": "b",
+      "phase": "draft",
+      "state": "succeeded",
+      "payload": {
+        "answer": "bdraft"
+      }
+    },
+    {
+      "case_id": "b",
+      "phase": "self_review",
+      "state": "succeeded",
+      "payload": {
+        "answer": "bself_review"
+      }
+    },
+    {
+      "case_id": "b",
+      "phase": "report",
+      "state": "succeeded",
+      "payload": {
+        "answer": "breport"
+      }
+    }
+  ],
+  "annotations": [
+    {
+      "annotator_id": "authored-fixture",
+      "case_id": "a",
+      "phase": "draft",
+      "payload_sha256": "acc77dc5c0dc968391709bd4e8ada3699251b196a9f35084b9f5a76c53588c94",
+      "labels": {
+        "target_value": "differs_or_offtarget",
+        "unit": "matches_reference",
+        "selected_evidence_support": "unsupported",
+        "nominal_or_measured_scope": "nominal_correct",
+        "citation_intent": "content",
+        "citation_applicability": "supports_intended_proposition",
+        "projection": "faithful",
+        "review_pointer": "relevant_and_valid"
+      },
+      "rationale": "Authored software fixture, not human/model outcome."
+    },
+    {
+      "annotator_id": "authored-fixture",
+      "case_id": "a",
+      "phase": "report",
+      "payload_sha256": "5d89be0297d080beb7d8360162077b88b93d09e96abd230e16f1bb11932480b4",
+      "labels": {
+        "target_value": "withheld",
+        "unit": "matches_reference",
+        "selected_evidence_support": "no_assertion",
+        "nominal_or_measured_scope": "nominal_correct",
+        "citation_intent": "content",
+        "citation_applicability": "supports_intended_proposition",
+        "projection": "faithful",
+        "review_pointer": "relevant_and_valid"
+      },
+      "rationale": "Authored software fixture, not human/model outcome."
+    },
+    {
+      "annotator_id": "authored-fixture",
+      "case_id": "b",
+      "phase": "draft",
+      "payload_sha256": "0c88553808b4ea9b26a3a0b549eafaea22ed531545b7e1df1a9027b508c44214",
+      "labels": {
+        "target_value": "withheld",
+        "unit": "matches_reference",
+        "selected_evidence_support": "no_assertion",
+        "nominal_or_measured_scope": "nominal_correct",
+        "citation_intent": "content",
+        "citation_applicability": "supports_intended_proposition",
+        "projection": "faithful",
+        "review_pointer": "relevant_and_valid"
+      },
+      "rationale": "Authored software fixture, not human/model outcome."
+    },
+    {
+      "annotator_id": "authored-fixture",
+      "case_id": "b",
+      "phase": "report",
+      "payload_sha256": "09ea196ad878cebae6253a217252e6faa8f658f0cbf0ae1fc6a758d76ebc84e2",
+      "labels": {
+        "target_value": "matches_reference",
+        "unit": "matches_reference",
+        "selected_evidence_support": "unsupported",
+        "nominal_or_measured_scope": "nominal_correct",
+        "citation_intent": "content",
+        "citation_applicability": "supports_intended_proposition",
+        "projection": "faithful",
+        "review_pointer": "relevant_and_valid"
+      },
+      "rationale": "Authored software fixture, not human/model outcome."
+    }
+  ]
+}

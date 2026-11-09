@@ -1,0 +1,14 @@
+{
+  "source_sha256": "2cb47c38664e92bba2107d41d419de1c48f9925e9b626f01e8011a957e5a99d2",
+  "extraction": "Exact AST source spans of executed live.py; nonexecutable excerpts, transport/resource configuration intentionally excluded. No claim of complete reproduction package. Existing run cutoff expired; no resource calls authorized by reading this.",
+  "excerpts": {
+    "triples": "def triples(p,materialized):\n g=Graph()\n for a,b in p['edges']:g.add((h.u(a),RDFS.subClassOf,h.u(b)))\n for a,b in p['types']:g.add((h.u(a),RDF.type,h.u(b)))\n if materialized:\n  for c in p['allclasses']:g.add((h.u(c),RDF.type,OWL.Class))\n  DeductiveClosure(OWLRL_Semantics,axiomatic_triples=False,datatype_axioms=False).expand(g)\n return sorted({(h.u(a).n3(),RDFS.subClassOf.n3(),h.u(b).n3()) for a in p['allclasses'] for b in p['allclasses'] if a!=b and (h.u(a),RDFS.subClassOf,h.u(b)) in g}|{(h.u(o).n3(),RDF.type.n3(),h.u(c).n3()) for o in p['objects'] for c in p['allclasses'] if (h.u(o),RDF.type,h.u(c)) in g})",
+    "Neo.query": " def query(self,q,n10s=False):\n  if n10s:\n   if q['kind']!='model_object_members':raise NotImplementedError('ancestor_not_in_selected_n10s_adapter')\n   statement='MATCH(c:SubtypeClass {run:$run,id:$target}) CALL n10s.inference.nodesInCategory(c,{inCatRel:\"TYPEOF\",subCatRel:\"SUBTYPE\"}) YIELD node WHERE node:SubtypeObject AND node.run=$run RETURN DISTINCT node.id AS id'\n  elif q['kind']=='ancestors':statement='MATCH(s:SubtypeClass {run:$run,id:$target})-[:SUBTYPE*1..]->(n:SubtypeClass) WHERE n.run=$run AND n.id<>$target RETURN DISTINCT n.id AS id'\n  else:statement='MATCH(n:SubtypeObject {run:$run})-[:TYPEOF]->(:SubtypeClass)-[:SUBTYPE*0..]->(c:SubtypeClass {run:$run,id:$target}) RETURN DISTINCT n.id AS id'\n  return sorted(r['id'] for r in self.request(statement,{'target':q['target']}))",
+    "sparql": "def sparql(store,q,p,materialized=False):\n target=h.u(q['target']).n3();sc=RDFS.subClassOf.n3();typ=RDF.type.n3()\n if q['kind']=='ancestors':pattern=target+' '+sc+('' if materialized else '+')+' ?x'\n else:pattern='?x '+typ+('' if materialized else '/'+sc+'*')+' '+target\n query='SELECT DISTINCT ?x WHERE {GRAPH '+store.graph+' {'+pattern+'}}'\n result=store.request(query);decode={str(h.u(k)):k for k in p['allclasses']|p['objects']}\n return sorted({decode[r['x']['value']] for r in result['results']['bindings'] if r['x']['type']=='uri'})"
+  },
+  "prelaunch_binding": {
+    "at": "2026-11-07T17:11:22.646036+00:00",
+    "source_hash_matches_prelaunch_v4": true,
+    "prior_freeze_is_earlier_unexecuted_version": true
+  }
+}

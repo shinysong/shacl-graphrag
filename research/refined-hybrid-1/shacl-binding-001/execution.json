@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "timeout",
+    "--kill-after=5s",
+    "120s",
+    "uv",
+    "run",
+    "--locked",
+    "--offline",
+    "python",
+    "-m",
+    "scripts.run_graphrag_shacl_binding",
+    "--manifest",
+    "_workspace/rag-backends-continuation-20261102/shacl-binding-manifest.json",
+    "--output",
+    "research/refined-hybrid-1/shacl-binding-001"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.38639425800647587,
+  "stdout": "{\"status\": \"completed\", \"planned\": 24, \"generation_executed\": false, \"ok\": 24, \"parity_rows\": 24, \"binding_statuses\": {\"unknown\": 52, \"pass\": 10}}\n",
+  "stderr": "",
+  "memory": "unmeasured"
+}

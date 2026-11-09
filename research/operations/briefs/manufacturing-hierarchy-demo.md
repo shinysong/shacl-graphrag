@@ -1,0 +1,102 @@
+# Saved-result manufacturing demo extension
+Scope: append to existing welding demo; partial published MachineTool model auxiliary. No network, paid calls, runtime checker or gold repair. Offline744 rows/248 OWL witness reports, six posthoc advisory cases (two unchanged/four authored). Optional explicit live artifact:992 slots including unsupported and failure rows. Current live finished868 completed124unsupported; resource stop ongoing separately. Results not QA/latency/generalOWL evidence. Witness selector explicitly OFFLINE OWL only, not proof of each live response. Existing base HTML and original source/execution correctness omitted/unverified. Manual software controls and browser checks planned after review. Review <=200 words; no other reviewers/source files.
+
+## build.py
+```
+import hashlib,json,sys
+from pathlib import Path
+ROOT=Path('research/manufacturing-model-change-1')
+def build(base,out,live_run=None):
+ source=Path(base).read_text()
+ if 'id="hierarchy-demo"' in source:raise ValueError('already_extended')
+ cfg=json.loads((ROOT/'subtype-offline-001/config.json').read_text())
+ for item in cfg['sources']:
+  if hashlib.sha256(Path(item['path']).read_bytes()).hexdigest()!=item['projection_sha256']:raise ValueError('projection_hash_mismatch')
+ nodes=[json.loads(Path(s['path']).read_text())['nodes'] for s in cfg['sources']]
+ rows=[json.loads(l) for l in (ROOT/'subtype-offline-001/rows.jsonl').read_text().splitlines()]
+ identity=lambda r:(r['source_index'],r['kind'],r['target'],r['arm'])
+ expected={(q['source_index'],q['kind'],q['target'],arm) for q in cfg['questions'] for arm in ('asserted','python_transitive','owlrl_transitive')}
+ if len(rows)!=744 or len({identity(r) for r in rows})!=744 or {identity(r) for r in rows}!=expected:raise ValueError('offline_denominator')
+ if live_run:
+  p=Path(live_run);live_rows=[json.loads(l) for l in (p/'rows.jsonl').read_text().splitlines()];plan=json.loads((p/'plan.json').read_text())
+  identity=lambda r:(r['source_index'],r['kind'],r['target'],r['arm'])
+  if len(live_rows)!=992 or len({identity(r) for r in live_rows})!=992 or {identity(r) for r in live_rows}!={identity(r) for r in plan}:raise ValueError('live_denominator')
+  rows+=live_rows
+ d={'sources':cfg['sources'],'nodes':[{k:{'class':n['class'],'browse':n['browse']} for k,n in ns.items()} for ns in nodes],'rows':rows,'witnesses':[r for r in json.loads((ROOT/'witness-001/offline-witnesses.json').read_text())['reports'] if r['arm']=='owlrl_transitive'],'cases':json.loads((ROOT/'advisory-metadata-001/fixtures.json').read_text()),'advisory':[json.loads(l) for l in (ROOT/'advisory-metadata-001/rows.jsonl').read_text().splitlines()],'live_run':str(live_run) if live_run else None}
+ data=json.dumps(d,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c').replace('>','\\u003e').replace('&','\\u0026')
+ fragment=Path(__file__).with_name('fragment.html').read_text().replace('__HD_DATA__',data)
+ if source.count('</body>')!=1:raise ValueError('body_contract')
+ Path(out).parent.mkdir(parents=True,exist_ok=True)
+ Path(out).write_text(source.replace('</body>',fragment+'\n</body>'))
+ print({'rows':len(rows),'witnesses':len(d['witnesses']),'cases':len(d['cases']),'live_run':d['live_run']})
+if __name__=='__main__':build(sys.argv[1],sys.argv[2],sys.argv[3] if len(sys.argv)>3 else None)
+
+```
+
+## fragment.html
+```
+<section id="hierarchy-demo" class="panel">
+<h2>공개 제조 모델의 관계·근거·최종 검토</h2>
+<p>기존 용접 자료를 대체하는 사례가 아닙니다. 제조 표준의 두 배포본으로 버전과 타입 관계를 확인하는 보조 실험입니다. 아래 결과는 저장된 실행 기록이며 DB나 LLM을 호출하지 않습니다.</p>
+<p id="hd-run"></p><div class="hd-grid">
+<label>배포본 <select id="hd-version"><option value="0">MachineTool 1.01.1</option><option value="1">MachineTool 1.02.0</option></select></label>
+<label>타입 <select id="hd-type"></select></label>
+<label>조회 범위 <select id="hd-kind"><option value="model_object_members">하위 타입을 포함한 모델 객체</option><option value="ancestors">상위 타입</option></select></label></div>
+<p id="hd-question"></p><div id="hd-results"></div>
+<h3>오프라인 OWL-RL 반환 값의 근거 경로</h3>
+<p>아래 경로는 저장된 오프라인 OWL-RL 결과에 연결됩니다. 다른 비교군의 결과는 위에 그대로 표시하며, 이 경로로 실제 DB의 차이나 실패를 대체하지 않습니다.</p><label>값 선택 <select id="hd-value"></select></label>
+<p id="hd-support"></p><svg id="hd-path" role="img" aria-label="선택된 원문 관계의 근거 경로"></svg>
+<details><summary>선택한 경로와 출처 위치</summary><pre id="hd-proof"></pre></details>
+<h3>최종 검토 알림의 예</h3>
+<p>두 사례는 저장된 근거 메타데이터를 사용했고, 네 사례는 검토 동작을 확인하려고 조건을 바꾼 통제 사례입니다. 실제 LLM의 오류를 측정한 결과가 아닙니다. 검토 알림은 답을 자동으로 수정하거나 차단하지 않습니다.</p>
+<label>검토 조건 <select id="hd-case"></select></label><p id="hd-review"></p>
+<details><summary>Python·SHACL에 공통으로 준 입력</summary><pre id="hd-input"></pre></details>
+<p><strong>해석 범위:</strong> 원문 관계로 설명할 수 있는 값과 전체 표준을 빠짐없이 확인한 답은 다릅니다. 외부 모델 정의는 이 비교에 포함하지 않았습니다. 빈 답의 근거 오류가 없더라도 대상이 전혀 없다는 뜻은 아닙니다. 모델 객체는 공장에서 가동 중인 장비 목록이 아닙니다.</p>
+</section>
+<style>
+#hierarchy-demo{margin-top:2rem}#hierarchy-demo .hd-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem}#hierarchy-demo label{display:block;margin:.5rem 0}#hierarchy-demo select{display:block;max-width:100%;width:100%;padding:.5rem;font:inherit;color:inherit;background:transparent}#hierarchy-demo pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:350px;overflow:auto}#hierarchy-demo .hd-result{border:1px solid #8895a7;border-radius:.5rem;padding:.7rem;margin:.5rem 0;overflow-wrap:anywhere}#hd-path{display:block;width:100%;max-width:420px;margin:auto;height:auto}#hd-path text{fill:currentColor;font:13px sans-serif}#hd-path rect{fill:transparent;stroke:currentColor}#hd-path line{stroke:currentColor}#hd-run,#hd-question,#hd-support,#hd-review{overflow-wrap:anywhere}
+</style>
+<script id="hd-data" type="application/json">__HD_DATA__</script>
+<script>
+(()=>{'use strict';const D=JSON.parse(document.getElementById('hd-data').textContent);const el=id=>document.getElementById(id);const version=el('hd-version'),type=el('hd-type'),kind=el('hd-kind'),value=el('hd-value');
+const labels={asserted:'직접 조회',python_transitive:'Python 전이 규칙',owlrl_transitive:'외부 OWL-RL',neo4j_cypher_paths:'실제 Neo4j 경로 조회',n10s_category:'실제 n10s 타입 소속 조회',neptune_sparql_paths:'실제 Neptune SPARQL 경로',neptune_external_owlrl:'외부 OWL-RL 결과를 저장한 실제 Neptune'};
+const statuses={completed:'완료',unsupported_selected_adapter:'이 어댑터의 구현 범위 밖',query_failed:'조회 실패',load_dependency_failed:'적재 의존 단계 실패',not_run_after_failure:'선행 실패로 미실행',infrastructure_not_run:'DB 준비 단계에서 미실행'};
+const caseNames={selected_supported:'선택한 자료 안에서 근거가 있는 값',full_scope_request:'같은 자료로 전체 표준 확인을 요청',wrong_snapshot:'다른 버전의 해시를 사용한 통제',unsupported_value:'근거 없는 값 개수를 바꾼 통제',empty_selected:'선택한 자료에서 빈 답',failed_execution:'조회 실패를 가정한 통제'};
+const flagNames={snapshot_mismatch:'요청한 버전과 사용한 출처가 다름',full_context_unverified:'외부 정의가 없어 전체 범위 확인이 필요함',unsupported_returned_value:'선택한 근거로 지지되지 않는 값이 있음',execution_unavailable:'실행 결과를 확인할 수 없음'};
+function name(k){const n=D.nodes[+version.value][k];if(n)return n.browse[1];try{const p=JSON.parse(k);return p[1]+' (외부 정의)'}catch{return k}}
+function option(k,text){const o=document.createElement('option');o.value=k;o.textContent=text;return o}
+function initTypes(){type.replaceChildren();Object.entries(D.nodes[+version.value]).filter(([k,n])=>n.class==='UAObjectType').sort((a,b)=>a[1].browse[1].localeCompare(b[1].browse[1])).forEach(([k,n])=>type.append(option(k,n.browse[1]+' · '+JSON.parse(k)[1])));const preferred=JSON.stringify(['http://opcfoundation.org/UA/MachineTool/','i=24']);if([...type.options].some(o=>o.value===preferred))type.value=preferred;render()}
+function selectedWitness(){return D.witnesses.find(r=>r.source_index===+version.value&&r.kind===kind.value&&r.target===type.value)}
+function render(){const rows=D.rows.filter(r=>r.source_index===+version.value&&r.kind===kind.value&&r.target===type.value);el('hd-question').textContent=name(type.value)+'를 '+version.options[version.selectedIndex].text+' 파일에 담긴 관계의 범위에서 조회합니다.';const root=el('hd-results');root.replaceChildren();rows.forEach(r=>{const box=document.createElement('div');box.className='hd-result';const head=document.createElement('strong');head.textContent=(labels[r.arm]||r.arm)+' — '+(statuses[r.status]||r.status);box.append(head);const text=document.createElement('p');text.textContent=r.status==='completed'?r.values.length+'개: '+(r.values.map(k=>name(k)+' ['+JSON.parse(k)[1]+']').join(', ')||'선택한 범위에서 반환 값 없음'):r.error||'지원 범위를 표시한 항목이며 성공한 조회로 세지 않습니다.';box.append(text);root.append(box)});const w=selectedWitness();value.replaceChildren();if(w)w.answers.forEach(a=>value.append(option(a.value,name(a.value)+' · '+JSON.parse(a.value)[1])));renderProof()}
+function svg(tag,attrs,text){const n=document.createElementNS('http://www.w3.org/2000/svg',tag);Object.entries(attrs).forEach(([k,v])=>n.setAttribute(k,v));if(text!==undefined)n.textContent=text;return n}
+function renderProof(){const w=selectedWitness(),a=w?.answers.find(a=>a.value===value.value),s=el('hd-path');s.replaceChildren();el('hd-proof').textContent=JSON.stringify({source:D.sources[+version.value],answer:a||null,unloaded_definition_boundary:w?.unloaded_definition_boundary||[],negative_or_global_completeness:'not_certified'},null,2);el('hd-support').textContent=a?'선택한 원문 관계 안에서 확인한 경로 하나입니다. 모든 도출 경로나 최소 변경 영향 범위를 뜻하지 않습니다.':'반환 값이 없어 양의 근거 경로를 표시하지 않습니다. 전체 범위의 부재를 증명하지는 않습니다.';if(!a?.one_support_path){s.setAttribute('viewBox','0 0 400 40');return}const path=a.one_support_path,nodes=[path[0].subject,...path.map(e=>e.object)];s.setAttribute('viewBox','0 0 400 '+(nodes.length*110));nodes.forEach((k,i)=>{const y=i*110;s.append(svg('rect',{x:10,y:y+5,width:380,height:64,rx:8}));const label=name(k),parts=label.match(/.{1,40}/g)||[''];parts.slice(0,2).forEach((t,j)=>s.append(svg('text',{x:200,y:y+24+j*16,'text-anchor':'middle'},t)));s.append(svg('text',{x:200,y:y+59,'text-anchor':'middle'},JSON.parse(k)[1]));if(i<path.length){s.append(svg('line',{x1:200,y1:y+70,x2:200,y2:y+105}));s.append(svg('text',{x:215,y:y+92},path[i].relation==='type'?'타입 연결':'상위 타입'));s.append(svg('text',{x:200,y:y+106,'text-anchor':'middle'},'▼'))}})}
+function review(){const id=el('hd-case').value,c=D.cases.find(c=>c.id===id),r=D.advisory.find(r=>r.id===id);el('hd-input').textContent=JSON.stringify(c.metadata,null,2);el('hd-review').textContent=r.status==='completed'?'Python: '+(r.python.map(x=>flagNames[x]||x).join(' / ')||'이 정책의 검토 알림 없음')+' · SHACL: '+(r.shacl.map(x=>flagNames[x]||x).join(' / ')||'이 정책의 검토 알림 없음')+' · 답변 변경 없음':r.error||r.status}
+el('hd-run').textContent=D.live_run?'오프라인 비교와 저장된 실제 DB 실행: '+D.live_run:'현재 화면은 저장된 오프라인 비교만 포함합니다. 실제 DB 비교 결과는 포함하지 않았습니다.';D.cases.forEach(c=>el('hd-case').append(option(c.id,caseNames[c.id]||c.id)));version.addEventListener('change',initTypes);type.addEventListener('change',render);kind.addEventListener('change',render);value.addEventListener('change',renderProof);el('hd-case').addEventListener('change',review);initTypes();review();
+})();
+</script>
+
+```
+
+## check.py
+```
+import importlib.util,json,re,tempfile
+from pathlib import Path
+spec=importlib.util.spec_from_file_location('builder',Path(__file__).with_name('build.py'));b=importlib.util.module_from_spec(spec);spec.loader.exec_module(b)
+base=Path('docs/experiments/seminar/manufacturing-trace.html')
+with tempfile.TemporaryDirectory(dir='_workspace') as tmp:
+ out=Path(tmp)/'out.html';b.build(base,out)
+ text=out.read_text();d=json.loads(re.search(r'<script id="hd-data" type="application/json">(.*?)</script>',text,re.S)[1]);assert len(d['rows'])==744 and len(d['witnesses'])==248 and len(d['cases'])==6
+ try:b.build(out,out)
+ except ValueError as e:assert str(e)=='already_extended'
+ else:raise AssertionError('duplicate_extension_accepted')
+ broken=Path(tmp)/'bad.html';broken.write_text('no body')
+ try:b.build(broken,out)
+ except ValueError as e:assert str(e)=='body_contract'
+ else:raise AssertionError('missing_body_accepted')
+ live=Path(tmp)/'live';live.mkdir();(live/'rows.jsonl').write_text('');(live/'plan.json').write_text('[]')
+ try:b.build(base,out,live)
+ except ValueError as e:assert str(e)=='live_denominator'
+ else:raise AssertionError('bad_live_denominator_accepted')
+ print('offline matrix and duplicate extension/body/live-denominator controls passed')
+
+```

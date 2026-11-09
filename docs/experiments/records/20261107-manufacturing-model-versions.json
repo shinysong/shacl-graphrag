@@ -1,0 +1,178 @@
+{
+  "recorded_at": "2026-11-07T17:29:02.074529+00:00",
+  "kind": "bounded published manufacturing schema and declared read-scope diagnostic",
+  "sources": "OPC Foundation MachineTool1.01.1 and1.02.0 pinned originalXML MIT1.00 comments retained",
+  "projection": {
+    "planned_sources": 2,
+    "parsed": 2,
+    "node_counts": [
+      552,
+      589
+    ],
+    "common_keys": 545,
+    "added_keys": 44,
+    "removed_keys": 7,
+    "changed_selected_definitions": 49,
+    "limits": "NumericNodeId/class/BrowseName/explicitparent/datatype/storedreferences only; values/descriptions/otherattributes/importdefinitions omitted"
+  },
+  "read_scope": {
+    "policies": {
+      "whole_file": {
+        "queries": 1192,
+        "changed_answers": 166,
+        "flagged": 1192,
+        "changed_missed": 0,
+        "unchanged_flagged": 1026
+      },
+      "node_projected_fields": {
+        "queries": 1192,
+        "changed_answers": 166,
+        "flagged": 200,
+        "changed_missed": 0,
+        "unchanged_flagged": 34
+      },
+      "question_field": {
+        "queries": 1192,
+        "changed_answers": 166,
+        "flagged": 166,
+        "changed_missed": 0,
+        "unchanged_flagged": 0
+      }
+    },
+    "scope": "Two declared lookup types per key from both inspected snapshots; dependent development queries, not representative user workload",
+    "assumptions": [
+      "Complete selected definition snapshots and correct declared field dependencies",
+      "External imported models excluded; not_defined_in_selected_file is not global absence",
+      "Field policy exactness follows construction for these direct lookups, not learned applicability",
+      "No repair, paid model calls, SHACL execution, engine performance or human labor measurement"
+    ]
+  },
+  "separate_dependency_metadata": "dependency-metadata-001 archives three IA snapshots, not loaded by projection/readscope. Version display strings and exactfilepin vs minimumdependency separated. No compatibilitysolver.",
+  "new_paid_calls": 0,
+  "reviews": [
+    "20261107T161117Z-opcua-definition-projection-5dedaf",
+    "20261107T161851Z-manufacturing-model-read-scope-ba5f7c",
+    "20261107T162915Z-manufacturing-model-results-800dc9",
+    "20261107T163054Z-manufacturing-demo-provenance-70778b"
+  ],
+  "review_limits": "Result packets omitted fullsource/parser/UI; those not independently reproduced by result reviewers",
+  "software_checks": {
+    "parser_controls": 5,
+    "two_source_failure_denominator": "passed",
+    "scope_controls": 4,
+    "demo_controls": "18and36accepted,unexpectedbackendandduplicatepairrejected; source displayed label only",
+    "browser": "36backendquestion selections3identity49definition5scope examples; no JSerror/nooverflow390light1280dark",
+    "diagram": "Simplified vertical flow,390light1280dark actualMermaidSVG,visuallyreadable mobile"
+  },
+  "publication": "Local build only; no push/deploy",
+  "failures_retained": [
+    "Initial browser plain uv missingplaywright; --with playwright recovery",
+    "Horizontaloverflow afterscopeaddition fixed",
+    "MobileLRdiagram too small visually; changedTB pendingrecheck"
+  ],
+  "limits": [
+    "Posthoc dependent development questions",
+    "Not actualplantchangehistory",
+    "No answerquality/SHACLincrementalbenefit/maintenanceeffort/DBperformance conclusions"
+  ],
+  "version_query_followup": {
+    "planned": 24,
+    "emitted": 24,
+    "completed": 24,
+    "paired_SQLite_RDFLib_queries_equal": 12,
+    "rawXML_selected_field_checks_equal": 24,
+    "rawXML_hashes_matching": 2,
+    "source_failure_control": "one failedsource:24emitted12completed12source_failed",
+    "missing_namespace_control": "absent namespace only, not two defined namespace collision",
+    "actual_Neo4j_Neptune": false,
+    "reference_representation": "Serialized reference JSON literals plus explicit target lookup; not native traversal benchmark",
+    "reviews": [
+      "20261107T163842Z-manufacturing-version-query-8bc28d",
+      "20261107T164138Z-manufacturing-xml-posthoc-5b8f6c"
+    ]
+  },
+  "subtype_followup": {
+    "artifact": "research/manufacturing-model-change-1/subtype-offline-001",
+    "planned": 744,
+    "completed": 744,
+    "python_owlrl_equal_pairs": 248,
+    "source_XML_selected_answer_equal": 744,
+    "different_from_asserted_questions": 50,
+    "runtime_review_job": "20261107T165123Z-manufacturing-subtype-projection-abb98b",
+    "xml_review_job": "20261107T165649Z-manufacturing-subtype-xml-audit-84ac6b",
+    "scope": "partial ObjectType/model-object positive hierarchy; no imports, full OPC semantics, actual backend or QA"
+  },
+  "initial_projection_DB_calls": 0,
+  "live_subtype_followup": {
+    "artifact": "research/manufacturing-model-change-1/subtype-live-001",
+    "planned_slots": 992,
+    "completed_query_slots": 868,
+    "unsupported_selected_adapter": 124,
+    "same_policy_Python_value_set_matches": 868,
+    "request_count_note": "Query slots only, not total transport/start/load/cleanup requests",
+    "resource_cleanup": "Six data namespaces empty; ownedcontainer and2anonymousvolumes absent; Neptune terminal stoppedconfirmed17:35:08UTC; ownedguarddisabled. OriginaluppercaseDockerabsencecheck failure retained, casefoldcleanup separatelyreviewed.",
+    "review_job": "20261107T170932Z-manufacturing-subtype-live-v4-ccf04f",
+    "source_scope": "partial positive ObjectType ancestry and model-object type membership",
+    "cleanup_review": "20261107T173416Z-manufacturing-subtype-cleanup-v5-f62315",
+    "original_XML_posthoc": {
+      "planned_unique_slots": 992,
+      "supported_scorable_values_equal": 868,
+      "selected_adapter_unsupported_unscored": 124,
+      "review_job": "20261107T173641Z-manufacturing-live-xml-audit-c8aa67"
+    }
+  },
+  "witness_followup": {
+    "artifact": "research/manufacturing-model-change-1/witness-001",
+    "reports": 744,
+    "positive_answer_occurrences": 759,
+    "empty_answer_reports": 200,
+    "limits": "One path per positive; no global completeness/minimal invalidation/QA"
+  },
+  "advisory_followup": {
+    "artifact": "research/manufacturing-model-change-1/advisory-metadata-001",
+    "cases": 6,
+    "unchanged_selected_metadata": 2,
+    "authored_interventions": 4,
+    "python_shacl_flag_sets_equal": 6,
+    "answer_changes": 0,
+    "new_LLM_calls": 0
+  },
+  "demo_extension": {
+    "path": "docs/experiments/seminar/manufacturing-trace.html",
+    "rows": 1736,
+    "offline_OWL_witnesses": 248,
+    "reviews": [
+      "20261107T172356Z-manufacturing-hierarchy-demo-80e592",
+      "20261107T172710Z-manufacturing-hierarchy-demo-v2-62c714"
+    ],
+    "browser": "248selectors277paths6cases each390light1280dark; selected visual inspection; no exhaustivevisual or QA claim"
+  },
+  "query_footprint_followup": {
+    "artifact": "research/manufacturing-model-change-1/query-footprint-001",
+    "policies": {
+      "whole_selected_graph": {
+        "queries": 124,
+        "changed": 1,
+        "flagged": 124,
+        "missed_changed": 0,
+        "unchanged_flagged": 123
+      },
+      "previous_positive_paths_only": {
+        "queries": 124,
+        "changed": 1,
+        "flagged": 0,
+        "missed_changed": 1,
+        "unchanged_flagged": 0
+      },
+      "query_adjacency_buckets": {
+        "queries": 124,
+        "changed": 1,
+        "flagged": 1,
+        "missed_changed": 0,
+        "unchanged_flagged": 0
+      }
+    },
+    "review": "20261107T173036Z-manufacturing-query-footprint-7a6e0c",
+    "scope": "Posthoc124dependent queries one actual selected-source answer change; positivepath-only deliberately incomplete control; fullsnapshots supplied; no measuredcost/labor/QA/minimality"
+  }
+}

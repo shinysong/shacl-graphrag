@@ -1,13 +1,39 @@
 # 연구 일지
 
-- [의료 온톨로지 RAG 리뷰 — Neo4j와 n10s를 이용한 검색·분류 실험](2026-11-05-review-clinical-ontology-rag.md)
-- [OWL과 SHACL 의미론 리뷰 — 추론한 그래프를 무엇으로 검증할 것인가](2026-11-05-review-owl-shacl-semantics.md)
-- [PolicyKG 리뷰 — 정책 문장의 의무·허용·금지를 SHACL로 옮기기](2026-11-05-review-policykg.md)
-- [RAG vs. GraphRAG 리뷰 — 상세 질문·관계 질문·답 없는 질문의 차이](2026-11-05-review-rag-vs-graphrag.md)
-- [rdf2pg 리뷰 — 같은 지식 그래프를 RDF와 속성 그래프로 조회하기](2026-11-05-review-rdf2pg.md)
-- [SHACL 업데이트 검증 리뷰 — 데이터를 바꾸기 전에 제약 보존을 판단하기](2026-11-05-review-shacl-updates.md)
-- [GraphRAG-Bench 리뷰 — 질문 난도와 검색·생성 비용을 나눠 보는 평가](2026-11-05-review-when-graphs-rag.md)
-- [xpSHACL 리뷰 — 검증 실패를 사람이 이해할 수 있는 설명으로 바꾸기](2026-11-05-review-xpshacl.md)
+- [2026-11-07 제조 자료의 질문·구현·기여 통합 정리](2026-11-07-manufacturing-research-map.md)
+
+- [2026-11-06 Neo4j·Neptune 추론과 변경 검토 실험](2026-11-06-backend-inference-review.md)
+
+- [의료 온톨로지 RAG 리뷰: Neo4j와 n10s를 이용한 검색·분류 실험](2026-11-05-review-clinical-ontology-rag.md)
+
+- [OWL과 SHACL 의미론 리뷰: 추론한 그래프를 무엇으로 검증할 것인가](2026-11-05-review-owl-shacl-semantics.md)
+
+- [PolicyKG 리뷰: 정책 문장의 의무·허용·금지를 SHACL로 옮기기](2026-11-05-review-policykg.md)
+
+- [RAG vs. GraphRAG 리뷰: 상세 질문·관계 질문·답 없는 질문의 차이](2026-11-05-review-rag-vs-graphrag.md)
+
+- [rdf2pg 리뷰: 같은 지식 그래프를 RDF와 속성 그래프로 조회하기](2026-11-05-review-rdf2pg.md)
+
+- [SHACL 업데이트 검증 리뷰: 데이터를 바꾸기 전에 제약 보존을 판단하기](2026-11-05-review-shacl-updates.md)
+
+- [GraphRAG-Bench 리뷰: 질문 난도와 검색·생성 비용을 나눠 보는 평가](2026-11-05-review-when-graphs-rag.md)
+
+- [xpSHACL 리뷰: 검증 실패를 사람이 이해할 수 있는 설명으로 바꾸기](2026-11-05-review-xpshacl.md)
+
+- [2026-11-04 최종 답변의 자체 검토와 SHACL 보고서 검토](2026-11-04-paired-six-model-review.md)
+
+- [2026-11-04 복합 질문과 답변 검토 입력 확장](2026-11-04-compound-answer-review.md)
+
+- [2026-11-04 선택 근거의 관계 경로 검사](2026-11-04-post-answer-native-paths.md)
+
+- [2026-11-04 사후 검토 보고서의 비교 설계](2026-11-04-post-answer-feedback-design.md)
+
+- [2026-11-04 최종 답변과 근거를 검토하는 SHACL 실험](2026-11-04-post-answer-review.md)
+
+- [2026-11-03 관계 확장과 SHACL 보고서의 최종 답변 비교](2026-11-03-final-answer-comparison.md)
+
+
+- [2026-11-02 하이브리드 검색과 관계 조회 및 SHACL의 비교 결과](2026-11-02-refined-hybrid-backends.md)
 
 - [2026-11-02 벡터 검색의 표현·청킹 개선 비교](../experiments/vector-retrieval-refinement.md)
 
@@ -25,14 +51,14 @@
 
 - [2026-10-29 제조 기록의 확인 요청과 근거 기반 수정안](../experiments/actionable-evidence-study.md)
 
-- [Meyers 외 논문 리뷰 — 제조 데이터를 연결하는 지식 그래프와 외부 계산](2026-10-29-review-meyers-manufacturing.md)
+- [Meyers 외 논문 리뷰: 제조 데이터를 연결하는 지식 그래프와 외부 계산](2026-10-29-review-meyers-manufacturing.md)
 
 - [2026-10-29 공개 자료 라이선스 확인과 합성 관계 조회의 첫 실행](../experiments/source-grounded-study.md)
 
-- [Wessel 외 논문 리뷰 — 배터리 전극의 식별과 생산 이력 추적](2026-10-29-review-battery-traceability.md)
-- [LG마그나 협력사 요구사항 리뷰 — 추적성·변경 승인·품질 기록의 연결](2026-10-29-review-lgmagna-traceability.md)
-- [MetalMind 논문 리뷰 — 금속 적층제조 매뉴얼에서 작업자 지원까지](2026-10-29-review-metalmind.md)
-- [이수연 외 논문 리뷰 — 반도체 특허에서 개체와 관계를 추출하는 방법](2026-10-29-review-semiconductor-patent-kg.md)
+- [Wessel 외 논문 리뷰: 배터리 전극의 식별과 생산 이력 추적](2026-10-29-review-battery-traceability.md)
+- [LG마그나 협력사 요구사항 리뷰: 추적성·변경 승인·품질 기록의 연결](2026-10-29-review-lgmagna-traceability.md)
+- [MetalMind 논문 리뷰: 금속 적층제조 매뉴얼에서 작업자 지원까지](2026-10-29-review-metalmind.md)
+- [이수연 외 논문 리뷰: 반도체 특허에서 개체와 관계를 추출하는 방법](2026-10-29-review-semiconductor-patent-kg.md)
 
 - [2026-10-28 BPI 2019 원본 구매 로그의 연구 적합성](2026-10-28-bpi2019-suitability.md)
 - [2026-10-28 원천 구축과 규칙 적용의 병목 분리](2026-10-28-source-rule-diagnostics.md)
@@ -47,11 +73,11 @@
 
 - [2026-10-21 코드 기반·표준 기반 비교의 연구 의의](2026-10-21-research-significance.md)
 
-- [NL2SHACL-Bench 리뷰 — 자연어로 만든 검증 규칙을 평가하는 전체 과정](2026-10-16-review-nl2shacl-bench.md)
-- [REGAE 리뷰 — 예시를 주고받으며 정규표현식을 만드는 도구](2026-10-16-review-regae.md)
-- [SHACL Guru 도구 리뷰 — VS Code에서 규칙을 생성하고 설명받는 과정](2026-10-16-review-shacl-guru.md)
-- [shacl-test 도구 리뷰 — RDF 사례와 검증 보고서를 반복 검사하는 방법](2026-10-16-review-shacl-test.md)
-- [Shapes from Examples 리뷰 — 그래프 사례에서 검증 규칙을 학습하는 이론](2026-10-16-review-shapes-from-examples.md)
+- [NL2SHACL-Bench 리뷰: 자연어로 만든 검증 규칙을 평가하는 전체 과정](2026-10-16-review-nl2shacl-bench.md)
+- [REGAE 리뷰: 예시를 주고받으며 정규표현식을 만드는 도구](2026-10-16-review-regae.md)
+- [SHACL Guru 도구 리뷰: VS Code에서 규칙을 생성하고 설명받는 과정](2026-10-16-review-shacl-guru.md)
+- [shacl-test 도구 리뷰: RDF 사례와 검증 보고서를 반복 검사하는 방법](2026-10-16-review-shacl-test.md)
+- [Shapes from Examples 리뷰: 그래프 사례에서 검증 규칙을 학습하는 이론](2026-10-16-review-shapes-from-examples.md)
 
 - [2026-10-15 YAGO 조회 실패와 검증에 필요한 주변 정보](2026-10-15-yago-native-tools.md)
 
@@ -87,3 +113,9 @@
 - [연구 일지 양식](template.md)
 
 - [2026-10-21 동일 정책 구현의 실행 비용과 변경 범위](2026-10-21-technology-selection-paper.md)
+
+- [용접 측정 자료와 결함 구간 연결](2026-11-07-welding-measurement-boundaries.md)
+
+- [실제 측정 파일을 추가한 최종 답변 비교](2026-11-07-measurement-answer-review.md)
+
+- [외부 정의를 불러왔을 때 달라지는 추론의 범위](2026-11-07-imported-definition-context.md)

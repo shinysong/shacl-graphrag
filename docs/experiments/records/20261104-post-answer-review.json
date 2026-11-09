@@ -1,0 +1,164 @@
+{
+  "protocol_id": "post-answer-review-1",
+  "date": "2026-11-04",
+  "scope": "separate offline diagnostics and candidate evaluation design; no new model calls or efficacy study",
+  "unit_methods": 11,
+  "unit_exit_code": 0,
+  "cases": 12,
+  "engine_runs": 24,
+  "completed": 20,
+  "input_failures": 4,
+  "execution_failures": 0,
+  "paid_calls": 0,
+  "reviews": [
+    "20261104T015138Z-post-answer-review-b655e5",
+    "20261104T015608Z-post-answer-demo-7fdf3f"
+  ],
+  "superseded_review": "20261104T015438Z-post-answer-demo-1dc08d",
+  "artifacts": "research/post-answer-review-1/demo-001",
+  "report": "docs/journal/2026-11-04-post-answer-review.md",
+  "interactive_demo": "docs/experiments/seminar/post-answer-review.html",
+  "limits": [
+    "one historical D answer manually projected",
+    "shared applicability gates",
+    "exact typed source agreement only",
+    "no external truth/question applicability/projection quality/revision or review-time assessment",
+    "shared compiler constructs observed/expected comparisons; not full domain RDF path constraint study",
+    "units counted per distinct diagnostic, never aggregate as independent benchmark trials",
+    "no new paid scope; provider token admission, full failure ledger, human evaluation and revision efficacy unmeasured"
+  ],
+  "additional_diagnostics": {
+    "lookup": {
+      "artifacts": "research/post-answer-review-1/lookup-demo-001",
+      "unit_methods": 13,
+      "cases": 20,
+      "engine_runs": 40,
+      "completed": 32,
+      "expected_input_failures": 8,
+      "execution_failures": 0,
+      "checks_passed": 60,
+      "review": "20261104T021414Z-postreview-lookup-eeb6fe"
+    },
+    "messages_v1": {
+      "unit_methods": 5,
+      "review": "20261104T021717Z-postreview-messages-20f168"
+    },
+    "historical_pointer_replay": {
+      "artifacts": "research/post-answer-review-1/pointer-replay-001",
+      "planned": 72,
+      "processed": 71,
+      "original_failure_preserved": 1,
+      "claims": 97,
+      "empty_claim_answers": 24,
+      "claim_citation_entries": 100,
+      "resolved_pointers": 86,
+      "value_statuses": {
+        "pass": 76,
+        "unknown": 9,
+        "flag": 10,
+        "not_applicable": 5
+      },
+      "unit_methods": 6,
+      "review": "20261104T022108Z-postreview-pointer-replay-a56d4f",
+      "interpretation": "literal pointer agreement, not answer correctness; metadata flags retained"
+    },
+    "mixed_v2": {
+      "initial_unit_methods": 7,
+      "latest_unit_methods": 9,
+      "reviews": [
+        "20261104T022807Z-postreview-mixed-c9538f",
+        "20261104T024221Z-postreview-independence-02ff52"
+      ],
+      "self_review_checker_independent": true,
+      "whole_campaign_runner_ready": false
+    },
+    "candidate_questions_v2": {
+      "contexts": 12,
+      "base_questions": 6,
+      "anchors": 2,
+      "changed_position_questions": 4,
+      "source_snapshots_unchanged": true,
+      "artifacts": "research/post-answer-review-1/question-candidates-002"
+    },
+    "evaluation_design": {
+      "reference_rows": 12,
+      "source_witnesses_verified": 40,
+      "selected_supported": 6,
+      "deliberate_selection_omissions": 6,
+      "source_absence_cases": 0,
+      "artifacts": "research/post-answer-review-1/evaluation-design-001",
+      "review": "20261104T024535Z-postreview-evaluation-design-3aed29",
+      "scored_model_outcomes": 0,
+      "domain_expert_validated": false
+    },
+    "literature": {
+      "primary_papers": 4,
+      "normative_specifications": 1,
+      "review": "20261104T023949Z-postreview-feedback-design-313e9b",
+      "systematic_review": false,
+      "provenance": "research/post-answer-review-1/literature-methods-001.json"
+    },
+    "native_rdf_paths": {
+      "artifacts": "research/post-answer-review-1/native-paths-002",
+      "prior_failed_artifacts": "research/post-answer-review-1/native-paths-001",
+      "unit_methods": 9,
+      "reused_cases": 20,
+      "engine_runs": 40,
+      "completed": 32,
+      "expected_input_failures": 8,
+      "execution_failures": 0,
+      "checks_passed": 62,
+      "checks_total": 62,
+      "prior_checks_passed": 61,
+      "prior_checks_total": 62,
+      "distinct_input_shapes_graphs": 1,
+      "rules": 6,
+      "unit_agreement_included": false,
+      "model_revision_pipeline_integrated": false,
+      "reviews": [
+        "20261104T025353Z-postreview-native-paths-7d1f50",
+        "20261104T025616Z-postreview-native-paths-6b9eb4"
+      ],
+      "limits": "shared source projection and missing gates; Python RDF traversal versus SHACL-SPARQL, not engine performance or semantic independence"
+    },
+    "retained_source_census": {
+      "artifacts": "research/post-answer-review-1/source-census-001",
+      "annotation_rows": 243,
+      "dictionary_rows": 85,
+      "links": 486,
+      "engine_runs": 972,
+      "completed": 972,
+      "execution_failures": 0,
+      "unavailable_target_links": 0,
+      "missing_value_links": 0,
+      "rules": 6,
+      "observed_flags": 0,
+      "review": "20261104T030337Z-postreview-source-census-a6736c",
+      "limits": "Source-derived references and claim values; not QA accuracy, detector sensitivity, global source quality or fresh evaluation."
+    },
+    "evaluation_accounting": {
+      "artifacts": "research/post-answer-review-1/accounting-example-001",
+      "unit_methods": 7,
+      "unit_exit": 0,
+      "authored_example_workflows": 2,
+      "actual_model_outputs_scored": 0,
+      "review": "20261104T031129Z-postreview-evaluation-accounting-3e76ae",
+      "limits": "Per-primary-target external labels, not automatic semantics or expert annotation; two isolated branch tests absent as recorded in reviews."
+    },
+    "provider_readiness": {
+      "artifacts": "research/post-answer-review-1/provider-readiness-002",
+      "reviewed_prior_artifacts": "research/post-answer-review-1/provider-readiness-001",
+      "review": "20261104T031642Z-postreview-provider-readiness-96d8cf",
+      "endpoint_hashes_verified": 6,
+      "documentation_hashes_verified": 3,
+      "max_prospective_calls_without_retries": 216,
+      "exact_tokenizer_validations": 0,
+      "new_generation_calls": 0,
+      "launch_ready": false,
+      "change_after_review": "pricing_per_token renamed catalog_pricing with mixed-unit note; values unchanged; no source code changes"
+    }
+  },
+  "methods_report": "docs/journal/2026-11-04-post-answer-feedback-design.md",
+  "pointer_viewer": "docs/experiments/seminar/post-answer-replay.html",
+  "native_paths_report": "docs/journal/2026-11-04-post-answer-native-paths.md"
+}

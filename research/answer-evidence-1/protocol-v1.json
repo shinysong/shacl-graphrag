@@ -1,0 +1,64 @@
+{
+  "version": "answer-evidence-1-draft1",
+  "status": "design_before_execution",
+  "objective": "Separate source evidence acquisition, relation expansion and optional SHACL-report effects on final answers and review guidance.",
+  "cohort": {
+    "development": "Existing24authored PENELOPE questions are consumed development;18source-present and6bundle-absent. Never relabel as heldout.",
+    "evaluation": "New independent questions and source records remain to be defined and frozen before tuning; not authorized as a benchmark claim."
+  },
+  "phase1_locator": {
+    "inputs": ["question text", "original source corpus", "frozen A1 and B parent rankings"],
+    "resolver": "scripts/graphrag_explicit_anchor.py; exact supported locator grammar only; not semantic interpretation",
+    "arms": ["A1", "B", "C", "D", "E"],
+    "anchor_off": "Preserve common-budget-off-002 and its explicit startup-failure lineage; reuse completed artifacts.",
+    "anchor_on": "For resolved_unique prepend original anchor chunk to each A1/B saved top-eight parent list, stable-deduplicate and retain first8. All other statuses retain original base list with explicit locator status. Source_invalid does not certify valid evidence; existing source validation remains mandatory.",
+    "downstream": "C and E independently expand same newly packed B evidence using original adjacency/SQLite policies. D uses exact new C evidence and freshly executed scoped SHACL/Python report. No report-driven retrieval or repacking.",
+    "budget": "Frozen common-message-budget-v1 full4096/base3072/reportincrement1024 and byte caps, E5surrogate only, generator_ready=false.",
+    "measure": "Unchanged offline support scorer after outputs frozen; all24question keys perarm and every failure retained. Preserve before/after support and displaced evidence. No gold to runtime.",
+    "interpretation": "Locator injection and seed selection intervention shared across methods; gains are not graph-specific or free-form natural-language understanding."
+  },
+  "phase2_answers": {
+    "arms": {
+      "B": "Improved hybrid retrieval evidence",
+      "C": "Matched relation-expanded evidence",
+      "D": "Exact C evidence plus scoped SHACL report"
+    },
+    "optional_baseline": "A1 may be retained as secondary comparator only if included in frozen budget and attempt count before calls.",
+    "shared": ["model and version", "question", "answer schema", "instructions", "temperature", "common evidence allowance", "total input cap", "output reserve"],
+    "policy": "No mandatory SHACL veto. Model may answer source-supported fields, qualify unknowns and identify specific review needs. Do not treat conformance as truth or missing selected context as source absence.",
+    "report_schema": "Use same report slot for all arms, null for B/C; D receives checker facts only. Freeze wording and compact report before execution; retain raw reports. No hidden reference labels.",
+    "output_fields": ["answer statements with source citations", "confirmed values", "uncertain values and reasons", "specific review requests with evidence pointers"],
+    "metrics": [
+      "Task answer agreement with frozen source reference; not external physical truth",
+      "Citation validity and applicability to answer statement",
+      "Unsupported value assertion or certainty",
+      "Unnecessary withholding on answerable questions",
+      "Partial-answer utility: confirmed fields retained",
+      "Review request specificity and relevance",
+      "Report misinterpretation, including vacuous conforms",
+      "Schema failures, failed calls and unfinished responses separately"
+    ],
+    "review_request_scoring": "Predeclare source-backed review criteria; distinguish automated checks from blinded human ratings. No claim of expert validation or improved human understanding without actual experts/users.",
+    "failure_policy": "Full planned denominators; missing/error responses are not silently dropped. Failed costs nonrefunded; no automatic retry. Original outputs never repaired from references.",
+    "prelaunch_gates": [
+      "Explicit new paid budget and bounded attempt reservation; prior paid stop remains meanwhile",
+      "Source/model/prompt/outputschema/report hashes frozen",
+      "Actual-model tokenizer or verified conservative admission bound, chat framing and output reserve accounted; E5 diagnostics insufficient",
+      "Model/tool accessibility and source disclosure scope checked without exposing credentials",
+      "Independent methods and implementation review before experiment execution",
+      "Scorer tested on authored fixtures; no runtime scorer or answer repair"
+    ]
+  },
+  "phase3_neptune": {
+    "goal": "Actual backend execution parity and measured operational properties only; do not equate DB choice with answer-quality treatment.",
+    "preconditions": ["AWS account", "region", "maximum duration", "cost cap", "owned-resource cleanup plan"],
+    "current_authorization": "No resource creation until these are fixed. Local readiness work allowed."
+  },
+  "later_work": {
+    "schema_generation": "Bounded tool/LLM draft diagnostic from source text/tables; pinned OpenOntologies capabilities and licenses first. Record executable failures and required semantic edits; no assume domain-expert conclusions.",
+    "change_management": "Controlled schema/field/relationship change cases with equivalent Python/SQL; measure affected outputs, edits and regression outcomes, not unmeasured human labor.",
+    "demo": "Show actual saved source, selected evidence, report and answer provenance; clearly label mock or unexecuted outputs.",
+    "deferred": "SWRL/SHACL Rules action prescriptions until concrete source-backed action requirements exist."
+  },
+  "execution": {"paid_calls_authorized": 0, "aws_creation": false, "push_deploy": false, "new_experiment_executed": false}
+}

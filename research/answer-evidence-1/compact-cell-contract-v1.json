@@ -1,0 +1,63 @@
+{
+  "version": "compact-cell-1",
+  "status": "proposed_before_implementation",
+  "purpose": "Reversible structural encoding of repeated cell metadata; source-only, no pruning or question-dependent selection.",
+  "runtime_inputs": [
+    "one original corpus chunk"
+  ],
+  "forbidden_inputs": [
+    "question",
+    "question_id",
+    "task label",
+    "reference answers",
+    "missing-node labels",
+    "support scores"
+  ],
+  "canonical_json": "UTF8 ensure_ascii=false sort_keys=true separators comma/colon allow_nan=false; reject duplicate keys/nonfinite values. Original text must equal canonical parsed JSON or reject without normalization.",
+  "cell_fields": [
+    "cell",
+    "data_type",
+    "value",
+    "formula",
+    "cached_value"
+  ],
+  "supported_chunks": {
+    "node": "Exactly chunk_id,chunk_type,node_id,text; type=node. Text object with cells:list,header_rows:list. Keep every record field unchanged except cell-list encoding.",
+    "edge": "Exactly chunk_id,chunk_type,edge_id,text; type=edge. Keep complete original chunk and text unchanged within wrapper."
+  },
+  "node_encoding": {
+    "cells": "record.cells and each header_rows item cells: every cell object must have exactly cell_fields keys; convert to array in declared order, preserving every JSON value/type including null and boolean, order and count. Reject missing/extra keys/nonobjects.",
+    "headers": "Each header item remains object; encode cells only, retain all other keys/values. Missing/nonlist cells errors.",
+    "record": "Keep all other record fields including values, dictionary_refs, locations, sha256, nested metadata; no translation or derivation.",
+    "structure": "Exactly projection_version,raw_chunk_sha256,identity,cell_fields,record. identity contains original chunk fields except text. record is encoded parsed text; cell_fields declared once per chunk."
+  },
+  "edge_encoding": "Exactly projection_version,raw_chunk_sha256,raw_chunk. raw_chunk deep-copies complete original edge.",
+  "integrity": {
+    "raw_chunk_sha256": "Compute SHA256 of canonical entire original chunk including original text; no caller-supplied digest.",
+    "decode": "Only declared version and exact wrapper keys. Node exact cell_fields sequence and every array length5; reconstruct dictionaries and canonical text, attach identity. Edge return raw_chunk. Revalidate original contract, recompute digest; mismatch errors, no partial result.",
+    "roundtrip": "decode(encode(original)) equals original chunk object exactly, no corpus lookup; no mutation. Raw corpus/manifests unchanged.",
+    "limit": "Hash checks representation integrity, not factual truth/authenticated origin; parent validates source-exact chunks."
+  },
+  "integration": {
+    "axis": "New representation condition; affects model interface and size, equal comprehension unverified.",
+    "arms": "Same encoder for all A1/B/C/D/E; retain raw baselines; no embedding/ranking updates.",
+    "packing": "Count complete compact messages under same caps/max8candidates. Save raw_selected_chunks,compact_selected_chunks and separate hashes. Never substitute compact hash for raw.",
+    "downstream": "If compact-packed B seeds C/E, downstream candidates also change: integrated representation/selection intervention, not pure size comparison. Fixed-candidate length diagnostic is separate and not efficacy.",
+    "C_D": "D exact C compact evidence; no extra source lookup/repacking from report. Checker decodes only selected transmitted chunks, not whole corpus, cites original IDs.",
+    "checker": "Assert decoded chunks equal saved raw selected chunks before unchanged SHACL/Python checks; all fields recoverable, no hidden omitted fields. Preserve unknown/applicability.",
+    "scorer": "Unchanged source-exact support scorer uses verified decoded raw envelopes offline only; not measure LLM comprehension. No labels in encoding/packing/checker."
+  },
+  "validation_plan": [
+    "Unit cases types/null/bool/formula/cache/empty lists/nested headers, extra/missing keys, invalid version/width/hash tampering/no mutation",
+    "All-corpus roundtrip audit for every node/edge; full failures and source hashes",
+    "Fixed-candidate fullserialized sizes including wrapper/schema overhead before integrated selection",
+    "Fresh independent reviews for implementation/execution; old results/failures preserved",
+    "Actual-model tokenizer/chat framing/outputreserve before anyLLM calls; E5diagnostic only"
+  ],
+  "authorization": {
+    "this_cycle": "contract and review only",
+    "paid_calls": 0,
+    "aws_creation": false,
+    "push_deploy": false
+  }
+}

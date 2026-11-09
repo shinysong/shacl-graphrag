@@ -1,0 +1,14 @@
+@prefix e: <urn:manufacturing-review:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode e:packet ;
+            sh:resultMessage "full_context_unverified" ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape e:Context ;
+            sh:value e:packet ] .
+

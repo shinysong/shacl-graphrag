@@ -1,0 +1,306 @@
+{
+  "status": "Posthoc research/demo index, not runtime input, not new benchmark; historical question text preserved. Question entries are not statistical trials.",
+  "legacy_taxonomy_sha256": "586fa8d08f83138eb13c9e277042332a3fb3e2f7aff7ba68c0c6e46ba08fd28e",
+  "question_count": 25,
+  "questions": [
+    {
+      "id": "W-Q1",
+      "legacy_id": "Q1",
+      "question": "PP6 작업표 2행의 x_init [mm]는 얼마인가요? 해당 셀을 제시해주세요.",
+      "domain": "manufacturing_workbook",
+      "source_basis": "retained_source",
+      "source_ids": [
+        "PP6:2"
+      ],
+      "measured_here": "corrected evidence projection on existing development subset; Q7 unsupported",
+      "not_measured": "new LLM answer quality or natural-language applicability",
+      "scope": "one scalar and explicit locator",
+      "historical_scope_note": "measured_here and not_measured are inherited from catalog001; followups below are separately scoped, not retroactive measurements of the same prompt."
+    },
+    {
+      "id": "W-Q2",
+      "legacy_id": "Q2",
+      "question": "PP6 작업표 2행의 defect 코드가 가리키는 결함 이름은 무엇인가요? 작업표와 코드북의 근거를 함께 제시해주세요.",
+      "domain": "manufacturing_workbook",
+      "source_basis": "retained_source",
+      "source_ids": [
+        "PP6:2",
+        "PP6:defect_code:4"
+      ],
+      "measured_here": "corrected evidence projection on existing development subset; Q7 unsupported",
+      "not_measured": "new LLM answer quality or natural-language applicability",
+      "scope": "follow declared source relationship",
+      "historical_scope_note": "measured_here and not_measured are inherited from catalog001; followups below are separately scoped, not retroactive measurements of the same prompt."
+    },
+    {
+      "id": "W-Q3",
+      "legacy_id": "Q3",
+      "question": "PP6 작업표 2행과 12행의 설정 번호와 코드북상 명목 Idc를 비교해주세요. 두 행의 명목 Idc 차이도 알려주세요.",
+      "domain": "manufacturing_workbook",
+      "source_basis": "retained_source",
+      "source_ids": [
+        "PP6:2",
+        "PP6:12",
+        "PP6:welding_settings_code:1",
+        "PP6:welding_settings_code:3"
+      ],
+      "measured_here": "corrected evidence projection on existing development subset; Q7 unsupported",
+      "not_measured": "new LLM answer quality or natural-language applicability",
+      "scope": "two lookups and derived difference, not operating recommendation",
+      "historical_scope_note": "measured_here and not_measured are inherited from catalog001; followups below are separately scoped, not retroactive measurements of the same prompt."
+    },
+    {
+      "id": "W-Q4",
+      "legacy_id": "Q4",
+      "question": "대상을 PP6 작업표 2행과 12행으로 한정할 때, x_init [mm]가 100 이상 250 이하이면서 코드북상 결함 이름이 Porosity인 행과 그 개수를 알려주세요.",
+      "domain": "manufacturing_workbook",
+      "source_basis": "retained_source",
+      "source_ids": [
+        "PP6:2",
+        "PP6:12",
+        "PP6:defect_code:4",
+        "PP6:defect_code:1"
+      ],
+      "measured_here": "corrected evidence projection on existing development subset; Q7 unsupported",
+      "not_measured": "new LLM answer quality or natural-language applicability",
+      "scope": "bounded filtering and enumeration, not entire dataset recall",
+      "historical_scope_note": "measured_here and not_measured are inherited from catalog001; followups below are separately scoped, not retroactive measurements of the same prompt."
+    },
+    {
+      "id": "W-Q5",
+      "legacy_id": "Q5",
+      "question": "PP6 작업표 2행의 x_init [mm]와 x_init [# sample]은 각각 무엇인가요? 코드북의 Idc를 이 행에서 실제 측정한 전류라고 설명할 근거도 있나요?",
+      "domain": "manufacturing_workbook",
+      "source_basis": "retained_source",
+      "source_ids": [
+        "PP6:2",
+        "PP6:welding_settings_code:1"
+      ],
+      "measured_here": "corrected evidence projection on existing development subset; Q7 unsupported",
+      "not_measured": "new LLM answer quality or natural-language applicability",
+      "scope": "distinguish units and nominal setting from measured observations",
+      "historical_scope_note": "measured_here and not_measured are inherited from catalog001; followups below are separately scoped, not retroactive measurements of the same prompt."
+    },
+    {
+      "id": "W-Q6",
+      "legacy_id": "Q6",
+      "question": "같은 파일의 명시된 코드북만 연결한다는 공통 규칙 아래, PP6 작업표 2행의 defect를 설명할 근거로 PP6 코드북의 코드 4와 PP7 코드북의 코드 4 중 어느 것을 사용할 수 있나요? 이름이 같다는 사실만으로 둘을 대체할 수 있나요?",
+      "domain": "manufacturing_workbook",
+      "source_basis": "retained_source_with_declared_policy",
+      "source_ids": [
+        "PP6:2",
+        "PP6:defect_code:4",
+        "PP7:defect_code:4"
+      ],
+      "measured_here": "corrected evidence projection on existing development subset; Q7 unsupported",
+      "not_measured": "new LLM answer quality or natural-language applicability",
+      "scope": "correct value alone does not establish source applicability",
+      "historical_scope_note": "measured_here and not_measured are inherited from catalog001; followups below are separately scoped, not retroactive measurements of the same prompt."
+    },
+    {
+      "id": "W-Q7",
+      "legacy_id": "Q7",
+      "question": "가상 이력표와 시작일 포함·종료일 제외 규칙을 기준으로, 2025-06-30의 PP6 기록에 적용되는 검토 문서 버전을 골라주세요. 최신 버전과 적용 버전이 같은지도 설명해주세요.",
+      "domain": "manufacturing_workbook",
+      "source_basis": "authored_synthetic_version_diagnostic",
+      "source_ids": [],
+      "measured_here": "corrected evidence projection on existing development subset; Q7 unsupported",
+      "not_measured": "new LLM answer quality or natural-language applicability",
+      "scope": "effective-date and scope selection, including overlaps/missing history",
+      "historical_scope_note": "measured_here and not_measured are inherited from catalog001; followups below are separately scoped, not retroactive measurements of the same prompt."
+    },
+    {
+      "id": "W-Q8",
+      "legacy_id": "Q8",
+      "question": "제공된 작업표와 코드북으로 PP6 작업표 2행에 대해 확인할 수 있는 내용과 확인할 수 없는 내용을 나눠주세요. 명목 Idc, 실제 측정 전류, 적용 검토 문서 버전을 각각 판단하려면 어떤 근거가 필요한가요?",
+      "domain": "manufacturing_workbook",
+      "source_basis": "bounded_evidence_review",
+      "source_ids": [
+        "PP6:2",
+        "PP6:welding_settings_code:1"
+      ],
+      "measured_here": "corrected evidence projection on existing development subset; Q7 unsupported",
+      "not_measured": "new LLM answer quality or natural-language applicability",
+      "scope": "preserve supported parts; specify missing evidence without claiming global absence",
+      "historical_scope_note": "measured_here and not_measured are inherited from catalog001; followups below are separately scoped, not retroactive measurements of the same prompt."
+    },
+    {
+      "id": "W-Q9",
+      "legacy_id": "Q9",
+      "question": "초안의 “PP6 작업표 2행의 결함은 Porosity이고 실제 측정 전류는 450 A다”를 제공된 자료와 대조해주세요. 유지·수정·판단 보류할 부분과 확인할 근거 위치를 제시해주세요.",
+      "domain": "manufacturing_workbook",
+      "source_basis": "retained_source_plus_authored_draft",
+      "source_ids": [
+        "PP6:2",
+        "PP6:defect_code:4",
+        "PP6:welding_settings_code:1"
+      ],
+      "measured_here": "corrected evidence projection on existing development subset; Q7 unsupported",
+      "not_measured": "new LLM answer quality or natural-language applicability",
+      "scope": "wrong label and unsupported measured interpretation distinguished",
+      "historical_scope_note": "measured_here and not_measured are inherited from catalog001; followups below are separately scoped, not retroactive measurements of the same prompt."
+    },
+    {
+      "id": "V1",
+      "question": "MachineTool 1.01.1과 1.02.0에서 i=5025의 이름은 각각 무엇으로 기록돼 있나요?",
+      "domain": "manufacturing_published_schema",
+      "source_basis": "two pinned actual published MachineTool XML files; consumed inspected development",
+      "query_kind": "browse",
+      "measured_here": "24SQLite/RDFLib slots across6questions and2versions; posthoc XML selected-field match",
+      "not_measured": "free-form answer evaluation, plant compatibility, native inference or new actualDBrun",
+      "scope": "Explicit source version; serialized references only; minimum dependencies are not exact file locks",
+      "historical_scope_note": "measured_here and not_measured are inherited from catalog001; followups below are separately scoped, not retroactive measurements of the same prompt."
+    },
+    {
+      "id": "V2",
+      "question": "각 MachineTool 배포 파일에서 i=5025에 명시된 부모 식별자는 무엇인가요?",
+      "domain": "manufacturing_published_schema",
+      "source_basis": "two pinned actual published MachineTool XML files; consumed inspected development",
+      "query_kind": "parent",
+      "measured_here": "24SQLite/RDFLib slots across6questions and2versions; posthoc XML selected-field match",
+      "not_measured": "free-form answer evaluation, plant compatibility, native inference or new actualDBrun",
+      "scope": "Explicit source version; serialized references only; minimum dependencies are not exact file locks",
+      "historical_scope_note": "measured_here and not_measured are inherited from catalog001; followups below are separately scoped, not retroactive measurements of the same prompt."
+    },
+    {
+      "id": "V3",
+      "question": "각 MachineTool 배포 파일에서 i=5025에 직접 기록된 참조의 종류·방향·대상을 알려주세요.",
+      "domain": "manufacturing_published_schema",
+      "source_basis": "two pinned actual published MachineTool XML files; consumed inspected development",
+      "query_kind": "references",
+      "measured_here": "24SQLite/RDFLib slots across6questions and2versions; posthoc XML selected-field match",
+      "not_measured": "free-form answer evaluation, plant compatibility, native inference or new actualDBrun",
+      "scope": "Explicit source version; serialized references only; minimum dependencies are not exact file locks",
+      "historical_scope_note": "measured_here and not_measured are inherited from catalog001; followups below are separately scoped, not retroactive measurements of the same prompt."
+    },
+    {
+      "id": "V4",
+      "question": "그 참조 대상 중 선택한 MachineTool 파일에 이름이 정의된 대상과 정의가 없는 대상을 구분해주세요.",
+      "domain": "manufacturing_published_schema",
+      "source_basis": "two pinned actual published MachineTool XML files; consumed inspected development",
+      "query_kind": "target_definitions",
+      "measured_here": "24SQLite/RDFLib slots across6questions and2versions; posthoc XML selected-field match",
+      "not_measured": "free-form answer evaluation, plant compatibility, native inference or new actualDBrun",
+      "scope": "Explicit source version; serialized references only; minimum dependencies are not exact file locks",
+      "historical_scope_note": "measured_here and not_measured are inherited from catalog001; followups below are separately scoped, not retroactive measurements of the same prompt."
+    },
+    {
+      "id": "V5",
+      "question": "두 MachineTool 파일의 SignalColor 별칭은 어느 네임스페이스 URI와 숫자 식별자를 가리키나요? ns 번호의 차이만으로 다른 대상이라고 할 수 있나요?",
+      "domain": "manufacturing_published_schema",
+      "source_basis": "two pinned actual published MachineTool XML files; consumed inspected development",
+      "query_kind": "alias",
+      "measured_here": "24SQLite/RDFLib slots across6questions and2versions; posthoc XML selected-field match",
+      "not_measured": "free-form answer evaluation, plant compatibility, native inference or new actualDBrun",
+      "scope": "Explicit source version; serialized references only; minimum dependencies are not exact file locks",
+      "historical_scope_note": "measured_here and not_measured are inherited from catalog001; followups below are separately scoped, not retroactive measurements of the same prompt."
+    },
+    {
+      "id": "V6",
+      "question": "두 MachineTool 배포 파일에 선언된 IA 외부 모델의 버전 요구를 제시해주세요. 이 정보만으로 현장 설치가 호환된다고 판단할 수 있나요?",
+      "domain": "manufacturing_published_schema",
+      "source_basis": "two pinned actual published MachineTool XML files; consumed inspected development",
+      "query_kind": "required_ia",
+      "measured_here": "24SQLite/RDFLib slots across6questions and2versions; posthoc XML selected-field match",
+      "not_measured": "free-form answer evaluation, plant compatibility, native inference or new actualDBrun",
+      "scope": "Explicit source version; serialized references only; minimum dependencies are not exact file locks",
+      "historical_scope_note": "measured_here and not_measured are inherited from catalog001; followups below are separately scoped, not retroactive measurements of the same prompt."
+    },
+    {
+      "id": "I1",
+      "question": "Welding Robot System #1이라는 이름이 등장하는 기록과 보고 위치를 보여주세요.",
+      "domain": "published_manufacturing_ticket_collection",
+      "source_basis": "100 publicFujitsu records, industrial authenticity vs synthetic unknown",
+      "measured_here": "three grouping policies and same-policy Python/pySHACL finding agreement",
+      "not_measured": "physicalidentity truth, human review time, LLM effectiveness",
+      "scope": "same name across two locations is advisory ambiguity, not proved bad merge",
+      "historical_scope_note": "measured_here and not_measured are inherited from catalog001; followups below are separately scoped, not retroactive measurements of the same prompt."
+    },
+    {
+      "id": "I2",
+      "question": "그 기록들을 하나의 물리적 설비로 합칠 수 있나요? 판단에 필요한 식별자나 이동 이력은 무엇인가요?",
+      "domain": "published_manufacturing_ticket_collection",
+      "source_basis": "100 publicFujitsu records, industrial authenticity vs synthetic unknown",
+      "measured_here": "three grouping policies and same-policy Python/pySHACL finding agreement",
+      "not_measured": "physicalidentity truth, human review time, LLM effectiveness",
+      "scope": "same name across two locations is advisory ambiguity, not proved bad merge",
+      "historical_scope_note": "measured_here and not_measured are inherited from catalog001; followups below are separately scoped, not retroactive measurements of the same prompt."
+    },
+    {
+      "id": "S1",
+      "question": "SBOM의 dependsOn이 빈 목록인 경우와 그 항목이 없는 경우를 같은 뜻으로 해석할 수 있나요?",
+      "domain": "SBOM_auxiliary",
+      "source_basis": "retained CycloneDX boundedpublic examples",
+      "measured_here": "prior schema-management1 study; no new modelcalls in this extension",
+      "not_measured": "manufacturing operations transfer",
+      "scope": "absence vs explicit-empty under published source semantics",
+      "historical_scope_note": "measured_here and not_measured are inherited from catalog001; followups below are separately scoped, not retroactive measurements of the same prompt."
+    },
+    {
+      "id": "S2",
+      "question": "두 실제 릴리스의 의존 관계가 바뀌었을 때 어떤 저장된 조회를 다시 확인해야 하나요?",
+      "domain": "SBOM_auxiliary",
+      "source_basis": "previous pinned actual release snapshots",
+      "measured_here": "prior808queries22changes23flags with completechangefeed/readscope",
+      "not_measured": "natural failure rates or human maintenance labor",
+      "scope": "complete metadata assumption; not new independent trial",
+      "historical_scope_note": "measured_here and not_measured are inherited from catalog001; followups below are separately scoped, not retroactive measurements of the same prompt."
+    },
+    {
+      "id": "W-Q8a",
+      "question": "실제 HDF 파일까지 제공했을 때 PP6 2행의 명목 Idc, 전류 채널 유무, 검증된 결함 구간 평균, 적용 문서 버전 중 무엇을 말할 수 있나요?",
+      "domain": "manufacturing_measurement",
+      "artifact": "research/manufacturing-measurement-1/answer-001",
+      "measured_here": "One consumed question ×6models×draft/self/SHACL=18completed; fourfields agree allarms; no incremental improvement opportunity",
+      "not_measured": "Source packet manually assembled; alignment/calibration/physicaltruth and human utility not validated",
+      "source_basis": "Consumed development sources; question wording is posthoc explanatory index, not frozen experimental prompt"
+    },
+    {
+      "id": "T1",
+      "question": "MachineTool StateMachineType(i=24)의 상위 타입은 무엇인가요? 직접 관계와 추론 경로를 구분해주세요.",
+      "domain": "manufacturing_published_schema",
+      "artifact": "research/manufacturing-model-change-1/subtype-live-001",
+      "measured_here": "248typed questions×4adapters=992slots;868completed124selectedn10sancestoradapterunsupported",
+      "not_measured": "No full OPC declaration/OWL semantics or engine performance",
+      "source_basis": "Consumed development sources; question wording is posthoc explanatory index, not frozen experimental prompt"
+    },
+    {
+      "id": "T2",
+      "question": "MachineTool StateMachineType(i=24)에 직접 또는 간접적으로 속하는 모델 객체는 무엇인가요?",
+      "domain": "manufacturing_published_schema",
+      "artifact": "research/manufacturing-model-change-1/subtype-live-001",
+      "measured_here": "Same consumed hierarchy study asT1, not independent trials. Example direct0 vsclosure7 model objects",
+      "not_measured": "Not observed physical equipment; not universal n10s capability limit",
+      "source_basis": "Consumed development sources; question wording is posthoc explanatory index, not frozen experimental prompt"
+    },
+    {
+      "id": "T3",
+      "question": "선택한 IA 정의를 추가하면 MachineTool i=117 모델 객체의 타입 집합과 근거 경로가 어떻게 바뀌나요?",
+      "domain": "manufacturing_published_schema",
+      "artifact": "research/manufacturing-model-change-1/object-type-context-001",
+      "measured_here": "Posthoc all300originalobjects1200slots;4questions changed;600PythonOWLpairs agree",
+      "not_measured": "Added source access; no strongerreasoner or newactualDB measurement",
+      "source_basis": "Consumed development sources; question wording is posthoc explanatory index, not frozen experimental prompt"
+    },
+    {
+      "id": "M1",
+      "question": "ObligationType(i=1002)의 기존 정의와 답의 근거가 그대로여도 새 객체가 추가되면 어느 조회를 다시 확인해야 하나요?",
+      "domain": "manufacturing_published_schema",
+      "artifact": "research/manufacturing-model-change-1/query-footprint-001",
+      "measured_here": "124membershipqueries1changed;positivepath-only misses1; adjacencybucketflags1 undercomplete snapshots",
+      "not_measured": "No minimaldependency guarantee or measuredhuman maintenance effort",
+      "source_basis": "Consumed development sources; question wording is posthoc explanatory index, not frozen experimental prompt"
+    },
+    {
+      "id": "M2",
+      "question": "MachineTool 파일에 명시된 필수·선택 모델링 규칙은 어디에 있고, 지금 구현이 그 규칙까지 검사하나요?",
+      "domain": "manufacturing_published_schema",
+      "artifact": "research/manufacturing-model-change-1/modelling-rules-002",
+      "measured_here": "Four originalXMLinventoryslotscomplete;371/76/407/76 explicitlytagged nodes; actualconformance notrun",
+      "not_measured": "No inheriteddeclaration expansion, liveinstance validation or site compliance",
+      "source_basis": "Consumed development sources; question wording is posthoc explanatory index, not frozen experimental prompt"
+    }
+  ],
+  "predecessor_sha256": "4275a714ca03f85f51b63087cb74fbdeb4309d9029bf8890871f02aac3745322",
+  "cross_dataset_join": "No verified identity link between Penelope PP6, published MachineTool model and Fujitsu ticket examples. Do not join by manufacturing vocabulary or claim one deployed plant."
+}

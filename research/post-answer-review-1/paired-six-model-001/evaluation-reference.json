@@ -1,0 +1,80 @@
+{
+  "scope": "evaluator_only; authored reference criteria before new outputs; not expert validated",
+  "references": {
+    "Q1": {
+      "position_value": 106,
+      "position_unit": "mm",
+      "locator": "PP6 defects_xlocation.xlsx D2 (row2)"
+    },
+    "Q2": {
+      "defect_code": 4,
+      "defect_label": "Metallic inclusion",
+      "source_applicability": "PP6 row2 A2 -> same PP6 defect_code dictionary code4, B label"
+    },
+    "Q3": {
+      "left_setting": 1,
+      "right_setting": 3,
+      "left_nominal_value": 450,
+      "right_nominal_value": 500,
+      "signed_difference": 50,
+      "units": "A; nominal",
+      "source_bindings": "PP6 row2/row12 -> PP6 setting1/3 columnC under Idc(A)"
+    },
+    "Q4": {
+      "membership": [
+        12
+      ],
+      "count": 1,
+      "list_count_consistency": true,
+      "bounded_scope": "only rows2 and12, inclusive100..250mm, Porosity"
+    },
+    "Q5": {
+      "position_mm": 106,
+      "sample_index": 66244,
+      "units": "mm vs sample index, cannot equate",
+      "nominal_not_measured": "450A nominal codebook setting; no actual measured current established"
+    },
+    "Q6": {
+      "applicable_codebook": "PP6 code4",
+      "rejected_substitute": "PP7 code4 despite equal label",
+      "policy_explanation": "same workbook/path/hash declared policy, no universal interchangeability claim"
+    },
+    "Q7": {
+      "applicable_version": "v1",
+      "latest_version": [
+        "v2"
+      ],
+      "difference_explanation": "latest release differs from applicable interval at2025-06-30",
+      "interval_scope": "PP6,start inclusive/end exclusive; supplied synthetic history only"
+    },
+    "Q8": {
+      "nominal_support": "450A supported by PP6 setting1",
+      "measured_support": "not established in selected bundle",
+      "version_support": "not established in selected bundle",
+      "specific_missing_evidence": "actual measurement record with row/time linkage; applicable scoped dated review document/history",
+      "no_global_absence_claim": "missing selected evidence does not establish global absence"
+    },
+    "Q9": {
+      "defect_correction": "Metallic inclusion not Porosity",
+      "measured_claim_review": "actual measured450A unsupported; qualify/withhold",
+      "retained_nominal_information": "450A as nominal setting only",
+      "valid_review_pointers": "row2 A2 defect -> PP6 defect_code code4 label and B2 setting1 -> PP6 setting codebook Idc(A); actualmeasurement needed"
+    }
+  },
+  "criteria": {
+    "subtarget_labels": [
+      "matches_reference",
+      "wrong",
+      "withheld",
+      "missing",
+      "unadjudicable"
+    ],
+    "unnecessary_withholding": "supported required target withheld; unsupported actualmeasurement/version uncertainty is appropriate",
+    "citation_support": "locator resolves and supports described role/value; codebook not actual measurement",
+    "unsupported_certainty": "asserted factual or complete/actual claim unsupported by selected context",
+    "actionable_review_pointer": "specific missing record/field/time/scope to inspect, not physical process prescription",
+    "scoring": "joint prose and structured claims; schema-valid but wrong declarations remain wrong; emptyclaims is not validation success"
+  },
+  "source_context_sha256": "1531e666439bf7036591cd179a6e54572c524240c2d6717f317ac871fa8d0fb6",
+  "source_context_hash_definition": "canonical config.inputs only, no provider prices"
+}

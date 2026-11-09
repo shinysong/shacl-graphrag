@@ -1,0 +1,170 @@
+[
+  {
+    "id": "authorization_pending",
+    "event": {
+      "admission": "pending",
+      "dispatch_attempted": false,
+      "outcome": "none",
+      "schema_valid": null
+    },
+    "expected_error": false,
+    "expected_status": "not_attempted",
+    "expected_consumed_attempts": 0
+  },
+  {
+    "id": "admitted_but_budget_stop",
+    "event": {
+      "admission": "admitted",
+      "dispatch_attempted": false,
+      "outcome": "none",
+      "schema_valid": null
+    },
+    "expected_error": false,
+    "expected_status": "not_attempted",
+    "expected_consumed_attempts": 0
+  },
+  {
+    "id": "input_oversize",
+    "event": {
+      "admission": "rejected",
+      "dispatch_attempted": false,
+      "outcome": "none",
+      "schema_valid": null
+    },
+    "expected_error": false,
+    "expected_status": "input_not_admitted",
+    "expected_consumed_attempts": 0
+  },
+  {
+    "id": "transport_unknown_receipt",
+    "event": {
+      "admission": "admitted",
+      "dispatch_attempted": true,
+      "outcome": "transport_error",
+      "schema_valid": null
+    },
+    "expected_error": false,
+    "expected_status": "transport_failure",
+    "expected_consumed_attempts": 1
+  },
+  {
+    "id": "provider_error",
+    "event": {
+      "admission": "admitted",
+      "dispatch_attempted": true,
+      "outcome": "provider_error",
+      "schema_valid": null
+    },
+    "expected_error": false,
+    "expected_status": "provider_failure",
+    "expected_consumed_attempts": 1
+  },
+  {
+    "id": "truncated_even_json_valid",
+    "event": {
+      "admission": "admitted",
+      "dispatch_attempted": true,
+      "outcome": "truncated",
+      "schema_valid": true
+    },
+    "expected_error": false,
+    "expected_status": "truncated",
+    "expected_consumed_attempts": 1
+  },
+  {
+    "id": "schema_invalid",
+    "event": {
+      "admission": "admitted",
+      "dispatch_attempted": true,
+      "outcome": "completed",
+      "schema_valid": false
+    },
+    "expected_error": false,
+    "expected_status": "schema_error",
+    "expected_consumed_attempts": 1
+  },
+  {
+    "id": "schema_valid_semantics_unknown",
+    "event": {
+      "admission": "admitted",
+      "dispatch_attempted": true,
+      "outcome": "completed",
+      "schema_valid": true
+    },
+    "expected_error": false,
+    "expected_status": "completed",
+    "expected_consumed_attempts": 1
+  },
+  {
+    "id": "dispatch_before_admission",
+    "event": {
+      "admission": "pending",
+      "dispatch_attempted": true,
+      "outcome": "completed",
+      "schema_valid": true
+    },
+    "expected_error": true,
+    "expected_status": null,
+    "expected_consumed_attempts": null
+  },
+  {
+    "id": "rejected_but_dispatched",
+    "event": {
+      "admission": "rejected",
+      "dispatch_attempted": true,
+      "outcome": "transport_error",
+      "schema_valid": null
+    },
+    "expected_error": true,
+    "expected_status": null,
+    "expected_consumed_attempts": null
+  },
+  {
+    "id": "response_without_attempt",
+    "event": {
+      "admission": "admitted",
+      "dispatch_attempted": false,
+      "outcome": "completed",
+      "schema_valid": true
+    },
+    "expected_error": true,
+    "expected_status": null,
+    "expected_consumed_attempts": null
+  },
+  {
+    "id": "unknown_schema_on_completed",
+    "event": {
+      "admission": "admitted",
+      "dispatch_attempted": true,
+      "outcome": "completed",
+      "schema_valid": null
+    },
+    "expected_error": true,
+    "expected_status": null,
+    "expected_consumed_attempts": null
+  },
+  {
+    "id": "no_terminal_result_after_dispatch",
+    "event": {
+      "admission": "admitted",
+      "dispatch_attempted": true,
+      "outcome": "none",
+      "schema_valid": null
+    },
+    "expected_error": true,
+    "expected_status": null,
+    "expected_consumed_attempts": null
+  },
+  {
+    "id": "nonboolean_attempt",
+    "event": {
+      "admission": "admitted",
+      "dispatch_attempted": 1,
+      "outcome": "completed",
+      "schema_valid": true
+    },
+    "expected_error": true,
+    "expected_status": null,
+    "expected_consumed_attempts": null
+  }
+]

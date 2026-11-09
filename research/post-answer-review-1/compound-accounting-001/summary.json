@@ -1,0 +1,260 @@
+{
+  "groups": {
+    "fixture": {
+      "planned_workflows": 1,
+      "workflow_execution": {
+        "draft": {
+          "succeeded": 1,
+          "failed": 0,
+          "not_attempted": 0
+        },
+        "self_review": {
+          "succeeded": 1,
+          "failed": 0,
+          "not_attempted": 0
+        },
+        "report": {
+          "succeeded": 1,
+          "failed": 0,
+          "not_attempted": 0
+        }
+      },
+      "planned_subtargets": 3,
+      "subtarget_execution_slots": {
+        "draft": {
+          "succeeded": 3,
+          "failed": 0,
+          "not_attempted": 0
+        },
+        "self_review": {
+          "succeeded": 3,
+          "failed": 0,
+          "not_attempted": 0
+        },
+        "report": {
+          "succeeded": 3,
+          "failed": 0,
+          "not_attempted": 0
+        }
+      },
+      "support_eligible_subtargets": 3,
+      "subtarget_annotations": {
+        "authored": {
+          "phases": {
+            "draft": {
+              "scored": 3,
+              "successful_unscored": 0,
+              "support_eligible_scored": 3,
+              "unnecessary_withholding": 0,
+              "axes": {
+                "target_value": {
+                  "matches_reference": 2,
+                  "differs_or_offtarget": 1
+                },
+                "unit": {
+                  "matches_reference": 3
+                },
+                "selected_evidence_support": {
+                  "supported": 3
+                },
+                "nominal_or_measured_scope": {
+                  "nominal_correct": 3
+                },
+                "citation_intent": {
+                  "content": 3
+                },
+                "citation_applicability": {
+                  "supports_intended_proposition": 3
+                },
+                "projection": {
+                  "faithful": 3
+                },
+                "review_pointer": {
+                  "relevant_and_valid": 3
+                }
+              }
+            },
+            "self_review": {
+              "scored": 3,
+              "successful_unscored": 0,
+              "support_eligible_scored": 3,
+              "unnecessary_withholding": 0,
+              "axes": {
+                "target_value": {
+                  "matches_reference": 2,
+                  "differs_or_offtarget": 1
+                },
+                "unit": {
+                  "matches_reference": 3
+                },
+                "selected_evidence_support": {
+                  "supported": 3
+                },
+                "nominal_or_measured_scope": {
+                  "nominal_correct": 3
+                },
+                "citation_intent": {
+                  "content": 3
+                },
+                "citation_applicability": {
+                  "supports_intended_proposition": 3
+                },
+                "projection": {
+                  "faithful": 3
+                },
+                "review_pointer": {
+                  "relevant_and_valid": 3
+                }
+              }
+            },
+            "report": {
+              "scored": 3,
+              "successful_unscored": 0,
+              "support_eligible_scored": 3,
+              "unnecessary_withholding": 1,
+              "axes": {
+                "target_value": {
+                  "matches_reference": 2,
+                  "withheld": 1
+                },
+                "unit": {
+                  "matches_reference": 3
+                },
+                "selected_evidence_support": {
+                  "supported": 3
+                },
+                "nominal_or_measured_scope": {
+                  "nominal_correct": 3
+                },
+                "citation_intent": {
+                  "content": 3
+                },
+                "citation_applicability": {
+                  "supports_intended_proposition": 3
+                },
+                "projection": {
+                  "faithful": 3
+                },
+                "review_pointer": {
+                  "relevant_and_valid": 3
+                }
+              }
+            }
+          },
+          "transitions": {
+            "self_review": {
+              "planned_pairs": 3,
+              "scored_pairs": 3,
+              "not_scored_pairs": 0,
+              "target": {
+                "unchanged_target_label": 3
+              },
+              "axis_pairs": {
+                "target_value": {
+                  "matches_reference -> matches_reference": 2,
+                  "differs_or_offtarget -> differs_or_offtarget": 1
+                },
+                "unit": {
+                  "matches_reference -> matches_reference": 3
+                },
+                "selected_evidence_support": {
+                  "supported -> supported": 3
+                },
+                "nominal_or_measured_scope": {
+                  "nominal_correct -> nominal_correct": 3
+                },
+                "citation_intent": {
+                  "content -> content": 3
+                },
+                "citation_applicability": {
+                  "supports_intended_proposition -> supports_intended_proposition": 3
+                },
+                "projection": {
+                  "faithful -> faithful": 3
+                },
+                "review_pointer": {
+                  "relevant_and_valid -> relevant_and_valid": 3
+                }
+              }
+            },
+            "report": {
+              "planned_pairs": 3,
+              "scored_pairs": 3,
+              "not_scored_pairs": 0,
+              "target": {
+                "unchanged_target_label": 2,
+                "wrong_to_withheld": 1
+              },
+              "axis_pairs": {
+                "target_value": {
+                  "matches_reference -> matches_reference": 2,
+                  "differs_or_offtarget -> withheld": 1
+                },
+                "unit": {
+                  "matches_reference -> matches_reference": 3
+                },
+                "selected_evidence_support": {
+                  "supported -> supported": 3
+                },
+                "nominal_or_measured_scope": {
+                  "nominal_correct -> nominal_correct": 3
+                },
+                "citation_intent": {
+                  "content -> content": 3
+                },
+                "citation_applicability": {
+                  "supports_intended_proposition -> supports_intended_proposition": 3
+                },
+                "projection": {
+                  "faithful -> faithful": 3
+                },
+                "review_pointer": {
+                  "relevant_and_valid -> relevant_and_valid": 3
+                }
+              }
+            }
+          }
+        }
+      },
+      "workflow_label_coverage": {
+        "authored": {
+          "draft": {
+            "contains_wrong_or_withheld_target": 1
+          },
+          "self_review": {
+            "contains_wrong_or_withheld_target": 1
+          },
+          "report": {
+            "contains_wrong_or_withheld_target": 1
+          }
+        }
+      }
+    }
+  },
+  "subtarget_disagreements": [],
+  "subtarget_identity_map": [
+    {
+      "encoded_id": "[\"a\",\"left\"]",
+      "case_id": "a",
+      "subtarget_id": "left"
+    },
+    {
+      "encoded_id": "[\"a\",\"right\"]",
+      "case_id": "a",
+      "subtarget_id": "right"
+    },
+    {
+      "encoded_id": "[\"a\",\"difference\"]",
+      "case_id": "a",
+      "subtarget_id": "difference"
+    }
+  ],
+  "input_sha256": "85d1fa343d3905ced3e18bff21ac3c4effa69a44e3d5347df41820d17a1454bf",
+  "consensus_performed": false,
+  "limits": [
+    "Externally supplied annotations; no automatic semantic scoring or expert validation",
+    "All target labels match is not whole-answer correctness: unit/support/projection axes stay separate",
+    "Expanded subtarget slots share phase outputs and are not independent calls or trials",
+    "Missing annotations are unscored; failures are not withholding; no runtime gold or answer repair"
+  ]
+}

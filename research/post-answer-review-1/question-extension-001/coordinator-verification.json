@@ -1,0 +1,39 @@
+{
+  "identity_slots": 72,
+  "completed_rule_universes_verified": 70,
+  "expected_input_failure_slots": 2,
+  "raw_report_slots": 72,
+  "normalized_status_counts": {
+    "pass": 276,
+    "flag": 32,
+    "unknown": 56
+  },
+  "source_postrun_sha256": "900bb25d15bcb4dbab89076d3a1372d84762829dcd645bae7c17bc60b9693ac8",
+  "dependency_hashes": {
+    "scripts/run_question_extension.py": "71d4173f249918c73c7fae0d510bdc9a2c5136d30d1ed20a46619a569bdd545f",
+    "scripts/postreview_extended.py": "2d94ef37964ed86182de9443296acf97c5ee9bce68f6022605783c1110c7f5d6",
+    "scripts/post_answer_review.py": "8362eec5fbcd135b0678935a9f310cbbed5372c1ae987aa4d4a83e53dac43f7f",
+    "scripts/postreview_native_paths.py": "c750d18a8ef0ee1ec2aad1b4bb03a5bbc2ec31f3442819bfd0e45429065cd893",
+    "scripts/postreview_lookup.py": "1ba49013630405c2d76adc8cff2d25ee8704cf71f0b61dccb40673d2fe78872d",
+    "tests/test_postreview_extended.py": "3ffab3f62c04357eab835f5b4c7c0ce7ed4f5e172e305d60f89c8803724bd002",
+    "uv.lock": "676774d1280b08cb70517587288bb53f538d1a4bd64b9b2362473e2dc9079cc9",
+    "pyproject.toml": "1d888771e75f7096411162899b3de3bcde28a6356fe0987995c994aaba485ecc"
+  },
+  "unit_test_exit": 0,
+  "runner_exit": 0,
+  "audit_attempts": [
+    {
+      "exit": 1,
+      "cause": "Coordinator case-ID assumption; preserved privately"
+    },
+    {
+      "exit": 0,
+      "method": "Actual evaluation case identities"
+    }
+  ],
+  "limits": [
+    "Coordinator audit, not independent semantic scoring",
+    "Manual projection and supplied policies; no NLP or LLM efficacy",
+    "Raw archive written at end; not crash durable"
+  ]
+}
