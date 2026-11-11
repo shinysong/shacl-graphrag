@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-10",
+  "study": "factory-rdf-parity",
+  "artifacts": "research/virtual-factory-llm-1/backend-parity-001",
+  "summary": {
+    "planned_slots": 144,
+    "completed": 96,
+    "failed_query_slots": 0,
+    "unattempted": 48,
+    "initialization": {
+      "neo4j_cypher": {
+        "status": "ready"
+      },
+      "neptune_sparql": {
+        "status": "unattempted",
+        "reason": "not enabled / no current bounded authorization"
+      }
+    },
+    "compared": 48,
+    "mismatches": 0,
+    "paid_llm_calls": 0,
+    "aws_power_actions": 0,
+    "scope": "Authored development transport/checker comparison; not LLM answer efficacy, DB performance, maintenance labor or OWL reasoning."
+  },
+  "checks": {
+    "factory-rdf-tests": 0,
+    "factory-lab-tests": 0,
+    "factory-branching-tests": 0,
+    "factory-planning-tests": 0
+  },
+  "review_job": "20261110T084440Z-factory-rdf-parity-fa0a47",
+  "renewal": {
+    "new_record": "Q03R",
+    "scope": "P-A only",
+    "retains_old": "Q03",
+    "removed_flag": "O17|M03|CAP-CUT qualification-not-applicable",
+    "retained_flag": "O18|M03|CAP-CUT qualification-not-applicable",
+    "python_shacl_same_flags_all_six_bundles": true
+  },
+  "limitations": [
+    "Synthetic development, not representative benchmark",
+    "RDFLib is not a remote RDF DB measurement; Neptune unattempted",
+    "No OWL inference, no Neptune-native SHACL",
+    "LLM efficacy unmeasured; current model-visible backend query metadata differs; normalize before controlled LLM comparison",
+    "Single-writer import, not concurrent transactional safety",
+    "AWS status denied/unreachable; actual stopped status and billing unknown",
+    "Neptune authorization cost cap is not billing enforcement"
+  ],
+  "next": "New bounded Neptune window and stop control, then named-graph import and same 48 tool requests. Paid LLM scope remains closed."
+}

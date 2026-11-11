@@ -14,10 +14,6 @@ OUTPUT = ROOT / '_workspace/chirpy-source'
 BASEURL = '/shacl-graphrag'
 TABS = {
     'index.md': ('about', 'fas fa-flask', 1),
-    'experiments/specification.md': ('protocol', 'fas fa-list-check', 2),
-    'experiments/records/index.md': ('runs', 'fas fa-vial', 3),
-    'journal/index.md': ('journal', 'fas fa-pen-nib', 4),
-    'setup/recording.md': ('setup', 'fas fa-circle-info', 5),
 }
 
 
@@ -106,10 +102,8 @@ def prepare():
                 pin = False
             else:
                 pinned_slugs = {
+                    '2026-11-11-ontology-shacl-role.md',
                     '2026-11-07-manufacturing-research-map.md',
-                    '2026-11-06-backend-inference-review.md',
-                    '2026-11-04-paired-six-model-review.md',
-                    '2026-10-22-llm-semantic-intervention-paper.md',
                 }
                 pin = filename in pinned_slugs
 
@@ -180,10 +174,13 @@ def prepare():
             dest = OUTPUT / source.relative_to(DOCS)
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(source, dest)
-    for name, layout, icon, order in [('categories', 'categories', 'fas fa-stream', 6),
-                                      ('archives', 'archives', 'fas fa-archive', 7)]:
-        (OUTPUT / '_tabs' / f'{name}.md').write_text('---\n' + yaml.safe_dump(dict(
-            title=name.capitalize(), layout=layout, icon=icon, order=order, permalink=f'/{name}/')) + '---\n')
+    # Keep historical index URLs for bookmarks. Archives collects dated posts
+    # and links to the separate execution-record index in its layout.
+    (OUTPUT / 'pages' / 'categories.md').write_text('---\n' + yaml.safe_dump(dict(
+        title='Categories', layout='categories', permalink='/categories/')) + '---\n')
+    (OUTPUT / '_tabs' / 'archives.md').write_text('---\n' + yaml.safe_dump(dict(
+        title='Archives', layout='archives', icon='fas fa-box-archive',
+        order=2, permalink='/archives/')) + '---\n')
     (OUTPUT / 'tags.html').write_text('---\nlayout: tags\ntitle: Tags\npermalink: /tags/\n---\n')
     search_file = OUTPUT / 'assets/js/data/search.json'
     search_file.parent.mkdir(parents=True, exist_ok=True)

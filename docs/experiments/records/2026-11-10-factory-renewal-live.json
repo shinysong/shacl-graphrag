@@ -1,0 +1,54 @@
+{
+  "study": "factory-renewal-live",
+  "date": "2026-11-10",
+  "artifact_directory": "research/virtual-factory-llm-1/renewal-live-001",
+  "summary": {
+    "run_id": "d700c3ad53d84420b4e6c3154cfb63e6",
+    "status": "completed",
+    "snapshot": "factory-v3",
+    "backend": "neo4j_cypher",
+    "model": "google/gemini-3.8-flash",
+    "provider": "google-ai-studio",
+    "temperature": 0,
+    "seed": 42,
+    "llm_calls": 6,
+    "tool_queries": 6,
+    "failed_llm_calls": 0,
+    "failed_tools": 0,
+    "finals": 3,
+    "new_reported_usd": "0.037679100",
+    "new_nonrefunded_reservations_usd": "0.28990350",
+    "budget_after": {
+      "attempts": 89,
+      "reserved_nonrefunded_usd": "3.16881600",
+      "reported_usd": "0.292659375",
+      "unresolved": 0
+    },
+    "python_shacl_request_messages_identical": true,
+    "same_frozen_bundle": true,
+    "gate_closed": true,
+    "aws_actions": 0,
+    "neptune_measured": false,
+    "scope": "One authored development case; unblinded coordinator inspection, not efficacy benchmark or controlled v2-v3 comparison."
+  },
+  "assessment": {
+    "core": "Draft and all finals recognize Q03R permits P-A qualification at snapshot date, not P-B. No core judgment improvement observed. Scheduling and delivery uncertainty preserved.",
+    "remaining_errors": [
+      "Draft and self/Python finals mix qualification-not-applicable with qualification-not-retrieved for O18 M01/M03. SHACL final uses not-applicable per candidate but repeats not-retrieved in summary. This conflates declared reason-code categories despite correct business conclusion.",
+      "Python final introduces waiting for M02 repair completion as a review option; graph says unavailable, not broken/under repair. This assumption is not supported by retrieved evidence.",
+      "Wording about system-wide service absence should be read as scope of provided tools, not verified whole enterprise absence."
+    ],
+    "limits": [
+      "Only one model/one authored case and fixed arm order; temperature0/seed42 do not guarantee identical responses.",
+      "No mutation/physical approval performed; no external truth or full sentence citation scoring.",
+      "Identical normalized Python/SHACL request payloads do not yield identical prose.",
+      "Current run Neo4j only; no Neptune execution and no RDF-specific LLM advantage tested."
+    ]
+  },
+  "review_job": "20261110T085244Z-factory-renewal-live-138248",
+  "checks": {
+    "factory-planning-tests": 0,
+    "factory-branching-tests": 0,
+    "factory-lab-tests": 0
+  }
+}

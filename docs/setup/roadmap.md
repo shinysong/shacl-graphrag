@@ -1,36 +1,23 @@
-# Setup roadmap (초기 이후)
+# 실험 환경과 다음 연결 작업
 
-부트스트랩(`scripts/bootstrap.sh`) 이후 진행된 인프라 및 실험 환경 현황과 후속 계획입니다.
+이 페이지는 설치 계획과 실제 실행을 구분합니다. 실험 수치는 각 [실행 기록](../experiments/records/index.md)에서 확인할 수 있습니다.
 
-## 1. 그래프 저장소 및 쿼리 엔진 현황
+## 현재 연결 상태
 
-| 엔진 | 역할 | 상태 및 구현 내용 |
+| 구성 요소 | 확인한 범위 | 남은 일 |
 | --- | --- | --- |
-| **RDFLib / pySHACL** | 온톨로지 모델링, 1:1 무조인 엔티티 그래프 투영 및 SHACL 유효성 검증 | **완료** (`unified_rule_lifecycle.py`, 4단계 생명주기 검증 완료) |
-| **Neo4j Community** | 라벨 속성 그래프(LPG) 비교군, Cypher 다중 홉 관계 탐색 | **완료** (`graphrag_neo4j.py`, `run_neo4j_retrieval.py` 하이브리드 검색 검증 완료) |
-| **GraphDB Free** | 대규모 RDF 저장 및 SHACL 네이티브 엔진 비교 | 예정 (도메인 실증 데이터 확장 시 도입) |
-| **Neptune Serverless** | 클라우드 관리형 그래프 DB 및 검증 계층 배치 비교 | 후반 예정 (Terraform 인프라 확정 후) |
+| RDFLib·pySHACL | 로컬 RDF 조회와 선택 근거 검사를 실행했습니다. | 더 큰 자료와 새 질문에서 검사 범위를 검토해야 합니다. |
+| Neo4j Community·n10s | 실제 Cypher 조회, 일부 RDF 매핑·추론·변경 사례를 실행했습니다. Factory Lab은 Neo4j를 기본 조회 저장소로 사용합니다. | 규칙 변경의 운영 비용과 동시 수정은 측정하지 않았습니다. |
+| Amazon Neptune | 이전의 제한된 세션에서 RDF/SPARQL 조회와 외부에서 계산한 추론 결과의 저장·변경 비교를 실행했습니다. | Factory Lab의 새 v3 조회 48건은 아직 Neptune에서 실행하지 않았습니다. 새 운영 시간과 종료 절차를 확인한 뒤 진행합니다. |
+| GraphDB Free | 연구의 비교 후보입니다. | 이 연구의 Factory Lab 비교에는 아직 연결하지 않았습니다. |
+| OpenRouter | 여섯 모델 사후 검토 개발 실험과 Factory Lab의 한 사례 실제 답변을 실행했습니다. | 새 유료 실행은 범위와 비용을 다시 고정해야 합니다. |
 
-## 2. LLM 게이트웨이 및 모델 평가
+Factory Lab의 이번 [Neo4j·로컬 RDF 조회 비교](../experiments/records/2026-11-10-factory-rdf-parity.json)는 정해진 다섯 조회 도구가 반환한 결과를 확인한 소규모 통합 검사입니다. 저장소 성능이나 임의의 SPARQL·Cypher가 동등한지는 다루지 않습니다. [실제 LLM 답변 기록](../experiments/records/2026-11-10-factory-renewal-live.json)은 Neo4j 경로에서만 실행했습니다.
 
-- **OpenRouter** 게이트웨이 (`.env` 기반):
-  - 모델별 추론 및 사후 검토(Post-Answer Review) 파이프라인 구축 완료.
-  - Claude 3.5 Sonnet, GPT-4o, Gemini 1.5 Pro, Llama 3.1 70B 등 6개 모델 대상 조언적 SHACL 검증 보고서의 유효성 검증 완료.
+## 다음 연결 작업
 
-## 3. 클라우드 인프라 (AWS)
+1. Neptune 운영 시간을 한정하고 중지 절차를 준비한 뒤, Factory Lab의 동일한 RDF 스냅샷과 48개 조회를 실행합니다.
+2. 저장소가 반환하는 공통 근거와 LLM에게 전달하는 도구 메타데이터를 분리해, 백엔드별 답변 비교의 입력을 맞춥니다.
+3. 같은 정책의 Python·SHACL 구현에서 규칙 변경 위치, 재검토 대상, 담당자 설명 자료를 비교합니다. 실제 유지보수 시간은 별도 측정 대상입니다.
 
-경로: `infra/terraform/`
-
-예정 리소스 초안:
-- EC2 (메모리 최적화 계열) + EBS
-- S3 (실험 산출물 및 데이터셋 아카이브)
-- IAM (최소 권한 원칙)
-- Neptune Serverless 연동
-
-## 4. 코딩 에이전트 협업 체계 (Codex / Orca / Gemini)
-
-상세: [agents.md](agents.md) 및 `_workspace/handoff.md`
-
-- **Codex CLI (`gpt-6-astra`)**: 주력 실행·검증·테스트 및 엄밀한 리뷰 엔진 (`fork_turns="none"` 기반 독립 리뷰)
-- **Gemini / Antigravity**: 거시 프레임워크 설계, 구조 개고, 연구 종합 및 외부 교차 감사
-- **세션 연속성**: `MEMORY.md` 및 `_workspace/handoff.md`를 통한 바통 인계 프로토콜 운용
+`infra/terraform/`는 현재 운영 중인 Neptune을 재현하는 확정된 배포 코드가 아닙니다. 인프라를 다시 만들기 전에 계정·리전·예산·보존 정책을 따로 검토해야 합니다. 연구 운영 절차는 [에이전트와 검토 체계](research-operations.md), 공개 절차는 [기록과 GitHub Pages 운영](recording.md)에 있습니다.

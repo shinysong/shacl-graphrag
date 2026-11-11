@@ -1,97 +1,41 @@
 # SHACL GraphRAG Lab
 
-지식 그래프(Knowledge Graph)의 의미적 관계 탐색과 형상 제약 언어(SHACL) 검증 보고서를 결합하여, 거대 언어 모델(LLM)의 비정상 의사결정과 근거 누락을 방지하고 추적성을 확보하는 연구 기록입니다.
+LLM이 그래프에서 찾은 근거를 바탕으로 답할 때, 관계 조회와 규칙 검사가 어디에 도움이 되는지 살펴보는 연구 기록입니다. 제조 사례를 중심으로 검색, 답변 생성, 사후 검토, 데이터 변경을 따로 비교합니다.
 
----
+## 지금 살펴보는 질문
 
-## 연구 개요 및 핵심 구조
-
-단순한 텍스트 기반 RAG(검색 증강 생성)는 비정형 문서에서 표면적 유사도를 찾는 데 유리하지만, 복잡한 인과 관계나 다중 홉 연결, 엄격한 규정 준수 여부를 검증하는 데 한계가 있습니다. 본 연구실은 원천 데이터의 엔티티 관계를 보존하는 그래프 검색과, 도메인 제약 조건을 기계 판독 가능한 규칙으로 표현하는 SHACL 검증 계층을 결합한 하이브리드 아키텍처를 연구합니다.
+> 제품과 설비의 관계가 바뀌었을 때 LLM은 새 근거를 찾아 적용 범위를 정확히 설명할까? 검사 보고서는 이미 쓴 답에서 무엇을 더 발견할까?
 
 ```mermaid
 flowchart LR
-    subgraph DataLayer ["1. 원천 데이터 및 규칙 모델링"]
-        T["정형 테이블 / 공공·산업 로그"] --> G["무조인 1:1 엔티티 그래프"]
-        P["업무 지침 / 정책 규정"] --> S["선언적 SHACL 형상 규칙"]
-    end
-
-    subgraph RetrievalLayer ["2. 하이브리드 GraphRAG 검색"]
-        Q["사용자 업무 질의"] --> V["밀집 벡터 검색"]
-        Q --> N["Neo4j Cypher 다중 홉 탐색"]
-        V & N --> B["선택 근거 서브그래프 결합"]
-    end
-
-    subgraph VerificationLayer ["3. SHACL 검증 및 사후 검토"]
-        B --> SH{"SHACL 유효성 검증"}
-        SH -->|검증 보고서 생성| LLM["LLM 답변 생성 및 사후 검토"]
-        LLM --> Out["근거 기반 조치 및 감사 보고서"]
-    end
+    Q["복합 업무 질문"] --> T["등록된 조회 도구 선택"]
+    T --> E["버전이 고정된 근거"]
+    E --> A["LLM 초안"]
+    A --> R["자체 검토 · Python · SHACL"]
+    R --> F["최종 답변과 검토 기록"]
+    E --> P["출처 · 적용 범위 · 누락 구분"]
+    P --> R
 ```
 
----
+현재 Factory Lab은 미리 정의한 다섯 조회 도구로 그래프를 읽고 같은 초안과 근거에서 세 가지 최종 검토 답변을 만듭니다. SHACL 보고서는 판단을 강제로 바꾸지 않는 참고 자료입니다. 화면에 표시하는 그래프는 해당 질문에서 실제 조회한 근거를 요약합니다. 합성 공장 자료이므로 설비 운영이나 안전 판단에 쓸 수 없습니다.
 
-## 4대 연구 핵심 성과 및 축적 지표
+## 최근 확인한 결과
 
-지난 연구 과정에서 축적된 핵심 결과와 실증 지표는 네 단계의 생명주기로 체계화되어 있습니다.
+| 범위 | 확인한 내용 | 해석의 경계 |
+| --- | --- | --- |
+| [검색과 관계 확장](journal/2026-11-02-refined-hybrid-backends.md) | 개발 질문 18건에서 필요한 근거를 모두 확보한 경우가 비교 조건별로 5건, 6건, 7건이었습니다. | 답변 정확도나 그래프 DB의 우위를 측정한 수치는 아닙니다. |
+| [여섯 모델의 사후 검토](journal/2026-11-04-paired-six-model-review.md) | 같은 초안에서 자체 검토와 SHACL 보고서 검토를 비교하고, 수정과 실패를 함께 기록했습니다. | 작성한 질문 유형의 개발 실험입니다. 새로운 질문으로의 일반화는 확인하지 않았습니다. |
+| [Neo4j·Neptune 추론 범위](journal/2026-11-06-backend-inference-review.md) | 같은 도출 사실을 조회하고, 관계·규칙 변경 뒤 오래된 결과가 남는 조건을 확인했습니다. | Neptune 내부 추론기가 실행된 것은 아닙니다. 외부에서 계산한 결과를 저장해 조회했습니다. |
+| [Factory Lab 조회 이식성](experiments/records/2026-11-10-factory-rdf-parity.json) | 합성 자료 3버전의 고정 조회 48쌍에서 Neo4j와 로컬 RDFLib의 반환 순서와 공통 근거가 일치했습니다. | 이 실행의 Neptune 48건은 미실행입니다. 임의 쿼리나 대규모 데이터의 동등성도 뜻하지 않습니다. |
+| [자격 갱신과 실제 LLM 답변](experiments/records/2026-11-10-factory-renewal-live.json) | M03의 제품 A 자격 갱신을 초안부터 찾았고 제품 B에는 적용하지 않았습니다. 최종 답변에는 검사 사유를 섞어 쓰는 문제가 남았습니다. | 한 모델·한 작성 사례입니다. 검토 보고서의 일반적 답변 개선 효과를 보여주지 않습니다. |
 
-```mermaid
-flowchart TD
-    SA["Stage A: 정책 정형화 & 반례 게이트<br>(24개 정책 x 4종 반례 96개, 무방비 L0 대비 L1 일치율 100%)"]
-    SB["Stage B: 런타임 근거 판정 & S2 표적 재조회<br>(60개체 360건, U0 오승인 33.3% -> S2 0.0% 차단)"]
-    SC["Stage C: 무조인 엔티티 그래프 규칙 진화<br>(R0->R3 진화 시 Python 조인 15줄 수정 vs SHACL 코어 수정 0줄)"]
-    SD["Stage D: LLM 호출 및 검증 보고서 주입<br>(ValidationReport 주입 시 슬롯 자동 공급 100%, 흔들림 1건 통제)"]
+## 문서 찾아보기
 
-    SA --> SB --> SC --> SD
-```
+- [온톨로지·SHACL을 어디에 쓰는가](journal/2026-11-11-ontology-shacl-role.md): 의미 공유, 데이터 변경, 근거 검토에서의 역할과 Python 대조
+- [실험 명세](experiments/specification.md): 질문, 입력, 비교 조건과 평가 경계
+- [실행 기록](experiments/records/index.md): 성공·실패와 원본 결과 파일
+- [연구 일지](journal/index.md): 결과 해석, 설계 변경과 논문 리뷰
+- [25장 발표 자료](experiments/seminar-guide.md): 현재 제조 사례와 아키텍처를 설명하는 슬라이드
+- [환경 설정과 공개 절차](setup/recording.md): 실행 환경, 문서 빌드, GitHub Pages 운영
 
-1. **Stage A (정책 정형화 & 반례 게이트)**: 영·한 24개 규정 정책과 4종 반례 증인 그래프를 구축하여, 자연어 규칙을 SHACL로 정규화할 때의 변환 무결성을 100% 검증했습니다.
-2. **Stage B (런타임 근거 판정 & 표적 재조회)**: 선택적 검증과 `sh:resultPath` 기반의 표적 1회 재조회(`S2`)를 결합하여 오승인률 0%와 과잉 보류 0%를 동시에 달성했습니다.
-3. **Stage C (무조인 엔티티 그래프 기반 규칙 진화)**: 스칼라 제약에서 5-hop 상위 본부 분리까지 규칙이 진화(`R0 → R3`)할 때, 관계형 DB나 수작업 코드와 달리 그래프 투영 코어의 수정 0줄을 입증했습니다.
-4. **Stage D (LLM 프롬프트 주입 및 사후 검토)**: SHACL `ValidationReport`를 프롬프트에 주입하여 LLM이 위반 개체, 위반 경로, 충돌 값을 추가 파싱 코드 없이 100% 인지하고 답변을 교정하도록 구현했습니다.
-
----
-
-## 연구 로드맵 및 최신 현황 (2026년 11월 기준)
-
-| 연구 단계 | 주요 내용 | 산출물 및 문서 | 진행 상태 |
-|---|---|---|:---:|
-| **규칙 생명주기 논문** | LLM 업무 질의의 의미·규칙 개입 통합 원고 집필 | [통합 논문 원고](journal/2026-10-22-llm-semantic-intervention-paper.md) | **완료** |
-| **인터랙티브 데모** | 제조 조치 제안 및 검증 보고서 인라인 뷰어 | [액션 가능 근거 데모](experiments/actionable-evidence-demo/index.html) · [보고서 데모](experiments/evidence-report-demo/index.html) | **완료** |
-| **세미나 발표 자료** | 제조 사례 중심 아키텍처 및 25페이지 슬라이드 | [세미나 가이드](experiments/seminar-guide.md) · [발표 슬라이드](experiments/seminar/slides.md) | **완료** |
-| **하이브리드 GraphRAG** | 밀집 벡터 검색 대 Neo4j Cypher 다중 홉 관계 탐색 비교 | [하이브리드 백엔드 일지](journal/2026-11-02-refined-hybrid-backends.md) | **완료** |
-| **사후 검토 다중 모델 평가** | 6개 상용·오픈소스 LLM 대상 조언적 검증 보고서 효용 측정 | [6개 모델 사후 검토 일지](journal/2026-11-04-paired-six-model-review.md) | **완료** |
-| **제조 자료·백엔드 이식성 비교** | 용접 작업표·측정 파일 및 OPC UA 모델 버전·추론·재검토 범위 대조 | [제조 연구 통합 정리](journal/2026-11-07-manufacturing-research-map.md) · [백엔드 추론 실험](journal/2026-11-06-backend-inference-review.md) | **완료** |
-| **외부 DB 및 대규모 확장** | GraphDB Free / Neptune Serverless 검증 계층 비교 | [환경 로드맵](setup/roadmap.md) | 진행 예정 |
-
----
-
-## 주요 문서 및 탐색 가이드
-
-- **연구 논문 및 종합 원고**:
-  - [제조 자료에서 확인한 의미 규칙의 이식성과 검토 범위](journal/2026-11-07-manufacturing-research-map.md)
-  - [LLM 기반 업무 질의의 의미·규칙 개입 통합 원고](journal/2026-10-22-llm-semantic-intervention-paper.md)
-  - [동일 정책 구현의 실행 비용과 변경 범위](journal/2026-10-21-technology-selection-paper.md)
-  - [탐색 연구의 주장별 정리와 새 연구 전환](journal/2026-10-27-exploration-closeout.md)
-- **실험 명세 및 실행 기록**:
-  - [온톨로지 활용 실험 명세](experiments/specification.md)
-  - [통합 규칙 생명주기 실행 기록](experiments/records/20261022-unified-rule-lifecycle.md)
-  - [전체 실행 기록 인덱스](experiments/records/index.md)
-- **엔지니어링 및 환경 설정**:
-  - [호스트 구성 및 환경 부트스트랩](setup/bootstrap.md)
-  - [연구 운영 에이전트 및 검토 체계](setup/research-operations.md)
-  - [엔지니어링 시행착오 및 교훈](lessons-learned/README.md)
-
----
-
-## 문헌 연구 및 외부 자료
-
-연구 과정에서 분석한 국내외 핵심 연구 논문 및 도구 리뷰 19편은 연구자 개인 블로그의 서재로 이관되어 체계적으로 유지됩니다.
-
-- **주요 리뷰 주제**:
-  - **GraphRAG & 검색**: 의료 온톨로지 RAG, RAG vs. GraphRAG, GraphRAG-Bench 등
-  - **그래프 아키텍처 & 추론기**: Amazon Neptune·Neo4j n10s·RETE·Hypertableau 비교, rdf2pg 등
-  - **SHACL & 지식 그래프**: OWL과 SHACL 의미론, PolicyKG, xpSHACL, 증분 업데이트 검증 등
-  - **제조 도메인 추적성**: 배터리 전극 이력 추적(Wessel 외), LG마그나 품질 기록, Meyers 제조 KG 등
-- **외부 채널**:
-  - [연구자 포트폴리오 및 논문 리뷰 아카이브 (`shinysong.github.io`)](https://shinysong.github.io/reviews/)
-  - [연구자 개인 블로그 (Tistory)](https://chaeeunsong.tistory.com/)
+이전에 진행한 GLEIF·YAGO 파일럿과 규칙 생명주기 실험도 [실험 명세](experiments/specification.md)와 [일지](journal/index.md)에 남아 있습니다. 각 결과는 해당 자료와 질문 범위에서 읽어야 합니다.

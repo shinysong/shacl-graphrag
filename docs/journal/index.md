@@ -1,5 +1,9 @@
 # 연구 일지
 
+- [2026-11-11 그래프 근거와 규칙을 함께 관리해야 하는 이유](2026-11-11-ontology-shacl-role.md)
+
+- [2026-11-10 Factory Lab 실제 답변 기록](../experiments/records/2026-11-10-factory-renewal-live.json) · [Neo4j와 로컬 RDF 조회 비교](../experiments/records/2026-11-10-factory-rdf-parity.json)
+
 - [2026-11-07 제조 자료의 질문·구현·기여 통합 정리](2026-11-07-manufacturing-research-map.md)
 
 - [2026-11-06 Neo4j·Neptune 추론과 변경 검토 실험](2026-11-06-backend-inference-review.md)

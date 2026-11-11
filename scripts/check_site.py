@@ -20,6 +20,29 @@ class Links(HTMLParser):
                 self.links.append(value)
 
 
+class SidebarLinks(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.in_sidebar = False
+        self.in_nav = False
+        self.links = []
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if attrs.get('id') == 'sidebar':
+            self.in_sidebar = True
+        if self.in_sidebar and tag == 'nav':
+            self.in_nav = True
+        if self.in_nav and tag == 'a':
+            self.links.append(attrs.get('href'))
+
+    def handle_endtag(self, tag):
+        if tag == 'nav':
+            self.in_nav = False
+        if tag == 'aside' and self.in_sidebar:
+            self.in_sidebar = False
+
+
 def main():
     errors = []
     for page in SITE.rglob('*.html'):
@@ -49,6 +72,22 @@ def main():
     forbidden = {'.env', 'MEMORY.md', 'AGENTS.md', '_workspace', 'runs', '.git', 'Gemfile', 'Gemfile.lock'}
     assert not any(forbidden.intersection(p.relative_to(SITE).parts) for p in SITE.rglob('*'))
     assert 'Chirpy' in (SITE / 'index.html').read_text()
+    sidebar = SidebarLinks()
+    sidebar.feed((SITE / 'index.html').read_text())
+    assert sidebar.links == [
+        BASE + '/', BASE + '/about/', BASE + '/archives/',
+    ], sidebar.links
+    for historical in ('setup/recording', 'categories', 'archives',
+                       'experiments/records', 'experiments/specification', 'journal'):
+        assert (SITE / historical / 'index.html').is_file(), historical
+    home = (SITE / 'index.html').read_text()
+    assert 'lab-intro' in home
+    assert 'post-list' not in home
+    assert '인터랙티브 데모' not in home
+    assert not (SITE / 'page2/index.html').exists()
+    archives = (SITE / 'archives/index.html').read_text()
+    assert BASE + '/experiments/records/' in archives
+    assert BASE + '/journal/' in archives
     assert not errors, '\n'.join(errors)
     print(f'Checked {len(manifest)} preserved pages, internal assets/links, JSON bytes and private-file exclusions.')
 
