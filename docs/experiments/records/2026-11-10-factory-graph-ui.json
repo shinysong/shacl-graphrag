@@ -1,0 +1,16 @@
+{
+  "change": "Factory Lab static SVG source graph and evidence-node-ID highlighting",
+  "review_job": "20261110T072504Z-factory-graph-ui-613061",
+  "checks": "factory-lab-tests exit0 (11 software tests), node syntax exit0. Readonly browser1440light/390dark validates11nodes, selected E4 highlight, Q01 attrs, no page overflow, hash mismatch no highlight, delayed prior-run race, failed graph clearing. Zero browser POST/paid calls. Not a benchmark.",
+  "scope": "Authored snapshot file, not live graph query. Edges are source edges, not confirmed retrieved edges. Hash mismatch disables highlights.",
+  "limitations": [
+    {
+      "severity": "warning",
+      "evidence": "Node button list replaced on selection may lose keyboard focus. Source SVG is a fixed layout with scrolling, not a large graph explorer.",
+      "recommendation": "Retain scope disclosures; improve focus and layout in subsequent UX work."
+    }
+  ],
+  "paid_calls": 0,
+  "gate": "remains closed",
+  "previous_review": "61de10 preserved; implementation blocker fixed and fresh job used"
+}

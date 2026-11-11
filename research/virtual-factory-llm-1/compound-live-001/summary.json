@@ -1,0 +1,65 @@
+{
+  "run_id": "658d38d1d0cf42209617d2da41dc498a",
+  "status": "completed_gate_closed",
+  "scope": "One authored synthetic compound development case, actual LLM interpretation/tools/draft and three advisory finals; no planning-off ablation",
+  "model": "google/gemini-3.8-flash",
+  "provider": {
+    "order": [
+      "google-ai-studio"
+    ],
+    "allow_fallbacks": false,
+    "require_parameters": true,
+    "max_price": {
+      "prompt": 0.75,
+      "completion": 3.75
+    }
+  },
+  "temperature": 0,
+  "seed": 42,
+  "paid_attempts": 7,
+  "paid_failures": 0,
+  "graph_tool_calls": 5,
+  "separate_graph_preflight": 1,
+  "planned_final_branches": 3,
+  "completed_final_branches": 3,
+  "unattempted_final_branches": 0,
+  "automatic_retries": 0,
+  "prelaunch_failure": "Immediate service-restart GET connection refused; no POST or paid call. Preserved privately, inspected before first POST.",
+  "cost_reported_delta_usd": "0.038260275",
+  "cost_nonrefunded_reservation_delta_usd": "0.33245850",
+  "cumulative_budget_after": {
+    "attempts": 83,
+    "reserved_nonrefunded_usd": "2.87891250",
+    "reported_usd": "0.254980275",
+    "unresolved": 0
+  },
+  "integrity": {
+    "shared_bundle_sha256": "8fb4f63d06768dc07404be2e1731c98cb0849327e016f46f2a9384472d44abaa",
+    "python_shacl_actual_request_bodies_identical": true,
+    "python_shacl_final_text_identical": false,
+    "final_calls_have_no_tools": true
+  },
+  "assessment": {
+    "method": "Coordinator unblinded case inspection; not independent or comprehensive scoring",
+    "observed_correction": "Draft and self use qualification-not-retrieved for O18/M01 and O18/M03. Retrieved Q01 and Q03 exist but do not apply to P-B. Python and SHACL final prose correct both reason codes to qualification-not-applicable under the declared policy.",
+    "decision_change": "Core candidate eligibility choices largely unchanged; no measured allocation improvement.",
+    "remaining_issues": [
+      "SHACL summary table still mixes mismatch and not-retrieved wording for O18/M01.",
+      "Draft and all finals overstate absence of renewal paperwork/approval in the system although no renewal-document/approval service was queried.",
+      "Full citation entailment, operational feasibility and review-pointer utility not scored."
+    ],
+    "limits": [
+      "One fixed-order authored development case, not representative benchmark.",
+      "Python also corrects the codes; no RDF-specific benefit established.",
+      "Identical Python/SHACL request bodies produced different texts despite temperature 0 and seed 42.",
+      "No schedule, workload, due-date or renewal-document service; no allocation writes or physical approval.",
+      "No Neptune/OWL experiment in this run."
+    ]
+  },
+  "software_checks": {
+    "factory-planning-tests": 0,
+    "factory-branching-tests": 0,
+    "factory-lab-tests": 0
+  },
+  "next_step": "Separate policy reason-code agreement from answer usefulness; test unsupported-service assertions and constraint preservation across further predeclared cases only with new paid scope."
+}

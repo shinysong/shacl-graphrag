@@ -1,0 +1,60 @@
+{
+  "study": "factory-complexity-1",
+  "date": "2026-11-11",
+  "artifact_directory": "research/factory-complexity-1/llm-001",
+  "execution": {
+    "planned_cases": 12,
+    "planned_finals": 36,
+    "status": "completed_scope",
+    "new_campaign": "_workspace/factory-complexity-20261111/paid-001",
+    "budget": {
+      "attempts": 75,
+      "reserved_nonrefunded_usd": "3.34753500",
+      "reported_usd": "0.390222075",
+      "unresolved": 0
+    },
+    "completed_cases": 12,
+    "not_attempted_cases": 0,
+    "failed_cases": 0,
+    "unresolved_running_cases": 0,
+    "drafts_generated": 12,
+    "finals_generated": 36
+  },
+  "backend": "RDFLib fixed SPARQL tools; no new Neptune/Neo4j queries",
+  "model": "google/gemini-3.8-flash",
+  "provider": "Google AI Studio",
+  "temperature": 0,
+  "seed": 42,
+  "tool_queries": 76,
+  "failed_paid_calls": 0,
+  "finish_reasons": {
+    "stop": 48,
+    "tool_calls": 27
+  },
+  "review_job": "20261111T120303Z-factory-complexity-answer-audit-28ff3c",
+  "independent_audit": {
+    "answers_per_reviewer": 48,
+    "dimensions_per_answer": 8,
+    "validated_quote_annotations": 768,
+    "unresolved_secondary_disagreements": 6,
+    "previous_attempts": "Both native agents hit usage limit; no outputs; two explicitly retried requests retained",
+    "scope": "Partially masked, authored development, not benchmark"
+  },
+  "observations": [
+    "No clear bounded core judgment error found by either auditor; no core decision improvement established",
+    "Case10 reason-label correction in Python and SHACL; self retained error",
+    "Case07 unsupported contention certainty introduced in Python and SHACL",
+    "Four cases have zero checker targets/not_assessed despite model queries",
+    "12 Python/SHACL message pairs identical;5answer strings identical; no checker language advantage claim"
+  ],
+  "new_calls_during_audit": 0,
+  "aws_actions": 0,
+  "runtime_changes_during_audit": false,
+  "gate_closed": true,
+  "limits": [
+    "Single model/repeat,12authored cases/fourfamilies",
+    "48texts are dependent, not48independent trials",
+    "Source recovery misses separate from grounded uncertainty",
+    "No external truth or human maintenance measurement"
+  ]
+}

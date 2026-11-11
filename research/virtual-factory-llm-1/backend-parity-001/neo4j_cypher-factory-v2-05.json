@@ -1,0 +1,45 @@
+{
+  "tool": "inspect_entity",
+  "arguments": {
+    "entity_id": "Q03"
+  },
+  "snapshot": "factory-v2",
+  "source_sha256": "ac965a11283075b6cf4cd8fc40c5e5e90d38a75b17c72c312db811f89566db9e",
+  "as_of": "2026-11-09",
+  "query": "MATCH (n:FactoryDemo {namespace:$ns,version:$v}) WHERE n.entity_id=$entity_id OPTIONAL MATCH (n)-[r]-(m:FactoryDemo {namespace:$ns,version:$v}) RETURN properties(n) AS entity, type(r) AS relation, properties(m) AS neighbor, startNode(r).entity_id AS from_id ORDER BY relation, m.entity_id LIMIT 60",
+  "rows": [
+    {
+      "entity": {
+        "capability": "CAP-CUT",
+        "product": "P-A",
+        "valid_until": "2026-10-31",
+        "kind": "Qualification",
+        "name": "M03 제품 A 자격",
+        "namespace": "virtual-factory-llm-1",
+        "valid_from": "2026-01-01",
+        "id": "Q03",
+        "entity_id": "Q03",
+        "version": "factory-v2"
+      },
+      "relation": "HAS_QUALIFICATION",
+      "neighbor": {
+        "kind": "Machine",
+        "namespace": "virtual-factory-llm-1",
+        "name": "대체 설비 3",
+        "id": "M03",
+        "entity_id": "M03",
+        "version": "factory-v2",
+        "status": "available"
+      },
+      "from_id": "M03"
+    }
+  ],
+  "scope": "selected query result in authored snapshot; not completeness proof",
+  "integrity": {
+    "verified_before_query": true,
+    "source_sha256": "ac965a11283075b6cf4cd8fc40c5e5e90d38a75b17c72c312db811f89566db9e",
+    "nodes": 11,
+    "edges": 12
+  },
+  "limit_reached": false
+}

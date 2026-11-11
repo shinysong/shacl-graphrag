@@ -1,0 +1,53 @@
+{
+  "protocol": "factory-complexity-1",
+  "phase": "offline scale and closed campaign preparation",
+  "date": "2026-11-11",
+  "scale": {
+    "synthetic": true,
+    "generation": "experiments/factory_complexity/scaling.py expand; exact sources/query observations retained privately and hash-listed",
+    "planned_cells": 6,
+    "completed_cells": 6,
+    "query_executions_including_warmup": 288,
+    "measured_query_executions": 216,
+    "repeats_per_query": 3,
+    "engine_scope": "in-memory RDFLib and SQLite; no Neo4j/Neptune timing",
+    "new_llm_calls": 0,
+    "source_state": "all size/fanout source records present; selected qualification retrieval remains fixed",
+    "limitations": [
+      "One process per cell; not independent workload samples",
+      "Query timing excludes build and source validation; unlike production full-content per-query integrity",
+      "Checkpoint IO and backend order can affect warm-cache measurements",
+      "Peak RSS is whole worker, not per-backend memory",
+      "30-row saturation alone does not prove omission;31-control confirms omission",
+      "Python/SHACL flags equal, not evidence of answer efficacy"
+    ]
+  },
+  "scale_summary": {
+    "planned": 6,
+    "completed": 6,
+    "unrelated_result_equal": true,
+    "calls": {
+      "llm": 0,
+      "aws": 0
+    },
+    "scope": "Offline in-memory software timing; no server-engine or answer-quality benchmark."
+  },
+  "paid_campaign": {
+    "planned_episodes": 12,
+    "planned_finals": 36,
+    "actual_new_calls": 0,
+    "authorization": "pending explicit human answer",
+    "gate_open": false,
+    "deadline": "2026-11-11T17:32:41+00:00"
+  },
+  "review_jobs": {
+    "scale": "20261111T095848Z-factory-complexity-scale-d6e906",
+    "campaign": "20261111T100954Z-factory-complexity-campaign-296320"
+  },
+  "limitations": [
+    "Synthetic diagnostic development; not fresh held-out benchmark",
+    "No new Neptune/Neo4j server timing",
+    "No measured LLM or SHACL answer benefit in this cycle",
+    "Previous review blockers and failed check retained"
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "date": "2026-11-11",
+  "study": "factory-neptune-parity",
+  "artifacts": "research/virtual-factory-llm-1/backend-parity-002",
+  "review_job": "20261111T083804Z-factory-neptune-live-7ef8c9",
+  "data_phase_status": "completed",
+  "summary": {
+    "planned_slots": 144,
+    "completed": 96,
+    "failed_query_slots": 0,
+    "unattempted": 48,
+    "initialization": {
+      "neo4j_cypher": {
+        "status": "unattempted",
+        "reason": "not enabled / no current bounded authorization"
+      },
+      "neptune_sparql": {
+        "status": "ready"
+      }
+    },
+    "compared": 48,
+    "mismatches": 0,
+    "paid_llm_calls": 0,
+    "aws_power_actions": 0,
+    "scope": "Authored development transport/checker comparison; not LLM answer efficacy, DB performance, maintenance labor or OWL reasoning."
+  },
+  "historical_neo4j_comparison": {
+    "pairs": 48,
+    "ordered_rows_equal": 48,
+    "common_evidence_equal": 48,
+    "source_hashes_verified": true,
+    "saved_evidence_digests_verified": true,
+    "new_neo4j_execution": false
+  },
+  "validation": {
+    "versions": 3,
+    "python_shacl_flags_equal_all_versions": true,
+    "neptune_flags_match_historical_neo4j": true,
+    "location": "local selected-evidence validation, not Neptune-internal SHACL"
+  },
+  "persistent_import": [
+    {
+      "version": "factory-v1",
+      "result": {
+        "already_loaded": false,
+        "verified_before_query": true,
+        "triples": 62,
+        "source_sha256": "01754b4a0d1d5d501a40496eabe06be811ca34150c955bc2d004b33664aaf716"
+      }
+    },
+    {
+      "version": "factory-v2",
+      "result": {
+        "already_loaded": false,
+        "verified_before_query": true,
+        "triples": 62,
+        "source_sha256": "ac965a11283075b6cf4cd8fc40c5e5e90d38a75b17c72c312db811f89566db9e"
+      }
+    },
+    {
+      "version": "factory-v3",
+      "result": {
+        "already_loaded": false,
+        "verified_before_query": true,
+        "triples": 70,
+        "source_sha256": "2f47b98a947bda6c79a99ebe540c24a2515519f448ab0a7136e00afe07b0f08b"
+      }
+    }
+  ],
+  "operations": {
+    "start_requested_at": "2026-11-11T08:40:24.010172+00:00",
+    "engine_healthy_at": "2026-11-11T08:50:59.316850+00:00",
+    "runner_completed_at": "2026-11-11T08:51:18.920326+00:00",
+    "first_stop_requested_at": "2026-11-11T08:51:18.980770+00:00",
+    "stop_accepted_at": "2026-11-11T08:56:21.530909+00:00",
+    "terminal_stop_confirmed": true,
+    "status": "stopped",
+    "actual_aws_cost_usd": null,
+    "note": "Runner aws_power_actions=0 excludes enclosing start/stop orchestration; failed stop attempts during starting/backing-up/stopping retained. User added status-query permissions during cleanup.",
+    "terminal_stop_confirmed_at": "2026-11-11T09:03:40.742022+00:00",
+    "instance_status": "stopped",
+    "owned_stop_units_removed": true
+  },
+  "checks": {
+    "factory-rdf-tests": 0,
+    "stop_wrapper_mock_cases": 3,
+    "stop_service_smoke_exit_code": 0
+  },
+  "limitations": [
+    "Authored consumed development fixtures; not fresh benchmark",
+    "48 slots are tool requests, not total HTTP request count; integrity/import requests are additional",
+    "No new LLM calls or answer efficacy measurement",
+    "Historical Neo4j observations, not concurrent performance comparison",
+    "Full source projection verification before each query; not optimized production throughput",
+    "No Neptune-native SHACL or OWL reasoning",
+    "Configured cost ceiling is not AWS billing enforcement; actual charge not measured",
+    "Factory Lab chat server default remains Neo4j; live Neptune adapter validated separately"
+  ],
+  "next": "Normalize model-visible transport metadata before any controlled LLM backend comparison; chat server currently remains Neo4j."
+}

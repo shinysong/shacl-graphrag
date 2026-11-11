@@ -1,0 +1,45 @@
+{
+  "tool": "inspect_entity",
+  "arguments": {
+    "entity_id": "Q03"
+  },
+  "snapshot": "factory-v3",
+  "source_sha256": "2f47b98a947bda6c79a99ebe540c24a2515519f448ab0a7136e00afe07b0f08b",
+  "as_of": "2026-11-09",
+  "query": "PREFIX f: <urn:factory-demo:vocab:> SELECT * WHERE { GRAPH <urn:factory-demo:graph:factory-v3> { { SELECT * WHERE { GRAPH <urn:factory-demo:graph:factory-v3> { BIND(<urn:factory-demo:factory-v3:entity:Q03> AS ?entity) ?entity f:id ?entity_id . OPTIONAL { VALUES ?relation { <urn:factory-demo:vocab:ASSIGNED_TO> <urn:factory-demo:vocab:CAPABLE_OF> <urn:factory-demo:vocab:HAS_QUALIFICATION> <urn:factory-demo:vocab:REQUIRES> } { ?entity ?relation ?neighbor . ?entity f:id ?from_id } UNION { ?neighbor ?relation ?entity . ?neighbor f:id ?from_id } ?neighbor f:id ?neighbor_id . } } } ORDER BY ?relation ?neighbor_id LIMIT 60 } BIND(COALESCE(?entity, <urn:factory-demo:unbound>) AS ?entity_key) OPTIONAL { ?entity_key f:id ?entity_id; a ?entity_kind . OPTIONAL { ?entity_key f:name ?entity_name } OPTIONAL { ?entity_key f:status ?entity_status } OPTIONAL { ?entity_key f:product ?entity_product } OPTIONAL { ?entity_key f:capability ?entity_capability } OPTIONAL { ?entity_key f:valid_from ?entity_valid_from } OPTIONAL { ?entity_key f:valid_until ?entity_valid_until } } BIND(COALESCE(?neighbor, <urn:factory-demo:unbound>) AS ?neighbor_key) OPTIONAL { ?neighbor_key f:id ?neighbor_id; a ?neighbor_kind . OPTIONAL { ?neighbor_key f:name ?neighbor_name } OPTIONAL { ?neighbor_key f:status ?neighbor_status } OPTIONAL { ?neighbor_key f:product ?neighbor_product } OPTIONAL { ?neighbor_key f:capability ?neighbor_capability } OPTIONAL { ?neighbor_key f:valid_from ?neighbor_valid_from } OPTIONAL { ?neighbor_key f:valid_until ?neighbor_valid_until } } } } ORDER BY ?relation ?neighbor_id",
+  "rows": [
+    {
+      "entity": {
+        "id": "Q03",
+        "name": "M03 제품 A 자격",
+        "product": "P-A",
+        "capability": "CAP-CUT",
+        "valid_from": "2026-01-01",
+        "valid_until": "2026-10-31",
+        "kind": "Qualification",
+        "namespace": "virtual-factory-llm-1",
+        "version": "factory-v3",
+        "entity_id": "Q03"
+      },
+      "neighbor": {
+        "id": "M03",
+        "name": "대체 설비 3",
+        "status": "available",
+        "kind": "Machine",
+        "namespace": "virtual-factory-llm-1",
+        "version": "factory-v3",
+        "entity_id": "M03"
+      },
+      "relation": "HAS_QUALIFICATION",
+      "from_id": "M03"
+    }
+  ],
+  "scope": "selected query result in authored snapshot; not completeness proof",
+  "integrity": {
+    "verified_before_query": true,
+    "triples": 70,
+    "source_sha256": "2f47b98a947bda6c79a99ebe540c24a2515519f448ab0a7136e00afe07b0f08b"
+  },
+  "limit_reached": false,
+  "backend": "rdflib_sparql"
+}

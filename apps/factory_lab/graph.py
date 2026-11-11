@@ -10,12 +10,13 @@ NAMESPACE = 'virtual-factory-llm-1'
 RELATIONS = {'ASSIGNED_TO', 'REQUIRES', 'CAPABLE_OF', 'HAS_QUALIFICATION'}
 
 def snapshot(version):
-    if version not in ('factory-v1', 'factory-v2'):
+    if version not in ('factory-v1', 'factory-v2', 'factory-v3'):
         raise ValueError('Unknown snapshot')
     raw = (DATA / (version + '.json')).read_bytes()
     return json.loads(raw), hashlib.sha256(raw).hexdigest()
 
 class Graph:
+    name = "neo4j_cypher"
     def __init__(self, url='http://127.0.0.1:7474'):
         if url != 'http://127.0.0.1:7474':
             raise ValueError('Only the owned loopback demo endpoint is allowed')
@@ -31,13 +32,31 @@ class Graph:
         result = obj['results'][0]
         return [dict(zip(result['columns'], d['row'])) for d in result['data']]
 
+    def verify_content(self, version):
+        d, sha = snapshot(version)
+        p={'ns':NAMESPACE,'v':version}
+        rows=self.query('MATCH (n:FactoryDemo {namespace:$ns,version:$v}) RETURN properties(n) AS entity ORDER BY n.entity_id',p)
+        actual=[{k:v for k,v in r['entity'].items() if k not in ('namespace','version','entity_id')} for r in rows]
+        edges=self.query('MATCH (a:FactoryDemo {namespace:$ns,version:$v})-[r]->(b) RETURN a.entity_id AS a,type(r) AS r,b.entity_id AS b,b.namespace AS ns,b.version AS v ORDER BY a.entity_id,type(r),b.entity_id',p)
+        canonical=lambda x:json.dumps(x,sort_keys=True,ensure_ascii=False)
+        if sorted(map(canonical,actual))!=sorted(map(canonical,d['nodes'])) or sorted((r['a'],r['r'],r['b']) for r in edges)!=sorted(map(tuple,d['edges'])) or any(r['ns']!=NAMESPACE or r['v']!=version for r in edges):
+            raise RuntimeError('Live graph differs from immutable source snapshot')
+        return {'verified_before_query':True,'source_sha256':sha,'nodes':len(rows),'edges':len(edges)}
+
     def load(self, version):
         """Administrative idempotent import. Never delete or overwrite other versions."""
         d, sha = snapshot(version)
         params = {'ns':NAMESPACE,'v':version,'hash':sha}
         found = self.query('MATCH (s:FactorySnapshot {namespace:$ns, version:$v}) RETURN s.sha256 AS sha256', params)
-        if found and any(x['sha256'] != sha for x in found):
+        if found and (len(found) != 1 or any(x['sha256'] != sha for x in found)):
             raise RuntimeError('Immutable snapshot hash conflict')
+        if found:
+            integrity=self.verify_content(version)
+            return {'version':version,'sha256':sha,'already_loaded':True,**integrity}
+        existing = self.query('MATCH (n:FactoryDemo {namespace:$ns,version:$v}) RETURN count(n) AS count', params)
+        if existing[0]['count']:
+            raise RuntimeError('Unmarked snapshot content exists; inspect interrupted import explicitly')
+        # Owned single-writer administrative path; no concurrent importer is supported.
         # Namespace-qualified IDs avoid touching existing historical/user graphs.
         for n in d['nodes']:
             self.query('MERGE (n:FactoryDemo {namespace:$ns, version:$v, entity_id:$id}) SET n += $props',
@@ -49,7 +68,8 @@ class Graph:
                        '(b:FactoryDemo {namespace:$ns,version:$v,entity_id:$b}) '
                        f'MERGE (a)-[:{rel}]->(b)', params | {'a':a,'b':b})
         self.query('MERGE (s:FactorySnapshot {namespace:$ns,version:$v}) SET s.sha256=$hash', params)
-        return {'version':version,'sha256':sha,'nodes':len(d['nodes']),'edges':len(d['edges'])}
+        integrity = self.verify_content(version)
+        return {'version':version,'sha256':sha,**integrity}
 
     def run(self, version, tool, args):
         d, sha = snapshot(version)
@@ -72,10 +92,11 @@ class Graph:
         stored = self.query('MATCH (s:FactorySnapshot {namespace:$ns,version:$v}) RETURN s.sha256 AS sha256',p)
         if len(stored) != 1 or stored[0]['sha256'] != sha:
             raise RuntimeError('Snapshot not loaded or hash differs')
+        integrity=self.verify_content(version)
         rows = self.query(q,p)
         return {'tool':tool,'arguments':args,'snapshot':version,'source_sha256':sha,'as_of':d['as_of'],
                 'query':q,'rows':rows,'scope':'selected query result in authored snapshot; not completeness proof',
-                'limit_reached':len(rows) >= (60 if tool=='inspect_entity' else 30)}
+                'integrity':integrity,'limit_reached':len(rows) >= (60 if tool=='inspect_entity' else 30)}
 
 ARGS = {'find_entities':'text','inspect_entity':'entity_id','impacted_orders':'machine_id',
         'replacement_candidates':'order_id','qualification_records':'machine_id'}

@@ -1,18 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 380" role="img" aria-labelledby="change-title change-desc" font-family="Pretendard, Noto Sans KR, sans-serif"><title id="change-title">담당자별로 다른 변경 판단 근거</title><desc id="change-desc">정책 담당자가 의미와 적용 범위를 정하고 개발 담당자가 매핑과 검사를 수정하며 운영 담당자가 적용 버전과 소비처를 확인한다.</desc><defs><marker id="change-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#245dc0" stroke-width="1.5"/></marker></defs><rect width="1120" height="380" rx="12" fill="white"/>
-<text x="26" y="32" text-anchor="start" font-size="22" font-weight="700" fill="#142d49">담당자별로 다른 변경 판단 근거</text>
-<circle cx="65" cy="81" r="13" fill="#d9e7fb" stroke="#245dc0"/><path d="M42 119 Q42 97 65 97 Q88 97 88 119" fill="#d9e7fb" stroke="#245dc0" stroke-width="2"/>
-<text x="110" y="104" text-anchor="start" font-size="23" font-weight="600" fill="#142d49">정책 담당자</text>
-<path d="M280 98 L390 98" fill="none" stroke="#245dc0" stroke-width="2.5" marker-end="url(#change-arrow)"/>
-<text x="425" y="91" text-anchor="start" font-size="23" font-weight="600" fill="#142d49">변경할 의미와 적용 범위</text>
-<text x="425" y="123" text-anchor="start" font-size="20" font-weight="400" fill="#52677f">본부 분리 조건 · 적용 시점 · 예외</text>
-<circle cx="65" cy="185" r="13" fill="#d9e7fb" stroke="#245dc0"/><path d="M42 223 Q42 201 65 201 Q88 201 88 223" fill="#d9e7fb" stroke="#245dc0" stroke-width="2"/>
-<text x="110" y="208" text-anchor="start" font-size="23" font-weight="600" fill="#142d49">개발 담당자</text>
-<path d="M280 202 L390 202" fill="none" stroke="#245dc0" stroke-width="2.5" marker-end="url(#change-arrow)"/>
-<text x="425" y="195" text-anchor="start" font-size="23" font-weight="600" fill="#142d49">스키마·매핑·검사의 변경</text>
-<text x="425" y="227" text-anchor="start" font-size="20" font-weight="400" fill="#52677f">관계 경로 · Shape · 반례와 회귀 검사</text>
-<circle cx="65" cy="289" r="13" fill="#d9e7fb" stroke="#245dc0"/><path d="M42 327 Q42 305 65 305 Q88 305 88 327" fill="#d9e7fb" stroke="#245dc0" stroke-width="2"/>
-<text x="110" y="312" text-anchor="start" font-size="23" font-weight="600" fill="#142d49">운영 담당자</text>
-<path d="M280 306 L390 306" fill="none" stroke="#245dc0" stroke-width="2.5" marker-end="url(#change-arrow)"/>
-<text x="425" y="299" text-anchor="start" font-size="23" font-weight="600" fill="#142d49">버전 배포와 영향 대상 확인</text>
-<text x="425" y="331" text-anchor="start" font-size="20" font-weight="400" fill="#52677f">소비 시스템 · 적용 버전 · 재검토 요청</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 360" role="img" aria-labelledby="change-title change-desc" font-family="Pretendard, Noto Sans KR, sans-serif"><title id="change-title">여러 서비스의 공통 규칙 공유와 공정한 비교 대상</title><desc id="change-desc">챗봇, 검색 API, 품질 점검, 데이터 적재가 공통 자격 조건을 공유하고 버전별로 추적한다. 공정한 비교 대상은 공유 스키마·규칙·버전 관리를 갖춘 Python 시스템이다.</desc><defs><marker id="change-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#245dc0" stroke-width="1.5"/></marker></defs><rect width="1120" height="360" rx="12" fill="white"/>
+<text x="26" y="32" text-anchor="start" font-size="22" font-weight="700" fill="#142d49">여러 서비스의 규칙 공유 구조와 공정한 비교 기준</text>
+<rect x="20" y="56" width="520" height="275" rx="9" fill="#f4f8fd" stroke="#c7d5e5" stroke-width="1.5"/>
+<text x="42" y="90" font-size="20" font-weight="700" fill="#142d49">공통 규칙 산출물 (SHACL 또는 공유 선언 규칙)</text>
+<rect x="42" y="108" width="476" height="58" rx="7" fill="#fff" stroke="#245dc0" stroke-width="1.8"/>
+<text x="280" y="135" text-anchor="middle" font-size="18" font-weight="700" fill="#245dc0">자격 조건 계약 v3 · 제품 + 역량 + 기준일 유효기간</text>
+<text x="280" y="156" text-anchor="middle" font-size="15" fill="#52677f">어느 서비스가 어떤 버전의 조건으로 검사했는지 해시·버전 기록</text>
+<path d="M150 166 V202" fill="none" stroke="#245dc0" stroke-width="2" marker-end="url(#change-arrow)"/>
+<path d="M410 166 V202" fill="none" stroke="#245dc0" stroke-width="2" marker-end="url(#change-arrow)"/>
+<rect x="42" y="210" width="225" height="46" rx="6" fill="#fff" stroke="#c7d5e5"/>
+<text x="154" y="239" text-anchor="middle" font-size="17" font-weight="600" fill="#142d49">챗봇 · 검색 API</text>
+<rect x="293" y="210" width="225" height="46" rx="6" fill="#fff" stroke="#c7d5e5"/>
+<text x="405" y="239" text-anchor="middle" font-size="17" font-weight="600" fill="#142d49">품질 점검 · 데이터 적재</text>
+<text x="42" y="298" font-size="16" fill="#52677f">개별 서비스마다 조건을 따로 코딩하면 한쪽만 수정될 위험</text>
+<rect x="570" y="56" width="530" height="275" rx="9" fill="#f7f9fc" stroke="#c7d5e5" stroke-width="1.5"/>
+<text x="592" y="90" font-size="20" font-weight="700" fill="#142d49">무엇과 비교해야 공정한가?</text>
+<rect x="592" y="110" width="486" height="82" rx="7" fill="#fff" stroke="#c7d5e5"/>
+<text x="612" y="140" font-size="18" font-weight="700" fill="#b33131">부적절한 대조군: 정리되지 않은 개별 Python 코드</text>
+<text x="612" y="170" font-size="16" fill="#52677f">규칙 분산 문제를 언어 자체의 한계로 오해하기 쉬움</text>
+<rect x="592" y="208" width="486" height="98" rx="7" fill="#fff" stroke="#245dc0" stroke-width="1.8"/>
+<text x="612" y="238" font-size="18" font-weight="700" fill="#245dc0">공정한 대조군: 공유 스키마·규칙·버전 관리 Python</text>
+<text x="612" y="266" font-size="16" fill="#142d49">동일 정책·동일 버전 메타데이터를 제공한 뒤</text>
+<text x="612" y="290" font-size="16" fill="#52677f">애플리케이션 결합도와 다중 도구 재사용성 차이를 비교</text>
 </svg>

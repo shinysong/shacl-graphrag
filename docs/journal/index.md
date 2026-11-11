@@ -1,5 +1,8 @@
 # 연구 일지
 
+- [2026-11-11 복합 질문의 실제 답변 검토](2026-11-11-compound-answer-review.md)
+- [2026-11-11 트리플 규모와 조회 한도](2026-11-11-factory-complexity.md)
+
 - [2026-11-11 그래프 근거와 규칙을 함께 관리해야 하는 이유](2026-11-11-ontology-shacl-role.md)
 
 - [2026-11-10 Factory Lab 실제 답변 기록](../experiments/records/2026-11-10-factory-renewal-live.json) · [Neo4j와 로컬 RDF 조회 비교](../experiments/records/2026-11-10-factory-rdf-parity.json)

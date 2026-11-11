@@ -1,0 +1,19 @@
+{
+  "tool": "inspect_entity",
+  "arguments": {
+    "entity_id": "missing"
+  },
+  "snapshot": "factory-v3",
+  "source_sha256": "2f47b98a947bda6c79a99ebe540c24a2515519f448ab0a7136e00afe07b0f08b",
+  "as_of": "2026-11-09",
+  "query": "MATCH (n:FactoryDemo {namespace:$ns,version:$v}) WHERE n.entity_id=$entity_id OPTIONAL MATCH (n)-[r]-(m:FactoryDemo {namespace:$ns,version:$v}) RETURN properties(n) AS entity, type(r) AS relation, properties(m) AS neighbor, startNode(r).entity_id AS from_id ORDER BY relation, m.entity_id LIMIT 60",
+  "rows": [],
+  "scope": "selected query result in authored snapshot; not completeness proof",
+  "integrity": {
+    "verified_before_query": true,
+    "source_sha256": "2f47b98a947bda6c79a99ebe540c24a2515519f448ab0a7136e00afe07b0f08b",
+    "nodes": 12,
+    "edges": 13
+  },
+  "limit_reached": false
+}

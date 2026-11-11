@@ -1,0 +1,74 @@
+{
+  "feature": "Compact Cytoscape source graph and three-column final answer comparison",
+  "library": {
+    "library": "Cytoscape.js",
+    "version": "3.34.3",
+    "license": "MIT",
+    "sources": [
+      {
+        "url": "https://raw.githubusercontent.com/cytoscape/cytoscape.js/v3.34.3/dist/cytoscape.min.js",
+        "file": "apps/factory_lab/static/vendor/cytoscape-3.34.3.min.js",
+        "bytes": 435503,
+        "sha256": "5f3b5b529546d5af1fc5628590af033b74511a5b6f789f5f4682845863228b91"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/cytoscape/cytoscape.js/v3.34.3/LICENSE",
+        "file": "apps/factory_lab/static/vendor/cytoscape-LICENSE.txt",
+        "bytes": 1082,
+        "sha256": "eb319c6e6f233607f71e8e2f450391751883cfc0eeb3ca7ef574c13d1d9c2203"
+      }
+    ]
+  },
+  "review_job": "20261110T080231Z-factory-graph-library-ebe24b",
+  "verification": {
+    "summary": "factory-lab-tests exit code 0 (11 local software tests). Node JS syntax exit code 0. Browser1440light390dark, three answer columns, graph11nodes, compact height, zoom/expand/Escape, hash mismatch highlight suppression pass. Extra browser proportional scroll sync, keyboard focus, stale run race, graph fetch failure cleanup and library failure text fallback pass. Zero POST/paid calls. Not efficacy or benchmark evidence.",
+    "decision": "observe",
+    "findings": [
+      {
+        "severity": "warning",
+        "evidence": "Missing library fallback lists nodes/edges but cannot select attrs; selection reset may retain stale aria-pressed. Source graph is not liveDB and highlighted IDs do not establish retrieved relationships.",
+        "recommendation": "Retain scope notice and these accessibility limitations for followup."
+      }
+    ],
+    "tasks": []
+  },
+  "browser": [
+    {
+      "width": 1440,
+      "theme": "light",
+      "errors": [],
+      "posts": [],
+      "node_count": 11,
+      "comparison_cards": 3
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "errors": [],
+      "posts": [],
+      "node_count": 11,
+      "comparison_cards": 3
+    }
+  ],
+  "edge_browser": {
+    "sync_ratios": [
+      0.19775873434410018,
+      0.19806094182825484,
+      0.19806094182825484
+    ],
+    "keyboard_focus_retained": true,
+    "race_guard": true,
+    "graph_failure_clear": true,
+    "library_failure_text_fallback": true,
+    "errors": [],
+    "posts": []
+  },
+  "budget_unchanged": {
+    "attempts": 83,
+    "reserved_nonrefunded_usd": "2.87891250",
+    "reported_usd": "0.254980275",
+    "unresolved": 0
+  },
+  "paid_calls": 0,
+  "limits": "Proportional scroll synchronization is not semantic paragraph alignment. No automatic answer scoring or difference classification. Mobile columns swipe horizontally. Source snapshot graph not live DB."
+}

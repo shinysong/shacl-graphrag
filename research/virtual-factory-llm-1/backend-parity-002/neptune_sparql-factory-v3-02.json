@@ -1,0 +1,19 @@
+{
+  "tool": "find_entities",
+  "arguments": {
+    "text": "not present"
+  },
+  "snapshot": "factory-v3",
+  "source_sha256": "2f47b98a947bda6c79a99ebe540c24a2515519f448ab0a7136e00afe07b0f08b",
+  "as_of": "2026-11-09",
+  "query": "PREFIX f: <urn:factory-demo:vocab:> SELECT * WHERE { GRAPH <urn:factory-demo:graph:factory-v3> { { SELECT * WHERE { GRAPH <urn:factory-demo:graph:factory-v3> { ?entity f:id ?entity_id; f:name ?search_name . FILTER(CONTAINS(LCASE(?entity_id), LCASE(\"not present\")) || CONTAINS(LCASE(?search_name), LCASE(\"not present\"))) } } ORDER BY ?entity_id LIMIT 30 } BIND(COALESCE(?entity, <urn:factory-demo:unbound>) AS ?entity_key) OPTIONAL { ?entity_key f:id ?entity_id; a ?entity_kind . OPTIONAL { ?entity_key f:name ?entity_name } OPTIONAL { ?entity_key f:status ?entity_status } OPTIONAL { ?entity_key f:product ?entity_product } OPTIONAL { ?entity_key f:capability ?entity_capability } OPTIONAL { ?entity_key f:valid_from ?entity_valid_from } OPTIONAL { ?entity_key f:valid_until ?entity_valid_until } } } } ORDER BY ?entity_id",
+  "rows": [],
+  "scope": "selected query result in authored snapshot; not completeness proof",
+  "integrity": {
+    "verified_before_query": true,
+    "triples": 70,
+    "source_sha256": "2f47b98a947bda6c79a99ebe540c24a2515519f448ab0a7136e00afe07b0f08b"
+  },
+  "limit_reached": false,
+  "backend": "neptune_sparql"
+}

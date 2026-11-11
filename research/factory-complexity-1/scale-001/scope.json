@@ -1,0 +1,20 @@
+{
+  "synthetic": true,
+  "generation": "experiments/factory_complexity/scaling.py expand; exact sources/query observations retained privately and hash-listed",
+  "planned_cells": 6,
+  "completed_cells": 6,
+  "query_executions_including_warmup": 288,
+  "measured_query_executions": 216,
+  "repeats_per_query": 3,
+  "engine_scope": "in-memory RDFLib and SQLite; no Neo4j/Neptune timing",
+  "new_llm_calls": 0,
+  "source_state": "all size/fanout source records present; selected qualification retrieval remains fixed",
+  "limitations": [
+    "One process per cell; not independent workload samples",
+    "Query timing excludes build and source validation; unlike production full-content per-query integrity",
+    "Checkpoint IO and backend order can affect warm-cache measurements",
+    "Peak RSS is whole worker, not per-backend memory",
+    "30-row saturation alone does not prove omission;31-control confirms omission",
+    "Python/SHACL flags equal, not evidence of answer efficacy"
+  ]
+}

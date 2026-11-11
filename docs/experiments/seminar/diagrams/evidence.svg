@@ -1,37 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 400" role="img" aria-labelledby="evidence-title evidence-desc" font-family="Pretendard, Noto Sans KR, sans-serif"><title id="evidence-title">시스템별 상태값을 키와 시점으로 연결</title><desc id="evidence-desc">합성 예시다. ERP 부품 상태 Approved, 계약 상태 Active, 검토자 상태 Qualified는 각각 의미가 다르다. 키로 연결하고 부서 변경 이력의 날짜를 확인해야 한다.</desc><defs><marker id="evidence-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#245dc0" stroke-width="1.5"/></marker></defs><rect width="1120" height="400" rx="12" fill="white"/>
-<text x="26" y="32" text-anchor="start" font-size="22" font-weight="700" fill="#142d49">시스템별 상태값을 키와 시점으로 연결</text>
-<text x="1090" y="32" text-anchor="end" font-size="18" font-weight="400" fill="#52677f">설명용 합성 예시 · 실제 스냅샷 아님</text>
-<rect x="20" y="62" width="330" height="175" rx="9" fill="#f4f8fd" stroke="#c7d5e5" stroke-width="1.5"/>
-<text x="36" y="93" text-anchor="start" font-size="22" font-weight="600" fill="#142d49">ERP · 부품</text>
-<text x="36" y="130" text-anchor="start" font-size="18" font-weight="400" fill="#52677f">part_id</text>
-<text x="334" y="130" text-anchor="end" font-size="20" font-weight="400" fill="#245dc0">P1</text>
-<text x="36" y="166" text-anchor="start" font-size="18" font-weight="400" fill="#52677f">status</text>
-<text x="334" y="166" text-anchor="end" font-size="20" font-weight="400" fill="#245dc0">Approved</text>
-<text x="36" y="202" text-anchor="start" font-size="18" font-weight="400" fill="#52677f">contract_id</text>
-<text x="334" y="202" text-anchor="end" font-size="20" font-weight="400" fill="#245dc0">C7</text>
-<rect x="395" y="62" width="330" height="175" rx="9" fill="#f4f8fd" stroke="#c7d5e5" stroke-width="1.5"/>
-<text x="411" y="93" text-anchor="start" font-size="22" font-weight="600" fill="#142d49">계약 시스템</text>
-<text x="411" y="130" text-anchor="start" font-size="18" font-weight="400" fill="#52677f">contract_id</text>
-<text x="709" y="130" text-anchor="end" font-size="20" font-weight="400" fill="#245dc0">C7</text>
-<text x="411" y="166" text-anchor="start" font-size="18" font-weight="400" fill="#52677f">status</text>
-<text x="709" y="166" text-anchor="end" font-size="20" font-weight="400" fill="#245dc0">Active</text>
-<text x="411" y="202" text-anchor="start" font-size="18" font-weight="400" fill="#52677f">reviewer_id</text>
-<text x="709" y="202" text-anchor="end" font-size="20" font-weight="400" fill="#245dc0">R2</text>
-<rect x="770" y="62" width="330" height="175" rx="9" fill="#f4f8fd" stroke="#c7d5e5" stroke-width="1.5"/>
-<text x="786" y="93" text-anchor="start" font-size="22" font-weight="600" fill="#142d49">검토자 명부</text>
-<text x="786" y="130" text-anchor="start" font-size="18" font-weight="400" fill="#52677f">reviewer_id</text>
-<text x="1084" y="130" text-anchor="end" font-size="20" font-weight="400" fill="#245dc0">R2</text>
-<text x="786" y="166" text-anchor="start" font-size="18" font-weight="400" fill="#52677f">status</text>
-<text x="1084" y="166" text-anchor="end" font-size="20" font-weight="400" fill="#245dc0">Qualified</text>
-<text x="786" y="202" text-anchor="start" font-size="18" font-weight="400" fill="#52677f">division</text>
-<text x="1084" y="202" text-anchor="end" font-size="20" font-weight="400" fill="#245dc0">품질팀</text>
-<path d="M350 201 L395 201" fill="none" stroke="#245dc0" stroke-width="2.5" marker-end="url(#evidence-arrow)"/>
-<path d="M725 201 L770 201" fill="none" stroke="#245dc0" stroke-width="2.5" marker-end="url(#evidence-arrow)"/>
-<text x="560" y="269" text-anchor="middle" font-size="21" font-weight="600" fill="#142d49">같은 status 열 이름 ≠ 같은 판단 기준</text>
-<rect x="20" y="288" width="1080" height="77" rx="9" fill="#f4f8fd" stroke="#c7d5e5" stroke-width="1.5"/>
-<text x="40" y="318" text-anchor="start" font-size="20" font-weight="600" fill="#142d49">R2 부서 이력</text>
-<text x="265" y="318" text-anchor="start" font-size="20" font-weight="400" fill="#52677f">2025-01-01 · 구매팀 (old)</text>
-<path d="M620 315 L700 315" fill="none" stroke="#245dc0" stroke-width="2.5" marker-end="url(#evidence-arrow)"/>
-<text x="730" y="318" text-anchor="start" font-size="20" font-weight="400" fill="#245dc0">2025-07-01 · 품질팀 (new)</text>
-<text x="40" y="349" text-anchor="start" font-size="19" font-weight="400" fill="#52677f">질문 기준일에 맞는 상태와 소속을 선택해야 한다.</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 380" role="img" aria-labelledby="evidence-title evidence-desc" font-family="Pretendard, Noto Sans KR, sans-serif"><title id="evidence-title">대체 가능이라는 말에 섞이기 쉬운 네 가지 업무 의미</title><desc id="evidence-desc">설비 M03과 자격 기록 Q03, Q03R에서 기능적 작업 가능, 제품·기간별 유효 자격, 생산 일정 배정 여유, 사용 승인을 구분해 명시한다.</desc><defs><marker id="evidence-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#245dc0" stroke-width="1.5"/></marker></defs><rect width="1120" height="380" rx="12" fill="white"/>
+<text x="26" y="32" text-anchor="start" font-size="22" font-weight="700" fill="#142d49">‘대체 가능’으로 뭉뚱그리기 쉬운 네 가지 업무 의미 구분</text>
+<text x="1090" y="32" text-anchor="end" font-size="17" font-weight="400" fill="#52677f">가상 공장 실험 사례 (M03 · Q03R · O17/O18)</text>
+<rect x="20" y="56" width="250" height="190" rx="9" fill="#f4f8fd" stroke="#c7d5e5" stroke-width="1.5"/>
+<text x="36" y="88" font-size="20" font-weight="700" fill="#245dc0">① 기능적 작업 가능</text>
+<text x="36" y="122" font-size="18" font-weight="600" fill="#142d49">M03 → CAP-CUT</text>
+<text x="36" y="154" font-size="16" fill="#52677f">절단 역량이 등록된 설비</text>
+<text x="36" y="182" font-size="16" fill="#52677f">O17·O18 모두 기능 후보</text>
+<text x="36" y="220" font-size="15" font-weight="600" fill="#334b66">자격·일정은 미확인</text>
+<rect x="296" y="56" width="250" height="190" rx="9" fill="#f4f8fd" stroke="#c7d5e5" stroke-width="1.5"/>
+<text x="312" y="88" font-size="20" font-weight="700" fill="#245dc0">② 유효한 제품 자격</text>
+<text x="312" y="122" font-size="18" font-weight="600" fill="#142d49">M03 → Q03R (P-A)</text>
+<text x="312" y="154" font-size="16" fill="#52677f">Q03R은 제품 P-A만 유효</text>
+<text x="312" y="182" font-size="16" fill="#52677f">O18(제품 P-B)은 범위 불일치</text>
+<text x="312" y="220" font-size="15" font-weight="600" fill="#b33131">제품·역량·기간 동시 충족 필요</text>
+<rect x="572" y="56" width="250" height="190" rx="9" fill="#f4f8fd" stroke="#c7d5e5" stroke-width="1.5"/>
+<text x="588" y="88" font-size="20" font-weight="700" fill="#245dc0">③ 일정 배정 가능</text>
+<text x="588" y="122" font-size="18" font-weight="600" fill="#142d49">available ≠ 일정 여유</text>
+<text x="588" y="154" font-size="16" fill="#52677f">설비 상태값만으로는</text>
+<text x="588" y="182" font-size="16" fill="#52677f">실제 부하·납기 판단 불가</text>
+<text x="588" y="220" font-size="15" font-weight="600" fill="#334b66">별도 스케줄 확인 대상</text>
+<rect x="848" y="56" width="252" height="190" rx="9" fill="#f4f8fd" stroke="#c7d5e5" stroke-width="1.5"/>
+<text x="864" y="88" font-size="20" font-weight="700" fill="#245dc0">④ 사용 승인 완료</text>
+<text x="864" y="122" font-size="18" font-weight="600" fill="#142d49">운영·품질 변경 승인</text>
+<text x="864" y="154" font-size="16" fill="#52677f">현장 소문(“갱신했다더라”)</text>
+<text x="864" y="182" font-size="16" fill="#52677f">≠ 공식 승인된 배정 변경</text>
+<text x="864" y="220" font-size="15" font-weight="600" fill="#334b66">담당자 확인·승인 절차 분리</text>
+<rect x="20" y="268" width="1080" height="86" rx="9" fill="#f7f9fc" stroke="#c7d5e5" stroke-width="1.5"/>
+<text x="40" y="302" text-anchor="start" font-size="19" font-weight="700" fill="#142d49">온톨로지의 역할: 관계를 무조건 늘리는 것이 아니라 위 네 가지 구분을 데이터 구조에 명시하는 것</text>
+<text x="40" y="334" text-anchor="start" font-size="17" font-weight="400" fill="#52677f">다만 RDF로 표현한다고 구분이 저절로 생기지는 않으므로, 개념과 적용 조건을 직접 설계해야 한다.</text>
 </svg>

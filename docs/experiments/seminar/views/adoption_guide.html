@@ -1,0 +1,29 @@
+<div class="columns">
+  <section class="panel">
+    <h3>언제 Python과 타입 스키마로 충분한가?</h3>
+    <div class="callout">
+      <b>서비스 하나 · 데이터 출처 하나 · 규칙 몇 개가 안정적으로 유지되는 상황</b>이라면 공유 Python 라이브러리와 타입 스키마로 끝내는 편이 더 단순하다. RDF·OWL·SHACL 도입에는 모델링·매핑·버전 관리라는 새로운 부담이 따른다.
+    </div>
+    <h3>도입 시점을 판단하는 네 가지 질문 (데이터 건수보다 중요)</h3>
+    <table>
+      <tbody>
+        <tr><th scope="row">1. 의미 중복</th><td>같은 업무 의미를 여러 팀·서비스가 반복해서 정의하고 있는가?</td></tr>
+        <tr><th scope="row">2. 변경 위치</th><td>자격·정책 규칙이 바뀔 때 수정할 위치를 찾기 어려운가?</td></tr>
+        <tr><th scope="row">3. 감사·설명</th><td>판단의 근거와 적용한 규칙 버전을 나중에 설명해야 하는가?</td></tr>
+        <tr><th scope="row">4. 저장소 전환</th><td>출처나 저장소(Neo4j · RDF · SQL)가 달라도 같은 해석을 유지해야 하는가?</td></tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="panel">
+    <h3>연구의 핵심 방향과 검증 분리</h3>
+    <div class="annotation"><strong>지양하는 주장:</strong> “온톨로지를 쓰면 LLM이 저절로 더 똑똑해진다.”</div>
+    <div class="annotation"><strong>설득력 있는 방향:</strong> “LLM이 사용하는 근거와 판단 조건을 명시하고 공유하며, 변경과 오류를 추적할 수 있게 한다.”</div>
+    <table>
+      <thead><tr><th>검증 축</th><th>무엇을 어떻게 보여줄 것인가</th></tr></thead>
+      <tbody>
+        <tr><td>답변 품질 개선</td><td>다중 후보·조건 변경 등 특정 상황에서 구조화된 보고서가 가져오는 효과로 검증</td></tr>
+        <tr><td>구조 자체의 장점</td><td>규칙 재사용 · 변경 시 재검토 범위 축소 · 판단 근거 추적 가능성으로 별도 입증</td></tr>
+      </tbody>
+    </table>
+  </section>
+</div>

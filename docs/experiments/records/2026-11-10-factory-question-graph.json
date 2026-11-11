@@ -1,0 +1,68 @@
+{
+  "change": "Collapsed question-specific evidence graph, no whole-source graph display/fetch; relation predicates labeled by default",
+  "review_job": "20261110T081116Z-factory-question-graph-4de731",
+  "projection": "Saved tool rows plus fixed graph.py query contracts only; no source edge or attribute completion. Expected source hash required.",
+  "checks": {
+    "summary": "factory-lab-tests exit code 0 (11 software tests). JS syntax exit code 0. Readonly browser1440light/390dark passes initialhidden, savedrun collapsed, lazy render, union8nodes9edges, E4two nodes one HAS_QUALIFICATION edge, default predicate labels, hash mismatch omission, findEntities noedges, inspect direction, null qualification. Race and clearing pass. Zero paid calls and source graph requests. Not an efficacy benchmark.",
+    "decision": "observe",
+    "findings": [
+      {
+        "severity": "warning",
+        "evidence": "Union node attributes use first retrieved representation. Retrieved graph does not establish which facts final answer relied on, completeness, or validation.",
+        "recommendation": "Use per-evidence filter and raw query events for full per-query attributes/provenance."
+      }
+    ],
+    "tasks": []
+  },
+  "browser": [
+    {
+      "width": 1440,
+      "theme": "light",
+      "union_ids": [
+        "O17",
+        "M02",
+        "CAP-CUT",
+        "O18",
+        "M01",
+        "M03",
+        "Q01",
+        "Q03"
+      ],
+      "initial_hidden": true,
+      "saved_run_collapsed": true,
+      "E4_nodes": [
+        "M01",
+        "Q01"
+      ],
+      "E4_edges": 1,
+      "projection_contract_checks": true,
+      "page_errors": [],
+      "paid_or_source_graph_requests": 0
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "union_ids": [
+        "O17",
+        "M02",
+        "CAP-CUT",
+        "O18",
+        "M01",
+        "M03",
+        "Q01",
+        "Q03"
+      ],
+      "initial_hidden": true,
+      "saved_run_collapsed": true,
+      "E4_nodes": [
+        "M01",
+        "Q01"
+      ],
+      "E4_edges": 1,
+      "projection_contract_checks": true,
+      "page_errors": [],
+      "paid_or_source_graph_requests": 0
+    }
+  ],
+  "paid_calls": 0
+}

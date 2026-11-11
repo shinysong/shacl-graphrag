@@ -1,0 +1,43 @@
+{
+  "tool": "qualification_records",
+  "arguments": {
+    "machine_id": "M03"
+  },
+  "snapshot": "factory-v1",
+  "source_sha256": "01754b4a0d1d5d501a40496eabe06be811ca34150c955bc2d004b33664aaf716",
+  "as_of": "2026-11-09",
+  "query": "MATCH (m:FactoryDemo {namespace:$ns,version:$v,entity_id:$machine_id}) OPTIONAL MATCH (m)-[:HAS_QUALIFICATION]->(r:FactoryDemo {namespace:$ns,version:$v}) RETURN properties(m) AS machine, properties(r) AS qualification ORDER BY r.entity_id LIMIT 30",
+  "rows": [
+    {
+      "machine": {
+        "kind": "Machine",
+        "namespace": "virtual-factory-llm-1",
+        "name": "대체 설비 3",
+        "id": "M03",
+        "entity_id": "M03",
+        "version": "factory-v1",
+        "status": "available"
+      },
+      "qualification": {
+        "capability": "CAP-CUT",
+        "product": "P-A",
+        "valid_until": "2026-10-31",
+        "kind": "Qualification",
+        "name": "M03 제품 A 자격",
+        "namespace": "virtual-factory-llm-1",
+        "valid_from": "2026-01-01",
+        "id": "Q03",
+        "entity_id": "Q03",
+        "version": "factory-v1"
+      }
+    }
+  ],
+  "scope": "selected query result in authored snapshot; not completeness proof",
+  "integrity": {
+    "verified_before_query": true,
+    "source_sha256": "01754b4a0d1d5d501a40496eabe06be811ca34150c955bc2d004b33664aaf716",
+    "nodes": 11,
+    "edges": 12
+  },
+  "limit_reached": false
+}

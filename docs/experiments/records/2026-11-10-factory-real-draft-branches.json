@@ -1,0 +1,40 @@
+{
+  "protocol": "virtual-factory-llm-1-real-draft-branches",
+  "date": "2026-11-10",
+  "status": "implemented_offline_verified_paid_gate_closed",
+  "review_job": "20261110T041233Z-factory-real-draft-branching-478801",
+  "new_paid_calls": 0,
+  "checks": {
+    "factory_branching_tests": 4,
+    "factory_lab_tests": 11,
+    "factory_diagnostic_tests": 3,
+    "factory_diagnostic_execution_tests": 3,
+    "all_exit_code": 0,
+    "candidate_integration": "scripted two lookups / three finals; Python SHACL flags/messages identical",
+    "ui_widths": [
+      1440,
+      390
+    ],
+    "mermaid_count": 3,
+    "site_widths": [
+      390,
+      1280
+    ]
+  },
+  "limitations": [
+    "No actual new LLM answers",
+    "Synthetic factory data",
+    "Fixed branch order",
+    "Reports may have different input lengths",
+    "Same normalized Python/SHACL reports yield same prompts",
+    "No query catalogue index or free query generation"
+  ],
+  "files": {
+    "apps/factory_lab/agent.py": "8ef55e5eedabf7e5b5c2be628fc098a441a8665fb2ea7c6990492e3a27c08af1",
+    "apps/factory_lab/branching.py": "7e334fab6355cc14681d2ba71100083ba2a25789150bc3fc972e6f022ef7790e",
+    "apps/factory_lab/static/app.js": "d86207a36b87e1cacc49fb7d8583894e2f88deabf25c4a689788044415477d43",
+    "apps/factory_lab/static/index.html": "b848054aa47b9203fe5e826c27ad2dddd87d3e2010b36c2d62fcd117d1871902",
+    "tests/test_factory_branching.py": "096192d7e02dddae1d8ea28d226a0cad5fe1850a126a7b72452213b7692a1d9e",
+    "docs/journal/2026-11-10-factory-query-tools-and-branches.md": "4e0c5b7fb274f3b243bdbd621336361a576bd8bb4b5c97a0ebecdc65384ef930"
+  }
+}

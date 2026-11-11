@@ -1,0 +1,41 @@
+{
+  "tool": "replacement_candidates",
+  "arguments": {
+    "order_id": "O19"
+  },
+  "snapshot": "factory-v2",
+  "source_sha256": "ac965a11283075b6cf4cd8fc40c5e5e90d38a75b17c72c312db811f89566db9e",
+  "as_of": "2026-11-09",
+  "query": "PREFIX f: <urn:factory-demo:vocab:> SELECT * WHERE { GRAPH <urn:factory-demo:graph:factory-v2> { { SELECT * WHERE { GRAPH <urn:factory-demo:graph:factory-v2> { BIND(<urn:factory-demo:factory-v2:entity:O19> AS ?order) ?order f:REQUIRES ?cap . ?machine f:CAPABLE_OF ?cap; f:id ?machine_id . ?cap f:id ?required_capability . } } ORDER BY ?machine_id ?required_capability LIMIT 30 } BIND(COALESCE(?order, <urn:factory-demo:unbound>) AS ?order_key) OPTIONAL { ?order_key f:id ?order_id; a ?order_kind . OPTIONAL { ?order_key f:name ?order_name } OPTIONAL { ?order_key f:status ?order_status } OPTIONAL { ?order_key f:product ?order_product } OPTIONAL { ?order_key f:capability ?order_capability } OPTIONAL { ?order_key f:valid_from ?order_valid_from } OPTIONAL { ?order_key f:valid_until ?order_valid_until } } BIND(COALESCE(?machine, <urn:factory-demo:unbound>) AS ?machine_key) OPTIONAL { ?machine_key f:id ?machine_id; a ?machine_kind . OPTIONAL { ?machine_key f:name ?machine_name } OPTIONAL { ?machine_key f:status ?machine_status } OPTIONAL { ?machine_key f:product ?machine_product } OPTIONAL { ?machine_key f:capability ?machine_capability } OPTIONAL { ?machine_key f:valid_from ?machine_valid_from } OPTIONAL { ?machine_key f:valid_until ?machine_valid_until } } } } ORDER BY ?machine_id ?required_capability",
+  "rows": [
+    {
+      "order": {
+        "id": "O19",
+        "name": "검사 주문",
+        "product": "P-A",
+        "kind": "Order",
+        "namespace": "virtual-factory-llm-1",
+        "version": "factory-v2",
+        "entity_id": "O19"
+      },
+      "machine": {
+        "id": "M04",
+        "name": "검사 설비 4",
+        "status": "available",
+        "kind": "Machine",
+        "namespace": "virtual-factory-llm-1",
+        "version": "factory-v2",
+        "entity_id": "M04"
+      },
+      "required_capability": "CAP-INSPECT"
+    }
+  ],
+  "scope": "selected query result in authored snapshot; not completeness proof",
+  "integrity": {
+    "verified_before_query": true,
+    "triples": 62,
+    "source_sha256": "ac965a11283075b6cf4cd8fc40c5e5e90d38a75b17c72c312db811f89566db9e"
+  },
+  "limit_reached": false,
+  "backend": "rdflib_sparql"
+}

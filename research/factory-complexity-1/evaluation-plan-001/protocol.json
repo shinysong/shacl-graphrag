@@ -1,0 +1,190 @@
+{
+  "protocol": "factory-complexity-1",
+  "design": "Paired actual model-generated draft and evidence, isolated self/Python/SHACL final reviews",
+  "cohort": "12 authored development cases across4questionfamilies and3evidence states; not fresh heldout",
+  "planned": {
+    "episodes": 12,
+    "drafts": 12,
+    "finals": 36,
+    "repeats": 1
+  },
+  "model": {
+    "model": "google/gemini-3.8-flash",
+    "provider": "google-ai-studio",
+    "endpoint_name": "Google AI Studio | google/gemini-3.8-flash-20260902",
+    "prompt_price": "0.00000075",
+    "completion_price": "0.00000375",
+    "request_price": "0",
+    "seed_supported": true,
+    "max_tokens": 2048,
+    "temperature": 0,
+    "reasoning_effort": "low",
+    "checked_at": "2026-11-11T09:48:42.077229+00:00",
+    "note": "Model alias plus fixed provider, returned model/provider captured; not immutable weights guarantee. No search, audio, images or explicit prompt caching."
+  },
+  "scope": {
+    "max_attempts": 108,
+    "max_usd": "5.00",
+    "deadline": "2026-11-11T17:32:41+00:00",
+    "failure_policy": "stop on first failed episode, no automatic retries; reservations never refunded"
+  },
+  "selection": "Model selects fixed tools/arguments; no free text-to-query generation",
+  "finals": "No new source lookup; same frozen draft/evidence, engine identity omitted from normalized reports",
+  "order": [
+    {
+      "case_id": "case-02",
+      "runtime": "research/factory-complexity-1/development-001/runtime/case-02",
+      "review_order": [
+        "self",
+        "python",
+        "shacl"
+      ],
+      "status": "not_attempted",
+      "max_calls": 9,
+      "planning": false
+    },
+    {
+      "case_id": "case-07",
+      "runtime": "research/factory-complexity-1/development-001/runtime/case-07",
+      "review_order": [
+        "self",
+        "shacl",
+        "python"
+      ],
+      "status": "not_attempted",
+      "max_calls": 9,
+      "planning": false
+    },
+    {
+      "case_id": "case-04",
+      "runtime": "research/factory-complexity-1/development-001/runtime/case-04",
+      "review_order": [
+        "python",
+        "self",
+        "shacl"
+      ],
+      "status": "not_attempted",
+      "max_calls": 9,
+      "planning": false
+    },
+    {
+      "case_id": "case-01",
+      "runtime": "research/factory-complexity-1/development-001/runtime/case-01",
+      "review_order": [
+        "python",
+        "shacl",
+        "self"
+      ],
+      "status": "not_attempted",
+      "max_calls": 9,
+      "planning": false
+    },
+    {
+      "case_id": "case-11",
+      "runtime": "research/factory-complexity-1/development-001/runtime/case-11",
+      "review_order": [
+        "shacl",
+        "self",
+        "python"
+      ],
+      "status": "not_attempted",
+      "max_calls": 9,
+      "planning": false
+    },
+    {
+      "case_id": "case-10",
+      "runtime": "research/factory-complexity-1/development-001/runtime/case-10",
+      "review_order": [
+        "shacl",
+        "python",
+        "self"
+      ],
+      "status": "not_attempted",
+      "max_calls": 9,
+      "planning": false
+    },
+    {
+      "case_id": "case-09",
+      "runtime": "research/factory-complexity-1/development-001/runtime/case-09",
+      "review_order": [
+        "self",
+        "python",
+        "shacl"
+      ],
+      "status": "not_attempted",
+      "max_calls": 9,
+      "planning": false
+    },
+    {
+      "case_id": "case-12",
+      "runtime": "research/factory-complexity-1/development-001/runtime/case-12",
+      "review_order": [
+        "self",
+        "shacl",
+        "python"
+      ],
+      "status": "not_attempted",
+      "max_calls": 9,
+      "planning": false
+    },
+    {
+      "case_id": "case-03",
+      "runtime": "research/factory-complexity-1/development-001/runtime/case-03",
+      "review_order": [
+        "python",
+        "self",
+        "shacl"
+      ],
+      "status": "not_attempted",
+      "max_calls": 9,
+      "planning": false
+    },
+    {
+      "case_id": "case-06",
+      "runtime": "research/factory-complexity-1/development-001/runtime/case-06",
+      "review_order": [
+        "python",
+        "shacl",
+        "self"
+      ],
+      "status": "not_attempted",
+      "max_calls": 9,
+      "planning": false
+    },
+    {
+      "case_id": "case-05",
+      "runtime": "research/factory-complexity-1/development-001/runtime/case-05",
+      "review_order": [
+        "shacl",
+        "self",
+        "python"
+      ],
+      "status": "not_attempted",
+      "max_calls": 9,
+      "planning": false
+    },
+    {
+      "case_id": "case-08",
+      "runtime": "research/factory-complexity-1/development-001/runtime/case-08",
+      "review_order": [
+        "shacl",
+        "python",
+        "self"
+      ],
+      "status": "not_attempted",
+      "max_calls": 9,
+      "planning": false
+    }
+  ],
+  "prospective_scoring_plan": "# Prospective answer scoring, development diagnostic\n\nFreeze before paid execution. Twelve case cells are selected from four families informed by earlier inspected errors, not sampled factory users or fresh held-out data. One actual model-led draft per cell, three isolated finals reuse EXACT draft and evidence. Counterbalance final branch order across cases if implemented; otherwise preserve and disclose current self/Python/SHACL order. Do not regenerate a draft to obtain a useful error. No tools during finals, no runtime evaluator imports, no gold-based repair. Identical Python/SHACL prompts mean prose differences are model variability, not different information supplied by checker language.\n\nPlanned denominator: 12 episodes,12 drafts,36 final branches. Record not_attempted/failed/truncated/cancelled separately. A run may stop at cap; do not quietly replace cases. Every successful draft remains in comparison, including correct and uncertain drafts. Do not divide correctness only by successful/correctly interpreted episodes without also showing total denominator.\n\nPer-answer coding has orthogonal fields:\n- Core product/order/candidate judgment against SELECTED evidence under published policy.\n- Full-source candidate/list recovery, separately; an unavailable source fact must not make evidence-grounded uncertainty a reasoning error.\n- Qualification reason: not_retrieved versus not_applicable; policy is not physical approval.\n- Citation existence plus proposition support, not merely bracket presence.\n- Unsupported certainty: schedule, renewal documents, whole-enterprise absence, complete impact list, physical allocation.\n- Unnecessary withholding only when selected evidence supports the requested bounded answer; withholding on missing evidence is not automatically unnecessary.\n- Preservation of user constraints and unverified attribution.\n- Specific human review pointer: named role or responsible function and fact/document to verify. Do not reward ungrounded recommended physical action.\n\nTransitions per matched draft/final: corrected error, persistent error, introduced error, correct retained, uncertainty appropriately retained, unnecessary withholding introduced/resolved. Record claim text and exact E references; do not present manually segmented claims as independent samples. Family-level and per-cell table primary; no significance claim from four authored families.\n\nTwo independent native auditors receive arm-masked full question, actual selected evidence, tool catalog, source scope, texts and explicit scoring rubric. Source-recovery reference may be supplied only to auditors (never runtime), clearly separate from selected-evidence truth. Both return supporting exact quotes; coordinator verifies quotes/citations and adjudicates disagreements, preserving both annotations. Masking imperfect when answers mention report; disclose. No automated heuristic is treated as semantic truth. Offline checker parity is NOT answer scoring.\n\nExpected information boundaries (not expected model answers): Q1/Q2/Q4 reports may expose qualification reason details; Q3 impact list is outside existing checker, so report must be not_assessed when no replacement candidates queried. A/O have same view facts and differ only in opaque source provenance after model projection; no correct-source-state-classification metric. Any whole-source absence claims are unsupported without declared complete retrieval.\n",
+  "prospective_scoring_plan_sha256": "ae0ba4e09b276b66b258dde8c330059659398b8741c5e060b2044b79d7fb88dc",
+  "provenance": "Scoring plan prepared before paid launch; this public JSON copy assembled during execution; not external preregistration",
+  "limits": [
+    "One model and one repeat",
+    "Source/view references only offline evaluator",
+    "Temperature0/seed42 not determinism guarantee",
+    "Same-policy Python essential; cannot infer RDF superiority",
+    "Source absence and projection omission not inferable from identical visible facts",
+    "No new Neptune/Neo4j backend measurement"
+  ]
+}

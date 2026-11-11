@@ -341,3 +341,52 @@ A second offline replay declares two direct lookups per key in the inspected two
 ### Manufacturing version-qualified lookup follow-up (2026-11-07)
 
 `research/manufacturing-model-change-1/version-query-offline-001/` retains 2 inspected MachineTool snapshots × 6 explicitly version-bound questions × SQLite/RDFLib = 24 planned/emitted/completed rows. Twelve adapter pairs agree. A separate posthoc XML reader checks the two recorded raw-source hashes and the selected fields of all 24 saved outputs. Exact source-file anchors are experiment reproducibility policy, not OPC UA RequiredModels compatibility rules. Explicit stored references are JSON values followed by target lookup; no reverse completion, inferred hierarchy, imported-model closure or native graph traversal measurement. A referenced target without a definition in the selected file remains locally undefined, not globally nonexistent. Independent source-error controls retain 12 source-failed slots out of 24; the absent-namespace control is not a two-defined-node collision test. No new LLM calls or actual graph-DB execution for this model follow-up. Preserve the separate earlier actual manufacturing workbook backend run and all consumed development cohorts.
+
+
+## Virtual factory live application integration
+
+`virtual-factory-llm-1` implements a model-selected read-only Neo4j tool loop, draft, optional same-selected-evidence Python/pySHACL advisory report, and final answer. Two authored immutable snapshots contain 11 nodes and 12 edges each. The UI streams actual execution events and retains queries, evidence, reports, failed attempts and costs. Five tool rounds and twelve tool calls bound each episode. Previous-turn context is not source evidence; fresh retrieval is instructed rather than oracle-enforced.
+
+Self-review, Python and SHACL episodes verify integration, not causal answer improvement: their retrieved evidence and drafts may differ. Future efficacy evaluation must reuse the same draft and evidence across review conditions. No physical operation is authorized, and missing retrieved qualifications do not prove source absence. This slice includes no vector retrieval, OWL reasoning or Neptune measurement. See [the application guide](../setup/factory-lab.md) and `records/2026-11-09-factory-lab.json`.
+
+
+## Authored same-draft factory diagnostic
+
+`virtual-factory-llm-1/diagnostic/run-001` freezes six authored case families, each with a correct and an injected-error draft. Thirty-six final-answer packets pair identical question, policy, draft and selected evidence across self-review, Python and SHACL. The checker implementation label is removed: identical normalized Python/SHACL reports yield identical prompts. This is not evidence of an RDF-specific answer effect. All packets remain unexecuted; reported checker controls are offline software checks. Original snapshots and live DB data are unchanged. Evaluator source snapshots and draft labels must never be sent at runtime. See [case definitions and limitations](virtual-factory-diagnostic.md).
+
+
+### Authored diagnostic final-answer cycle, 2026-11-10
+
+The frozen36 packets were executed once with Gemini3.8Flash/google-ai-studio, temperature0/seed42/output2048, no tools or retries.36completed/0failed/0unattempted; reported batchUSD0.06954000. Coordinator unblinded primary-judgment review:6/6injected errors corrected and6/6correct judgments retained perarm. This does not establish incremental SHACL benefit, natural error frequency, full citation entailment or general accuracy. Python/SHACL12normalized prompt pairs and returned text pairs were identical. Inputs remain frozen; outputs live in research/virtual-factory-llm-1/diagnostic/answers-001. [Report](../journal/2026-11-10-factory-final-answer-cycle.md).
+
+### Factory Lab shared real-draft branches — 2026-11-10
+
+Implementation protocol: [query tools and branching journal](../journal/2026-11-10-factory-query-tools-and-branches.md).
+The live tool loop produces one draft and selected evidence bundle. Freeze question,
+policy/system text, snapshot metadata and optional prior-question context with that
+bundle and its hash before self/Python/SHACL final calls. No cross-branch answer
+context, evaluator inputs, new retrieval or compulsory veto. Strip engine names
+from final model inputs; retain them in audit events. Fixed sequential order, same
+model/output cap, unequal report/input lengths. Persist all three planned arms;
+stop on first failure/cancellation with remaining arms not attempted, no automatic
+retry. A comparison run is not a single-answer conversation parent. Authored-source
+status and consumed development scope remain. Current evidence is offline software
+verification only; paid gate closed and no new model efficacy measurement.
+
+### Compound factory request interpretation — 2026-11-10
+
+Optional model-declared pre-retrieval interpretation separates goals, constraints,
+unverified user reports, unknowns and advisory fixed-tool steps. Both on/off tool
+stages receive the same source-coverage notice. Validate bounded JSON, duplicate
+keys, verbatim quote attribution, tool arguments and prior-step dependencies only;
+valid semantic mistakes remain outcomes. Invalid plans retain raw text and stop
+without retry. Original user history (max6turns/8000chars, no silent truncation)
+replaces previous-answer context, including comparison parents. Freeze identical
+history and interpretation for all final branches. No schedule/load services,
+physical allocation, optimizer or new SHACL constraint types. Additional planning
+call means unequal total cost; new context format differs from historical runs.
+Nine authored presentations/twelve turns in compound-requests/runtime.json;
+separate unscored evaluation-only.json never loaded by app. Variants are intended
+final-intent matches with wording/history differences, not a pure length ablation.
+See [implementation journal](../journal/2026-11-10-compound-factory-requests.md).
+Offline software verification only; no paid launch or measured efficacy.

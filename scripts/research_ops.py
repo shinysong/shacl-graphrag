@@ -20,6 +20,13 @@ SPEC = ROOT / 'research/operations'
 WORK = ROOT / '_workspace/research-ops-codex'
 PHASES = ('plan', 'methods', 'implementation', 'synthesis', 'analysis')
 CHECKS = {
+    'factory-campaign-tests': ['uv','run','--locked','python','-m','unittest','discover','-s','tests','-p','test_factory_campaign.py'],
+    'factory-complexity-tests': ['uv','run','--locked','python','-m','unittest','discover','-s','tests','-p','test_factory_complexity.py'],
+    'factory-rdf-tests': ['uv','run','--locked','python','-m','unittest','discover','-s','tests','-p','test_factory_rdf.py'],
+    'factory-planning-tests': ['uv','run','--locked','python','-m','unittest','discover','-s','tests','-p','test_factory_planning.py'],
+    'factory-branching-tests': ['uv','run','--locked','python','-m','unittest','discover','-s','tests','-p','test_factory_branching.py'],
+    'factory-diagnostic-execution-tests': ['uv','run','--locked','python','-m','unittest','discover','-s','tests','-p','test_factory_diagnostic_execution.py'],
+    'factory-diagnostic-tests': ['uv', 'run', '--locked', 'python', '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_factory_diagnostic.py'],
     'factory-lab-tests': ['uv', 'run', '--locked', 'python', '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_factory_lab.py'],
     'unit-tests': ['uv', 'run', '--locked', 'python', '-m', 'unittest', 'discover', '-s', 'tests'],
     'e0-local': ['uv', 'run', '--locked', 'python', 'scripts/run_validation_experiment.py', '--local-only'],

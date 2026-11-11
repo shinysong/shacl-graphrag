@@ -1,0 +1,886 @@
+{
+  "scope": "Prospective manual semantic coding; no model answers scored. Evaluator only, never runtime.",
+  "planned_episodes": 12,
+  "planned_drafts": 12,
+  "planned_finals": 36,
+  "dimensions": [
+    "selected_evidence_judgment",
+    "source_recovery",
+    "qualification_reason",
+    "citation_support",
+    "unsupported_certainty",
+    "unnecessary_withholding",
+    "user_constraint_preservation",
+    "human_review_pointer"
+  ],
+  "rules": {
+    "unit": "case/answer; claim spans are annotations, not independent samples",
+    "unknown": "Keep unavailable evidence distinct from a wrong inference",
+    "transitions": [
+      "corrected_error",
+      "persistent_error",
+      "introduced_error",
+      "correct_retained",
+      "appropriate_uncertainty_retained",
+      "unnecessary_withholding_introduced",
+      "unnecessary_withholding_resolved"
+    ],
+    "evidence": "Each finding requires exact answer quote and selected evidence IDs; source reference only for separate source_recovery",
+    "masking": "Mask arm identity where possible; disclose report mentions and imperfect masking",
+    "failures": "Preserve all12 cases and36 final slots; missing outputs are not correct answers"
+  },
+  "cases": [
+    {
+      "case_id": "case-01",
+      "family": "Q1",
+      "source_state_for_evaluator_only": "C",
+      "answers": [
+        {
+          "condition": "draft",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "self",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "python",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "shacl",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        }
+      ]
+    },
+    {
+      "case_id": "case-02",
+      "family": "Q1",
+      "source_state_for_evaluator_only": "A",
+      "answers": [
+        {
+          "condition": "draft",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "self",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "python",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "shacl",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        }
+      ]
+    },
+    {
+      "case_id": "case-03",
+      "family": "Q1",
+      "source_state_for_evaluator_only": "O",
+      "answers": [
+        {
+          "condition": "draft",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "self",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "python",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "shacl",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        }
+      ]
+    },
+    {
+      "case_id": "case-04",
+      "family": "Q2",
+      "source_state_for_evaluator_only": "C",
+      "answers": [
+        {
+          "condition": "draft",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "self",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "python",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "shacl",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        }
+      ]
+    },
+    {
+      "case_id": "case-05",
+      "family": "Q2",
+      "source_state_for_evaluator_only": "A",
+      "answers": [
+        {
+          "condition": "draft",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "self",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "python",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "shacl",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        }
+      ]
+    },
+    {
+      "case_id": "case-06",
+      "family": "Q2",
+      "source_state_for_evaluator_only": "O",
+      "answers": [
+        {
+          "condition": "draft",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "self",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "python",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "shacl",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        }
+      ]
+    },
+    {
+      "case_id": "case-07",
+      "family": "Q3",
+      "source_state_for_evaluator_only": "C",
+      "answers": [
+        {
+          "condition": "draft",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "self",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "python",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "shacl",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        }
+      ]
+    },
+    {
+      "case_id": "case-08",
+      "family": "Q3",
+      "source_state_for_evaluator_only": "A",
+      "answers": [
+        {
+          "condition": "draft",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "self",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "python",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "shacl",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        }
+      ]
+    },
+    {
+      "case_id": "case-09",
+      "family": "Q3",
+      "source_state_for_evaluator_only": "O",
+      "answers": [
+        {
+          "condition": "draft",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "self",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "python",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "shacl",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        }
+      ]
+    },
+    {
+      "case_id": "case-10",
+      "family": "Q4",
+      "source_state_for_evaluator_only": "C",
+      "answers": [
+        {
+          "condition": "draft",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "self",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "python",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "shacl",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        }
+      ]
+    },
+    {
+      "case_id": "case-11",
+      "family": "Q4",
+      "source_state_for_evaluator_only": "A",
+      "answers": [
+        {
+          "condition": "draft",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "self",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "python",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "shacl",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        }
+      ]
+    },
+    {
+      "case_id": "case-12",
+      "family": "Q4",
+      "source_state_for_evaluator_only": "O",
+      "answers": [
+        {
+          "condition": "draft",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "self",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "python",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        },
+        {
+          "condition": "shacl",
+          "status": "not_attempted",
+          "run_id": null,
+          "scores": {
+            "selected_evidence_judgment": null,
+            "source_recovery": null,
+            "qualification_reason": null,
+            "citation_support": null,
+            "unsupported_certainty": null,
+            "unnecessary_withholding": null,
+            "user_constraint_preservation": null,
+            "human_review_pointer": null
+          },
+          "claims": []
+        }
+      ]
+    }
+  ]
+}

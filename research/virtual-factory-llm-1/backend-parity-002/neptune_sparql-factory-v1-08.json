@@ -1,0 +1,62 @@
+{
+  "tool": "impacted_orders",
+  "arguments": {
+    "machine_id": "M02"
+  },
+  "snapshot": "factory-v1",
+  "source_sha256": "01754b4a0d1d5d501a40496eabe06be811ca34150c955bc2d004b33664aaf716",
+  "as_of": "2026-11-09",
+  "query": "PREFIX f: <urn:factory-demo:vocab:> SELECT * WHERE { GRAPH <urn:factory-demo:graph:factory-v1> { { SELECT * WHERE { GRAPH <urn:factory-demo:graph:factory-v1> { BIND(<urn:factory-demo:factory-v1:entity:M02> AS ?machine) ?order f:ASSIGNED_TO ?machine; f:id ?order_id . OPTIONAL { ?order f:REQUIRES ?cap . ?cap f:id ?required_capability } } } ORDER BY ?order_id ?required_capability LIMIT 30 } BIND(COALESCE(?order, <urn:factory-demo:unbound>) AS ?order_key) OPTIONAL { ?order_key f:id ?order_id; a ?order_kind . OPTIONAL { ?order_key f:name ?order_name } OPTIONAL { ?order_key f:status ?order_status } OPTIONAL { ?order_key f:product ?order_product } OPTIONAL { ?order_key f:capability ?order_capability } OPTIONAL { ?order_key f:valid_from ?order_valid_from } OPTIONAL { ?order_key f:valid_until ?order_valid_until } } BIND(COALESCE(?machine, <urn:factory-demo:unbound>) AS ?machine_key) OPTIONAL { ?machine_key f:id ?machine_id; a ?machine_kind . OPTIONAL { ?machine_key f:name ?machine_name } OPTIONAL { ?machine_key f:status ?machine_status } OPTIONAL { ?machine_key f:product ?machine_product } OPTIONAL { ?machine_key f:capability ?machine_capability } OPTIONAL { ?machine_key f:valid_from ?machine_valid_from } OPTIONAL { ?machine_key f:valid_until ?machine_valid_until } } } } ORDER BY ?order_id ?required_capability",
+  "rows": [
+    {
+      "order": {
+        "id": "O17",
+        "name": "제품 A 주문",
+        "product": "P-A",
+        "kind": "Order",
+        "namespace": "virtual-factory-llm-1",
+        "version": "factory-v1",
+        "entity_id": "O17"
+      },
+      "machine": {
+        "id": "M02",
+        "name": "가공 설비 2",
+        "status": "available",
+        "kind": "Machine",
+        "namespace": "virtual-factory-llm-1",
+        "version": "factory-v1",
+        "entity_id": "M02"
+      },
+      "required_capability": "CAP-CUT"
+    },
+    {
+      "order": {
+        "id": "O18",
+        "name": "제품 B 주문",
+        "product": "P-B",
+        "kind": "Order",
+        "namespace": "virtual-factory-llm-1",
+        "version": "factory-v1",
+        "entity_id": "O18"
+      },
+      "machine": {
+        "id": "M02",
+        "name": "가공 설비 2",
+        "status": "available",
+        "kind": "Machine",
+        "namespace": "virtual-factory-llm-1",
+        "version": "factory-v1",
+        "entity_id": "M02"
+      },
+      "required_capability": "CAP-CUT"
+    }
+  ],
+  "scope": "selected query result in authored snapshot; not completeness proof",
+  "integrity": {
+    "verified_before_query": true,
+    "triples": 62,
+    "source_sha256": "01754b4a0d1d5d501a40496eabe06be811ca34150c955bc2d004b33664aaf716"
+  },
+  "limit_reached": false,
+  "backend": "neptune_sparql"
+}

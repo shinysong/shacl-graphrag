@@ -1,0 +1,83 @@
+{
+  "tool": "replacement_candidates",
+  "arguments": {
+    "order_id": "O17"
+  },
+  "snapshot": "factory-v3",
+  "source_sha256": "2f47b98a947bda6c79a99ebe540c24a2515519f448ab0a7136e00afe07b0f08b",
+  "as_of": "2026-11-09",
+  "query": "MATCH (o:FactoryDemo {namespace:$ns,version:$v,entity_id:$order_id})-[:REQUIRES]->(c:FactoryDemo {namespace:$ns,version:$v})<-[:CAPABLE_OF]-(m:FactoryDemo {namespace:$ns,version:$v}) RETURN properties(o) AS order, properties(m) AS machine, c.entity_id AS required_capability ORDER BY m.entity_id, c.entity_id LIMIT 30",
+  "rows": [
+    {
+      "order": {
+        "product": "P-A",
+        "kind": "Order",
+        "namespace": "virtual-factory-llm-1",
+        "name": "제품 A 주문",
+        "id": "O17",
+        "entity_id": "O17",
+        "version": "factory-v3"
+      },
+      "machine": {
+        "kind": "Machine",
+        "namespace": "virtual-factory-llm-1",
+        "name": "가공 설비 1",
+        "id": "M01",
+        "entity_id": "M01",
+        "version": "factory-v3",
+        "status": "available"
+      },
+      "required_capability": "CAP-CUT"
+    },
+    {
+      "order": {
+        "product": "P-A",
+        "kind": "Order",
+        "namespace": "virtual-factory-llm-1",
+        "name": "제품 A 주문",
+        "id": "O17",
+        "entity_id": "O17",
+        "version": "factory-v3"
+      },
+      "machine": {
+        "kind": "Machine",
+        "namespace": "virtual-factory-llm-1",
+        "name": "가공 설비 2",
+        "id": "M02",
+        "entity_id": "M02",
+        "version": "factory-v3",
+        "status": "unavailable"
+      },
+      "required_capability": "CAP-CUT"
+    },
+    {
+      "order": {
+        "product": "P-A",
+        "kind": "Order",
+        "namespace": "virtual-factory-llm-1",
+        "name": "제품 A 주문",
+        "id": "O17",
+        "entity_id": "O17",
+        "version": "factory-v3"
+      },
+      "machine": {
+        "kind": "Machine",
+        "namespace": "virtual-factory-llm-1",
+        "name": "대체 설비 3",
+        "id": "M03",
+        "entity_id": "M03",
+        "version": "factory-v3",
+        "status": "available"
+      },
+      "required_capability": "CAP-CUT"
+    }
+  ],
+  "scope": "selected query result in authored snapshot; not completeness proof",
+  "integrity": {
+    "verified_before_query": true,
+    "source_sha256": "2f47b98a947bda6c79a99ebe540c24a2515519f448ab0a7136e00afe07b0f08b",
+    "nodes": 12,
+    "edges": 13
+  },
+  "limit_reached": false
+}

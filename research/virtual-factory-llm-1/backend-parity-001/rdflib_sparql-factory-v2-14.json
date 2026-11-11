@@ -1,0 +1,32 @@
+{
+  "tool": "qualification_records",
+  "arguments": {
+    "machine_id": "M02"
+  },
+  "snapshot": "factory-v2",
+  "source_sha256": "ac965a11283075b6cf4cd8fc40c5e5e90d38a75b17c72c312db811f89566db9e",
+  "as_of": "2026-11-09",
+  "query": "PREFIX f: <urn:factory-demo:vocab:> SELECT * WHERE { GRAPH <urn:factory-demo:graph:factory-v2> { { SELECT * WHERE { GRAPH <urn:factory-demo:graph:factory-v2> { BIND(<urn:factory-demo:factory-v2:entity:M02> AS ?machine) ?machine f:id ?machine_id . OPTIONAL { ?machine f:HAS_QUALIFICATION ?qualification . ?qualification f:id ?qualification_id } } } ORDER BY ?qualification_id LIMIT 30 } BIND(COALESCE(?machine, <urn:factory-demo:unbound>) AS ?machine_key) OPTIONAL { ?machine_key f:id ?machine_id; a ?machine_kind . OPTIONAL { ?machine_key f:name ?machine_name } OPTIONAL { ?machine_key f:status ?machine_status } OPTIONAL { ?machine_key f:product ?machine_product } OPTIONAL { ?machine_key f:capability ?machine_capability } OPTIONAL { ?machine_key f:valid_from ?machine_valid_from } OPTIONAL { ?machine_key f:valid_until ?machine_valid_until } } BIND(COALESCE(?qualification, <urn:factory-demo:unbound>) AS ?qualification_key) OPTIONAL { ?qualification_key f:id ?qualification_id; a ?qualification_kind . OPTIONAL { ?qualification_key f:name ?qualification_name } OPTIONAL { ?qualification_key f:status ?qualification_status } OPTIONAL { ?qualification_key f:product ?qualification_product } OPTIONAL { ?qualification_key f:capability ?qualification_capability } OPTIONAL { ?qualification_key f:valid_from ?qualification_valid_from } OPTIONAL { ?qualification_key f:valid_until ?qualification_valid_until } } } } ORDER BY ?qualification_id",
+  "rows": [
+    {
+      "machine": {
+        "id": "M02",
+        "name": "가공 설비 2",
+        "status": "unavailable",
+        "kind": "Machine",
+        "namespace": "virtual-factory-llm-1",
+        "version": "factory-v2",
+        "entity_id": "M02"
+      },
+      "qualification": null
+    }
+  ],
+  "scope": "selected query result in authored snapshot; not completeness proof",
+  "integrity": {
+    "verified_before_query": true,
+    "triples": 62,
+    "source_sha256": "ac965a11283075b6cf4cd8fc40c5e5e90d38a75b17c72c312db811f89566db9e"
+  },
+  "limit_reached": false,
+  "backend": "rdflib_sparql"
+}

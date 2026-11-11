@@ -1,0 +1,66 @@
+{
+  "tool": "qualification_records",
+  "arguments": {
+    "machine_id": "M03"
+  },
+  "snapshot": "factory-v3",
+  "source_sha256": "2f47b98a947bda6c79a99ebe540c24a2515519f448ab0a7136e00afe07b0f08b",
+  "as_of": "2026-11-09",
+  "query": "MATCH (m:FactoryDemo {namespace:$ns,version:$v,entity_id:$machine_id}) OPTIONAL MATCH (m)-[:HAS_QUALIFICATION]->(r:FactoryDemo {namespace:$ns,version:$v}) RETURN properties(m) AS machine, properties(r) AS qualification ORDER BY r.entity_id LIMIT 30",
+  "rows": [
+    {
+      "machine": {
+        "kind": "Machine",
+        "namespace": "virtual-factory-llm-1",
+        "name": "대체 설비 3",
+        "id": "M03",
+        "entity_id": "M03",
+        "version": "factory-v3",
+        "status": "available"
+      },
+      "qualification": {
+        "capability": "CAP-CUT",
+        "product": "P-A",
+        "valid_until": "2026-10-31",
+        "kind": "Qualification",
+        "name": "M03 제품 A 자격",
+        "namespace": "virtual-factory-llm-1",
+        "valid_from": "2026-01-01",
+        "id": "Q03",
+        "entity_id": "Q03",
+        "version": "factory-v3"
+      }
+    },
+    {
+      "machine": {
+        "kind": "Machine",
+        "namespace": "virtual-factory-llm-1",
+        "name": "대체 설비 3",
+        "id": "M03",
+        "entity_id": "M03",
+        "version": "factory-v3",
+        "status": "available"
+      },
+      "qualification": {
+        "capability": "CAP-CUT",
+        "product": "P-A",
+        "valid_until": "2027-10-31",
+        "kind": "Qualification",
+        "name": "M03 제품 A 갱신 자격",
+        "namespace": "virtual-factory-llm-1",
+        "valid_from": "2026-11-01",
+        "id": "Q03R",
+        "entity_id": "Q03R",
+        "version": "factory-v3"
+      }
+    }
+  ],
+  "scope": "selected query result in authored snapshot; not completeness proof",
+  "integrity": {
+    "verified_before_query": true,
+    "source_sha256": "2f47b98a947bda6c79a99ebe540c24a2515519f448ab0a7136e00afe07b0f08b",
+    "nodes": 12,
+    "edges": 13
+  },
+  "limit_reached": false
+}

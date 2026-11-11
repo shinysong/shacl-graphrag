@@ -1,0 +1,23 @@
+<div class="columns">
+  <section class="panel">
+    <h3>도구 계약 선언 · <code>replacement_candidates(order_id)</code></h3>
+    <div class="annotation">
+      “이 도구는 요구 역량(<code>CAP-CUT</code>)을 갖춘 <b>기능적 후보 설비</b>만 반환한다. 자격이나 일정 여유까지 확인하지 않으므로 다음 판단에는 별도 자격 조회(<code>qualification_records</code>)가 필요하다.”
+    </div>
+    <table>
+      <thead><tr><th>도구 이름</th><th>반환하는 근거</th><th>단독으로 확정할 수 없는 것</th></tr></thead>
+      <tbody>
+        <tr><td><code>replacement_candidates</code></td><td>요구 역량을 갖춘 설비 후보</td><td>제품별 유효 자격 · 실제 일정 여유</td></tr>
+        <tr><td><code>qualification_records</code></td><td>설비의 자격 코드·제품·유효기간</td><td>작업장 부하 · 납기 준수 · 현장 승인</td></tr>
+        <tr><td><code>impacted_orders</code></td><td>특정 설비에 배정된 주문 목록</td><td>대체 설비의 적격 여부</td></tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="panel">
+    <h3>온톨로지 · SHACL · 검사기의 역할 분담</h3>
+    <div class="annotation"><strong>온톨로지 (개념 정렬):</strong> 도구가 반환하는 <code>Machine</code>, <code>Capability</code>, <code>Qualification</code>의 관계와 상태 정의를 통일</div>
+    <div class="annotation"><strong>SHACL (입력 근거 검사):</strong> 최종 판단 전에 선택된 후보에 대해 제품·역량·기준일 자격 근거가 실제로 조회됐는지 확인</div>
+    <div class="annotation"><strong>명시적 한계:</strong> LLM이 질문을 잘못 해석했거나 엉뚱한 도구를 선택한 문제까지 검사기가 자동으로 해결하지는 못함</div>
+    <p class="small">출처: <code>apps/factory_lab/graph.py</code> · <code>docs/journal/2026-11-10-factory-query-tools-and-branches.md</code></p>
+  </section>
+</div>

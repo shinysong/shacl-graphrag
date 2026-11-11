@@ -1,0 +1,62 @@
+<urn:factory-demo:factory-v2:entity:CAP-CUT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <urn:factory-demo:vocab:Capability> .
+<urn:factory-demo:factory-v2:entity:CAP-CUT> <urn:factory-demo:vocab:id> "CAP-CUT" .
+<urn:factory-demo:factory-v2:entity:CAP-CUT> <urn:factory-demo:vocab:name> "가상 가공 작업" .
+<urn:factory-demo:factory-v2:entity:CAP-INSPECT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <urn:factory-demo:vocab:Capability> .
+<urn:factory-demo:factory-v2:entity:CAP-INSPECT> <urn:factory-demo:vocab:id> "CAP-INSPECT" .
+<urn:factory-demo:factory-v2:entity:CAP-INSPECT> <urn:factory-demo:vocab:name> "가상 검사 작업" .
+<urn:factory-demo:factory-v2:entity:M01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <urn:factory-demo:vocab:Machine> .
+<urn:factory-demo:factory-v2:entity:M01> <urn:factory-demo:vocab:CAPABLE_OF> <urn:factory-demo:factory-v2:entity:CAP-CUT> .
+<urn:factory-demo:factory-v2:entity:M01> <urn:factory-demo:vocab:HAS_QUALIFICATION> <urn:factory-demo:factory-v2:entity:Q01> .
+<urn:factory-demo:factory-v2:entity:M01> <urn:factory-demo:vocab:id> "M01" .
+<urn:factory-demo:factory-v2:entity:M01> <urn:factory-demo:vocab:name> "가공 설비 1" .
+<urn:factory-demo:factory-v2:entity:M01> <urn:factory-demo:vocab:status> "available" .
+<urn:factory-demo:factory-v2:entity:M02> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <urn:factory-demo:vocab:Machine> .
+<urn:factory-demo:factory-v2:entity:M02> <urn:factory-demo:vocab:CAPABLE_OF> <urn:factory-demo:factory-v2:entity:CAP-CUT> .
+<urn:factory-demo:factory-v2:entity:M02> <urn:factory-demo:vocab:id> "M02" .
+<urn:factory-demo:factory-v2:entity:M02> <urn:factory-demo:vocab:name> "가공 설비 2" .
+<urn:factory-demo:factory-v2:entity:M02> <urn:factory-demo:vocab:status> "unavailable" .
+<urn:factory-demo:factory-v2:entity:M03> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <urn:factory-demo:vocab:Machine> .
+<urn:factory-demo:factory-v2:entity:M03> <urn:factory-demo:vocab:CAPABLE_OF> <urn:factory-demo:factory-v2:entity:CAP-CUT> .
+<urn:factory-demo:factory-v2:entity:M03> <urn:factory-demo:vocab:HAS_QUALIFICATION> <urn:factory-demo:factory-v2:entity:Q03> .
+<urn:factory-demo:factory-v2:entity:M03> <urn:factory-demo:vocab:id> "M03" .
+<urn:factory-demo:factory-v2:entity:M03> <urn:factory-demo:vocab:name> "대체 설비 3" .
+<urn:factory-demo:factory-v2:entity:M03> <urn:factory-demo:vocab:status> "available" .
+<urn:factory-demo:factory-v2:entity:M04> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <urn:factory-demo:vocab:Machine> .
+<urn:factory-demo:factory-v2:entity:M04> <urn:factory-demo:vocab:CAPABLE_OF> <urn:factory-demo:factory-v2:entity:CAP-INSPECT> .
+<urn:factory-demo:factory-v2:entity:M04> <urn:factory-demo:vocab:id> "M04" .
+<urn:factory-demo:factory-v2:entity:M04> <urn:factory-demo:vocab:name> "검사 설비 4" .
+<urn:factory-demo:factory-v2:entity:M04> <urn:factory-demo:vocab:status> "available" .
+<urn:factory-demo:factory-v2:entity:O17> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <urn:factory-demo:vocab:Order> .
+<urn:factory-demo:factory-v2:entity:O17> <urn:factory-demo:vocab:ASSIGNED_TO> <urn:factory-demo:factory-v2:entity:M02> .
+<urn:factory-demo:factory-v2:entity:O17> <urn:factory-demo:vocab:REQUIRES> <urn:factory-demo:factory-v2:entity:CAP-CUT> .
+<urn:factory-demo:factory-v2:entity:O17> <urn:factory-demo:vocab:id> "O17" .
+<urn:factory-demo:factory-v2:entity:O17> <urn:factory-demo:vocab:name> "제품 A 주문" .
+<urn:factory-demo:factory-v2:entity:O17> <urn:factory-demo:vocab:product> "P-A" .
+<urn:factory-demo:factory-v2:entity:O18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <urn:factory-demo:vocab:Order> .
+<urn:factory-demo:factory-v2:entity:O18> <urn:factory-demo:vocab:ASSIGNED_TO> <urn:factory-demo:factory-v2:entity:M02> .
+<urn:factory-demo:factory-v2:entity:O18> <urn:factory-demo:vocab:REQUIRES> <urn:factory-demo:factory-v2:entity:CAP-CUT> .
+<urn:factory-demo:factory-v2:entity:O18> <urn:factory-demo:vocab:id> "O18" .
+<urn:factory-demo:factory-v2:entity:O18> <urn:factory-demo:vocab:name> "제품 B 주문" .
+<urn:factory-demo:factory-v2:entity:O18> <urn:factory-demo:vocab:product> "P-B" .
+<urn:factory-demo:factory-v2:entity:O19> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <urn:factory-demo:vocab:Order> .
+<urn:factory-demo:factory-v2:entity:O19> <urn:factory-demo:vocab:ASSIGNED_TO> <urn:factory-demo:factory-v2:entity:M04> .
+<urn:factory-demo:factory-v2:entity:O19> <urn:factory-demo:vocab:REQUIRES> <urn:factory-demo:factory-v2:entity:CAP-INSPECT> .
+<urn:factory-demo:factory-v2:entity:O19> <urn:factory-demo:vocab:id> "O19" .
+<urn:factory-demo:factory-v2:entity:O19> <urn:factory-demo:vocab:name> "검사 주문" .
+<urn:factory-demo:factory-v2:entity:O19> <urn:factory-demo:vocab:product> "P-A" .
+<urn:factory-demo:factory-v2:entity:Q01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <urn:factory-demo:vocab:Qualification> .
+<urn:factory-demo:factory-v2:entity:Q01> <urn:factory-demo:vocab:capability> "CAP-CUT" .
+<urn:factory-demo:factory-v2:entity:Q01> <urn:factory-demo:vocab:id> "Q01" .
+<urn:factory-demo:factory-v2:entity:Q01> <urn:factory-demo:vocab:name> "M01 제품 A 자격" .
+<urn:factory-demo:factory-v2:entity:Q01> <urn:factory-demo:vocab:product> "P-A" .
+<urn:factory-demo:factory-v2:entity:Q01> <urn:factory-demo:vocab:valid_from> "2026-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+<urn:factory-demo:factory-v2:entity:Q01> <urn:factory-demo:vocab:valid_until> "2026-12-31"^^<http://www.w3.org/2001/XMLSchema#date> .
+<urn:factory-demo:factory-v2:entity:Q03> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <urn:factory-demo:vocab:Qualification> .
+<urn:factory-demo:factory-v2:entity:Q03> <urn:factory-demo:vocab:capability> "CAP-CUT" .
+<urn:factory-demo:factory-v2:entity:Q03> <urn:factory-demo:vocab:id> "Q03" .
+<urn:factory-demo:factory-v2:entity:Q03> <urn:factory-demo:vocab:name> "M03 제품 A 자격" .
+<urn:factory-demo:factory-v2:entity:Q03> <urn:factory-demo:vocab:product> "P-A" .
+<urn:factory-demo:factory-v2:entity:Q03> <urn:factory-demo:vocab:valid_from> "2026-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+<urn:factory-demo:factory-v2:entity:Q03> <urn:factory-demo:vocab:valid_until> "2026-10-31"^^<http://www.w3.org/2001/XMLSchema#date> .
+<urn:factory-demo:factory-v2:snapshot> <urn:factory-demo:vocab:as_of> "2026-11-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+<urn:factory-demo:factory-v2:snapshot> <urn:factory-demo:vocab:source_sha256> "ac965a11283075b6cf4cd8fc40c5e5e90d38a75b17c72c312db811f89566db9e" .

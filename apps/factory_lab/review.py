@@ -13,6 +13,15 @@ def candidates(evidence):
         if item.get('tool')=='qualification_records':
             mid=item['arguments']['machine_id']
             records.setdefault(mid,[]).extend(r['qualification'] for r in item['rows'] if r.get('qualification'))
+        elif item.get('tool')=='inspect_entity':
+            for row in item['rows']:
+                if row.get('relation')!='HAS_QUALIFICATION':
+                    continue
+                entity,neighbor=row.get('entity') or {},row.get('neighbor') or {}
+                if entity.get('kind')=='Machine' and neighbor.get('kind')=='Qualification' and row.get('from_id')==entity.get('id'):
+                    records.setdefault(entity['id'],[]).append(neighbor)
+                elif entity.get('kind')=='Qualification' and neighbor.get('kind')=='Machine' and row.get('from_id')==neighbor.get('id'):
+                    records.setdefault(neighbor['id'],[]).append(entity)
     result={}
     for item in evidence:
         if item.get('tool')!='replacement_candidates':

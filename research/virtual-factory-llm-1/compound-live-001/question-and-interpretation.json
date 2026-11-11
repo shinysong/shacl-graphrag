@@ -1,0 +1,149 @@
+{
+  "config": {
+    "question": "M02가 멈춰서 이번 주 주문을 다른 설비로 돌리고 싶어. M01은 자격은 된다는데 이미 일정이 꽉 찼다고 하고, M03은 자격 갱신했다는 얘기가 있는데 시스템에는 예전 기록만 보여. O17은 납기를 지켜야 하고 O18은 하루 정도 늦춰도 돼. 확인된 근거로 선택지를 비교하고 누구에게 뭘 확인해야 하는지 알려줘. 아직 설비 배정은 바꾸지 말고.",
+    "snapshot": "factory-v2",
+    "review": "compare",
+    "planning": true
+  },
+  "interpretation": {
+    "interpretation": {
+      "goals": [
+        {
+          "text": "M02 가동 중단에 따라 이번 주 주문을 처리할 대체 설비 선택지를 확인된 근거 기반으로 비교",
+          "source_turn": 0,
+          "quote": "M02가 멈춰서 이번 주 주문을 다른 설비로 돌리고 싶어"
+        },
+        {
+          "text": "각 대안별로 누구에게 무엇을 확인해야 하는지 안내",
+          "source_turn": 0,
+          "quote": "확인된 근거로 선택지를 비교하고 누구에게 뭘 확인해야 하는지 알려줘"
+        }
+      ],
+      "constraints": [
+        {
+          "text": "아직 설비 배정을 직접 변경하지 말 것 (읽기 전용 분석만 수행)",
+          "source_turn": 0,
+          "quote": "아직 설비 배정은 바꾸지 말고",
+          "state": "active"
+        },
+        {
+          "text": "주문 O17은 납기를 반드시 준수해야 함",
+          "source_turn": 0,
+          "quote": "O17은 납기를 지켜야 하고",
+          "state": "active"
+        },
+        {
+          "text": "주문 O18은 납기를 1일 정도 지연 가능",
+          "source_turn": 0,
+          "quote": "O18은 하루 정도 늦춰도 돼",
+          "state": "active"
+        }
+      ],
+      "user_reports": [
+        {
+          "text": "M01은 자격 요건은 충족하나 이미 일정이 가득 찼다는 보고",
+          "source_turn": 0,
+          "quote": "M01은 자격은 된다는데 이미 일정이 꽉 찼다고 하고"
+        },
+        {
+          "text": "M03은 자격 갱신 소문이 있으나 시스템에는 과거 기록만 존재함",
+          "source_turn": 0,
+          "quote": "M03은 자격 갱신했다는 얘기가 있는데 시스템에는 예전 기록만 보여"
+        }
+      ],
+      "unknowns": [
+        "M02에 배정된 이번 주 주문의 전체 목록 및 요구 역량",
+        "M01의 실제 현재 일정 및 가용 슬롯 정보 (DB 서비스 없음)",
+        "M03의 실제 자격 갱신 증빙 및 승인 여부",
+        "O17 및 O18의 공식 납기 일자 및 우선순위 데이터"
+      ],
+      "steps": [
+        {
+          "id": "S1",
+          "question": "M02에 배정된 영향받는 주문 및 요구 역량 조회",
+          "tool": "impacted_orders",
+          "arguments": {
+            "machine_id": "M02"
+          },
+          "depends_on": [],
+          "status": "ready",
+          "reason": "M02 중단으로 재배치가 필요한 주문과 요구 역량을 확인하기 위함"
+        },
+        {
+          "id": "S2",
+          "question": "O17 주문에 대한 역량 기반 대체 가능 설비 후보군 조회",
+          "tool": "replacement_candidates",
+          "arguments": {
+            "order_id": "O17"
+          },
+          "depends_on": [],
+          "status": "ready",
+          "reason": "납기 준수가 필수인 O17의 대체 설비 후보를 확인하기 위함"
+        },
+        {
+          "id": "S3",
+          "question": "O18 주문에 대한 역량 기반 대체 가능 설비 후보군 조회",
+          "tool": "replacement_candidates",
+          "arguments": {
+            "order_id": "O18"
+          },
+          "depends_on": [],
+          "status": "ready",
+          "reason": "납기 조정이 가능한 O18의 대체 설비 후보를 확인하기 위함"
+        },
+        {
+          "id": "S4",
+          "question": "M01 설비의 공식 자격 기록 확인",
+          "tool": "qualification_records",
+          "arguments": {
+            "machine_id": "M01"
+          },
+          "depends_on": [],
+          "status": "ready",
+          "reason": "M01의 시스템 상 자격 보유 상태 검증"
+        },
+        {
+          "id": "S5",
+          "question": "M03 설비의 공식 자격 기록 확인",
+          "tool": "qualification_records",
+          "arguments": {
+            "machine_id": "M03"
+          },
+          "depends_on": [],
+          "status": "ready",
+          "reason": "M03의 등록된 자격 만료/과거 기록 내역 확인"
+        },
+        {
+          "id": "S6",
+          "question": "M01 설비의 실제 일정 부하 및 슬롯 확인 (스케줄 서비스 부재)",
+          "tool": null,
+          "arguments": null,
+          "depends_on": [
+            "S4"
+          ],
+          "status": "unsupported",
+          "reason": "설비 부하 및 스케줄 데이터를 조회하는 서비스가 제공되지 않음"
+        },
+        {
+          "id": "S7",
+          "question": "M03의 최신 자격 갱신 서류 공식 유효성 검증",
+          "tool": null,
+          "arguments": null,
+          "depends_on": [
+            "S5"
+          ],
+          "status": "unsupported",
+          "reason": "자격 갱신 서류 접수 및 외부 인증 검증 서비스가 부재함"
+        }
+      ],
+      "clarifications": [
+        "M02에 할당된 대상 주문이 O17, O18 외에 추가로 존재하는지 확인이 필요합니다.",
+        "M01 일정 담당자에게 O17 납기 내 부분 투입 가능 여부를 문의해야 합니다.",
+        "품질/설비 인증 담당자에게 M03의 자격 갱신 증빙 서류 제출 여부를 확인해야 합니다."
+      ]
+    },
+    "schema_valid": true,
+    "semantic_correctness": "unverified",
+    "notice": "Model-declared interpretation, NOT verified intent or source truth. Quoted user reports are unverified. Plans are advisory, not executed automatically. The source has machines/orders/capabilities/qualification records only; no load, schedule, delivery-date or renewal-document service. Read-only analysis only; never approve or perform a physical allocation."
+  }
+}

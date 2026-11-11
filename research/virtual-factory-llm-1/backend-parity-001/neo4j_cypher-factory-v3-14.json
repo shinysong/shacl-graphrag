@@ -1,0 +1,32 @@
+{
+  "tool": "qualification_records",
+  "arguments": {
+    "machine_id": "M02"
+  },
+  "snapshot": "factory-v3",
+  "source_sha256": "2f47b98a947bda6c79a99ebe540c24a2515519f448ab0a7136e00afe07b0f08b",
+  "as_of": "2026-11-09",
+  "query": "MATCH (m:FactoryDemo {namespace:$ns,version:$v,entity_id:$machine_id}) OPTIONAL MATCH (m)-[:HAS_QUALIFICATION]->(r:FactoryDemo {namespace:$ns,version:$v}) RETURN properties(m) AS machine, properties(r) AS qualification ORDER BY r.entity_id LIMIT 30",
+  "rows": [
+    {
+      "machine": {
+        "kind": "Machine",
+        "namespace": "virtual-factory-llm-1",
+        "name": "가공 설비 2",
+        "id": "M02",
+        "entity_id": "M02",
+        "version": "factory-v3",
+        "status": "unavailable"
+      },
+      "qualification": null
+    }
+  ],
+  "scope": "selected query result in authored snapshot; not completeness proof",
+  "integrity": {
+    "verified_before_query": true,
+    "source_sha256": "2f47b98a947bda6c79a99ebe540c24a2515519f448ab0a7136e00afe07b0f08b",
+    "nodes": 12,
+    "edges": 13
+  },
+  "limit_reached": false
+}

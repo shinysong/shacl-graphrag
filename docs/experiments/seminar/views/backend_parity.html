@@ -1,0 +1,27 @@
+<div class="columns">
+  <section class="panel">
+    <h3>저장소·표현이 달라도 같은 기준 유지</h3>
+    <p>Neo4j(Cypher)와 RDF 저장소(SPARQL)는 내부 구조와 질의어가 다르므로 <b>같은 후보·근거·조건</b>을 반환하는 공통 의미 모델이 비교 기준이 된다.</p>
+    <table>
+      <thead><tr><th>실험 범위</th><th>비교 대상</th><th>관측 결과</th></tr></thead>
+      <tbody>
+        <tr><td>가상 공장 도구 대조</td><td>Neo4j Cypher vs RDFLib SPARQL (3버전 × 16호출)</td><td><b>48쌍 조회 100% 일치</b> · 6개 묶음 플래그 일치</td></tr>
+        <tr><td>기본 그래프 패턴</td><td>SQL/Python · RDFLib · Neo4j · Neptune</td><td>실행된 36개 슬롯 모두 고정 참조값과 일치</td></tr>
+        <tr><td>계층 추론·삭제·복원</td><td>Python · 외부 RDFS · Neo4j+n10s · Neptune</td><td>갱신 조건 32/32 일치 · 미갱신 불일치 4건 포착</td></tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="panel">
+    <h3>변경 후 재검토 범위를 좁히는 질문 계약</h3>
+    <p>데이터·규칙 변경 후 전체 묶음 해시만 비교하면 답이 같은 결과에도 경고가 붙는다. 선언한 질문 대상·연결 경로 해시를 쓰면 불일치 8건은 유지한 채 경고를 줄인다.</p>
+    <table>
+      <thead><tr><th>확인 범위 정책 (160개 결과 재검사)</th><th>전체 경고</th><th>실제 불일치 포착</th><th>일치 결과에 붙은 경고</th></tr></thead>
+      <tbody>
+        <tr><td>전체 묶음 해시 비교</td><td>32</td><td>8 / 8</td><td>24</td></tr>
+        <tr><td>선언한 질문 유형별 범위</td><td>20</td><td>8 / 8</td><td>12</td></tr>
+        <tr><td>선언한 조회 대상·연결 경로</td><td><b>10</b></td><td><b>8 / 8</b></td><td><b>2</b></td></tr>
+      </tbody>
+    </table>
+    <p class="small">작은 증거: 기준 구현·확인 가능성 입증 · 가상 공장 48쌍의 Neptune 실증이나 유지보수 비용 절감을 뜻하지는 않음</p>
+  </section>
+</div>

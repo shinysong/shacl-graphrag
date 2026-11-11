@@ -1,0 +1,13 @@
+# Independent masked answer audit
+
+Read only this request, `_workspace/factory-complexity-20261111/answer-audit/packet.json`, its packet.sha256, and the prospective scoring rubric embedded in the packet. Do NOT read the key, other reviewer outputs, prior model outcomes, runtime source code, or .env. No calls, network, source edits or tests. Write your assigned phase result and a sibling `annotations.json` only.
+
+Audit ALL supplied answers for the eight dimensions in the rubric. Arm and draft identity are masked. Infer neither an arm nor a favored outcome. Actual selected evidence is the boundary for answer-grounding; offline source/view references are ONLY for separate recovery judgments. Full-view facts not retrieved by the model are not evidence available to that model. Citations must support the actual proposition, not just exist. Empty selected records are not proof of enterprise/source absence. A candidate meeting the bounded policy is not physical allocation approval. Distinguish broad wording uncertainty from clear wrong core judgment. Do not punish an appropriately cautious bounded answer solely because hidden source records exist. No arbitrary overall numeric accuracy score; case-level annotations, not independent claim trials.
+
+Write annotations.json with keys packet_sha256, answers (one row per answer_id), limitations. Each answer row has answer_id, dimensions (eight fields each pass/fail/unclear/not_applicable), core_summary, findings. Findings contain dimension, exact_quote (contiguous literal substring), evidence_ids (all must exist), explanation, severity (core_error/secondary_error/ambiguity/positive). Give a supporting exact quote for any fail, ambiguity, or positive conclusion. Do not invent absent text. Human review pointers may name a responsible function and specific missing document/fact; do not require personal names. Statements that no write was performed are supported by the read-only tool catalog. If no output exists retain missing/failed case, do not score it as success. Disclose partial masking, authored cells, one model/repeat, and no measured human maintenance benefit.
+
+Your phase result uses the normal coordinator JSON contract: summary,decision(observe or ready),findings,tasks. Report what you inspected and unverified boundaries. Methods reviewer and implementation reviewer each independently annotate the same answers; neither reads the other's artifacts. No edits to answer text or runtime repairs.
+
+Frozen packet SHA256: d84c487f97db03d5d613d0434c5024f804ca173a31a39a48caf4a6976949e0df
+
+Terminal execution:12cases,12drafts36finals;75paidcalls;0failures/unattempted; all48textresponses finish_reason stop. These are execution counts, not answer-quality claims.

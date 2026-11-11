@@ -1,0 +1,51 @@
+{
+  "protocol": "virtual-factory-llm-1",
+  "recorded_at": "2026-11-09T07:46:43.634849+00:00",
+  "scope": "first live application integration; authored synthetic development only",
+  "snapshots": {
+    "count": 2,
+    "nodes_each": 11,
+    "edges_each": 12
+  },
+  "software_tests": {
+    "count": 11,
+    "exit_code": 0
+  },
+  "live_graph_checks": 12,
+  "restart_persistence_verified": true,
+  "runs": [
+    {
+      "id": "ded2b664d5a54969bfafb3089e75521e",
+      "status": "completed",
+      "review": "self",
+      "parent_id": "93a923705d48459fafaae0ad06308bc2"
+    },
+    {
+      "id": "93a923705d48459fafaae0ad06308bc2",
+      "status": "completed",
+      "review": "python",
+      "parent_id": null
+    },
+    {
+      "id": "98b1c5436b3d4ba2abb6d0729d2f8a0c",
+      "status": "completed",
+      "review": "shacl",
+      "parent_id": null
+    }
+  ],
+  "budget": {
+    "attempts": 12,
+    "reserved_nonrefunded_usd": "0.48070650",
+    "reported_usd": "0.04921425",
+    "unresolved": 0
+  },
+  "limitations": [
+    "Not a held-out benchmark or shared-draft causal comparison",
+    "No measured SHACL answer improvement",
+    "No vector retrieval, OWL reasoning, Neptune or six-model comparison in this slice",
+    "Temperature zero and seed do not guarantee identical output",
+    "Integrity check and query are separate transactions; no concurrent graph edits",
+    "Immediate previous turn context is prompted to be re-queried; not enforced by oracle"
+  ],
+  "review_job": "20261109T074001Z-factory-lab-first-implementation-v5-13a69a"
+}

@@ -1,0 +1,78 @@
+{
+  "protocol": "virtual-factory-llm-1-authored-diagnostic",
+  "cases": 6,
+  "authored_drafts": 12,
+  "unexecuted_packets": 36,
+  "new_llm_calls": 0,
+  "new_db_calls": 0,
+  "checks": {
+    "factory-diagnostic-tests": {
+      "tests": 3,
+      "exit_code": 0
+    },
+    "factory-lab-tests": {
+      "tests": 11,
+      "exit_code": 0
+    }
+  },
+  "checker_results": [
+    {
+      "case_id": "assignment",
+      "assessment": "not_assessed",
+      "flags": [],
+      "python_shacl_equal": true
+    },
+    {
+      "case_id": "eligible",
+      "assessment": "selected_candidates_checked",
+      "flags": [],
+      "python_shacl_equal": true
+    },
+    {
+      "case_id": "expired",
+      "assessment": "selected_candidates_checked",
+      "flags": [
+        {
+          "candidate": "O17|M03|CAP-CUT",
+          "code": "qualification-not-applicable"
+        }
+      ],
+      "python_shacl_equal": true
+    },
+    {
+      "case_id": "split_records",
+      "assessment": "selected_candidates_checked",
+      "flags": [
+        {
+          "candidate": "O17|M03|CAP-CUT",
+          "code": "qualification-not-applicable"
+        }
+      ],
+      "python_shacl_equal": true
+    },
+    {
+      "case_id": "retrieval_gap",
+      "assessment": "selected_candidates_checked",
+      "flags": [
+        {
+          "candidate": "O17|M01|CAP-CUT",
+          "code": "qualification-not-retrieved"
+        }
+      ],
+      "python_shacl_equal": true
+    },
+    {
+      "case_id": "outside_policy",
+      "assessment": "selected_candidates_checked",
+      "flags": [],
+      "python_shacl_equal": true
+    }
+  ],
+  "limits": [
+    "Authored synthetic development; not observed model mistakes or fresh heldout data",
+    "No final answer efficacy measured",
+    "No source repair or oracle inputs",
+    "Existing live app is independent-episode mode, not this paired experiment"
+  ],
+  "job": "20261110T012500Z-factory-diagnostic-f6f1ff"
+}

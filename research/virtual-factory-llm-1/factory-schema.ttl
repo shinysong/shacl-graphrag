@@ -1,0 +1,22 @@
+@prefix f: <urn:factory-demo:vocab:> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+f:Machine a rdfs:Class .
+f:Order a rdfs:Class .
+f:Capability a rdfs:Class .
+f:Qualification a rdfs:Class .
+f:ASSIGNED_TO a rdf:Property; rdfs:domain f:Order; rdfs:range f:Machine .
+f:REQUIRES a rdf:Property; rdfs:domain f:Order; rdfs:range f:Capability .
+f:CAPABLE_OF a rdf:Property; rdfs:domain f:Machine; rdfs:range f:Capability .
+f:HAS_QUALIFICATION a rdf:Property; rdfs:domain f:Machine; rdfs:range f:Qualification .
+f:id a rdf:Property; rdfs:range xsd:string .
+f:name a rdf:Property; rdfs:range xsd:string .
+f:status a rdf:Property; rdfs:domain f:Machine; rdfs:range xsd:string .
+f:product a rdf:Property; rdfs:range xsd:string .
+# Preserve historical string IDs; no capability edge inferred from this field.
+f:capability a rdf:Property; rdfs:domain f:Qualification; rdfs:range xsd:string .
+f:valid_from a rdf:Property; rdfs:domain f:Qualification; rdfs:range xsd:date .
+f:valid_until a rdf:Property; rdfs:domain f:Qualification; rdfs:range xsd:date .
+f:source_sha256 a rdf:Property; rdfs:range xsd:string .
+f:as_of a rdf:Property; rdfs:range xsd:date .

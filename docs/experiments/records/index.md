@@ -1,5 +1,7 @@
 # 실행 기록
 
+- [2026-11-11 복합 질문 12건의 실제 LLM 답변과 독립 검토](2026-11-11-factory-complexity-llm.json) · [해석](../../journal/2026-11-11-compound-answer-review.md)
+
 - [2026-11-10 Factory Lab 자격 갱신과 실제 LLM 답변](2026-11-10-factory-renewal-live.json) — 한 작성 사례, Neo4j 조회 6건·LLM 호출 6회. 초안의 핵심 판단은 맞았고 검사 사유 혼용은 남았습니다.
 - [2026-11-10 Neo4j와 로컬 RDF 조회 비교](2026-11-10-factory-rdf-parity.json) — 고정 조회 48쌍 일치. 이 실행의 Neptune 48건은 미실행입니다.
 

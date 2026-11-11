@@ -1,0 +1,19 @@
+{
+  "tool": "impacted_orders",
+  "arguments": {
+    "machine_id": "M01"
+  },
+  "snapshot": "factory-v1",
+  "source_sha256": "01754b4a0d1d5d501a40496eabe06be811ca34150c955bc2d004b33664aaf716",
+  "as_of": "2026-11-09",
+  "query": "MATCH (o:FactoryDemo {namespace:$ns,version:$v})-[:ASSIGNED_TO]->(m:FactoryDemo {namespace:$ns,version:$v,entity_id:$machine_id}) OPTIONAL MATCH (o)-[:REQUIRES]->(c:FactoryDemo {namespace:$ns,version:$v}) RETURN properties(o) AS order, properties(m) AS machine, c.entity_id AS required_capability ORDER BY o.entity_id, c.entity_id LIMIT 30",
+  "rows": [],
+  "scope": "selected query result in authored snapshot; not completeness proof",
+  "integrity": {
+    "verified_before_query": true,
+    "source_sha256": "01754b4a0d1d5d501a40496eabe06be811ca34150c955bc2d004b33664aaf716",
+    "nodes": 11,
+    "edges": 12
+  },
+  "limit_reached": false
+}

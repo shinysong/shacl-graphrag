@@ -1,0 +1,19 @@
+{
+  "tool": "impacted_orders",
+  "arguments": {
+    "machine_id": "M01"
+  },
+  "snapshot": "factory-v3",
+  "source_sha256": "2f47b98a947bda6c79a99ebe540c24a2515519f448ab0a7136e00afe07b0f08b",
+  "as_of": "2026-11-09",
+  "query": "PREFIX f: <urn:factory-demo:vocab:> SELECT * WHERE { GRAPH <urn:factory-demo:graph:factory-v3> { { SELECT * WHERE { GRAPH <urn:factory-demo:graph:factory-v3> { BIND(<urn:factory-demo:factory-v3:entity:M01> AS ?machine) ?order f:ASSIGNED_TO ?machine; f:id ?order_id . OPTIONAL { ?order f:REQUIRES ?cap . ?cap f:id ?required_capability } } } ORDER BY ?order_id ?required_capability LIMIT 30 } BIND(COALESCE(?order, <urn:factory-demo:unbound>) AS ?order_key) OPTIONAL { ?order_key f:id ?order_id; a ?order_kind . OPTIONAL { ?order_key f:name ?order_name } OPTIONAL { ?order_key f:status ?order_status } OPTIONAL { ?order_key f:product ?order_product } OPTIONAL { ?order_key f:capability ?order_capability } OPTIONAL { ?order_key f:valid_from ?order_valid_from } OPTIONAL { ?order_key f:valid_until ?order_valid_until } } BIND(COALESCE(?machine, <urn:factory-demo:unbound>) AS ?machine_key) OPTIONAL { ?machine_key f:id ?machine_id; a ?machine_kind . OPTIONAL { ?machine_key f:name ?machine_name } OPTIONAL { ?machine_key f:status ?machine_status } OPTIONAL { ?machine_key f:product ?machine_product } OPTIONAL { ?machine_key f:capability ?machine_capability } OPTIONAL { ?machine_key f:valid_from ?machine_valid_from } OPTIONAL { ?machine_key f:valid_until ?machine_valid_until } } } } ORDER BY ?order_id ?required_capability",
+  "rows": [],
+  "scope": "selected query result in authored snapshot; not completeness proof",
+  "integrity": {
+    "verified_before_query": true,
+    "triples": 70,
+    "source_sha256": "2f47b98a947bda6c79a99ebe540c24a2515519f448ab0a7136e00afe07b0f08b"
+  },
+  "limit_reached": false,
+  "backend": "rdflib_sparql"
+}
