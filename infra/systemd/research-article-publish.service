@@ -1,0 +1,9 @@
+[Unit]
+Description=Publish ready SHACL GraphRAG research articles
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/ubuntu/shacl-graphrag
+Environment=PATH=/home/ubuntu/.local/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=/home/ubuntu/.local/bin/uv run --locked python scripts/publish_ready_articles.py --publish
+TimeoutStartSec=30min

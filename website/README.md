@@ -19,3 +19,14 @@ BUNDLE_GEMFILE=website/Gemfile bundle install
 ```
 
 The final artifact is `site/`. Python remains managed by uv. The legacy MkDocs build checks source documents only; CI always runs Chirpy last before uploading the artifact. The theme uses its default public CDN assets. No comments, analytics or offline cache are enabled.
+
+Daily article publication is deliberately opt-in. Put the finished dated journal
+Markdown path and any new `docs/assets/images/` PNG/SVG paths in ignored
+`_workspace/publication/ready.json`, for example
+`{"paths":["docs/journal/2026-11-11-example.md"]}`. The installed user timer
+runs at 09:00 Asia/Seoul. It copies only those paths into a clean checkout of the
+Pages branch, runs strict MkDocs and Chirpy checks, and pushes only if they pass.
+Failed attempts stay queued and receive an ignored JSON receipt under
+`_workspace/publication/attempts/`. No queue means no push. The timer does not
+write articles or publish unrelated dirty workspace files. It needs this EC2
+host and GitHub SSH access; `systemctl --user list-timers` shows the next run.

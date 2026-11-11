@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily SHACL GraphRAG article publication at 09:00 KST
+
+[Timer]
+OnCalendar=*-*-* 09:00:00 Asia/Seoul
+Persistent=true
+Unit=research-article-publish.service
+
+[Install]
+WantedBy=timers.target
