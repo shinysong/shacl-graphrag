@@ -4,8 +4,8 @@ Chirpy 7.6.0 (MIT) supplies the layouts, search, categories, archives, dark mode
 
 Canonical content stays in `docs/`. `scripts/prepare_chirpy.py` copies only public Markdown/JSON plus this template to ignored `_workspace/chirpy-source/`, adds Jekyll metadata and rewrites links while retaining existing URLs. Fenced Mermaid diagrams automatically enable the theme’s Mermaid renderer on their page. Keep diagram labels short enough for mobile screens. Do not edit generated pages.
 
-The primary sidebar is Home, About, and Archives. Home presents only the research
-overview; Archives lists dated posts and links to the execution-record index.
+The primary sidebar is Home, About, and Archives. Home presents the research
+overview and recent posts; Archives lists dated posts and links to the execution-record index.
 Protocol, Runs, Journal, Setup, Categories, and Tags retain their existing URLs
 but are reached through content links,
 search, or bookmarks. Edit `TABS` and pinned post names in `scripts/prepare_chirpy.py`

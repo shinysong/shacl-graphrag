@@ -82,9 +82,10 @@ def main():
         assert (SITE / historical / 'index.html').is_file(), historical
     home = (SITE / 'index.html').read_text()
     assert 'lab-intro' in home
-    assert 'post-list' not in home
+    assert 'id="post-list"' in home
+    assert 'card-wrapper card' in home
     assert '인터랙티브 데모' not in home
-    assert not (SITE / 'page2/index.html').exists()
+    assert (SITE / 'page2/index.html').exists()
     archives = (SITE / 'archives/index.html').read_text()
     assert BASE + '/experiments/records/' in archives
     assert BASE + '/journal/' in archives
