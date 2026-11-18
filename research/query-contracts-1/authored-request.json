@@ -1,0 +1,37 @@
+{
+  "obligations": {
+    "impact": "영향 주문",
+    "candidate": "대체 설비",
+    "qualification": "자격 확인",
+    "delivery": "납기 가능성"
+  },
+  "steps": [
+    {
+      "id": "impact",
+      "obligation": "impact",
+      "tool": "impacted_orders",
+      "binding": {
+        "literal": "M02",
+        "kind": "Machine"
+      }
+    },
+    {
+      "id": "candidates",
+      "obligation": "candidate",
+      "tool": "replacement_candidates",
+      "binding": {
+        "step": "impact",
+        "path": "order.id"
+      }
+    },
+    {
+      "id": "qualifications",
+      "obligation": "qualification",
+      "tool": "qualification_records",
+      "binding": {
+        "step": "candidates",
+        "path": "machine.id"
+      }
+    }
+  ]
+}

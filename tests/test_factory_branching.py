@@ -138,3 +138,89 @@ class BranchTests(unittest.TestCase):
         self.assertEqual(count,48)
 
 if __name__=='__main__':unittest.main()
+
+class CoverageTests(unittest.TestCase):
+    def selected(self):
+        from apps.factory_lab.rdf_graph import RDFLibGraph
+        # Use the existing actual RDFLib adapter, no server or API calls.
+        graph=RDFLibGraph()
+        return [graph.run('factory-v3', 'inspect_entity', {'entity_id':eid}) | {'evidence_id':f'E{i}'}
+                for i,eid in enumerate(['M03','O17','O18'],1)]
+
+    def test_alternate_path_and_no_cross_product(self):
+        from apps.factory_lab import coverage
+        evidence=self.selected();snap={'version':'factory-v3','sha256':evidence[0]['source_sha256'],'as_of':evidence[0]['as_of']}
+        targets=[{'order_id':'O17','machine_id':'M03','quote':'q'},{'order_id':'O18','machine_id':'M03','quote':'q'}]
+        a=coverage.review(evidence,'python',targets,snap);b=coverage.review(evidence,'shacl',targets,snap)
+        self.assertEqual(a['flags'],b['flags']);self.assertEqual(a['candidate_count'],2)
+        self.assertEqual([t['status'] for t in a['coverage']['targets']],['checked','checked'])
+        self.assertEqual(coverage.review(evidence,'python',[],snap)['candidate_count'],0)
+        # Removing the order's positive requirement relation does not mean it fails.
+        e=copy.deepcopy(evidence);e[1]['rows']=[]
+        r=coverage.review(e,'python',targets,snap)
+        self.assertEqual(r['coverage']['targets'][0]['status'],'not_assessed')
+        self.assertEqual(r['candidate_count'],1)
+        # Provenance mismatch is explicit and never supplemented from source.
+        e=copy.deepcopy(evidence);e[0]['source_sha256']='other'
+        r=coverage.review(e,'python',targets,snap)
+        self.assertEqual(r['coverage']['rejected_evidence_ids'],['E1'])
+        self.assertEqual(r['candidate_count'],0)
+        e=copy.deepcopy(evidence);e.append(copy.deepcopy(e[0]))
+        e[-1]['rows'][0]['entity']['status']='conflicting'
+        self.assertEqual(coverage.review(e,'python',targets,snap)['candidate_count'],0)
+        frozen=freeze_bundle('q','draft',evidence,SYSTEM,snap,review_targets=targets)
+        p,pm=final_packet(frozen,'python');s,sm=final_packet(frozen,'shacl')
+        self.assertEqual(pm,sm)
+        legacy=freeze_bundle('q','draft',evidence,SYSTEM,snap)
+        self.assertEqual(final_packet(legacy,'python')[0]['candidate_count'],0)
+        self.assertNotIn('coverage',final_packet(legacy,'python')[0])
+        self.assertEqual(final_packet(frozen,'self')[0]['checked_candidates'],[])
+
+    def test_declaration_attribution_not_semantic_truth(self):
+        from apps.factory_lab import coverage
+        target={'order_id':'O17','machine_id':'M03','quote':'검토'}
+        self.assertEqual(coverage.declarations({'targets':[target]},['검토해주세요']),[target])
+        with self.assertRaises(ValueError):coverage.declarations({'targets':[target]},['다른 질문'])
+        with self.assertRaises(ValueError):coverage.declarations({'targets':[target]*25},['검토'])
+        with self.assertRaises(ValueError):coverage.declarations({'targets':[target|{'gold':True}]},['검토'])
+
+    def test_scripted_declaration_is_not_graph_evidence(self):
+        from apps.factory_lab import coverage
+        with tempfile.TemporaryDirectory() as d:
+            store=Store(Path(d)/'state.sqlite')
+            class Graph:
+                def run(self,*args):raise AssertionError('Declaration must not query graph')
+            class Gateway:
+                count=0
+                def call(self,rid,messages,tools=None):
+                    self.count+=1
+                    if self.count==1:
+                        self.has_declaration=any(t['function']['name']==coverage.TOOL_NAME for t in tools)
+                        return {'tool_calls':[{'id':'target','function':{'name':coverage.TOOL_NAME,'arguments':json.dumps({'targets':[{'order_id':'O17','machine_id':'M03','quote':'검토'}]})}}]}
+                    return {'content':'Scripted only'}
+            gateway=Gateway();runner=Runner(store,Graph(),lambda _:gateway,coverage_review=True)
+            config={'question':'검토','snapshot':'factory-v3','review':'compare'}
+            rid=store.create(config);runner.cancel_flags[rid]=threading.Event();runner.lock.acquire();runner.execute(rid,config)
+            self.assertEqual(store.get(rid)['status'],'completed');self.assertTrue(gateway.has_declaration)
+            events=store.events(rid)
+            self.assertFalse(any(e['kind']=='tool_completed' for e in events))
+            frozen=next(e['payload']['bundle'] for e in events if e['kind']=='evidence_frozen')
+            self.assertEqual(frozen['evidence'],[]);self.assertEqual(len(frozen['review_targets']),1)
+            reports=[e['payload']['report'] for e in events if e['kind']=='branch_report']
+            self.assertTrue(all(r['assessment']=='not_assessed' for r in reports))
+            self.assertEqual(store.budget()['attempts'],0)
+
+    def test_catalog_isolation_and_planning_start(self):
+        from unittest.mock import patch
+        from apps.factory_lab.graph import TOOLS
+        original=copy.deepcopy(TOOLS)
+        with tempfile.TemporaryDirectory() as d:
+            store=Store(Path(d)/'state.sqlite')
+            first=Runner(store,coverage_review=True);second=Runner(store,coverage_review=True)
+            legacy=Runner(store)
+            self.assertEqual(TOOLS,original);self.assertEqual(legacy.tool_catalog,original)
+            self.assertEqual(first.tool_catalog,second.tool_catalog)
+            self.assertEqual(len(first.tool_catalog),len(original)+1)
+            with patch('apps.factory_lab.agent.threading.Thread'):
+                rid=first.start({'question':'검토','snapshot':'factory-v3','review':'compare','planning':True})
+            self.assertTrue(store.get(rid)['config']['planning']);first.lock.release()

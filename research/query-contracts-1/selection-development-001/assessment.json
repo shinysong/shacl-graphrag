@@ -1,0 +1,166 @@
+{
+  "scope": "authored development; selection labels not final answer accuracy",
+  "summaries": {
+    "top1": {
+      "obligations": 15,
+      "correct_selection": 11,
+      "wrong_selection": 4,
+      "unnecessary_unselected": 0,
+      "correct_unselected": 0,
+      "unscored_failure": 0,
+      "invalid_plans": 1,
+      "retained_errors": [
+        {
+          "request": "r01",
+          "task": "delivery",
+          "selected": "qualification_records",
+          "accepted": []
+        },
+        {
+          "request": "r04",
+          "task": "candidate",
+          "selected": "qualification_records",
+          "accepted": [
+            "replacement_candidates"
+          ]
+        },
+        {
+          "request": "r05",
+          "task": "authenticity",
+          "selected": "qualification_records",
+          "accepted": []
+        },
+        {
+          "request": "r06",
+          "task": "current",
+          "selected": "qualification_records",
+          "accepted": [
+            "current_qualification_records"
+          ]
+        }
+      ]
+    },
+    "typed_top3": {
+      "obligations": 15,
+      "correct_selection": 12,
+      "wrong_selection": 3,
+      "unnecessary_unselected": 0,
+      "correct_unselected": 0,
+      "unscored_failure": 0,
+      "invalid_plans": 0,
+      "retained_errors": [
+        {
+          "request": "r01",
+          "task": "delivery",
+          "selected": "qualification_records",
+          "accepted": []
+        },
+        {
+          "request": "r05",
+          "task": "authenticity",
+          "selected": "qualification_records",
+          "accepted": []
+        },
+        {
+          "request": "r06",
+          "task": "current",
+          "selected": "qualification_records",
+          "accepted": [
+            "current_qualification_records"
+          ]
+        }
+      ]
+    }
+  },
+  "backend_parity": [
+    {
+      "request": "r01",
+      "arm": "top1",
+      "selection_equal": true,
+      "executed_both": true,
+      "outputs_equal": true
+    },
+    {
+      "request": "r02",
+      "arm": "top1",
+      "selection_equal": true,
+      "executed_both": true,
+      "outputs_equal": true
+    },
+    {
+      "request": "r03",
+      "arm": "top1",
+      "selection_equal": true,
+      "executed_both": true,
+      "outputs_equal": true
+    },
+    {
+      "request": "r04",
+      "arm": "top1",
+      "selection_equal": true,
+      "executed_both": false,
+      "outputs_equal": null
+    },
+    {
+      "request": "r05",
+      "arm": "top1",
+      "selection_equal": true,
+      "executed_both": true,
+      "outputs_equal": true
+    },
+    {
+      "request": "r06",
+      "arm": "top1",
+      "selection_equal": true,
+      "executed_both": true,
+      "outputs_equal": true
+    },
+    {
+      "request": "r01",
+      "arm": "typed_top3",
+      "selection_equal": true,
+      "executed_both": true,
+      "outputs_equal": true
+    },
+    {
+      "request": "r02",
+      "arm": "typed_top3",
+      "selection_equal": true,
+      "executed_both": true,
+      "outputs_equal": true
+    },
+    {
+      "request": "r03",
+      "arm": "typed_top3",
+      "selection_equal": true,
+      "executed_both": true,
+      "outputs_equal": true
+    },
+    {
+      "request": "r04",
+      "arm": "typed_top3",
+      "selection_equal": true,
+      "executed_both": true,
+      "outputs_equal": true
+    },
+    {
+      "request": "r05",
+      "arm": "typed_top3",
+      "selection_equal": true,
+      "executed_both": true,
+      "outputs_equal": true
+    },
+    {
+      "request": "r06",
+      "arm": "typed_top3",
+      "selection_equal": true,
+      "executed_both": true,
+      "outputs_equal": true
+    }
+  ],
+  "answer_quality": "unmeasured",
+  "sha256": {
+    "research/query-contracts-1/selection-development-001/results.json": "69cedff9bbcebf539a5f39f6cb5d85b0a807c09dbfa797027bd7a1b703f2a6e8",
+    "research/query-contracts-1/selection-development-001/scoring.json": "7b8d1f540cdaba0a5cf34154c3646c633318980a0d8569058eff6a8b2a9b9c2e"
+  }
+}

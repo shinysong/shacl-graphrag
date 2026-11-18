@@ -13,7 +13,8 @@ from apps.factory_lab.llm import Gateway
 
 class CampaignTests(unittest.TestCase):
     def setUp(self):
-        (ROOT/'_workspace').mkdir(exist_ok=True);self.tmp=tempfile.TemporaryDirectory(dir=ROOT/'_workspace');self.addCleanup(self.tmp.cleanup)
+        (ROOT/'_workspace').mkdir(exist_ok=True)
+        self.tmp=tempfile.TemporaryDirectory(dir=ROOT/'_workspace');self.addCleanup(self.tmp.cleanup)
         self.base=Path(self.tmp.name);self.work=self.base/'campaign'
         self.deadline=(datetime.now(timezone.utc)+timedelta(minutes=10)).isoformat()
         self.clock=patch.object(c,'DEADLINE',self.deadline);self.clock.start();self.addCleanup(self.clock.stop)
@@ -103,3 +104,34 @@ class CampaignTests(unittest.TestCase):
         self.assertFalse((self.work/'progress.json').exists())
 
 if __name__=='__main__':unittest.main()
+
+class CoverageCampaignBoundaryTests(unittest.TestCase):
+    def test_fixed_scope_and_closed_gate(self):
+        from experiments.factory_complexity import coverage_campaign as c
+        self.assertEqual(c.CASES,('case-04','case-05','case-11','case-12'))
+        with self.assertRaises(ValueError):c.preflight('/tmp/not-authorized-campaign')
+        self.assertEqual(c.ID,'factory-coverage-live-1')
+        self.assertIn('explicitly declared order/machine pairs',c.COVERAGE_NOTICE)
+        self.assertNotIn('replacement candidates only',c.COVERAGE_NOTICE)
+
+    def test_new_gate_failure_denominator_and_no_resume(self):
+        from experiments.factory_complexity import coverage_campaign as c
+        (ROOT/'_workspace').mkdir(exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=ROOT/'_workspace') as d:
+            base=Path(d);work=base/'new'
+            cfg={'model':'test/model','provider':'test','prompt_price':'0.00000075','completion_price':'0.00000375','max_tokens':2048}
+            ready={'model':'test/model','checked_at':datetime.now(timezone.utc).isoformat(),'data':{'data':{'endpoints':[{'tag':'test','pricing':{'prompt':cfg['prompt_price'],'completion':cfg['completion_price']},'supported_parameters':['tools','tool_choice','temperature','max_tokens','seed']}]}}}
+            c.write(base/'model.json',cfg);c.write(base/'ready.json',ready)
+            c.prepare(work,base/'ready.json',base/'model.json','SCRIPTED TEST ONLY')
+            with self.assertRaisesRegex(RuntimeError,'gate closed'):c.preflight(work)
+            gate=c.read(work/'execution-gate.json');gate['approved']=True;c.write(work/'execution-gate.json',gate)
+            self.assertFalse(any('/evaluation/' in name for name in gate['files']))
+            class Fake:
+                def __init__(self,*args,**kw):pass
+                def call(self,*args,**kw):raise RuntimeError('Scripted failure, no paid request')
+            with patch.object(c,'Gateway',Fake):result=c.run(work)
+            self.assertEqual([s['status'] for s in result['slots']],['failed','not_attempted','not_attempted','not_attempted'])
+            self.assertEqual(result['budget']['attempts'],0)
+            self.assertFalse(c.read(work/'execution-gate.json')['approved'])
+            gate['approved']=True;c.write(work/'execution-gate.json',gate)
+            with self.assertRaisesRegex(RuntimeError,'Prior launch'):c.preflight(work)

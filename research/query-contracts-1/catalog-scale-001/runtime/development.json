@@ -1,0 +1,134 @@
+[
+  {
+    "id": "d01",
+    "question": "O17에 현재 배정된 설비 목록 O17을 처리할 역량을 갖춘 대체 설비 후보",
+    "tasks": [
+      {
+        "id": "assigned",
+        "text": "O17에 현재 배정된 설비 목록",
+        "binding": {
+          "kind": "Order",
+          "literal": "O17"
+        }
+      },
+      {
+        "id": "alternatives",
+        "text": "O17을 처리할 역량을 갖춘 대체 설비 후보",
+        "binding": {
+          "kind": "Order",
+          "literal": "O17"
+        }
+      }
+    ]
+  },
+  {
+    "id": "d02",
+    "question": "M03의 기준일 현재 유효한 자격 기록 M03의 기준일 전에 만료된 자격 기록",
+    "tasks": [
+      {
+        "id": "current",
+        "text": "M03의 기준일 현재 유효한 자격 기록",
+        "binding": {
+          "kind": "Machine",
+          "literal": "M03"
+        }
+      },
+      {
+        "id": "expired",
+        "text": "M03의 기준일 전에 만료된 자격 기록",
+        "binding": {
+          "kind": "Machine",
+          "literal": "M03"
+        }
+      }
+    ]
+  },
+  {
+    "id": "d03",
+    "question": "Orders assigned to machine M01 All qualification records, including past and current, for M01",
+    "tasks": [
+      {
+        "id": "orders",
+        "text": "Orders assigned to machine M01",
+        "binding": {
+          "kind": "Machine",
+          "literal": "M01"
+        }
+      },
+      {
+        "id": "history",
+        "text": "All qualification records, including past and current, for M01",
+        "binding": {
+          "kind": "Machine",
+          "literal": "M01"
+        }
+      }
+    ]
+  },
+  {
+    "id": "d04",
+    "question": "M02의 자격 이력을 기간 필터 없이 모두 조회 M02 작업의 납기 준수를 확정",
+    "tasks": [
+      {
+        "id": "history",
+        "text": "M02의 자격 이력을 기간 필터 없이 모두 조회",
+        "binding": {
+          "kind": "Machine",
+          "literal": "M02"
+        }
+      },
+      {
+        "id": "deadline",
+        "text": "M02 작업의 납기 준수를 확정",
+        "binding": {
+          "kind": "Machine",
+          "literal": "M02"
+        }
+      }
+    ]
+  },
+  {
+    "id": "d05",
+    "question": "Machines with the required capability for O18 Verify authenticity of signed approval documents for O18",
+    "tasks": [
+      {
+        "id": "alternative",
+        "text": "Machines with the required capability for O18",
+        "binding": {
+          "kind": "Order",
+          "literal": "O18"
+        }
+      },
+      {
+        "id": "authentic",
+        "text": "Verify authenticity of signed approval documents for O18",
+        "binding": {
+          "kind": "Order",
+          "literal": "O18"
+        }
+      }
+    ]
+  },
+  {
+    "id": "d06",
+    "question": "Expired qualification records before as of date for M01 M01 설비에 할당된 주문을 조회",
+    "tasks": [
+      {
+        "id": "expired",
+        "text": "Expired qualification records before as of date for M01",
+        "binding": {
+          "kind": "Machine",
+          "literal": "M01"
+        }
+      },
+      {
+        "id": "orders",
+        "text": "M01 설비에 할당된 주문을 조회",
+        "binding": {
+          "kind": "Machine",
+          "literal": "M01"
+        }
+      }
+    ]
+  }
+]

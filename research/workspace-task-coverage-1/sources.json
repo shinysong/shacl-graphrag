@@ -1,0 +1,10 @@
+{
+  "scope": "Authored synthetic development fixture; no real customer data or representative benchmark.",
+  "metadata": {"snapshot_id":"commerce-task-coverage-1","as_of":"2026-11-17","currency":"GBP"},
+  "files": [
+    {"name":"purchase_export.csv","content":"purchase_ref,queue_state,charged_total\nP-17,packed,54.00\nP-18,waiting,82.00\n"},
+    {"name":"parcel_export.csv","content":"parent_purchase,parcel_ref,carrier_state\nP-17,T-1,handed_over\nP-17,T-2,label_created\nP-18,T-3,label_created\n"},
+    {"name":"return_export.csv","content":"ticket_ref,original_purchase,refund_requested\nR-7,P-17,54.00\n"},
+    {"name":"operating_policy.md","content":"The return ticket reference is not the purchase reference. original_purchase refers to purchase_ref; parent_purchase uses that same purchase reference.\n\nReturns may be requested within 14 days of delivery. Opened hygiene items are excluded. Delivery dates and product categories are not included in these exports.\n\nFree shipping applies from GBP 60. This note does not state whether the threshold is before or after discount."}
+  ]
+}

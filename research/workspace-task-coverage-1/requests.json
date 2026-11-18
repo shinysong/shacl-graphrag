@@ -1,0 +1,8 @@
+{
+  "scope":"Authored tool-contract probes, not outputs selected by a real LLM. Every attempt is retained. No model accuracy scoring.",
+  "requests":[
+    {"id":"known-purchase","question":"Compare P-17 purchase and parcels. Can it be refunded?","calls":[{"tool":"relation_rows","arguments":{"relation_id":"@purchase_parcels","value":"P-17"}}],"unresolved":["Refund eligibility requires delivery date and product category."]},
+    {"id":"ticket-dependent-purchase","question":"For return R-7, find the original purchase and its parcels.","calls":[{"tool":"source_rows","arguments":{"entry_id":"map:return_export.csv:ticket_ref","value":"R-7"}},{"tool":"relation_rows","arguments":{"relation_id":"@purchase_parcels","value":{"from_evidence":"e1","column":"original_purchase"}}}],"unresolved":["This authored probe tests whether a previous result can bind the next tool argument."]},
+    {"id":"threshold-basis","question":"Does P-17 qualify for free shipping after discount?","calls":[{"tool":"source_document","arguments":{"entry_id":"policy:operating_policy.md:3"}}],"unresolved":["The threshold basis and discount amount are absent; no eligibility calculation is requested."]}
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "revision": "factory-explanation-001",
+  "classification": "software and UI verification, not efficacy evidence",
+  "review_job": "20261117T022138Z-factory-explanation-8b40b5",
+  "reviews": {
+    "methods": "ready",
+    "implementation": "ready"
+  },
+  "checks": {
+    "check-factory-explanation-tests": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_factory_explanation.py"
+      ],
+      "exit_code": 0,
+      "scope": "local software check; not a benchmark"
+    },
+    "check-factory-public-tests": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_factory_public.py"
+      ],
+      "exit_code": 0,
+      "scope": "local software check; not a benchmark"
+    },
+    "check-research-ops-tests": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_research_ops.py"
+      ],
+      "exit_code": 0,
+      "scope": "local software check; not a benchmark"
+    }
+  },
+  "test_counts": {
+    "explanation": 9,
+    "public": 11
+  },
+  "browser": [
+    {
+      "width": 1440,
+      "color_scheme": "light",
+      "cases": 7,
+      "original_answer_switches": true,
+      "full_export_equals_response": true,
+      "graph_initially_collapsed": true,
+      "js_errors": [],
+      "external_requests": [],
+      "paid_calls": 0
+    },
+    {
+      "width": 390,
+      "color_scheme": "dark",
+      "cases": 7,
+      "original_answer_switches": true,
+      "full_export_equals_response": true,
+      "graph_initially_collapsed": true,
+      "js_errors": [],
+      "external_requests": [],
+      "paid_calls": 0
+    }
+  ],
+  "documentation_browser": [
+    {
+      "width": 1440,
+      "theme": "light",
+      "mermaid_svg": 1,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mermaid_svg": 1,
+      "overflow": false
+    }
+  ],
+  "builds": {
+    "mkdocs_strict_exit": 0,
+    "chirpy_exit": 0,
+    "preserved_pages_checked": 191
+  },
+  "preservation": {
+    "baseline_files": 506,
+    "mismatches": [],
+    "reviewed_hashes_match": 8,
+    "prior_app_files_changed": [
+      "apps/factory_lab/public_runtime.py",
+      "apps/factory_lab/public_server.py",
+      "apps/factory_lab/public_static/index.html",
+      "apps/factory_lab/public_static/app.js"
+    ]
+  },
+  "local_engines": [
+    {
+      "case": "applicability",
+      "conforms": false,
+      "violations": 1,
+      "owl_witnesses": 1
+    },
+    {
+      "case": "conforming",
+      "conforms": true,
+      "violations": 0,
+      "owl_witnesses": 1
+    },
+    {
+      "case": "omitted",
+      "conforms": false,
+      "violations": 1,
+      "owl_witnesses": 1
+    },
+    {
+      "case": "altered",
+      "conforms": true,
+      "violations": 0,
+      "owl_witnesses": 1
+    },
+    {
+      "case": "history-01",
+      "conforms": false,
+      "violations": 2,
+      "owl_witnesses": 0
+    },
+    {
+      "case": "history-07",
+      "conforms": false,
+      "violations": 2,
+      "owl_witnesses": 0
+    },
+    {
+      "case": "history-10",
+      "conforms": false,
+      "violations": 5,
+      "owl_witnesses": 0
+    }
+  ],
+  "new_paid_calls": 0,
+  "limitations": [
+    "Authored diagnostic cases, not a representative benchmark.",
+    "Original model answers are selected consumed development records, not new calls.",
+    "Optional OWL changes final context only when enabled; new real-model answer effects remain unmeasured.",
+    "OWL mapping is authored, not automatically extracted or expert-validated.",
+    "Conformance is not truth or completeness; inference is not physical approval.",
+    "No production load or native macOS/Windows verification."
+  ],
+  "requirements": {
+    "1_scope_and_preservation": {
+      "status": "verified",
+      "evidence": [
+        "preservation.json",
+        "before.json",
+        "analysis-v4-state.json"
+      ],
+      "detail": "506 frozen research files unchanged; only four existing public app files changed. Original reviewer and historical rc1 manifest retained."
+    },
+    "2_representative_cases": {
+      "status": "verified",
+      "evidence": [
+        "default-environment.json",
+        "archive-fidelity.json",
+        "tests/test_factory_explanation.py"
+      ],
+      "detail": "Four authored diagnostics with separate intervention/expected behavior; three exact historical model comparisons. No runtime answer gold or repair."
+    },
+    "3_shacl_actual_trace": {
+      "status": "verified",
+      "evidence": [
+        "apps/factory_lab/explanation.py",
+        "tests/test_factory_explanation.py",
+        "browser-result-v2.json"
+      ],
+      "detail": "Native report, source version, shapes, candidate values, focus, nullable native path/value; no-target not_assessed. Missing retrieval and source absence not conflated."
+    },
+    "4_owl_actual_trace": {
+      "status": "verified",
+      "evidence": [
+        "apps/factory_lab/explanation.py",
+        "default-environment.json",
+        "tests/test_factory_explanation.py"
+      ],
+      "detail": "Actual OWL-RL closure; asserted/axiom/derived triples stored separately; direct reconstructed witnesses explicitly not internal proof. No physical approval."
+    },
+    "5_ui_and_answer_linkage": {
+      "status": "verified",
+      "evidence": [
+        "browser-result-v2.json",
+        "archive-fidelity.json",
+        "tests/test_factory_public.py"
+      ],
+      "detail": "Question-scoped collapsed graph, provenance panel, exact original answers and diffs, problematic final retained. Optional OWL compact final context verified with scripted gateway; real-provider effect unmeasured as permitted."
+    },
+    "6_validation_and_documentation": {
+      "status": "verified",
+      "evidence": [
+        "analysis-v4-state.json",
+        "docs-browser.json",
+        "mkdocs.log",
+        "chirpy.log"
+      ],
+      "detail": "9 explanation +11 public tests, operations checks; changed facts/shapes/axioms and HTTP failures; same-policy Python retained. Editable Mermaid and text fallback; desktop/mobile rendering."
+    },
+    "completion_keyless_local_execution": {
+      "status": "verified",
+      "evidence": [
+        "default-environment.json",
+        "browser-result-v2.json"
+      ],
+      "detail": "Seven keyless cases run with actual local engines in default uv environment; no AWS or model key."
+    },
+    "constraints": {
+      "status": "verified",
+      "evidence": [
+        "preservation.json",
+        "browser-result-v2.json"
+      ],
+      "detail": "uv only; no new paid calls, AWS actions, legacy restart, commit/push/deployment. Private logs remain ignored. Independent review blocker and rejected stale analysis preserved."
+    }
+  },
+  "next_step": "Inspect the keyless demo. Any new real-provider efficacy study requires separate bounded approval."
+}

@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "snapshot_id": "shop-demo-001",
+  "as_of": "2026-11-17",
+  "currency": "KRW",
+  "products": [
+    {
+      "id": "P1",
+      "name": "데일리 러닝화",
+      "category": "RunningShoe"
+    },
+    {
+      "id": "P2",
+      "name": "스포츠 양말",
+      "category": "Socks"
+    }
+  ],
+  "skus": [
+    {
+      "id": "S1",
+      "product": "P1",
+      "color": "흰색",
+      "size": "260",
+      "price": 90000,
+      "warehouse": "W1",
+      "available": 0,
+      "arrival": null,
+      "arrival_confirmed": false
+    },
+    {
+      "id": "S2",
+      "product": "P1",
+      "color": "검정",
+      "size": "260",
+      "price": 70000,
+      "warehouse": "W1",
+      "available": 3,
+      "arrival": null,
+      "arrival_confirmed": false
+    },
+    {
+      "id": "S3",
+      "product": "P1",
+      "color": "파랑",
+      "size": "260",
+      "price": 90000,
+      "warehouse": "W1",
+      "available": 3,
+      "arrival": "2026-11-20",
+      "arrival_confirmed": true
+    },
+    {
+      "id": "S4",
+      "product": "P1",
+      "color": "회색",
+      "size": "260",
+      "price": 90000,
+      "warehouse": "W1",
+      "available": null,
+      "arrival": null,
+      "arrival_confirmed": false
+    },
+    {
+      "id": "S5",
+      "product": "P2",
+      "color": "흰색",
+      "size": "FREE",
+      "price": 20000,
+      "warehouse": "W1",
+      "available": 20,
+      "arrival": "2026-11-20",
+      "arrival_confirmed": true
+    }
+  ],
+  "orders": [
+    {
+      "id": "O1",
+      "status": "unshipped",
+      "coupon": "C1",
+      "shipping_policy": "D1",
+      "requested_arrival": "2026-11-20"
+    }
+  ],
+  "items": [
+    {
+      "id": "I1",
+      "order": "O1",
+      "sku": "S1",
+      "quantity": 1
+    },
+    {
+      "id": "I2",
+      "order": "O1",
+      "sku": "S5",
+      "quantity": 1
+    }
+  ],
+  "coupons": [
+    {
+      "id": "C1",
+      "minimum": 100000,
+      "discount": 10000
+    }
+  ],
+  "shipping_policies": [
+    {
+      "id": "D1",
+      "minimum": 50000,
+      "fee": 3000,
+      "split_allowed": false
+    }
+  ],
+  "consents": [
+    {
+      "id": "N1",
+      "order": "O1",
+      "sku": "S3",
+      "status": "approved"
+    },
+    {
+      "id": "N2",
+      "order": "O1",
+      "sku": "S4",
+      "status": "approved"
+    }
+  ],
+  "approvals": [],
+  "cases": [
+    {
+      "id": "approval",
+      "label": "할인 예외 승인·고객 동의 필요",
+      "question": "고객이 배송 지연 운동화를 다른 색으로 바꾸고, 양말은 유지하며 할인과 금요일 도착을 원합니다. 가능한 처리안과 승인·동의·추가 확인 사항을 검토해주세요.",
+      "item": "I1",
+      "replacement": "S2",
+      "retain_discount": true,
+      "free_shipping": true,
+      "split": false,
+      "promise_arrival": true
+    },
+    {
+      "id": "ready",
+      "label": "선언된 조건 충족 · 처리안 유지",
+      "question": "고객이 배송 지연 운동화를 다른 색으로 바꾸고, 양말은 유지하며 할인과 금요일 도착을 원합니다. 가능한 처리안과 승인·동의·추가 확인 사항을 검토해주세요.",
+      "item": "I1",
+      "replacement": "S3",
+      "retain_discount": true,
+      "free_shipping": true,
+      "split": false,
+      "promise_arrival": true
+    },
+    {
+      "id": "unknown",
+      "label": "재고·도착 근거 부족",
+      "question": "고객이 배송 지연 운동화를 다른 색으로 바꾸고, 양말은 유지하며 할인과 금요일 도착을 원합니다. 가능한 처리안과 승인·동의·추가 확인 사항을 검토해주세요.",
+      "item": "I1",
+      "replacement": "S4",
+      "retain_discount": true,
+      "free_shipping": true,
+      "split": false,
+      "promise_arrival": false
+    }
+  ]
+}

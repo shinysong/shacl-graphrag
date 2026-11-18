@@ -1,0 +1,158 @@
+[
+  {
+    "id": "r01",
+    "question": "M02 중단 영향과 대체 설비의 현재 자격, 납기까지 확인해줘.",
+    "tasks": [
+      {
+        "id": "impact",
+        "text": "설비 M02 중단 영향 주문",
+        "binding": {
+          "literal": "M02",
+          "kind": "Machine"
+        }
+      },
+      {
+        "id": "candidates",
+        "text": "주문 대체 역량 후보 설비",
+        "binding": {
+          "step": "impact",
+          "path": "order.id"
+        }
+      },
+      {
+        "id": "qualification",
+        "text": "현재 유효기간 안에 있는 자격 기록",
+        "binding": {
+          "step": "candidates",
+          "path": "machine.id"
+        }
+      },
+      {
+        "id": "delivery",
+        "text": "설비의 납기 가능성과 일정 부하 확인",
+        "binding": {
+          "literal": "M03",
+          "kind": "Machine"
+        }
+      }
+    ]
+  },
+  {
+    "id": "r02",
+    "question": "O17에 배정된 설비와 대체 가능한 역량 후보를 각각 알려줘.",
+    "tasks": [
+      {
+        "id": "assigned",
+        "text": "주문에 현재 배정된 설비 조회",
+        "binding": {
+          "literal": "O17",
+          "kind": "Order"
+        }
+      },
+      {
+        "id": "candidate",
+        "text": "주문 대체 역량 후보",
+        "binding": {
+          "literal": "O17",
+          "kind": "Order"
+        }
+      }
+    ]
+  },
+  {
+    "id": "r03",
+    "question": "M03의 현재 자격과 만료된 자격을 구분해줘.",
+    "tasks": [
+      {
+        "id": "current",
+        "text": "기준일 현재 유효기간 안에 있는 자격 기록",
+        "binding": {
+          "literal": "M03",
+          "kind": "Machine"
+        }
+      },
+      {
+        "id": "expired",
+        "text": "기준일 전에 만료된 과거 자격 기록",
+        "binding": {
+          "literal": "M03",
+          "kind": "Machine"
+        }
+      }
+    ]
+  },
+  {
+    "id": "r04",
+    "question": "대체 후보와 연결된 주문의 조건 및 자격 전체를 보고 싶어.",
+    "tasks": [
+      {
+        "id": "candidate",
+        "text": "설비 후보 자격 제품 역량 비교",
+        "binding": {
+          "literal": "O18",
+          "kind": "Order"
+        }
+      },
+      {
+        "id": "all",
+        "text": "설비 자격 제품 역량 유효기간 전체 기록",
+        "binding": {
+          "step": "candidate",
+          "path": "machine.id"
+        }
+      }
+    ]
+  },
+  {
+    "id": "r05",
+    "question": "현재 배정과 자격을 확인하되 갱신 문서의 진위도 확인해줘.",
+    "tasks": [
+      {
+        "id": "assigned",
+        "text": "현재 배정 설비 자격 확인",
+        "binding": {
+          "literal": "O17",
+          "kind": "Order"
+        }
+      },
+      {
+        "id": "all",
+        "text": "자격 기록 제품 역량 유효기간",
+        "binding": {
+          "step": "assigned",
+          "path": "machine.id"
+        }
+      },
+      {
+        "id": "authenticity",
+        "text": "자격 갱신 문서의 진위와 승인자 확인",
+        "binding": {
+          "literal": "M03",
+          "kind": "Machine"
+        }
+      }
+    ]
+  },
+  {
+    "id": "r06",
+    "question": "M03의 현재 제품별 자격과 설비 중단 영향 주문을 알려줘.",
+    "tasks": [
+      {
+        "id": "current",
+        "text": "현재 제품별 자격",
+        "binding": {
+          "literal": "M03",
+          "kind": "Machine"
+        }
+      },
+      {
+        "id": "impact",
+        "text": "설비 중단 영향 주문",
+        "binding": {
+          "literal": "M03",
+          "kind": "Machine"
+        }
+      }
+    ]
+  }
+]

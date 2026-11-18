@@ -1,0 +1,11 @@
+{
+  "scope": "Authored synthetic development probes used during implementation; not held-out, not representative commerce accuracy",
+  "metadata": {"snapshot_id":"vocabulary-development-1","as_of":"2026-11-17","currency":"KRW"},
+  "cases": [
+    {"id":"order-alias", "files":[{"name":"export_a.csv","content":"주문번호,주문상태,쿠폰번호,요청도착일\nO1,unshipped,C1,2026-11-17\n"}], "expected":{"map:export_a.csv:주문번호":"orders.id","map:export_a.csv:주문상태":"orders.status","map:export_a.csv:쿠폰번호":"orders.coupon","map:export_a.csv:요청도착일":"orders.requested_arrival"}},
+    {"id":"line-reference", "files":[{"name":"export_b.csv","content":"주문항목번호,order_no,옵션번호,수량\nI1,O1,S1,2\n"}], "expected":{"map:export_b.csv:주문항목번호":"items.id","map:export_b.csv:order_no":"items.order","map:export_b.csv:옵션번호":"items.sku","map:export_b.csv:수량":"items.quantity"}},
+    {"id":"ambiguous-and-near-name", "files":[{"name":"unknown.csv","content":"order_no,sku_id,refund_order_no\nO1,S1,R1\n"}], "expected":{"map:unknown.csv:order_no":"","map:unknown.csv:sku_id":"","map:unknown.csv:refund_order_no":""}},
+    {"id":"isolated-alias", "files":[{"name":"unknown.csv","content":"order_no\nO1\n"}], "expected":{"map:unknown.csv:order_no":""}},
+    {"id":"canonical-control", "files":[{"name":"orders.csv","content":"id,status,coupon,shipping_policy,requested_arrival\nO1,unshipped,C1,P1,2026-11-17\n"}], "expected":{"map:orders.csv:id":"orders.id","map:orders.csv:status":"orders.status","map:orders.csv:coupon":"orders.coupon","map:orders.csv:shipping_policy":"orders.shipping_policy","map:orders.csv:requested_arrival":"orders.requested_arrival"}}
+  ]
+}

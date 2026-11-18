@@ -1,0 +1,217 @@
+{
+  "status": "six executable development competitors; not scale benchmark",
+  "catalog": [
+    {
+      "id": "factory.impacted_orders.v1",
+      "tool": "impacted_orders",
+      "revision": 1,
+      "description": "Orders assigned to a machine; 설비 중단 영향 주문",
+      "availability": "existing_fixed_tool",
+      "input": {
+        "machine_id": {
+          "wire_type": "nonempty_string",
+          "semantic_type": "MachineId",
+          "semantic_type_enforcement": "not currently enforced by runtime string validator"
+        }
+      },
+      "output_bindings": {
+        "rows[].order.id": "OrderId",
+        "rows[].machine.id": "MachineId",
+        "rows[].required_capability": "CapabilityIdOrNull"
+      },
+      "evidence_support": [
+        "assigned_orders",
+        "order_required_capability"
+      ],
+      "relations": [
+        "ASSIGNED_TO",
+        "REQUIRES"
+      ],
+      "does_not_establish": [
+        "all_physical_impacts",
+        "impact_list_completeness",
+        "delivery_feasibility"
+      ],
+      "result_limit": 30,
+      "limit_semantics": "Reaching limit signals possible truncation, not proof of omission. compare tool limit is per version.",
+      "empty_semantics": "No returned record in selected view; not global source absence.",
+      "version_binding": "snapshot/source_sha256/as_of; compare tool also binds each nested version",
+      "execution": "existing fixed parameterized template; never arbitrary query text"
+    },
+    {
+      "id": "factory.replacement_candidates.v1",
+      "tool": "replacement_candidates",
+      "revision": 1,
+      "description": "Machines with required capability; 주문 대체 역량 후보",
+      "availability": "existing_fixed_tool",
+      "input": {
+        "order_id": {
+          "wire_type": "nonempty_string",
+          "semantic_type": "OrderId",
+          "semantic_type_enforcement": "not currently enforced by runtime string validator"
+        }
+      },
+      "output_bindings": {
+        "rows[].order.id": "OrderId",
+        "rows[].machine.id": "MachineId",
+        "rows[].required_capability": "CapabilityId"
+      },
+      "evidence_support": [
+        "capability_candidate_pairs",
+        "order_required_capability"
+      ],
+      "relations": [
+        "REQUIRES",
+        "CAPABLE_OF"
+      ],
+      "does_not_establish": [
+        "qualification_applicability",
+        "available_schedule",
+        "physical_approval"
+      ],
+      "result_limit": 30,
+      "limit_semantics": "Reaching limit signals possible truncation, not proof of omission. compare tool limit is per version.",
+      "empty_semantics": "No returned record in selected view; not global source absence.",
+      "version_binding": "snapshot/source_sha256/as_of; compare tool also binds each nested version",
+      "execution": "existing fixed parameterized template; never arbitrary query text"
+    },
+    {
+      "id": "factory.qualification_records.v1",
+      "tool": "qualification_records",
+      "revision": 1,
+      "description": "Selected qualification records; 설비 자격 제품 역량 유효기간",
+      "availability": "existing_fixed_tool",
+      "input": {
+        "machine_id": {
+          "wire_type": "nonempty_string",
+          "semantic_type": "MachineId",
+          "semantic_type_enforcement": "not currently enforced by runtime string validator"
+        }
+      },
+      "output_bindings": {
+        "rows[].machine.id": "MachineId",
+        "rows[].qualification": "QualificationOrNull"
+      },
+      "evidence_support": [
+        "selected_qualification_records"
+      ],
+      "relations": [
+        "HAS_QUALIFICATION"
+      ],
+      "does_not_establish": [
+        "renewal_document_authenticity",
+        "source_absence",
+        "order_specific_applicability_without_order_evidence"
+      ],
+      "result_limit": 30,
+      "limit_semantics": "Reaching limit signals possible truncation, not proof of omission. compare tool limit is per version.",
+      "empty_semantics": "No returned record in selected view; not global source absence.",
+      "version_binding": "snapshot/source_sha256/as_of; compare tool also binds each nested version",
+      "execution": "existing fixed parameterized template; never arbitrary query text"
+    },
+    {
+      "id": "factory.assigned_machines.v1",
+      "tool": "assigned_machines",
+      "revision": 1,
+      "description": "Current assigned machines for an order; 주문에 현재 배정된 설비 조회",
+      "availability": "standalone_competing_fixed_query",
+      "input": {
+        "order_id": {
+          "wire_type": "nonempty_string",
+          "semantic_type": "OrderId",
+          "semantic_type_enforcement": "not currently enforced by runtime string validator"
+        }
+      },
+      "output_bindings": {
+        "rows[].order.id": "OrderId",
+        "rows[].machine.id": "MachineId",
+        "rows[].required_capability": "CapabilityId"
+      },
+      "evidence_support": [
+        "current_assignments"
+      ],
+      "relations": [
+        "ASSIGNED_TO",
+        "REQUIRES"
+      ],
+      "does_not_establish": [
+        "capability_candidates",
+        "qualification_applicability",
+        "delivery_feasibility"
+      ],
+      "result_limit": 30,
+      "limit_semantics": "Reaching limit signals possible truncation, not proof of omission. compare tool limit is per version.",
+      "empty_semantics": "No matching selected record; filtered qualification query returns no null placeholder.",
+      "version_binding": "snapshot/source_sha256/as_of; compare tool also binds each nested version",
+      "execution": "existing fixed parameterized template; never arbitrary query text"
+    },
+    {
+      "id": "factory.current_qualification_records.v1",
+      "tool": "current_qualification_records",
+      "revision": 1,
+      "description": "Qualification records valid on snapshot date; 기준일 현재 유효기간 안에 있는 자격 기록",
+      "availability": "standalone_competing_fixed_query",
+      "input": {
+        "machine_id": {
+          "wire_type": "nonempty_string",
+          "semantic_type": "MachineId",
+          "semantic_type_enforcement": "not currently enforced by runtime string validator"
+        }
+      },
+      "output_bindings": {
+        "rows[].machine.id": "MachineId",
+        "rows[].qualification": "QualificationOrNull"
+      },
+      "evidence_support": [
+        "date_current_qualification_records"
+      ],
+      "relations": [
+        "HAS_QUALIFICATION"
+      ],
+      "does_not_establish": [
+        "order_product_applicability",
+        "physical_approval",
+        "renewal_authenticity"
+      ],
+      "result_limit": 30,
+      "limit_semantics": "Reaching limit signals possible truncation, not proof of omission. compare tool limit is per version.",
+      "empty_semantics": "No matching selected record; filtered qualification query returns no null placeholder.",
+      "version_binding": "snapshot/source_sha256/as_of; compare tool also binds each nested version",
+      "execution": "existing fixed parameterized template; never arbitrary query text"
+    },
+    {
+      "id": "factory.expired_qualification_records.v1",
+      "tool": "expired_qualification_records",
+      "revision": 1,
+      "description": "Qualification records expired before snapshot date; 기준일 전에 만료된 과거 자격 기록",
+      "availability": "standalone_competing_fixed_query",
+      "input": {
+        "machine_id": {
+          "wire_type": "nonempty_string",
+          "semantic_type": "MachineId",
+          "semantic_type_enforcement": "not currently enforced by runtime string validator"
+        }
+      },
+      "output_bindings": {
+        "rows[].machine.id": "MachineId",
+        "rows[].qualification": "QualificationOrNull"
+      },
+      "evidence_support": [
+        "date_expired_qualification_records"
+      ],
+      "relations": [
+        "HAS_QUALIFICATION"
+      ],
+      "does_not_establish": [
+        "all_history",
+        "order_product_applicability",
+        "renewal_authenticity"
+      ],
+      "result_limit": 30,
+      "limit_semantics": "Reaching limit signals possible truncation, not proof of omission. compare tool limit is per version.",
+      "empty_semantics": "No matching selected record; filtered qualification query returns no null placeholder.",
+      "version_binding": "snapshot/source_sha256/as_of; compare tool also binds each nested version",
+      "execution": "existing fixed parameterized template; never arbitrary query text"
+    }
+  ]
+}

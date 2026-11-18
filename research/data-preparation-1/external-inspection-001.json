@@ -1,0 +1,86 @@
+{
+  "sources": [
+    {
+      "repo": "NVIDIA/auto-ontology",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/NVIDIA/auto-ontology/a630ebd97aa4b4410b2f41f5a8af06260af2f7b9/README.md",
+          "bytes": 25552,
+          "sha256": "e0fead5025478e50f926588c50ca7c6283127f1abde32a70dca19a136d6a7971"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/NVIDIA/auto-ontology/a630ebd97aa4b4410b2f41f5a8af06260af2f7b9/LICENSE",
+          "bytes": 11432,
+          "sha256": "f30c028cc160cd27972bf845c9e44c703201903d226cecaf827b39fbf8f61d5e"
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://raw.githubusercontent.com/NVIDIA/auto-ontology/a630ebd97aa4b4410b2f41f5a8af06260af2f7b9/pyproject.toml",
+          "bytes": 4622,
+          "sha256": "e68a4ea8ba7c4000ea2e1b01d1ee702041cfdcbdfa52b3e268cc82c2d9062c49"
+        },
+        {
+          "path": "docs/architecture.md",
+          "url": "https://raw.githubusercontent.com/NVIDIA/auto-ontology/a630ebd97aa4b4410b2f41f5a8af06260af2f7b9/docs/architecture.md",
+          "bytes": 19425,
+          "sha256": "e51b3bfc76bbfec9f90968438403db46ed618bac9a41373f9ceb523302056ab4"
+        },
+        {
+          "path": "auto_ontology/ingestion_service/ingest.py",
+          "url": "https://raw.githubusercontent.com/NVIDIA/auto-ontology/a630ebd97aa4b4410b2f41f5a8af06260af2f7b9/auto_ontology/ingestion_service/ingest.py",
+          "bytes": 13851,
+          "sha256": "3714c3c5a2296a67c009e37cd857905df9dc51516c806cce552fe515fedfa193"
+        }
+      ],
+      "commit": "a630ebd97aa4b4410b2f41f5a8af06260af2f7b9",
+      "runtime_integration": "not_connected",
+      "review_level": "Selected pinned source inspection, not installation or execution",
+      "license": "Apache-2.0",
+      "input": "DB metadata, table values, keys and query history via connectors",
+      "output": "Postgres semantic catalog; Ossie YAML import/export",
+      "dependencies": "Python >=3.12,<3.14; Postgres/pgvector, connectors, model endpoints; see pinned pyproject",
+      "decision": "Do not install the full stack for bounded CSV onboarding. Keep generator interface separate from approvals. A future adapter must map semantic terms to our explicit field/policy contracts; no current RDF/SHACL converter implemented."
+    },
+    {
+      "repo": "fabio-rovai/open-ontologies",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/fabio-rovai/open-ontologies/1ed99ac1e20450faf5ad52c824232b054778e5e0/README.md",
+          "bytes": 32122,
+          "sha256": "d44986c3a1e0fca6c7f836ea8244e2ed023f31920100c4dd0bb7e24fc8adcc3d"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/fabio-rovai/open-ontologies/1ed99ac1e20450faf5ad52c824232b054778e5e0/LICENSE",
+          "bytes": 1068,
+          "sha256": "8aecab11d51f3cf7b43440859eb51e7a256f294a648a11b4ed224e9e91ce18bd"
+        },
+        {
+          "path": "Cargo.toml",
+          "url": "https://raw.githubusercontent.com/fabio-rovai/open-ontologies/1ed99ac1e20450faf5ad52c824232b054778e5e0/Cargo.toml",
+          "bytes": 8965,
+          "sha256": "4eebb1765474d393cb6e2fa3935fbfb2c004dea2b07db1c2658d5e10fb1cdfde"
+        },
+        {
+          "path": "src/ingest.rs",
+          "url": "https://raw.githubusercontent.com/fabio-rovai/open-ontologies/1ed99ac1e20450faf5ad52c824232b054778e5e0/src/ingest.rs",
+          "bytes": 25312,
+          "sha256": "cdc193efb6df1a1cb1e8496bba8fb596662819a382dc01c2ac093c760cba8152"
+        }
+      ],
+      "commit": "1ed99ac1e20450faf5ad52c824232b054778e5e0",
+      "runtime_integration": "not_connected",
+      "review_level": "Selected pinned source inspection, not installation or execution",
+      "license": "MIT",
+      "input": "Structured data parsing including CSV/JSON, mapping and ontology workflow",
+      "output": "Parsed rows and RDF/ontology tooling described upstream",
+      "dependencies": "Rust crate; see pinned Cargo.toml; no binary installed",
+      "decision": "Source ingestion inspected; retain our stricter bounded CSV parser and source locations. Future adapter may consume mapping proposals; no upstream reasoning/proof claims transferred to this demo."
+    }
+  ],
+  "paid_calls": 0,
+  "claims": "No external generator execution, effectiveness or full compatibility measured"
+}

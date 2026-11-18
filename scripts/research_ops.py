@@ -20,6 +20,13 @@ SPEC = ROOT / 'research/operations'
 WORK = ROOT / '_workspace/research-ops-codex'
 PHASES = ('plan', 'methods', 'implementation', 'synthesis', 'analysis')
 CHECKS = {
+    'workspace-tests': ['uv','run','--locked','python','-m','unittest','discover','-s','tests','-p','test_workspace*.py'],
+    'data-preparation-tests': ['uv','run','--locked','python','-m','unittest','discover','-s','tests','-p','test_preparation*.py'],
+    'factory-explanation-tests': ['uv','run','--locked','python','-m','unittest','discover','-s','tests','-p','test_factory_explanation.py'],
+    'factory-commerce-tests': ['uv','run','--locked','python','-m','unittest','discover','-s','tests','-p','test_factory_commerce.py'],
+    'factory-public-tests': ['uv','run','--locked','python','-m','unittest','discover','-s','tests','-p','test_factory_public.py'],
+    'query-contract-tests': ['uv','run','--locked','python','-m','unittest','discover','-s','tests','-p','test_query_contracts.py'],
+    'research-ops-tests': ['uv','run','--locked','python','-m','unittest','discover','-s','tests','-p','test_research_ops.py'],
     'factory-campaign-tests': ['uv','run','--locked','python','-m','unittest','discover','-s','tests','-p','test_factory_campaign.py'],
     'factory-complexity-tests': ['uv','run','--locked','python','-m','unittest','discover','-s','tests','-p','test_factory_complexity.py'],
     'factory-rdf-tests': ['uv','run','--locked','python','-m','unittest','discover','-s','tests','-p','test_factory_rdf.py'],

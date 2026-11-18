@@ -4,15 +4,18 @@ import json
 from .store import dumps
 from .review import review
 from .evidence import CONTRACT, canonical, model_evidence
+from . import coverage
 
 ARMS = ('self', 'python', 'shacl')
 
-def freeze_bundle(question, draft, evidence, system, snapshot_meta, previous_question=None, request_context=None):
+def freeze_bundle(question, draft, evidence, system, snapshot_meta, previous_question=None, request_context=None, *, review_targets=None):
     # JSON round trip detaches mutable tool result objects; no evaluator inputs.
     bundle = json.loads(dumps({'question': question, 'draft': draft, 'evidence': evidence,
         'system': system, 'snapshot': snapshot_meta,
         'previous_question_context_only': previous_question, 'request_context': request_context,
         'model_evidence_contract': CONTRACT}))
+    if review_targets is not None:
+        bundle.update(review_contract=coverage.CONTRACT, review_targets=json.loads(dumps(review_targets)))
     raw = dumps(bundle)
     return {'sha256': hashlib.sha256(raw.encode()).hexdigest(), 'bundle': bundle}
 
@@ -25,7 +28,11 @@ def final_packet(frozen, arm):
     contract = bundle.get('model_evidence_contract')
     if contract not in (None, CONTRACT):
         raise ValueError('Unsupported model evidence contract')
-    report = review(bundle['evidence'], arm)
+    review_contract = bundle.get('review_contract')
+    if review_contract not in (None, coverage.CONTRACT):
+        raise ValueError('Unsupported review contract')
+    report = (review(bundle['evidence'], arm) if review_contract is None else
+              coverage.review(bundle['evidence'], arm, bundle['review_targets'], bundle['snapshot']))
     # Engine identity stays in the audit event, not in the model prompt.
     normalized = {k: v for k, v in report.items() if k != 'engine'}
     payload = {k: bundle[k] for k in

@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "scope": "Authored consumed development diagnostics; exact mapping and unordered relationship expectations are evaluator annotations, not runtime inputs or certified truth. Policy semantics are retained for manual inspection, not scored.",
+  "cases": [
+    {
+      "id": "alias_context",
+      "files": [
+        {
+          "name": "export.csv",
+          "content": "order_no,order_status\nO1,paid\n"
+        }
+      ],
+      "expectations": {
+        "mappings": {
+          "export.csv:order_no": "orders.id",
+          "export.csv:order_status": "orders.status"
+        },
+        "required_relations": [],
+        "forbidden_relations": []
+      }
+    },
+    {
+      "id": "similar_not_same",
+      "files": [
+        {
+          "name": "export.csv",
+          "content": "refund_order_no,order_status\nR1,waiting\n"
+        },
+        {
+          "name": "dictionary.md",
+          "content": "refund_order_no is a refund request identifier, not an order identifier. order_status is the refund queue state, not the purchase status."
+        }
+      ],
+      "expectations": {
+        "mappings": {
+          "export.csv:refund_order_no": "",
+          "export.csv:order_status": ""
+        },
+        "required_relations": [],
+        "forbidden_relations": []
+      }
+    },
+    {
+      "id": "declared_nonstandard",
+      "files": [
+        {
+          "name": "purchases.csv",
+          "content": "purchase_ref,queue_state\nP1,paid\n"
+        },
+        {
+          "name": "parcels.csv",
+          "content": "parent_purchase,parcel_ref\nP1,S1\n"
+        },
+        {
+          "name": "dictionary.md",
+          "content": "purchases.csv purchase_ref identifies a purchase. parcels.csv parent_purchase references purchases.csv purchase_ref. parcel_ref identifies a parcel."
+        }
+      ],
+      "expectations": {
+        "mappings": {},
+        "required_relations": [
+          [
+            "parcels.csv:parent_purchase",
+            "purchases.csv:purchase_ref"
+          ]
+        ],
+        "forbidden_relations": []
+      }
+    },
+    {
+      "id": "declared_without_overlap",
+      "files": [
+        {
+          "name": "purchases.csv",
+          "content": "purchase_ref,queue_state\nP1,paid\n"
+        },
+        {
+          "name": "parcels.csv",
+          "content": "parent_purchase,parcel_ref\nP2,S1\n"
+        },
+        {
+          "name": "dictionary.md",
+          "content": "parcels.csv parent_purchase references purchases.csv purchase_ref. This export omits the referenced P2 purchase; retain this missing-reference issue for review."
+        }
+      ],
+      "expectations": {
+        "mappings": {},
+        "required_relations": [
+          [
+            "parcels.csv:parent_purchase",
+            "purchases.csv:purchase_ref"
+          ]
+        ],
+        "forbidden_relations": []
+      }
+    },
+    {
+      "id": "denied_overlap",
+      "files": [
+        {
+          "name": "orders.csv",
+          "content": "id,status\nX1,paid\n"
+        },
+        {
+          "name": "products.csv",
+          "content": "id,name,category\nX1,Shirt,clothing\n"
+        },
+        {
+          "name": "dictionary.md",
+          "content": "orders.csv id and products.csv id are unrelated identifiers. Their equal strings are coincidental. Do not interpret them as references to the same object."
+        }
+      ],
+      "expectations": {
+        "mappings": {},
+        "required_relations": [],
+        "forbidden_relations": [
+          [
+            "orders.csv:id",
+            "products.csv:id"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "policy_scope",
+      "files": [
+        {
+          "name": "rules.md",
+          "content": "무료배송은 5만원 이상 주문에 적용한다.\n\n2026-11-01부터 VIP 고객은 할인 후 3만원 이상 무료배송이다. 도서산간은 제외한다.\n\n2026-11-01부터 일반 고객은 할인 전 5만원 이상 무료배송이다."
+        }
+      ],
+      "expectations": {
+        "mappings": {},
+        "required_relations": [],
+        "forbidden_relations": []
+      }
+    }
+  ]
+}

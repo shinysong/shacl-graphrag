@@ -1,0 +1,6 @@
+# Bulk field approval preview
+Scope public_static/workspace.js previewDecisions only, existing targetControl/saveDecisions/decisionEditor dependencies. New modal shows selected sourcefile/column, readable target label, exact unsaved interpretation/note, first3 original values with physical positions, optional model-source disclosure. Missing target or blank raw-only meaning disables confirm, without writing state. Server validation unchanged. Original explicit confirm calls same saveDecisions and preserves unselected edits; Escape/back closes without saving. No autoapproval or model execution.
+Browser pending actual1440/390 missingmeaning gate, Escape no revision, exactmeaning/note literalHTML, selected-only approval and unselected edits. No new unit tests for UI mirroring; registered workspace-tests and research-ops-tests. Not general a11y/usability or semantic benchmark.
+Readonly independent methods/implementation review; inspect scoped source, no secrets, other reviews or historicalQA. Write only designated JSON.
+
+Fresh source after originalcf3539 blocker: modal now approval-preview class, scoped dd/td white-space pre-wrap preserves newlines/indentation without renderingHTML. v2 browser checks multiline storedmeaning and computedstyle. Review workspace.css scoped rule too. Original reviews retained.

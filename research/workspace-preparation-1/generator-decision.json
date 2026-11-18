@@ -1,0 +1,35 @@
+{
+  "decision": "Prefer restricted direct-model proposal adapter over installing external ontology stacks for this workspace",
+  "basis_record": "research/data-preparation-1/external-inspection-001.json",
+  "constraints": [
+    "Reuse bounded source parser and exact locators",
+    "Reuse explicit human review and immutable proposals",
+    "Do not execute model-generated queries or rules",
+    "No new infrastructure"
+  ],
+  "external_projects": {
+    "NVIDIA/auto-ontology": "Pinned selected-source inspection only; not installed or executed",
+    "fabio-rovai/open-ontologies": "Pinned selected-source inspection only; not installed or executed"
+  },
+  "implementation": "apps/factory_lab/preparation_model.py",
+  "integration_status": "Opt-in public workspace wiring implemented via --workspace-model-proposals and explicitly configured gateway; scripted transport and browser integration verified. Real-provider proposal quality remains unmeasured.",
+  "authorization": "No new paid call made or authorized by this implementation",
+  "limits": [
+    "Adapter accepts commerce only; default public workspace remains local vocabulary generator",
+    "Transport must be an explicitly authorized metered gateway; adapter does not create one",
+    "Prompt injection instruction separation is not proof of model robustness",
+    "Model proposal quality and cost unmeasured",
+    "Model accepts optional source-column relationship hypotheses (max32), including zero-overlap pairs. Hypotheses remain pending until explicit human review; source references do not establish semantic truth. Actual provider relation quality remains unmeasured.",
+    "Optional existing-relation assessments retain supported/contradicted/uncertain model judgments with source pointers and questions. They do not approve, remove or execute relations; pointer validity is not semantic entailment. Unassessed candidates remain unassessed.",
+    "Identical inspected sources and metadata preserve saved proposals and human edits without generator calls. Changed-source embedded decision history does not retain complete old model assessment evidence; retain the original revision/export."
+  ],
+  "integration_evidence": [
+    "apps/factory_lab/public_server.py:make_server",
+    "apps/factory_lab/workspace_service.py:model_suggestions path",
+    "tests/test_workspace_generation.py",
+    "tests/test_preparation_model.py",
+    "tests/test_preparation_model_relations.py",
+    "tests/test_preparation_assessment.py",
+    "tests/test_preparation_history.py"
+  ]
+}

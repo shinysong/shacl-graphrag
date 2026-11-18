@@ -1,0 +1,229 @@
+{
+  "revision": "data-preparation-001",
+  "scope": "Human-reviewed fixed-adapter CSV/policy onboarding; local lexical suggestions, actual local engines, template answers. No LLM efficacy measurement.",
+  "source_hashes": {
+    "apps/factory_lab/preparation.py": "b28f6ba85145c1a01bd9959551907c462bf8439bd599794ab156e4a2291969c6",
+    "apps/factory_lab/preparation_factory.py": "758584a7054a41ac93f38d60e6c958770b165400188a0e1ea015cd4ad9614964",
+    "apps/factory_lab/preparation_service.py": "97b60d766fbadb00cb7d089e714e0c54776e574785754dd43f74e985c25e2383",
+    "apps/factory_lab/preparation_sources.py": "af5938678b68d2fd55893e5d65f161b78bae41a28dd822ddafe58c6f6af5fc23",
+    "apps/factory_lab/public_server.py": "fc39c6032a640898a2036b7c54a3ad53f4d4b9f72b5aee02bfab14728f248376",
+    "apps/factory_lab/public_static/prepare.css": "f0f8fb1fbf5fb6b953517ce49a57c2045c83cc3c4ca3c61fee04afb56f185abd",
+    "apps/factory_lab/public_static/prepare.html": "b71419f33f5d98f26779b985cfe18801d56dc461aac8bd46ea42bdaff1119a65",
+    "apps/factory_lab/public_static/prepare.js": "9637d9e7cd05d04eea5efd55bd605f81ef89ea8df6cc9e0820fd834ff79ab361",
+    "docs/setup/data-preparation.md": "e7a9664424f70bdbec293b6cb2ce5b3a42f158d1016fdd2944239c69b3bd8375",
+    "examples/data_preparation/commerce/approvals.csv": "b95afd25761daca9a358322710b49111682b503dcb9e759e1426a026511b3416",
+    "examples/data_preparation/commerce/cases.csv": "02dbe048bdd104c3d12943773c54a209080dd0341a0603e9e0f6e5c7b147c5e7",
+    "examples/data_preparation/commerce/consents.csv": "4cf51e1adcb9a2b879c19dc5634c67e045f5d6ae83c69efd846ed42b6fbeccc9",
+    "examples/data_preparation/commerce/coupons.csv": "3bc09b2c842f1a4816faa326416b93db1d55f91f3527e425222e0889534a11e5",
+    "examples/data_preparation/commerce/items.csv": "90540fb278f67a7bff481c66c64226948beb91f3d865fdcf865abea72a3d60ce",
+    "examples/data_preparation/commerce/orders.csv": "6831d6ee4ea79fd1cfb51816b81233330fae2f759b6b6552506feb7b7b6ad336",
+    "examples/data_preparation/commerce/policies.md": "4825227f72dd0aa15e3e90238ca2bb4ca3cbd9de0aba1478a07729104a99965b",
+    "examples/data_preparation/commerce/products.csv": "8adcb9e634f4d6520a60920776bffcc154f12cd85515979a969d25ef667fc682",
+    "examples/data_preparation/commerce/shipping_policies.csv": "b776bb7f27b014dd2ecd0fbfec92f17167cec7aa189170b213f12c42f4db2ce9",
+    "examples/data_preparation/commerce/skus.csv": "46f9df9cc9565485a4cb67c68453fb4302d619b1709ad368660a676a67b40f0f",
+    "examples/data_preparation/commerce/snapshot.json": "302b0f84594cea6a1fd3fb2827152c7e0126cc28f06ce69b5d60dce0e071aa87",
+    "examples/data_preparation/factory/capabilities.csv": "158b00f63d9f9cefa718c6baefd5ce28954daddc8c7dc37a443e57c16a59bc00",
+    "examples/data_preparation/factory/cases.csv": "45f1ee6f15fd92ed7459223225a7d6896e49fe7cd329a81280249f6e4b1fe4c9",
+    "examples/data_preparation/factory/links.csv": "92cba875427d735bd30d41af1c4f59ac851c2ecba8ddc99513f314f979fce59a",
+    "examples/data_preparation/factory/machines.csv": "3e88fae70b7cd79cc1e94768ed3305f99175adc80280fab9bb2920887ac7fa40",
+    "examples/data_preparation/factory/orders.csv": "9b8d064e1b97e4ccdc52913b9bb0e87a90bcef75336c54b291f3692b970eea9a",
+    "examples/data_preparation/factory/policies.md": "fd3dfc5c4319843a4012d6a97b6b8d28c8968e1d62a641f85e87ceff1d14d96c",
+    "examples/data_preparation/factory/qualifications.csv": "ec17df9f8956efd37927d7637fa66df374df9305a04f177cded75c0045f5069b",
+    "examples/data_preparation/factory/snapshot.json": "2de38b8caa262a77230bb9372dd4fa150c9feab112c5bc13e09eafab33cd2d55",
+    "tests/test_preparation.py": "8be1382e168c36b78a6948bc0621312fe86d6f35d4824755515ca400bc026e06",
+    "tests/test_preparation_history.py": "696c597de70dea25f1c0781ae5b48dee1789e205e369bd99860615f756d44c03",
+    "tests/test_preparation_http.py": "9f54dedd620abfada98fa79dab28ed2ffe874855620b8c21e70dc91a377c4f80",
+    "tests/test_preparation_sources.py": "1edd99694b2465956699b15ab6246c6b1e3e84ce0a3da0ef292f7f7c97a1c859"
+  },
+  "native_review_job": "20261117T081153Z-data-preparation-be29e1",
+  "checks": {
+    "check-data-preparation-tests": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_preparation*.py"
+      ],
+      "exit_code": 0,
+      "scope": "local software check; not a benchmark"
+    },
+    "check-factory-public-tests": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_factory_public.py"
+      ],
+      "exit_code": 0,
+      "scope": "local software check; not a benchmark"
+    },
+    "check-factory-commerce-tests": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_factory_commerce.py"
+      ],
+      "exit_code": 0,
+      "scope": "local software check; not a benchmark"
+    },
+    "check-factory-explanation-tests": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_factory_explanation.py"
+      ],
+      "exit_code": 0,
+      "scope": "local software check; not a benchmark"
+    },
+    "check-research-ops-tests": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_research_ops.py"
+      ],
+      "exit_code": 0,
+      "scope": "local software check; not a benchmark"
+    }
+  },
+  "test_counts": {
+    "data_preparation": 24,
+    "public": 11,
+    "commerce": 7,
+    "explanation": 9,
+    "operations": 24
+  },
+  "browser": [
+    {
+      "domain": "commerce",
+      "width": 1440,
+      "theme": "light",
+      "actual_review_download_import_execute": true,
+      "no_overflow": true,
+      "no_external_requests": true,
+      "paid_calls": 0,
+      "scope_candidates_visible_and_saved": true,
+      "bom_crlf_hash": true,
+      "session_recovery": true,
+      "failed_execution_clears_result": true
+    },
+    {
+      "domain": "commerce",
+      "width": 390,
+      "theme": "dark",
+      "actual_review_download_import_execute": true,
+      "no_overflow": true,
+      "no_external_requests": true,
+      "paid_calls": 0,
+      "scope_candidates_visible_and_saved": true,
+      "bom_crlf_hash": true,
+      "session_recovery": true,
+      "failed_execution_clears_result": true
+    },
+    {
+      "domain": "factory",
+      "width": 1440,
+      "theme": "light",
+      "actual_review_download_import_execute": true,
+      "no_overflow": true,
+      "no_external_requests": true,
+      "paid_calls": 0,
+      "scope_candidates_visible_and_saved": true,
+      "bom_crlf_hash": true,
+      "session_recovery": true,
+      "failed_execution_clears_result": true
+    },
+    {
+      "domain": "factory",
+      "width": 390,
+      "theme": "dark",
+      "actual_review_download_import_execute": true,
+      "no_overflow": true,
+      "no_external_requests": true,
+      "paid_calls": 0,
+      "scope_candidates_visible_and_saved": true,
+      "bom_crlf_hash": true,
+      "session_recovery": true,
+      "failed_execution_clears_result": true
+    }
+  ],
+  "docs_browser": [
+    {
+      "width": 1440,
+      "theme": "light",
+      "mermaid_svg": 1,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mermaid_svg": 1,
+      "overflow": false
+    }
+  ],
+  "builds": {
+    "mkdocs_strict_exit": 0,
+    "chirpy_exit": 0,
+    "preserved_pages": 193
+  },
+  "historical_baseline_files_unchanged": 506,
+  "paid_calls": 0,
+  "AWS_operations": 0,
+  "external_inspection": "research/data-preparation-1/external-inspection-001.json",
+  "external_integration_executed": false,
+  "screenshots": {
+    "prepare-factory-1440-light.png": "410bcc911a44fc84cf713211659c3fa331d595a4c428fb7c05aef5f5d05d2fad",
+    "prepare-factory-390-dark.png": "08e82d18863cef9d28aac2cbbb425179ad3ebcc797c4e3ce5018257a12446ac6",
+    "prepare-commerce-1440-light.png": "f64641c5d63b86c71fe9f5f09d53e5379a68c209734f1714eea7c5719e21dec9",
+    "prepare-390-dark.png": "de86f9e6d32f419e8261a1393905c6266f2a6501093b75a23e01954d0f971a51",
+    "prepare-1440-light.png": "bc087f80a9f590786e512046ead50d69ccb53c53366f6d9a995fce7a6df8d224",
+    "prepare-commerce-390-dark.png": "b64af6e7135d36f36f6deeaf5239b9fa3df0f507f234affa5985f26f4a3a8d6b"
+  },
+  "limitations": [
+    "Only declared commerce/factory schemas; one CSV per collection, no arbitrary joins.",
+    "Local exact-name and lexical candidates; human approval does not prove policy completeness or truth.",
+    "OWL axioms and SHACL/computed-feature contracts authored in adapters, not automatically compiled from prose.",
+    "Source hashes and review history are not signatures or reviewer authentication.",
+    "Sessions are memory-only until approved bundle export; server restart loses unfinished drafts.",
+    "DB connections, PDF/OCR, arbitrary domains and real model generation are not implemented.",
+    "Peak resource use and production performance unmeasured."
+  ],
+  "prior_failures": "Original independent revise reviews retained. BOM harness initially doubled CRLF; fixed fixture normalization. One final browser attempt timed out waiting for download without enough error evidence; subsequent unchanged-source runs passed with HTTP error capture. Deliberate missing-case 400 responses test result invalidation, not hidden failures."
+}

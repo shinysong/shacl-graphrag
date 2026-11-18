@@ -1,0 +1,151 @@
+{
+  "revision": "commerce-admin-demo-001",
+  "scope": "Authored diagnostic with actual local RDF/SHACL/OWL and template answer; no LLM measurement or order mutation",
+  "source_hashes": {
+    "apps/factory_lab/commerce.py": "cfec48436161dd53bdbdca25e1a2215dfa8946aa43c1daa78b042438fa936817",
+    "apps/factory_lab/public_server.py": "06cf1adb5a19b8f0c6ed76a6a6644aa833b4759a50dcc4c65c94a9a049872c92",
+    "apps/factory_lab/public_static/app.js": "779875697f2f18d47ba6fe4aa2ca29acc73b1946030cdffce9403f9016cc39e9",
+    "apps/factory_lab/public_static/index.html": "8d96f55b1a2982f979b928d437071d74f811a64d24fbd7160742f70d907107ce",
+    "examples/commerce_lab/shop.json": "cc918723d50c793fc646ac3efc9debf47d2323dfb81bbd63b06cb216e8348d64",
+    "tests/test_factory_commerce.py": "a4b0f7830bebf99a98b7f1a774d6b08e7d91cda063df23041b58a5e0fe2b1eff"
+  },
+  "data_contract": "docs/setup/commerce-data.md",
+  "checks": {
+    "check-factory-commerce-tests": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_factory_commerce.py"
+      ],
+      "exit_code": 0,
+      "scope": "local software check; not a benchmark"
+    },
+    "check-factory-public-tests": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_factory_public.py"
+      ],
+      "exit_code": 0,
+      "scope": "local software check; not a benchmark"
+    },
+    "check-factory-explanation-tests": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_factory_explanation.py"
+      ],
+      "exit_code": 0,
+      "scope": "local software check; not a benchmark"
+    },
+    "check-research-ops-tests": {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_research_ops.py"
+      ],
+      "exit_code": 0,
+      "scope": "local software check; not a benchmark"
+    }
+  },
+  "browser": [
+    {
+      "width": 1440,
+      "theme": "light",
+      "commerce_cases": 3,
+      "manufacturing_preserved": true,
+      "graph_collapsed_then_rendered": true,
+      "export_equals_response": true,
+      "no_external_requests": true,
+      "no_overflow": true,
+      "paid_calls": 0
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "commerce_cases": 3,
+      "manufacturing_preserved": true,
+      "graph_collapsed_then_rendered": true,
+      "export_equals_response": true,
+      "no_external_requests": true,
+      "no_overflow": true,
+      "paid_calls": 0
+    }
+  ],
+  "docs_browser": [
+    {
+      "width": 1440,
+      "theme": "light",
+      "mermaid_svg": 1,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "mermaid_svg": 1,
+      "overflow": false
+    }
+  ],
+  "builds": {
+    "mkdocs_strict_exit": 0,
+    "chirpy_exit": 0,
+    "preserved_pages_checked": 192
+  },
+  "preserved_baseline_files": 506,
+  "paid_calls": 0,
+  "native_review_job": "20261117T064717Z-commerce-lab-28bcb4",
+  "limitations": [
+    "Only single seller/warehouse KRW snapshots.",
+    "Consent/approval collections assumed snapshot-complete.",
+    "Shared computed features feed Python and SHACL; not RDF superiority.",
+    "No natural-language plan extraction or new model answer.",
+    "OWL class closure is authored and separate from coupon eligibility.",
+    "No production load/latency claim."
+  ],
+  "cases": [
+    "approval",
+    "ready",
+    "unknown"
+  ],
+  "input_verified": [
+    "required fields/types",
+    "ID uniqueness and references",
+    "canonical calendar dates",
+    "nonnegative integer money/stock",
+    "custom-file HTTP startup",
+    "invalid inputs rejected"
+  ],
+  "prior_attempts": "Initial review blockers retained; first two browser harness attempts failed on collapsed-panel access and asynchronous canvas wait, corrected without hiding failures."
+}

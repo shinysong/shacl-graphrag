@@ -1,0 +1,1404 @@
+{
+  "scope": "Author-seen exact tool-ID diagnostic; supplied decomposition; no final-answer accuracy",
+  "status": "completed",
+  "slot_statuses": {
+    "completed": 32
+  },
+  "budget": {
+    "attempts": 32,
+    "reserved_nonrefunded_usd": "3.5458150",
+    "reported_usd": "0.251945925",
+    "unresolved": 0
+  },
+  "groups": [
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "cohort": "primary",
+      "slots": 6,
+      "completed": 6,
+      "planned_tasks": 16,
+      "scored_tasks": 16,
+      "agreement": 12,
+      "wrong_tool": 0,
+      "unnecessary_null": 1,
+      "correct_null": 3,
+      "required_tool_missing": 1,
+      "query_calls": 24,
+      "raw_execution_failed": 0,
+      "checked_rejections": 0
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "cohort": "repeat",
+      "slots": 2,
+      "completed": 2,
+      "planned_tasks": 6,
+      "scored_tasks": 6,
+      "agreement": 4,
+      "wrong_tool": 0,
+      "unnecessary_null": 0,
+      "correct_null": 2,
+      "required_tool_missing": 0,
+      "query_calls": 4,
+      "raw_execution_failed": 0,
+      "checked_rejections": 0
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "cohort": "primary",
+      "slots": 6,
+      "completed": 6,
+      "planned_tasks": 16,
+      "scored_tasks": 16,
+      "agreement": 12,
+      "wrong_tool": 0,
+      "unnecessary_null": 1,
+      "correct_null": 3,
+      "required_tool_missing": 1,
+      "query_calls": 24,
+      "raw_execution_failed": 0,
+      "checked_rejections": 0
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "cohort": "repeat",
+      "slots": 2,
+      "completed": 2,
+      "planned_tasks": 6,
+      "scored_tasks": 6,
+      "agreement": 4,
+      "wrong_tool": 0,
+      "unnecessary_null": 0,
+      "correct_null": 2,
+      "required_tool_missing": 0,
+      "query_calls": 8,
+      "raw_execution_failed": 0,
+      "checked_rejections": 0
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "cohort": "repeat",
+      "slots": 2,
+      "completed": 2,
+      "planned_tasks": 6,
+      "scored_tasks": 6,
+      "agreement": 4,
+      "wrong_tool": 0,
+      "unnecessary_null": 0,
+      "correct_null": 2,
+      "required_tool_missing": 0,
+      "query_calls": 4,
+      "raw_execution_failed": 0,
+      "checked_rejections": 0
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "cohort": "primary",
+      "slots": 6,
+      "completed": 6,
+      "planned_tasks": 16,
+      "scored_tasks": 16,
+      "agreement": 13,
+      "wrong_tool": 0,
+      "unnecessary_null": 0,
+      "correct_null": 3,
+      "required_tool_missing": 0,
+      "query_calls": 15,
+      "raw_execution_failed": 0,
+      "checked_rejections": 0
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "cohort": "primary",
+      "slots": 6,
+      "completed": 6,
+      "planned_tasks": 16,
+      "scored_tasks": 16,
+      "agreement": 13,
+      "wrong_tool": 0,
+      "unnecessary_null": 0,
+      "correct_null": 3,
+      "required_tool_missing": 0,
+      "query_calls": 15,
+      "raw_execution_failed": 0,
+      "checked_rejections": 0
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "cohort": "repeat",
+      "slots": 2,
+      "completed": 2,
+      "planned_tasks": 6,
+      "scored_tasks": 6,
+      "agreement": 4,
+      "wrong_tool": 0,
+      "unnecessary_null": 0,
+      "correct_null": 2,
+      "required_tool_missing": 0,
+      "query_calls": 8,
+      "raw_execution_failed": 0,
+      "checked_rejections": 0
+    }
+  ],
+  "rows": [
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m02",
+      "repeat": 0,
+      "task": "active",
+      "selected": "current_qualification_records",
+      "accepted": [
+        "current_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Provides qualification records valid on the snapshot date for the specified machine."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m02",
+      "repeat": 0,
+      "task": "past",
+      "selected": "expired_qualification_records",
+      "accepted": [
+        "expired_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Provides qualification records expired before the snapshot date for the specified machine."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m02",
+      "repeat": 0,
+      "task": "proof",
+      "selected": null,
+      "accepted": [],
+      "category": "correct_null",
+      "required_tool_missing": false,
+      "reason": "No presented tool establishes physical approval or document authenticity."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m01",
+      "repeat": 1,
+      "task": "assignment",
+      "selected": "assigned_machines",
+      "accepted": [
+        "assigned_machines"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Directly queries the machines currently assigned to the specified OrderId (O18)."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m01",
+      "repeat": 1,
+      "task": "alternative",
+      "selected": "replacement_candidates",
+      "accepted": [
+        "replacement_candidates"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Finds candidate machines possessing the required capability for the specified OrderId (O18)."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m01",
+      "repeat": 1,
+      "task": "deadline",
+      "selected": null,
+      "accepted": [],
+      "category": "correct_null",
+      "required_tool_missing": false,
+      "reason": "No presented tool evaluates schedule, machine load, or delivery deadline feasibility; impacted_orders only lists assigned orders and explicitly does not establish delivery feasibility."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m01",
+      "repeat": 0,
+      "task": "assignment",
+      "selected": "assigned_machines",
+      "accepted": [
+        "assigned_machines"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Directly retrieves the machines currently assigned to the specified order O18."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m01",
+      "repeat": 0,
+      "task": "alternative",
+      "selected": "replacement_candidates",
+      "accepted": [
+        "replacement_candidates"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Retrieves candidate machines matching the required capability for order O18."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m01",
+      "repeat": 0,
+      "task": "deadline",
+      "selected": null,
+      "accepted": [],
+      "category": "correct_null",
+      "required_tool_missing": false,
+      "reason": "No presented tool provides schedule, machine load, or delivery feasibility evidence."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m06",
+      "repeat": 0,
+      "task": "candidates",
+      "selected": "replacement_candidates",
+      "accepted": [
+        "replacement_candidates"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Finds machines capable of fulfilling the required capability for order O18."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m06",
+      "repeat": 0,
+      "task": "all_records",
+      "selected": null,
+      "accepted": [
+        "qualification_records"
+      ],
+      "category": "unnecessary_null",
+      "required_tool_missing": true,
+      "reason": "No single presented tool in the task catalog retrieves both current and past qualification records together."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m06",
+      "repeat": 0,
+      "task": "capacity",
+      "selected": null,
+      "accepted": [],
+      "category": "correct_null",
+      "required_tool_missing": false,
+      "reason": "No presented tool provides machine schedule, current load, or available capacity."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m02",
+      "repeat": 1,
+      "task": "active",
+      "selected": "current_qualification_records",
+      "accepted": [
+        "current_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "기준일 현재 유효기간 안에 있는 설비(MachineId)의 자격 기록을 직접 조회하는 전용 도구입니다."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m02",
+      "repeat": 1,
+      "task": "past",
+      "selected": "expired_qualification_records",
+      "accepted": [
+        "expired_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "기준일 이전에 만료된 설비(MachineId)의 과거 자격 기록을 분리하여 조회하는 전용 도구입니다."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m02",
+      "repeat": 1,
+      "task": "proof",
+      "selected": null,
+      "accepted": [],
+      "category": "correct_null",
+      "required_tool_missing": false,
+      "reason": "제시된 자격 조회 도구들은 문서 진위 확인(renewal_document_authenticity/renewal_authenticity)을 보증하지 않으며, 승인 문서 진위를 확인하는 도구가 카탈로그에 없습니다."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m04",
+      "repeat": 0,
+      "task": "allocated",
+      "selected": "assigned_machines",
+      "accepted": [
+        "assigned_machines"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "주문에 현재 배정된 설비를 조회하며 OrderId 입력과 machine.id 출력을 제공한다."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m04",
+      "repeat": 0,
+      "task": "records",
+      "selected": "qualification_records",
+      "accepted": [
+        "qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "기준일 유효기간으로 필터링하는 current_qualification_records와 달리, 설비에 연결된 선택된 자격 기록을 유효기간 필터 없이 조회한다."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m02",
+      "repeat": 1,
+      "task": "active",
+      "selected": "current_qualification_records",
+      "accepted": [
+        "current_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "기준일 현재 유효기간 안에 있는 자격 기록을 조회하는 전용 고정 질의입니다."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m02",
+      "repeat": 1,
+      "task": "past",
+      "selected": "expired_qualification_records",
+      "accepted": [
+        "expired_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "기준일 이전에 만료된 과거 자격 기록만 분리하여 조회하는 전용 고정 질의입니다."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m02",
+      "repeat": 1,
+      "task": "proof",
+      "selected": null,
+      "accepted": [],
+      "category": "correct_null",
+      "required_tool_missing": false,
+      "reason": "제공된 모든 자격 기록 도구는 승인 및 갱신 문서의 진위(authenticity)를 입증하지 않으며, 문서 진위 확인 서비스가 제공 범위에 없습니다."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m02",
+      "repeat": 1,
+      "task": "active",
+      "selected": "current_qualification_records",
+      "accepted": [
+        "current_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Selects qualification records for a machine that are valid on the snapshot date."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m02",
+      "repeat": 1,
+      "task": "past",
+      "selected": "expired_qualification_records",
+      "accepted": [
+        "expired_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Selects qualification records for a machine that expired before the snapshot date."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m02",
+      "repeat": 1,
+      "task": "proof",
+      "selected": null,
+      "accepted": [],
+      "category": "correct_null",
+      "required_tool_missing": false,
+      "reason": "No presented tool verifies approval or renewal document authenticity."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m03",
+      "repeat": 0,
+      "task": "affected",
+      "selected": "impacted_orders",
+      "accepted": [
+        "impacted_orders"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Finds orders directly assigned to machine M04 using machine_id input."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m03",
+      "repeat": 0,
+      "task": "substitutes",
+      "selected": "replacement_candidates",
+      "accepted": [
+        "replacement_candidates"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Finds machine candidates with the required capability for each order_id from the affected step."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m05",
+      "repeat": 0,
+      "task": "expired",
+      "selected": "expired_qualification_records",
+      "accepted": [
+        "expired_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Selects qualification records for the machine that expired before the snapshot date."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m05",
+      "repeat": 0,
+      "task": "valid",
+      "selected": "current_qualification_records",
+      "accepted": [
+        "current_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Selects qualification records for the machine that are valid on the snapshot date."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m05",
+      "repeat": 0,
+      "task": "orders",
+      "selected": "impacted_orders",
+      "accepted": [
+        "impacted_orders"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Takes machine_id and returns orders assigned to that machine."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m04",
+      "repeat": 0,
+      "task": "allocated",
+      "selected": "assigned_machines",
+      "accepted": [
+        "assigned_machines"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Queries current machines assigned to order O19."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m04",
+      "repeat": 0,
+      "task": "records",
+      "selected": "qualification_records",
+      "accepted": [
+        "qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Queries all selected qualification records for the assigned machine without validity-date filtering."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m03",
+      "repeat": 0,
+      "task": "affected",
+      "selected": "impacted_orders",
+      "accepted": [
+        "impacted_orders"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "설비 ID(M04)를 입력받아 해당 설비에 직접 배정된 영향 주문 목록을 조회하는 고정 쿼리입니다."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m03",
+      "repeat": 0,
+      "task": "substitutes",
+      "selected": "replacement_candidates",
+      "accepted": [
+        "replacement_candidates"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "선행 단계에서 도출된 주문 ID별로 요구 역량을 갖춘 대체 설비 후보를 조회하며, 자격 유효성이나 일정 가용성, 최종 승인을 확정하지 않는 후보 수준에 부합합니다."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m02",
+      "repeat": 1,
+      "task": "active",
+      "selected": "current_qualification_records",
+      "accepted": [
+        "current_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Provides qualification records valid on the snapshot date for the specified machine."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m02",
+      "repeat": 1,
+      "task": "past",
+      "selected": "expired_qualification_records",
+      "accepted": [
+        "expired_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Provides qualification records expired before the snapshot date for the specified machine."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m02",
+      "repeat": 1,
+      "task": "proof",
+      "selected": null,
+      "accepted": [],
+      "category": "correct_null",
+      "required_tool_missing": false,
+      "reason": "No presented tool establishes physical approval or document authenticity."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m02",
+      "repeat": 0,
+      "task": "active",
+      "selected": "current_qualification_records",
+      "accepted": [
+        "current_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "기준일 현재 유효기간 안에 있는 자격 기록을 조회하는 전용 고정 질의입니다."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m02",
+      "repeat": 0,
+      "task": "past",
+      "selected": "expired_qualification_records",
+      "accepted": [
+        "expired_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "기준일 이전에 만료된 과거 자격 기록만 분리하여 조회하는 전용 고정 질의입니다."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m02",
+      "repeat": 0,
+      "task": "proof",
+      "selected": null,
+      "accepted": [],
+      "category": "correct_null",
+      "required_tool_missing": false,
+      "reason": "제공된 모든 자격 기록 도구는 승인 및 갱신 문서의 진위(authenticity)를 입증하지 않으며, 문서 진위 확인 서비스가 제공 범위에 없습니다."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m03",
+      "repeat": 0,
+      "task": "affected",
+      "selected": "impacted_orders",
+      "accepted": [
+        "impacted_orders"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Finds orders directly assigned to the specified machine_id (M04) and outputs order.id for downstream binding, while noting it does not establish impact list completeness."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m03",
+      "repeat": 0,
+      "task": "substitutes",
+      "selected": "replacement_candidates",
+      "accepted": [
+        "replacement_candidates"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Finds candidate machines capable of the required capability for each bound order_id, without establishing qualification applicability, schedule availability, or physical approval."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m03",
+      "repeat": 0,
+      "task": "affected",
+      "selected": "impacted_orders",
+      "accepted": [
+        "impacted_orders"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Takes a MachineId (M04) and returns orders directly assigned to that machine along with order.id."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m03",
+      "repeat": 0,
+      "task": "substitutes",
+      "selected": "replacement_candidates",
+      "accepted": [
+        "replacement_candidates"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Takes an OrderId from the affected step and returns machines capable of the order's required capability."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m05",
+      "repeat": 0,
+      "task": "expired",
+      "selected": "expired_qualification_records",
+      "accepted": [
+        "expired_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Selects qualification records for the bound MachineId that expired before the snapshot date."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m05",
+      "repeat": 0,
+      "task": "valid",
+      "selected": "current_qualification_records",
+      "accepted": [
+        "current_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Selects qualification records for the bound MachineId that are date-valid on the snapshot date without claiming physical approval."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m05",
+      "repeat": 0,
+      "task": "orders",
+      "selected": "impacted_orders",
+      "accepted": [
+        "impacted_orders"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Accepts MachineId and returns orders directly assigned to that machine; other presented tools require OrderId."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m01",
+      "repeat": 1,
+      "task": "assignment",
+      "selected": "assigned_machines",
+      "accepted": [
+        "assigned_machines"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Directly retrieves the machines currently assigned to the specified order O18."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m01",
+      "repeat": 1,
+      "task": "alternative",
+      "selected": "replacement_candidates",
+      "accepted": [
+        "replacement_candidates"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Retrieves candidate machines matching the required capability for order O18."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m01",
+      "repeat": 1,
+      "task": "deadline",
+      "selected": null,
+      "accepted": [],
+      "category": "correct_null",
+      "required_tool_missing": false,
+      "reason": "No presented tool provides schedule, machine load, or delivery feasibility evidence."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m05",
+      "repeat": 0,
+      "task": "expired",
+      "selected": "expired_qualification_records",
+      "accepted": [
+        "expired_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Provides qualification records for a machine that expired before the snapshot date."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m05",
+      "repeat": 0,
+      "task": "valid",
+      "selected": "current_qualification_records",
+      "accepted": [
+        "current_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Provides qualification records for a machine that are valid on the snapshot date."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m05",
+      "repeat": 0,
+      "task": "orders",
+      "selected": "impacted_orders",
+      "accepted": [
+        "impacted_orders"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Provides orders assigned to the specified machine."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m01",
+      "repeat": 0,
+      "task": "assignment",
+      "selected": "assigned_machines",
+      "accepted": [
+        "assigned_machines"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Provides current assigned machines for order O18."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m01",
+      "repeat": 0,
+      "task": "alternative",
+      "selected": "replacement_candidates",
+      "accepted": [
+        "replacement_candidates"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Provides machines with the required capability for order O18."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m01",
+      "repeat": 0,
+      "task": "deadline",
+      "selected": null,
+      "accepted": [],
+      "category": "correct_null",
+      "required_tool_missing": false,
+      "reason": "No presented tool provides schedule, load, or delivery feasibility evidence."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m01",
+      "repeat": 1,
+      "task": "assignment",
+      "selected": "assigned_machines",
+      "accepted": [
+        "assigned_machines"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Provides current assigned machines for order O18."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m01",
+      "repeat": 1,
+      "task": "alternative",
+      "selected": "replacement_candidates",
+      "accepted": [
+        "replacement_candidates"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Provides machines with the required capability for order O18."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m01",
+      "repeat": 1,
+      "task": "deadline",
+      "selected": null,
+      "accepted": [],
+      "category": "correct_null",
+      "required_tool_missing": false,
+      "reason": "No presented tool provides schedule, load, or delivery feasibility evidence."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m05",
+      "repeat": 0,
+      "task": "expired",
+      "selected": "expired_qualification_records",
+      "accepted": [
+        "expired_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Provides qualification records for a machine that expired before the snapshot date (`date_expired_qualification_records`), directly matching the temporal scope."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m05",
+      "repeat": 0,
+      "task": "valid",
+      "selected": "current_qualification_records",
+      "accepted": [
+        "current_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Provides qualification records for a machine valid on the snapshot date (`date_current_qualification_records`), directly matching the date-valid scope without implying physical approval."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m05",
+      "repeat": 0,
+      "task": "orders",
+      "selected": "impacted_orders",
+      "accepted": [
+        "impacted_orders"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Takes a `machine_id` and returns orders directly assigned to that machine (`assigned_orders` via `ASSIGNED_TO`)."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m01",
+      "repeat": 0,
+      "task": "assignment",
+      "selected": "assigned_machines",
+      "accepted": [
+        "assigned_machines"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Directly queries the machines currently assigned to the specified OrderId (O18)."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m01",
+      "repeat": 0,
+      "task": "alternative",
+      "selected": "replacement_candidates",
+      "accepted": [
+        "replacement_candidates"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Finds candidate machines possessing the required capability for the specified OrderId (O18)."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m01",
+      "repeat": 0,
+      "task": "deadline",
+      "selected": null,
+      "accepted": [],
+      "category": "correct_null",
+      "required_tool_missing": false,
+      "reason": "No presented tool evaluates schedule, machine load, or delivery deadline feasibility; impacted_orders only lists assigned orders and explicitly does not establish delivery feasibility."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m01",
+      "repeat": 1,
+      "task": "assignment",
+      "selected": "assigned_machines",
+      "accepted": [
+        "assigned_machines"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Queries current assigned machines for order O18."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m01",
+      "repeat": 1,
+      "task": "alternative",
+      "selected": "replacement_candidates",
+      "accepted": [
+        "replacement_candidates"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Queries machines with the required capability for order O18."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m01",
+      "repeat": 1,
+      "task": "deadline",
+      "selected": null,
+      "accepted": [],
+      "category": "correct_null",
+      "required_tool_missing": false,
+      "reason": "No presented tool provides schedule, load, or delivery feasibility evidence."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m06",
+      "repeat": 0,
+      "task": "candidates",
+      "selected": "replacement_candidates",
+      "accepted": [
+        "replacement_candidates"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Finds machines with capabilities matching the required capability of order O18."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m06",
+      "repeat": 0,
+      "task": "all_records",
+      "selected": "qualification_records",
+      "accepted": [
+        "qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Retrieves qualification records for each candidate machine without filtering to only current or only expired records."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m06",
+      "repeat": 0,
+      "task": "capacity",
+      "selected": null,
+      "accepted": [],
+      "category": "correct_null",
+      "required_tool_missing": false,
+      "reason": "No presented tool provides machine schedule, current load, or available slack time."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m06",
+      "repeat": 0,
+      "task": "candidates",
+      "selected": "replacement_candidates",
+      "accepted": [
+        "replacement_candidates"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Finds candidate machines linked to the required capability of order O18 via REQUIRES and CAPABLE_OF relations."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m06",
+      "repeat": 0,
+      "task": "all_records",
+      "selected": "qualification_records",
+      "accepted": [
+        "qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Retrieves all selected qualification records for a machine without filtering out current or expired entries, matching the request for both current and past records."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m06",
+      "repeat": 0,
+      "task": "capacity",
+      "selected": null,
+      "accepted": [],
+      "category": "correct_null",
+      "required_tool_missing": false,
+      "reason": "No presented tool provides machine schedule, current load, or available capacity information."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m02",
+      "repeat": 0,
+      "task": "active",
+      "selected": "current_qualification_records",
+      "accepted": [
+        "current_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "기준일 현재 유효기간 안에 있는 설비(MachineId)의 자격 기록을 직접 조회하는 전용 도구입니다."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m02",
+      "repeat": 0,
+      "task": "past",
+      "selected": "expired_qualification_records",
+      "accepted": [
+        "expired_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "기준일 이전에 만료된 설비(MachineId)의 과거 자격 기록을 분리하여 조회하는 전용 도구입니다."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m02",
+      "repeat": 0,
+      "task": "proof",
+      "selected": null,
+      "accepted": [],
+      "category": "correct_null",
+      "required_tool_missing": false,
+      "reason": "제시된 자격 조회 도구들은 문서 진위 확인(renewal_document_authenticity/renewal_authenticity)을 보증하지 않으며, 승인 문서 진위를 확인하는 도구가 카탈로그에 없습니다."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m06",
+      "repeat": 0,
+      "task": "candidates",
+      "selected": "replacement_candidates",
+      "accepted": [
+        "replacement_candidates"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Finds candidate machines matching the order's required capability for an OrderId input."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m06",
+      "repeat": 0,
+      "task": "all_records",
+      "selected": null,
+      "accepted": [
+        "qualification_records"
+      ],
+      "category": "unnecessary_null",
+      "required_tool_missing": true,
+      "reason": "No single presented tool in this task's catalog returns both current and past qualification records; the available options only filter strictly to current or strictly to expired records."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m06",
+      "repeat": 0,
+      "task": "capacity",
+      "selected": null,
+      "accepted": [],
+      "category": "correct_null",
+      "required_tool_missing": false,
+      "reason": "No presented tool provides machine schedule, load, or available capacity evidence."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m02",
+      "repeat": 0,
+      "task": "active",
+      "selected": "current_qualification_records",
+      "accepted": [
+        "current_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Selects qualification records valid on the snapshot date for machine M01."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m02",
+      "repeat": 0,
+      "task": "past",
+      "selected": "expired_qualification_records",
+      "accepted": [
+        "expired_qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Selects qualification records expired before the snapshot date for machine M01."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m02",
+      "repeat": 0,
+      "task": "proof",
+      "selected": null,
+      "accepted": [],
+      "category": "correct_null",
+      "required_tool_missing": false,
+      "reason": "No presented tool verifies approval document authenticity, which is outside the available service scope."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m04",
+      "repeat": 0,
+      "task": "allocated",
+      "selected": "assigned_machines",
+      "accepted": [
+        "assigned_machines"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Retrieves the machines currently assigned to the specified order (O19) via the ASSIGNED_TO relation, as opposed to candidate machines."
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m04",
+      "repeat": 0,
+      "task": "records",
+      "selected": "qualification_records",
+      "accepted": [
+        "qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Retrieves qualification records for the machine without filtering by snapshot date validity, unlike current_qualification_records or expired_qualification_records."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m01",
+      "repeat": 0,
+      "task": "assignment",
+      "selected": "assigned_machines",
+      "accepted": [
+        "assigned_machines"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Queries current assigned machines for the specified order (O18)."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m01",
+      "repeat": 0,
+      "task": "alternative",
+      "selected": "replacement_candidates",
+      "accepted": [
+        "replacement_candidates"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Queries machines with the required capability for the specified order (O18)."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m01",
+      "repeat": 0,
+      "task": "deadline",
+      "selected": null,
+      "accepted": [],
+      "category": "correct_null",
+      "required_tool_missing": false,
+      "reason": "No presented tool provides schedule, load, or delivery feasibility evidence."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m04",
+      "repeat": 0,
+      "task": "allocated",
+      "selected": "assigned_machines",
+      "accepted": [
+        "assigned_machines"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Queries current assigned machines for the given order_id O19 and outputs machine.id."
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m04",
+      "repeat": 0,
+      "task": "records",
+      "selected": "qualification_records",
+      "accepted": [
+        "qualification_records"
+      ],
+      "category": "agreement",
+      "required_tool_missing": false,
+      "reason": "Queries all selected qualification records for a machine_id without filtering by validity period."
+    }
+  ],
+  "repeat_stability": [
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m01",
+      "comparable": true,
+      "choices_equal": true
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "full_catalog",
+      "request": "m02",
+      "comparable": true,
+      "choices_equal": true
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m02",
+      "comparable": true,
+      "choices_equal": true
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m02",
+      "comparable": true,
+      "choices_equal": true
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m02",
+      "comparable": true,
+      "choices_equal": true
+    },
+    {
+      "model": "google/gemini-4-carbon",
+      "arm": "retrieved",
+      "request": "m01",
+      "comparable": true,
+      "choices_equal": true
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "retrieved",
+      "request": "m01",
+      "comparable": true,
+      "choices_equal": true
+    },
+    {
+      "model": "google/gemini-4-hydrogen",
+      "arm": "full_catalog",
+      "request": "m01",
+      "comparable": true,
+      "choices_equal": true
+    }
+  ],
+  "progress_sha256": "fff42f6ee806a0db8df68c407b415c765f2a88300607c3e65d45e85ddd0e3093"
+}

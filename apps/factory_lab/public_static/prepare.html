@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>데이터 준비 · Factory Lab</title><link rel="stylesheet" href="/prepare.css"></head>
+<body><header><a href="/">← Factory Lab</a><h1>내 자료로 데이터 준비</h1><p>자료 추가 → 초안 검토 → 승인 번들 저장 → 로컬 조회·검증</p></header>
+<main><section><h2>1. 자료 추가</h2><p>CSV 여러 개와 TXT·Markdown 정책 문서를 선택하세요. 파일당 1 MB, 전체 4 MB, 최대 24개입니다. CSV는 최대 200행·64열, 문서는 파일당 256문단입니다. 관계 후보는 256개·1 MB, 전체 검토 항목은 1,024개까지 받으며 초과하면 오류를 표시합니다. 자료는 로컬 서버에서 처리하며 외부 모델에 보내지 않습니다.</p>
+<p>이커머스 주문 변경과 제조 자격 검토를 지원합니다. 파일 이름과 열 이름의 정확한 일치, 정책 키워드로 후보를 제안합니다. 자유로운 자연어 해석이나 LLM 생성이 아닙니다.</p>
+<label>업무 어댑터<select id="adapter"><option value="commerce-csv-1">이커머스 · 주문 변경</option><option value="factory-csv-1">제조 · 자격 검토</option></select></label><label>자료 파일<input id="files" type="file" multiple accept=".csv,.txt,.md"></label>
+<div class="row"><label>스냅숏 이름<input id="snapshot" value="my-shop-001"></label><label>기준일<input id="asof" type="date" value="2026-11-17"></label><label>통화<input id="currency" value="KRW" disabled></label></div>
+<div class="row"><button id="analyze">파일 분석</button><button id="example">선택한 업무 예제 열기</button><label>승인 번들 불러오기<input id="import" type="file" accept=".json"></label></div>
+<p>서버 재시작 시 검토 중인 세션은 사라집니다. 이 버전은 완료된 승인 번들을 파일로 저장합니다.</p></section>
+<section><h2>열려 있는 초안</h2><div class="row"><select id="sessions" aria-label="열려 있는 초안"></select><button id="resume">선택한 초안 열기</button><button id="reload-sessions">목록 새로고침</button></div></section>
+<p id="status" role="status" aria-live="polite"></p><p id="error" role="alert"></p>
+<section id="review" hidden><h2>2. 초안 검토</h2><p id="counts"></p><p>관계 후보는 확정된 조인이 아닙니다. 현재 변환기는 컬렉션마다 한 CSV를 사용하고 기존 참조 필드를 검사합니다. 후보 관계를 승인해도 임의 조인을 생성하지 않습니다.</p>
+<details><summary>원본·열 분석·고정 OWL 공리</summary><pre id="sources"></pre></details>
+<div class="row"><label>항목 종류<select id="filter"><option value="mapping">필드 매핑</option><option value="policy">정책 해석</option><option value="relation">관계 후보</option></select></label><button id="approve-mappings">표시된 정확 일치 매핑 승인</button><button id="refresh">선택한 파일 전체로 교체·재검토</button></div>
+<p>정책 해석에는 적용 대상·예외·시점을 적으세요. 실행 계약과 맞지 않는 정책은 ‘정보 부족’으로 남기세요. ‘문맥만 보존’은 규칙을 실행하지 않습니다. 제외한 항목도 기록에 남습니다.</p>
+<div id="entries"></div><button id="close">현재 초안 닫기</button></section>
+<section id="finish" hidden><h2>3. 저장과 실행</h2><p>미확정 항목이나 필수 매핑·정책이 있으면 구체적인 오류를 표시합니다. 실행은 임시 데이터로 실제 RDFLib 조회·pySHACL·Python 검사·OWL-RL 분류를 수행합니다. 답변은 템플릿이며 주문을 바꾸지 않습니다.</p>
+<div class="row"><button id="save">승인 번들 저장</button><label>처리안 ID<input id="case" value="approval"></label><button id="execute">이 번들로 검토 실행</button></div><pre id="answer"></pre><button id="export-result" hidden>실행 결과 저장</button><details><summary>조회·검증·출처 전체 결과</summary><pre id="result"></pre></details></section></main><script src="/prepare.js"></script></body></html>

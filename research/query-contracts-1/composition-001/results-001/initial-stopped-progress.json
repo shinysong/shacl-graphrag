@@ -1,0 +1,146 @@
+{
+  "status": "stopped",
+  "cases": [
+    {
+      "id": "c03",
+      "question": "M03에 배정된 주문들을 먼저 확인하고 각 주문의 대체 설비 후보와 자격 기록을 연결해서 검토해줘. 어느 주문에서 어느 후보를 확인했는지 근거를 유지하고, 제품만 맞는 기록과 역량만 맞는 별개 기록을 합쳐서 유효하다고 판단하지 마. 추가 주문을 넣어도 되는 가동 여력까지 알 수 있는지도 알려줘.",
+      "status": "failed",
+      "stages": [
+        {
+          "stage": "decompose",
+          "arm": "shared",
+          "run_id": "20af2a2da2d2441080cdac238e90440f",
+          "input_bytes": 2587,
+          "status": "completed",
+          "public_content": "{\"requirements\":[{\"id\":\"r1\",\"text\":\"M03에 배정된 주문들을 먼저 확인한다.\"},{\"id\":\"r2\",\"text\":\"확인된 각 주문에 대해 대체 설비 후보를 확인한다.\"},{\"id\":\"r3\",\"text\":\"각 주문과 대체 설비 후보별로 제품, 필요 역량, 기준일(2026-11-09)이 단일 기록으로 일치하는 자격 기록을 연결하여 검토하되, 제품만 맞는 기록과 역량만 맞는 별개 기록을 합치지 않고 주문별 후보 확인 근거를 유지한다.\"},{\"id\":\"r4\",\"text\":\"추가 주문을 넣어도 되는 가동 여력(설비 부하 등)을 알 수 있는지 확인한다.\"}]}",
+          "calls": [
+            {
+              "http_status": 200,
+              "model": "google/gemini-4-hydrogen",
+              "provider": "Google AI Studio",
+              "usage": {
+                "prompt_tokens": 612,
+                "completion_tokens": 477,
+                "total_tokens": 1089,
+                "cost": 0.0044955,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.0044955,
+                  "upstream_inference_prompt_cost": 0.000918,
+                  "upstream_inference_completions_cost": 0.0035775
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 319,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              },
+              "cost": "0.0044955",
+              "generation_id": "gen-1794792257-QUDm8bowKEVdpExIgecv",
+              "call_id": "64ad5b5eb369453d8bdef432bf9b934a",
+              "reserved_nonrefunded_usd": "0.0692010",
+              "status": "completed"
+            }
+          ]
+        },
+        {
+          "stage": "plan",
+          "arm": "full",
+          "run_id": "0165795bb8c245a9ba2680ee1ec0675d",
+          "input_bytes": 7024,
+          "status": "failed",
+          "public_content": "```json\n{\n  \"steps\": [\n    {\n      \"id\": \"s1\",\n      \"obligation\": \"r1\",\n      \"tool\": \"impacted_orders\",\n      \"binding\": {\n        \"literal\": \"M03\",\n        \"kind\": \"Machine\"\n      }\n    },\n    {\n      \"id\": \"s2\",\n      \"obligation\": \"r2\",\n      \"tool\": \"replacement_candidates\",\n      \"binding\": {\n        \"step\": \"s1\",\n        \"path\": \"order.id\"\n      }\n    },\n    {\n      \"id\": \"s3\",\n      \"obligation\": \"r3\",\n      \"tool\": \"current_qualification_records\",\n      \"binding\": {\n        \"step\": \"s2\",\n        \"path\": \"machine.id\"\n      }\n    }\n  ],\n  \"unplanned\": [\n    {\n      \"id\": \"r4\",\n      \"reason\": \"No machine load, scheduling, or available capacity service exists in the tool catalog.\"\n    }\n  ]\n}\n```",
+          "calls": [
+            {
+              "http_status": 200,
+              "model": "google/gemini-4-hydrogen",
+              "provider": "Google AI Studio",
+              "usage": {
+                "prompt_tokens": 1534,
+                "completion_tokens": 947,
+                "total_tokens": 2481,
+                "cost": 0.0094035,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.0094035,
+                  "upstream_inference_prompt_cost": 0.002301,
+                  "upstream_inference_completions_cost": 0.0071025
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 691,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              },
+              "cost": "0.0094035",
+              "generation_id": "gen-1794792262-nRmTORoC4OdlyWiIvhl7",
+              "call_id": "f863991933d847d187619f5da523c3a4",
+              "reserved_nonrefunded_usd": "0.0825120",
+              "status": "completed"
+            }
+          ],
+          "error": "Expecting value: line 1 column 1 (char 0)"
+        }
+      ],
+      "arms": {},
+      "requirements": [
+        {
+          "id": "r1",
+          "text": "M03에 배정된 주문들을 먼저 확인한다."
+        },
+        {
+          "id": "r2",
+          "text": "확인된 각 주문에 대해 대체 설비 후보를 확인한다."
+        },
+        {
+          "id": "r3",
+          "text": "각 주문과 대체 설비 후보별로 제품, 필요 역량, 기준일(2026-11-09)이 단일 기록으로 일치하는 자격 기록을 연결하여 검토하되, 제품만 맞는 기록과 역량만 맞는 별개 기록을 합치지 않고 주문별 후보 확인 근거를 유지한다."
+        },
+        {
+          "id": "r4",
+          "text": "추가 주문을 넣어도 되는 가동 여력(설비 부하 등)을 알 수 있는지 확인한다."
+        }
+      ]
+    },
+    {
+      "id": "c04",
+      "question": "O18의 현재 배정 설비를 찾고 그 설비의 전체 자격 이력과 기준일에 유효한 기록, 그 전에 만료된 기록을 나눠서 확인해줘. 현재 유효한 자격이 있어도 O18의 제품과 요구 역량에 적용되는지는 따로 판단해줘. 물리적인 작업 승인을 내릴 수 있는지와 조회로 확인한 사실을 구분해줘.",
+      "status": "unattempted",
+      "stages": [],
+      "arms": {}
+    },
+    {
+      "id": "c01",
+      "question": "M02가 중단됐다고 가정하자. 현재 배정 관계상 영향을 받는 주문을 찾고, 주문마다 필요한 역량을 가진 대체 설비 후보를 찾아줘. 각 후보에 대해 해당 주문 제품과 역량에 맞고 기준일에도 유효한 자격 기록이 있는지 같은 기록 안에서 확인해줘. 납기를 지킬 수 있는지도 판단하되 확인할 수 없는 부분은 따로 밝혀줘.",
+      "status": "unattempted",
+      "stages": [],
+      "arms": {}
+    },
+    {
+      "id": "c02",
+      "question": "O19에 지금 배정된 설비와, 그 주문을 처리할 역량이 있는 다른 설비 후보를 구분해서 보여줘. 후보별 자격 기록은 과거 이력까지 빠짐없이 조회하고, 그중 O19에 현재 적용 가능한 자격과 만료된 자격을 구분해줘. 자격 문서의 서명이 진짜인지도 확인 가능한지 알려줘.",
+      "status": "unattempted",
+      "stages": [],
+      "arms": {}
+    }
+  ],
+  "error": "Expecting value: line 1 column 1 (char 0)",
+  "budget": {
+    "attempts": 2,
+    "reserved_nonrefunded_usd": "0.1517130",
+    "reported_usd": "0.0138990",
+    "unresolved": 0
+  }
+}

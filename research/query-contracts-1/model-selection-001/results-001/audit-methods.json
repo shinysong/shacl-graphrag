@@ -1,0 +1,28 @@
+{
+  "summary": "The completed selector artifact supports the proposed bounded conclusion. Independently recomputed counts match: 32 completed calls; each model has 13 correct tool selections and 3 correct nulls across 16 primary full-catalog tasks, versus 12 correct tools, 3 correct nulls and 1 retrieval-caused null across 16 retrieved tasks. Models make identical choices and all 8 repeated request pairs retain their choices. Saved executions record 32 raw and 16 derived checked executions, with zero vetoes. No new API calls or registered software tests were run.",
+  "decision": "ready",
+  "findings": [
+    {
+      "severity": "info",
+      "evidence": "prepared-001/progress.json and scoring.json: the only primary mismatch for each model is m06/all_records. Its presented shortlist contains assigned_machines, expired_qualification_records and current_qualification_records, excluding qualification_records. model_selection.py instructs one presented tool or null per task.",
+      "recommendation": "Describe the null as an end-to-end selection shortfall caused by candidate omission and a compliant model response under the single-tool interface. Preserve the recorded unnecessary_null rubric category while explaining its pipeline-level meaning; do not describe model reasoning failure or source-data absence."
+    },
+    {
+      "severity": "warning",
+      "evidence": "docs/experiments/query-model-selection.md still states prepared/not authorized or executed, a null deadline, and untested provider acceptance/billing. Supplied progress is completed; session records authorization and a fixed window; the gate is now closed after termination.",
+      "recommendation": "When publishing observed results, mark these statements as historical preparation state or update the current status. Keep reported billing distinct from independently verified invoice costs; the allowed packet supplies only the saved budget summary, not the underlying billing ledger."
+    },
+    {
+      "severity": "info",
+      "evidence": "requests.json contains six authored requests with 16 supplied task decompositions; repeated m01/m02 add six dependent task observations per model and paid arm. Progress choices agree across models and all eight repeated request pairs; checked plans have no rejection.",
+      "recommendation": "Keep primary and repeat denominators separate. Report zero observed model-choice difference and zero observed checker intervention in this cohort, without inferring model equivalence, general reliability, checker efficacy, final-answer accuracy, SHACL efficacy or graph-engine superiority."
+    }
+  ],
+  "tasks": [
+    {
+      "owner": "coordinator",
+      "deliverable": "Current observed-results documentation with preparation statements clearly dated or superseded",
+      "verification": "Current status agrees with completed progress and closed gate; 16 primary tasks per model/arm remain separate from repeated tasks; retrieval-caused nulls and reported costs retain their qualifications."
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "summary": "Independent masked audit of all 16 saved answers found supported core selected-evidence eligibility judgments, four clear wrong-reason outcomes and two additional wording/code ambiguities. Six-contract proposal is appropriately labeled as design; several composition/control details need future specification. No publication/design blocker established, no executable checks run, no source changes or paid calls.",
+  "decision": "ready",
+  "findings": [
+    {
+      "severity": "info",
+      "evidence": "case_id=case-04; answer_id=A1; exact answer quote: \"주문 O17: **자격 요건 충족 (대체 후보 부합)**\". No clear substantive defect. E1/E4 show expired Q03 and valid Q03R for P-A/CAP-CUT; E2 supports O17 applicability, E3 supports O18 product mismatch. The answer correctly uses not-applicable for O18, disclaims source completeness and operational approval, and supplies named follow-up roles. No unnecessary withholding or missing requested comparison identified.",
+      "recommendation": "Retain the original answer as an experimental outcome and report this selected-evidence assessment separately; do not repair or rerun it."
+    },
+    {
+      "severity": "info",
+      "evidence": "case_id=case-04; answer_id=A3; exact answer quote: \"주문 O17: **자격 요건 충족 (대체 후보 부합)**\". No clear substantive defect. E1/E4 show expired Q03 and valid Q03R for P-A/CAP-CUT; E2 supports O17 applicability, E3 supports O18 product mismatch. The answer correctly uses not-applicable for O18, disclaims source completeness and operational approval, and supplies named follow-up roles. No unnecessary withholding or missing requested comparison identified.",
+      "recommendation": "Retain the original answer as an experimental outcome and report this selected-evidence assessment separately; do not repair or rerun it."
+    },
+    {
+      "severity": "info",
+      "evidence": "case_id=case-04; answer_id=A2; exact answer quote: \"주문 O18 검토: **부적합 (`qualification-not-applicable`)**\". No clear substantive defect. E1/E4 contain Q03R valid on 2026-11-09 for O17 P-A/CAP-CUT and only P-A qualifications against O18 P-B. The answer distinguishes old/new records and supplies schedule and certification follow-up without claiming delivery or approval services.",
+      "recommendation": "Retain the original answer as an experimental outcome and report this selected-evidence assessment separately; do not repair or rerun it."
+    },
+    {
+      "severity": "info",
+      "evidence": "case_id=case-04; answer_id=A4; exact answer quote: \"주문 O17 (대체 가능 - 후보 부합)\". No clear substantive defect when read with its explicit advisory-only and source-absence caveats. E1/E4 support Q03R applicability; E3 supports O18 mismatch. Both orders, old/new records, responsible roles and unsupported schedule/approval are addressed.",
+      "recommendation": "Retain the original answer as an experimental outcome and report this selected-evidence assessment separately; do not repair or rerun it."
+    },
+    {
+      "severity": "info",
+      "evidence": "case_id=case-05; answer_id=A1; exact answer quote: \"**대체 불가** (유효기간 만료로 인한 `qualification-not-applicable`).\". No clear core applicability defect. E1/E4 contain only expired Q03; E2 O17 matches its product/capability but not its date, and E3 O18 also mismatches product. Withholding is supported by selected evidence, not proof of full-source ineligibility. The answer explicitly preserves possible missing renewal evidence and identifies follow-up roles. Claims of agreement with an unseen review_report cannot be independently verified from this masked packet.",
+      "recommendation": "Retain the original answer as an experimental outcome and report this selected-evidence assessment separately; do not repair or rerun it."
+    },
+    {
+      "severity": "info",
+      "evidence": "case_id=case-05; answer_id=A3; exact answer quote: \"**대체 불가** (유효기간 만료로 인한 `qualification-not-applicable`).\". No clear core applicability defect. E1/E4 contain only expired Q03; E2 O17 matches its product/capability but not its date, and E3 O18 also mismatches product. Withholding is supported by selected evidence, not proof of full-source ineligibility. The answer explicitly preserves possible missing renewal evidence and identifies follow-up roles. Claims of agreement with an unseen review_report cannot be independently verified from this masked packet.",
+      "recommendation": "Retain the original answer as an experimental outcome and report this selected-evidence assessment separately; do not repair or rerun it."
+    },
+    {
+      "severity": "warning",
+      "evidence": "case_id=case-05; answer_id=A2; exact answer quote: \"**대체 불가** (제품 범위 불일치 및 자격 미등록으로 `qualification-not-applicable`).\". Core withholding and not-applicable classification are supported by expired wrong-product Q03 in E1/E4, but the registration-absence wording asserts more than selected evidence establishes; no source registration service is supplied. Its earlier generic source-absence caveat reduces but does not remove this local unsupported wording. It also juxtaposes not-retrieved/not-applicable for the missing renewal without clearly separating record retrieval from order-level applicability.",
+      "recommendation": "Retain the original answer as an experimental outcome and report this selected-evidence assessment separately; do not repair or rerun it."
+    },
+    {
+      "severity": "warning",
+      "evidence": "case_id=case-05; answer_id=A4; exact answer quote: \"본 시스템 조회 결과 부재가 실제 원천 부재를 증명하지는 않으며(`qualification-not-retrieved`)\". Core O17/O18 withholding is supported by expired Q03 and O18 product mismatch. The parenthetical attaches not-retrieved to a source-completeness caveat despite available qualification records; this is ambiguous reason-code usage, not a wrong core decision. A genuinely unreturned renewal and the order-level not-applicable result should be scored separately. The answer otherwise gives both orders, old/missing renewal distinction, and follow-up roles.",
+      "recommendation": "Retain the original answer as an experimental outcome and report this selected-evidence assessment separately; do not repair or rerun it."
+    },
+    {
+      "severity": "warning",
+      "evidence": "case_id=case-11; answer_id=A1; exact answer quote: \"제품 `P-B`에 대한 자격 기록이 조회되지 않았습니다 (`qualification-not-retrieved`).\". Wrong order-level reason for M03/O18: E4/E6 contain Q03 and Q03R, both P-A, while E2 requires P-B. Under the supplied policy this is not-applicable, not absence of qualification records. Core outcomes remain supported: both machines qualify for O17, neither has an applicable selected O18 qualification; Q01X capability and Q01Y expiry cannot be combined. No unnecessary withholding identified. Follow-up explicitly covers M01 renewal and allocation review but leaves M03/P-B source confirmation implicit.",
+      "recommendation": "Retain the original answer as an experimental outcome and report this selected-evidence assessment separately; do not repair or rerun it."
+    },
+    {
+      "severity": "warning",
+      "evidence": "case_id=case-11; answer_id=A4; exact answer quote: \"제품 `P-B`에 대한 자격 기록이 조회되지 않음 (`qualification-not-retrieved`).\". Wrong order-level reason for M03/O18: E4/E6 contain Q03 and Q03R, both P-A, while E2 requires P-B. Under the supplied policy this is not-applicable, not absence of qualification records. Core outcomes remain supported: both machines qualify for O17, neither has an applicable selected O18 qualification; Q01X capability and Q01Y expiry cannot be combined. No unnecessary withholding identified. Follow-up explicitly covers M01 renewal and allocation review but leaves M03/P-B source confirmation implicit.",
+      "recommendation": "Retain the original answer as an experimental outcome and report this selected-evidence assessment separately; do not repair or rerun it."
+    },
+    {
+      "severity": "info",
+      "evidence": "case_id=case-11; answer_id=A2; exact answer quote: \"조회된 기록 중 제품 `P-B`에 적용 가능한 유효 자격이 없습니다 (`qualification-not-applicable`).\". No clear core applicability or reason-code defect. E3/E5 show Q01 valid for O17 and Q01X wrong-capability/Q01Y expired for O18; E4/E6 show Q03R valid for O17 and P-A-only records inapplicable to O18. The answer rejects cross-record composition and bounds source absence and scheduling. Follow-up explicitly covers M01 renewal and allocation review; M03/P-B source confirmation remains implicit, a limited completeness weakness rather than a missing order comparison.",
+      "recommendation": "Retain the original answer as an experimental outcome and report this selected-evidence assessment separately; do not repair or rerun it."
+    },
+    {
+      "severity": "info",
+      "evidence": "case_id=case-11; answer_id=A3; exact answer quote: \"자격 미충족 / `qualification-not-applicable`\". No clear core applicability or reason-code defect. E3/E5 show Q01 valid for O17 and Q01X wrong-capability/Q01Y expired for O18; E4/E6 show Q03R valid for O17 and P-A-only records inapplicable to O18. The answer rejects cross-record composition and bounds source absence and scheduling. Follow-up explicitly covers M01 renewal and allocation review; M03/P-B source confirmation remains implicit, a limited completeness weakness rather than a missing order comparison.",
+      "recommendation": "Retain the original answer as an experimental outcome and report this selected-evidence assessment separately; do not repair or rerun it."
+    },
+    {
+      "severity": "warning",
+      "evidence": "case_id=case-12; answer_id=A2; exact answer quote: \"**자격 미조회 (`qualification-not-retrieved`)**\". Wrong reason code for M03/O18. E4/E6 return Q03 and Q03R for P-A, and E2 requires P-B, so selected records are not-applicable under the supplied policy. Both O17 positive judgments and both O18 withholding judgments remain supported. Q01X and Q01Y are correctly not combined. No unnecessary withholding or missing requested order comparison; source limits and human follow-up are supplied.",
+      "recommendation": "Retain the original answer as an experimental outcome and report this selected-evidence assessment separately; do not repair or rerun it."
+    },
+    {
+      "severity": "warning",
+      "evidence": "case_id=case-12; answer_id=A3; exact answer quote: \"**자격 미조회 (`qualification-not-retrieved`)**\". Wrong reason code for M03/O18. E4/E6 return Q03 and Q03R for P-A, and E2 requires P-B, so selected records are not-applicable under the supplied policy. Both O17 positive judgments and both O18 withholding judgments remain supported. Q01X and Q01Y are correctly not combined. No unnecessary withholding or missing requested order comparison; source limits and human follow-up are supplied.",
+      "recommendation": "Retain the original answer as an experimental outcome and report this selected-evidence assessment separately; do not repair or rerun it."
+    },
+    {
+      "severity": "info",
+      "evidence": "case_id=case-12; answer_id=A1; exact answer quote: \"**자격 불충족 / 미조회 (`qualification-not-applicable`)**\". No clear substantive defect. E3/E5 support M01 O17 and reject M01 O18 without combining Q01X/Q01Y; E4/E6 support M03 O17 through Q03R and reject M03 O18 on product scope. The correct not-applicable code is used, source absence is explicitly bounded, and all requested comparisons and follow-up categories are addressed. The selected-evidence limitation prevents treating the negative result as recovered full-source truth.",
+      "recommendation": "Retain the original answer as an experimental outcome and report this selected-evidence assessment separately; do not repair or rerun it."
+    },
+    {
+      "severity": "info",
+      "evidence": "case_id=case-12; answer_id=A4; exact answer quote: \"M03에 대해 조회된 기록 중 제품 `P-B`와 작업 `CAP-CUT`을 충족하는 유효 기록이 없습니다 [E4].\". No clear substantive defect. E3/E5 support M01 O17 and reject M01 O18 without combining Q01X/Q01Y; E4/E6 support M03 O17 through Q03R and reject M03 O18 on product scope. The correct not-applicable code is used, source absence is explicitly bounded, and all requested comparisons and follow-up categories are addressed. The selected-evidence limitation prevents treating the negative result as recovered full-source truth.",
+      "recommendation": "Retain the original answer as an experimental outcome and report this selected-evidence assessment separately; do not repair or rerun it."
+    },
+    {
+      "severity": "info",
+      "evidence": "All 16 answers assessed against the permitted packet; SHA256 c82d58e2dfb95251e9e169456ab07de5e9cd84d00120caefb0acf63638f8134b matches the request. No core applicability reversal or unnecessary withholding established from selected evidence. Four clear order-level wrong-reason instances and two additional case-05 wording/code ambiguities are reported separately. No schedule/load/delivery/approval service or full-source recovery was observed.",
+      "recommendation": "Do not generalize these consumed selected cases into independent accuracy trials or external truth; preserve reviewer disagreements and masked IDs during aggregation."
+    },
+    {
+      "severity": "info",
+      "evidence": "catalog-proposal.json explicitly states proposal_catalog_not_yet_an_index_or_selector; all six entries disclose that semantic types are not currently enforced by runtime string validation. Each names fixed-template execution, bounded result counts, empty-view semantics and nonclaims. The composition section warns that compatible types do not verify intent and unsupported schedule/load/delivery subquestions remain unsupported.",
+      "recommendation": "Ready as a design proposal only. Actual runtime conformance, output binding fidelity, resource usage and performance remain unverified because executable source and checks are outside this packet."
+    },
+    {
+      "severity": "warning",
+      "evidence": "The two composition hints propagate only order.id and machine.id. Shared version_binding text names snapshot/source_sha256/as_of, but the hints do not state a checked same-snapshot join invariant or same-record product/capability/date predicate. inspect_entity relations is an empty list despite its description promising relation direction; the meaning of empty relations is not specified. These are design underspecifications, not demonstrated implementation defects.",
+      "recommendation": "Before implementation, specify same-snapshot evidence joins, order requirement retention, single-record date/product/capability checks and directional relation support. Keep them distinct from typed identifier compatibility and from unavailable source completeness."
+    },
+    {
+      "severity": "warning",
+      "evidence": "The proposed comparison gives all arms the same catalog information, decomposition, access and aggregate budgets, but the full-catalog, retrieval, and retrieval-plus-constraints arms can still differ in visible context length, filtering, search overhead and consumed generator budget. A six-item catalog and old12 development cases cannot establish scalable retrieval or independent evaluation benefits.",
+      "recommendation": "In the future frozen protocol record exact presented metadata, retrieval and generation costs, abstention behavior and budget exhaustion; distinguish lexical from dense retrieval and new compositions from novel independent domains. No present efficacy or implementation benchmark claim is warranted."
+    }
+  ],
+  "tasks": []
+}

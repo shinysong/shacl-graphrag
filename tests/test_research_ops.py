@@ -278,7 +278,7 @@ class NativeOpsTests(unittest.TestCase):
             'factory-diagnostic-execution-tests', 'factory-branching-tests',
             'factory-planning-tests', 'factory-rdf-tests',
             'factory-complexity-tests', 'factory-campaign-tests',
-            'unit-tests', 'e0-local',
+            'unit-tests', 'e0-local', 'query-contract-tests', 'research-ops-tests', 'factory-public-tests', 'factory-explanation-tests', 'factory-commerce-tests', 'data-preparation-tests', 'workspace-tests',
         })
 
     def test_unknown_commands_and_legacy_live_are_not_available(self):

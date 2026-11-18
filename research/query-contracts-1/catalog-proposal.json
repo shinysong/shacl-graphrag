@@ -1,0 +1,255 @@
+{
+  "schema_version": 1,
+  "status": "proposal_catalog_not_yet_an_index_or_selector",
+  "catalog": [
+    {
+      "id": "factory.find_entities.v1",
+      "tool": "find_entities",
+      "revision": 1,
+      "description": "Entity name/ID lookup; 이름 식별자 찾기",
+      "availability": "existing_fixed_tool",
+      "input": {
+        "text": {
+          "wire_type": "nonempty_string",
+          "semantic_type": "LiteralSubstring",
+          "semantic_type_enforcement": "not currently enforced by runtime string validator"
+        }
+      },
+      "output_bindings": {
+        "rows[].entity.id": "EntityId"
+      },
+      "evidence_support": [
+        "entity_identity"
+      ],
+      "relations": [],
+      "does_not_establish": [
+        "identity_unique",
+        "business_eligibility"
+      ],
+      "result_limit": 30,
+      "limit_semantics": "Reaching limit signals possible truncation, not proof of omission. compare tool limit is per version.",
+      "empty_semantics": "No returned record in selected view; not global source absence.",
+      "version_binding": "snapshot/source_sha256/as_of; compare tool also binds each nested version",
+      "execution": "existing fixed parameterized template; never arbitrary query text"
+    },
+    {
+      "id": "factory.inspect_entity.v1",
+      "tool": "inspect_entity",
+      "revision": 1,
+      "description": "Entity neighborhood and relation direction; 객체 인접 관계 확인",
+      "availability": "existing_fixed_tool",
+      "input": {
+        "entity_id": {
+          "wire_type": "nonempty_string",
+          "semantic_type": "EntityId",
+          "semantic_type_enforcement": "not currently enforced by runtime string validator"
+        }
+      },
+      "output_bindings": {
+        "rows[].entity": "Entity",
+        "rows[].neighbor": "EntityOrNull",
+        "rows[].relation": "RelationOrNull",
+        "rows[].from_id": "EntityIdOrNull"
+      },
+      "evidence_support": [
+        "selected_adjacency"
+      ],
+      "relations": [],
+      "does_not_establish": [
+        "complete_neighborhood",
+        "full_multi_hop_path",
+        "external_truth"
+      ],
+      "result_limit": 60,
+      "limit_semantics": "Reaching limit signals possible truncation, not proof of omission. compare tool limit is per version.",
+      "empty_semantics": "No returned record in selected view; not global source absence.",
+      "version_binding": "snapshot/source_sha256/as_of; compare tool also binds each nested version",
+      "execution": "existing fixed parameterized template; never arbitrary query text"
+    },
+    {
+      "id": "factory.impacted_orders.v1",
+      "tool": "impacted_orders",
+      "revision": 1,
+      "description": "Orders assigned to a machine; 설비 중단 영향 주문",
+      "availability": "existing_fixed_tool",
+      "input": {
+        "machine_id": {
+          "wire_type": "nonempty_string",
+          "semantic_type": "MachineId",
+          "semantic_type_enforcement": "not currently enforced by runtime string validator"
+        }
+      },
+      "output_bindings": {
+        "rows[].order.id": "OrderId",
+        "rows[].machine.id": "MachineId",
+        "rows[].required_capability": "CapabilityIdOrNull"
+      },
+      "evidence_support": [
+        "assigned_orders",
+        "order_required_capability"
+      ],
+      "relations": [
+        "ASSIGNED_TO",
+        "REQUIRES"
+      ],
+      "does_not_establish": [
+        "all_physical_impacts",
+        "impact_list_completeness",
+        "delivery_feasibility"
+      ],
+      "result_limit": 30,
+      "limit_semantics": "Reaching limit signals possible truncation, not proof of omission. compare tool limit is per version.",
+      "empty_semantics": "No returned record in selected view; not global source absence.",
+      "version_binding": "snapshot/source_sha256/as_of; compare tool also binds each nested version",
+      "execution": "existing fixed parameterized template; never arbitrary query text"
+    },
+    {
+      "id": "factory.replacement_candidates.v1",
+      "tool": "replacement_candidates",
+      "revision": 1,
+      "description": "Machines with required capability; 주문 대체 역량 후보",
+      "availability": "existing_fixed_tool",
+      "input": {
+        "order_id": {
+          "wire_type": "nonempty_string",
+          "semantic_type": "OrderId",
+          "semantic_type_enforcement": "not currently enforced by runtime string validator"
+        }
+      },
+      "output_bindings": {
+        "rows[].order.id": "OrderId",
+        "rows[].machine.id": "MachineId",
+        "rows[].required_capability": "CapabilityId"
+      },
+      "evidence_support": [
+        "capability_candidate_pairs",
+        "order_required_capability"
+      ],
+      "relations": [
+        "REQUIRES",
+        "CAPABLE_OF"
+      ],
+      "does_not_establish": [
+        "qualification_applicability",
+        "available_schedule",
+        "physical_approval"
+      ],
+      "result_limit": 30,
+      "limit_semantics": "Reaching limit signals possible truncation, not proof of omission. compare tool limit is per version.",
+      "empty_semantics": "No returned record in selected view; not global source absence.",
+      "version_binding": "snapshot/source_sha256/as_of; compare tool also binds each nested version",
+      "execution": "existing fixed parameterized template; never arbitrary query text"
+    },
+    {
+      "id": "factory.qualification_records.v1",
+      "tool": "qualification_records",
+      "revision": 1,
+      "description": "Selected qualification records; 설비 자격 제품 역량 유효기간",
+      "availability": "existing_fixed_tool",
+      "input": {
+        "machine_id": {
+          "wire_type": "nonempty_string",
+          "semantic_type": "MachineId",
+          "semantic_type_enforcement": "not currently enforced by runtime string validator"
+        }
+      },
+      "output_bindings": {
+        "rows[].machine.id": "MachineId",
+        "rows[].qualification": "QualificationOrNull"
+      },
+      "evidence_support": [
+        "selected_qualification_records"
+      ],
+      "relations": [
+        "HAS_QUALIFICATION"
+      ],
+      "does_not_establish": [
+        "renewal_document_authenticity",
+        "source_absence",
+        "order_specific_applicability_without_order_evidence"
+      ],
+      "result_limit": 30,
+      "limit_semantics": "Reaching limit signals possible truncation, not proof of omission. compare tool limit is per version.",
+      "empty_semantics": "No returned record in selected view; not global source absence.",
+      "version_binding": "snapshot/source_sha256/as_of; compare tool also binds each nested version",
+      "execution": "existing fixed parameterized template; never arbitrary query text"
+    },
+    {
+      "id": "factory.compare_impacted_orders.v1",
+      "tool": "compare_impacted_orders",
+      "revision": 1,
+      "description": "Previous/current assigned orders; 변경 전후 영향 주문 비교",
+      "availability": "existing_fixed_tool",
+      "input": {
+        "machine_id": {
+          "wire_type": "nonempty_string",
+          "semantic_type": "MachineId",
+          "semantic_type_enforcement": "not currently enforced by runtime string validator"
+        }
+      },
+      "output_bindings": {
+        "rows[].version": "VersionId",
+        "rows[].source_sha256": "SourceDigest",
+        "rows[].rows[].order.id": "OrderId"
+      },
+      "evidence_support": [
+        "two_version_selected_assignment_lists"
+      ],
+      "relations": [
+        "ASSIGNED_TO"
+      ],
+      "does_not_establish": [
+        "complete_change_detection",
+        "unchanged_answer_from_unchanged_old_edges"
+      ],
+      "result_limit": 30,
+      "limit_semantics": "Reaching limit signals possible truncation, not proof of omission. compare tool limit is per version.",
+      "empty_semantics": "No returned record in selected view; not global source absence.",
+      "version_binding": "snapshot/source_sha256/as_of; compare tool also binds each nested version",
+      "execution": "existing fixed parameterized template; never arbitrary query text"
+    }
+  ],
+  "composition_proposal": [
+    {
+      "from": "factory.impacted_orders.v1",
+      "binding": "rows[].order.id",
+      "to": "factory.replacement_candidates.v1",
+      "argument": "order_id"
+    },
+    {
+      "from": "factory.replacement_candidates.v1",
+      "binding": "rows[].machine.id",
+      "to": "factory.qualification_records.v1",
+      "argument": "machine_id"
+    }
+  ],
+  "composition_limits": [
+    "Declared output type compatibility is not verified user intent.",
+    "Potentially truncated lists cannot establish exhaustive composition.",
+    "Schedule/load/delivery services unavailable; retain unsupported subquestions.",
+    "Review-target declaration is control metadata, not a graph-query contract."
+  ],
+  "next_experiment": {
+    "arms": [
+      "full catalog selection",
+      "lexical or dense catalog retrieval (separate measured methods)",
+      "retrieval plus typed input/output and scope constraints"
+    ],
+    "controls": [
+      "Same catalog information available to all arms; information ablation separately labeled",
+      "Same frozen question decomposition across selector comparisons",
+      "Same source access, aggregate token/tool-call budgets and generator",
+      "No evaluator target contracts in runtime",
+      "Old12 cases development; new question compositions required for reserved evaluation"
+    ],
+    "metrics": [
+      "required-query omission",
+      "semantically wrong selected query",
+      "unbound or incompatible composition",
+      "unsupported certainty",
+      "unnecessary withholding",
+      "final answer quality",
+      "tokens/calls/latency"
+    ]
+  }
+}

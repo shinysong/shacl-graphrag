@@ -8,6 +8,7 @@ from .review import review,POLICY
 from .llm import Gateway
 from .store import WORK,dumps
 from .branching import ARMS,freeze_bundle,final_packet
+from . import coverage
 from .evidence import canonical, model_evidence
 from .planning import request_messages,validate_interpretation,user_turns,NOTICE
 
@@ -22,14 +23,16 @@ candidate status, citations, and concrete review pointers. You are not given eva
 Policy: '''+dumps(POLICY)
 
 class Runner:
-    def __init__(self,store,graph=None,gateway_factory=Gateway,*,snapshot_resolver=snapshot,tool_catalog=None,source_notice=NOTICE,review_order=ARMS):
+    def __init__(self,store,graph=None,gateway_factory=Gateway,*,snapshot_resolver=snapshot,tool_catalog=None,source_notice=NOTICE,review_order=ARMS, coverage_review=False):
         self.store=store;self.graph=graph or Graph();self.gateway_factory=gateway_factory
         # Programmatic research injection only; HTTP config cannot select these.
         self.snapshot_resolver=snapshot_resolver
-        self.tool_catalog=TOOLS if tool_catalog is None else json.loads(dumps(tool_catalog))
+        self.tool_catalog=json.loads(dumps(TOOLS if tool_catalog is None else tool_catalog))
         self.source_notice=source_notice
         if len(review_order)!=3 or set(review_order)!=set(ARMS):raise ValueError('Review order must contain each arm once')
         self.review_order=tuple(review_order)
+        self.coverage_review=coverage_review
+        if coverage_review:self.tool_catalog.append(coverage.TOOL)
         self.lock=threading.Lock();self.cancel_flags={}
     def start(self,config):
         if not self.lock.acquire(blocking=False):raise RuntimeError('Another run is active')
@@ -43,7 +46,7 @@ class Runner:
                 previous=self.store.get(parent)
                 if previous['status']!='completed':raise ValueError('Only completed runs can be continued')
             if type(config.get('planning',False)) is not bool:raise ValueError('Invalid planning mode')
-            if config.get('planning') and self.tool_catalog!=TOOLS:
+            if config.get('planning') and [t for t in self.tool_catalog if t != coverage.TOOL]!=TOOLS:
                 raise ValueError('Custom catalog does not support the fixed planning schema')
             user_turns(self.store,config['question'],parent)
             planning=config.get('planning',False)
@@ -56,7 +59,7 @@ class Runner:
         flag=self.cancel_flags.get(rid)
         if flag:flag.set();self.store.event(rid,'cancel_requested',{'message':'Current request may finish and be billed; no further calls will start.'})
     def execute(self,rid,config):
-        start=time.monotonic();evidence=[]
+        start=time.monotonic();evidence=[];review_targets=[]
         def checkpoint():
             if self.cancel_flags[rid].is_set():raise RuntimeError('Cancelled')
             if time.monotonic()-start>480:raise RuntimeError('Episode time limit')
@@ -86,6 +89,8 @@ class Runner:
                 self.store.event(rid,'interpretation_completed',{'interpretation':interpretation,
                     'schema_valid':True,'semantic_correctness':'unverified','notice':NOTICE})
                 messages.append({'role':'user','content':'MODEL-DECLARED advisory interpretation (may be wrong; original user text is authoritative): '+dumps(interpretation)+'\n'+NOTICE})
+            if self.coverage_review:
+                messages.append({'role':'system','content':'Before the draft, declare intended order/machine review pairs with declare_review_targets and exact user quotes. This is only a review declaration, not evidence, verified intent or complete question coverage. Do not infer unrequested pairs. Other dimensions remain outside the checker.'})
             tools_used=0;draft=None
             for step in range(6):
                 checkpoint()
@@ -106,6 +111,19 @@ class Runner:
                     checkpoint();tools_used+=1
                     if tools_used>12:raise RuntimeError('Tool-call cap')
                     name=call['function']['name'];args=json.loads(call['function']['arguments'])
+                    if self.coverage_review and name==coverage.TOOL_NAME:
+                        try:
+                            added=coverage.declarations(args,turns)
+                            proposed=list({(t['order_id'],t['machine_id']):t for t in review_targets+added}.values())
+                            if len(proposed)>24:raise ValueError('Cumulative target limit')
+                            review_targets=proposed
+                            result={'targets':review_targets,'notice':'Declared intent only; no graph lookup or truth validation.'}
+                            self.store.event(rid,'review_targets_declared',result)
+                        except ValueError as error:
+                            result={'error':str(error)}
+                            self.store.event(rid,'review_targets_failed',result)
+                        messages.append({'role':'tool','tool_call_id':call['id'],'content':canonical(result)})
+                        continue
                     self.store.event(rid,'tool_started',{'tool':name,'arguments':args,'tool_call_id':call['id']})
                     try:
                         result=self.graph.run(config['snapshot'],name,args)
@@ -122,7 +140,8 @@ class Runner:
             frozen=freeze_bundle(config['question'],draft,evidence,SYSTEM,
                 {'version':d['id'],'sha256':sha,'as_of':d['as_of']},
                 turns[-2] if len(turns)>1 else None,
-                request_context={'user_turns':turns,'interpretation':interpretation,'notice':self.source_notice})
+                request_context={'user_turns':turns,'interpretation':interpretation,'notice':self.source_notice},
+                review_targets=review_targets if self.coverage_review else None)
             self.store.event(rid,'evidence_frozen',frozen)
             if config['review']=='compare':
                 # Persist the full denominator before the first branch; absent result = not attempted.

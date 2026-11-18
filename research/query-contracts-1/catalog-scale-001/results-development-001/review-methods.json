@@ -1,0 +1,22 @@
+{
+  "summary": "Ready for the bounded offline verification and closed-preparation objective. Static inspection confirms that settled_calls now carries known failed-response usage/cost into condition-level scoring while preserving unknown cost and nonrefunded reservations. Candidate inclusion, conditional model errors, unnecessary nulls, unsupported selections and unscored tasks have separate denominators. The scientific claims remain limited to authored requests, supplied interpretations and fixed-target distractor growth. I did not run tests or model calls, inspect evaluation wording/labels, or verify provider behavior.",
+  "decision": "ready",
+  "findings": [
+    {
+      "severity": "info",
+      "evidence": "scale_campaign.settled_calls reads canonical calls.details, reserved and status for a run; both the success and exception paths attach those records to slots. scale_scoring.score aggregates call measurements before excluding failed slots from selection scoring. test_real_gateway_mocked_truncation_retains_known_and_unknown_billing exercises the real Gateway through mocked HTTP and checks known/unknown cost, token retention, unresolved billing, reservations, campaign stop and remaining slots. These are inspected assertions, not observed passing results.",
+      "recommendation": "Complete the registered offline checks before declaring implementation verification finished. Keep measured provider behavior and actual model selection quality unverified until a separately authorized campaign."
+    },
+    {
+      "severity": "info",
+      "evidence": "The protocol and catalog generator retain six target services and add record-kind by subject by time-scope templates. The scorer exposes candidate_hit/supported_tasks and model_error_with_candidate/scored_supported_candidate_present separately; task rows retain the candidate flag and null/wrong-tool categories. Documentation identifies author-seen prospective questions, reused schema/entities, dependent tasks within requests and C derived from B, with ordinary execution already rejecting incompatible input types.",
+      "recommendation": "Preserve these limits in later reporting: this does not estimate representative catalog diversity, unseen-domain transfer, final-answer accuracy, independent C trials or an RDF/SHACL execution advantage. Do not interpret broader-query disagreement as a wrong final answer without separate adjudication."
+    },
+    {
+      "severity": "info",
+      "evidence": "The supplied revision brief identifies prepared-003 as stale and closed after the source correction. prepare creates an unapproved gate, and preflight/Gateway compare frozen runtime hashes. The current objective explicitly excludes paid execution.",
+      "recommendation": "Prepare a fresh closed folder after final source freeze. Any future launch still requires the documented current-price check, exact scope approval and hash-bound gate; this methods decision does not authorize calls."
+    }
+  ],
+  "tasks": []
+}

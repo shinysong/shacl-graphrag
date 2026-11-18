@@ -103,7 +103,7 @@ def main():
     fcntl.flock(process_lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
     store=Store();store.recover()
     server=ThreadingHTTPServer(('127.0.0.1',a.port),Handler);server.daemon_threads=True
-    server.store=store;server.runner=Runner(store,graph=graph);server.token=secrets.token_hex(32)
+    server.store=store;server.runner=Runner(store,graph=graph,coverage_review=True);server.token=secrets.token_hex(32)
     print(f'Factory Lab on http://127.0.0.1:{a.port}',flush=True)
     server.serve_forever()
 

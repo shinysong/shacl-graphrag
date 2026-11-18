@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "scope": "Posthoc author annotations, never provider input. A supported label on reverse relation does not certify direction. Missing assessment is unassessed, never a correct uncertainty result.",
+  "cases": [
+    {
+      "id": "document_support",
+      "assessment_of_pair": [
+        "orders.csv:id",
+        "products.csv:id"
+      ],
+      "expected": "supported",
+      "judgment_scope": "Authored document agreement for the existing overlap hypothesis; not real-world truth or an approved join. Direction and granularity require separate human review."
+    },
+    {
+      "id": "document_deny",
+      "assessment_of_pair": [
+        "orders.csv:id",
+        "products.csv:id"
+      ],
+      "expected": "contradicted",
+      "judgment_scope": "Authored document agreement for the existing overlap hypothesis; not real-world truth or an approved join. Direction and granularity require separate human review."
+    },
+    {
+      "id": "document_unspecified",
+      "assessment_of_pair": [
+        "orders.csv:id",
+        "products.csv:id"
+      ],
+      "expected": "uncertain",
+      "judgment_scope": "Authored document agreement for the existing overlap hypothesis; not real-world truth or an approved join. Direction and granularity require separate human review."
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "campaign": "factory-coverage-live-1",
+  "scope": "Four selected consumed development cases; expected pairs are operator audit only, never runtime input",
+  "result": {
+    "planned_cases": 4,
+    "planned_drafts": 4,
+    "planned_finals": 12,
+    "status": "completed_scope",
+    "budget": {
+      "attempts": 22,
+      "reserved_nonrefunded_usd": "1.01105850",
+      "reported_usd": "0.127838175",
+      "unresolved": 0
+    },
+    "slots": [
+      {
+        "case_id": "case-04",
+        "runtime": "research/factory-complexity-1/development-001/runtime/case-04",
+        "review_order": [
+          "self",
+          "python",
+          "shacl"
+        ],
+        "status": "completed",
+        "run_id": "5c1aeb8250e44b51a48ed16034c0521f"
+      },
+      {
+        "case_id": "case-05",
+        "runtime": "research/factory-complexity-1/development-001/runtime/case-05",
+        "review_order": [
+          "python",
+          "shacl",
+          "self"
+        ],
+        "status": "completed",
+        "run_id": "c29d006147964470aa23a4b156970c26"
+      },
+      {
+        "case_id": "case-11",
+        "runtime": "research/factory-complexity-1/development-001/runtime/case-11",
+        "review_order": [
+          "shacl",
+          "self",
+          "python"
+        ],
+        "status": "completed",
+        "run_id": "cf4960b73e1d4cc2b5323adb2609ebf0"
+      },
+      {
+        "case_id": "case-12",
+        "runtime": "research/factory-complexity-1/development-001/runtime/case-12",
+        "review_order": [
+          "self",
+          "shacl",
+          "python"
+        ],
+        "status": "completed",
+        "run_id": "b97c20c27bc44cd593688fcbe7b51d35"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "case-04",
+      "status": "completed",
+      "calls": 5,
+      "declared_pairs": [
+        [
+          "O17",
+          "M03"
+        ],
+        [
+          "O18",
+          "M03"
+        ]
+      ],
+      "expected_pairs_from_operator_question_reading": [
+        [
+          "O17",
+          "M03"
+        ],
+        [
+          "O18",
+          "M03"
+        ]
+      ],
+      "missing_declarations": [],
+      "extra_declarations": [],
+      "expected_pairs_not_checked": [],
+      "candidate_count": 2,
+      "python_shacl_flags_equal": true,
+      "python_shacl_messages_equal": true,
+      "finals": 3
+    },
+    {
+      "case_id": "case-05",
+      "status": "completed",
+      "calls": 5,
+      "declared_pairs": [
+        [
+          "O17",
+          "M03"
+        ],
+        [
+          "O18",
+          "M03"
+        ]
+      ],
+      "expected_pairs_from_operator_question_reading": [
+        [
+          "O17",
+          "M03"
+        ],
+        [
+          "O18",
+          "M03"
+        ]
+      ],
+      "missing_declarations": [],
+      "extra_declarations": [],
+      "expected_pairs_not_checked": [],
+      "candidate_count": 2,
+      "python_shacl_flags_equal": true,
+      "python_shacl_messages_equal": true,
+      "finals": 3
+    },
+    {
+      "case_id": "case-11",
+      "status": "completed",
+      "calls": 6,
+      "declared_pairs": [
+        [
+          "O17",
+          "M01"
+        ],
+        [
+          "O17",
+          "M03"
+        ],
+        [
+          "O18",
+          "M01"
+        ],
+        [
+          "O18",
+          "M03"
+        ]
+      ],
+      "expected_pairs_from_operator_question_reading": [
+        [
+          "O17",
+          "M01"
+        ],
+        [
+          "O17",
+          "M03"
+        ],
+        [
+          "O18",
+          "M01"
+        ],
+        [
+          "O18",
+          "M03"
+        ]
+      ],
+      "missing_declarations": [],
+      "extra_declarations": [],
+      "expected_pairs_not_checked": [],
+      "candidate_count": 4,
+      "python_shacl_flags_equal": true,
+      "python_shacl_messages_equal": true,
+      "finals": 3
+    },
+    {
+      "case_id": "case-12",
+      "status": "completed",
+      "calls": 6,
+      "declared_pairs": [
+        [
+          "O17",
+          "M01"
+        ],
+        [
+          "O17",
+          "M03"
+        ],
+        [
+          "O18",
+          "M01"
+        ],
+        [
+          "O18",
+          "M03"
+        ]
+      ],
+      "expected_pairs_from_operator_question_reading": [
+        [
+          "O17",
+          "M01"
+        ],
+        [
+          "O17",
+          "M03"
+        ],
+        [
+          "O18",
+          "M01"
+        ],
+        [
+          "O18",
+          "M03"
+        ]
+      ],
+      "missing_declarations": [],
+      "extra_declarations": [],
+      "expected_pairs_not_checked": [],
+      "candidate_count": 4,
+      "python_shacl_flags_equal": true,
+      "python_shacl_messages_equal": true,
+      "finals": 3
+    }
+  ],
+  "runtime_audit_boundary": "No evaluation gold or operator target pairs supplied to Runner"
+}

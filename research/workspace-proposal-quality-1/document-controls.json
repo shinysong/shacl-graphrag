@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "scope": "Authored development controls, identical table bytes; only dictionary paragraph varies. No runtime scoring expectations.",
+  "cases": [
+    {
+      "id": "document_support",
+      "files": [
+        {
+          "name": "orders.csv",
+          "content": "id,status\nX1,paid\n"
+        },
+        {
+          "name": "products.csv",
+          "content": "id,name,category\nX1,Shirt,clothing\n"
+        },
+        {
+          "name": "dictionary.md",
+          "content": "In this export orders.csv id identifies the product ordered, rather than a unique order. It references products.csv id. One row represents one product order."
+        }
+      ]
+    },
+    {
+      "id": "document_deny",
+      "files": [
+        {
+          "name": "orders.csv",
+          "content": "id,status\nX1,paid\n"
+        },
+        {
+          "name": "products.csv",
+          "content": "id,name,category\nX1,Shirt,clothing\n"
+        },
+        {
+          "name": "dictionary.md",
+          "content": "In this export orders.csv id identifies a unique order. products.csv id identifies a product. The two identifiers are unrelated; their equal strings are coincidental."
+        }
+      ]
+    },
+    {
+      "id": "document_unspecified",
+      "files": [
+        {
+          "name": "orders.csv",
+          "content": "id,status\nX1,paid\n"
+        },
+        {
+          "name": "products.csv",
+          "content": "id,name,category\nX1,Shirt,clothing\n"
+        },
+        {
+          "name": "dictionary.md",
+          "content": "This export contains order and product records. It does not define the identifier relationship between these files."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "summary": "Ready for registered offline verification and fresh closed preparation. Canonical settled-call extraction now preserves known failed-response costs/tokens and unknown billing alongside nonrefunded reservations. The added network-free real-Gateway regression exercises both variants through campaign scoring. No blocking implementation defect identified. Tests were inspected, not executed; no paid calls or evaluation text/outcome inspection occurred.",
+  "decision": "ready",
+  "findings": [
+    {
+      "severity": "info",
+      "evidence": "scale_campaign.settled_calls reads calls.details, status and reservation directly from the shared ledger for successful slots and failure handling. Gateway settles known billed truncation details before raising; scale_scoring aggregates call measurements before excluding failed slots from task scoring. The real-Gateway mocked truncation test verifies known/unknown cost, token retention, unresolved count, one reservation, 35 unattempted slots and closed root gate.",
+      "recommendation": "Execute registered query-contract-tests and factory-campaign-tests before claiming validation success. Keep the mocked provider distinction explicit."
+    },
+    {
+      "severity": "info",
+      "evidence": "Fixed study ledger and launch lock remain shared across work folders; nonempty ledger blocks another launch, failures retain reservations, frozen hashes are checked before calls, per-task execution policy is common across conditions and gates close on campaign termination. All seven split manifest hashes matched in hash-only verification. Runtime does not access scoring rubrics.",
+      "recommendation": "Keep paid execution closed and preserve earlier failed/stale preparation folders. Generate a new closed preparation after final source freeze as described in the supplied brief."
+    },
+    {
+      "severity": "warning",
+      "evidence": "Peak memory on the 16 GiB host and provider behavior have not been measured in this read-only review. Bounded synthetic SQLite predicates and an existing RDF snapshot do not themselves establish host resource or model performance results.",
+      "recommendation": "Record these assumptions as unverified; do not infer provider reliability, model accuracy or engine advantage from software fixtures."
+    }
+  ],
+  "tasks": []
+}

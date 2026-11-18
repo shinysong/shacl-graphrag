@@ -1,0 +1,166 @@
+[
+  {
+    "id": "m01",
+    "question": "O18의 지금 배정과 대체 역량 후보를 구분하고, 실제 가능한 납기도 확인해줘.",
+    "tasks": [
+      {
+        "id": "assignment",
+        "text": "O18에 지금 배정되어 있는 설비",
+        "binding": {
+          "literal": "O18",
+          "kind": "Order"
+        }
+      },
+      {
+        "id": "alternative",
+        "text": "O18의 요구 역량을 갖춘 대체 후보",
+        "binding": {
+          "literal": "O18",
+          "kind": "Order"
+        }
+      },
+      {
+        "id": "deadline",
+        "text": "M01에 맡기면 납기까지 끝낼 수 있는지 일정과 부하를 확인",
+        "binding": {
+          "literal": "M01",
+          "kind": "Machine"
+        }
+      }
+    ]
+  },
+  {
+    "id": "m02",
+    "question": "M01 자격이 현재 유효한지 볼 자료와 만료된 이력을 따로 보여주고 승인 문서 진위도 알려줘.",
+    "tasks": [
+      {
+        "id": "active",
+        "text": "기준일이 유효기간에 포함되는 M01 자격 기록",
+        "binding": {
+          "literal": "M01",
+          "kind": "Machine"
+        }
+      },
+      {
+        "id": "past",
+        "text": "기준일 전에 기간이 끝난 M01 자격 기록",
+        "binding": {
+          "literal": "M01",
+          "kind": "Machine"
+        }
+      },
+      {
+        "id": "proof",
+        "text": "M01 자격 승인 문서의 진위 확인",
+        "binding": {
+          "literal": "M01",
+          "kind": "Machine"
+        }
+      }
+    ]
+  },
+  {
+    "id": "m03",
+    "question": "M04 중단에 연결된 주문을 보고 그 주문별 대체 후보를 찾아줘.",
+    "tasks": [
+      {
+        "id": "affected",
+        "text": "M04에 직접 배정된 영향 주문",
+        "binding": {
+          "literal": "M04",
+          "kind": "Machine"
+        }
+      },
+      {
+        "id": "substitutes",
+        "text": "앞에서 찾은 각 주문의 요구 역량에 연결된 설비 후보",
+        "binding": {
+          "step": "affected",
+          "path": "order.id"
+        }
+      }
+    ]
+  },
+  {
+    "id": "m04",
+    "question": "O19의 배정 설비를 확인하고 그 설비 자격은 기간으로 거르지 말고 모두 조회해줘.",
+    "tasks": [
+      {
+        "id": "allocated",
+        "text": "O19에 실제 배정된 설비 조회",
+        "binding": {
+          "literal": "O19",
+          "kind": "Order"
+        }
+      },
+      {
+        "id": "records",
+        "text": "선택된 설비에 연결된 자격 기록 전체, 유효기간 필터 없이 조회",
+        "binding": {
+          "step": "allocated",
+          "path": "machine.id"
+        }
+      }
+    ]
+  },
+  {
+    "id": "m05",
+    "question": "M03의 만료 기록과 현재 기록을 분리한 뒤 M03에 배정된 주문도 확인해줘.",
+    "tasks": [
+      {
+        "id": "expired",
+        "text": "M03에서 기준일 이전에 만료된 자격",
+        "binding": {
+          "literal": "M03",
+          "kind": "Machine"
+        }
+      },
+      {
+        "id": "valid",
+        "text": "M03에서 기준일 현재 날짜상 유효한 자격",
+        "binding": {
+          "literal": "M03",
+          "kind": "Machine"
+        }
+      },
+      {
+        "id": "orders",
+        "text": "M03에 직접 배정된 주문 목록",
+        "binding": {
+          "literal": "M03",
+          "kind": "Machine"
+        }
+      }
+    ]
+  },
+  {
+    "id": "m06",
+    "question": "O18 후보 설비들의 모든 자격 근거를 모으고 설비 여유 시간까지 확인해줘.",
+    "tasks": [
+      {
+        "id": "candidates",
+        "text": "O18의 요구 역량과 연결된 후보 설비",
+        "binding": {
+          "literal": "O18",
+          "kind": "Order"
+        }
+      },
+      {
+        "id": "all_records",
+        "text": "각 후보 설비의 전체 자격 기록을 현재와 과거 모두 조회",
+        "binding": {
+          "step": "candidates",
+          "path": "machine.id"
+        }
+      },
+      {
+        "id": "capacity",
+        "text": "M03의 일정과 현재 부하에서 여유 시간 확인",
+        "binding": {
+          "literal": "M03",
+          "kind": "Machine"
+        }
+      }
+    ]
+  }
+]

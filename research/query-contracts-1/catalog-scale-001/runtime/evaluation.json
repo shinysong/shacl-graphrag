@@ -1,0 +1,134 @@
+[
+  {
+    "id": "q01",
+    "question": "For order O19, identify the equipment already allocated, rather than every compatible machine. Also list other equipment possessing the capability demanded by O19.",
+    "tasks": [
+      {
+        "id": "assigned",
+        "text": "For order O19, identify the equipment already allocated, rather than every compatible machine.",
+        "binding": {
+          "kind": "Order",
+          "literal": "O19"
+        }
+      },
+      {
+        "id": "alternative",
+        "text": "Also list other equipment possessing the capability demanded by O19.",
+        "binding": {
+          "kind": "Order",
+          "literal": "O19"
+        }
+      }
+    ]
+  },
+  {
+    "id": "q02",
+    "question": "M03의 자격은 최신 것만 말고 효력이 끝난 것까지 포함한 전체 이력을 보여줘. 그 설비가 오늘 남은 시간에 추가 주문을 소화할 수 있을지도 확정해줘.",
+    "tasks": [
+      {
+        "id": "history",
+        "text": "M03의 자격은 최신 것만 말고 효력이 끝난 것까지 포함한 전체 이력을 보여줘.",
+        "binding": {
+          "kind": "Machine",
+          "literal": "M03"
+        }
+      },
+      {
+        "id": "capacity",
+        "text": "그 설비가 오늘 남은 시간에 추가 주문을 소화할 수 있을지도 확정해줘.",
+        "binding": {
+          "kind": "Machine",
+          "literal": "M03"
+        }
+      }
+    ]
+  },
+  {
+    "id": "q03",
+    "question": "For M02 retrieve qualifications whose validity interval contains the recorded snapshot date. Separately retrieve qualifications ending strictly before that date.",
+    "tasks": [
+      {
+        "id": "current",
+        "text": "For M02 retrieve qualifications whose validity interval contains the recorded snapshot date.",
+        "binding": {
+          "kind": "Machine",
+          "literal": "M02"
+        }
+      },
+      {
+        "id": "expired",
+        "text": "Separately retrieve qualifications ending strictly before that date.",
+        "binding": {
+          "kind": "Machine",
+          "literal": "M02"
+        }
+      }
+    ]
+  },
+  {
+    "id": "q04",
+    "question": "M04가 멈추면 현재 배정 관계를 통해 찾아야 할 주문은 무엇인가? M04의 자격 기록도 현재와 과거를 나누지 않고 전부 확인해줘.",
+    "tasks": [
+      {
+        "id": "orders",
+        "text": "M04가 멈추면 현재 배정 관계를 통해 찾아야 할 주문은 무엇인가?",
+        "binding": {
+          "kind": "Machine",
+          "literal": "M04"
+        }
+      },
+      {
+        "id": "history",
+        "text": "M04의 자격 기록도 현재와 과거를 나누지 않고 전부 확인해줘.",
+        "binding": {
+          "kind": "Machine",
+          "literal": "M04"
+        }
+      }
+    ]
+  },
+  {
+    "id": "q05",
+    "question": "Which machine is allocated to O18 in the stored assignment relation? Can the signatures on O18 approval documents be authenticated from these services?",
+    "tasks": [
+      {
+        "id": "assigned",
+        "text": "Which machine is allocated to O18 in the stored assignment relation?",
+        "binding": {
+          "kind": "Order",
+          "literal": "O18"
+        }
+      },
+      {
+        "id": "authentic",
+        "text": "Can the signatures on O18 approval documents be authenticated from these services?",
+        "binding": {
+          "kind": "Order",
+          "literal": "O18"
+        }
+      }
+    ]
+  },
+  {
+    "id": "q06",
+    "question": "M01 설비의 자격 중 스냅샷 날짜에도 효력이 있는 기록만 찾아줘. 그 설비를 사용하는 것으로 배정된 주문도 함께 찾아줘.",
+    "tasks": [
+      {
+        "id": "current",
+        "text": "M01 설비의 자격 중 스냅샷 날짜에도 효력이 있는 기록만 찾아줘.",
+        "binding": {
+          "kind": "Machine",
+          "literal": "M01"
+        }
+      },
+      {
+        "id": "orders",
+        "text": "그 설비를 사용하는 것으로 배정된 주문도 함께 찾아줘.",
+        "binding": {
+          "kind": "Machine",
+          "literal": "M01"
+        }
+      }
+    ]
+  }
+]
