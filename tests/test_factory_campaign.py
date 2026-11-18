@@ -13,7 +13,7 @@ from apps.factory_lab.llm import Gateway
 
 class CampaignTests(unittest.TestCase):
     def setUp(self):
-        self.tmp=tempfile.TemporaryDirectory(dir=ROOT/'_workspace');self.addCleanup(self.tmp.cleanup)
+        (ROOT/'_workspace').mkdir(exist_ok=True);self.tmp=tempfile.TemporaryDirectory(dir=ROOT/'_workspace');self.addCleanup(self.tmp.cleanup)
         self.base=Path(self.tmp.name);self.work=self.base/'campaign'
         self.deadline=(datetime.now(timezone.utc)+timedelta(minutes=10)).isoformat()
         self.clock=patch.object(c,'DEADLINE',self.deadline);self.clock.start();self.addCleanup(self.clock.stop)

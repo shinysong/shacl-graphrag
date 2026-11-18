@@ -1,0 +1,128 @@
+{
+  "id": "query-contracts-1-selection-development-001",
+  "date": "2026-11-12",
+  "scope": "six authored compound requests /15 supplied decomposed tasks; consumed synthetic selected view",
+  "arms": [
+    "BM25 top1",
+    "BM25 top3 plus input/output type filtering"
+  ],
+  "catalog_tools": 6,
+  "slots": 24,
+  "slot_statuses": {
+    "recorded": 24,
+    "failed": 0,
+    "unattempted": 0
+  },
+  "selection_agreement": {
+    "top1": {
+      "obligations": 15,
+      "correct_selection": 11,
+      "wrong_selection": 4,
+      "unnecessary_unselected": 0,
+      "correct_unselected": 0,
+      "unscored_failure": 0,
+      "invalid_plans": 1,
+      "retained_errors": [
+        {
+          "request": "r01",
+          "task": "delivery",
+          "selected": "qualification_records",
+          "accepted": []
+        },
+        {
+          "request": "r04",
+          "task": "candidate",
+          "selected": "qualification_records",
+          "accepted": [
+            "replacement_candidates"
+          ]
+        },
+        {
+          "request": "r05",
+          "task": "authenticity",
+          "selected": "qualification_records",
+          "accepted": []
+        },
+        {
+          "request": "r06",
+          "task": "current",
+          "selected": "qualification_records",
+          "accepted": [
+            "current_qualification_records"
+          ]
+        }
+      ]
+    },
+    "typed_top3": {
+      "obligations": 15,
+      "correct_selection": 12,
+      "wrong_selection": 3,
+      "unnecessary_unselected": 0,
+      "correct_unselected": 0,
+      "unscored_failure": 0,
+      "invalid_plans": 0,
+      "retained_errors": [
+        {
+          "request": "r01",
+          "task": "delivery",
+          "selected": "qualification_records",
+          "accepted": []
+        },
+        {
+          "request": "r05",
+          "task": "authenticity",
+          "selected": "qualification_records",
+          "accepted": []
+        },
+        {
+          "request": "r06",
+          "task": "current",
+          "selected": "qualification_records",
+          "accepted": [
+            "current_qualification_records"
+          ]
+        }
+      ]
+    }
+  },
+  "executed_backend_pairs": 11,
+  "equal_executed_output_pairs": 11,
+  "invalid_plan_backend_pairs": 1,
+  "actual_query_calls": 84,
+  "failed_query_calls": 0,
+  "new_paid_llm_calls": 0,
+  "aws_operations": 0,
+  "answer_quality": "unmeasured",
+  "independent_review": {
+    "initial_blocked": "20261112T032907Z-query-selection-development-f365af",
+    "corrected_ready": "20261112T033126Z-query-selection-development-7a3e4d"
+  },
+  "checks": {
+    "query-contract-tests": {
+      "exit_code": 0,
+      "tests": 16
+    },
+    "factory-complexity-tests": {
+      "exit_code": 0,
+      "tests": 13
+    }
+  },
+  "limits": [
+    "operator-supplied decomposition/types/dependency paths",
+    "manual expected selection labels, not final answer accuracy",
+    "type filtering plus top3 choice set is combined intervention",
+    "unsupported services remain wrongly selected",
+    "all qualification records may support later filtering; no such filter here",
+    "six tools not scale/generalization benchmark",
+    "multi-capability composer limitation retained",
+    "no new actual Neo4j/Neptune or model evaluation"
+  ],
+  "artifact_sha256": {
+    "research/query-contracts-1/selection-development-001/assessment.json": "2779d87aa251aec3522f7f6156248ba69a3a19c31416a0783958584f96ece9b3",
+    "research/query-contracts-1/selection-development-001/catalog.json": "059e2e7a8cf1212042adcc7822339edb95e661205afe15013f5f31550b6161c1",
+    "research/query-contracts-1/selection-development-001/requests.json": "a3984f205b9719c9c6c81490d5c95992bf3659556436f150e27e5dabebfdb487",
+    "research/query-contracts-1/selection-development-001/results.json": "69cedff9bbcebf539a5f39f6cb5d85b0a807c09dbfa797027bd7a1b703f2a6e8",
+    "research/query-contracts-1/selection-development-001/scoring.json": "7b8d1f540cdaba0a5cf34154c3646c633318980a0d8569058eff6a8b2a9b9c2e",
+    "research/query-contracts-1/selection-development-001/source-manifest.json": "29bca51f3179f80022c1fc31b07be3d183f9aa1804058a5e54f985eba08eae46"
+  }
+}

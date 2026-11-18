@@ -1,5 +1,7 @@
 # Factory Lab 실행 안내
 
+> Historical research-service guide. For the portable, keyless local demo use [Factory Lab public setup](factory-lab-public.md). Dates, cloud endpoints and approval windows below are historical.
+
 Factory Lab은 가상 제조 자료를 조회하는 GraphRAG 연구용 앱이다. 질문을 받으면 LLM이 Neo4j 조회 도구를 선택한다. 서버는 실제 호출과 결과를 저장하고 채팅·워크플로우 화면에 전달한다. 미리 작성한 답변이나 애니메이션으로 실행을 대신하지 않는다.
 
 ## 접속

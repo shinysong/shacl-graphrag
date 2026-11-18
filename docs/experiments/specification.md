@@ -390,3 +390,68 @@ separate unscored evaluation-only.json never loaded by app. Variants are intende
 final-intent matches with wording/history differences, not a pure length ablation.
 See [implementation journal](../journal/2026-11-10-compound-factory-requests.md).
 Offline software verification only; no paid launch or measured efficacy.
+
+### Selected-evidence review-target coverage — 2026-11-12
+
+`factory-review-coverage-v1` adds explicit order/machine target declarations to newly
+frozen Factory Lab bundles. Declarations are model intent, not source evidence or
+verified question coverage. Matching selected snapshot/hash/date evidence alone
+feeds both Python and SHACL; missing or conflicting inputs remain unassessed.
+Historical unmarked bundles retain the legacy checker path.
+
+The offline `coverage-001` diagnostic reuses 12 consumed development bundles with
+operator-authored question-family targets. It measures projection availability and
+checker parity only: no new source queries, paid calls, final answers, or efficacy
+claims. Preserve the input hashes, all target rows and old outcomes. A future paid
+study must separately score omitted/wrong model declarations, answer correctness,
+unsupported certainty and unnecessary withholding within a newly authorized cap.
+
+### Actual target-declaration follow-up and query-contract transition — 2026-11-12
+
+`factory-coverage-live-1` executed cases04/05/11/12 selected from consumed development
+because their earlier checker target counts were zero. Four new drafts and twelve
+finals share the coverage-enabled tool interface; no operator target pairs enter
+runtime. The operator limits are36attempts/USD2/onehour under the latest explicit
+actual-LLM execution request, separate from prior closed campaign ledgers.
+All four cases completed in22calls. Selected declaration coverage and reason-code
+changes are diagnostic results, not independent benchmark accuracy or SHACL advantage.
+The next design is [Reusable query contracts](query-contracts.md); its six-tool
+catalog is a proposal, not an implemented index or paid evaluation authorization.
+
+## Query-contract foundation and post-answer closeout (2026-11-12)
+
+The [bounded post-answer comparison is closed](answer-review-closeout.md).
+Its reason-code corrections, unchanged core decisions, report-introduced overstatement
+and same-policy Python/SHACL limits remain recorded; no additional similar-case
+campaign is opened. The [query-contract protocol](query-contracts.md) now has a
+standalone BM25 catalog index and caller-authored typed plan executor. Actual
+RDFLib/SQLite diagnostic results are in
+[the foundation record](records/2026-11-12-query-contract-foundation.json).
+This is not yet model-selected composition or end-to-end answer coverage. Retrieval,
+composition and final-answer effects require separate controlled comparisons.
+
+## Competing-query lexical selection diagnostic (2026-11-12)
+
+[Query-contract selection](query-contracts.md) now includes six meaningful executable
+contracts, six authored compound requests/15 supplied intentions and two deterministic
+selection arms. The [development record](records/2026-11-12-query-selection-development.json)
+retains all24 slots, invalid plans and unsupported-service substitutions. BM25 top1
+agrees with11 intentions, typed-top3 with12; this is a combined candidate-set/type
+intervention and not final-answer accuracy, an LLM comparison or held-out evaluation.
+The 84 actual SQL/SPARQL calls and11 equal executed backend pairs are software
+integration evidence. New paid model selection remains unexecuted.
+
+
+## Two-model query selection preparation
+
+See [bounded model and structure protocol](query-model-selection.md). The authorized 32-call comparison is complete; both models matched, with one retrieval-caused task omission each in the shortlisted condition. See observed results and limitations in the protocol.
+
+
+## Catalog growth and query selection
+
+[Catalog-scale protocol](catalog-scale-selection.md) defines nested6/24/72contract controls, separate development/prospective questions and closed cumulativeUSD5preparation. Offline checks do not measure model or final-answer performance.
+
+
+## Model-composed compound queries and final answers
+
+[Compound-query protocol](compound-query-composition.md) records four original-question decompositions, LLM-written dependency plans, actual fixed-query execution and twelve final answers across full/retrieved/checked conditions. The 24-call comparison completed after preserved format-only recovery. Independent original-requirement and answer audits found no demonstrated incremental checking benefit; known synthetic source and all uncertainties remain explicit.
