@@ -2,7 +2,7 @@
 
 속성 그래프(Property Graph) 데이터베이스는 스키마를 미리 고정하지 않고도 데이터를 적재할 수 있다는 유연성 덕분에 빠르게 보급되었다. 그러나 금융 사기 탐지, 제조 추적성, 고객 통합처럼 데이터 규모와 파이프라인 복잡도가 커지면 어떤 노드·간선 타입이 허용되고 어느 부분만 유연하게 열어 둘지 명시적인 스키마로 통제해야 한다. SIGMOD 2023에 발표된 **PG-Schema**는 LDBC 속성 그래프 스키마 워킹그룹의 학계·산업계 연구자 21명이 2년여의 논의를 거쳐 완성한 속성 그래프 스키마 정의 언어(DDL)다.
 
-이 글은 2026년 11월 19일에 작성한 장별 심층 리뷰다. 논문의 1장부터 6장까지를 따라가며 금융 사기 그래프 스키마 예제(그림 1, 그림 2), 스키마리스에서 엄격한 스키마까지 아우르는 10대 설계 요구사항(R1–R10), 다중 상속·추상 타입·열린(`OPEN`)/닫힌(`STRICT`/`LOOSE`) 조합을 지원하는 **PG-Types**의 핵심 문법(그림 3)과 대수적 컴파일 의미론($\oplus$ 연산자), [PG-Keys](2026-11-19-review-pg-keys.md)를 타입 기반으로 확장한 일반 제약 계층, 그리고 ER·RDFS·OWL·SHACL·ShEx·JSON Schema·상용 그래프 DB 21종을 16개 기능 축으로 전수 비교한 표 1을 차례로 읽는다. 원문의 도면 3점, 수식·코드 1점, 비교표 1점은 저자 공개 arXiv v4 최종 PDF에서 216 DPI로 가져왔고 설명을 위해 새로 그린 도식은 Mermaid로 구분했다.
+이 글은 2026년 11월 19일에 작성한 장별 심층 리뷰다. 논문의 1장부터 6장까지를 따라가며 금융 사기 그래프 스키마 예제(그림 1, 그림 2), 스키마리스에서 엄격한 스키마까지 아우르는 10대 설계 요구사항(R1–R10), 다중 상속·추상 타입·열린(`OPEN`)/닫힌(`STRICT`/`LOOSE`) 조합을 지원하는 **PG-Types**의 핵심 문법(그림 3)과 대수적 컴파일 의미론($\oplus$ 연산자), [PG-Keys](2026-11-19-review-pg-keys.md)를 타입 기반으로 확장한 일반 제약 계층, 그리고 ER·RDFS·OWL·SHACL·ShEx·JSON Schema·상용 그래프 DB 21종을 16개 기능 축으로 전수 비교한 표 1을 차례로 읽는다. 원문의 도면 3점, 수식·코드 1점, 비교표 1점은 저자 공개 arXiv v4 최종 PDF에서 216 DPI로 가져왔고 설명을 위해 새로 그린 도식은 Excalidraw 다이어그램으로 구분했다.
 
 ## 논문 정보와 검토 범위
 
@@ -67,15 +67,9 @@
 
 그림 3에서 실무적으로 가장 정교하게 설계된 부분은 **열린 스키마와 닫힌 스키마를 세 가지 서로 다른 입도(granularity)에서 조합할 수 있는 메커니즘**이다.
 
-```mermaid
-flowchart TD
-    A[PG-Schema 개방성 제어 3계층] --> B1["1. 그래프 전체 수준: STRICT vs. LOOSE\nCREATE GRAPH TYPE g STRICT / LOOSE { ... }"]
-    A --> B2["2. 개별 노드·간선 레이블 수준: OPEN\n(t: Person & Employee? OPEN { ... })"]
-    A --> B3["3. 개별 노드·간선 속성 레코드 수준: OPTIONAL 및 OPEN\n{ name STRING, OPTIONAL birthday DATE, OPEN }"]
-    B1 --> C1["STRICT: 그래프의 모든 노드·간선이 선언된 타입 중 최소 하나에 부합해야 함\nLOOSE: 선언된 간선 타입의 끝점 등 매칭된 요소만 검사하고 미선언 노드·간선 허용"]
-    B2 --> C2["레이블 뒤 OPEN: 명시된 필수 레이블 외에 임의의 추가 레이블 허용"]
-    B3 --> C3["속성 블록 안 OPEN: 명시된 속성 외에 임의의 추가(미선언) 속성 키·값 허용"]
-```
+![PG-Schema의 3계층 개방성(Openness) 제어 아키텍처](../assets/images/pg-schema/excalidraw-openness-tiers.svg)
+
+그림: 그래프 전체(`STRICT`/`LOOSE`), 개별 노드·간선 레이블(`OPEN`), 개별 속성 레코드(`OPTIONAL`/`OPEN`)의 세 입도에서 개방성을 조합하는 PG-Schema 아키텍처 ([SVG 크게 보기](../assets/images/pg-schema/excalidraw-openness-tiers.svg) · [Excalidraw 원본](../assets/images/pg-schema/excalidraw-openness-tiers.excalidraw)).
 
 1. **속성 수준(`OPTIONAL`과 `{ ... OPEN }`)**:
    - `{name STRING, OPTIONAL birthday DATE}`는 닫힌 레코드 타입으로, `name`은 필수, `birthday`는 선택이며 그 외의 속성은 허용하지 않는다.

@@ -54,29 +54,9 @@
 
 `SHACL 1.2 Overview`가 밝히는 첫 번째 구조적 변화는 과거의 단일 권고안 + 비규범 노트(SHACL-AF) 체계를 **역할별로 깔끔하게 분리된 7개의 Working Draft(권고안 트랙)와 2개의 Editor's Draft**로 모듈화한 것이다.
 
-```mermaid
-flowchart TD
-    subgraph Original_2017["2017 오리지널 SHACL 체계"]
-        O1["SHACL Recommendation (2017)\nCore + SPARQL 통합"]
-        O2["SHACL-AF (W3C Note)\nNode Expressions + Rules + Targets"]
-        O3["DASH (비표준 멤버 확장)\nUI 폼 + 확장 어휘"]
-    end
+![2017 오리지널 SHACL에서 2026 W3C SHACL 1.2 명세 패밀리로의 모듈화 재편](../assets/images/shacl-12/excalidraw-shacl12-family.svg)
 
-    subgraph SHACL_12["2026 SHACL 1.2 명세 패밀리 (모듈화 & 권고안 트랙 격상)"]
-        S1["1. SHACL 1.2 Core\n순수 코어 제약·RDF 1.2 Reification·어노테이션"]
-        S2["2. SHACL 1.2 Node Expressions\n파생 속성(sh:values)·동적 타깃 노드 계산"]
-        S3["3. SHACL 1.2 SPARQL-Related Features\nSPARQL 제약·SPARQL 타깃·SPARQL 노드 식"]
-        S4["4. SHACL 1.2 Inference Rules\n규칙 기반 추론 프레임워크"]
-        S5["5. SPARQL 1.2 RL\nSHACL 규칙과 결합되는 Datalog 스타일 RDF 규칙 언어"]
-        S6["6. SHACL 1.2 User Interfaces\n폼·위젯·화면 생성 표준화"]
-        S7["7. SHACL 1.2 Profiling\n패키징·프로파일 정의·모듈별 SHACL-SHACL 검증"]
-        S8["8. SHACL 1.2 Compact Syntax & Overview\n간결 구문 및 전체 개요"]
-    end
-
-    O1 --> S1 & S3
-    O2 --> S2 & S4 & S5
-    O3 --> S6 & S7
-```
+그림: 2017년 오리지널 SHACL 체계(Before)에서 2026년 W3C SHACL 1.2 명세 패밀리(After)로의 모듈화 및 권고안 트랙 격상 구조 ([SVG 크게 보기](../assets/images/shacl-12/excalidraw-shacl12-family.svg) · [Excalidraw 원본](../assets/images/shacl-12/excalidraw-shacl12-family.excalidraw)).
 
 | SHACL 1.2 명세 문서 | 트랙 상태 | 핵심 역할과 2017년 대비 위치 |
 |---|---|---|

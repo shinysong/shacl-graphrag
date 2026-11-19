@@ -38,13 +38,9 @@
 
 RDF 1.1에서 `:employee38 :jobTitle "Assistant Designer"`라는 문장에 대해 *"이 사실은 `:employee22`가 주장했다(`:accordingTo`)"*라는 메타데이터를 붙이려면 네 가지 우회법 중 하나를 택해야 했다.
 
-```mermaid
-flowchart TD
-    A["원래 표현하고 싶은 사실과 메타데이터\n(:employee38, :jobTitle, 'Assistant Designer')\n+ 출처: :employee22"] --> B1["1. RDF 1.0 표준 Reification\nrdf:Statement + subject/predicate/object\n(트리플 4배 폭증, 원래 트리플과 의미적 단절)"]
-    A --> B2["2. N-항 관계 (N-ary Relation)\n중간 공백 노드 _:JobAssignment 도입\n(직관적이나 기존 2항 스키마·쿼리 전면 재작성)"]
-    A --> B3["3. Singleton Property\n매 간선마다 고유 술어 :jobTitle#1 생성\n(술어 IRI 폭발로 인덱싱·SPARQL 최적화 저하)"]
-    A --> B4["4. Named Graph (Quad)\n그래프 이름을 문장 ID처럼 사용\n(그래프 단위 그룹화 기능을 문장 ID에 소진)"]
-```
+![RDF 1.1에서 간선 메타데이터를 표현하던 4가지 우회법과 구조적 한계](../assets/images/rdf-12/excalidraw-rdf11-workarounds.svg)
+
+그림: RDF 1.1에서 개별 트리플(간선)에 출처·시간 등 메타데이터를 부여할 때 사용하던 4가지 우회법과 각각의 구조적 한계 ([SVG 크게 보기](../assets/images/rdf-12/excalidraw-rdf11-workarounds.svg) · [Excalidraw 원본](../assets/images/rdf-12/excalidraw-rdf11-workarounds.excalidraw)).
 
 1. **고전적 RDF 1.0 Reification (`rdf:Statement`)**:
    ```turtle
@@ -103,24 +99,9 @@ W3C RDF & SPARQL 워킹그룹은 이 문제를 근본적으로 해결하기 위�
    - 트리플 항(명제)을 목적어로 삼고 술어가 **`rdf:reifies`**인 트리플을 **Reifying Triple**이라 부르고, 그 주어(IRI 또는 Blank Node) $r$을 **Reifier**라고 부른다.
    - 이 **Reifier($r$)**가 바로 그 명제에 대한 특정 주장(claim), 특정 시점의 근무 사건(event), 특정 추출 결과(provenance instance)를 가리키는 핸들(식별자)이 되며, 모든 메타데이터 속성은 트리플 항이 아니라 이 **Reifier($r$)**에 달린다!
 
-```mermaid
-flowchart LR
-    subgraph Proposition["1. 추상 명제 (Triple Term)"]
-        TT["<<( :Alice :workedAt :Acme )>>"]
-    end
-    subgraph Reifiers["2. 개별 사건/진술 식별자 (Reifiers)"]
-        R1[":work_period_1 (IRI 또는 _:b1)"]
-        R2[":work_period_2 (IRI 또는 _:b2)"]
-    end
-    subgraph Metadata["3. 사건별 메타데이터 (서로 섞이지 않음)"]
-        M1[":startYear 2018\n:endYear 2020\n:type 'Contract'"]
-        M2[":startYear 2023\n:endYear 2025\n:type 'FullTime'"]
-    end
-    R1 -->|rdf:reifies| TT
-    R2 -->|rdf:reifies| TT
-    R1 --> M1
-    R2 --> M2
-```
+![W3C RDF 1.2의 핵심 해법: 추상 명제(Triple Term)와 개별 사건 식별자(Reifier)의 2계층 분리](../assets/images/rdf-12/excalidraw-reifier-architecture.svg)
+
+그림: 추상 명제(`Triple Term`)와 개별 사건·진술 식별자(`Reifier`)를 2계층으로 분리해 동일 명제의 다중 발생 사건 메타데이터가 서로 섞이지 않게 하는 RDF 1.2 아키텍처 ([SVG 크게 보기](../assets/images/rdf-12/excalidraw-reifier-architecture.svg) · [Excalidraw 원본](../assets/images/rdf-12/excalidraw-reifier-architecture.excalidraw)).
 
 이 2계층 분리 덕분에 동일한 추상 명제 `<<( :Alice :workedAt :Acme )>>`에 대해 `:work_period_1`과 `:work_period_2`라는 **서로 다른 Reifier를 몇 개든 만들 수 있고**, 반대로 하나의 Reifier가 여러 개의 트리플 항을 동시에 묶어(`:situation_1 rdf:reifies <<( ... )>>, <<( ... )>>`) 하나의 복합 상황에 대한 출처를 한꺼번에 기록하는 **다대다(M:N) 매핑**까지 가능해졌다.
 

@@ -1,0 +1,546 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw.com",
+  "elements": [
+    {
+      "id": "text_1",
+      "type": "text",
+      "x": 510,
+      "y": 16,
+      "text": "PG-Key 제약의 Cypher 반례 탐색 질의(K1·K2·K3) 자동 변환과 공집합 검증",
+      "fontSize": 18,
+      "strokeColor": "#212529",
+      "textAlign": "middle"
+    },
+    {
+      "id": "rect_2",
+      "type": "rectangle",
+      "x": 24,
+      "y": 155,
+      "width": 224,
+      "height": 115,
+      "strokeColor": "#343a40",
+      "backgroundColor": "#f8f9fa",
+      "fillStyle": "solid",
+      "strokeWidth": 2.2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3,
+        "value": 10
+      }
+    },
+    {
+      "id": "text_3",
+      "type": "text",
+      "x": 136,
+      "y": 170,
+      "text": "PG-Key 제약 선언",
+      "fontSize": 15,
+      "strokeColor": "#212529",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_4",
+      "type": "text",
+      "x": 136,
+      "y": 199,
+      "text": "FOR p(x)",
+      "fontSize": 13,
+      "strokeColor": "#343a40",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_5",
+      "type": "text",
+      "x": 136,
+      "y": 219,
+      "text": "IDENTIFIER q(x, y)",
+      "fontSize": 13,
+      "strokeColor": "#343a40",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_6",
+      "type": "text",
+      "x": 136,
+      "y": 245.2,
+      "text": "(EXCLUSIVE + MANDATORY + SINGLETON)",
+      "fontSize": 9.8,
+      "strokeColor": "#495057",
+      "textAlign": "middle"
+    },
+    {
+      "id": "rect_7",
+      "type": "rectangle",
+      "x": 290,
+      "y": 65,
+      "width": 355,
+      "height": 86,
+      "strokeColor": "#495057",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "strokeWidth": 1.8,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3,
+        "value": 10
+      }
+    },
+    {
+      "id": "text_8",
+      "type": "text",
+      "x": 467,
+      "y": 75,
+      "text": "(K1) EXCLUSIVE 반례 탐색 질의",
+      "fontSize": 14,
+      "strokeColor": "#212529",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_9",
+      "type": "text",
+      "x": 467,
+      "y": 100.5,
+      "text": "p(x1) & p(x2) & q(x1,y) & q(x2,y) & x1 <> x2",
+      "fontSize": 11.5,
+      "strokeColor": "#343a40",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_10",
+      "type": "text",
+      "x": 467,
+      "y": 122.5,
+      "text": "서로 다른 두 대상(x1 != x2)이 같은 키 값(y)을 공유하는지 검사",
+      "fontSize": 11.5,
+      "strokeColor": "#495057",
+      "textAlign": "middle"
+    },
+    {
+      "id": "rect_11",
+      "type": "rectangle",
+      "x": 290,
+      "y": 170,
+      "width": 355,
+      "height": 86,
+      "strokeColor": "#495057",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "strokeWidth": 1.8,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3,
+        "value": 10
+      }
+    },
+    {
+      "id": "text_12",
+      "type": "text",
+      "x": 467,
+      "y": 180,
+      "text": "(K2) MANDATORY 반례 탐색 질의",
+      "fontSize": 14,
+      "strokeColor": "#212529",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_13",
+      "type": "text",
+      "x": 467,
+      "y": 205.5,
+      "text": "p(x) WHERE NOT EXISTS q(x, y)",
+      "fontSize": 11.5,
+      "strokeColor": "#343a40",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_14",
+      "type": "text",
+      "x": 467,
+      "y": 227.5,
+      "text": "키 값(y)이 하나도 존재하지 않는 누락 대상(x)이 있는지 검사",
+      "fontSize": 11.5,
+      "strokeColor": "#495057",
+      "textAlign": "middle"
+    },
+    {
+      "id": "rect_15",
+      "type": "rectangle",
+      "x": 290,
+      "y": 275,
+      "width": 355,
+      "height": 86,
+      "strokeColor": "#495057",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "strokeWidth": 1.8,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3,
+        "value": 10
+      }
+    },
+    {
+      "id": "text_16",
+      "type": "text",
+      "x": 467,
+      "y": 285,
+      "text": "(K3) SINGLETON 반례 탐색 질의",
+      "fontSize": 14,
+      "strokeColor": "#212529",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_17",
+      "type": "text",
+      "x": 467,
+      "y": 310.5,
+      "text": "p(x) & q(x,y1) & q(x,y2) & y1 <> y2",
+      "fontSize": 11.5,
+      "strokeColor": "#343a40",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_18",
+      "type": "text",
+      "x": 467,
+      "y": 332.5,
+      "text": "하나의 대상(x)이 2개 이상의 서로 다른 키 값(y1 != y2)을 갖는지 검사",
+      "fontSize": 11.5,
+      "strokeColor": "#495057",
+      "textAlign": "middle"
+    },
+    {
+      "id": "arrow_19",
+      "type": "arrow",
+      "x": 244,
+      "y": 195,
+      "width": 42,
+      "height": 87,
+      "strokeColor": "#495057",
+      "strokeWidth": 1.8,
+      "strokeStyle": "solid",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          42,
+          -87
+        ]
+      ],
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "arrow_20",
+      "type": "arrow",
+      "x": 244,
+      "y": 213,
+      "width": 42,
+      "height": 0,
+      "strokeColor": "#495057",
+      "strokeWidth": 1.8,
+      "strokeStyle": "solid",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          42,
+          0
+        ]
+      ],
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "arrow_21",
+      "type": "arrow",
+      "x": 244,
+      "y": 231,
+      "width": 42,
+      "height": 87,
+      "strokeColor": "#495057",
+      "strokeWidth": 1.8,
+      "strokeStyle": "solid",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          42,
+          87
+        ]
+      ],
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "diamond_22",
+      "type": "diamond",
+      "x": 683,
+      "y": 161,
+      "width": 124,
+      "height": 104,
+      "strokeColor": "#343a40",
+      "backgroundColor": "#f8f9fa",
+      "fillStyle": "solid",
+      "strokeWidth": 2.0,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "id": "text_23",
+      "type": "text",
+      "x": 745,
+      "y": 195.5,
+      "text": "세 질의 모두",
+      "fontSize": 12.5,
+      "strokeColor": "#212529",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_24",
+      "type": "text",
+      "x": 745,
+      "y": 213.5,
+      "text": "결과 0건?",
+      "fontSize": 12.5,
+      "strokeColor": "#212529",
+      "textAlign": "middle"
+    },
+    {
+      "id": "arrow_25",
+      "type": "arrow",
+      "x": 645,
+      "y": 108,
+      "width": 57,
+      "height": 77,
+      "strokeColor": "#495057",
+      "strokeWidth": 1.8,
+      "strokeStyle": "solid",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          57,
+          77
+        ]
+      ],
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "arrow_26",
+      "type": "arrow",
+      "x": 645,
+      "y": 213,
+      "width": 36,
+      "height": 0,
+      "strokeColor": "#495057",
+      "strokeWidth": 1.8,
+      "strokeStyle": "solid",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          36,
+          0
+        ]
+      ],
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "arrow_27",
+      "type": "arrow",
+      "x": 645,
+      "y": 318,
+      "width": 57,
+      "height": 77,
+      "strokeColor": "#495057",
+      "strokeWidth": 1.8,
+      "strokeStyle": "solid",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          57,
+          -77
+        ]
+      ],
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "rect_28",
+      "type": "rectangle",
+      "x": 840,
+      "y": 105,
+      "width": 158,
+      "height": 78,
+      "strokeColor": "#1971c2",
+      "backgroundColor": "#e7f5ff",
+      "fillStyle": "solid",
+      "strokeWidth": 2.3,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3,
+        "value": 10
+      }
+    },
+    {
+      "id": "text_29",
+      "type": "text",
+      "x": 919,
+      "y": 122,
+      "text": "PG-Key 검증 통과",
+      "fontSize": 14,
+      "strokeColor": "#1864ab",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_30",
+      "type": "text",
+      "x": 919,
+      "y": 147.5,
+      "text": "(AC⁰ 다항 시간 검증)",
+      "fontSize": 11.5,
+      "strokeColor": "#1971c2",
+      "textAlign": "middle"
+    },
+    {
+      "id": "arrow_31",
+      "type": "arrow",
+      "x": 785,
+      "y": 190,
+      "width": 51,
+      "height": 42,
+      "strokeColor": "#1971c2",
+      "strokeWidth": 2.0,
+      "strokeStyle": "solid",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          51,
+          -42
+        ]
+      ],
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "text_32",
+      "type": "text",
+      "x": 808,
+      "y": 146,
+      "text": "Yes",
+      "fontSize": 12,
+      "strokeColor": "#1971c2",
+      "textAlign": "middle"
+    },
+    {
+      "id": "rect_33",
+      "type": "rectangle",
+      "x": 840,
+      "y": 240,
+      "width": 158,
+      "height": 86,
+      "strokeColor": "#495057",
+      "backgroundColor": "#f8f9fa",
+      "fillStyle": "solid",
+      "strokeWidth": 1.9,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3,
+        "value": 10
+      }
+    },
+    {
+      "id": "text_34",
+      "type": "text",
+      "x": 919,
+      "y": 256.5,
+      "text": "구체적 위반 반례 반환",
+      "fontSize": 13.5,
+      "strokeColor": "#212529",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_35",
+      "type": "text",
+      "x": 919,
+      "y": 280.5,
+      "text": "반환된 바인딩 자체가",
+      "fontSize": 11.5,
+      "strokeColor": "#495057",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_36",
+      "type": "text",
+      "x": 919,
+      "y": 298.5,
+      "text": "위반 노드·간선·속성",
+      "fontSize": 11.5,
+      "strokeColor": "#495057",
+      "textAlign": "middle"
+    },
+    {
+      "id": "arrow_37",
+      "type": "arrow",
+      "x": 785,
+      "y": 236,
+      "width": 51,
+      "height": 42,
+      "strokeColor": "#495057",
+      "strokeWidth": 1.8,
+      "strokeStyle": "solid",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          51,
+          42
+        ]
+      ],
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "text_38",
+      "type": "text",
+      "x": 808,
+      "y": 262,
+      "text": "No",
+      "fontSize": 12,
+      "strokeColor": "#495057",
+      "textAlign": "middle"
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff",
+    "gridSize": null
+  },
+  "files": {}
+}

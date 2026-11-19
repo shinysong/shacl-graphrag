@@ -95,7 +95,8 @@ For session continuity, read local `MEMORY.md` if present. For cross-agent baton
 ## Documentation and explanation visuals
 
 - User preference: proactively use diagrams wherever they make documentation or explanations easier to understand. Apply this when writing or revising research notes, experiment protocols, architecture descriptions, and code explanations.
-- Prefer Mermaid for process, sequence, state, and relationship diagrams; SVG for precise reusable illustrations; function/call-flow diagrams for execution paths; and ASCII art for compact text-only explanations or terminal output. Choose the format that best communicates the content.
+- For blog posts, paper/spec reviews, and conceptual explanations, prefer **Excalidraw-style hand-drawn SVG diagrams** (with companion editable `.excalidraw` JSON sources) over Mermaid diagrams.
+- **Excalidraw color rule**: Do not color every component. For flat, sequential, or parallel structures where no single element requires special emphasis, unify components in **achromatic/monochrome tones** (`#ffffff` or `#f8f9fa` fill, `#343a40` or `#495057` border, `#212529` text). Reserve **pastel tones or sky-blue accents** (`#e7f5ff` or `#d0ebff` fill, `#1971c2` border/text) strictly for before/after comparisons or key focal components that must stand out.
 - Make inputs, outputs, branches, dependencies, and validation/repair loops explicit when relevant. Pair diagrams with concise explanatory text and preserve facts, measurements, and the distinction between implemented behavior and planned work.
 - Keep diagram sources editable in the repository. For published diagrams, verify actual rendering in Chirpy, mobile readability, and light/dark contrast; provide a text fallback when needed.
 

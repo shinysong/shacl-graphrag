@@ -2,7 +2,7 @@
 
 관계형 데이터베이스의 기본 키(Primary Key)는 한 테이블의 튜플만 식별한다. 그러나 속성 그래프(Property Graph)에서는 노드뿐 아니라 간선과 속성도 식별·참조해야 하고, "같은 국가에 속한 도시들의 이름은 유일하다"처럼 이웃 위상 경로를 포함한 키도 자주 등장한다. 이 논문은 LDBC(Linked Data Benchmark Council) 산하 속성 그래프 스키마 워킹그룹(PGSWG)의 학계·산업계 연구자 17명이 합의해 발표한 **PG-Keys**의 설계 요구사항, 형식 의미론, 검증 질의 변환, 그리고 RDF/OWL·SHACL·관계형 키와의 비교를 다룬다.
 
-이 글은 2026년 11월 19일에 작성한 장별 심층 리뷰다. 논문의 1장부터 7장까지를 따라가며 속성 그래프에서 키가 필요한 세 가지 목적(무결성 제약·객체 참조·현실 개체 식별), 8가지 설계 요구사항(R0–R7), `EXCLUSIVE`·`MANDATORY`·`SINGLETON` 조합으로 정의되는 4대 키 계층, 질의 기반 범위(Scope)와 서술자(Descriptor) 문법, 조건 (K1)·(K2)·(K3)의 Cypher 검증 질의 변환, 그리고 SHACL·OWL(`owl:hasKey`)·XML 키와의 패러다임 비교를 차례로 읽는다. 원문의 도면 2점과 형식 정의·검증 질의 발췌 2점은 저자 공개 PDF에서 216 DPI로 가져왔고 설명을 위해 새로 그린 도식은 Mermaid로 구분했다.
+이 글은 2026년 11월 19일에 작성한 장별 심층 리뷰다. 논문의 1장부터 7장까지를 따라가며 속성 그래프에서 키가 필요한 세 가지 목적(무결성 제약·객체 참조·현실 개체 식별), 8가지 설계 요구사항(R0–R7), `EXCLUSIVE`·`MANDATORY`·`SINGLETON` 조합으로 정의되는 4대 키 계층, 질의 기반 범위(Scope)와 서술자(Descriptor) 문법, 조건 (K1)·(K2)·(K3)의 Cypher 검증 질의 변환, 그리고 SHACL·OWL(`owl:hasKey`)·XML 키와의 패러다임 비교를 차례로 읽는다. 원문의 도면 2점과 형식 정의·검증 질의 발췌 2점은 저자 공개 PDF에서 216 DPI로 가져왔고 설명을 위해 새로 그린 도식은 Excalidraw 다이어그램으로 구분했다.
 
 ## 논문 정보와 검토 범위
 
@@ -168,15 +168,9 @@ $$\text{FOR } p(x) \;\; \text{EXCLUSIVE } [\,\text{MANDATORY} \mid \text{SINGLET
 
 원문 4.5절 발췌. 도시 식별자 키(`FOR (x:City) IDENTIFIER y, x.name WITHIN (x)-[:isPartOf]->(y:Country)`)를 위반하는 반례를 찾는 세 개의 Cypher 질의 (K1, K2, K3). Angles et al., PDF 8쪽. [원문](https://eprints.bbk.ac.uk/id/eprint/53503/1/staworko-sigmod21.pdf#page=8) · [크게 보기](../assets/images/pg-keys/validation-cypher-queries.png).
 
-```mermaid
-flowchart LR
-    A["PG-Key 선언\nFOR p(x) IDENTIFIER q(x, y)"] --> B1["(K1) 반례 탐색 질의\np(x1) & p(x2) & q(x1,y) & q(x2,y) & x1 <> x2"]
-    A --> B2["(K2) 반례 탐색 질의\np(x) WHERE NOT EXISTS q(x, y)"]
-    A --> B3["(K3) 반례 탐색 질의\np(x) & q(x,y1) & q(x,y2) & y1 <> y2"]
-    B1 & B2 & B3 --> C{세 질의 모두 결과 0건?}
-    C -->|Yes| D[PG-Key 검증 통과]
-    C -->|No| E[반환된 바인딩이 곧 구체적 위반 반례]
-```
+![PG-Key 제약의 Cypher 반례 탐색 질의(K1·K2·K3) 자동 변환과 공집합 검증](../assets/images/pg-keys/excalidraw-k1-k2-k3-validation.svg)
+
+그림: PG-Key 제약 선언을 세 개의 병렬 반례 탐색 질의 (K1), (K2), (K3)로 자동 변환해 공집합 여부로 검증하는 흐름 ([SVG 크게 보기](../assets/images/pg-keys/excalidraw-k1-k2-k3-validation.svg) · [Excalidraw 원본](../assets/images/pg-keys/excalidraw-k1-k2-k3-validation.excalidraw)).
 
 이 구조 덕분에 범위 질의 $p$와 서술자 질의 $q$가 유한 변수의 결합 질의(CQ)로 주어지면 데이터 크기에 대해 **다항 시간(Polynomial Time, 사실상 $\text{AC}^0$ 데이터 복잡도)** 안에 검증이 끝난다. 또한 그래프에 작은 삽입·삭제($\Delta G$)가 일어났을 때에도 변경된 노드·간선 주변만 위 Cypher 질의로 국소 검사하는 **증분 검증(Incremental Validation)**을 기존 관계형 뷰 유지보수 기법 그대로 적용할 수 있다.
 

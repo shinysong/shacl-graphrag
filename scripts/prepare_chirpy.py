@@ -170,7 +170,7 @@ def prepare():
         shutil.copyfile(source, dest)
     # Only explicit public figure formats, never arbitrary workspace artifacts.
     for source in (DOCS / 'assets').rglob('*'):
-        if source.is_file() and source.suffix.lower() in {'.svg', '.png'}:
+        if source.is_file() and source.suffix.lower() in {'.svg', '.png', '.excalidraw'}:
             dest = OUTPUT / source.relative_to(DOCS)
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(source, dest)

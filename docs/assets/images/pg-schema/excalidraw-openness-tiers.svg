@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 445" width="1020" height="445">
+<defs>
+<style>
+.exc-title { font-family: "Virgil", "Comic Sans MS", "Bradley Hand", "Nanum Pen Script", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; font-weight: 700; }
+.exc-text { font-family: "Virgil", "Comic Sans MS", "Bradley Hand", "Nanum Pen Script", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
+.exc-code { font-family: "Cascadia Code", "Fira Code", "JetBrains Mono", "Consolas", monospace; }
+</style>
+<filter id="soft-shadow" x="-5%" y="-5%" width="110%" height="110%">
+  <feDropShadow dx="1.5" dy="2" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.05"/>
+</filter>
+</defs>
+<rect x="0" y="0" width="1020" height="445" rx="12" fill="#ffffff" stroke="#e9ecef" stroke-width="1.5"/>
+<text x="510" y="34" font-size="18" fill="#212529" text-anchor="middle" class="exc-title" font-weight="700">PG-Schema의 3계층 개방성(Openness) 제어 아키텍처</text>
+<rect x="330.0" y="54.0" width="360.0" height="48.0" rx="10" fill="#f8f9fa" stroke="none" filter="url(#soft-shadow)"/>
+<path d="M 340.5 54.3 Q 509.1 54.1 679.8 53.4 Q 689.8 53.4 689.8 63.4 Q 689.4 78.0 690.4 92.9 Q 690.4 102.9 680.4 102.9 Q 510.2 102.7 339.9 102.7 Q 329.9 102.7 329.9 92.7 Q 330.0 78.7 330.5 64.3 Q 330.5 54.3 340.5 54.3 Z" fill="none" stroke="#343a40" stroke-width="2.20" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 339.5 53.0 Q 509.9 55.0 679.9 54.6 Q 689.9 54.6 689.9 64.6 Q 689.4 76.7 690.6 90.7 Q 690.6 100.7 680.6 100.7 Q 511.1 103.0 339.3 101.3 Q 329.3 101.3 329.3 91.3 Q 330.8 76.7 329.5 63.0 Q 329.5 53.0 339.5 53.0 Z" fill="none" stroke="#343a40" stroke-width="1.43" stroke-opacity="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="510" y="83" font-size="15" fill="#212529" text-anchor="middle" class="exc-text" font-weight="700">PG-Schema 개방성 제어 3계층 (Granularity)</text>
+<path d="M 509.6 101.5 Q 344.4 119.6 180.7 137.4" fill="none" stroke="#495057" stroke-width="1.80" stroke-opacity="0.9" stroke-linecap="round"/>
+<path d="M 510.5 101.5 Q 345.2 119.5 180.8 137.7" fill="none" stroke="#495057" stroke-width="1.17" stroke-opacity="0.55" stroke-linecap="round"/>
+<path d="M 188.9 132.4 L 180.0 138.0 L 189.9 141.5" fill="none" stroke="#495057" stroke-width="1.80" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="30.0" y="142.0" width="300.0" height="102.0" rx="10" fill="#ffffff" stroke="none" filter="url(#soft-shadow)"/>
+<path d="M 39.6 142.7 Q 180.0 142.1 321.0 141.5 Q 331.0 141.5 331.0 151.5 Q 329.7 192.3 329.7 233.1 Q 329.7 243.1 319.7 243.1 Q 180.1 243.7 39.4 243.8 Q 29.4 243.8 29.4 233.8 Q 29.7 193.9 29.6 152.7 Q 29.6 142.7 39.6 142.7 Z" fill="none" stroke="#343a40" stroke-width="2.00" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 40.2 140.6 Q 179.1 143.0 321.3 143.3 Q 331.3 143.3 331.3 153.3 Q 330.5 194.3 329.7 235.3 Q 329.7 245.3 319.7 245.3 Q 179.4 244.4 38.9 245.2 Q 28.9 245.2 28.9 235.2 Q 31.2 192.0 30.2 150.6 Q 30.2 140.6 40.2 140.6 Z" fill="none" stroke="#343a40" stroke-width="1.30" stroke-opacity="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="180" y="168" font-size="14.5" fill="#212529" text-anchor="middle" class="exc-text" font-weight="700">1. 그래프 전체 수준</text>
+<text x="180" y="190" font-size="12.5" fill="#495057" text-anchor="middle" class="exc-text" font-weight="700">STRICT vs. LOOSE</text>
+<text x="180" y="218" font-size="11" fill="#343a40" text-anchor="middle" class="exc-code" font-weight="700">CREATE GRAPH TYPE g STRICT / LOOSE { ... }</text>
+<path d="M 179.5 244.1 Q 179.2 258.8 179.4 273.3" fill="none" stroke="#495057" stroke-width="1.80" stroke-opacity="0.9" stroke-linecap="round"/>
+<path d="M 180.2 243.9 Q 179.4 259.1 180.2 273.2" fill="none" stroke="#495057" stroke-width="1.17" stroke-opacity="0.55" stroke-linecap="round"/>
+<path d="M 175.4 264.5 L 180.0 274.0 L 184.6 264.5" fill="none" stroke="#495057" stroke-width="1.80" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="30.0" y="278.0" width="300.0" height="64.0" rx="10" fill="#f8f9fa" stroke="none" filter="url(#soft-shadow)"/>
+<path d="M 39.3 277.0 Q 180.4 278.6 319.1 278.3 Q 329.1 278.3 329.1 288.3 Q 329.4 309.9 330.9 332.0 Q 330.9 342.0 320.9 342.0 Q 179.1 342.1 39.0 341.4 Q 29.0 341.4 29.0 331.4 Q 30.5 310.0 29.3 287.0 Q 29.3 277.0 39.3 277.0 Z" fill="none" stroke="#495057" stroke-width="1.60" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 40.8 277.3 Q 179.3 278.2 320.5 277.9 Q 330.5 277.9 330.5 287.9 Q 328.7 309.8 330.3 330.8 Q 330.3 340.8 320.3 340.8 Q 181.2 342.4 39.9 342.3 Q 29.9 342.3 29.9 332.3 Q 30.0 311.0 30.8 287.3 Q 30.8 277.3 40.8 277.3 Z" fill="none" stroke="#495057" stroke-width="1.04" stroke-opacity="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="180" y="302" font-size="12" fill="#212529" text-anchor="middle" class="exc-text" font-weight="700">STRICT (닫힌 그래프 스키마)</text>
+<text x="180" y="324" font-size="11" fill="#495057" text-anchor="middle" class="exc-text">모든 노드·간선이 선언된 타입에 부합해야 함</text>
+<rect x="30.0" y="352.0" width="300.0" height="66.0" rx="10" fill="#e7f5ff" stroke="none" filter="url(#soft-shadow)"/>
+<path d="M 40.4 352.0 Q 179.4 352.2 319.8 352.7 Q 329.8 352.7 329.8 362.7 Q 330.1 385.5 330.1 408.0 Q 330.1 418.0 320.1 418.0 Q 179.9 417.8 39.7 417.3 Q 29.7 417.3 29.7 407.3 Q 30.1 384.5 30.4 362.0 Q 30.4 352.0 40.4 352.0 Z" fill="none" stroke="#1971c2" stroke-width="2.00" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 41.3 352.4 Q 180.9 351.6 319.4 352.0 Q 329.4 352.0 329.4 362.0 Q 329.8 384.9 331.0 409.3 Q 331.0 419.3 321.0 419.3 Q 178.7 418.3 40.6 419.1 Q 30.6 419.1 30.6 409.1 Q 30.1 385.8 31.3 362.4 Q 31.3 352.4 41.3 352.4 Z" fill="none" stroke="#1971c2" stroke-width="1.30" stroke-opacity="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="180" y="377" font-size="12" fill="#1864ab" text-anchor="middle" class="exc-text" font-weight="700">LOOSE (부분·유연 스키마)</text>
+<text x="180" y="399" font-size="11" fill="#1971c2" text-anchor="middle" class="exc-text" font-weight="700">매칭 요소만 검사하고 미선언 노드·간선 공존 허용</text>
+<path d="M 509.7 102.8 Q 509.6 120.7 510.4 138.1" fill="none" stroke="#495057" stroke-width="1.80" stroke-opacity="0.9" stroke-linecap="round"/>
+<path d="M 510.3 102.2 Q 509.5 120.7 509.5 137.5" fill="none" stroke="#495057" stroke-width="1.17" stroke-opacity="0.55" stroke-linecap="round"/>
+<path d="M 505.4 128.5 L 510.0 138.0 L 514.6 128.5" fill="none" stroke="#495057" stroke-width="1.80" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="360.0" y="142.0" width="300.0" height="102.0" rx="10" fill="#ffffff" stroke="none" filter="url(#soft-shadow)"/>
+<path d="M 369.9 142.4 Q 511.0 141.8 650.4 142.6 Q 660.4 142.6 660.4 152.6 Q 659.0 192.6 659.6 233.4 Q 659.6 243.4 649.6 243.4 Q 510.5 243.8 370.9 243.3 Q 360.9 243.3 360.9 233.3 Q 359.3 192.2 359.9 152.4 Q 359.9 142.4 369.9 142.4 Z" fill="none" stroke="#343a40" stroke-width="2.00" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 368.7 142.2 Q 510.5 141.3 649.6 142.5 Q 659.6 142.5 659.6 152.5 Q 660.7 193.5 659.0 233.4 Q 659.0 243.4 649.0 243.4 Q 509.8 244.6 370.1 243.5 Q 360.1 243.5 360.1 233.5 Q 359.6 194.2 358.7 152.2 Q 358.7 142.2 368.7 142.2 Z" fill="none" stroke="#343a40" stroke-width="1.30" stroke-opacity="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="510" y="168" font-size="14.5" fill="#212529" text-anchor="middle" class="exc-text" font-weight="700">2. 개별 노드·간선 레이블 수준</text>
+<text x="510" y="190" font-size="12.5" fill="#495057" text-anchor="middle" class="exc-text" font-weight="700">레이블 식 뒤 OPEN 키워드</text>
+<text x="510" y="218" font-size="11" fill="#343a40" text-anchor="middle" class="exc-code" font-weight="700">(t: Person &amp; Employee? OPEN { ... })</text>
+<path d="M 510.4 243.7 Q 510.6 259.3 510.6 274.2" fill="none" stroke="#495057" stroke-width="1.80" stroke-opacity="0.9" stroke-linecap="round"/>
+<path d="M 510.7 244.1 Q 510.7 259.0 509.8 274.4" fill="none" stroke="#495057" stroke-width="1.17" stroke-opacity="0.55" stroke-linecap="round"/>
+<path d="M 505.4 264.5 L 510.0 274.0 L 514.6 264.5" fill="none" stroke="#495057" stroke-width="1.80" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="360.0" y="278.0" width="300.0" height="64.0" rx="10" fill="#f8f9fa" stroke="none" filter="url(#soft-shadow)"/>
+<path d="M 370.4 278.2 Q 509.8 277.9 649.7 277.4 Q 659.7 277.4 659.7 287.4 Q 660.9 310.2 660.2 331.3 Q 660.2 341.3 650.2 341.3 Q 510.1 341.4 369.9 342.6 Q 359.9 342.6 359.9 332.6 Q 360.5 309.7 360.4 288.2 Q 360.4 278.2 370.4 278.2 Z" fill="none" stroke="#495057" stroke-width="1.60" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 370.6 279.3 Q 509.3 278.2 650.9 277.2 Q 660.9 277.2 660.9 287.2 Q 660.0 308.6 661.2 332.5 Q 661.2 342.5 651.2 342.5 Q 511.3 340.8 369.1 340.7 Q 359.1 340.7 359.1 330.7 Q 360.9 310.0 360.6 289.3 Q 360.6 279.3 370.6 279.3 Z" fill="none" stroke="#495057" stroke-width="1.04" stroke-opacity="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="510" y="302" font-size="12" fill="#212529" text-anchor="middle" class="exc-text" font-weight="700">기본 (닫힌 레이블 조합)</text>
+<text x="510" y="324" font-size="11" fill="#495057" text-anchor="middle" class="exc-text">명시된 레이블 식 조합과 정확히 일치해야 함</text>
+<rect x="360.0" y="352.0" width="300.0" height="66.0" rx="10" fill="#e7f5ff" stroke="none" filter="url(#soft-shadow)"/>
+<path d="M 370.6 352.6 Q 509.7 352.8 650.4 351.8 Q 660.4 351.8 660.4 361.8 Q 660.4 384.1 660.0 407.4 Q 660.0 417.4 650.0 417.4 Q 509.7 417.9 369.5 417.0 Q 359.5 417.0 359.5 407.0 Q 360.0 385.0 360.6 362.6 Q 360.6 352.6 370.6 352.6 Z" fill="none" stroke="#1971c2" stroke-width="2.00" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 370.9 351.1 Q 511.0 353.1 650.4 352.4 Q 660.4 352.4 660.4 362.4 Q 660.9 385.1 658.6 407.0 Q 658.6 417.0 648.6 417.0 Q 510.3 418.5 368.9 418.3 Q 358.9 418.3 358.9 408.3 Q 359.4 385.0 360.9 361.1 Q 360.9 351.1 370.9 351.1 Z" fill="none" stroke="#1971c2" stroke-width="1.30" stroke-opacity="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="510" y="377" font-size="12" fill="#1864ab" text-anchor="middle" class="exc-text" font-weight="700">OPEN (열린 레이블 확장)</text>
+<text x="510" y="399" font-size="11" fill="#1971c2" text-anchor="middle" class="exc-text" font-weight="700">필수 레이블 외에 임의의 추가 레이블 부착 허용</text>
+<path d="M 509.4 101.7 Q 674.5 120.0 839.8 138.7" fill="none" stroke="#495057" stroke-width="1.80" stroke-opacity="0.9" stroke-linecap="round"/>
+<path d="M 509.3 101.3 Q 675.0 120.8 840.0 138.1" fill="none" stroke="#495057" stroke-width="1.17" stroke-opacity="0.55" stroke-linecap="round"/>
+<path d="M 830.1 141.5 L 840.0 138.0 L 831.1 132.4" fill="none" stroke="#495057" stroke-width="1.80" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="690.0" y="142.0" width="300.0" height="102.0" rx="10" fill="#ffffff" stroke="none" filter="url(#soft-shadow)"/>
+<path d="M 700.0 142.3 Q 840.6 142.7 980.8 141.3 Q 990.8 141.3 990.8 151.3 Q 989.1 192.2 990.5 233.3 Q 990.5 243.3 980.5 243.3 Q 839.8 243.1 700.8 244.5 Q 690.8 244.5 690.8 234.5 Q 690.8 192.4 690.0 152.3 Q 690.0 142.3 700.0 142.3 Z" fill="none" stroke="#343a40" stroke-width="2.00" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 699.3 142.6 Q 839.3 141.7 978.9 143.0 Q 988.9 143.0 988.9 153.0 Q 990.6 192.4 989.6 234.1 Q 989.6 244.1 979.6 244.1 Q 839.8 243.2 700.9 242.8 Q 690.9 242.8 690.9 232.8 Q 690.2 192.8 689.3 152.6 Q 689.3 142.6 699.3 142.6 Z" fill="none" stroke="#343a40" stroke-width="1.30" stroke-opacity="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="840" y="168" font-size="14.5" fill="#212529" text-anchor="middle" class="exc-text" font-weight="700">3. 개별 노드·간선 속성 레코드 수준</text>
+<text x="840" y="190" font-size="12.5" fill="#495057" text-anchor="middle" class="exc-text" font-weight="700">OPTIONAL 및 블록 내 OPEN</text>
+<text x="840" y="218" font-size="11" fill="#343a40" text-anchor="middle" class="exc-code" font-weight="700">{ name STRING, OPTIONAL dob DATE, OPEN }</text>
+<path d="M 840.2 243.2 Q 839.6 258.6 840.1 274.7" fill="none" stroke="#495057" stroke-width="1.80" stroke-opacity="0.9" stroke-linecap="round"/>
+<path d="M 840.4 243.4 Q 839.5 258.7 840.0 273.9" fill="none" stroke="#495057" stroke-width="1.17" stroke-opacity="0.55" stroke-linecap="round"/>
+<path d="M 835.4 264.5 L 840.0 274.0 L 844.6 264.5" fill="none" stroke="#495057" stroke-width="1.80" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="690.0" y="278.0" width="300.0" height="64.0" rx="10" fill="#f8f9fa" stroke="none" filter="url(#soft-shadow)"/>
+<path d="M 700.6 278.3 Q 839.5 277.2 979.5 278.2 Q 989.5 278.2 989.5 288.2 Q 990.2 310.3 991.0 331.3 Q 991.0 341.3 981.0 341.3 Q 840.4 342.2 700.5 341.3 Q 690.5 341.3 690.5 331.3 Q 690.2 309.4 690.6 288.3 Q 690.6 278.3 700.6 278.3 Z" fill="none" stroke="#495057" stroke-width="1.60" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 699.3 277.0 Q 841.2 278.7 981.4 276.9 Q 991.4 276.9 991.4 286.9 Q 990.8 308.7 991.0 331.7 Q 991.0 341.7 981.0 341.7 Q 840.5 340.7 701.0 341.8 Q 691.0 341.8 691.0 331.8 Q 690.3 309.7 689.3 287.0 Q 689.3 277.0 699.3 277.0 Z" fill="none" stroke="#495057" stroke-width="1.04" stroke-opacity="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="840" y="302" font-size="12" fill="#212529" text-anchor="middle" class="exc-text" font-weight="700">기본 (닫힌 속성 레코드)</text>
+<text x="840" y="324" font-size="11" fill="#495057" text-anchor="middle" class="exc-text">선언된 필수·선택(OPTIONAL) 속성 키만 허용</text>
+<rect x="690.0" y="352.0" width="300.0" height="66.0" rx="10" fill="#e7f5ff" stroke="none" filter="url(#soft-shadow)"/>
+<path d="M 699.3 351.9 Q 840.8 352.9 979.6 351.9 Q 989.6 351.9 989.6 361.9 Q 989.5 384.7 990.2 407.2 Q 990.2 417.2 980.2 417.2 Q 839.9 417.6 699.9 417.8 Q 689.9 417.8 689.9 407.8 Q 690.9 385.7 689.3 361.9 Q 689.3 351.9 699.3 351.9 Z" fill="none" stroke="#1971c2" stroke-width="2.00" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 699.1 352.9 Q 840.6 350.9 980.9 353.0 Q 990.9 353.0 990.9 363.0 Q 990.2 383.9 989.8 406.6 Q 989.8 416.6 979.8 416.6 Q 840.3 417.3 700.5 417.1 Q 690.5 417.1 690.5 407.1 Q 688.8 386.0 689.1 362.9 Q 689.1 352.9 699.1 352.9 Z" fill="none" stroke="#1971c2" stroke-width="1.30" stroke-opacity="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="840" y="377" font-size="12" fill="#1864ab" text-anchor="middle" class="exc-text" font-weight="700">OPEN (열린 속성 레코드)</text>
+<text x="840" y="399" font-size="11" fill="#1971c2" text-anchor="middle" class="exc-text" font-weight="700">필수 속성만 강제하고 미선언 추가 속성 키·값 허용</text>
+</svg>

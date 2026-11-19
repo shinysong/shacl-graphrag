@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 420" width="1020" height="420">
+<defs>
+<style>
+.exc-title { font-family: "Virgil", "Comic Sans MS", "Bradley Hand", "Nanum Pen Script", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; font-weight: 700; }
+.exc-text { font-family: "Virgil", "Comic Sans MS", "Bradley Hand", "Nanum Pen Script", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
+.exc-code { font-family: "Cascadia Code", "Fira Code", "JetBrains Mono", "Consolas", monospace; }
+</style>
+<filter id="soft-shadow" x="-5%" y="-5%" width="110%" height="110%">
+  <feDropShadow dx="1.5" dy="2" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.05"/>
+</filter>
+</defs>
+<rect x="0" y="0" width="1020" height="420" rx="12" fill="#ffffff" stroke="#e9ecef" stroke-width="1.5"/>
+<text x="510" y="34" font-size="17.5" fill="#212529" text-anchor="middle" class="exc-title" font-weight="700">W3C RDF 1.2의 핵심 해법: 추상 명제(Triple Term)와 개별 사건 식별자(Reifier)의 2계층 분리</text>
+<rect x="24.0" y="64.0" width="285.0" height="325.0" rx="10" fill="#f8f9fa" stroke="none"/>
+<path d="M 33.3 64.7 Q 167.4 64.7 298.6 64.4 Q 308.6 64.4 308.6 74.4 Q 308.8 226.6 308.6 379.6 Q 308.6 389.6 298.6 389.6 Q 166.9 389.5 34.3 388.1 Q 24.3 388.1 24.3 378.1 Q 24.7 227.4 23.3 74.7 Q 23.3 64.7 33.3 64.7 Z" fill="none" stroke="#495057" stroke-width="1.90" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 5"/>
+<text x="166" y="92" font-size="15" fill="#212529" text-anchor="middle" class="exc-text" font-weight="700">1. 추상 명제 (Triple Term)</text>
+<text x="166" y="112" font-size="11.5" fill="#495057" text-anchor="middle" class="exc-text">(그래프 내 단일 추상 명제 타입)</text>
+<rect x="42.0" y="185.0" width="249.0" height="95.0" rx="10" fill="#ffffff" stroke="none" filter="url(#soft-shadow)"/>
+<path d="M 52.9 184.5 Q 167.2 185.6 280.0 184.6 Q 290.0 184.6 290.0 194.6 Q 292.0 233.0 290.4 270.5 Q 290.4 280.5 280.4 280.5 Q 166.3 280.6 52.5 281.0 Q 42.5 281.0 42.5 271.0 Q 42.6 232.1 42.9 194.5 Q 42.9 184.5 52.9 184.5 Z" fill="none" stroke="#343a40" stroke-width="2.10" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 51.3 184.1 Q 166.2 184.6 279.8 185.6 Q 289.8 185.6 289.8 195.6 Q 289.6 231.6 292.4 270.9 Q 292.4 280.9 282.4 280.9 Q 167.0 279.8 52.2 281.1 Q 42.2 281.1 42.2 271.1 Q 43.3 231.1 41.3 194.1 Q 41.3 184.1 51.3 184.1 Z" fill="none" stroke="#343a40" stroke-width="1.37" stroke-opacity="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="166" y="222" font-size="12.5" fill="#212529" text-anchor="middle" class="exc-code" font-weight="700">&lt;&lt;( :Alice :workedAt :Acme )&gt;&gt;</text>
+<text x="166" y="252" font-size="11.2" fill="#495057" text-anchor="middle" class="exc-text">4번째 정식 RDF 노드(목적어 위치 전용)</text>
+<rect x="370.0" y="64.0" width="300.0" height="325.0" rx="10" fill="#e7f5ff" stroke="none" filter="url(#soft-shadow)"/>
+<path d="M 380.7 64.6 Q 520.0 63.2 660.2 64.2 Q 670.2 64.2 670.2 74.2 Q 669.9 225.7 670.3 378.1 Q 670.3 388.1 660.3 388.1 Q 520.4 388.7 379.8 389.9 Q 369.8 389.9 369.8 379.9 Q 371.0 227.4 370.7 74.6 Q 370.7 64.6 380.7 64.6 Z" fill="none" stroke="#1971c2" stroke-width="2.20" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 380.2 63.0 Q 519.1 63.4 660.0 64.8 Q 670.0 64.8 670.0 74.8 Q 671.0 225.9 668.9 378.3 Q 668.9 388.3 658.9 388.3 Q 520.6 387.8 379.7 389.9 Q 369.7 389.9 369.7 379.9 Q 370.0 225.4 370.2 73.0 Q 370.2 63.0 380.2 63.0 Z" fill="none" stroke="#1971c2" stroke-width="1.43" stroke-opacity="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="520" y="92" font-size="15" fill="#1864ab" text-anchor="middle" class="exc-text" font-weight="700">2. 개별 사건/진술 식별자 (Reifiers)</text>
+<text x="520" y="112" font-size="11.5" fill="#1971c2" text-anchor="middle" class="exc-text">(동일 명제의 서로 다른 발생 사건을 분리)</text>
+<rect x="392.0" y="140.0" width="256.0" height="86.0" rx="10" fill="#ffffff" stroke="none" filter="url(#soft-shadow)"/>
+<path d="M 402.1 139.3 Q 519.0 140.6 637.2 140.8 Q 647.2 140.8 647.2 150.8 Q 648.0 182.3 648.4 216.0 Q 648.4 226.0 638.4 226.0 Q 519.9 226.7 401.1 226.0 Q 391.1 226.0 391.1 216.0 Q 392.8 183.0 392.1 149.3 Q 392.1 139.3 402.1 139.3 Z" fill="none" stroke="#1971c2" stroke-width="2.10" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 402.4 139.7 Q 521.0 139.0 638.7 139.8 Q 648.7 139.8 648.7 149.8 Q 648.3 183.4 649.1 216.4 Q 649.1 226.4 639.1 226.4 Q 519.1 225.7 401.0 225.7 Q 391.0 225.7 391.0 215.7 Q 391.1 181.7 392.4 149.7 Q 392.4 139.7 402.4 139.7 Z" fill="none" stroke="#1971c2" stroke-width="1.37" stroke-opacity="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="520" y="172" font-size="14" fill="#1864ab" text-anchor="middle" class="exc-code" font-weight="700">:work_period_1</text>
+<text x="520" y="198" font-size="11.2" fill="#1971c2" text-anchor="middle" class="exc-text">(1차 근무 사건 Reifier IRI / _:b1)</text>
+<rect x="392.0" y="265.0" width="256.0" height="86.0" rx="10" fill="#ffffff" stroke="none" filter="url(#soft-shadow)"/>
+<path d="M 401.9 264.0 Q 520.9 266.0 637.3 265.0 Q 647.3 265.0 647.3 275.0 Q 647.2 308.4 648.0 340.6 Q 648.0 350.6 638.0 350.6 Q 520.8 351.7 401.6 350.8 Q 391.6 350.8 391.6 340.8 Q 392.5 308.5 391.9 274.0 Q 391.9 264.0 401.9 264.0 Z" fill="none" stroke="#1971c2" stroke-width="2.10" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 401.5 264.4 Q 518.9 265.1 636.9 264.7 Q 646.9 264.7 646.9 274.7 Q 647.1 307.2 649.4 342.1 Q 649.4 352.1 639.4 352.1 Q 521.4 350.3 400.7 350.3 Q 390.7 350.3 390.7 340.3 Q 391.5 309.1 391.5 274.4 Q 391.5 264.4 401.5 264.4 Z" fill="none" stroke="#1971c2" stroke-width="1.37" stroke-opacity="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="520" y="297" font-size="14" fill="#1864ab" text-anchor="middle" class="exc-code" font-weight="700">:work_period_2</text>
+<text x="520" y="323" font-size="11.2" fill="#1971c2" text-anchor="middle" class="exc-text">(2차 근무 사건 Reifier IRI / _:b2)</text>
+<path d="M 392.3 182.4 Q 343.5 192.1 295.1 218.7" fill="none" stroke="#1971c2" stroke-width="2.20" stroke-opacity="0.9" stroke-linecap="round"/>
+<path d="M 392.2 183.6 Q 343.9 192.6 294.3 217.2" fill="none" stroke="#1971c2" stroke-width="1.43" stroke-opacity="0.55" stroke-linecap="round"/>
+<path d="M 301.2 209.6 L 295.0 218.0 L 305.5 217.6" fill="none" stroke="#1971c2" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="343" y="184" font-size="11.5" fill="#1864ab" text-anchor="middle" class="exc-code" font-weight="700">rdf:reifies</text>
+<path d="M 392.0 307.4 Q 343.9 285.7 295.5 248.0" fill="none" stroke="#1971c2" stroke-width="2.20" stroke-opacity="0.9" stroke-linecap="round"/>
+<path d="M 391.6 308.3 Q 343.1 285.7 294.3 248.6" fill="none" stroke="#1971c2" stroke-width="1.43" stroke-opacity="0.55" stroke-linecap="round"/>
+<path d="M 305.3 250.2 L 295.0 248.0 L 299.6 257.4" fill="none" stroke="#1971c2" stroke-width="2.20" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="343" y="302" font-size="11.5" fill="#1864ab" text-anchor="middle" class="exc-code" font-weight="700">rdf:reifies</text>
+<rect x="730.0" y="64.0" width="266.0" height="325.0" rx="10" fill="#f8f9fa" stroke="none"/>
+<path d="M 741.0 64.6 Q 864.0 64.9 986.7 64.0 Q 996.7 64.0 996.7 74.0 Q 996.8 226.9 995.9 379.5 Q 995.9 389.5 985.9 389.5 Q 863.7 389.7 739.5 388.6 Q 729.5 388.6 729.5 378.6 Q 729.7 226.9 731.0 74.6 Q 731.0 64.6 741.0 64.6 Z" fill="none" stroke="#495057" stroke-width="1.90" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 5"/>
+<text x="863" y="92" font-size="15" fill="#212529" text-anchor="middle" class="exc-text" font-weight="700">3. 사건별 독립 메타데이터</text>
+<text x="863" y="112" font-size="11.5" fill="#495057" text-anchor="middle" class="exc-text">(두 사건의 속성이 절대 뒤섞이지 않음)</text>
+<rect x="748.0" y="135.0" width="230.0" height="96.0" rx="10" fill="#ffffff" stroke="none" filter="url(#soft-shadow)"/>
+<path d="M 757.5 135.2 Q 863.3 134.5 968.0 134.3 Q 978.0 134.3 978.0 144.3 Q 978.8 183.0 978.4 221.6 Q 978.4 231.6 968.4 231.6 Q 863.5 231.3 757.3 230.6 Q 747.3 230.6 747.3 220.6 Q 748.0 182.7 747.5 145.2 Q 747.5 135.2 757.5 135.2 Z" fill="none" stroke="#343a40" stroke-width="1.90" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 757.6 136.1 Q 863.1 134.2 968.8 133.9 Q 978.8 133.9 978.8 143.9 Q 977.6 182.7 978.3 219.8 Q 978.3 229.8 968.3 229.8 Q 862.4 232.0 757.9 231.3 Q 747.9 231.3 747.9 221.3 Q 748.7 183.1 747.6 146.1 Q 747.6 136.1 757.6 136.1 Z" fill="none" stroke="#343a40" stroke-width="1.23" stroke-opacity="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="863" y="163" font-size="12" fill="#212529" text-anchor="middle" class="exc-code" font-weight="700">:startYear 2018 ;</text>
+<text x="863" y="185" font-size="12" fill="#212529" text-anchor="middle" class="exc-code" font-weight="700">:endYear   2020 ;</text>
+<text x="863" y="207" font-size="12" fill="#212529" text-anchor="middle" class="exc-code" font-weight="700">:type      &#x27;Contract&#x27; .</text>
+<rect x="748.0" y="260.0" width="230.0" height="96.0" rx="10" fill="#ffffff" stroke="none" filter="url(#soft-shadow)"/>
+<path d="M 757.0 261.0 Q 862.7 260.9 967.3 259.7 Q 977.3 259.7 977.3 269.7 Q 977.1 307.9 978.3 346.4 Q 978.3 356.4 968.3 356.4 Q 863.5 355.9 757.4 355.2 Q 747.4 355.2 747.4 345.2 Q 747.6 308.3 747.0 271.0 Q 747.0 261.0 757.0 261.0 Z" fill="none" stroke="#343a40" stroke-width="1.90" stroke-opacity="0.92" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 758.2 260.7 Q 862.9 259.9 968.4 260.5 Q 978.4 260.5 978.4 270.5 Q 978.5 307.0 978.7 346.9 Q 978.7 356.9 968.7 356.9 Q 863.9 357.3 757.3 355.6 Q 747.3 355.6 747.3 345.6 Q 746.9 307.8 748.2 270.7 Q 748.2 260.7 758.2 260.7 Z" fill="none" stroke="#343a40" stroke-width="1.23" stroke-opacity="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="863" y="288" font-size="12" fill="#212529" text-anchor="middle" class="exc-code" font-weight="700">:startYear 2023 ;</text>
+<text x="863" y="310" font-size="12" fill="#212529" text-anchor="middle" class="exc-code" font-weight="700">:endYear   2025 ;</text>
+<text x="863" y="332" font-size="12" fill="#212529" text-anchor="middle" class="exc-code" font-weight="700">:type      &#x27;FullTime&#x27; .</text>
+<path d="M 648.2 183.0 Q 696.2 182.7 744.6 182.4" fill="none" stroke="#343a40" stroke-width="2.00" stroke-opacity="0.9" stroke-linecap="round"/>
+<path d="M 647.9 183.1 Q 695.8 182.7 744.4 183.3" fill="none" stroke="#343a40" stroke-width="1.30" stroke-opacity="0.55" stroke-linecap="round"/>
+<path d="M 734.5 187.6 L 744.0 183.0 L 734.5 178.4" fill="none" stroke="#343a40" stroke-width="2.00" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 647.3 308.1 Q 696.7 307.8 743.6 308.0" fill="none" stroke="#343a40" stroke-width="2.00" stroke-opacity="0.9" stroke-linecap="round"/>
+<path d="M 647.2 308.3 Q 696.7 308.6 744.4 308.5" fill="none" stroke="#343a40" stroke-width="1.30" stroke-opacity="0.55" stroke-linecap="round"/>
+<path d="M 734.5 312.6 L 744.0 308.0 L 734.5 303.4" fill="none" stroke="#343a40" stroke-width="2.00" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

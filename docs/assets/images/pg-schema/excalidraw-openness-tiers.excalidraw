@@ -1,0 +1,564 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw.com",
+  "elements": [
+    {
+      "id": "text_1",
+      "type": "text",
+      "x": 510,
+      "y": 16,
+      "text": "PG-Schema의 3계층 개방성(Openness) 제어 아키텍처",
+      "fontSize": 18,
+      "strokeColor": "#212529",
+      "textAlign": "middle"
+    },
+    {
+      "id": "rect_2",
+      "type": "rectangle",
+      "x": 330,
+      "y": 54,
+      "width": 360,
+      "height": 48,
+      "strokeColor": "#343a40",
+      "backgroundColor": "#f8f9fa",
+      "fillStyle": "solid",
+      "strokeWidth": 2.2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3,
+        "value": 10
+      }
+    },
+    {
+      "id": "text_3",
+      "type": "text",
+      "x": 510,
+      "y": 68,
+      "text": "PG-Schema 개방성 제어 3계층 (Granularity)",
+      "fontSize": 15,
+      "strokeColor": "#212529",
+      "textAlign": "middle"
+    },
+    {
+      "id": "arrow_4",
+      "type": "arrow",
+      "x": 510,
+      "y": 102,
+      "width": 330,
+      "height": 36,
+      "strokeColor": "#495057",
+      "strokeWidth": 1.8,
+      "strokeStyle": "solid",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -330,
+          36
+        ]
+      ],
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "rect_5",
+      "type": "rectangle",
+      "x": 30,
+      "y": 142,
+      "width": 300,
+      "height": 102,
+      "strokeColor": "#343a40",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "strokeWidth": 2.0,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3,
+        "value": 10
+      }
+    },
+    {
+      "id": "text_6",
+      "type": "text",
+      "x": 180,
+      "y": 153.5,
+      "text": "1. 그래프 전체 수준",
+      "fontSize": 14.5,
+      "strokeColor": "#212529",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_7",
+      "type": "text",
+      "x": 180,
+      "y": 177.5,
+      "text": "STRICT vs. LOOSE",
+      "fontSize": 12.5,
+      "strokeColor": "#495057",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_8",
+      "type": "text",
+      "x": 180,
+      "y": 207,
+      "text": "CREATE GRAPH TYPE g STRICT / LOOSE { ... }",
+      "fontSize": 11,
+      "strokeColor": "#343a40",
+      "textAlign": "middle"
+    },
+    {
+      "id": "arrow_9",
+      "type": "arrow",
+      "x": 180,
+      "y": 244,
+      "width": 0,
+      "height": 30,
+      "strokeColor": "#495057",
+      "strokeWidth": 1.8,
+      "strokeStyle": "solid",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ],
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "rect_10",
+      "type": "rectangle",
+      "x": 30,
+      "y": 278,
+      "width": 300,
+      "height": 64,
+      "strokeColor": "#495057",
+      "backgroundColor": "#f8f9fa",
+      "fillStyle": "solid",
+      "strokeWidth": 1.6,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3,
+        "value": 10
+      }
+    },
+    {
+      "id": "text_11",
+      "type": "text",
+      "x": 180,
+      "y": 290,
+      "text": "STRICT (닫힌 그래프 스키마)",
+      "fontSize": 12,
+      "strokeColor": "#212529",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_12",
+      "type": "text",
+      "x": 180,
+      "y": 313,
+      "text": "모든 노드·간선이 선언된 타입에 부합해야 함",
+      "fontSize": 11,
+      "strokeColor": "#495057",
+      "textAlign": "middle"
+    },
+    {
+      "id": "rect_13",
+      "type": "rectangle",
+      "x": 30,
+      "y": 352,
+      "width": 300,
+      "height": 66,
+      "strokeColor": "#1971c2",
+      "backgroundColor": "#e7f5ff",
+      "fillStyle": "solid",
+      "strokeWidth": 2.0,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3,
+        "value": 10
+      }
+    },
+    {
+      "id": "text_14",
+      "type": "text",
+      "x": 180,
+      "y": 365,
+      "text": "LOOSE (부분·유연 스키마)",
+      "fontSize": 12,
+      "strokeColor": "#1864ab",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_15",
+      "type": "text",
+      "x": 180,
+      "y": 388,
+      "text": "매칭 요소만 검사하고 미선언 노드·간선 공존 허용",
+      "fontSize": 11,
+      "strokeColor": "#1971c2",
+      "textAlign": "middle"
+    },
+    {
+      "id": "arrow_16",
+      "type": "arrow",
+      "x": 510,
+      "y": 102,
+      "width": 0,
+      "height": 36,
+      "strokeColor": "#495057",
+      "strokeWidth": 1.8,
+      "strokeStyle": "solid",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          36
+        ]
+      ],
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "rect_17",
+      "type": "rectangle",
+      "x": 360,
+      "y": 142,
+      "width": 300,
+      "height": 102,
+      "strokeColor": "#343a40",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "strokeWidth": 2.0,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3,
+        "value": 10
+      }
+    },
+    {
+      "id": "text_18",
+      "type": "text",
+      "x": 510,
+      "y": 153.5,
+      "text": "2. 개별 노드·간선 레이블 수준",
+      "fontSize": 14.5,
+      "strokeColor": "#212529",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_19",
+      "type": "text",
+      "x": 510,
+      "y": 177.5,
+      "text": "레이블 식 뒤 OPEN 키워드",
+      "fontSize": 12.5,
+      "strokeColor": "#495057",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_20",
+      "type": "text",
+      "x": 510,
+      "y": 207,
+      "text": "(t: Person & Employee? OPEN { ... })",
+      "fontSize": 11,
+      "strokeColor": "#343a40",
+      "textAlign": "middle"
+    },
+    {
+      "id": "arrow_21",
+      "type": "arrow",
+      "x": 510,
+      "y": 244,
+      "width": 0,
+      "height": 30,
+      "strokeColor": "#495057",
+      "strokeWidth": 1.8,
+      "strokeStyle": "solid",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ],
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "rect_22",
+      "type": "rectangle",
+      "x": 360,
+      "y": 278,
+      "width": 300,
+      "height": 64,
+      "strokeColor": "#495057",
+      "backgroundColor": "#f8f9fa",
+      "fillStyle": "solid",
+      "strokeWidth": 1.6,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3,
+        "value": 10
+      }
+    },
+    {
+      "id": "text_23",
+      "type": "text",
+      "x": 510,
+      "y": 290,
+      "text": "기본 (닫힌 레이블 조합)",
+      "fontSize": 12,
+      "strokeColor": "#212529",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_24",
+      "type": "text",
+      "x": 510,
+      "y": 313,
+      "text": "명시된 레이블 식 조합과 정확히 일치해야 함",
+      "fontSize": 11,
+      "strokeColor": "#495057",
+      "textAlign": "middle"
+    },
+    {
+      "id": "rect_25",
+      "type": "rectangle",
+      "x": 360,
+      "y": 352,
+      "width": 300,
+      "height": 66,
+      "strokeColor": "#1971c2",
+      "backgroundColor": "#e7f5ff",
+      "fillStyle": "solid",
+      "strokeWidth": 2.0,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3,
+        "value": 10
+      }
+    },
+    {
+      "id": "text_26",
+      "type": "text",
+      "x": 510,
+      "y": 365,
+      "text": "OPEN (열린 레이블 확장)",
+      "fontSize": 12,
+      "strokeColor": "#1864ab",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_27",
+      "type": "text",
+      "x": 510,
+      "y": 388,
+      "text": "필수 레이블 외에 임의의 추가 레이블 부착 허용",
+      "fontSize": 11,
+      "strokeColor": "#1971c2",
+      "textAlign": "middle"
+    },
+    {
+      "id": "arrow_28",
+      "type": "arrow",
+      "x": 510,
+      "y": 102,
+      "width": 330,
+      "height": 36,
+      "strokeColor": "#495057",
+      "strokeWidth": 1.8,
+      "strokeStyle": "solid",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          330,
+          36
+        ]
+      ],
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "rect_29",
+      "type": "rectangle",
+      "x": 690,
+      "y": 142,
+      "width": 300,
+      "height": 102,
+      "strokeColor": "#343a40",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "strokeWidth": 2.0,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3,
+        "value": 10
+      }
+    },
+    {
+      "id": "text_30",
+      "type": "text",
+      "x": 840,
+      "y": 153.5,
+      "text": "3. 개별 노드·간선 속성 레코드 수준",
+      "fontSize": 14.5,
+      "strokeColor": "#212529",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_31",
+      "type": "text",
+      "x": 840,
+      "y": 177.5,
+      "text": "OPTIONAL 및 블록 내 OPEN",
+      "fontSize": 12.5,
+      "strokeColor": "#495057",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_32",
+      "type": "text",
+      "x": 840,
+      "y": 207,
+      "text": "{ name STRING, OPTIONAL dob DATE, OPEN }",
+      "fontSize": 11,
+      "strokeColor": "#343a40",
+      "textAlign": "middle"
+    },
+    {
+      "id": "arrow_33",
+      "type": "arrow",
+      "x": 840,
+      "y": 244,
+      "width": 0,
+      "height": 30,
+      "strokeColor": "#495057",
+      "strokeWidth": 1.8,
+      "strokeStyle": "solid",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ],
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "rect_34",
+      "type": "rectangle",
+      "x": 690,
+      "y": 278,
+      "width": 300,
+      "height": 64,
+      "strokeColor": "#495057",
+      "backgroundColor": "#f8f9fa",
+      "fillStyle": "solid",
+      "strokeWidth": 1.6,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3,
+        "value": 10
+      }
+    },
+    {
+      "id": "text_35",
+      "type": "text",
+      "x": 840,
+      "y": 290,
+      "text": "기본 (닫힌 속성 레코드)",
+      "fontSize": 12,
+      "strokeColor": "#212529",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_36",
+      "type": "text",
+      "x": 840,
+      "y": 313,
+      "text": "선언된 필수·선택(OPTIONAL) 속성 키만 허용",
+      "fontSize": 11,
+      "strokeColor": "#495057",
+      "textAlign": "middle"
+    },
+    {
+      "id": "rect_37",
+      "type": "rectangle",
+      "x": 690,
+      "y": 352,
+      "width": 300,
+      "height": 66,
+      "strokeColor": "#1971c2",
+      "backgroundColor": "#e7f5ff",
+      "fillStyle": "solid",
+      "strokeWidth": 2.0,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3,
+        "value": 10
+      }
+    },
+    {
+      "id": "text_38",
+      "type": "text",
+      "x": 840,
+      "y": 365,
+      "text": "OPEN (열린 속성 레코드)",
+      "fontSize": 12,
+      "strokeColor": "#1864ab",
+      "textAlign": "middle"
+    },
+    {
+      "id": "text_39",
+      "type": "text",
+      "x": 840,
+      "y": 388,
+      "text": "필수 속성만 강제하고 미선언 추가 속성 키·값 허용",
+      "fontSize": 11,
+      "strokeColor": "#1971c2",
+      "textAlign": "middle"
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff",
+    "gridSize": null
+  },
+  "files": {}
+}
