@@ -19,9 +19,9 @@ This is a local single-user release candidate, `0.1.0-rc1`. Linux is the verific
 
 ## Use your own CSV and policy documents
 
-Open **http://localhost:9261/workspace** for the evolving single-user operations workspace. Upload sources, review field suggestions, save review drafts, run approved-source lookups and compare revisions. Start with the [workspace guide](docs/setup/workspace.md), including supported inputs and current limitations.
+Open **http://localhost:9261/workspace** for the evolving single-user operations workspace. Upload sources, review field suggestions, save review drafts, run approved-source lookups and compare revisions. Start with the [workspace guide](docs/setup/workspace.md), including supported inputs and current limitations, or the [three-file commerce example](examples/factory_lab/workspace/commerce-lines/README.md).
 
-Workspace free questions require the separate `--workspace-questions` opt-in and use at most two model calls. `--workspace-model-proposals` separately enables a one-call meaning-draft proposal. Both share the configured budget; neither is enabled by a plain startup. Browser integration uses scripted model responses with actual local queries, not a measured live-model quality result. Existing factory research paths remain available.
+Workspace free questions require the separate `--workspace-questions` opt-in and use at most two model calls. `--workspace-model-proposals` separately enables a one-call meaning-draft proposal. Both share the configured budget; neither is enabled by a plain startup. Scripted local integration and bounded live-model onboarding checks are recorded separately; neither establishes general model quality. Existing factory research paths remain available.
 
 ## Ask new questions with your own key
 

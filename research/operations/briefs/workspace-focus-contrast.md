@@ -1,0 +1,17 @@
+# Keyboard focus contrast after task preparation acceptance
+
+Actual task preparation run4 (4993) passed1440/39012authoredgroups, no callbacks/mutations/errors/overflow. Product native designer/planner accepted bounded usability; earlier three harness failures and independent review jobs preserved under task-preparation.27ea67 analysis complete. No new paidcalls; master9/.04313850reported/.4497480nonrefund under10 unchanged.
+
+Root completion audit found a real remaining contrast defect in current global keyboard focus outline: legacy #d69424 versus white ratio2.586 below selected3:1 threshold. Body/muted/accent text selectedpairs alreadypass4.5 (token-contrast-check.json). Do not claim fullWCAG from these selectedpairs. ONLY product change now CSS late :focus-visible outline-color:var(--accent), using existingneutralindigo#4659bd; no JS/backend/data/question/permissions changes. OriginalCSS before-focus-contrast.css preserved. Review actual CSS overrides not just brief.
+
+Private browser.py keeps existing authored guidance/fullbundle/savedresult/zero-call preservation scenarios and real baseline byte comparisons. Adds real Tab then Shift+Tab after focus of source-navigation button; requires active :focus-visible, reads computed outline color/width and first opaque ancestor background, calculates selected focus pair ratio>=3 and outlinewidth>=2, captures keyboardfocusPNG then Enter navigates to actualsource heading. Saves runtime Playwright version/executable and ratio. Color parser covers computed opaque rgb, not general alpha/gradient conformance; no fullaccessibility or all-states claim. New observation adds checkpoint; old12groups become13 with focus. Still no model/sourcewrites from UI. Historical/archive/policybuffer/allTab/screenreader remain outside current scope.
+
+Registered research-ops-tests then actual bounded browser (notmodel): from repo root `PYTHONPATH=. uv run --locked --offline --with playwright python _workspace/product-workspace-20261119/task-preparation/browser.py --out _workspace/product-workspace-20261119/task-preparation/run-5`. Existing102workspace47.190s regression valid for unchanged Python/JS runtime; no need repeat solely CSSoutline change. Existing uv cache/Chromium; no newdepsinstall/network, preserve missingcache/failure if occurs. Server ownedephemeral and joinedfinally; originalbad runs notoverwritten. Review source/harness frozen hashes. Reviewers ownpacket/read-onlynecessarysource, no otherreviewoutputs/secrets/heldoutgold/tests/services/calls/edits. NoAWS/push/deploy/persistent restart. Goal still active pending full completion audit and resultingmaterial requirements, not arbitrarygeneralbenchmark.
+
+Frozen SHA-256:
+- `apps/factory_lab/public_static/workspace.js` `ecbd49a1d22a4410c9222559845976e500cc8666eec40396e858991dde65c3b0`
+- `apps/factory_lab/public_static/workspace.css` `743b667bd880d17d74bba22380bf9452c52e48d8e2e60544e1f7481772e0bd7a`
+- `apps/factory_lab/public_static/workspace.html` `d01093cd5f15ed8f869642e7e6a25718c9831e37b4eeb73159eb3bafcd676a48`
+- `docs/setup/workspace.md` `692f74834ea6ef260a4c3afb3eccef6a8df7f66d87d086d45cdc1ac9642496c0`
+- `_workspace/product-workspace-20261119/task-preparation/browser.py` `5a132321c29893788817cfb60d23c6cc4160ed8ea3582731cb7e7b8562652b3f`
+- `_workspace/product-workspace-20261119/task-preparation/fixtures.py` `a2905a5bdd48a478a0dc561721904d5f2e1ec83542aea64affdaef9050474c42`

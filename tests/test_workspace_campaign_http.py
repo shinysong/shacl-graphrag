@@ -17,7 +17,7 @@ from scripts.workspace_proposal_preflight import inspect
 
 class CampaignHTTPTests(unittest.TestCase):
     def test_gateway_billing_and_retention(self):
-        for scenario in ('success', 'missing_cost', 'truncated', 'http_error'):
+        for scenario in ('success', 'success_low', 'missing_cost', 'truncated', 'http_error'):
             with self.subTest(scenario=scenario), tempfile.TemporaryDirectory() as tmp:
                 root = Path(tmp)
                 messages, config = test_workspace_preflight.PreflightTests().fixture(root)
@@ -28,6 +28,11 @@ class CampaignHTTPTests(unittest.TestCase):
                 (root/'two-messages.json').write_bytes(second_raw)
                 manifest['records'].append(dict(manifest['records'][0], id='two', messages_sha256=hashlib.sha256(second_raw).hexdigest()))
                 (root/'manifest.json').write_text(json.dumps(manifest))
+                if scenario=='success_low':
+                    config['reasoning_effort']='low'
+                    endpoint=json.loads((root/'endpoints.json').read_text())
+                    endpoint['data']['endpoints'][0]['supported_parameters'].append('reasoning')
+                    (root/'endpoints.json').write_text(json.dumps(endpoint))
                 config['max_calls'] = 2
                 report = inspect(root, root/'endpoints.json', config)
                 auth = {k: report[k] for k in ('config_sha256', 'manifest_sha256', 'endpoints_sha256')}
@@ -58,7 +63,7 @@ class CampaignHTTPTests(unittest.TestCase):
                 with patch('apps.factory_lab.public_runtime.httpx.Client', side_effect=client), \
                      patch('socket.socket.connect', side_effect=AssertionError('Network forbidden')):
                     result = execute(root, root/'endpoints.json', config, auth, directory, key)
-                count = 2 if scenario=='success' else 1
+                count = 2 if scenario.startswith('success') else 1
                 self.assertEqual(len(requests), count)
                 for index, payload in enumerate(requests):
                     rows = observations[index]
@@ -68,6 +73,8 @@ class CampaignHTTPTests(unittest.TestCase):
                     self.assertEqual(payload['messages'], (messages,second_messages)[index])
                     self.assertEqual(payload['temperature'], 0)
                     self.assertEqual(payload['max_tokens'], config['max_tokens'])
+                    if scenario=='success_low':self.assertEqual(payload['reasoning'],{'effort':'low'})
+                    else:self.assertNotIn('reasoning',payload)
                     self.assertFalse(payload['provider']['allow_fallbacks'])
                     self.assertEqual(payload['provider']['order'], [config['provider']])
                 self.assertEqual(len(result['attempts']), count)
@@ -80,9 +87,9 @@ class CampaignHTTPTests(unittest.TestCase):
                 self.assertEqual((directory/'paid-stop.json').exists(), scenario=='missing_cost')
                 self.assertEqual(export_attempts(directory), result)
                 for attempt in result['attempts']:
-                    self.assertEqual(attempt['status'], 'response' if scenario=='success' else 'failed')
+                    self.assertEqual(attempt['status'], 'response' if scenario.startswith('success') else 'failed')
                     self.assertEqual(attempt['packet_sha256'], hashlib.sha256(raw if attempt['case_id']=='one' else second_raw).hexdigest())
-                    if scenario=='success': self.assertEqual(attempt['message'], response_message)
+                    if scenario.startswith('success'): self.assertEqual(attempt['message'], response_message)
                 self.assertEqual(len(list((directory/'calls').glob('*-request.json'))), count)
                 saved_responses = list((directory/'calls').glob('*-response.txt'))
                 self.assertEqual(len(saved_responses), count)

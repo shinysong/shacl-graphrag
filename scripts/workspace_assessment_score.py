@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 
 
-def score(packet_dir, rubric_path, attempts_path):
+def score(packet_dir, rubric_path, attempts_path, *, allow_json_envelope=False):
     root = Path(packet_dir)
     rubric_raw = Path(rubric_path).read_bytes()
     attempts_raw = Path(attempts_path).read_bytes()
@@ -59,7 +59,12 @@ def score(packet_dir, rubric_path, attempts_path):
                 rows.append(result)
                 continue
             try:
-                response = json.loads(attempt['message']['content'])
+                if allow_json_envelope:
+                    from apps.factory_lab.preparation_model import decode_proposal
+                    response, envelope = decode_proposal(attempt['message']['content'])
+                    result['response_format'] = envelope
+                else:
+                    response = json.loads(attempt['message']['content'])
                 values = response.get('relation_assessments', [])
                 if not isinstance(values, list):
                     raise ValueError('Assessments must be a list')
@@ -89,6 +94,7 @@ def score(packet_dir, rubric_path, attempts_path):
     return {'scope':'Authored development pair-label agreement, directions retained separately. Not direction correctness, citation entailment, full response validity, truth, approval or model quality evidence by itself.',
             'rubric_sha256':hashlib.sha256(rubric_raw).hexdigest(),
             'attempts_sha256':hashlib.sha256(attempts_raw).hexdigest(), 'packet_sha256':hashes,
+            'response_policy':'single-json-envelope-v1' if allow_json_envelope else 'strict-json',
             'planned_cases':len(rubric), 'recorded_attempts':len(attempts),
             'case_attempt_states':dict(Counter(r['state'] for r in rows)),
             'direction_outcomes':dict(Counter(d['outcome'] for r in rows for d in r['directions'])),
@@ -99,7 +105,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('packets'); parser.add_argument('rubric'); parser.add_argument('attempts')
     parser.add_argument('output')
+    parser.add_argument('--allow-json-envelope',action='store_true',help='Explicit changed-parser diagnostic; never rewrite original strict results')
     args = parser.parse_args()
-    report = score(args.packets, args.rubric, args.attempts)
+    report = score(args.packets, args.rubric, args.attempts, allow_json_envelope=args.allow_json_envelope)
     with Path(args.output).open('x') as out:
         json.dump(report, out, ensure_ascii=False, indent=2)

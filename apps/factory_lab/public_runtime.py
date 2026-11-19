@@ -68,9 +68,11 @@ class PublicGateway:
         self.store, self.directory, self.config, self.key = store, Path(directory), config, key
         if not key or key == 'your_openrouter_api_key_here':
             raise ValueError('Set OPENROUTER_API_KEY in the server environment')
-        if set(config) != {'model', 'provider', 'prompt_per_million', 'completion_per_million',
+        if set(config) - {'reasoning_effort'} != {'model', 'provider', 'prompt_per_million', 'completion_per_million',
                           'max_tokens', 'max_calls', 'max_usd', 'hours'}:
             raise ValueError('Use the documented live-config fields')
+        if 'reasoning_effort' in config and config['reasoning_effort'] not in ('low', 'medium', 'high'):
+            raise ValueError('Unsupported reasoning effort')
         for field in ('model', 'provider'):
             if not isinstance(config[field], str) or not config[field].strip() or '<' in config[field]:
                 raise ValueError('Choose a model and provider')
@@ -115,6 +117,8 @@ class PublicGateway:
                    'max_tokens': cfg['max_tokens'], 'stream': False,
                    'provider': {'order': [cfg['provider']], 'allow_fallbacks': False, 'require_parameters': True,
                                 'max_price': {'prompt': float(cfg['prompt_per_million']), 'completion': float(cfg['completion_per_million'])}}}
+        if 'reasoning_effort' in cfg:
+            payload['reasoning'] = {'effort': cfg['reasoning_effort']}
         details = {'cost': None}
         calls = self.directory / 'calls'
         calls.mkdir(mode=0o700, exist_ok=True)

@@ -4,6 +4,7 @@ No generated query/code execution. Structural validation is not semantic truth.
 Caller persists every checkpoint and owns authorization and idempotency.
 """
 import json
+from .model_json import decode_model_json
 from copy import deepcopy
 from . import preparation as p, workspace_lookup, workspace_policy, workspace_stock, workspace_documents, workspace_relations, workspace_bindings
 
@@ -141,8 +142,13 @@ def ask(draft,question,call,checkpoint):
         if not isinstance(content,str) or len(content.encode())>256000:
             raise ValueError('Missing or oversized model question response')
         trace['model_responses'].append({'phase':phase,'content':content});checkpoint(trace)
-        try:return json.loads(content)
-        except (ValueError,RecursionError) as exc:raise ValueError('Question model response is not JSON') from exc
+        try:
+            value, envelope = decode_model_json(content)
+        except ValueError as exc:
+            raise ValueError('Question model response is not JSON') from exc
+        trace['model_responses'][-1]['response_format'] = envelope
+        checkpoint(trace)
+        return value
     plan=model(PLANNER,{'question':question,'catalog':catalog},'planning')
     if not isinstance(plan,dict) or set(plan)!={'calls','unresolved'} or not isinstance(plan['calls'],list) or len(plan['calls'])>4 or not strings(plan['unresolved']):
         raise ValueError('Invalid bounded question plan')

@@ -125,3 +125,33 @@ class QuestionTests(unittest.TestCase):
                 calls=len(gateway.calls)
                 self.assertTrue(WorkspaceService(Path(tmp)/'db',question_gateway=gateway).handle(request)['reused'])
                 self.assertEqual(len(gateway.calls),calls)
+
+
+class QuestionEnvelopeTests(unittest.TestCase):
+    def test_saved_fenced_messages_preserve_evidence_and_unresolved_scope(self):
+        class Fenced(Gateway):
+            def call(self,key,messages):
+                response=super().call(key,messages)
+                response['content']='```json\n'+response['content']+'\n```'
+                return response
+        with tempfile.TemporaryDirectory() as tmp:
+            gateway=Fenced([PLAN,FINAL]);service=WorkspaceService(Path(tmp)/'db',question_gateway=gateway)
+            row=service.store.create('approved',approved())
+            request={'action':'ask','id':row['id'],'revision':1,'request_key':'fenced','question':'Show O1 and refund eligibility'}
+            result=service.handle(request)['operation']
+            self.assertEqual(result['state'],'completed',result.get('error'))
+            self.assertEqual(result['result']['unresolved'],PLAN['unresolved'])
+            self.assertEqual(result['result']['evidence'][0]['result']['mode'],'source_lookup')
+            self.assertTrue(all(r['content'].startswith('```json') and r['response_format']=='json_fence' for r in result['result']['model_responses']))
+            self.assertEqual(len(gateway.calls),2)
+            self.assertTrue(service.handle(request)['reused']);self.assertEqual(len(gateway.calls),2)
+        for content in ('```json\n{"calls":','Explanation\n{"calls":[],"unresolved":[]}',
+                        '```json\n{"calls":[{"tool":"run_sql","arguments":{}}],"unresolved":[]}\n```'):
+            class Raw(Gateway):
+                def call(self,key,messages):self.calls.append((key,messages));return {'content':content}
+            with self.subTest(content=content),tempfile.TemporaryDirectory() as tmp:
+                gateway=Raw([]);service=WorkspaceService(Path(tmp)/'db',question_gateway=gateway);row=service.store.create('approved',approved())
+                op=service.handle({'action':'ask','id':row['id'],'revision':1,'request_key':'bad','question':'Show O1'})['operation']
+                self.assertEqual(op['state'],'failed');self.assertEqual(len(gateway.calls),1)
+                self.assertEqual(op['result']['model_responses'][0]['content'],content)
+                self.assertEqual(op['result']['evidence'],[])

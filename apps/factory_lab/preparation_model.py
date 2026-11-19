@@ -4,6 +4,7 @@ No client, credentials, environment lookup or implicit network call here. The
 caller must supply an authorized durable gateway (e.g. MeteredClient.call bound
 to an existing run). Public workspace remains local-only until explicitly wired.
 """
+from .model_json import decode_model_json
 from copy import deepcopy
 import json
 from . import preparation as p
@@ -56,6 +57,9 @@ not assessed, not supported. These judgments cannot delete or approve candidates
 Do not also propose a new relation for an assessed existing directed pair.
 '''
 
+# Compatibility export for saved-response diagnostics and the proposal adapter.
+decode_proposal = decode_model_json
+
 class ModelProposalGenerator:
     def __init__(self, call, model_identity):
         if not callable(call) or not isinstance(model_identity,str) or not 1<=len(model_identity)<=160:
@@ -80,10 +84,7 @@ class ModelProposalGenerator:
             raise ValueError('Proposal context exceeds 38000 bytes; split the source bundle')
         message=self.call(messages)
         content=message.get('content') if isinstance(message,dict) else None
-        if not isinstance(content,str) or len(content.encode())>256000:
-            raise ValueError('Missing or oversized model proposal response')
-        try:response=json.loads(content)
-        except (ValueError,RecursionError) as exc:raise ValueError('Model proposal is not valid JSON') from exc
+        response, envelope = decode_proposal(content)
         if not isinstance(response,dict) or (not {'choices'}<=set(response) or set(response)-{'choices','relations','relation_assessments'}) or not isinstance(response['choices'],list) or len(response['choices'])!=len(selected):
             raise ValueError('Model must return every requested proposal exactly once')
         indexed={e['id']:e for e in selected};seen=set()
@@ -110,6 +111,9 @@ class ModelProposalGenerator:
         existing={e['id']:e for e in baseline if e['kind']=='relation'}
         self._relations(response.get('relations',[]),baseline,sources)
         self._assess(response.get('relation_assessments',[]),existing,sources)
+        for entry in baseline:
+            if entry.get('extraction', {}).get('method') == self.name:
+                entry['extraction']['response_format'] = envelope
         p.validate_suggestions(baseline,sources)
         return baseline
 

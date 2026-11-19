@@ -13,8 +13,10 @@ from apps.factory_lab.store import dumps
 
 
 def inspect(packet_dir, endpoints_path, config):
-    if set(config)!={"model","provider","prompt_per_million","completion_per_million","max_tokens","max_calls","max_usd","hours"}:
+    if set(config)-{"reasoning_effort"}!={"model","provider","prompt_per_million","completion_per_million","max_tokens","max_calls","max_usd","hours"}:
         raise ValueError("Use exact gateway config fields")
+    if 'reasoning_effort' in config and config['reasoning_effort'] not in ('low','medium','high'):
+        raise ValueError('Unsupported reasoning effort')
     root=Path(packet_dir)
     raw=(root/'manifest.json').read_bytes();manifest=json.loads(raw)
     endpoint_raw=Path(endpoints_path).read_bytes();data=json.loads(endpoint_raw)['data']
@@ -35,6 +37,8 @@ def inspect(packet_dir, endpoints_path, config):
     for field,price in [('prompt_per_million','prompt'),('completion_per_million','completion')]:
         if Decimal(str(config[field])) < Decimal(endpoint['pricing'][price])*1000000:
             raise ValueError('Configured price below provider snapshot')
+    if 'reasoning_effort' in config and 'reasoning' not in endpoint.get('supported_parameters',[]):
+        raise ValueError('Provider does not advertise reasoning configuration')
     if config['max_tokens']>endpoint['max_completion_tokens']:raise ValueError('Output limit exceeds provider snapshot')
     records=[];seen=set();total=Decimal(0)
     for capture in manifest['records']:
@@ -61,7 +65,7 @@ def inspect(packet_dir, endpoints_path, config):
             'manifest_sha256':hashlib.sha256(raw).hexdigest(),'endpoints_sha256':hashlib.sha256(endpoint_raw).hexdigest(),
             'records':records,'total_reserved_usd':str(total),'paid_execution_ready':False,
             'remaining':['Explicit new bounded human authorization and absolute deadline','Independent live runner review and durable attempt export','Recheck provider metadata before execution; tokenizer/output adequacy unmeasured'],
-            'limitations':['No calls or semantic quality results','No actual tokenizer count; reservation formula not billed-cost prediction','Model reasoning defaults are not pinned by this gateway config','Metadata compatibility is not successful provider execution']}
+            'limitations':['No calls or semantic quality results','No actual tokenizer count; reservation formula not billed-cost prediction','Reasoning effort is pinned; actual provider allocation remains unmeasured' if 'reasoning_effort' in config else 'Model reasoning defaults are not pinned by this gateway config','Metadata compatibility is not successful provider execution']}
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)

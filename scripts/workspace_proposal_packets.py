@@ -47,7 +47,7 @@ def freeze(source_path, output):
         records.append(record)
         # Retain each completed capture even if a later case fails.
         (output/'records.json').write_text(json.dumps(records,indent=2))
-    files=['apps/factory_lab/preparation_model.py','apps/factory_lab/preparation.py',
+    files=['apps/factory_lab/model_json.py','apps/factory_lab/preparation_model.py','apps/factory_lab/preparation.py',
            'apps/factory_lab/preparation_advisory.py','apps/factory_lab/preparation_sources.py',
            'apps/factory_lab/preparation_evidence.py','scripts/workspace_proposal_packets.py','uv.lock']
     report={'scope':'Offline exact message capture only; zero provider calls or generated answers',

@@ -33,7 +33,7 @@ class PreflightTests(unittest.TestCase):
     def test_tamper_caps_and_provider_parameters(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp);messages,config=self.fixture(root)
-            for change in ({'max_usd':'0.000001'},{'prompt_per_million':'0.5'},{'provider':'other'},{'extra':1}):
+            for change in ({'max_usd':'0.000001'},{'prompt_per_million':'0.5'},{'provider':'other'},{'extra':1},{'reasoning_effort':'none'},{'reasoning_effort':'low'}):
                 with self.subTest(change=change),self.assertRaises(ValueError):inspect(root,root/'endpoints.json',config|change)
             data=json.loads((root/'endpoints.json').read_text());data['data']['endpoints'][0]['supported_parameters']=['max_tokens'];(root/'endpoints.json').write_text(json.dumps(data))
             with self.assertRaises(ValueError):inspect(root,root/'endpoints.json',config)
