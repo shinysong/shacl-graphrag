@@ -140,12 +140,12 @@ flowchart TD
 
 이 복잡도 표는 이론적 계산 가능성과 확장성의 근거를 제공한다. 특히 스키마가 고정된 상태에서 데이터 크기에 대해 **PTime-complete**라는 결과는, 존재 공리가 포함된 온톨로지 환경에서도 NP-hard나 결정 불가능(undecidable)으로 빠지지 않고 결정론적 다항 시간 안에 닫힌 세계 검증을 수행할 수 있음을 보장한다.
 
-## 10장: 종합 판단과 우리 연구(`shacl-graphrag`)에의 시사점
+## 10장: 종합 판단과 OWL·SHACL 결합 파이프라인 설계 시사점
 
 이 논문은 "OWL 추론기와 SHACL 검증기를 어떻게 한 파이프라인에 놓을 것인가?"라는 실무적 질문에 가장 엄밀한 이론적 기준점을 제공한다.
 
 1. **추론된 익명 존재(Existential Witness)와 명시적 데이터 증거의 구분**:
    - 논문의 예제 3.1·3.2가 잘 보여 주듯, 온톨로지의 존재 공리($\sqsubseteq \exists r.B$)로 추론된 익명 노드를 실제 원천 데이터에서 확인된 개체와 무분별하게 섞으면 개수 제약(`sh:minCount`, `sh:maxCount`)이나 부정 제약(`sh:not`)이 깨진다.
-   - 우리 연구(`shacl-graphrag`)의 오프라인 OWL-RL 추론 및 SHACL 검증 실험에서도 **양의 규칙 폐포(positive rule closure)로 얻은 사실**과 **원천 데이터의 누락(missing evidence)**을 엄격히 분리하는 원칙을 세웠는데, 이 논문의 엄격한 정준 모델(Austere Canonical Model)이 바로 그러한 최소 추론 원칙의 형식적 일반화다.
+   - 따라서 OWL-RL/RDFS 추론과 SHACL 검증을 결합할 때에는 **양의 규칙 폐포(positive rule closure)로 얻은 사실**과 **원천 데이터의 누락(missing evidence)**을 엄격히 분리해야 하며, 이 논문의 엄격한 정준 모델(Austere Canonical Model)이 바로 그러한 최소 추론 원칙의 형식적 일반화다.
 2. **구현 시 확인해야 할 언어 조각(Fragment)의 경계**:
    - 이 논문의 재작성 정리가 성립하는 범위는 일관된 $\text{Horn-}\mathcal{ALCHIQ}$ 온톨로지와 Stratified SHACL(재귀 영역에서는 일반 카디널리티와 `sh:closed` 제외)이다. 만약 온톨로지에 비-Horn 선언($A \sqsubseteq B \sqcup C$)이 들어가면 단일 정준 모델이 존재하지 않아 Core Universal Model 의미론을 그대로 쓸 수 없다. 따라서 실제 시스템에 적용할 때에는 사용하는 온톨로지가 Horn 조각에 속하는지부터 점검해야 한다.

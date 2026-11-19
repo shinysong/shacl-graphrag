@@ -40,7 +40,7 @@
 - **예제 1.1 (고객 360 식별 그래프와 부분적/다중 키)**:
   - 기업의 내부 고객 노드(`:Customer {customerid, name}`)와 외부 소셜 미디어 데이터(`:TwitterUser {username, email}`)를 병합해 하나의 고객 노드로 합친다고 하자.
   - 내부 `customerid`는 모든 고객에게 정확히 하나씩 있어야 하는 정식 식별자(**EXCLUSIVE MANDATORY SINGLETON**)다.
-  - 반면 트위터 계정(`twitter`)은 모든 고객이 갖고 있지는 않지만(선택적), 일단 존재하면 서로 다른 두 고객이 같은 트위터 계정을 공유할 수는 없다(**EXCLUSIVE**).また 한 고객이 여러 이메일 주소를 가질 수도 있는데, 이때에도 각 이메일 주소는 특정 고객 한 명만을 가리켜야 한다.
+  - 반면 트위터 계정(`twitter`)은 모든 고객이 갖고 있지는 않지만(선택적), 일단 존재하면 서로 다른 두 고객이 같은 트위터 계정을 공유할 수는 없다(**EXCLUSIVE**). 또한 한 고객이 여러 이메일 주소를 가질 수도 있는데, 이때에도 각 이메일 주소는 특정 고객 한 명만을 가리켜야 한다.
 - **예제 1.2 (위상 구조를 포함한 주문 무결성)**:
   - `(:Order)-[:placedBy]->(:Customer)` 패턴에서, 주문(`Order`)의 식별자는 주문 자체의 속성(`orderid`)뿐 아니라 **"반드시 정확히 한 명의 고객(`:Customer`)과 `:placedBy` 간선으로 연결되어야 한다"**는 그래프 위상(topology) 조건까지 포함한다.
 
@@ -184,7 +184,7 @@ flowchart LR
 
 ### 5.1 시맨틱 웹(OWL `owl:hasKey`, SHACL)과의 결정적 차이
 
-5.4절에서 저자들은 시맨틱 웹 스택의 키·제약 언어와 PG-Keys를 직접 비교한다. 우리 연구(`shacl-graphrag`)의 관점에서 가장 눈여겨볼 대목이다.
+5.4절에서 저자들은 시맨틱 웹 스택의 키·제약 언어와 PG-Keys를 직접 비교한다. 속성 그래프와 RDF/OWL·SHACL의 설계 철학 차이를 가장 선명하게 보여 주는 대목이다.
 
 | 비교 항목 | OWL 2 (`owl:hasKey`) | W3C SHACL / ShEx | PG-Keys (SIGMOD 2021) |
 |---|---|---|---|
@@ -205,11 +205,11 @@ flowchart LR
 2. **정규 경로 질의(Regular Path Queries, 6.2절)**: 행정 구역처럼 도시가 주(State)·도(Province)를 거쳐 국가로 연결될 때 `[:isPartOf*]` 같은 추이적 경로를 범위나 서술자에 쓸 수 있다. 다만 임의 길이 경로 자체가 키 값(`p = (x)-[:isPartOf*]->(:Country)`)으로 쓰일 때에는 그래프에 순환(cycle)이 있으면 경로가 무한해질 수 있어 최단 경로(shortest path)나 단순 경로(simple path)로 제한하는 의미론적 선택이 필요하다고 짚는다.
 3. **복합 값(Complex Values, 6.3절)**: JSON처럼 속성값 안에 배열이나 중첩 객체가 들어 있을 때 `x.email[@.category='official']` 같은 경로 추출을 서술자에 결합할 수 있다.
 
-## 종합 판단과 우리 연구(`shacl-graphrag`)에의 시사점
+## 종합 판단과 RDF/OWL·SHACL 비교 시사점
 
 PG-Keys는 그래프 데이터베이스에서 흔히 뒤섞여 쓰이던 **유일성(`EXCLUSIVE`), 필수성(`MANDATORY`), 함수성(`SINGLETON`)**을 3개의 직교하는 논리 조건 (K1, K2, K3)으로 분해하고, 이를 표준 패턴 매칭 질의로 곧바로 검증할 수 있게 만든 명쾌한 논문이다.
 
 1. **식별자·참조 무결성 검사의 표준화**:
-   - 우리 연구의 `domain-characteristics-1` 및 `workbench` 연결성 검증에서 다룬 식별자 네임스페이스·복합 참조 키 문제는 사실상 PG-Keys의 `EXCLUSIVE MANDATORY SINGLETON` (K1+K2+K3) 구조와 정확히 일치한다.
+   - 여러 원천 데이터를 통합하거나 엔티티 연결성을 검증할 때 흔히 마주치는 식별자 네임스페이스·복합 참조 키 문제는 PG-Keys의 `EXCLUSIVE MANDATORY SINGLETON` (K1+K2+K3) 구조로 명확히 분류할 수 있다.
 2. **검증기의 Cypher/SPARQL 반례 질의 컴파일 패턴**:
-   - 4.5절이 제시한 "(K1) 두 복사본 조인 후 $x_1 \neq x_2$ 검사, (K2) `NOT EXISTS` 검사, (K3) 서술자 두 복사본 조인 후 $\bar{y}_1 \neq \bar{y}_2$ 검사"는 Neo4j나 RDF/SPARQL 양쪽 백엔드에서 동등한 키 무결성 감사(audit) 쿼리를 자동 생성할 때 그대로 쓸 수 있는 표준 템플릿이다. 이어지는 2023년 논문인 [PG-Schema 리뷰](2026-11-19-review-pg-schema.md)에서는 이 PG-Keys가 어떻게 다중 상속 타입 시스템(**PG-Types**)과 결합해 완전한 그래프 스키마 언어가 되는지 살펴본다.
+   - 4.5절이 제시한 "(K1) 두 복사본 조인 후 $x_1 \neq x_2$ 검사, (K2) `NOT EXISTS` 검사, (K3) 서술자 두 복사본 조인 후 $\bar{y}_1 \neq \bar{y}_2$ 검사"는 Neo4j(Cypher)나 RDF(SPARQL) 양쪽 백엔드에서 동등한 키 무결성 감사(audit) 쿼리를 자동 생성할 때 그대로 쓸 수 있는 표준 템플릿이다. 이어지는 2023년 논문인 [PG-Schema 리뷰](2026-11-19-review-pg-schema.md)에서는 이 PG-Keys가 어떻게 다중 상속 타입 시스템(**PG-Types**)과 결합해 완전한 그래프 스키마 언어가 되는지 살펴본다.

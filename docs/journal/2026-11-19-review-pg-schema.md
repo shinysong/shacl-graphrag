@@ -175,13 +175,13 @@ $$(L_1, R_1) \oplus (L_2, R_2) \;=\; (L_1 \cup L_2,\; R_1 \cap R_2)$$
 | **TV** (Tractable Validation) | 다항 시간 내 검증 보장 | 재귀·부정·카디널리티 결합 시 NP-hard 가능 (`[✓]`) | 비재귀 계층화 구조와 CQ 제약으로 다항 시간 검증 보장 (`✓`) |
 | **SFPX** (Schema First/Partial/fleXible) | 엄격한 선스키마, 부분 스키마, 사후 유연 스키마 | 모양 타깃에 따라 모두 가능 (`f/p/x`) | `STRICT` / `LOOSE` / `OPEN` 조합으로 모두 가능 (`f/p/x`) |
 
-### 5.2 우리 연구(`shacl-graphrag` 및 RDF↔LPG 브리지)에의 시사점
+### 5.2 RDF/SHACL 및 속성 그래프 스키마 설계에의 시사점
 
 이 논문은 앞서 리뷰한 [rdf2pg 리뷰](2026-11-05-review-rdf2pg.md), [OWL과 SHACL 의미론 리뷰](2026-11-05-review-owl-shacl-semantics.md), 그리고 [PG-Keys 리뷰](2026-11-19-review-pg-keys.md)를 하나로 이어 주는 핵심 고리다.
 
 1. **SHACL의 `sh:closed`와 PG-Schema의 `STRICT` / `LOOSE` / `OPEN` 대응**:
    - RDF/SHACL에서 엔터프라이즈 스키마를 작성할 때 가장 번거로운 점 중 하나가 "기본적으로는 열린 그래프이지만 핵심 엔티티는 닫고(`sh:closed true`), 그 안에서도 일부 확장 메타데이터만 열어 두는" 세밀한 개방성 조절이다.
-   - PG-Schema가 제시한 **그래프 수준(`STRICT`/`LOOSE`) · 레이블 수준(`OPEN`) · 속성 수준(`OPTIONAL`/`OPEN`)의 3단 분리**는 JSON/LPG 기반 워크스페이스(`apps/factory_lab/workspace_*`)나 RDF-LPG 양방향 변환 스키마를 설계할 때 그대로 차용할 수 있는 가장 깔끔한 추상화다.
+   - PG-Schema가 제시한 **그래프 수준(`STRICT`/`LOOSE`) · 레이블 수준(`OPEN`) · 속성 수준(`OPTIONAL`/`OPEN`)의 3단 분리**는 속성 그래프 기반 시스템이나 RDF-LPG 양방향 변환 스키마를 설계할 때 그대로 차용할 수 있는 가장 깔끔한 추상화다.
 2. **타입 추론($\text{Types}(u)$)과 제약 검증($\text{FOR } p(x) \dots$)의 2단계 파이프라인**:
    - PG-Schema는 먼저 각 노드와 간선이 어떤 구조적 타입(`personType`, `customerType`)에 부합하는지 로컬 매칭($\text{Types}: N_G \cup E_G \to 2^{N_S} \cup 2^{E_S}$)으로 결정한 뒤, 그 타입 이름을 범위·서술자 질의에서 참조해 PG-Keys 제약을 검사한다.
    - 이는 SHACL에서 타깃 선택(`sh:targetClass` 또는 암묵적 모양 타입)과 제약 컴포넌트 검사를 나누거나, OWL-RL/RDFS 타입 폐포를 먼저 계산한 뒤 SHACL을 적용하는 2단계 검증 아키텍처와 구조적으로 일맥상통한다. ISO GQL 표준이 이 PG-Schema를 기반으로 확정되어 가고 있는 만큼, 향후 속성 그래프와 RDF/SHACL 하이브리드 시스템을 설계할 때 필수 기준점이 되는 논문이다.
