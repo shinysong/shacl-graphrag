@@ -40,13 +40,9 @@ RDF는 대상을 노드로, 관계를 연결로 표현하는 데이터 모델이
 
 논문은 양성 예시들의 공통 구조를 그래프의 곱으로 표현하고 도달 관계를 반영한 star product를 구성한다. 이어 음성과 구분되는지, 그 구조를 유한한 shape로 표현할 수 있는지를 분석한다. fitting 존재 판단에는 오토마타를 이용한 방법도 제시한다. [논문 §4–5](https://arxiv.org/html/2607.27934v2)
 
-```mermaid
-flowchart TD
-    A[그래프와 양성·음성 노드] --> B[사용할 관계와 표현 범위 지정]
-    B --> C[양성들의 공통 구조 분석]
-    C --> D[음성 구분과 유한 표현 가능성 확인]
-    D --> E[조건에 맞는 fitting 판단·계산]
-```
+![양성·음성 예제 기반 SHACL Fitting 판정 흐름](../assets/images/shapes-from-examples/excalidraw-shapes-fitting-flow.svg)
+
+그림: 양성·음성 예제 기반 SHACL Fitting 판정 흐름 ([SVG 크게 보기](../assets/images/shapes-from-examples/excalidraw-shapes-fitting-flow.svg) · [Excalidraw 원본](../assets/images/shapes-from-examples/excalidraw-shapes-fitting-flow.excalidraw)).
 
 이 그림은 접근을 이해하기 위한 요약이다. 증명의 세부 알고리즘을 그대로 구현한 의사코드와는 구별된다. 특히 사례를 구분하는 규칙이 존재하는 문제와, 그중 가장 구체적인 규칙을 얻는 문제를 섞어서는 안 된다.
 

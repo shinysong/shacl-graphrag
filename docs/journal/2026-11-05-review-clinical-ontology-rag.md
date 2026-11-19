@@ -71,16 +71,9 @@
 
 그림 1을 따라가면 먼저 MIMIC-IV의 CSV 테이블을 전처리·정규화해 RDF 트리플로 바꾼다. 이를 의료 온톨로지에 맞춰 Neo4j 지식 그래프로 적재한 뒤 Cypher 기반 그래프 검색과 임베딩 기반 벡터 검색을 나란히 수행한다. 두 경로에서 찾은 근거는 하이브리드 근거 융합 모듈에서 순위화와 온톨로지 검증을 거쳐 LLM으로 들어가고 최종적으로 임상 의사결정 지원 답변과 근거 경로가 출력된다.
 
-```mermaid
-flowchart TD
-    A[MIMIC-IV 테이블] --> B[규칙 기반 RDF 매핑]
-    B --> C[n10s로 Neo4j 적재]
-    C --> D[유형·관계를 따른 Cypher 검색]
-    A --> E[텍스트 표현의 벡터 검색]
-    D --> F[근거 결합과 의미 필터]
-    E --> F
-    F --> G[LLM 분류·설명]
-```
+![MIMIC-IV 기반 임상 온톨로지 RAG 파이프라인](../assets/images/clinical-ontology-rag/excalidraw-clinical-rag-pipeline.svg)
+
+그림: MIMIC-IV 기반 임상 온톨로지 RAG 파이프라인 ([SVG 크게 보기](../assets/images/clinical-ontology-rag/excalidraw-clinical-rag-pipeline.svg) · [Excalidraw 원본](../assets/images/clinical-ontology-rag/excalidraw-clinical-rag-pipeline.excalidraw)).
 
 위 도식은 기존 리뷰에서 논문의 처리 순서를 한눈에 보려고 그린 것이다. 원문 그림 1의 노란색 상자(`Healthcare ontology`)에는 `Patient`, `Encounter`, `Condition`, `Medication`, `Observation` 다섯 항목만 적혀 있으나 이어지는 3.1절 본문과 그림 3에서는 `LabTest`를 포함한 여섯 클래스를 정식 온톨로지 클래스로 정의한다. 또한 RDF 입력을 n10s로 적재했다는 설명만으로 OWL 추론기 전체나 별도의 SHACL 엔진 실행이 검증되었다고 읽어서는 안 된다. 본문이 실제로 설명하는 핵심 메커니즘은 유형·관계 제약을 따른 검색과 생성 전 의미 필터다.
 
@@ -162,15 +155,9 @@ $$p(y \mid x) = \text{LLM}(C_h, O(C_h))$$
 
 논문이 말하는 생성 전 검증은 바로 이 $O(C_h)$ 단계다. 예를 들어 환자 A의 검사값을 환자 B의 입원 기록에 잘못 연결했다면 숫자 형식이 멀쩡해도 근거로 쓰면 안 된다. 관계의 정의역과 치역, 환자·입원 귀속을 확인하는 검사는 이런 구조적 뒤섞임을 걸러낼 수 있다. 반면에 올바른 환자와 입원에 연결되어 있지만 측정 자체가 잘못 기록된 수치는 스키마나 관계 제약만으로 찾아낼 수 없다.
 
-```mermaid
-flowchart LR
-    subgraph FilterScope ["의미 필터 O(Ch)가 걸러내는 영역과 한계"]
-        A["후보 근거 결합 (Ch)"] --> B{"정의역·치역 및 개체 귀속 검사"}
-        B -->|환자·입원 불일치 또는 허용되지 않은 관계| C["생성 전 제거"]
-        B -->|온톨로지 구조 통과| D["LLM 입력 근거 O(Ch)"]
-        D --> E["주의: 올바른 구조 안의 측정값 자체 오류는 별도 사실 검증 영역"]
-    end
-```
+![의미 필터 O(Ch)가 걸러내는 구조적 범위와 사실 검증 한계](../assets/images/clinical-ontology-rag/excalidraw-clinical-semantic-filter.svg)
+
+그림: 의미 필터 O(Ch)가 걸러내는 구조적 범위와 사실 검증 한계 ([SVG 크게 보기](../assets/images/clinical-ontology-rag/excalidraw-clinical-semantic-filter.svg) · [Excalidraw 원본](../assets/images/clinical-ontology-rag/excalidraw-clinical-semantic-filter.excalidraw)).
 
 3.7절과 부록(Appendix)에 공개된 구현 사양을 모으면 다음과 같다.
 
@@ -304,26 +291,15 @@ flowchart LR
 
 13쪽 부록의 프롬프트는 검색 근거와 질문을 받아 이진 예측, $[0, 1]$ 구간의 신뢰도 점수, 근거 경로 세 가지를 함께 출력하도록 요청한다. 결국 한 번의 모델 응답에서 나온 결과가 두 갈래의 서로 다른 평가로 나뉘어 채점되는 셈이다.
 
-```mermaid
-flowchart TD
-    A[환자 질문과 검색 근거] --> B[Claude 3.5 Sonnet 응답]
-    B --> C["이진 예측 및 [0, 1] 신뢰도 점수"]
-    B --> D[생성된 임상 진술과 근거 경로]
-    C --> E["표 1·그림 4: 5-겹 교차 검증 분류 지표 (AUC-ROC 0.88)"]
-    D --> F["표 2: 구성별 출력 100건 수동 검토 (KG 경로 미연결 진술 ~6%)"]
-```
+![임상 RAG 정량 분류 평가 및 수동 근거 검토 체계](../assets/images/clinical-ontology-rag/excalidraw-clinical-evaluation.svg)
+
+그림: 임상 RAG 정량 분류 평가 및 수동 근거 검토 체계 ([SVG 크게 보기](../assets/images/clinical-ontology-rag/excalidraw-clinical-evaluation.svg) · [Excalidraw 원본](../assets/images/clinical-ontology-rag/excalidraw-clinical-evaluation.excalidraw)).
 
 위 도식처럼 표 1의 분류 지표와 표 2의 환각률은 같은 시스템에서 나왔더라도 측정 대상과 분모가 다르다. 또한 이 논문이 다루는 온톨로지 검사는 생성 전에 부적합한 후보 근거를 덜어 내는 필터($O(C_h)$)에 초점을 맞추고 있어서, 초안 답변을 먼저 생성한 뒤 검증 보고서를 붙여 수정·보류를 유도하는 사후 검토 설계와는 개입 위치가 다르다.
 
-```mermaid
-flowchart LR
-    subgraph PreFilter ["이 논문의 중심 흐름 (생성 전 근거 필터)"]
-        P1[후보 검색 근거] --> P2["생성 전 의미 필터 O(Ch)"] --> P3[최종 답변 및 예측]
-    end
-    subgraph PostReview ["별도로 비교할 연구 설계 (생성 후 보고서 기반 검토)"]
-        Q1[동일한 검색 근거] --> Q2[초안 답변 생성] --> Q3[제약 검증 보고서] --> Q4[수정 답변 또는 보류]
-    end
-```
+![생성 전 의미 필터(Pre-filter)와 생성 후 제약 검토(Post-review)의 비교 구조](../assets/images/clinical-ontology-rag/excalidraw-clinical-prefilter-vs-postreview.svg)
+
+그림: 생성 전 의미 필터(Pre-filter)와 생성 후 제약 검토(Post-review)의 비교 구조 ([SVG 크게 보기](../assets/images/clinical-ontology-rag/excalidraw-clinical-prefilter-vs-postreview.svg) · [Excalidraw 원본](../assets/images/clinical-ontology-rag/excalidraw-clinical-prefilter-vs-postreview.excalidraw)).
 
 원문 그림 1–3이 온톨로지와 그래프 구조를 보여 준다면 표 1–2와 그림 4는 패혈증 분류 실험과 출력 표본 검토에서 보고된 수치를 보여 준다. 논문의 주장과 직접 제시된 근거, 그리고 확대 해석을 경계해야 할 지점을 정리하면 다음과 같다.
 

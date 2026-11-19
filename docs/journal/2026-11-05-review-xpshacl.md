@@ -67,27 +67,9 @@ W3C SHACL 표준 검증기(`pySHACL`, TopBraid, Apache Jena SHACL 등)는 데이
 4. **Context Retriever (RAG 단계)**: 데이터 그래프와 모양 그래프, 그리고 연결된 온톨로지에서 위반과 관련된 개체·속성의 `rdfs:label`, `rdfs:comment`, `skos:definition`, 주변 이웃 트리플을 검색해 문맥 패키지를 만든다.
 5. **Explanation Generator / LLM**: 정당화 트리와 검색된 문맥을 프롬프트에 담아 LLM(실험에서는 로컬 Ollama 기반 `Llama 3` / `Mistral` 계열 또는 API 모델 활용 가능 구조)에 전달하고, **(a) 왜 위반이 발생했는지에 대한 평이한 자연어 설명**과 **(b) 데이터 또는 스키마를 어떻게 점검·수정해야 하는지에 대한 구체적 권고(actionable suggestion)**를 생성한다. 생성된 설명은 재사용을 위해 Violation KG에 영구 저장된다.
 
-```mermaid
-sequenceDiagram
-    participant U as 입력 (RDF + SHACL)
-    participant V as Extended Validator
-    participant K as Violation KG (Cache)
-    participant J as Justification Tree & RAG
-    participant L as LLM Generator
+![xpSHACL 시퀀스: Violation KG 캐시 적중과 Justification RAG 설명 생성](../assets/images/xpshacl/excalidraw-xpshacl-sequence.svg)
 
-    U->>V: 검증 실행
-    V->>V: 위반 검출 및 Violation Signature 계산
-    V->>K: Signature 조회
-    alt Cache Hit (동일 위반 패턴 존재)
-        K-->>V: 저장된 설명 반환 (LLM 호출 생략)
-    else Cache Miss (신규 위반 패턴)
-        V->>J: 정당화 트리 조립 + 라벨·주변 트리플 검색
-        J->>L: 구조화된 문맥 프롬프트 전달
-        L-->>K: 자연어 설명 및 수정 제안 저장
-        K-->>V: 생성된 설명 반환
-    end
-    V-->>U: 설명이 첨부된 최종 보고서(Explained Violation) 출력
-```
+그림: xpSHACL 시퀀스: Violation KG 캐시 적중과 Justification RAG 설명 생성 ([SVG 크게 보기](../assets/images/xpshacl/excalidraw-xpshacl-sequence.svg) · [Excalidraw 원본](../assets/images/xpshacl/excalidraw-xpshacl-sequence.excalidraw)).
 
 > [!IMPORTANT]
 > **설명 생성과 데이터 자동 수리(Auto-repair)의 경계**:

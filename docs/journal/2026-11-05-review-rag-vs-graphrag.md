@@ -37,18 +37,9 @@
 
 저자들은 이 혼선을 줄이기 위해 문서 분할, 임베딩 모델, 생성 스크립트, 채점 프롬프트를 통일한 상태에서 텍스트 RAG와 다섯 가지 GraphRAG 계열을 비교한다. [원문 §1–3](https://arxiv.org/pdf/2502.11371v3#page=2)
 
-```mermaid
-flowchart TD
-    A[원시 문서 집합] --> B[공통 전처리: 약 256토큰 청크 분할]
-    B --> C1[텍스트 RAG: Dense/BM25 청크 검색]
-    B --> C2[KG-GraphRAG: 개체·관계 트리플 및 연결 청크 검색]
-    B --> C3[Community-GraphRAG: Local 개체·이웃 / Global 커뮤니티 요약]
-    B --> C4[HippoRAG2: 개인화 PageRank로 원문 청크 순위화]
-    B --> C5[RaptorRAG: 계층 클러스터링 트리 요약 검색]
-    C1 & C2 & C3 & C4 & C5 --> D[검색 근거 오프라인 저장]
-    D --> E[공통 생성기: Llama-3.1-8B / 70B-Instruct]
-    E --> F[과제별·질문 유형별 분리 채점]
-```
+![RAG vs. GraphRAG 5개 계열 공통 전처리·저장·생성 평가 파이프라인](../assets/images/rag-vs-graphrag/excalidraw-rag-vs-graphrag-eval.svg)
+
+그림: RAG vs. GraphRAG 5개 계열 공통 전처리·저장·생성 평가 파이프라인 ([SVG 크게 보기](../assets/images/rag-vs-graphrag/excalidraw-rag-vs-graphrag-eval.svg) · [Excalidraw 원본](../assets/images/rag-vs-graphrag/excalidraw-rag-vs-graphrag-eval.excalidraw)).
 
 ### 1.2 일곱 가지 비교군의 검색 단위 차이
 

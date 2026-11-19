@@ -118,14 +118,9 @@ $$\varphi, \psi ::= \top \mid B \mid c \mid \varphi \land \psi \mid \varphi \lor
 
 그림 5. 예제 6.5에서 유한 입력 노드($a, b$)로부터 뻗어나가는 무한한 엄격한 정준 모델의 일부. Oudshoorn, Ortiz, Šimkus, PDF 17쪽. [원문](https://noukoudshoorn.github.io/files/SHACL_Validation.pdf#page=17) · [크게 보기](../assets/images/owl-shacl-semantics/figure-05-austere-canonical.png) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
-```mermaid
-flowchart TD
-    A[유한 입력 그래프 G + Horn-ALCHIQ 온톨로지 O] --> B[핵심 아이디어: 무한한 익명 서브트리는 유한 개의 1-type/2-type 패턴으로 반복됨]
-    C[입력 SHACL 제약 S] --> D[제약 재작성 알고리즘 Rewriting]
-    B --> D
-    D --> E[유한 장식 그래프 G' + 재작성된 SHACL 제약 S']
-    E --> F[온톨로지 없는 표준 유한 SHACL 검증기로 판정]
-```
+![Horn-ALCHIQ 온톨로지 추론 하의 SHACL 제약 재작성 판정 흐름](../assets/images/owl-shacl-semantics/excalidraw-owl-shacl-rewriting.svg)
+
+그림: Horn-ALCHIQ 온톨로지 추론 하의 SHACL 제약 재작성 판정 흐름 ([SVG 크게 보기](../assets/images/owl-shacl-semantics/excalidraw-owl-shacl-rewriting.svg) · [Excalidraw 원본](../assets/images/owl-shacl-semantics/excalidraw-owl-shacl-rewriting.excalidraw)).
 
 그림 5에서 보듯 입력 그래프의 개체 $a, b$ 바깥으로 생성되는 익명 노드 사슬($x_1, x_2, \dots$)은 무한하지만, 각 익명 노드가 만족하는 온톨로지 개념 집합(1-type)과 인접 연결 형태(2-type)의 가짓수는 유한하다. 따라서 어떤 경로 표현 $E$가 익명 트리 영역으로 들어갔다가 나오는 조건이나 익명 트리 내부에서 머무는 조건을 **유한 오토마타 상태 전이**로 미리 계산해 SHACL 모양 식 자체에 합쳐 넣을 수 있다. 그 결과 무한 정준 모델 위에서의 검증 문제를 **온톨로지가 없는 유한 그래프 위의 일반 SHACL 검증 문제**로 정확히 환원한다(정리 6.12, 7.6).
 

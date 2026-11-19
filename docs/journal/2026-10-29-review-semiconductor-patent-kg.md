@@ -31,18 +31,9 @@
 
 입력은 2020–2023년 USPTO 영어 특허 초록입니다. 반도체 제조의 웨이퍼 제조, 산화, 포토리소그래피, 식각, 이온 주입, 증착, CMP, 패키징에 해당하는 여덟 세부 주제를 다룹니다. 실제 공장의 센서 기록이나 생산 로트 이력을 사용한 연구는 아닙니다. [§4.1]
 
-```mermaid
-flowchart TD
-    A[특허 초록과 세부 주제] --> B[KBIR-Inspec 개체 후보]
-    B --> C[표기 정리]
-    A --> D[LLM의 개체 정제·관계 추출]
-    C --> D
-    D --> E[드문 관계 표현 제거]
-    E --> F[주제 내부의 관계 묶기]
-    F --> G[주제 사이의 관계 통합]
-    G --> H[대표 관계로 치환한 그래프]
-    H --> I[원문 지지·구조·검색 평가]
-```
+![반도체 특허 초록 기반 지식 그래프 추출 및 관계 정규화 흐름](../assets/images/semiconductor-patent-kg/excalidraw-patent-kg-pipeline.svg)
+
+그림: 반도체 특허 초록 기반 지식 그래프 추출 및 관계 정규화 흐름 ([SVG 크게 보기](../assets/images/semiconductor-patent-kg/excalidraw-patent-kg-pipeline.svg) · [Excalidraw 원본](../assets/images/semiconductor-patent-kg/excalidraw-patent-kg-pipeline.excalidraw)).
 
 흐름은 `후보 추출 → 문맥을 이용한 관계 생성 → 관계 어휘 통합 → 평가`입니다. LLM을 한 번 호출해 모든 작업을 끝내기보다 중간 결과를 정리하며 좁혀갑니다. [§3, 그림 1, 그림 3–6]
 

@@ -21,18 +21,9 @@ Wessel 외의 *Traceability in Battery Cell Production*은 이 연결 문제를 
 
 일반적인 생산 흐름은 전극 제조, 셀 조립, 셀 컨디셔닝으로 나뉩니다. 전극 제조에서는 재료를 혼합하고 집전체에 코팅하고 건조·압연한 뒤 필요한 크기로 자릅니다. 조립에서는 여러 전극과 분리막이 하나의 구조물로 합쳐집니다. 논문의 관심은 이 과정에서 물체와 데이터의 대응을 유지하는 데 있습니다. [§1–2.1]
 
-```mermaid
-flowchart TD
-    A[재료 배치들] -->|혼합| B[코팅용 혼합물]
-    B --> C[연속 전극 롤]
-    C -->|절단: 하나에서 여러 개| D[전극 시트 1]
-    C --> E[전극 시트 2]
-    C --> F[전극 시트 3]
-    D -->|다른 전극·분리막과 결합| G[전극 적층체]
-    H[상대 전극과 분리막] --> G
-    G --> I[배터리 셀]
-    J[코팅 위치별 측정값] -. 해당 구간의 식별 연결 .-> D
-```
+![배터리 전극 롤-투-셀 추적성과 구간 측정 연결](../assets/images/battery-traceability/excalidraw-battery-roll-to-cell.svg)
+
+그림: 배터리 전극 롤-투-셀 추적성과 구간 측정 연결 ([SVG 크게 보기](../assets/images/battery-traceability/excalidraw-battery-roll-to-cell.svg) · [Excalidraw 원본](../assets/images/battery-traceability/excalidraw-battery-roll-to-cell.excalidraw)).
 
 텍스트로 읽으면 `재료 배치 → 전극 롤 → 잘린 시트 → 적층체 → 셀`입니다. 분할과 결합이 일어날 때 입력과 출력의 연결을 남겨야 앞 공정의 측정값을 뒤 공정의 물체에 대응시킬 수 있습니다.
 
@@ -75,17 +66,9 @@ BLB의 구현에서는 코팅 장치에 잉크젯을 설치해 전극에 50 mm �
 
 별도 실험에서는 전극 표면의 특징을 지문처럼 활용합니다. 80 m × 200 mm 음극을 제작하면서 공기 방울을 넣어 구별 가능한 표면 특징을 늘렸습니다. 건조 중 생기는 약 100–200 μm 크기의 핀홀을 건조 후와 압연 후 영상에서 대응시키는 방식입니다. 압연 후 전극 밀도는 1.4 g/cm³입니다. [§4.2, 그림 8]
 
-```mermaid
-flowchart TD
-    A[건조 후 표면 영상] --> B[밝기 보정·영역 자르기]
-    B --> C[핀홀 위치·크기 검출]
-    C --> D[기준점 주변의 상대 좌표 패턴]
-    E[압연 후 표면 영상] --> F[후보 영역의 특징 검출]
-    F --> G[좌표 패턴의 오차 비교]
-    D --> G
-    G --> H[가장 유사한 영역 선택]
-    I[참조용 인쇄 표식] -->|대응의 확인| H
-```
+![표면 핀홀 패턴 기반 건조 전·압연 후 전극 시트 추적](../assets/images/battery-traceability/excalidraw-battery-pinhole-matching.svg)
+
+그림: 표면 핀홀 패턴 기반 건조 전·압연 후 전극 시트 추적 ([SVG 크게 보기](../assets/images/battery-traceability/excalidraw-battery-pinhole-matching.svg) · [Excalidraw 원본](../assets/images/battery-traceability/excalidraw-battery-pinhole-matching.excalidraw)).
 
 Python/OpenCV와 ImageJ를 사용하고 Hough transform과 blob detection으로 특징을 찾습니다. 매칭에서는 대응 특징점의 좌표 차이를 제곱한 값을 평균합니다. 작은 값일수록 두 패턴의 위치 구성이 가깝습니다. 핀홀 지름 차이도 분석하지만 영상의 밝기 영향을 크게 받기 때문에 직접적인 매칭 결정과 구분합니다.
 

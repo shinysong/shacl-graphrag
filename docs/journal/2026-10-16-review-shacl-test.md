@@ -60,15 +60,9 @@ npx shacl-test   --shapes=shapes.ttl   --valid-cases="cases/valid/*.ttl"   --inv
 
 ## 입력이 처리되는 과정
 
-```mermaid
-flowchart TD
-    A[규칙 파일과 사례 파일 경로] --> B[Bash가 사례별 검증 명령 실행]
-    B --> C[양성은 종료 코드 확인]
-    B --> D[음성은 보고서 정리]
-    D --> E[approvals로 기대 보고서 비교]
-    C --> F[성공·실패 출력과 로그]
-    E --> F
-```
+![SHACL-Test 회귀 검증 및 승인(Approval) 비교 흐름](../assets/images/shacl-test/excalidraw-shacl-test-flow.svg)
+
+그림: SHACL-Test 회귀 검증 및 승인(Approval) 비교 흐름 ([SVG 크게 보기](../assets/images/shacl-test/excalidraw-shacl-test-flow.svg) · [Excalidraw 원본](../assets/images/shacl-test/excalidraw-shacl-test-flow.excalidraw)).
 
 `run.sh`는 기본 검증 명령을 구성하고 데이터 파일을 표준입력으로 넘긴다. 양성 경로는 검증 명령의 종료 코드를 확인한다. 음성 경로는 출력 보고서를 정리한 뒤 approvals에 넘긴다. 처리는 외부 명령과 파일을 연결해 진행되며 단일 함수의 boolean 반환만으로 끝나지 않는다. [run.sh](https://github.com/zazuko/shacl-test/blob/f09b688477090ca3cba6a70326797e64d911eb37/run.sh)
 

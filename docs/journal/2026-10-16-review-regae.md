@@ -28,14 +28,9 @@
 
 REGAE는 semantic augmentation과 data augmentation을 제공한다. semantic augmentation에서는 입력 일부를 그대로 유지하거나 숫자 같은 문자 범주로 일반화하도록 표시한다. data augmentation은 유사 입력·경계 사례·후보 간 결과가 갈리는 입력을 생성한다. [논문 §3–5](https://glassmanlab.seas.harvard.edu/papers/ips_augex_uist20.pdf)
 
-```mermaid
-flowchart TD
-    A[문자열과 허용·거부 표시] --> B[정규표현식 후보 합성]
-    B --> C[추가 문자열 생성과 결과 표시]
-    C --> D[사용자가 표시 또는 판정 수정]
-    D --> B
-    B --> E[선택한 정규표현식]
-```
+![ReGAE 대화형 정규표현식 합성 및 검증 루프](../assets/images/regae/excalidraw-regae-loop.svg)
+
+그림: ReGAE 대화형 정규표현식 합성 및 검증 루프 ([SVG 크게 보기](../assets/images/regae/excalidraw-regae-loop.svg) · [Excalidraw 원본](../assets/images/regae/excalidraw-regae-loop.excalidraw)).
 
 위 흐름은 예시를 주고 후보를 만든 뒤, 새 예시를 확인하면서 다시 합성하는 반복이다. 자연어 문장을 곧바로 코드로 번역하는 파이프라인과는 입력 방식부터 다르다.
 

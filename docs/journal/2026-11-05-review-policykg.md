@@ -86,13 +86,9 @@
 - **D2 (LexDeMod & GDPR Transfer)**: 외부 임대차 계약 의무 분류 벤치마크인 LexDeMod(200문장 샘플)와 수작업 추출한 GDPR 조항 15개.
 - **D3 (Human IRR Sample)**: 인간 평가자 2명과 LLM의 의무 양상 분류 일치도를 재기 위한 층화 표집 **50문장**.
 
-```mermaid
-flowchart LR
-    A[D1 전체 추출 문장: 1,663개] --> B[규범 규칙 문장: 443개]
-    B --> C1[FOL 검증 통과 경로: 351개\n구조 정확도 351/351\n양상 일치 330/351]
-    B --> C2[폴백 경로: 92개\n전체 구문 유효성 401/443]
-    C1 --> D[행동 평가 부분집합: 69개 Shape\n양성·음성 인스턴스 판별 F1 0.866]
-```
+![PolicyKG: 정책 문장의 FOL 검증 및 SHACL Shape 변환·평가 흐름](../assets/images/policykg/excalidraw-policykg-pipeline.svg)
+
+그림: PolicyKG: 정책 문장의 FOL 검증 및 SHACL Shape 변환·평가 흐름 ([SVG 크게 보기](../assets/images/policykg/excalidraw-policykg-pipeline.svg) · [Excalidraw 원본](../assets/images/policykg/excalidraw-policykg-pipeline.excalidraw)).
 
 ### 5.2 RQ1–RQ3 종합 결과(원문 표 1) 읽기
 

@@ -60,12 +60,9 @@ FAIR는 데이터를 찾고 접근하고 상호운용하고 재사용할 수 있
 
 RDF reification에서는 관계를 설명하는 자원을 만들고 주어·술어·목적어와 추가 속성을 연결한다. 이를 기계적으로 옮기면 LPG에도 중간 노드가 남는다. rdf2pg는 SPARQL로 이 구조를 읽어 단백질→문헌 관계 하나와 그 관계의 속성으로 묶을 수 있다. 저장 형식을 바꾸면서 응용에서 다룰 관계의 단위도 정한다.
 
-```mermaid
-flowchart LR
-    A[단백질·문헌·관계 설명 자원] --> B[SPARQL로 관계 구조 선택]
-    B --> C[단백질 → 문헌 관계]
-    B --> D[관계 속성 fscore]
-```
+![단백질-문헌 RDF 관계를 속성 그래프 간선+속성으로 매핑하는 구조](../assets/images/rdf2pg/excalidraw-rdf2pg-protein-mapping.svg)
+
+그림: 단백질-문헌 RDF 관계를 속성 그래프 간선+속성으로 매핑하는 구조 ([SVG 크게 보기](../assets/images/rdf2pg/excalidraw-rdf2pg-protein-mapping.svg) · [Excalidraw 원본](../assets/images/rdf2pg/excalidraw-rdf2pg-protein-mapping.excalidraw)).
 
 위 도식은 원문 그림 1의 변환 의도를 간추린 것이다. 어떤 자원을 하나의 관계로 묶을지는 매핑 작성자가 결정한다. 자연어에서 온톨로지를 자동으로 발견했다는 결과는 아니다.
 
@@ -96,16 +93,9 @@ flowchart LR
 
 데이터를 고르는 매핑과 대상 형식에 쓰는 코드를 분리했으므로 새로운 출력 대상을 추가할 때 노드·관계 핸들러를 구현하는 방식으로 확장할 수 있다. 다만 새 DB에 연결된다는 것과 그 DB에서 동일한 성능·질의 의미가 검증됐다는 것은 별개다. Jena TDB는 이 변환 경로의 입력 저장소이며 아래 세 DB 성능 비교에서 별도의 질의 엔진 조건은 아니다.
 
-```mermaid
-flowchart TD
-    A[RDF 원천 데이터] --> B[SPARQL 매핑]
-    B --> C[공통 노드·관계 표현]
-    C --> D[Neo4j용 변환]
-    C --> E[GraphML 변환]
-    D --> F[Cypher 조회]
-    E --> G[ArcadeDB의 Gremlin 조회]
-    A --> H[Virtuoso의 SPARQL 조회]
-```
+![RDF 원천 데이터의 다중 그래프 엔진 변환·조회 경로](../assets/images/rdf2pg/excalidraw-rdf2pg-multiengine-arch.svg)
+
+그림: RDF 원천 데이터의 다중 그래프 엔진 변환·조회 경로 ([SVG 크게 보기](../assets/images/rdf2pg/excalidraw-rdf2pg-multiengine-arch.svg) · [Excalidraw 원본](../assets/images/rdf2pg/excalidraw-rdf2pg-multiengine-arch.excalidraw)).
 
 기존 리뷰의 위 도식도 남겼다. 원문 그림 3이 클래스와 처리 흐름을 보여준다면 이 도식은 RDF 직접 조회와 LPG 변환 조회가 어디서 갈라지는지를 보여준다.
 
@@ -192,13 +182,9 @@ Virtuoso는 RDF를 직접 읽고 LPG 경로에는 SPARQL로 읽어 구조를 바
 
 논문은 처음 100개 결과를 가져오는 조건과 Gremlin에서 제한을 적용하는 위치의 문제를 논의한다. 아래는 그 의미를 설명하기 위한 도식이며 모든 25개 질의가 똑같이 실행됐다는 도식은 아니다.
 
-```mermaid
-flowchart LR
-    A[후보 경로] --> B[먼저 100개로 제한]
-    B --> C[추가 조건 확인]
-    A --> D[추가 조건 확인]
-    D --> E[결과 100개로 제한]
-```
+![질의 엔진 간 LIMIT 100과 추가 필터 순서 차이에 따른 결과 불일치](../assets/images/rdf2pg/excalidraw-rdf2pg-limit-order.svg)
+
+그림: 질의 엔진 간 LIMIT 100과 추가 필터 순서 차이에 따른 결과 불일치 ([SVG 크게 보기](../assets/images/rdf2pg/excalidraw-rdf2pg-limit-order.svg) · [Excalidraw 원본](../assets/images/rdf2pg/excalidraw-rdf2pg-limit-order.excalidraw)).
 
 두 경로는 처리량뿐 아니라 반환 집합도 달라질 수 있다. 먼저 잘라낸 후보 안에 조건을 만족하는 것이 적으면 뒤에 있는 유효한 결과를 놓친다. 따라서 빠른 실행을 같은 답을 계산한 결과로 인정하려면 제한 위치·정렬·중복 처리까지 맞춰야 한다. 이는 이 리뷰의 비교 설계 해석이며 새 성능 측정은 아니다.
 
@@ -208,12 +194,9 @@ flowchart LR
 
 원문은 Car와 Van을 Vehicle로 매핑하는 예를 든다. 둘 다 차량이라는 응용 해석은 가능해도 대상 그래프에 원래 유형을 남기지 않았다면 어느 것이 Car였는지 되돌릴 수 없다.
 
-```mermaid
-flowchart LR
-    A[Car] --> C[Vehicle]
-    B[Van] --> C
-    C --> D[원래 유형을 따로 남기지 않으면 역변환 불가]
-```
+![상위 클래스(Vehicle)로 병합 시 원래 유형(Car/Van) 역변환 불가 문제](../assets/images/rdf2pg/excalidraw-rdf2pg-lossy-type.svg)
+
+그림: 상위 클래스(Vehicle)로 병합 시 원래 유형(Car/Van) 역변환 불가 문제 ([SVG 크게 보기](../assets/images/rdf2pg/excalidraw-rdf2pg-lossy-type.svg) · [Excalidraw 원본](../assets/images/rdf2pg/excalidraw-rdf2pg-lossy-type.excalidraw)).
 
 여기서 의미 보존은 SPARQL로 선택한 내용이 매핑에서 정한 대상 스키마에 맞는다는 논의다. 실제 세계에서 그 내용이 참이라는 보증이나 모든 원본 정보의 무손실 보존과는 구분해야 한다. 의도적으로 일부 정보만 노출하는 응용에서는 정보 축소가 목적일 수 있다.
 
@@ -248,15 +231,9 @@ flowchart LR
 
 ## 논문의 주장과 근거 연결
 
-```mermaid
-flowchart TD
-    A[RDF 지식을 여러 도구에서 조회할 필요] --> B[도메인별 SPARQL 매핑]
-    B --> C[공통 LPG 표현과 출력 핸들러]
-    C --> D[세 데이터셋·세 DB·25개 질의 비교]
-    B --> E[의미 보존과 역변환 조건 논의]
-    D --> F[매핑·언어·엔진이 함께 정하는 비용]
-    E --> F
-```
+![rdf2pg 프레임워크의 매핑·변환·다중 DB 벤치마크 및 역변환 분석 구조](../assets/images/rdf2pg/excalidraw-rdf2pg-summary.svg)
+
+그림: rdf2pg 프레임워크의 매핑·변환·다중 DB 벤치마크 및 역변환 분석 구조 ([SVG 크게 보기](../assets/images/rdf2pg/excalidraw-rdf2pg-summary.svg) · [Excalidraw 원본](../assets/images/rdf2pg/excalidraw-rdf2pg-summary.excalidraw)).
 
 위는 리뷰에서 새로 만든 전체 논증도다. 원문 그림 1–3이 구현을, 그림 4–5가 데이터와 질의를, 그림 6–7이 측정을 보여준다고 연결해서 읽으면 된다.
 

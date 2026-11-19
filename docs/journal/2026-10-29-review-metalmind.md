@@ -23,18 +23,9 @@
 
 예를 들어 작업자가 특정 필터의 밸브 위치를 물으면 시스템은 관련 문장뿐 아니라 연결된 플랜지와 씰, 정비 절차, 그림까지 함께 제시하려고 합니다. 이때 지식 그래프는 부품과 작업의 연결을 저장하고 LLM은 문서에서 관계를 추출하거나 검색 결과를 답변으로 구성합니다. 혼합현실은 그 답을 작업 현장에서 보여주는 인터페이스입니다.
 
-```mermaid
-flowchart TD
-    A[AM400 매뉴얼의 글·그림] --> B[문서 구조와 텍스트 조각]
-    B --> C[LLM의 개체·관계 추출]
-    C --> D[중복 후보에 대한 사람의 검토]
-    D --> E[Neo4j 지식 그래프]
-    Q[작업자의 질문] --> R[벡터 검색·관계 탐색]
-    E --> R
-    R --> S[근거를 이용한 답변 생성]
-    S --> T[텍스트·관련 이미지·음성 안내]
-    U[작업자의 경험 설명] -. 지식 추가 경로 .-> C
-```
+![MetalMind 산업 매뉴얼 기반 지식 그래프 구축 및 작업자 질의응답](../assets/images/metalmind/excalidraw-metalmind-pipeline.svg)
+
+그림: MetalMind 산업 매뉴얼 기반 지식 그래프 구축 및 작업자 질의응답 ([SVG 크게 보기](../assets/images/metalmind/excalidraw-metalmind-pipeline.svg) · [Excalidraw 원본](../assets/images/metalmind/excalidraw-metalmind-pipeline.excalidraw)).
 
 흐름을 글로 읽으면 `매뉴얼 → 관계 추출 → 검토 → 그래프 → 검색 → 답변·이미지`입니다. 작업자의 경험을 추가하는 경로도 있지만 장기적인 자동 개선 효과를 측정한 실험은 아닙니다.
 

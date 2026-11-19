@@ -72,15 +72,9 @@
 - **정적 보존 검증 문제(Static Validation Problem)**: 주어진 모양 제약 $(\mathcal{C}, \mathcal{T})$와 업데이트 $\alpha$에 대해, $(\mathcal{C}, \mathcal{T})$를 만족하는 **모든** 그래프 $I$가 업데이트 후 그래프 $I^\alpha$에서도 $(\mathcal{C}, \mathcal{T})$를 만족하는가?
 - 이를 뒤집어 말하면(여문제, co-problem), **업데이트 전에는 $(\mathcal{C}, \mathcal{T})$를 만족하지만($I \models (\mathcal{C}, \mathcal{T})$), 업데이트 후에는 $(\mathcal{C}, \mathcal{T})$를 위반하는($I^\alpha \not\models (\mathcal{C}, \mathcal{T})$) 반례 그래프 $I$가 존재하는가?**라는 **충족 가능성(Satisfiability)** 문제가 된다.
 
-```mermaid
-flowchart TD
-    A[입력: 기존 SHACL 제약 S + 업데이트 프로그램 alpha] --> B[Regression 재작성: 업데이트 후 조건을 업데이트 전 조건 S_alpha 로 역변환]
-    B --> C["반례 존재성 수식 구성: S AND (NOT S_alpha)"]
-    C --> D[SHACL 충족 가능성 / FOL 변환 SHACL2FOL]
-    D --> E[Vampire 4.9 정리 증명기 실행]
-    E -->|Unsatisfiable 반례 없음| F[정적 보존 증명 완료: 항상 안전]
-    E -->|Satisfiable 반례 모델 발견| G[위반 가능성 검출: 제약을 깨는 입력 그래프 예시 제시]
-```
+![SHACL 업데이트 정적 보존 검증: Regression 재작성과 Vampire 정리 증명](../assets/images/shacl-updates/excalidraw-shacl-updates-regression.svg)
+
+그림: SHACL 업데이트 정적 보존 검증: Regression 재작성과 Vampire 정리 증명 ([SVG 크게 보기](../assets/images/shacl-updates/excalidraw-shacl-updates-regression.svg) · [Excalidraw 원본](../assets/images/shacl-updates/excalidraw-shacl-updates-regression.excalidraw)).
 
 이때 가장 중요한 기술적 단계가 **회귀 재작성(Regression, 정리 1 및 정리 2)**이다. 업데이트 $\alpha = (\oplus, \ominus)$가 실행된 뒤의 그래프 $I^\alpha$에서 어떤 노드가 클래스 $B$에 속할 조건은, 업데이트 전 그래프 $I$에서 **(원래 $B$에 속하면서 $\ominus$ 조건에 걸리지 않았거나) 또는 ($\oplus$ 조건에 새로 걸렸거나)** 둘 중 하나다.
 

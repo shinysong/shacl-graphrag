@@ -71,19 +71,9 @@
 
 그림 3. GraphRAG-Bench의 6단계 구축 과정(1. 도메인 수집 → 2. 지침 추출 → 3. 정량 분석 → 4. 질문 생성 → 5. 근거 추출 → 6. 인간 검증)과 3단계 평가 체계(Graph Evaluation, Retrieval Evaluation, Generation Evaluation). Xiang et al., PDF 5쪽. [원문](https://arxiv.org/pdf/2506.05690v3#page=5) · [크게 보기](../assets/images/when-graphs-rag/figure-03-framework.png) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
-```mermaid
-flowchart LR
-    subgraph Step1_3[벤치마크 구축]
-        A[Novel 20권 / NCCN 의료 지침] --> B[핵심 사실·관계 추출]
-        B --> C[Level 1-4 질문 + 황금 근거 생성]
-        C --> D[전문가·검수자 필터링]
-    end
-    subgraph Step4_6[3단계 분리 평가]
-        D --> E1[1. 그래프 위상 평가: 노드·간선 수, 평균 차수, 군집 계수]
-        D --> E2[2. 검색 단계 평가: Evidence Recall vs. Context Relevance]
-        D --> E3[3. 생성 단계 평가: ACC, ROUGE-L, Recall, Faithfulness, Coverage]
-    end
-```
+![GraphRAG-Bench: 벤치마크 구축(1–3단계)과 3계층 분리 평가(4–6단계)](../assets/images/when-graphs-rag/excalidraw-graphrag-bench-stages.svg)
+
+그림: GraphRAG-Bench: 벤치마크 구축(1–3단계)과 3계층 분리 평가(4–6단계) ([SVG 크게 보기](../assets/images/when-graphs-rag/excalidraw-graphrag-bench-stages.svg) · [Excalidraw 원본](../assets/images/when-graphs-rag/excalidraw-graphrag-bench-stages.excalidraw)).
 
 특히 3.3절이 정의한 **검색 단계와 생성 단계의 분리 지표**가 중요하다.
 

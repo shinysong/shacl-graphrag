@@ -55,14 +55,9 @@ metrics_summary.csv: 집계 결과
 
 평가 코드에서는 RDFLib `Graph()`를 만들어 Turtle을 읽고 임시 디렉터리에 생성 그래프를 둔다. 항목별 결과는 JSONL, 집계는 CSV로 기록한다. 확인한 평가 경로는 로컬 파일과 메모리 그래프를 사용하며 별도 그래프 DB 서버를 전제로 하지 않는다. [평가 구현](https://github.com/DE-TUM/NL2SHACL-Framework/blob/328bc5071c9c6ca00c707db99e416762f1e2eb90/Shapes-Evaluation/evaluators.py) · [평가 입출력](https://github.com/DE-TUM/NL2SHACL-Framework/blob/328bc5071c9c6ca00c707db99e416762f1e2eb90/Shapes-Evaluation/README.md)
 
-```mermaid
-flowchart TD
-    A[설명과 온톨로지 JSONL] --> B[LLM 번역]
-    B --> C[생성 SHACL을 포함한 JSONL]
-    C --> D[유효성·구조·의미 평가]
-    E[기준 Turtle 규칙] --> D
-    D --> F[항목별 JSONL과 집계 CSV]
-```
+![NL2SHACL-Bench 평가 파이프라인](../assets/images/nl2shacl-bench/excalidraw-nl2shacl-pipeline.svg)
+
+그림: NL2SHACL-Bench 평가 파이프라인 ([SVG 크게 보기](../assets/images/nl2shacl-bench/excalidraw-nl2shacl-pipeline.svg) · [Excalidraw 원본](../assets/images/nl2shacl-bench/excalidraw-nl2shacl-pipeline.excalidraw)).
 
 ## 서로 다른 세 층위의 평가
 

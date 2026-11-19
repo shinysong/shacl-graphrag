@@ -38,13 +38,9 @@ Meyers 외의 *Towards a knowledge graph framework for ad hoc analysis in manufa
 
 참조 아키텍처의 중심에는 지식 그래프가 있습니다. 분석가는 이 계층을 통해 대상을 탐색하고 질의하며 지식을 갱신하거나 계산합니다. 원본 데이터 수집은 기존 제조 시스템에서 계속 수행합니다. 논문은 센서 수집이나 MES 입력 자체를 새로 해결하는 연구로 범위를 잡지 않습니다. [그림 3, pp.3736–3737]
 
-```mermaid
-flowchart TD
-    A[분석가의 업무 질문] --> B[탐색·질의·갱신·추론]
-    B --> C[공통 개념과 관계를 담은 지식 그래프]
-    C --> D[접근 방법 선택<br/>저장·매핑·참조·외부 계산]
-    D --> E[기존 저장소와 계산 서비스<br/>SQL·파일·시계열·모델]
-```
+![공통 개념 지식 그래프 기반의 다중 저장소 접근 구조](../assets/images/meyers-manufacturing/excalidraw-meyers-kg-access.svg)
+
+그림: 공통 개념 지식 그래프 기반의 다중 저장소 접근 구조 ([SVG 크게 보기](../assets/images/meyers-manufacturing/excalidraw-meyers-kg-access.svg) · [Excalidraw 원본](../assets/images/meyers-manufacturing/excalidraw-meyers-kg-access.excalidraw)).
 
 여기서 단일 접근점은 데이터가 물리적으로 한곳에 저장된다는 뜻이 아닙니다. 사용자는 공통 개념으로 질문하지만 실제 데이터 접근은 원본 저장소나 계산 서비스로 나뉠 수 있습니다. 그 연결을 가능하게 하는 매핑과 인터페이스는 별도로 만들어야 합니다.
 
@@ -92,17 +88,9 @@ On-demand calculation, ODC는 계산 결과를 그래프의 속성처럼 질의�
 
 기술 구현 그림 8에서는 파일·SQL 접근에 Dremio와 Ontop을 사용하고 시계열 저장소 InfluxDB에 대한 계산은 Python REST 서버로 연결합니다. ODC 엔드포인트가 이러한 경로를 연결합니다. 데이터베이스 질의, 외부 Python 계산, OWL의 논리적 추론은 각각 다른 실행 경로입니다.
 
-```mermaid
-flowchart TD
-    A[공통 개념으로 작성한 SPARQL 질의] --> B{필요한 값의 접근 경로}
-    B -->|가상화한 데이터| C[Ontop과 SQL 접근]
-    B -->|계산 속성| D[ODC를 통한 Python REST 호출]
-    C --> E[원본 데이터베이스·파일에서 값 조회]
-    D --> F[시계열 처리·통계·모델 실행]
-    E --> G[질의 결과로 결합]
-    F --> G
-    G --> H[분석가의 표·그래프·추가 분석]
-```
+![Ontop SQL 가상화와 ODC Python REST 계산의 연합 SPARQL 실행](../assets/images/meyers-manufacturing/excalidraw-meyers-federated-query.svg)
+
+그림: Ontop SQL 가상화와 ODC Python REST 계산의 연합 SPARQL 실행 ([SVG 크게 보기](../assets/images/meyers-manufacturing/excalidraw-meyers-federated-query.svg) · [Excalidraw 원본](../assets/images/meyers-manufacturing/excalidraw-meyers-federated-query.excalidraw)).
 
 논문은 Theia 기반 탐색 도구도 제시합니다. 그림 7에는 개념 간 연결, SPARQL 편집기, 표와 그래프가 한 화면에 배치되어 있습니다. 이는 분석가가 관계를 따라가며 데이터를 탐색하는 인터페이스입니다. 자연어 질문을 LLM이 자동으로 해석하는 시스템은 이 논문의 구현 범위에 포함되지 않습니다.
 

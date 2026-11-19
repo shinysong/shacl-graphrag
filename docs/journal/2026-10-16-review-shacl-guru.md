@@ -38,13 +38,9 @@ RDF는 데이터 표현이고 SHACL은 그 데이터의 검사 규칙이다. 예
 
 ## 실제 호출 흐름
 
-```mermaid
-flowchart TD
-    A[채팅 명령] --> B[선택 영역 또는 활성 파일 읽기]
-    B --> C[명령별 prompt와 최근 대화 구성]
-    C --> D[VS Code 모델 API 호출]
-    D --> E[채팅에 응답 스트리밍]
-```
+![SHACL Guru VS Code 확장 실행 흐름](../assets/images/shacl-guru/excalidraw-shacl-guru-flow.svg)
+
+그림: SHACL Guru VS Code 확장 실행 흐름 ([SVG 크게 보기](../assets/images/shacl-guru/excalidraw-shacl-guru-flow.svg) · [Excalidraw 원본](../assets/images/shacl-guru/excalidraw-shacl-guru-flow.excalidraw)).
 
 `getEditorContext`가 편집기 문맥을 읽고 `buildPrompt`가 명령에 따른 요청을 구성한다. 처리 함수는 최근 대화 중 일부와 현재 요청을 메시지로 만들어 모델에 전달한다. 반환된 텍스트 조각은 채팅에 차례로 출력된다. 확인한 처리 함수에는 RDF 파서나 SHACL 검증 엔진을 실행하는 단계가 없다. [호출 경로 소스](https://github.com/simonstey/vscode-shacl-guru/blob/2cce4bed082e1dc720a715277dc1aca3b50337ae/src/extension.ts)
 
