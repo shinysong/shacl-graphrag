@@ -1,29 +1,29 @@
-# 2026-11-07 — Resource cleanup and observed terminal states
+# 2026-11-07 — 자원 정리와 실제 종료 상태의 확인
 
-## Context
+## 자원 사용 범위
 
-A bounded manufacturing hierarchy comparison used an existing Neptune cluster and an owned temporary Neo4j container. Query results, data cleanup, resource deletion, and terminal shutdown were recorded separately.
+제한된 제조 계층 비교에 기존 Neptune 클러스터와 실험이 소유한 임시 Neo4j 컨테이너를 사용했다. 질의 결과, 데이터 정리, 자원 삭제, 최종 중지 상태를 나누어 기록했다.
 
-## Incident
+## 중지와 정리의 확인 실패
 
-Neptune accepted SPARQL requests while its management API still reported `starting`. The initial stop requests were rejected. A later stop request was accepted at 17:25:54 UTC; terminal `stopped` was confirmed at 17:35:08 UTC. A readiness probe was therefore insufficient evidence that a management operation would immediately succeed.
+관리 API가 아직 `starting`을 보고하는 동안 Neptune은 SPARQL 요청을 받았다. 초기 중지 요청은 거부됐다. 이후 17:25:54 UTC에 보낸 중지 요청은 수락됐고 17:35:08 UTC에 최종 `stopped` 상태를 확인했다. 질의 준비 상태 확인만으로 관리 작업도 즉시 성공한다고 판단할 수는 없었다.
 
-The temporary container and its anonymous volumes were removed. The cleanup helper nevertheless reported `removal_not_verified`: it expected `No such object`, while this Docker invocation emitted `error: no such object`. The original foreground execution ended with a cleanup error after preserving all 992 result slots. This failure was retained rather than relabeled as successful.
+임시 컨테이너와 익명 볼륨은 삭제됐다. 하지만 정리 보조 도구는 `No such object`를 기대한 반면 실제 Docker 명령이 `error: no such object`를 출력해 `removal_not_verified`를 보고했다. 원래 포그라운드 실행은 결과 슬롯 992개를 모두 저장한 뒤 정리 오류로 끝났다. 이 실패를 성공으로 바꾸지 않고 보존했다.
 
-A separately reviewed helper matched the exact owned resource name with case-insensitive error text. Its six controls covered both message cases, post-removal verification, an unrelated error, and a terminal receipt. An independent check confirmed the two owned volumes were absent. Only the owned stop timer and service were disabled after terminal shutdown was confirmed.
+보조 도구는 별도 리뷰를 거쳤다. 이 도구는 실험이 소유한 자원의 정확한 이름을 확인하고 오류 문구는 대소문자를 구분하지 않고 확인했다. 제어 사례 여섯 개로 두 가지 대소문자 형식과 삭제 후 확인을 다뤘다. 관계없는 오류와 최종 상태 기록도 이 사례에 포함했다. 독립 검사로 실험 소유 볼륨 두 개가 없음을 확인했다. 최종 중지를 확인한 뒤에는 실험이 소유한 중지 타이머와 서비스만 비활성화했다.
 
-## Lesson
+## 준비·요청 수락·종료의 구분
 
-Keep query readiness, management-operation acceptance, and terminal resource state separate. A successful query does not establish that a cluster has completed its startup transition. A stop request does not establish completed shutdown.
+질의를 받을 준비가 된 상태, 관리 작업이 수락된 상태, 최종 자원 상태를 구분한다. 질의 성공은 클러스터 시작 전환이 끝났다는 증거가 아니며 중지 요청 수락도 중지 완료를 뜻하지 않는다.
 
-Check the observed CLI response format in addition to mocked responses. Accept a specific absent-resource condition, not any failed command. Preserve cleanup uncertainty and retry bounded administrative recovery without restarting the experiment.
+모의 응답뿐 아니라 실제 CLI 응답 형식을 확인한다. 아무 명령 실패나 자원 부재로 취급하지 않고 특정한 자원 없음 조건만 허용한다. 정리 상태의 불확실성을 남기고 실험을 다시 시작하지 않은 채 제한된 관리 복구만 수행한다.
 
-## Follow-up
+## 후속 확인
 
-- [x] Retained the original cleanup failure and separately recorded recovery.
-- [x] Reviewed and checked case-insensitive matching for the exact owned container.
-- [x] Confirmed terminal Neptune shutdown and absence of the owned container and volumes.
-- [x] Removed only the experiment's owned stop guard.
-- [ ] If a future run uses a different Docker client or backend, verify its response format before relying on the same helper.
+- [x] 원래 정리 실패를 유지하고 복구를 별도로 기록했다.
+- [x] 실험 소유 컨테이너에 대한 정확한 이름과 대소문자 무관 비교를 리뷰·검사했다.
+- [x] Neptune 최종 중지와 실험 소유 컨테이너·볼륨의 부재를 확인했다.
+- [x] 실험이 소유한 중지 보호 장치만 제거했다.
+- [ ] 다른 Docker 클라이언트나 백엔드를 사용하는 다음 실행에서는 같은 보조 도구에 의존하기 전에 응답 형식을 확인한다.
 
-Evidence: `research/manufacturing-model-change-1/subtype-live-001/` preserves the query denominator and namespace-cleanup results. Administrative receipts and native review records remain in the ignored workspace. This incident is not a DB performance or answer-quality result.
+질의 분모와 네임스페이스 정리 결과는 `research/manufacturing-model-change-1/subtype-live-001/`에 보존했다. 관리 작업과 네이티브 리뷰 기록은 Git에서 제외한 작업 공간에 남아 있다. 이 사건은 DB 성능이나 답변 품질의 측정 결과가 아니다.

@@ -1,23 +1,23 @@
-# 2026-10-12 — Verify Git objects when publishing through a connector
+# 2026-10-12 — 커넥터로 게시할 때 Git 객체를 검증하는 방법
 
-## Context
+## 게시 배경
 
-Publish the validated E0 experiment and MkDocs site to GitHub Pages after explicit user authorization.
+사용자의 명시적 승인에 따라 검증한 E0 실험과 MkDocs 사이트를 GitHub Pages에 게시하려 했다. E0는 당시 실험의 식별자다.
 
-## Incident
+## 전송 실패와 복구
 
-The host had no Git HTTPS credentials, so `git push` failed. The connected GitHub app had repository write access and provided Git object APIs.
+호스트에 Git HTTPS 인증 정보가 없어 `git push`가 실패했다. 연결된 GitHub 앱에는 저장소 쓰기 권한과 Git 객체 API가 있었다.
 
-An initial bulk transfer through shell output produced a remote tree that did not match the local commit. Comparing blob hashes exposed a corrupted document and missing entries. The incorrect tree was never attached to the published branch.
+처음 셸 출력을 통해 일괄 전송한 원격 트리는 로컬 커밋과 일치하지 않았다. blob 해시를 대조하니 문서 하나가 손상됐고 일부 항목도 빠져 있었다. 잘못된 트리를 게시 브랜치에 연결하지는 않았다.
 
-Reading the remaining blobs as bounded base64 chunks, verifying each returned blob SHA, and constructing a tree from the complete local manifest produced the exact local tree SHA. The branch was then advanced with an expected-head check and without force.
+남은 blob을 크기가 제한된 base64 조각으로 읽고 반환된 blob SHA를 각각 검증했다. 전체 로컬 목록으로 트리를 구성하자 로컬 트리 SHA와 정확히 일치했다. 이후 예상한 브랜치 HEAD인지 확인하고 강제 갱신 없이 브랜치를 진행했다.
 
-## Lesson
+## 객체 검증 원칙
 
-Do not assume a large tool response preserves file bytes, even if its JSON can be parsed. Verify blob and tree hashes before updating a remote branch. Use bounded chunks when transferring large files through tool output.
+대용량 도구 응답이 JSON으로 파싱된다고 파일 바이트까지 보존됐다고 가정해서는 안 된다. 원격 브랜치를 바꾸기 전에 blob과 트리 해시를 확인한다. 도구 출력으로 큰 파일을 옮길 때는 조각 크기를 제한한다.
 
-## Follow-up
+## 후속 확인
 
-- [x] Verify the complete remote tree against the local commit before publication.
-- [x] Align the local branch with the identical tree committed through the GitHub app.
-- [ ] Configure host Git authentication if direct CLI pushes are needed later.
+- [x] 게시 전에 전체 원격 트리와 로컬 커밋을 대조했다.
+- [x] GitHub 앱으로 커밋한 동일 트리에 로컬 브랜치를 맞췄다.
+- [ ] 나중에 CLI에서 직접 푸시해야 한다면 호스트의 Git 인증을 설정한다.

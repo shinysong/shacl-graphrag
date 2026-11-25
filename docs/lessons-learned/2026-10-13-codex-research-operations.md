@@ -1,45 +1,24 @@
-# 2026-10-13 — Research operations backend and experimental model costs
+# 2026-10-13 — 연구 운영 실행기와 실험 모델 비용의 분리
 
-## Context
+## 도입 배경
 
-The user requested researcher-side orchestration using Codex subagents while
-keeping experimental QA on OpenRouter. The initial operations runner also used
-OpenRouter for planning and reviews, adding a second API cost path. That was an
-implementation choice; it was not required by the experiment architecture.
+사용자는 연구자 측 작업 조율에는 Codex 하위 에이전트를, 실험용 QA에는 OpenRouter를 사용하도록 요청했다. 초기 운영 실행기는 계획과 리뷰에도 OpenRouter를 사용해 별도의 API 비용 경로를 만들었다. 이는 구현 과정에서 선택한 방식이며 실험 아키텍처가 요구한 조건은 아니었다.
 
-## Incident
+## 설명과 구현의 혼선
 
-The implementation and explanation initially failed to make that distinction
-clear. A daily limit of 100 operations requests did not change the experimental
-QA budget or the Codex account's usage allowance. The earlier API verification
-made 22 calls at reported cost $0.00515835; all original attempts and costs remain
-under ignored `_workspace/research-ops/`.
+초기 구현과 설명은 이 구분을 충분히 드러내지 못했다. 하루 운영 요청 100회 제한은 실험 QA 예산이나 Codex 계정의 사용 허용량을 바꾸지 않았다. 앞선 API 검증에서는 22회를 호출했고 보고 비용은 $0.00515835였다. 원래 시도와 비용은 모두 Git에서 제외한 `_workspace/research-ops/`에 남겼다.
 
-## Lesson
+## 실행기 역할 정리
 
-Choose the backend separately for research operations and experimental inference.
-Use the active Codex session and native subagents for planning, code work and
-independent review. Keep OpenRouter solely in the existing experimental runners.
-Do not replace native collaboration with a paid API worker when it is unavailable.
+연구 운영과 실험 추론의 실행 수단을 따로 선택한다. 계획, 코드 작업, 독립 리뷰에는 현재 Codex 세션과 네이티브 하위 에이전트를 사용한다. OpenRouter는 기존 실험 실행기에서만 사용한다. 네이티브 협업을 사용할 수 없다고 유료 API 작업자로 대체하지 않는다.
 
-The migrated helper freezes task packets, records logical role requests and
-results, enforces independent reviewer attribution and blocker gates, and runs
-only registered local checks. It has no model transport. Agent IDs are recorded
-operator annotations, not authenticated identity. Shared workspace access requires
-review instructions and audit; it is not a security sandbox.
+이전한 보조 도구는 작업 자료를 고정하고 역할 요청과 결과를 기록한다. 독립 리뷰어의 식별 정보와 차단 조건을 검사하고 등록한 로컬 검사만 실행한다. 모델 호출 기능은 없다. 에이전트 ID는 운영자가 기록한 주석이며 인증된 신원이 아니다. 공유 작업 공간에 접근하는 에이전트는 리뷰 지침과 감사 기록으로 관리하며, 이 경계를 보안 샌드박스로 간주하지 않는다.
 
-## Follow-up
+## 당시 후속 확인
 
-- Preserve historical requests, unsuccessful attempts, costs and prior limitations.
-- Count at most 100 logical requests per UTC day and 7 per job. Do not describe
-  these counts as Codex token/account limits or enforceable monetary budgets.
-- Verify actual native reviews and local checks, including a deliberately flawed
-  proposal with no real evaluation answers supplied.
-- Document measured software behavior separately from scientific reviewer quality.
+- 과거 요청, 실패한 시도, 비용과 한계를 보존했다.
+- UTC 하루에 논리 요청 최대 100회, 작업당 7회로 집계했다. 이 수치를 Codex 토큰·계정 한도나 강제 가능한 금전 예산으로 설명하지 않았다.
+- 의도적 결함 제안에는 실제 평가 정답을 제공하지 않았다. 이 제안으로 네이티브 리뷰와 로컬 검사를 확인했다.
+- 측정한 소프트웨어 동작과 과학적 리뷰 품질을 나누어 기록했다.
 
-Native verification completed the registered checks with 44 unit tests and
-`e0-local` both successful. Separately dispatched reviewers each found four
-blockers in the deliberately obvious proposal. Its execution gate rejected the
-job, and no checks ran for that proposal. This is one disclosed known-defect smoke
-check, not a blinded reviewer benchmark or proof of general scientific judgment.
-No new OpenRouter model calls were made during migration.
+네이티브 검증에서 등록된 단위 테스트 44개와 `e0-local`은 모두 성공했다. 별도로 리뷰어들에게 검토를 요청했다. 제안에는 의도적으로 결함을 뚜렷하게 넣었으며 리뷰어들은 각각 차단 사유 네 개를 찾았다. 실행 조건 검사에서 해당 작업을 거부했으므로 그 제안의 검사는 실행하지 않았다. 이는 결함을 미리 알고 공개한 단일 기본 동작 검사이며, 블라인드 리뷰 벤치마크나 일반적인 과학적 판단 능력의 증거는 아니다. 이전 과정에서 새 OpenRouter 모델 호출은 없었다.

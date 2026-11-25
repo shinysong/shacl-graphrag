@@ -1,19 +1,19 @@
-# 2026-10-12 — Preserve source documents when changing themes
+# 2026-10-12 — 테마를 바꿀 때 원본 문서를 보존하는 방법
 
-## Context
+## 변경 배경
 
-The first published MkDocs site passed content and build checks but did not receive browser visual review. The user rejected its appearance and selected Chirpy.
+처음 게시한 MkDocs 사이트는 내용과 빌드 검사를 통과했지만 브라우저에서 화면을 검토하지 않았다. 사용자는 디자인이 기대와 다르다고 판단했고 Chirpy를 선택했다.
 
-## Incident
+## 확인한 문제
 
-HTTP success and working links did not establish that the visual result met the user's expectations. Chirpy uses Jekyll, so applying the selected theme also required a different publication build.
+HTTP 응답이 정상이고 링크가 작동해도 화면이 사용자의 기대를 충족한다고 볼 수는 없었다. Chirpy는 Jekyll을 사용하므로 선택한 테마를 적용하려면 게시용 빌드도 바꿔야 했다.
 
-## Lesson
+## 원본 보존과 화면 확인
 
-Review desktop and mobile layouts before publishing a visual change. Keep experiment Markdown and JSON as canonical sources; generate theme-specific metadata and links in an isolated staging directory. Compare JSON bytes and check the existing URLs after migration.
+화면을 바꿔 게시하기 전에 데스크톱과 모바일 배치를 확인한다. 실험 Markdown과 JSON은 기준 원본으로 유지하고 테마별 메타데이터와 링크는 격리된 준비 디렉터리에서 생성한다. 이전 후에는 JSON 바이트를 비교하고 기존 주소가 계속 열리는지 확인한다.
 
-## Follow-up
+## 후속 확인
 
-- [x] Keep source records in `docs/` and pin the Chirpy dependency.
-- [x] Add checks for old URLs, internal links and private-file exclusions.
-- [x] Review the built site in desktop and mobile browsers before publication.
+- [x] 원본 기록을 `docs/`에 유지하고 Chirpy 의존성 버전을 고정했다.
+- [x] 기존 주소, 내부 링크, 비공개 파일 제외 여부를 확인하는 검사를 추가했다.
+- [x] 게시 전에 빌드한 사이트를 데스크톱·모바일 브라우저로 확인했다.

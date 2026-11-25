@@ -1,21 +1,23 @@
-# 2026-10-21 — Recovering a report without repeating measurements
+# 2026-10-21 — 측정을 반복하지 않고 보고서를 복구한 사례
 
-## Context
+## 검사 배경
 
-The technology-selection maintenance check evaluated 15 isolated submissions against 96 frozen expected outputs. Each output and its process log was persisted before summary generation.
+기술 선택 유지보수 검사에서 격리된 제출물 15개를 고정한 기대 출력 96개와 비교했다. 요약을 만들기 전에 각 출력과 프로세스 로그를 저장했다.
 
-## Incident
+## 요약 생성 실패와 복구
 
-All 96 outputs matched, but the checker then exited with code 1: its hash helper received the string `__file__` and attempted to call `read_bytes()` on it. The original failed invocation and raw results were retained. After changing the helper to use `Path(path)`, a separately reviewed `--summarize-only` path reconstructed the missing summary from saved outputs and checked their correspondence to the recorded rows. Recovery exited with code 0 and launched zero new workers.
+출력 96개가 모두 일치했지만 검사기는 이후 종료 코드 1로 끝났다. 해시 보조 함수가 문자열 `__file__`을 받아 그 문자열에 `read_bytes()`를 호출하려 했기 때문이다. 실패한 원래 실행과 원시 결과는 유지했다.
 
-The original checker failure remains distinct from the passing implementation outputs. See the [maintenance record](../experiments/records/20261021-technology-selection-maintenance.json) for both review jobs and outcomes.
+보조 함수에서 `Path(path)`를 사용하도록 고친 뒤 별도 리뷰를 거친 `--summarize-only` 경로로 저장된 출력에서 누락된 요약을 재구성했다. 출력이 기록된 행과 대응하는지도 확인했다. 복구는 종료 코드 0으로 끝났고 새 작업자는 실행하지 않았다.
 
-## Lesson
+원래 검사기의 실패와 구현 출력의 통과 결과는 구분해 기록한다. 두 리뷰 작업과 결과는 [유지보수 기록](../experiments/records/20261021-technology-selection-maintenance.json)에 남겼다.
 
-Before retrying an experiment after a reporting error, check which outputs were already saved. If those records are intact, validate and summarize them without repeating the measured work or changing the original failure status.
+## 저장된 결과의 재사용
 
-## Follow-up
+보고 오류 뒤 실험을 다시 실행하기 전에 어떤 출력이 이미 저장됐는지 확인한다. 기록이 온전하다면 측정을 반복하거나 원래 실패 상태를 바꾸지 않고 검증과 요약만 수행한다.
 
-- [x] Preserve the original exit code, logs and saved outputs.
-- [x] Review the summary-only recovery separately and record zero new workers.
-- [x] Distinguish reporting failure from implementation correctness in the paper.
+## 후속 확인
+
+- [x] 원래 종료 코드, 로그, 저장된 출력을 보존했다.
+- [x] 요약만 복구하는 경로를 별도로 리뷰하고 새 작업자 0명을 기록했다.
+- [x] 논문에서 보고 실패와 구현의 정확성을 구분했다.

@@ -1,21 +1,21 @@
-# 2026-10-15 — YAGO query bindings and validation dead ends
+# 2026-10-15 — YAGO 질의의 변수 바인딩과 검증 중단 문제
 
-## Context
+## 진단 배경
 
-A 12-episode LLM integration diagnostic reused original YAGO data and SHACL. A separate one-episode scaffolded follow-up preserved the initial outcomes.
+12개 에피소드의 LLM 통합 진단에서 기존 YAGO 데이터와 SHACL을 재사용했다. 별도의 안내를 추가한 후속 에피소드 한 건에서도 최초 결과를 보존했다.
 
-## Incident
+## 질의와 검증의 막힘
 
-A constant-subject pattern did not bind projected `?s`. The tool rejected returned bindings with a generic non-source-triple error. Mandatory validation also prevented unknown answers from terminating when evidence was empty. Neither issue establishes defective YAGO ontology or model-independent semantic inability.
+주어를 상수로 고정한 패턴이 출력 변수 `?s`에 값을 연결하지 않았다. 도구는 반환된 바인딩을 일반적인 원본 외 트리플 오류로 거부했다. 필수 검증 조건도 근거가 비어 있는 경우 답을 알 수 없다는 상태로 종료하지 못하게 했다. 어느 문제도 YAGO 온톨로지의 결함이나 모델과 무관한 의미 처리 불능을 입증하지 않는다.
 
-Posthoc checks passed for all four original subject contexts. Three source-supported LLM answers had retrieved evidence failing the birthplace class constraint because linked-place type descriptions were omitted. These were coordinator checks, not model-selected checks.
+원래 주어 문맥 네 개는 사후 검사를 모두 통과했다. 원본이 뒷받침하는 LLM 답변 세 건은 연결된 장소의 타입 설명을 가져오지 않아 검색 근거가 출생지 클래스 제약을 위반했다. 이 검사는 모델이 선택한 검사가 아니라 조정자가 사후 수행한 검사다.
 
-## Lesson
+## 도구 피드백과 종료 조건
 
-Distinguish missing variable bindings from invented triples in tool feedback. Permit explicit unresolved termination while recording that validation could not execute. A SHACL class violation on retrieved evidence can reflect omitted type context rather than a false source relation.
+도구 피드백에서 변수에 값이 연결되지 않은 경우와 만들어낸 트리플을 구분한다. 검증을 실행할 수 없었다고 기록하면서 미해결 상태로 명시적으로 종료할 수 있게 한다. 검색 근거의 SHACL 클래스 위반은 원본 관계의 거짓 여부보다 빠진 타입 문맥에서 비롯됐을 수 있다.
 
-## Follow-up
+## 후속 과제
 
-- [ ] Add explicit unbound-variable diagnostics under fresh review.
-- [ ] Allow evidence-insufficient termination without labeling it a validation pass.
-- [ ] Compare a model-selected entity-description tool separately from free SPARQL.
+- [ ] 새 리뷰를 거쳐 값이 연결되지 않은 변수를 명시하는 진단을 추가한다.
+- [ ] 근거 부족으로 종료하되 검증 통과로 표시하지 않는다.
+- [ ] 모델이 선택하는 엔티티 설명 도구를 자유 SPARQL과 별도로 비교한다.

@@ -1,21 +1,23 @@
-# 2026-10-17 Workbench export boundaries
+# 2026-10-17 — 규칙 작업 공간의 내보내기 범위
 
-## Context
+## 기능 배경
 
-The local rule workbench exports reviewed rules separately from opt-in source records. Users can reload a metadata-only JSON workspace and reconnect data later.
+로컬 규칙 작업 공간은 검토한 규칙과 사용자가 명시적으로 포함한 원본 레코드를 나누어 내보낸다. 사용자는 메타데이터만 있는 JSON 작업 공간을 다시 불러온 뒤 나중에 데이터를 연결할 수 있다.
 
-## Incident
+## 원본 값의 유출 경로
 
-The first implementation converted reference-table values into SHACL `sh:in` lists. Omitting `data.ttl` was insufficient: those values still appeared in `shapes.ttl`. Independent review also found that a reloaded redacted table was classified as a genuinely empty table, and malformed allowed-value parameters could pass import validation but crash the editor.
+첫 구현은 참조 테이블의 값을 SHACL `sh:in` 목록으로 바꿨다. `data.ttl`을 제외해도 그 값들이 `shapes.ttl`에 남아 있었다. 독립 리뷰에서는 원본을 가린 테이블을 실제로 비어 있는 테이블로 분류하는 문제와, 허용 값 매개변수의 잘못된 구조가 가져오기 검사는 통과하지만 편집기를 중단시키는 문제도 발견했다.
 
-## Lesson
+## 산출물별 검사
 
-Check every exported artifact for source-derived values, not only files named as data. Reference membership now uses class assertions in the RDF data graph; shapes contain the structural condition. A sentinel regression checks default archive members. Redacted source absence is reported as unknown, while a genuinely empty mapped table remains not applicable. Validate parameter structure before rendering imported projects.
+데이터라는 이름의 파일뿐 아니라 내보내는 모든 파일에 원본에서 유래한 값이 있는지 확인한다. 참조 집합에 속하는지는 RDF 데이터 그래프의 클래스 선언으로 표현하고 Shape에는 구조 조건을 둔다. 기본 압축 파일의 구성 항목은 식별용 값을 넣는 회귀 검사로 확인한다.
 
-## Follow-up
+가려진 원본이 없어 판단할 수 없는 경우는 알 수 없음으로 보고한다. 매핑한 테이블이 실제로 비어 있는 경우는 적용 대상 아님으로 유지한다. 가져온 프로젝트를 화면에 표시하기 전에 매개변수 구조를 검증한다.
 
-- [x] Preserve reference values only in opt-in RDF data.
-- [x] Test metadata-only reload and malformed parameter imports.
-- [x] Revalidate exported RDF and SHACL and compare individual violation pairs.
-- [x] Keep failed review records and obtain fresh independent reviews after changes.
-- [ ] Verify the PostgreSQL connector against an authorized live database before claiming live integration coverage.
+## 후속 확인
+
+- [x] 참조 값은 사용자가 명시적으로 포함한 RDF 데이터에만 보존했다.
+- [x] 메타데이터만 다시 불러오는 경우와 잘못된 매개변수 가져오기를 테스트했다.
+- [x] 내보낸 RDF·SHACL을 다시 검증하고 개별 위반 쌍을 비교했다.
+- [x] 실패한 리뷰 기록을 유지하고 수정 후 새로운 독립 리뷰를 받았다.
+- [ ] 실제 연결을 지원한다고 주장하기 전에 승인된 실제 PostgreSQL DB로 커넥터를 확인한다.

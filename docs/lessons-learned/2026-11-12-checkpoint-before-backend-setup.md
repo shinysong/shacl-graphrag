@@ -1,26 +1,20 @@
-# 2026-11-12 — Checkpoint before graph-backend setup
+# 2026-11-12 — 그래프 백엔드 초기화 전에 실험 계획 저장하기
 
-## Context
+## 진단 범위
 
-The offline query-selection diagnostic declared 24 request/arm/backend slots and
-saved the record after each attempted slot.
+오프라인 질의 선택 진단에서 요청·조건·백엔드 조합 24개를 선언하고 각 조합을 시도한 뒤 기록을 저장했다.
 
-## Incident
+## 초기 저장 전의 공백
 
-Independent implementation review found that Views, SQLite and RDFLib initialization
-preceded the first save. A setup exception would therefore leave no result artifact,
-even though per-slot failures were retained. This was caught before the actual run;
-no lost experimental result was observed.
+독립 구현 리뷰에서 첫 저장보다 Views, SQLite, RDFLib 초기화가 먼저 실행되는 점을 발견했다. 각 조합의 실패는 보존하더라도 준비 단계에서 예외가 발생하면 결과 파일 자체가 남지 않을 수 있었다. 실제 실행 전에 발견한 문제이며 실험 결과가 유실된 사례를 관찰한 것은 아니다.
 
-## Lesson
+## 초기화 실패 기록
 
-Persist the complete planned denominator before initializing execution backends.
-Preserve setup failure separately from query failure, leaving never-attempted slots
-explicitly unattempted. Close any backend initialized before a later failure.
+실행 백엔드를 초기화하기 전에 계획한 전체 분모를 저장한다. 준비 실패와 질의 실패를 따로 기록하고 시도하지 않은 조합은 명시적으로 미시도로 남긴다. 일부 백엔드를 초기화한 뒤 나중 단계에서 실패하면 이미 초기화한 백엔드도 닫는다.
 
-## Follow-up
+## 후속 확인
 
-- [x] Correct initialization order and preserve setup_status/setup_error.
-- [x] Inject a Views setup failure and check all 24 unattempted slots survive.
-- [x] Retain the initial blocked review and obtain fresh independent reviews.
-- [x] Run the corrected diagnostic and retain all original output slots.
+- [x] 초기화 순서를 고치고 setup_status/setup_error를 보존했다.
+- [x] Views 준비 실패를 주입해 미시도 조합 24개가 모두 남는지 확인했다.
+- [x] 처음 차단된 리뷰를 유지하고 새 독립 리뷰를 받았다.
+- [x] 수정한 진단을 실행하고 원래 출력 조합을 모두 보존했다.

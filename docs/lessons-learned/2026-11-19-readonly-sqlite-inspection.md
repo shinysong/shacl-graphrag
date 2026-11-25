@@ -1,19 +1,21 @@
-# 2026-11-19 — Read-only inspection of historical SQLite runs
+# 2026-11-19 — 과거 SQLite 실행 기록의 읽기 전용 점검
 
-## Context
+## 복구 배경
 
-A browser recovery copied an earlier failed workspace into a new run directory. The recovery used SQLite's backup API with a read-only source connection and checked the source file hash before and after execution.
+브라우저 복구 과정에서 앞서 실패한 작업 공간을 새 실행 디렉터리로 복사했다. SQLite 백업 API와 읽기 전용 원본 연결을 사용하고 실행 전후 원본 파일 해시를 확인했다.
 
-## Incident
+## 점검 과정의 파일 변경
 
-The recovery finished with its original-file hash assertion passing. A later coordinator check opened the historical file with the application’s `WorkspaceStore` constructor. That constructor initializes tables and writes `PRAGMA user_version=1`, even when the caller only intends to read existing operations. The SQLite file hash changed after the recovery had finished. The original failure outcome remained recorded; no new question was inserted into the historical database. The pre-inspection hash and changed-file hash were retained rather than reconstructing a guessed header.
+복구는 원본 파일 해시가 같다는 검사를 통과하며 끝났다. 하지만 이후 조정자가 과거 파일을 애플리케이션의 `WorkspaceStore` 생성자로 열었다. 이 생성자는 기존 작업을 읽기만 하려는 경우에도 테이블을 초기화하고 `PRAGMA user_version=1`을 기록한다. 복구가 끝난 뒤 SQLite 파일 해시가 바뀌었다.
 
-## Lesson
+원래 실패 결과는 남아 있었고 과거 DB에 새 질문을 넣지는 않았다. 헤더를 추정해 되돌리는 대신 점검 전 해시와 변경된 파일 해시를 보존했다.
 
-Inspect historical artifacts through `sqlite3.connect("file:path?mode=ro", uri=True)`, not through an application store that runs migrations. A read method does not make its constructor read-only. Distinguish logical row preservation from byte-for-byte file identity.
+## 읽기 전용 연결의 명시
 
-## Follow-up
+과거 파일은 마이그레이션을 실행하는 애플리케이션 저장소 대신 `sqlite3.connect("file:path?mode=ro", uri=True)`로 점검한다. 읽기 메서드를 사용한다고 생성자까지 읽기 전용이 되는 것은 아니다. 논리적인 행 보존과 바이트 단위 파일 동일성을 구분한다.
 
-- [x] Retain the failed check and pre/post physical hashes in the private recovery record.
-- [x] Use an explicit read-only connection for the new-operation identity check.
-- [ ] Audit other historical inspection helpers before reuse; no repository-wide audit is claimed.
+## 후속 확인
+
+- [x] 비공개 복구 기록에 실패한 검사와 전후 물리 해시를 남겼다.
+- [x] 새 작업의 동일성 확인에는 명시적 읽기 전용 연결을 사용했다.
+- [ ] 다른 과거 기록 점검 보조 도구도 재사용 전에 감사한다. 저장소 전체를 감사했다고 주장하지 않는다.

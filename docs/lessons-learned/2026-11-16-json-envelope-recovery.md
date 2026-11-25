@@ -1,17 +1,17 @@
-# 2026-11-16 — Preserve model content during JSON-envelope recovery
+# 2026-11-16 — JSON 응답 형식을 복구하면서 모델 내용을 보존하기
 
-## Context
+## 중단 배경
 
-The compound-query campaign stopped after two paid requests because the plan response enclosed otherwise valid JSON in a Markdown JSON fence.
+복합 질의 실험이 유료 요청 두 번 뒤 중단됐다. 계획 응답이 유효한 JSON을 Markdown JSON 코드 블록으로 감쌌기 때문이다.
 
-## Incident
+## 형식 처리와 수동 재개
 
-A strict JSON decoder rejected the transport envelope. The original stopped progress and billed attempts remained immutable. A reviewed manual continuation decoded one whole-response fence and reused the exact saved decomposition and plan responses. Reconstructed planning messages had to match the original paid request.
+엄격한 JSON 디코더가 응답의 외부 형식을 거부했다. 원래 중단 상태와 과금된 시도는 변경하지 않았다. 리뷰를 거친 수동 재개에서는 전체 응답을 감싼 코드 블록 하나만 해석하고 저장된 요구 분해·계획 응답을 그대로 재사용했다. 다시 구성한 계획 메시지는 원래 유료 요청과 일치해야 했다.
 
-## Lesson
+## 형식 복구의 경계
 
-Separate transport-envelope parsing from semantic repair. Accepting a single whole-response fence must not modify model fields, choices or bindings, extract arbitrary prose, repeat requests or refund failure reservations. Keep the original denominator, deadline and stopped artifact alongside continuation results. This recovery is a post-failure amendment, not first-try experimental success.
+전송 응답의 외부 형식을 해석하는 일과 의미를 고치는 일을 구분한다. 응답 전체를 감싼 코드 블록 하나를 허용하더라도 모델 필드·선택·바인딩을 바꾸거나 임의의 문장만 추출해서는 안 된다. 요청을 반복하거나 실패 예약액을 환급하지도 않는다. 원래 분모·종료 시각·중단 파일을 재개 결과와 함께 유지한다. 이 복구는 실패 후 절차 변경이며 첫 시도 실험 성공은 아니다.
 
-## Verification
+## 검증 범위
 
-The independent recovery review passed 46 query-contract tests and 10 campaign tests. The real-Gateway mocked-HTTP recovery test verifies 24 total requests, reuse of the original two responses, unchanged parent progress and deadline, and shared nonrefunded accounting. Actual completion used two original plus 22 additional calls; no paid call was repeated.
+독립 복구 리뷰에서 질의 계약 테스트 46개와 실험 테스트 10개를 통과했다. 복구 테스트는 실제 Gateway와 모의 HTTP를 사용한다. 이 테스트는 총 요청 24회와 원래 응답 두 개의 재사용을 확인한다. 상위 진행 기록과 종료 시각이 보존되는지도 확인하며 공유 비환급 회계도 점검한다. 실제 완료에는 원래 두 번과 추가 22번의 호출을 사용했으며 유료 호출을 반복하지 않았다.

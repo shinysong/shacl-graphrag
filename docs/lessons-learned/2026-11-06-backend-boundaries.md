@@ -1,36 +1,25 @@
-# 2026-11-06 — Backend and checker boundaries
+# 2026-11-06 — 그래프 백엔드와 검사기의 처리 경계
 
-## Context
+## 비교 배경
 
-A bounded Neo4j+n10s / Neptune RDF study reused frozen development source records,
-then checked saved outputs with Python and SHACL advisory metadata policies.
+제한된 Neo4j+n10s / Neptune RDF 연구에서 고정된 개발 원본 레코드를 재사용했다. 이후 저장된 출력을 Python과 SHACL의 검토용 메타데이터 정책으로 검사했다.
 
-## Incident
+## 질의와 검사에서 생긴 차이
 
-- A combined Cypher MATCH excluded reusing the same relationship across patterns.
-  Separate MATCH clauses restored the declared basic-graph-pattern contract.
-- n10s 5.26.0 KEEP export changed URN predicates, although triple counts matched.
-  SHORTEN preserved the selected full 3,999-triple projection in a separate followup.
-- A trailing LF after a 64-character hash passed the original SHACL pattern but
-  failed Python fullmatch. Non-string inputs caused four Python checker failures.
-  These original outcomes were retained; a separate v2 contract added a shared
-  string-or-null input gate and exact SHACL length/datatype constraints.
-- Root-owned files left by an earlier container build prevented regenerating the
-  ignored Chirpy source and output. The first failed build logs were retained.
+- Cypher의 하나로 합친 MATCH는 패턴 사이에서 같은 관계를 재사용하지 못하게 했다. MATCH를 나누자 선언한 기본 그래프 패턴의 조건을 복원할 수 있었다.
+- n10s 5.26.0의 KEEP 내보내기는 트리플 수가 같아도 URN 술어를 바꿨다. 별도 후속 확인에서 SHORTEN은 선택한 3,999개 트리플 전체의 투영을 보존했다.
+- 64자 해시 끝에 붙은 LF는 원래 SHACL 패턴을 통과했지만 Python fullmatch에는 실패했다. 문자열이 아닌 입력은 Python 검사 실패 네 건을 일으켰다. 이 결과를 보존하고 별도 v2 계약에 문자열 또는 null만 허용하는 공통 입력 검사를 추가했다. 정확한 SHACL 길이 제약과 데이터 타입 제약도 추가했다.
+- 이전 컨테이너 빌드가 남긴 root 소유 파일 때문에 Git에서 제외한 Chirpy 소스와 출력을 다시 생성하지 못했다. 처음 실패한 빌드 로그는 보존했다.
 
-## Lesson
+## 식별자와 입력 타입 확인
 
-Check identities and typed values, not only counts or successful API status.
-Separate input rejection, checker exceptions, conformance and factual correctness.
-A new contract version must not replace earlier failed or discrepant outcomes.
+건수나 API 성공 상태뿐 아니라 식별자와 타입이 있는 값을 확인한다. 입력 거부, 검사기 예외, 제약 적합성, 사실의 정확성을 구분한다. 새 계약 버전으로 이전 실패나 불일치 결과를 대체하지 않는다.
 
-Run container documentation builds with the host UID/GID. Correct ownership only
-on known generated directories; do not rewrite tracked website sources to bypass
-an ownership error.
+컨테이너 문서 빌드에는 호스트 UID/GID를 사용한다. 소유권 수정은 이미 알고 있는 생성 디렉터리에 한정한다. 소유권 오류를 우회하려고 Git이 추적하는 웹사이트 원본을 고치지 않는다.
 
-## Follow-up
+## 후속 확인
 
-- [x] Preserve original runs and independent review blockers.
-- [x] Record versioned boundary replay with separate rejection denominators.
-- [x] Correct ownership of generated `_workspace/chirpy-source` and `site`.
-- [ ] Measure new final-answer effects only under a separately frozen paid scope.
+- [x] 원래 실행과 독립 리뷰의 차단 사유를 보존했다.
+- [x] 입력 거부 분모를 따로 두고 버전별 경계 재검사를 기록했다.
+- [x] 생성된 `_workspace/chirpy-source`와 `site`의 소유권을 수정했다.
+- [ ] 새 최종 답변 효과는 별도로 고정한 유료 실험 범위에서만 측정한다.

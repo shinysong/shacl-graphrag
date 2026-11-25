@@ -1,19 +1,19 @@
-# 2026-10-19 — CLI filename shadowed the library
+# 2026-10-19 — CLI 파일명과 라이브러리 이름의 충돌
 
-## Context
+## 확인 배경
 
-Before publishing accumulated work, CI was expanded to install workbench dependencies and discover both unittest and pytest tests.
+누적 작업을 게시하기 전에 CI에서 규칙 작업 공간의 의존성을 설치하고 unittest와 pytest 테스트를 모두 찾도록 범위를 넓혔다.
 
-## Incident
+## 테스트 수집 실패
 
-Full pytest collection failed because older tests prepend `scripts/` to the Python import path. The file `scripts/rule_workbench.py` then shadowed the `rule_workbench` package. Scoped workbench tests had passed because their import order differed. The failure was preserved before changing code.
+기존 테스트가 Python 모듈 검색 경로 앞에 `scripts/`를 추가하면서 전체 pytest 수집이 실패했다. `scripts/rule_workbench.py`가 `rule_workbench` 패키지보다 먼저 발견됐기 때문이다. 작업 공간만 다루는 테스트는 불러오는 순서가 달라 통과했었다. 코드를 바꾸기 전에 실패 기록을 보존했다.
 
-## Lesson
+## 파일명과 수집 범위
 
-A CLI wrapper should not share its filename with an importable package when scripts and libraries can share the module search path. Scoped tests do not replace a full collection check before publication.
+스크립트와 라이브러리가 모듈 검색 경로를 공유할 수 있다면 CLI 실행용 파일에 패키지와 같은 이름을 붙이지 않는다. 게시 전 전체 테스트 수집 확인을 일부 범위의 테스트로 대체할 수는 없다.
 
-## Follow-up
+## 후속 확인
 
-- [x] Rename the unchanged CLI wrapper to `scripts/run_rule_workbench.py` and update the current usage guide.
-- [x] Obtain independent review before rerunning checks.
-- [x] Execute the renamed CLI with real offline demo validation and export.
+- [x] CLI 내용은 유지하면서 파일명을 `scripts/run_rule_workbench.py`로 바꾸고 사용 안내를 수정했다.
+- [x] 검사를 다시 실행하기 전에 독립 리뷰를 받았다.
+- [x] 바뀐 CLI로 실제 오프라인 예제의 검증과 내보내기를 실행했다.

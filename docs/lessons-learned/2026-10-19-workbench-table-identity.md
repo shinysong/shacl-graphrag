@@ -1,18 +1,18 @@
-# 2026-10-19 — Connector display names and source identity
+# 2026-10-19 — 커넥터 표시 이름과 원본 식별자의 구분
 
-## Context
+## 확인 배경
 
-Four domain fixtures were exported as CSV, Excel, SQLite and JSON for identical row-level checks.
+네 분야의 테스트 자료를 CSV, Excel, SQLite, JSON으로 내보내 동일한 행별 검사를 수행하려 했다.
 
-## Incident
+## 매핑 오류 발견
 
-Independent review found that the test adapter treated an Excel display name as a table identifier. The connector labels a sheet `data.xlsx / WorkOrders`, while its source metadata records `sheet: WorkOrders`. The assumption would break the test's explicit fixture mapping. Review blocked execution; no labels or data were changed to make the check pass.
+독립 리뷰에서 테스트 어댑터가 Excel의 표시 이름을 테이블 식별자로 취급한 점을 발견했다. 커넥터는 시트를 `data.xlsx / WorkOrders`로 표시하지만 원본 메타데이터에는 `sheet: WorkOrders`를 기록한다. 이 가정대로라면 테스트에서 직접 작성한 자료 매핑이 깨진다. 리뷰가 실행을 차단했으며 검사를 통과시키려고 이름이나 데이터를 바꾸지는 않았다.
 
-## Lesson
+## 안정적인 식별 기준
 
-Use connector provenance fields (`source.sheet`, `source.table`, or the known CSV source filename) for explicit fixture bindings. Keep user-facing display names separate from stable IDs. This binding is an authored test adapter, not automatic schema matching.
+명시적 테스트 자료 연결에는 커넥터의 출처 필드인 `source.sheet`, `source.table` 또는 이미 알고 있는 CSV 원본 파일명을 사용한다. 사용자에게 보이는 이름과 안정적인 ID를 구분한다. 이 연결은 직접 작성한 테스트 어댑터이며 자동 스키마 매칭은 아니다.
 
-## Follow-up
+## 후속 확인
 
-- [x] Correct runner and tests, then obtain fresh independent reviews.
-- [x] Verify every row status across four formats and four 200-row domain fixtures.
+- [x] 실행기와 테스트를 고친 뒤 새 독립 리뷰를 받았다.
+- [x] 네 형식과 분야별 200행 테스트 자료 네 개에서 모든 행의 상태를 확인했다.

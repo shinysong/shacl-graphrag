@@ -1,19 +1,19 @@
-# 2026-10-27 — Teaching schema and slide consistency
+# 2026-10-27 — 교육용 스키마와 발표자료의 정의 일치
 
-## Context
+## 변경 배경
 
-A presentation replaced a sensor example with a small manufacturing example while preserving earlier teaching artifacts.
+기존 교육 자료를 보존하면서 발표자료의 센서 예제를 작은 제조 예제로 바꿨다.
 
-## Incident
+## 결과만으로 드러나지 않은 불일치
 
-The slide defined `installedIn` with domain `Component`, but the copied runner initially retained `Fastener`. The chosen individual was a `Bolt`, a subclass of `Fastener`, so the displayed query results matched despite the definition mismatch. Independent source reviews caught it. The corrected runner uses `Component`; original outputs remain under the ignored revision workspace.
+슬라이드는 `installedIn`의 domain을 `Component`로 정의했지만 복사한 실행기는 처음에 `Fastener`를 유지했다. 선택한 개체가 `Fastener`의 하위 클래스인 `Bolt`였기 때문에 정의가 다른데도 표시한 질의 결과는 같았다. 독립 원본 리뷰에서 이 차이를 발견했다. 수정한 실행기는 `Component`를 사용하며 원래 출력은 Git에서 제외한 수정 작업 공간에 남겼다.
 
-## Lesson
+## 정의 직접 대조
 
-Matching example outputs do not prove that a diagram and an executable schema declare the same semantics. Compare the declared predicates, domain/range and class hierarchy directly, as well as the result values.
+예제 출력이 같다고 도식과 실행 가능한 스키마가 같은 의미를 선언한다고 볼 수는 없다. 결과 값뿐 아니라 선언한 술어, domain/range, 클래스 계층을 직접 비교한다.
 
-## Follow-up
+## 후속 확인
 
-- [x] Align the runner and teaching definition; regenerate the tiny example.
-- [x] Preserve the original attempt and request a fresh review after the source change.
-- [x] Keep historical research and the earlier sensor artifacts unchanged.
+- [x] 실행기와 교육용 정의를 맞추고 작은 예제를 다시 생성했다.
+- [x] 원래 시도를 보존하고 원본 변경 후 새 리뷰를 요청했다.
+- [x] 과거 연구와 이전 센서 자료는 유지했다.

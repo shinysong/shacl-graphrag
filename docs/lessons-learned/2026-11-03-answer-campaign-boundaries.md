@@ -1,23 +1,23 @@
-# 2026-11-03 — Generator names, artifact bindings and answer denominators
+# 2026-11-03 — 모델 식별자와 결과 연결 및 답변 집계 분모
 
-## Context
+## 실험 범위
 
-A bounded final-answer campaign used 24 consumed development questions under B/C/D, with 72 attempts and a $1 ceiling.
+제한된 최종 답변 실험에서 이미 사용한 개발 질문 24건에 B/C/D 조건을 적용했다. 시도 상한은 72회, 비용 상한은 $1이었다.
 
-## Incident
+## 실행 전후 발견한 문제
 
-Independent review caught an OpenRouter-qualified model name being passed to the tokenizer registry before execution. The runner was changed to explicit `o200k_base` while preserving the API model name. A fresh review and offline preflight preceded every paid attempt.
+독립 리뷰에서 OpenRouter 형식의 모델 이름을 토크나이저 등록부에 넘기는 문제를 실행 전에 발견했다. API 모델 이름은 유지하면서 실행기는 명시적 `o200k_base`를 쓰도록 바꿨다. 모든 유료 시도에 앞서 새 리뷰와 오프라인 사전 점검을 수행했다.
 
-The first aggregation review also found that unique episode IDs alone did not prove a 24-question × three-arm universe, and that equal costs did not establish response identity. The revised aggregator checks the full question/arm product, target uniqueness, frozen inputs, saved request equality, raw answer equality and missing resolved artifacts.
+첫 집계 리뷰에서는 에피소드 ID가 고유하다는 사실만으로 질문 24건 × 세 조건 전체가 포함됐다고 확인할 수 없다는 문제도 발견했다. 비용이 같다고 응답이 같은 것도 아니었다. 수정한 집계기는 질문·조건의 전체 조합과 대상의 고유성, 고정 입력을 확인한다. 저장한 요청끼리 일치하는지와 원시 답변끼리 일치하는지, 해석하고 연결한 결과 파일이 누락됐는지도 확인한다.
 
-One actual D response returned an array where the answer schema allowed only a scalar. Its original text and cost remain preserved; it was not repaired or retried. A different D response supplied the correct target label with a wrong codebook row. All cited IDs belonged to the selected chunks, which did not prevent incorrect joins or locations.
+실제 D 응답 한 건은 스칼라만 허용한 답변 스키마에 배열을 반환했다. 원문과 비용을 보존했고 수정하거나 재시도하지 않았다. 다른 D 응답은 올바른 대상 이름과 잘못된 코드북 행을 함께 제시했다. 인용 ID가 모두 선택된 청크에 속해도 잘못된 연결이나 위치를 막지는 못했다.
 
-## Lesson
+## 집계와 해석 원칙
 
-Keep provider model identifiers separate from tokenizer identifiers. Bind summaries to immutable requests and responses, not just costs or counts. Count format failures separately from withholding, and target-value agreement separately from citation correctness.
+공급자의 모델 식별자와 토크나이저 식별자를 구분한다. 비용이나 건수만 보지 않고 변경할 수 없는 요청·응답 기록에 요약을 연결한다. 형식 실패와 답변 보류를 따로 집계하고 대상 값의 일치와 인용의 정확성도 구분한다.
 
-## Follow-up
+## 후속 확인
 
-- [x] Preserve failed review jobs, the schema failure and all 72 attempts.
-- [x] Obtain fresh independent reviews after runner and aggregation changes.
-- [ ] Use fresh questions and independent semantic adjudication for a confirmatory comparison; the present campaign does not supply either.
+- [x] 실패한 리뷰 작업, 스키마 실패, 시도 72회 전체를 보존했다.
+- [x] 실행기와 집계기를 바꾼 뒤 새 독립 리뷰를 받았다.
+- [ ] 확인적 비교에는 새 질문과 독립적인 의미 판정이 필요하다. 이번 실험은 어느 쪽도 제공하지 않는다.

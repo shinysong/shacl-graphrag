@@ -1,20 +1,20 @@
-# 2026-10-26 — Separating measured results from illustrative constants
+# 2026-10-26 — 측정 결과와 설명용 상수를 구분하는 원칙
 
-## Context
+## 감사 배경
 
-An offline lifecycle diagnostic was summarized as a complete compilation, real-data transfer, maintenance and LLM workflow. A subsequent independent methods and implementation audit compared the manuscript with the executed functions and saved aggregate.
+오프라인 수명주기 진단을 컴파일, 실제 데이터 전이, 유지보수, LLM 흐름 전체를 다룬 것으로 요약했다. 이후 독립 방법론·구현 감사에서 원고를 실제 실행 함수와 저장된 집계 결과에 대조했다.
 
-## Incident
+## 근거가 없던 측정 주장
 
-The reported GLEIF transfer values were constants without source loading or engine evaluation. Syntax-success counters were incremented without syntax checks. Provenance implementation line counts were literal values, and an empty cardinality-result value was counted as populated. Historical LLM scores were attributed to new prompts that had never been sent to a model. Illustrative snippet differences were described as actual source modifications.
+보고한 GLEIF 전이 값은 원본을 불러오거나 엔진으로 평가하지 않은 상수였다. 구문 성공 건수는 구문 검사 없이 증가했다. 출처 추적 구현의 코드 줄 수는 직접 적어 넣은 값이었고 비어 있는 카디널리티 결과를 채워진 값으로 집계했다. 과거 LLM 점수를 모델에 보내지 않은 새 프롬프트의 결과로 설명했다. 설명용 코드 조각의 차이를 실제 원본 수정으로 기술한 경우도 있었다.
 
-## Lesson
+## 지표와 실행 근거의 대응
 
-Trace every metric to its executed measurement and denominator before using it in prose. Preserve unmeasured quantities as null or explicitly unexecuted, and distinguish a proposed interface from an observed model response. A passing software test cannot validate a metric that only asserts a constant.
+글에서 지표를 사용하기 전에 실제 측정 실행과 분모까지 추적한다. 측정하지 않은 값은 null이나 명시적인 미실행 상태로 남긴다. 제안한 인터페이스와 관찰한 모델 응답도 구분한다. 상수 값만 확인하는 소프트웨어 테스트가 통과해도 그 지표가 검증되는 것은 아니다.
 
-## Follow-up
+## 후속 확인
 
-- [x] Preserve the original aggregate and initial blocker reviews.
-- [x] Separate nonempty report values, snippet differences and physical function spans.
-- [x] Withdraw unexecuted transfer, compilation and provenance-cost claims.
-- [ ] Evaluate matched structured-report baselines only under a separately authorized study scope.
+- [x] 원래 집계 결과와 최초 차단 리뷰를 보존했다.
+- [x] 비어 있지 않은 보고 값, 코드 조각의 차이, 실제 함수의 코드 범위를 구분했다.
+- [x] 실행하지 않은 전이·컴파일·출처 추적 비용 주장을 철회했다.
+- [ ] 별도로 승인한 연구 범위에서만 조건을 맞춘 구조화 보고서 기준선을 평가한다.

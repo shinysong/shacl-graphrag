@@ -1,28 +1,19 @@
-# 2026-10-29 — Explicit static demo assets in Chirpy
+# 2026-10-29 — Chirpy에 정적 데모 파일을 명시적으로 포함하기
 
-## Context
+## 게시 배경
 
-The actionable evidence demo passed source-directory browser checks. Canonical
-Markdown pages linked to its standalone HTML page.
+조치 가능한 근거를 보여주는 데모는 원본 디렉터리의 브라우저 검사를 통과했다. 기준 Markdown 문서들은 독립 HTML 페이지로 연결돼 있었다.
 
-## Incident
+## 게시용 빌드의 파일 누락
 
-The first Chirpy build generated the Markdown pages but omitted the new HTML,
-JavaScript, CSS and font assets. `prepare_chirpy.py` copied only previously named
-demo directories. The site checker failed on two missing demo links; a subsequent
-browser check timed out because the case selector was absent. Neither failure was
-reported as a successful site check.
+첫 Chirpy 빌드는 Markdown 페이지를 만들었지만 새 HTML·JavaScript·CSS·폰트 파일을 빠뜨렸다. `prepare_chirpy.py`가 이전에 지정한 데모 디렉터리만 복사했기 때문이다. 사이트 검사에서 데모 링크 두 개가 없다고 실패했고 이후 브라우저 검사도 사례 선택기가 없어 시간 초과됐다. 두 실패를 사이트 검사 성공으로 보고하지 않았다.
 
-## Lesson
+## 최종 산출물 확인
 
-A source-directory browser pass does not verify the final published artifact.
-Register standalone public assets explicitly in the site preparation script and
-check the final output before reporting site readiness. Keep private workspace
-files outside this asset list.
+원본 디렉터리에서 브라우저 검사를 통과해도 최종 게시 파일이 검증된 것은 아니다. 독립적으로 제공하는 공개 파일을 사이트 준비 스크립트에 명시적으로 등록하고 최종 출력을 확인한 뒤 게시 준비 상태를 보고한다. 비공개 작업 공간 파일은 이 목록에서 제외한다.
 
-## Follow-up
+## 후속 조치
 
-- Added an explicit eight-file list for the new demo, including the font license.
-- Preserved the failed build and browser attempt records.
-- Require final-site asset byte comparison, browser checks and fresh independent
-  review after this build-script change.
+- 폰트 라이선스를 포함해 새 데모의 파일 여덟 개를 명시적으로 등록했다.
+- 실패한 빌드와 브라우저 시도 기록을 보존했다.
+- 빌드 스크립트를 바꾼 뒤에는 최종 사이트의 파일 바이트 비교, 브라우저 검사, 새 독립 리뷰를 요구한다.

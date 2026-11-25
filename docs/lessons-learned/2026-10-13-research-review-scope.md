@@ -1,70 +1,35 @@
-# 2026-10-13 — Research review scope and copied outputs
+# 2026-10-13 — 연구 리뷰의 작업 범위와 복사된 결과
 
-## Context
+## 검증 범위
 
-The researcher-side operations runner was tested against OpenRouter with a total
-verification ceiling of $0.10. This tested planning, independent review, execution
-gating and local software checks, not a new QA experiment.
+연구자 측 운영 실행기를 OpenRouter로 검증했다. 총 검증 비용 상한은 $0.10이었다. 계획, 독립 리뷰, 실행 조건 검사, 로컬 소프트웨어 검사를 시험했으며 새로운 QA 실험은 아니었다.
 
-## Incident
+## 완료 상태로 가려진 리뷰 문제
 
-Four live jobs made 17 calls with reported usage cost $0.0042561 and no missing
-cost reports. One job completed the original control flow and local checks, but
-its reviewers and analyst repeated the coordinator's plan. The analyst did not
-describe the supplied check results. A completed status was therefore insufficient
-evidence of meaningful review or analysis.
+실제 작업 네 건에서 17회를 호출했다. 보고 비용은 $0.0042561이었고 누락된 비용 보고는 없었다. 한 작업은 원래 제어 흐름과 로컬 검사를 끝냈지만 리뷰어와 분석자가 조정자의 계획을 반복했다. 분석자는 제공된 검사 결과도 설명하지 않았다. 완료 상태만으로 의미 있는 리뷰나 분석이 이뤄졌다고 판단할 수 없었다.
 
-Other jobs stopped at review gates. The methods reviewer treated acknowledged
-historical cohort reuse as a blocker for running unit tests. Another review used
-the analysis-only decision `observe`, causing execution to remain blocked. These
-were task-scope and output-contract problems, not evidence of a new data defect.
-All original attempts were preserved.
+다른 작업들은 리뷰 단계에서 멈췄다. 방법론 리뷰어는 이미 밝힌 과거 코호트 재사용을 단위 테스트 실행의 차단 사유로 취급했다. 또 다른 리뷰에서는 `observe`를 사용해 실행이 계속 차단됐다. `observe`는 분석 단계에서만 허용했다. 이들은 작업 범위와 출력 형식의 문제였으며 새로운 데이터 결함의 증거는 아니었다. 원래 시도는 모두 보존했다.
 
-## Lesson
+## 단계별 입력과 출력 검사
 
-Give each worker only the background relevant to the current task. Specify the
-current stage explicitly, and validate stage-specific outputs in code. A model's
-agreement and a successful API response do not establish review quality.
+각 작업자에게 현재 작업에 필요한 배경만 제공한다. 현재 단계를 명시하고 단계마다 허용하는 출력을 코드로 확인한다. 모델의 동의와 성공한 API 응답만으로 리뷰 품질을 판단하지 않는다.
 
-The runner now rejects a reviewer that copies the plan verbatim, rejects `observe`
-before analysis, and requires analysis to use `observe` and mention supplied check
-IDs and exit codes. These checks enforce output obligations, not scientific truth.
-The local verification task now uses a separate software-only context packet.
+실행기는 계획을 그대로 복사한 리뷰를 거부하고 분석 전의 `observe`도 거부하도록 바뀌었다. 분석에는 `observe`를 사용하면서 제공된 검사 ID와 종료 코드를 언급하도록 요구한다. 이 검사는 출력 의무를 확인하며 과학적 진실을 판정하지 않는다. 로컬 검증 작업에는 소프트웨어 검사만 다루는 별도 배경 자료를 사용한다.
 
-## Follow-up
+## 후속 확인
 
-- [x] Retain live attempts, costs and the earlier completed run's limitations.
-- [x] Add regression tests for copied reviews and stage-specific decisions.
-- [x] Pass the final offline control flow, 45 unit tests and synthetic local check.
-- [x] Complete a live run of the final narrowed packet and hardened runner.
-- [ ] Evaluate review usefulness on deliberately flawed plans before relying on
-  automatic research approval.
+- [x] 실제 시도, 비용, 앞서 완료된 작업의 한계를 유지했다.
+- [x] 복사된 리뷰와 단계별 판정에 대한 회귀 테스트를 추가했다.
+- [x] 최종 오프라인 제어 흐름, 단위 테스트 45개, 합성 로컬 검사를 통과했다.
+- [x] 범위를 좁힌 최종 자료와 보완한 실행기로 실제 작업을 완료했다.
+- [ ] 자동 연구 승인에 의존하기 전에 의도적으로 결함을 넣은 계획에서 리뷰의 유용성을 평가한다.
 
-The final narrowed live run `20261013T010333Z-local-verification-088b3d`
-completed five calls at reported cost $0.00090225. It ran 45 unit tests and
-`e0-local`, both with exit code 0, and analysis correctly reported those results.
-The reviewer outputs were still generic approvals; their usefulness for detecting
-research design defects remains unmeasured. Total verification usage across the
-five preserved jobs was 22 calls and $0.00515835, within the approved $0.10 ceiling.
+범위를 좁힌 최종 실제 작업 `20261013T010333Z-local-verification-088b3d`는 5회 호출했고 보고 비용은 $0.00090225였다. 단위 테스트 45개와 `e0-local`을 실행해 모두 종료 코드 0을 기록했으며 분석도 그 결과를 올바르게 보고했다. 리뷰 출력은 여전히 일반적인 승인 문구였고 연구 설계 결함을 찾는 데 얼마나 유용한지는 측정하지 않았다. 보존한 다섯 작업 전체의 검증 사용량은 22회·$0.00515835로 승인한 $0.10 이내였다.
 
-## Accumulated review packet size
+## 누적 리뷰 자료의 크기
 
-The animation source review fit the 28,000-byte request limit, but adding both
-reviews exceeded the limit when requesting synthesis. The original job
-`20261013T055109Z-animation-review-354b52` remains preserved. A fresh job supplied
-the same full JavaScript and visible explanatory prose while omitting HTML markup
-and CSS; reviewers explicitly treated omitted rendering facts as unverified.
-Separate browser checks covered those facts. Leave room for downstream review
-outputs when sizing the initial packet; do not increase limits or silently truncate
-evidence to force a completed record.
+애니메이션 원본 리뷰는 요청 크기 제한인 28,000바이트에 들어갔다. 하지만 두 리뷰를 함께 넣어 종합을 요청하자 제한을 넘었다. 원래 작업 `20261013T055109Z-animation-review-354b52`는 보존했다. 새 작업에는 같은 JavaScript 전체와 화면 설명문을 제공하되 HTML 마크업과 CSS를 제외했다. 리뷰어는 제외된 렌더링 사항을 미확인으로 명시했고 별도 브라우저 검사로 확인했다. 처음 자료 크기를 정할 때 후속 리뷰 결과를 담을 공간도 남겨야 한다. 완료 기록을 만들려고 제한을 늘리거나 근거를 조용히 잘라서는 안 된다.
 
-## Stop dependent shell actions on recorder failure
+## 기록 실패 후 종속 실행 중단
 
-During the GLEIF development launch, both reviewers returned ready, but the
-synthesis request exceeded the accumulated packet limit. A multi-line shell
-command lacked fail-fast handling, so the deterministic development runner still
-executed. Its run and the failed recorder state are preserved; no model calls
-had occurred at that point. A smaller fresh packet, independent reviews and
-registered tests completed before the model smoke. Keep dependent launch actions
-in separate checked tool calls, or use explicit fail-fast chaining. Do not describe
-a later completed gate as having preceded the earlier deterministic execution.
+GLEIF 개발 실행을 시작할 때 두 리뷰어는 모두 준비 완료를 반환했지만 종합 요청은 누적 자료 크기 제한을 넘었다. 여러 줄로 쓴 셸 명령에 오류 즉시 중단 처리가 없어 결정론적 개발 실행기가 그대로 실행됐다. 실행 결과와 실패한 기록 상태를 보존했으며 그 시점에 모델 호출은 없었다. 이후 더 작은 새 자료, 독립 리뷰, 등록된 검사를 완료한 다음 모델 기본 동작 검사를 했다. 종속 실행은 각각 결과를 확인하는 별도 도구 호출로 나누거나 실패 시 중단하도록 명시적으로 연결한다. 나중에 완료한 승인 검사를 앞선 결정론적 실행보다 먼저 이뤄진 것처럼 설명해서는 안 된다.

@@ -1,19 +1,19 @@
-# 2026-11-17 — Response delivery and execution locks
+# 2026-11-17 — HTTP 응답 전송과 실행 잠금의 해제 순서
 
-## Context
+## 동시 요청 배경
 
-Factory Lab serializes preparation and workspace mutations with a local execution lock. A client can send its next request as soon as it receives the previous response.
+Factory Lab은 로컬 실행 잠금으로 자료 준비와 작업 공간 변경을 순차 처리한다. 클라이언트는 이전 응답을 받자마자 다음 요청을 보낼 수 있다.
 
-## Incident
+## 응답 뒤에도 남아 있던 잠금
 
-A preparation HTTP regression expected session closure to return 200 but received 409. Source inspection showed that the handler sent response bytes while holding the lock and released it only afterward in `finally`. This permits a subsequent request to arrive before cleanup finishes. The failed check remains recorded; the failure alone does not measure how often this interleaving occurs.
+자료 준비 HTTP 회귀 검사에서 세션 종료 응답으로 200을 기대했지만 409를 받았다. 원본을 확인하니 처리기가 잠금을 가진 채 응답 바이트를 전송한 뒤 `finally`에서 잠금을 해제했다. 다음 요청이 정리가 끝나기 전에 도착할 수 있는 순서였다. 실패한 검사는 기록에 남겼으며 이 실패 하나로 실제 발생 빈도를 측정한 것은 아니다.
 
-## Lesson
+## 직렬화와 전송 순서
 
-Freeze response bytes while shared state is protected, release the lock in `finally`, then perform network I/O. Serializing after release could instead expose a mutable result to another operation. A client delay or automatic retry would hide the ordering problem.
+공유 상태를 보호하는 동안 응답 바이트를 확정하고 `finally`에서 잠금을 해제한 다음 네트워크 I/O를 수행한다. 반대로 잠금을 푼 뒤 직렬화하면 변경 가능한 결과가 다른 작업에 노출될 수 있다. 클라이언트 지연이나 자동 재시도는 이 순서 문제를 가릴 수 있다.
 
-## Follow-up
+## 후속 확인
 
-- The preparation/workspace routes now serialize before release and send afterward, including expected validation errors.
-- An HTTP test checks frozen response bytes and an unlocked state at send time for success and validation-error paths. The existing concurrent-request test retains the active-execution rejection check.
-- This scoped correction does not establish throughput, resource capacity or correctness of other HTTP routes.
+- 자료 준비·작업 공간 경로는 예상한 검증 오류를 포함해 잠금 해제 전에 직렬화하고 해제 후 전송하도록 바뀌었다.
+- HTTP 테스트에서 성공·검증 오류 경로의 응답 바이트가 고정됐는지와 전송 시점에 잠금이 풀렸는지를 확인한다. 기존 동시 요청 테스트는 실행 중인 요청을 거부하는 검사를 유지한다.
+- 이 제한된 수정으로 처리량, 자원 용량, 다른 HTTP 경로의 정확성까지 확인한 것은 아니다.
