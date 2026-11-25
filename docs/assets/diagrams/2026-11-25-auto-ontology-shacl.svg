@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120" role="img" aria-labelledby="title desc">
+<title id="title">예상 아키텍처 — auto-ontology와 SHACL의 역할</title>
+<desc id="desc">auto-ontology가 의미 모델 생성과 검색·SQL 질의를 담당하고, 연구 계층이 실제 조회 근거와 초안을 고정한 뒤 자체 검토, 동일 정책 Python, SHACL 검토를 비교하는 제안 구조. upstream 질문 응답의 자료실 연결과 통합 비교는 예정이며, SHACL은 선택된 RDF 근거에 선언한 제약을 검사한다.</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#666"/></marker></defs>
+<style>
+text{font-family:'Noto Sans CJK KR','Noto Sans KR',sans-serif;fill:#202020} .title{font-size:32px;font-weight:700}.sub{font-size:18px;fill:#606060}.lane{font-size:23px;font-weight:700}.head{font-size:21px;font-weight:700}.body{font-size:18px}.small{font-size:16px;fill:#555}.box{fill:white;stroke:#777;stroke-width:1.5}.line{fill:none;stroke:#666;stroke-width:2;marker-end:url(#arrow)}.group{fill:#f5f5f5;stroke:#c7c7c7}.planned{stroke-dasharray:7 5}.pill{font-size:15px;fill:#555}
+</style>
+<rect width="1600" height="1120" fill="white"/>
+<text x="46" y="57" class="title">검색·질의는 auto-ontology, 근거 검토는 연구 계층</text>
+<text x="46" y="91" class="sub">예상 통합 구조 · 2026-11-25  |  SHACL 보고서를 최종 답변과 사람의 검토에 활용</text>
+
+<rect x="36" y="119" width="1528" height="217" class="group"/>
+<text x="58" y="154" class="lane">01  자료 준비와 의미 모델</text>
+<rect x="60" y="177" width="265" height="132" class="box"/>
+<text x="78" y="209" class="head">원본 DB · 표</text>
+<text x="78" y="242" class="body">식별자·스키마·자료 버전</text>
+<text x="78" y="272" class="small">문서 정책은 별도 근거·규칙 경로</text>
+<rect x="365" y="177" width="357" height="132" class="box"/>
+<text x="385" y="209" class="head">auto-ontology · 의미 생성</text>
+<text x="385" y="242" class="body">스키마·표본 → 개념·열 설명</text>
+<text x="385" y="272" class="body">관계·조인 후보·계산식 제안</text>
+<rect x="762" y="177" width="324" height="132" class="box"/>
+<text x="782" y="209" class="head">사람 · 의미와 관계 검토</text>
+<text x="782" y="242" class="body">원본 대조 → 수정·채택</text>
+<text x="782" y="272" class="small">인증 표시와 실행 권한은 별개</text>
+<rect x="1126" y="177" width="410" height="132" class="box"/>
+<text x="1146" y="209" class="head">auto-ontology · 의미 카탈로그</text>
+<text x="1146" y="242" class="body">개념 ↔ 실제 테이블·열·관계</text>
+<text x="1146" y="272" class="small">현재: 생성·내보내기 연결 / 검색 재사용 예정</text>
+<path d="M325 243H363 M722 243H760 M1086 243H1124" class="line"/>
+
+<rect x="36" y="354" width="1528" height="229" class="group"/>
+<text x="58" y="391" class="lane">02  auto-ontology 담당 · 질문 → 검색 → SQL 실행 → 초안</text>
+<text x="1070" y="390" class="pill">upstream 구현 있음 / 우리 채팅 연결 예정</text>
+<rect x="60" y="418" width="216" height="134" class="box"/>
+<text x="80" y="453" class="head">사용자 질문</text>
+<text x="80" y="487" class="body">저장소·접근 범위</text>
+<text x="80" y="518" class="body">자료 버전 선택</text>
+<rect x="317" y="418" width="320" height="134" class="box planned"/>
+<text x="337" y="453" class="head">retrieve · 의미 검색</text>
+<text x="337" y="487" class="body">임베딩·이름 검색</text>
+<text x="337" y="518" class="body">필드·계산식·조인 경로 확보</text>
+<rect x="678" y="418" width="433" height="134" class="box planned"/>
+<text x="698" y="453" class="head">LLM + run_sql / submit</text>
+<text x="698" y="487" class="body">SQL 생성 → 구문·참조·읽기 범위 검사</text>
+<text x="698" y="518" class="body">원본 DB 조회 → 결과를 보고 다음 단계 선택</text>
+<rect x="1152" y="418" width="384" height="134" class="box planned"/>
+<text x="1172" y="453" class="head">조회 근거 + 답변 초안</text>
+<text x="1172" y="487" class="body">SQL·반환 행·실행 과정</text>
+<text x="1172" y="518" class="small">실행 실패·미실행·빈 결과도 구분</text>
+<path d="M276 485H315 M637 485H676 M1111 485H1150" class="line"/>
+<path d="M1330 309V347H660V402H477V416" class="line planned"/>
+
+<rect x="36" y="603" width="1528" height="342" class="group"/>
+<text x="58" y="641" class="lane">03  우리 실험 담당 · 동일한 근거에서 검토 효과 비교</text>
+<text x="1133" y="640" class="pill">기존 검토 기능 재사용 / 통합 실험 예정</text>
+<rect x="60" y="665" width="309" height="112" class="box"/>
+<text x="80" y="697" class="head">초안·조회 근거 고정</text>
+<text x="80" y="728" class="body">자료·쿼리·의미 모델 버전</text>
+<text x="80" y="755" class="small">각 비교군에 같은 질문·초안·근거</text>
+<rect x="60" y="799" width="309" height="118" class="box"/>
+<text x="80" y="831" class="head">검토한 업무 규칙</text>
+<text x="80" y="863" class="body">정책 출처·적용 대상·시점</text>
+<text x="80" y="892" class="small">Python과 SHACL에 같은 정책 제공</text>
+
+<rect x="422" y="665" width="535" height="59" class="box planned"/>
+<text x="442" y="702" class="head">A  자체 검토</text><text x="650" y="702" class="body">동일 초안·근거를 LLM이 재검토</text>
+<rect x="422" y="738" width="535" height="59" class="box planned"/>
+<text x="442" y="775" class="head">B  Python 검토</text><text x="650" y="775" class="body">동일 정책의 검사 결과 제공</text>
+<rect x="422" y="811" width="535" height="106" class="box planned"/>
+<text x="442" y="843" class="head">C  SHACL 검토</text>
+<text x="442" y="873" class="body">선택된 조회 근거 → RDF 변환 → Shape 검사</text>
+<text x="442" y="899" class="small">위반 대상·경로·제약·검사 범위를 보고서로 제공</text>
+<path d="M369 715H395V694H420 M395 715V767H420 M395 767V845H420" class="line"/>
+<path d="M369 863H398V789H420 M398 863V891H420" class="line"/>
+
+<rect x="1011" y="665" width="525" height="141" class="box planned"/>
+<text x="1031" y="698" class="head">각 조건의 최종 답변 + 사람의 검토</text>
+<text x="1031" y="732" class="body">수정·유지한 판단과 근거 확인</text>
+<text x="1031" y="762" class="body">검토가 필요한 항목·확인하지 못한 범위 표시</text>
+<text x="1031" y="790" class="small">SHACL 위반을 자동 답변 차단으로 쓰지 않는 기본안</text>
+<path d="M957 694H1009 M957 767H1009 M957 864H983V789H1009" class="line"/>
+<rect x="1011" y="829" width="525" height="88" class="box"/>
+<text x="1031" y="859" class="head">사후 평가 · 런타임과 분리</text>
+<text x="1031" y="890" class="body">정확성·근거 지지·과잉 확신·불필요한 보류·비용</text>
+<path d="M1275 806V827" class="line"/>
+<path d="M1536 530H1550V591H214V663" class="line planned"/>
+
+<text x="48" y="980" class="head">SHACL이 검사하는 것: 선언한 규칙과 선택된 RDF 근거의 일치 여부</text>
+<text x="48" y="1013" class="body">예: 수량의 타입·범위, 필요한 연결·값, 선언한 적용 조건. 자연어 답변 전체의 사실성·검색 완전성은 보증하지 않음.</text>
+<text x="48" y="1047" class="small">비교 조건명 A/B/C는 이 제안도 안에서만 사용. 같은 검사 근거·정책·모델·생성 예산을 맞추고, SHACL군만 추가 조회하지 않음.</text>
+<text x="48" y="1080" class="small">점선 상자·연결: 새 통합이 필요한 부분. 현재 SHACL 진단은 제한된 경로에 구현됨. 업무 Shape 자동 생성·효과 일반화는 별도 검증 과제.</text>
+</svg>

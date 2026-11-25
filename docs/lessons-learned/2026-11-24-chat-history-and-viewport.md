@@ -1,22 +1,26 @@
-# 2026-11-24 — Chat history and viewport boundaries
+# 2026-11-24 — 채팅 기록과 모바일 입력창의 표시 범위
 
-## Context
+## 변경 배경
 
-The workspace question screen became a chronological conversation while retaining original execution records and the existing request-recovery controls.
+저장소 질문 화면을 시간순 대화 형태로 바꾸면서 원래 실행 기록과 요청 복구 기능을 유지했다.
 
-## Incident
+## 확인한 문제
 
-Parallel read-only history requests intermittently failed because the local server serializes workspace operations with a nonblocking shared lock. A summary placeholder could therefore appear instead of an older question. Separately, the expanded recovery panel pushed the mobile composer below the viewport during an active request. Full-page screenshots and horizontal-overflow checks did not detect the vertical usability failure.
+로컬 서버는 비차단 공유 잠금으로 저장소 작업을 순차 처리한다. 읽기 전용 채팅 기록 요청을 병렬로 보내도 잠금 경쟁이 생겨 간헐적으로 실패했다. 그 결과 이전 질문 대신 요약용 임시 표시가 나타날 수 있었다.
 
-## Lesson
+모바일에서는 요청 실행 중 펼쳐진 복구 패널이 입력창을 화면 아래로 밀어냈다. 전체 페이지 캡처와 가로 넘침 검사만으로는 이 세로 방향의 사용성 문제를 발견하지 못했다.
 
-Read-only requests can still contend for an application lock. Hydrate a bounded number of saved turns sequentially and keep an explicit load action after failure. Validate the composer's actual viewport bounds in idle, pending and completed states. Preserve prominent recovery for unknown requests; only the exact foreground chat request can use compact recovery details when its actual progress and cancellation remain visible in the conversation.
+## 수정 원칙
 
-## Follow-up
+읽기 전용 요청도 애플리케이션 잠금을 두고 경쟁할 수 있다. 저장된 대화는 개수를 제한해 순차적으로 불러오고 실패하면 다시 불러오는 동작을 명확히 제공한다. 대기·실행 중·완료 상태마다 입력창이 실제 화면 안에 있는지 확인한다.
 
-- [x] Preserve the original question, answer, version, unresolved items and execution details.
-- [x] Check desktop and mobile composer bounds, Enter submission, Shift+Enter, pending progress and display-only new conversations using an isolated local service and a fake model.
-- [x] Check that polling failures appear in the pending message.
-- [x] Verify the public screen with saved records and no paid requests.
+상태를 알 수 없는 요청의 복구 안내는 눈에 잘 띄게 유지한다. 현재 화면에서 실행 중인 바로 그 채팅 요청에 한해서만 복구 상세를 접을 수 있다. 그 경우에도 실제 진행 상태와 취소 기능은 대화 안에 보여야 한다.
 
-These are software and interface checks. They do not establish answer accuracy, successful business-query selection or multi-turn model memory.
+## 후속 확인
+
+- [x] 원래 질문·답변·자료 버전·미해결 항목·실행 상세를 보존했다.
+- [x] 격리된 로컬 서비스와 모의 모델로 데스크톱·모바일 입력창 위치, Enter 전송, Shift+Enter, 실행 중 진행 표시, 표시만 초기화하는 새 대화를 확인했다.
+- [x] 상태 확인 요청이 실패하면 진행 중인 메시지 안에 오류가 나타나는지 확인했다.
+- [x] 저장된 기록으로 공개 화면을 확인했으며 유료 요청은 하지 않았다.
+
+이 결과는 소프트웨어와 인터페이스 검사다. 답변 정확도, 업무 조회 선택의 성공, 모델의 여러 턴 기억을 검증한 결과로 해석해서는 안 된다.

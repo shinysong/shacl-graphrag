@@ -1,22 +1,26 @@
-# 2026-11-24 — Reservation settlement and reported costs
+# 2026-11-24 — 비용 예약과 실제 보고 비용의 정산
 
-## Context
+## 발생 상황
 
-The shared workspace used the same conservative spending boundary as earlier bounded research campaigns. Each native chat call reserved the full documented model context and output ceilings. The gateway retained that reservation after successful calls, even when the provider reported a much smaller cost.
+공유 작업 공간은 앞선 제한적 연구 실험과 같은 보수적 비용 한도를 사용했다. 네이티브 채팅 호출마다 문서에 명시된 모델의 문맥·출력 상한 전체를 기준으로 비용을 예약했다. 호출에 성공하고 공급자가 훨씬 작은 비용을 보고해도 게이트웨이는 예약액을 그대로 유지했다.
 
-## Incident
+## 중단 원인
 
-An example SQLite semantic-generation run stopped at the local reservation limit. The native ledger contained 39 completed provider attempts, $9.6341 in cumulative reservations and $0.01367171 in reported costs. Another chat required a $1.20 reservation. This was a local accounting refusal, not evidence of an exhausted provider account. A partial upstream export was retained without being imported or approved.
+예제 SQLite의 의미 모델 생성이 로컬 예약 한도에 걸려 중단됐다. 네이티브 원장에는 완료된 공급자 호출 시도 39회, 누적 예약액 $9.6341, 보고 비용 $0.01367171이 기록돼 있었다. 다음 채팅에는 $1.20의 예약이 필요했다.
 
-## Lesson
+이는 로컬 회계 정책이 실행을 거부한 경우였다. 공급자 계정의 잔액이 소진됐다는 증거는 아니었다. upstream에서 일부 내보낸 결과는 보존했지만 가져오기나 승인을 진행하지 않았다.
 
-Use separate concepts for an in-flight hold, a successful response's reported cost, and an unresolved liability. An explicitly selected settlement policy may release the unused portion of a successful, cost-known response. Failed responses and missing, invalid or unconfirmed costs retain their full holds. HTTP 200 alone is insufficient: a provider-error payload must also fail and stop native retries. Reserve atomically before transport so concurrent requests cannot spend the same remaining allowance.
+## 정산 정책
 
-An explicitly authorized reservation reset must preserve the predecessor ledger and its hash, carry historical costs and attempt counts into the new accounting epoch, and keep the campaign's total ceiling and deadline. The reset procedure supports the inspected first-reset case only; it is not a general ledger migration service. A process interruption during the multi-file migration requires operator inspection.
+진행 중인 호출의 예약액, 성공 응답의 보고 비용, 아직 비용을 확정하지 못한 책임 금액을 따로 관리한다. 정산 정책을 명시적으로 선택한 경우에만 성공했고 비용도 확인된 응답의 미사용 예약액을 해제한다. 실패 응답이나 비용이 누락·무효·미확인인 응답은 예약액 전체를 유지한다.
 
-## Follow-up
+HTTP 200만으로 성공을 판단하지 않는다. 응답 본문에 공급자 오류가 있으면 실패로 처리하고 네이티브 재시도도 중단한다. 전송 전에 예약을 원자적으로 처리해야 동시에 들어온 요청이 같은 잔여 한도를 중복 사용하지 않는다.
 
-- [x] Keep fixed, nonrefunded reservation accounting as the default for historical research protocols.
-- [x] Add explicit successful-response settlement, conservative unresolved holds and provider-error checks.
-- [x] Verify concurrency, inherited-cost accounting, configuration binding and native retry stopping with offline tests.
-- [ ] Reconcile each deployment's actual migration and generation receipts before claiming that its connection works. Software tests alone do not establish semantic mapping quality or provider invoice accuracy.
+사용자가 예약 초기화를 명시적으로 승인하더라도 이전 원장과 해시를 보존해야 한다. 과거 비용과 호출 시도 횟수는 새 회계 구간으로 넘기고 캠페인 총한도와 종료 시각은 유지한다. 이번 초기화 절차는 확인한 최초 초기화 사례만 지원하며 범용 원장 마이그레이션 기능은 아니다. 여러 파일을 옮기는 도중 프로세스가 중단되면 운영자가 상태를 확인해야 한다.
+
+## 후속 확인
+
+- [x] 과거 연구 프로토콜의 기본값인 고정·비환급 예약 회계를 유지했다.
+- [x] 성공 응답의 명시적 정산, 미확정 비용의 보수적 예약 유지, 공급자 오류 검사를 추가했다.
+- [x] 동시성, 이전 비용 승계, 설정 결속, 네이티브 재시도 중단을 오프라인 테스트로 확인했다.
+- [ ] 각 배포의 실제 이전 기록과 생성 결과를 대조한 뒤 연결 성공을 판단한다. 소프트웨어 테스트만으로 의미 매핑 품질이나 공급자 청구서의 정확성까지 확인할 수는 없다.

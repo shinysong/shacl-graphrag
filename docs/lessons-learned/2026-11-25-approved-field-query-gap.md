@@ -1,21 +1,25 @@
-# 2026-11-25 — Field approval and executable source reads
+# 2026-11-25 — 필드 승인과 실제 조회 사이의 공백
 
-## Context
+## 발생 상황
 
-A workspace had approved product identifiers, names and recorded quantities, but a question asking for positive remaining quantities returned no query evidence.
+상품 식별자·이름·기록된 수량을 승인한 저장소에서, 남은 수량이 양수인 상품을 묻자 조회 근거가 없다는 답변이 나왔다.
 
-## Incident
+## 원인
 
-The saved planner received an empty approved-query catalog and selected no calls. Field review had not created a reusable query approval. The model therefore had no business-query operation for the requested filter, despite permission to reuse the source fields. The server returned a generic English no-evidence message. This was an execution-capability gap, not a SHACL validation result or evidence that the source lacked products.
+저장된 실행 계획을 확인하니 승인된 질의 목록이 비어 있었고 모델은 도구를 하나도 선택하지 않았다. 필드 검토를 마쳐도 재사용 가능한 질의가 자동으로 승인되지는 않았다. 원본 필드를 재사용할 권한은 있었지만 요청한 조건을 실행할 업무 조회 도구가 없었다. 서버는 이 상황에 영어로 된 일반적인 근거 없음 메시지를 반환했다.
 
-## Lesson
+이 실패는 조회 기능의 공백이었다. SHACL 검사 결과도 아니고 원본에 상품이 없다는 증거도 아니었다.
 
-Separate reading approved source fields from approving reusable joins, business decisions and policy applications. A fixed single-table tool can expose bounded typed filters and approved projections without accepting model-generated SQL. Validate field permissions, source hashes and current review versions on every execution; retain counts, omitted rows, type exclusions and child execution records. A positive recorded quantity does not establish current stock or full order eligibility.
+## 수정 원칙
 
-## Follow-up
+승인한 원본 필드를 읽는 권한과 재사용할 조인·업무 판단·정책 적용을 승인하는 절차를 분리한다. 고정된 단일 테이블 도구라면 모델이 만든 SQL을 직접 받지 않고도 승인한 열과 제한된 타입별 필터로 조회할 수 있다.
 
-- [x] Add actual snapshot and service tests for private fields, numeric types, NULL, truncation, source drift, cancellation, revision changes and replay.
-- [x] Keep original failed/no-execution outcomes and distinguish the new routing version.
-- [x] Explain future no-execution outcomes separately from empty matching results.
+매 실행에서 필드 권한, 원본 해시, 현재 검토 버전을 확인한다. 전체 건수·생략한 행·타입 때문에 제외한 행·하위 실행 기록도 남긴다. 기록된 수량이 양수라는 사실만으로 현재 재고나 주문에 필요한 모든 조건이 충족됐다고 판단해서는 안 된다.
 
-Software checks do not establish general natural-language selection accuracy. A separate actual-model run is recorded privately; its outcome must be assessed independently of these checks.
+## 후속 확인
+
+- [x] 실제 스냅샷과 서비스 테스트에서 비공개 필드, 숫자 타입, NULL, 결과 잘림, 원본 변경, 취소, 버전 변경, 실행 기록 재사용을 확인했다.
+- [x] 처음 실패하거나 조회하지 못한 결과를 보존하고 새 도구 선택 버전을 구분했다.
+- [x] 이후 응답에서는 조회 미실행과 조건에 맞는 행이 없는 경우를 구분하도록 했다.
+
+소프트웨어 검사만으로 자연어 질문에 맞는 도구를 일반적으로 잘 선택한다고 결론 내릴 수는 없다. 별도의 실제 모델 실행 기록은 비공개로 보관하며 그 결과는 소프트웨어 검사와 나누어 평가한다.

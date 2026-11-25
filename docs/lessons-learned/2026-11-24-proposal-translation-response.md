@@ -1,17 +1,19 @@
-# 2026-11-24 — Translation response contracts
+# 2026-11-24 — 번역 응답 형식과 실패 후 복구
 
-## Context
+## 발생 상황
 
-The proposal comparison needed Korean editing suggestions while preserving the original imported descriptions and existing approvals. The shared model gateway returns an assistant message object with a text `content` field.
+제안 비교 화면에 한국어 수정안을 제공하되 가져온 원본 설명과 기존 승인은 보존해야 했다. 공유 모델 게이트웨이는 텍스트 `content` 필드를 가진 assistant 메시지 객체를 반환한다.
 
-## Incident
+## 실패 원인
 
-The first translation handler parsed that message object directly as JSON. Its test substitute returned a string, so local tests failed to exercise the actual gateway interface. One provider call completed and its response was retained, but the translation operation failed during local processing. No translation was applied or approved.
+첫 번역 처리기는 메시지 객체 자체를 JSON으로 해석했다. 테스트 대역은 문자열을 반환했기 때문에 로컬 테스트에서 실제 게이트웨이 인터페이스를 확인하지 못했다. 공급자 호출 한 번은 완료됐고 응답도 보관됐지만 이후 로컬 처리에서 번역 작업이 실패했다. 번역은 적용되지 않았고 승인도 바뀌지 않았다.
 
-## Correction
+## 수정과 복구
 
-Parse the message's text content and test with the actual assistant-message structure. Accept a single complete JSON code fence as a documented presentation wrapper; preserve its original bytes and reject unrelated commentary rather than extracting arbitrary fragments. Preserve the failed operation and its paid call. A separately recorded offline processing operation can validate the saved response against the exact original messages, source revision and requested IDs without another provider call. The recovery must retain original request and response hashes and identify the original failed operation and provider call. It must not overwrite the failure or invent another successful provider attempt.
+메시지의 텍스트 내용을 파싱하고 실제 assistant 메시지 구조로 테스트한다. 완전한 JSON 코드 블록 하나는 허용하는 응답 형식으로 명시한다. 원본 바이트는 보존하고 관계없는 설명이 섞이면 임의의 일부만 추출하지 말고 거부한다.
 
-## Verification boundary
+실패한 작업과 그 유료 호출은 그대로 남긴다. 별도로 기록한 오프라인 처리 작업에서 저장된 응답을 정확한 원래 메시지·자료 버전·요청 ID와 대조하면 공급자를 다시 호출하지 않고 복구할 수 있다. 이때 원래 요청과 응답의 해시, 실패 작업과 공급자 호출의 식별자를 유지한다. 기존 실패를 덮어쓰거나 공급자 호출이 한 번 더 성공한 것처럼 기록해서는 안 된다.
 
-Korean text, expected IDs and response structure do not establish correct business meaning. The source description remains visible, translation is a review suggestion, and existing approvals remain unchanged. Missing descriptions stay missing.
+## 확인한 범위
+
+한국어 문장, 기대한 ID, 응답 구조가 맞는다고 업무 의미까지 올바른 것은 아니다. 원본 설명을 계속 보여주고 번역은 검토 제안으로 제시한다. 기존 승인은 바꾸지 않으며 설명이 없던 항목은 비워 둔다.

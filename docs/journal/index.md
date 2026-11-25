@@ -1,5 +1,7 @@
 # 연구 일지
 
+- [2026-11-25 auto-ontology의 조회 경로와 SHACL 검토 계층](2026-11-25-auto-ontology-shacl-architecture.md)
+
 - [2026-11-11 복합 질문의 실제 답변 검토](2026-11-11-compound-answer-review.md)
 - [2026-11-11 트리플 규모와 조회 한도](2026-11-11-factory-complexity.md)
 
