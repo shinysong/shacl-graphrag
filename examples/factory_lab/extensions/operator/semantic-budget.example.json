@@ -1,0 +1,52 @@
+{
+  "format": "auto-ontology-semantic-budget-1",
+  "wall_timeout_seconds": "REPLACE_WITH_AUTHORIZED_INTEGER_SECONDS_AT_MOST_1800",
+  "config": {
+    "models": [
+      {
+        "alias": "openai/auto-ontology-reasoning",
+        "actual_id": "REPLACE_WITH_VERIFIED_PROVIDER_MODEL_ID",
+        "kind": "chat",
+        "provider": "REPLACE_WITH_EXACT_PROVIDER",
+        "input_nanodollars_per_token": "REPLACE_WITH_VERIFIED_POSITIVE_INTEGER_RATE",
+        "output_nanodollars_per_token": "REPLACE_WITH_VERIFIED_POSITIVE_INTEGER_RATE",
+        "max_input_tokens": "REPLACE_WITH_FULL_PROVIDER_INPUT_CEILING",
+        "max_output_tokens": "REPLACE_WITH_REQUEST_OUTPUT_CEILING_INCLUDING_REASONING",
+        "billing_output_tokens": "REPLACE_WITH_FULL_PROVIDER_BILLABLE_OUTPUT_CEILING",
+        "reservation_nanodollars": "REPLACE_WITH_FULL_INPUT_PLUS_BILLABLE_OUTPUT_RESERVATION",
+        "verification": "REPLACE_WITH_DATED_PRIMARY_PROVIDER_PRICE_AND_CONTEXT_EVIDENCE_REFERENCE"
+      },
+      {
+        "alias": "openai/auto-ontology-embedding",
+        "actual_id": "REPLACE_WITH_VERIFIED_2048_DIMENSION_EMBEDDING_MODEL",
+        "kind": "embedding",
+        "provider": "REPLACE_WITH_EXACT_PROVIDER",
+        "input_nanodollars_per_token": "REPLACE_WITH_VERIFIED_POSITIVE_INTEGER_RATE",
+        "output_nanodollars_per_token": 0,
+        "max_input_tokens": "REPLACE_WITH_FULL_PROVIDER_INPUT_CEILING",
+        "max_output_tokens": 0,
+        "billing_output_tokens": 0,
+        "reservation_nanodollars": "REPLACE_WITH_FULL_INPUT_RESERVATION",
+        "verification": "REPLACE_WITH_DATED_PRIMARY_PROVIDER_PRICE_CONTEXT_AND_DIMENSION_EVIDENCE_REFERENCE"
+      }
+    ],
+    "call_cap": "REPLACE_WITH_AUTHORIZED_POSITIVE_INTEGER_AT_MOST_1000",
+    "chat_attempt_cap": "REPLACE_WITH_AUTHORIZED_POSITIVE_INTEGER",
+    "embedding_attempt_cap": "REPLACE_WITH_AUTHORIZED_POSITIVE_INTEGER",
+    "per_call_nanodollars": "REPLACE_WITH_AUTHORIZED_MAX_PER_CALL_RESERVATION",
+    "total_nanodollars": "REPLACE_WITH_AUTHORIZED_TOTAL_AT_MOST_10000000000",
+    "deadline_epoch": "REPLACE_WITH_AUTHORIZED_ABSOLUTE_UTC_UNIX_EPOCH_NUMBER",
+    "timeout_seconds": "REPLACE_WITH_POSITIVE_INTEGER_AT_MOST_120",
+    "max_request_bytes": "REPLACE_WITH_POSITIVE_INTEGER_AT_MOST_4194304",
+    "max_response_bytes": "REPLACE_WITH_POSITIVE_INTEGER_AT_MOST_16777216"
+  },
+  "bridge_limits": {
+    "max_tables": 12,
+    "max_columns_per_table": 40,
+    "max_rows_per_table": 1000,
+    "max_source_bytes": 16777216,
+    "max_cell_bytes": 8192,
+    "timeout_seconds": "REPLACE_WITH_POSITIVE_INTEGER_NOT_ABOVE_WALL_TIMEOUT",
+    "max_output_bytes": 8388608
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "pack": "organization-medium",
+  "policy_document": "note-01.txt",
+  "policy_paragraph_prefix": "Policy\nRole eligibility requires an active employee, an approval-capable role, and an inclusive grant validity interval.",
+  "questions": [
+    {
+      "number": 1,
+      "status": "supported",
+      "root": "approval_requests",
+      "root_key": "id",
+      "parameters": {
+        "project_id": [
+          "integer",
+          1
+        ],
+        "status": [
+          "text",
+          "open"
+        ]
+      },
+      "filters": [
+        [
+          "approval_requests.project_id",
+          "eq",
+          "project_id"
+        ],
+        [
+          "approval_requests.status",
+          "eq",
+          "status"
+        ]
+      ],
+      "projection": [
+        [
+          "approval_requests.id",
+          "request_id"
+        ]
+      ]
+    },
+    {
+      "number": 2,
+      "status": "supported",
+      "root": "approval_events",
+      "root_key": "id",
+      "joins": [
+        [
+          "approval_events.request_id",
+          "approval_requests.id"
+        ],
+        [
+          "approval_requests.project_id",
+          "projects.id"
+        ]
+      ],
+      "parameters": {},
+      "filters": [],
+      "projection": [
+        [
+          "projects.owner_team_id",
+          "owner_team_id"
+        ]
+      ],
+      "group_by": [
+        "projects.owner_team_id"
+      ],
+      "aggregates": [
+        [
+          "count_rows",
+          null,
+          "approval_event_count"
+        ]
+      ],
+      "limitations": [
+        "Every recorded approval event is counted, including decisions other than approved. This is an event count, not distinct request count or authority assessment. Null parent keys remain visible as a group."
+      ]
+    },
+    {
+      "number": 3,
+      "status": "supported",
+      "root": "role_grants",
+      "root_key": "id",
+      "joins": [
+        [
+          "role_grants.employee_id",
+          "employees.id"
+        ],
+        [
+          "role_grants.role_id",
+          "roles.id"
+        ]
+      ],
+      "parameters": {
+        "active": [
+          "integer",
+          1
+        ],
+        "capable": [
+          "integer",
+          1
+        ],
+        "as_of": [
+          "date",
+          "2026-11-19"
+        ]
+      },
+      "filters": [
+        [
+          "employees.active",
+          "eq",
+          "active"
+        ],
+        [
+          "roles.can_approve",
+          "eq",
+          "capable"
+        ],
+        [
+          "role_grants.valid_from",
+          "lte",
+          "as_of"
+        ],
+        [
+          "role_grants.valid_to",
+          "gte",
+          "as_of"
+        ]
+      ],
+      "projection": [
+        [
+          "employees.id",
+          "employee_id"
+        ]
+      ],
+      "distinct": true,
+      "policy_required": true,
+      "output_kind": "prerequisite_candidates",
+      "limitations": [
+        "Role eligibility only, with inclusive validity dates; does not certify an approval event or external legal validity."
+      ]
+    },
+    {
+      "number": 4,
+      "status": "supported",
+      "query_kind": "directed_reachability",
+      "policy_required": true,
+      "joins": [
+        [
+          "dependencies.predecessor_id",
+          "milestones.id"
+        ],
+        [
+          "dependencies.successor_id",
+          "milestones.id"
+        ]
+      ],
+      "parameters": {
+        "seed": [
+          "integer",
+          0
+        ],
+        "relation": [
+          "text",
+          "finish-to-start"
+        ]
+      },
+      "reachability": {
+        "edge_id": "dependencies.id",
+        "source": "dependencies.predecessor_id",
+        "destination": "dependencies.successor_id",
+        "node": "milestones.id",
+        "direction": "forward",
+        "node_key_type": "integer",
+        "seed_parameter": "seed",
+        "filters": [
+          {
+            "field": "dependencies.relation",
+            "op": "eq",
+            "parameter": "relation",
+            "value_type": "text"
+          }
+        ],
+        "budgets": {
+          "max_depth": 128,
+          "max_nodes": 10000,
+          "max_edges": 100000
+        }
+      }
+    },
+    {
+      "number": 5,
+      "status": "missing_evidence",
+      "missing": [
+        "external legal validity assessment",
+        "applicable external law and authoritative evidence"
+      ],
+      "reason": "Recorded approvals and audit events do not certify external legal validity."
+    }
+  ]
+}

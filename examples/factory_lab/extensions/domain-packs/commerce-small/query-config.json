@@ -1,0 +1,12 @@
+{
+  "pack": "commerce-small",
+  "policy_document": "returns.txt",
+  "policy_paragraph_prefix": "Authored test policy, effective 2026-11-01:",
+  "questions": [
+    {"number":1,"status":"supported","root":"products","root_key":"sku","parameters":{"category":["text","equipment"]},"filters":[["products.category","eq","category"]],"projection":[["products.sku","sku"]]},
+    {"number":2,"status":"supported","root":"order_items","root_key":"line_id","joins":[["order_items.order_id","orders.order_id"]],"parameters":{"status":["text","delivered"]},"filters":[["orders.status","eq","status"]],"projection":[["orders.order_id","order_id"]],"group_by":["orders.order_id"],"aggregates":[["sum","order_items.quantity","total_quantity"]]},
+    {"number":3,"status":"supported","root":"orders","root_key":"order_id","parameters":{"status":["text","delivered"]},"filters":[["orders.status","eq","status"]],"projection":[["orders.order_id","order_id"]],"output_kind":"prerequisite_candidates","policy_required":true,"limitations":["Delivered status is only a return prerequisite. Condition and delivery date evidence are absent; neither full return eligibility nor physical delivery is established."]},
+    {"number":4,"status":"supported","root":"order_items","root_key":"line_id","parameters":{"sku":["text","S000"]},"filters":[["order_items.sku","eq","sku"]],"projection":[["order_items.order_id","order_id"]],"distinct":true,"output_kind":"potential_impact_candidates","limitations":["Recorded order references identify recall review candidates, not actual harm or recall approval."]},
+    {"number":5,"status":"missing_evidence","missing":["customer identity","order-to-customer relationship"],"reason":"No customer identity or customer relationship is supplied in the schema or scope documents."}
+  ]
+}

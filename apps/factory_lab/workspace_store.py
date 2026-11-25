@@ -10,12 +10,35 @@ import json
 from pathlib import Path
 import secrets
 import sqlite3
+import time
 
 MAX_DOCUMENT_BYTES = 16 * 1024 * 1024
 MAX_STORED_BYTES = 256 * 1024 * 1024
 MAX_WORKSPACES = 50
 MAX_REVISIONS = 500
 MAX_OPERATIONS = 500
+
+
+class ExecutionCancelled(ValueError):
+    """Cooperative stop; any supplied evidence is incomplete and advisory."""
+
+
+def cancellation_callback(store, oid):
+    # SQLite calls progress handlers per VM instruction. Bound durable polling.
+    next_poll, requested = 0.0, False
+    def check():
+        nonlocal next_poll, requested
+        stamp = time.monotonic()
+        if not requested and stamp >= next_poll:
+            requested = store.cancel_requested(oid)
+            next_poll = stamp + 0.05
+        return requested
+    return check
+
+
+def check_cancel(callback):
+    if callback is not None and callback():
+        raise ExecutionCancelled('Execution cancelled; no automatic retry')
 
 
 def encode(value):
@@ -226,8 +249,8 @@ class WorkspaceStore:
             db.execute('BEGIN IMMEDIATE')
             row=db.execute('SELECT id,kind,state FROM operations WHERE workspace=? AND request_key=?',(key,request_key)).fetchone()
             if row is None:raise ValueError('Request is not recorded yet; wait for progress')
-            if row['kind'] not in ('question','model_suggestions'):
-                raise ValueError('Only model workflows support cooperative cancellation')
+            if row['kind'] not in ('question','model_suggestions','local_reasoning','database_reasoning_execute','database_query_execute'):
+                raise ValueError('This operation does not support cooperative cancellation')
             if row['state']=='running':
                 db.execute('INSERT OR IGNORE INTO operation_cancellations VALUES(?,?)',(row['id'],now()))
         return self.progress(key,request_key)
@@ -283,7 +306,7 @@ class WorkspaceStore:
         content=encode(result)
         with self.connect() as db:
             db.execute('BEGIN IMMEDIATE')
-            previous=db.execute("SELECT result FROM operations WHERE id=? AND state='running'",(oid,)).fetchone()
+            previous=db.execute("SELECT result,kind FROM operations WHERE id=? AND state='running'",(oid,)).fetchone()
             if previous is None:raise ValueError('Operation missing or already terminal')
             require_capacity(db,max(0,len(content.encode())-len((previous['result'] or '').encode())))
             changed=db.execute("UPDATE operations SET result=?,updated=? WHERE id=? AND state='running'",(content,now(),oid))
@@ -297,11 +320,13 @@ class WorkspaceStore:
         content=encode(result) if result is not None else None
         with self.connect() as db:
             db.execute('BEGIN IMMEDIATE')
-            previous=db.execute("SELECT result FROM operations WHERE id=? AND state='running'",(oid,)).fetchone()
+            previous=db.execute("SELECT result,kind FROM operations WHERE id=? AND state='running'",(oid,)).fetchone()
             if previous is None:raise ValueError('Operation missing or already terminal')
             if state=='completed' and db.execute('SELECT 1 FROM operation_cancellations WHERE operation=?',(oid,)).fetchone():
                 state='cancelled'
-                error='Cancellation requested; in-flight response retained, no automatic retry. Charges may apply.'
+                error='Cancellation requested; in-flight evidence retained, no automatic retry.'
+                if previous['kind'] in ('question','model_suggestions'):
+                    error += ' Charges may apply.'
             if content is not None:require_capacity(db,max(0,len(content.encode())-len((previous['result'] or '').encode())))
             changed = db.execute('UPDATE operations SET state=?,result=?,error=?,updated=? WHERE id=? AND state=?',
                                  (state,content,error,now(),oid,'running'))

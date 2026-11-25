@@ -68,7 +68,7 @@ class PublicGateway:
         self.store, self.directory, self.config, self.key = store, Path(directory), config, key
         if not key or key == 'your_openrouter_api_key_here':
             raise ValueError('Set OPENROUTER_API_KEY in the server environment')
-        if set(config) - {'reasoning_effort'} != {'model', 'provider', 'prompt_per_million', 'completion_per_million',
+        if set(config) - {'reasoning_effort', 'absolute_deadline'} != {'model', 'provider', 'prompt_per_million', 'completion_per_million',
                           'max_tokens', 'max_calls', 'max_usd', 'hours'}:
             raise ValueError('Use the documented live-config fields')
         if 'reasoning_effort' in config and config['reasoning_effort'] not in ('low', 'medium', 'high'):
@@ -80,11 +80,20 @@ class PublicGateway:
             value = Decimal(str(config[field]))
             if not value.is_finite() or value <= 0:
                 raise ValueError('Prices and cap must be finite positive numbers')
-        for field, low, high in [('max_tokens', 256, 4096), ('max_calls', 1, 100), ('hours', 1, 8)]:
+        hosted = config.get('absolute_deadline') is not None
+        for field, low, high in [('max_tokens', 256, 4096), ('max_calls', 1, 500 if hosted else 100), ('hours', 1, 8)]:
             if type(config[field]) is not int or not low <= config[field] <= high:
                 raise ValueError('Invalid limit: ' + field)
-        if Decimal(str(config['max_usd'])) > 5:
-            raise ValueError('Demo session cap must be at most USD 5')
+        if Decimal(str(config['max_usd'])) > (10 if hosted else 5):
+            raise ValueError('Demo session exceeds explicit deployment cap')
+        # Explicit hosted sessions may span several days; restart never renews
+        # the operator-fixed deadline. Historical/default eight-hour sessions
+        # retain their original validation and configuration fingerprints.
+        absolute = config.get('absolute_deadline')
+        if absolute is not None:
+            end = datetime.fromisoformat(absolute)
+            if end.tzinfo is None or not timedelta(0) < end - datetime.now(timezone.utc) <= timedelta(days=31):
+                raise ValueError('Explicit aware future deadline within 31 days required')
         session_path = self.directory / 'session.json'
         fingerprint = hashlib.sha256(dumps(config).encode()).hexdigest()
         if session_path.exists():
@@ -92,12 +101,16 @@ class PublicGateway:
             if session.get('config_sha256') != fingerprint:
                 raise ValueError('Existing session config differs; use a deliberately new data directory')
         else:
-            session = {'config_sha256': fingerprint, 'deadline': (datetime.now(timezone.utc) + timedelta(hours=config['hours'])).isoformat(),
+            session = {'config_sha256': fingerprint, 'deadline': absolute or (datetime.now(timezone.utc) + timedelta(hours=config['hours'])).isoformat(),
                        'max_attempts': config['max_calls'], 'max_usd': str(config['max_usd'])}
             session_path.write_text(dumps(session))
         self.session = session
 
-    def call(self, rid, messages):
+    def call_with_receipt(self, rid, messages):
+        """Same reservation/call path, with bounded provenance for workspace use."""
+        return self.call(rid, messages, include_receipt=True)
+
+    def call(self, rid, messages, *, include_receipt=False):
         cfg = self.config
         if self.store.budget()['unresolved']:
             raise RuntimeError('Unresolved billing: inspect the local ledger before another request')
@@ -146,6 +159,16 @@ class PublicGateway:
                 raise ValueError('Missing text content')
             self.store.settle(cid, 'completed', details)
             self.store.event(rid, 'llm_response', {'call_id': cid, **details})
+            if include_receipt:
+                def reported(name):
+                    value = body.get(name)
+                    return value.replace(self.key, '[REDACTED]') if isinstance(value, str) and len(value) <= 200 else None
+                return {**message, 'receipt': {
+                    'call_id': cid, 'requested_model': cfg['model'],
+                    'requested_provider': cfg['provider'],
+                    'returned_model': reported('model'), 'returned_provider': reported('provider'),
+                    'generation_id': reported('id'), 'config_sha256': self.session['config_sha256'],
+                    'reported_cost_usd': str(details['cost']), 'reserved_usd': str(amount)}}
             return message
         except Exception as exc:
             self.store.settle(cid, 'failed', details | {'error_type': type(exc).__name__})

@@ -1,0 +1,12 @@
+{
+  "pack":"organization-small",
+  "policy_document":"note-01.txt",
+  "policy_paragraph_prefix":"Policy\nCurrent assignments use inclusive validity dates.",
+  "questions":[
+    {"number":1,"status":"supported","root":"employees","root_key":"id","parameters":{"active":["integer",1],"team_id":["integer",1]},"filters":[["employees.active","eq","active"],["employees.team_id","eq","team_id"]],"projection":[["employees.id","employee_id"]]},
+    {"number":2,"status":"supported","root":"assignments","root_key":"id","joins":[["assignments.employee_id","employees.id"]],"parameters":{"active":["integer",1],"as_of":["date","2026-11-19"]},"filters":[["employees.active","eq","active"],["assignments.valid_from","lte","as_of"],["assignments.valid_to","gte","as_of"]],"projection":[["assignments.project_id","project_id"]],"group_by":["assignments.project_id"],"aggregates":[["count_distinct","employees.id","active_employee_count"]],"policy_required":true,"limitations":["Counts distinct employees, not assignment rows. Zero-member projects are absent under current empty-group behavior."]},
+    {"number":3,"status":"supported","root":"exceptions","root_key":"id","parameters":{"as_of":["date","2026-11-19"]},"filters":[["exceptions.expires_at","gte","as_of"]],"projection":[["exceptions.id","exception_id"],["exceptions.project_id","project_id"]],"policy_required":true,"output_kind":"prerequisite_candidates","limitations":["Expiry date is treated as included through that date; exceptions still require owner review and do not grant authority."]},
+    {"number":4,"status":"supported","root":"assignments","root_key":"id","parameters":{"employee_id":["integer",1],"as_of":["date","2026-11-19"]},"filters":[["assignments.employee_id","eq","employee_id"],["assignments.valid_from","lte","as_of"],["assignments.valid_to","gte","as_of"]],"projection":[["assignments.project_id","project_id"]],"distinct":true,"policy_required":true,"output_kind":"potential_impact_candidates","limitations":["Current means authored snapshot date 2026-11-19. Assignment validity is separate from employee active status. Review candidates are not confirmed project delays."]},
+    {"number":5,"status":"missing_evidence","missing":["annual salary","salary period and currency"],"reason":"No salary information is supplied."}
+  ]
+}

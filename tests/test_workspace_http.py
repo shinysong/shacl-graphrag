@@ -17,7 +17,8 @@ class WorkspaceHTTPTests(unittest.TestCase):
                     with httpx.Client(base_url=f'http://127.0.0.1:{server.server_port}') as client:
                         page=client.get('/workspace')
                         self.assertEqual(page.status_code,200)
-                        self.assertIn('데이터 정리',page.text)
+                        self.assertIn('검토·승인',page.text)
+                        self.assertIn('id="area-chat"',page.text)
                         for asset in ('workspace.js','workspace.css'):
                             self.assertEqual(client.get('/'+asset).status_code,200)
                         headers={'X-CSRF-Token':client.get('/api/config').json()['csrf']}

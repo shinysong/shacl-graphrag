@@ -8,6 +8,8 @@ from copy import deepcopy
 
 
 def catalog(draft):
+    if draft.get('adapter') == 'registered-database-1':
+        return []  # No inferred unique business identifiers.
     specs,_=p.adapter_config(draft['adapter'])
     result=[]
     for table in specs:
@@ -22,7 +24,11 @@ def catalog(draft):
     return result
 
 
-def execute(draft, selection):
+def execute(draft, selection, *, database_adapter=None):
+    if draft.get('adapter') == 'registered-database-1':
+        if database_adapter is None:
+            raise ValueError('Registered database adapter is not configured')
+        return database_adapter.execute_rows(draft, selection)
     draft=p.restore_draft(draft)
     if isinstance(selection,dict) and set(selection)=={'entry_id'}:
         return workspace_documents.execute(draft,selection)
@@ -60,17 +66,23 @@ def execute(draft, selection):
             'notice':'원본 문자열 그대로 표시합니다. 미검토 필드는 사용하지 않았으며 정책 판단·관계 추론·SHACL 검증·LLM 호출은 수행하지 않았습니다.'}
 
 
-def row_catalog(draft):
+def row_catalog(draft, *, database_adapter=None):
     """Approved source columns; no unique-business-identifier assumption."""
+    if draft.get('adapter') == 'registered-database-1':
+        if database_adapter is None:
+            raise ValueError('Registered database adapter is not configured')
+        return database_adapter.row_catalog(draft)
     result=[]
     sources={s['name']:s for s in draft['sources']}
+    from .workspace_extension_review import active_annotations
     for entry in draft['entries']:
         if entry['kind']!='mapping' or entry['status']!='approved':continue
         ref=entry['source'];source=sources[ref['file']]
         result.append({'entry_id':entry['id'],'file':ref['file'],'column':ref['column'],
                        'sha256':source['sha256'],'reviewed_target':entry['target'],
                        'reviewed_interpretation':entry.get('interpretation',''),
-                       'interpretation_origin':'user_review_not_source_fact'})
+                       'interpretation_origin':'user_review_not_source_fact',
+                       'extension_reviews':active_annotations(draft,entry)})
     return result
 
 

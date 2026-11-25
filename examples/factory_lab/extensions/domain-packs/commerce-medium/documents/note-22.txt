@@ -1,0 +1,12 @@
+commerce-medium / reference note 22
+Authored synthetic fixture. Snapshot: 2026-11-19.
+
+Policy
+Promotions require a product mapping, matching customer tier, and inclusive date validity. Confirmed order line values exclude tax and freight. Supplier suspension triggers review of confirmed orders containing its products. Inventory is a snapshot, not a guarantee of allocation. Shipment state is independent of order state; no carbon accounting is supplied.
+
+Table role and record
+returns contains 200 records with fields: id, order_item_id, requested_at, reason, status.
+Example source record: {"id": 147, "order_item_id": 2499, "reason": "damaged", "requested_at": "2026-11-15", "status": "pending"}
+
+Evidence limits
+Database rows are the full authored snapshot. This note explains one example, not a replacement for querying all rows. Missing fields are unknown; do not invent values from domain knowledge. Synthetic event order, dates and exceptions are designed for query preparation, not measured operational frequencies.

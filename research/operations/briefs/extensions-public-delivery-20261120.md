@@ -1,0 +1,18 @@
+# Public workflow findability and evidence fidelity
+Review updated canonicaloperator/domainworkflowdocs + upstreamguide/walkthrough/results/md/json nav. Existingactual smallcommercefullbrowser183709 both1440/375 passed1query+2native/width, notfreshhost/manualusability. Existingmanufacturing/org authoredserviceflows13/20selectedrows +actualRDFS andmedium35/30, schema-inclusivecounts notnewobjects/efficacy. Whole mediumsource15680/17250; nativeinputselectedonly. ProfileCLI actualoffline6080/8250rows source/sampleFK0vs141/0vs0, no upstreamsamplebridge. Fullsourcecatalogactual12tables46/47columns12/15FK. New3domainmanualrecipe checkedsource/config but NOTnewmanualbrowserexecution. RepositoryURLspointcurrentbranch filesunpushed, canonicalguidesmustinternalnavigate; don'tclaimremoteavailability/deploy. Scopefidelityaudit corrects overexpansion fivepackpaid/freshhost notmandatory. Inspect exactUIlabel/queryconfig/fieldaliases/policy/aggregation/datatype relationapproval and actualevidence links. No otherreviewoutputs/secrets/gold/API/service/sourceedits. Write ownready/revise. AfterbothREADY rootruns strictMkDocs thenChirpy+actualstaticbrowser desktopmobile navigation to2newguides/table; product390tests unchangedreuse. Softwaredocschecks notwholeflowacceptance/QA. Rootmustnotmarkgoalcomplete fromdocs alone; remaining3small connectedusability audit persists.
+
+Priorf80b93 blocked: restorefilename mismatch and invisibleimportIDs. Fixed explicitfreshrestore rename+servercommand, extensionResult requestidentity disclosure, existingactualreceiptbrowser nowassertsworkspace/importID/revision at1440/375. Rootwillnotrerun390unchangedbackendtests; ops then receiptbrowser withcurrentgate +staticdocsbuild/browser. Review exact fixes and twoharnesses; recoveryfullstore16replays earlierpassed but new serverrename manual command notyetexecuted.
+
+- docs/setup/factory-lab-extension-operator.md SHA256 871f67986249490b16244b3bf948fb2de22e06c5fba0a15622422a935600707f
+- docs/setup/factory-lab-domain-workflows.md SHA256 b9f06a22627134170aaf54d743c74a96c4b0af98595a183d625625c9488d2e13
+- docs/setup/factory-lab-upstream-extensions.md SHA256 75cca579b3e1f44c32d8e5e1c7d464f0ce765f06121261b0be7115e3c91c2dc2
+- docs/setup/factory-lab-extension-walkthrough.md SHA256 6afd2a4957dedfcab207d612fe13a1e89f758410a90fa3154aed43fc99c8a287
+- docs/experiments/records/factory-lab-extensions-20261119.md SHA256 39e2e086d58db5b598acdc6ba772a5ed39d8afb566a049193fcd3a0909b2f46b
+- docs/experiments/records/factory-lab-extensions-20261119.json SHA256 5dfebe07030b85d2a93266b7573f20bd0c3423af26d3f3db15a12f7e745e042b
+- examples/factory_lab/extensions/operator/README.md SHA256 a19a031ca48f3714a818aa2d7e3de907d3399556f1823e3380bb0c3c7c899505
+- examples/factory_lab/extensions/domain-packs/WORKFLOWS.md SHA256 a0045a64d9dd93c99233724d7d840b459e06c08a6ac62c5c9a31a4e28633bad9
+- examples/factory_lab/extensions/domain-packs/README.md SHA256 1dd11074a73d39c040b1bb296e9e48071e2a1b6d08b4fab4bf440144f3282785
+- mkdocs.yml SHA256 dcf46522f5d6642626cae44c9adc7a6b965e390b79d4efee10767682eaf980f6
+- apps/factory_lab/public_static/workspace.js SHA256 1836667bb1333b5193ca847f0218593bc45f8591864662a712dd5b4e2abfa518
+- _workspace/extensions-20261119/accept_receipt_browser.py SHA256 b10e67a42136c62edd8866879bdad1c953427a5c1eebc8c6d1b2565fab519ea9
+- _workspace/extensions-20261119/browser_public_delivery.py SHA256 ae298fd22e78582a469ecef5005dd3228734359cd2cac93e8ac70e7b427cc9de

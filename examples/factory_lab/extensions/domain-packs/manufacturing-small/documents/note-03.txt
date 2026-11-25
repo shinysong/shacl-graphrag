@@ -1,0 +1,12 @@
+manufacturing-small / reference note 03
+Authored synthetic fixture. Snapshot: 2026-11-19.
+
+Policy
+A BOM dependency applies on inclusive valid_from/valid_to dates. Change impact means candidate review, not predicted failure. Cosmetic waivers apply only if approved, unexpired, and cosmetic-only; they never override functional inspection failures. Inspection history is not complete physical-life evidence.
+
+Table role and record
+products contains 20 records with fields: id, name, release_state.
+Example source record: {"id": 14, "name": "Assembly 14", "release_state": "released"}
+
+Evidence limits
+Database rows are the full authored snapshot. This note explains one example, not a replacement for querying all rows. Missing fields are unknown; do not invent values from domain knowledge. Synthetic event order, dates and exceptions are designed for query preparation, not measured operational frequencies.

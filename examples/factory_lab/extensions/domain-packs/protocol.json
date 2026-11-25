@@ -1,0 +1,96 @@
+{
+  "protocol": "factorylab-domain-preparation-1",
+  "frozen_before_generation": true,
+  "snapshot_date": "2026-11-19",
+  "source_kind": "authored synthetic; existing commerce-small copied byte-for-byte",
+  "scope": "Runtime source package only; authored synthetic fixtures, no model, database service, automatic approval or answer scoring.",
+  "licenses": {
+    "generator": "Apache-2.0 project code",
+    "new_data_and_documents": "Author-created synthetic fixtures, CC0-1.0 dedication",
+    "existing_commerce_small": "Existing local authored fixture; inherited provenance, no external source license asserted"
+  },
+  "measurement": {
+    "document_characters": "Unicode code points including whitespace",
+    "estimated_tokens": "ceil(characters/4), heuristic, not tokenizer measurement",
+    "estimated_pages": "ceil(characters/3000), heuristic, not rendered pages"
+  },
+  "packs": {
+    "commerce-small": {
+      "tables": {
+        "products": 20,
+        "orders": 40,
+        "order_items": 120
+      },
+      "documents": 2,
+      "total_rows": 180
+    },
+    "manufacturing-small": {
+      "tables": {
+        "suppliers": 10,
+        "parts": 40,
+        "products": 20,
+        "bom": 80,
+        "inspections": 120,
+        "waivers": 10
+      },
+      "documents": 4,
+      "total_rows": 280
+    },
+    "organization-small": {
+      "tables": {
+        "teams": 10,
+        "employees": 60,
+        "projects": 20,
+        "assignments": 120,
+        "approvals": 60,
+        "exceptions": 10
+      },
+      "documents": 4,
+      "total_rows": 280
+    },
+    "commerce-medium": {
+      "tables": {
+        "categories": 10,
+        "suppliers": 40,
+        "products": 400,
+        "warehouses": 10,
+        "inventory": 4000,
+        "customers": 1000,
+        "orders": 2000,
+        "order_items": 6000,
+        "shipments": 1600,
+        "returns": 200,
+        "promotions": 20,
+        "promotion_products": 400
+      },
+      "documents": 24,
+      "total_rows": 15680
+    },
+    "organization-medium": {
+      "tables": {
+        "teams": 30,
+        "employees": 1000,
+        "roles": 20,
+        "role_grants": 2000,
+        "projects": 200,
+        "assignments": 3000,
+        "milestones": 1000,
+        "dependencies": 800,
+        "approval_requests": 2000,
+        "approval_events": 3000,
+        "exceptions": 200,
+        "audit_events": 4000
+      },
+      "documents": 24,
+      "total_rows": 17250
+    }
+  },
+  "questions_per_pack": [
+    "singlequery",
+    "compound",
+    "applicability",
+    "changeimpact",
+    "unanswerable"
+  ],
+  "database_policy": "Full SQLite preparation and SQL queries over all rows; no 200-row upload surrogate"
+}

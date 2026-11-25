@@ -1,0 +1,6 @@
+@prefix ex: <urn:factory-extension:> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+ex:QualifiedMachine rdfs:subClassOf ex:Machine .
+ex:assignedTo rdfs:domain ex:WorkOrder ; rdfs:range ex:Machine .
+ex:M02 a ex:QualifiedMachine .
+ex:O17 ex:assignedTo ex:M03 .

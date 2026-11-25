@@ -1,0 +1,272 @@
+{
+  "pack": "commerce-medium",
+  "policy_document": "note-01.txt",
+  "policy_paragraph_prefix": "Policy\nPromotions require a product mapping, matching customer tier, and inclusive date validity.",
+  "questions": [
+    {
+      "number": 1,
+      "status": "supported",
+      "root": "suppliers",
+      "root_key": "id",
+      "parameters": {
+        "suspended": [
+          "integer",
+          0
+        ]
+      },
+      "filters": [
+        [
+          "suppliers.suspended",
+          "eq",
+          "suspended"
+        ]
+      ],
+      "projection": [
+        [
+          "suppliers.id",
+          "supplier_id"
+        ]
+      ]
+    },
+    {
+      "number": 2,
+      "status": "supported",
+      "root": "order_items",
+      "root_key": "id",
+      "joins": [
+        [
+          "order_items.order_id",
+          "orders.id"
+        ]
+      ],
+      "parameters": {
+        "status": [
+          "text",
+          "confirmed"
+        ]
+      },
+      "filters": [
+        [
+          "orders.status",
+          "eq",
+          "status"
+        ]
+      ],
+      "projection": [
+        [
+          "orders.customer_id",
+          "customer_id"
+        ]
+      ],
+      "group_by": [
+        "orders.customer_id"
+      ],
+      "product_aggregates": [
+        {
+          "left": "order_items.quantity",
+          "right": "order_items.unit_price_cents",
+          "name": "line_value_cents",
+          "unit": "cents"
+        }
+      ],
+      "policy_required": true,
+      "limitations": [
+        "Recorded line quantity times recorded line price in cents; excludes tax and freight."
+      ],
+      "previous_status": "unsupported_operator",
+      "previous_diagnostic": {
+        "operator_gaps": [
+          "root_numeric_product_aggregate"
+        ],
+        "required_plan": {
+          "root": "order_items",
+          "joins": [
+            [
+              "order_items.order_id",
+              "orders.id"
+            ]
+          ],
+          "filter": {
+            "orders.status": "confirmed"
+          },
+          "group_by": [
+            "orders.customer_id"
+          ],
+          "aggregate": {
+            "op": "sum_product",
+            "fields": [
+              "order_items.quantity",
+              "order_items.unit_price_cents"
+            ],
+            "units": "cents"
+          }
+        },
+        "reason": "Current SUM accepts one root field only. Summing unit_price_cents or quantity alone changes the fixed compound question. Tax and freight are excluded by source policy."
+      }
+    },
+    {
+      "number": 3,
+      "status": "supported",
+      "root": "promotion_products",
+      "root_key": "promotion_id",
+      "joins": [
+        [
+          "promotion_products.promotion_id",
+          "promotions.id"
+        ]
+      ],
+      "parameters": {
+        "product_id": [
+          "integer",
+          1
+        ],
+        "customer_id": [
+          "integer",
+          1
+        ],
+        "as_of": [
+          "date",
+          "2026-11-19"
+        ]
+      },
+      "filters": [
+        [
+          "promotion_products.product_id",
+          "eq",
+          "product_id"
+        ],
+        [
+          "promotions.starts_at",
+          "lte",
+          "as_of"
+        ],
+        [
+          "promotions.ends_at",
+          "gte",
+          "as_of"
+        ]
+      ],
+      "scalar_bindings": [
+        {
+          "name": "selected_tier",
+          "table": "customers.id",
+          "selector": "customers.id",
+          "selector_type": "integer",
+          "parameter": "customer_id",
+          "value": "customers.tier",
+          "value_type": "text"
+        }
+      ],
+      "comparisons": [
+        {
+          "op": "eq",
+          "left": "promotions.required_tier",
+          "right_scalar": "selected_tier",
+          "value_type": "text"
+        }
+      ],
+      "projection": [
+        [
+          "promotions.id",
+          "promotion_id"
+        ]
+      ],
+      "distinct": true,
+      "policy_required": true,
+      "limitations": [
+        "Published date endpoints interpreted inclusively; recorded customer tier resolved in this same snapshot. This is not external eligibility verification."
+      ],
+      "previous_status": "unsupported_operator",
+      "previous_diagnostic": {
+        "number": 3,
+        "status": "unsupported_operator",
+        "operator_gaps": [
+          "cross_root_scalar_binding",
+          "field_to_field_predicate"
+        ],
+        "required_plan": {
+          "customer_selection": {
+            "customers.id": 1
+          },
+          "product_selection": {
+            "promotion_products.product_id": 1
+          },
+          "joins": [
+            [
+              "promotion_products.promotion_id",
+              "promotions.id"
+            ]
+          ],
+          "filters": [
+            "promotions.starts_at <= 2026-11-19",
+            "promotions.ends_at >= 2026-11-19",
+            "promotions.required_tier = selected customers.tier"
+          ],
+          "projection": [
+            "promotions.id"
+          ]
+        },
+        "reason": "Customer and promotion mappings lack a declared FK path. Current typed literal parameters cannot bind a reviewed customer lookup result. Do not guess a customer tier or omit the tier predicate."
+      }
+    },
+    {
+      "number": 4,
+      "status": "supported",
+      "root": "order_items",
+      "root_key": "id",
+      "joins": [
+        [
+          "order_items.order_id",
+          "orders.id"
+        ],
+        [
+          "order_items.product_id",
+          "products.id"
+        ]
+      ],
+      "parameters": {
+        "supplier_id": [
+          "integer",
+          1
+        ],
+        "status": [
+          "text",
+          "confirmed"
+        ]
+      },
+      "filters": [
+        [
+          "products.supplier_id",
+          "eq",
+          "supplier_id"
+        ],
+        [
+          "orders.status",
+          "eq",
+          "status"
+        ]
+      ],
+      "projection": [
+        [
+          "orders.id",
+          "order_id"
+        ]
+      ],
+      "distinct": true,
+      "policy_required": true,
+      "output_kind": "potential_impact_candidates",
+      "limitations": [
+        "Hypothetical supplier suspension identifies recorded confirmed-order review candidates; it does not assert the supplier is currently suspended."
+      ]
+    },
+    {
+      "number": 5,
+      "status": "missing_evidence",
+      "missing": [
+        "carbon accounting",
+        "shipment activity and emissions factors"
+      ],
+      "reason": "Shipment state does not supply actual carbon footprint."
+    }
+  ]
+}

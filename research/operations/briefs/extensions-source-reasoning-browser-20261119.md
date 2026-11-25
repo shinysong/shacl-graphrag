@@ -1,0 +1,10 @@
+# Actual source-bound reasoning browser acceptance
+Review only browser harness and imported helpers/source listed below. Product gate1db282 independently READY;250pytest/ops0, actual local source-bound runner175818 passed. Source unchanged. Current task tests1440/375 explicit UI projection, two ontology plans/approval/actualOOexecution/derived selection/advisory/history/originalanswer unchanged. Rawreceipt and failures preserved. This is scripted acceptance, not expert review, business efficacy, or accessibility audit. No model/cloud/gold/answerSQLrerun. Local ephemeral servers only; separate teardownsteps. Gateflag operatorannotation, coordinator must enforce actual review/checks. After both READY+ synthesis run research-ops-tests, then harness with uv --locked --with playwright and gate record. Do not execute in review. Inspect missing/ambiguous selectors, raw retention, before/after linkage, cleanup and safety. Fullgoal remains active with missingquestionworkflow/publicdocs and wider audit outstanding.
+Read interface.md adjacent to harness. Do not read otherrevieweroutputs or secrets.
+- _workspace/extensions-20261119/source-bound-reasoning/browser_actual_reasoning.py SHA256 23e43dfc0867014974af8a49f1f142d161c2887a5ce17b19546bea7bb4116c6a
+- _workspace/extensions-20261119/source-bound-reasoning/run_actual_reasoning.py SHA256 9c27b497350bbda17641132508a87ba956b7e51a9a5142c5e43c7781965a7c03
+- _workspace/extensions-20261119/query-contracts/browser_result_priority_acceptance.py SHA256 bb8220342bd94f6ddd5aab4ba71f841f30cc0fcd442055b6fd85fe3767c90636
+- apps/factory_lab/public_static/workspace.js SHA256 c29e9b38a0a3f8dea4bab77aa3b40d2a040b08c555289ab9a4a7ca0d6e17bc83
+- apps/factory_lab/public_static/workspace.css SHA256 800f6adac0473dbc741b0280d15de05dc1b20f0d734c36a23cf6c1276320912e
+
+Prior10179a bothblocked hiddenmobile navigation beforeclick. Harnessnowuses existing open_details on navigation summary beforebutton; no DOM mutation or backend shortcut. Prior gatepreserved, freshreviewrequired.

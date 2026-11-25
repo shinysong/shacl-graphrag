@@ -1,0 +1,31 @@
+# Explicit reservation reset and actual-cost settlement
+Latest human explicitly requests current cumulative reservation reset and calculation improvement. Preserve all historical providercosts, failedoperation, rawattempts, cache, stop; never erase actualspend or raise existing total$20 (10native+10workspace), fixedDec3T14:59:59Z. Native old39attempts/39completions, all provider200 costknown, $0.01367171actual vs$9.6341rawreservations; failed generation stopped locally atnext1.20 reservation. NoOpenRouterbalanceclaim.
+Implementation: Config mode fixed(defaultlegacy) or settled(explicit). ledger_totals reads immutableattempt/completion rows. Settled successful2xx/errorfree finite numeric nonnegative usage.cost roundsUPnanodollars; actualcostconsumesbudget andunusedholdreleased. Non2xx/error/missing/invalidcost keepsfullhold. Missing/invalid/excesscurrentcost raisesDenied; nativewrapperpersistentlystops. Maximumprovidercontext/outputreserve1.20 remains as transienthold, no uncertain tokenizer assumption. AtomicBEGINIMMEDIATE prevents concurrentoversubscription. No automatic retry.
+Existing predecessorhash-boundcarryforward now uses selectedaccounting to verify prioractualdebit +prior inheritedcounts; defaultfixedunchanged. v2budgetenvelope explicitsettled/carryfields, v1unchanged. Current readiness/UI showused+holds and settlementexplanation; firstchatcapacitynotwholegenerationpromise.
+Deployment private migrate.py must be reviewed: stopONLYowned factory-lab-live-20261203.service after noactiveops, firstresetonly. Archive oldledger/cache/stop unmodified+budgetbackup; createv2config with inherited39attempts andactual$0.01367171debit, same$10cap/deadline, reduce remainingrolecaps bypriorcounts. Reuse exactcompletedcacheentries only, failedcache staysarchived. Newledger atoldpathcreatedonrestart; oldpriorhashbind andcampaignlock. No wallet topup or actualspendreset. Migration can requireoperatorrecovery if interrupted; manifest preserved, no claimcrashatomic. Requiresallpriorcostknown andnoinheritedcampaigns; failsotherwise. No secret outputs.
+One verification native generation onexistinguserexample c4f7509484e319172a2cc4b4eb437bb9 revision1 viaoperatorcredential, maxONElaunch/noautomaticretry, bridge600s/existingrole/costcaps remain. Exactoldresponsesmaybecached, newresponsesmetered. Rawbefore/after/pendingimportpreserved; never approval. Do not claim semanticquality/truth ortime savings from completion. Registered checks workspace-extension-pytest/shared-workspace-tests/research-ops-tests. Focused44passed+23subtests beforefinalfreeze, no paidcalls yet.
+Independentmethods: budget correctness/authorization/limits/migration/testscope. Implementation: source/accountingconcurrency/unknowncost/frozenconfigcompatibility/migration+runner. Readlistedsourceandownrequest/brief, NOTprivatedeployedconfig/ledgers/secrets orotherreview. No sourceedits.
+Frozen:
+{
+  "apps/factory_lab/extension_gateway.py": "c98c16fb9754c5bc896c0524ca109da7732ee8528b56103943476f11e4ae9ee5",
+  "apps/factory_lab/auto_ontology_semantic_cli.py": "f26c3a3e55c5c28e605369910a480ad3b2c3b137ca569db0dacf3b19967ded3e",
+  "apps/factory_lab/shared_server.py": "52469b93bc86bfccd2948a00f30fc400d91f1c6140ae09158383c231e01688a9",
+  "apps/factory_lab/public_static/shared-ui.js": "1aeedc5bbb6e116c8890bc33b104918d72ebfc948b7a84dcf55888add9414d37",
+  "tests/test_extension_gateway.py": "d2128128acf16753700202c0e1aaa7811d9617eb29695fb1f25ccbaabcf9ece2",
+  "tests/test_shared_native_gateway.py": "e6555fef1a3764eb298ff91fce6e2fa6d71f98e8d5157f4722e5ddafacc00b9d",
+  "tests/test_workspace_semantic_operator.py": "214bcbfbfe99e9871c591b89c6d1ef5fc5ad52f51ff439dfd1b989981dd27dc5",
+  "_workspace/native-settlement-20261124/migrate.py": "324dd1928df78efeecab8f62fe867dc394caf0e48e99238f99a7146dc35a8141",
+  "_workspace/native-settlement-20261124/verify_generation.py": "3925d90bd861a13ab454f0a31672786a025a3e250a724195e56384296c4cf27e"
+}
+Fresh v2 after independentreview blocker: Gatewayrejectstop-level providererror evenHTTP200 BEFOREsuccesssettlement, explicitNoRetrytestcostknownerror retainsfullhold/stop/no2ndtransport. Verifyrunner exclusive open(x) startreceipt BEFOREpost preventsconcurrentdoublelaunch. Migrationrechecks noactiveopsAFTERunitstop beforearchive. Priorblockedreview preserved. No deployedchanges orpaidcalls; thesechanges requirefreshgate. Frozen-v2:
+{
+  "apps/factory_lab/extension_gateway.py": "c96287d06c0308e2aae3fa8bdea96f965371631f4c9325d17428b937d500d313",
+  "apps/factory_lab/auto_ontology_semantic_cli.py": "f26c3a3e55c5c28e605369910a480ad3b2c3b137ca569db0dacf3b19967ded3e",
+  "apps/factory_lab/shared_server.py": "52469b93bc86bfccd2948a00f30fc400d91f1c6140ae09158383c231e01688a9",
+  "apps/factory_lab/public_static/shared-ui.js": "1aeedc5bbb6e116c8890bc33b104918d72ebfc948b7a84dcf55888add9414d37",
+  "tests/test_extension_gateway.py": "d2128128acf16753700202c0e1aaa7811d9617eb29695fb1f25ccbaabcf9ece2",
+  "tests/test_shared_native_gateway.py": "75fb306c571919c1b384889e366da021b57fb28acaac037b2dfa3219cbf6b9fe",
+  "tests/test_workspace_semantic_operator.py": "214bcbfbfe99e9871c591b89c6d1ef5fc5ad52f51ff439dfd1b989981dd27dc5",
+  "_workspace/native-settlement-20261124/migrate.py": "b7006f0057f4ef8c06f92492a8b9d225ff32213527450d4c6eff1a7528433a15",
+  "_workspace/native-settlement-20261124/verify_generation.py": "5506f314d54f40d4617b6e94d96989a9d397c7b7e90fd479bbe142e5fce73d31"
+}

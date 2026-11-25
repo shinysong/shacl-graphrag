@@ -1,0 +1,3 @@
+# Dirty editor browser dialog assertion
+Product unchanged after253c54 registeredchecks both0. Actual UX browser191254 bothwidths reached finaldialogassertion; beforeunload caused by intentionally dirtydraft. Preserve failure. Harness now explicitly asserts ordered3confirms+1beforeunload and exacttransmission/dirtynavigation messages. All initialcollapse/keyboardopen/dirtyvalue/childfocus/replay/sourcehash assertions unchanged. Inspect harness and JSbeforeunload implementation; no modelcalls. Run research-ops-tests then corrected browser. Native4runs alreadypassed, do not rerun.
+_workspace/extensions-20261119/browser_db_question_ux.py SHA256 5088721958821507f5a01ad0a8afd5211f245c7bff3d214f09f30e5f225fe10a

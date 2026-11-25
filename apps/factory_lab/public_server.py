@@ -51,6 +51,7 @@ class Handler(BaseHTTPRequestHandler):
                      '/prepare': (STATIC/'prepare.html', 'text/html'),
                      '/workspace': (STATIC/'workspace.html', 'text/html'),
                      '/workspace.js': (STATIC/'workspace.js', 'text/javascript'),
+                     '/review_inventory.js': (STATIC/'review_inventory.js', 'text/javascript'),
                      '/workspace.css': (STATIC/'workspace.css', 'text/css'),
                      '/prepare.js': (STATIC/'prepare.js', 'text/javascript'),
                      '/prepare.css': (STATIC/'prepare.css', 'text/css'),
@@ -129,7 +130,8 @@ class Handler(BaseHTTPRequestHandler):
     def do_OPTIONS(self): self.send({'error': 'Cross-origin access disabled'}, 403)
 
 
-def make_server(demo, port=9261, commerce_data=None, workspace_model_proposals=False, workspace_questions=False):
+def make_server(demo, port=9261, commerce_data=None, workspace_model_proposals=False, workspace_questions=False,
+                workspace_reasoner_binary=None, workspace_database_registry=None, workspace_document_registry=None):
     from .preparation_service import PreparationService
     from .workspace_service import WorkspaceService
     from .commerce import DEFAULT, load
@@ -139,13 +141,38 @@ def make_server(demo, port=9261, commerce_data=None, workspace_model_proposals=F
         raise ValueError('Workspace model proposals require an explicit live config')
     if workspace_questions and demo.gateway is None:
         raise ValueError('Workspace questions require an explicit live config')
+    reasoner = None
+    database_registry = None
+    if workspace_database_registry is not None:
+        from .workspace_database import SQLiteSources
+        registry_path = Path(workspace_database_registry).resolve(strict=True)
+        if not registry_path.is_dir():
+            raise ValueError('Configured database registry must be an existing directory')
+        database_registry = SQLiteSources(registry_path)
+    source_documents = None
+    if workspace_document_registry is not None:
+        from .workspace_source_documents import DocumentSources
+        if database_registry is None:
+            raise ValueError('Source documents require a configured database registry')
+        document_path = Path(workspace_document_registry).resolve(strict=True)
+        if not document_path.is_dir():
+            raise ValueError('Configured document registry must be an existing directory')
+        source_documents = DocumentSources(document_path, database_registry)
+    if workspace_reasoner_binary is not None:
+        from .workspace_reasoning import LocalReasoner
+        binary = Path(workspace_reasoner_binary).resolve(strict=True)
+        if not binary.is_file() or not os.access(binary, os.X_OK):
+            raise ValueError('Configured local reasoner must be executable')
+        reasoner = LocalReasoner(binary)
     server = ThreadingHTTPServer(('127.0.0.1', port), Handler)
     server.commerce_data = commerce_data
     server.demo = demo
     server.preparation = PreparationService()
     server.workspace = WorkspaceService(demo.directory/'workspaces.sqlite',
                                         proposal_gateway=demo.gateway if workspace_model_proposals else None,
-                                        question_gateway=demo.gateway if workspace_questions else None)
+                                        question_gateway=demo.gateway if workspace_questions else None,
+                                        local_reasoner=reasoner,
+                                        database_registry=database_registry, source_documents=source_documents)
     server.token = secrets.token_hex(32)
     return server
 
@@ -160,6 +187,12 @@ def main():
                    help='Opt in to user-triggered workspace model proposals under the live-config shared budget')
     p.add_argument('--workspace-questions',action='store_true',
                    help='Opt in to two-call workspace question episodes using the shared live-config budget')
+    p.add_argument('--workspace-reasoner-binary', type=Path,
+                   help='Opt in to a trusted local OpenOntologies executable; uploaded RDF only, no paid API')
+    p.add_argument('--workspace-database-registry', type=Path,
+                   help='Opt in to an existing operator-managed SQLite snapshot registry; browser paths are not accepted')
+    p.add_argument('--workspace-document-registry', type=Path,
+                   help='Optional private registry of hash-bound source text documents')
     args = p.parse_args()
     os.umask(0o077)
     args.data_dir.mkdir(parents=True, exist_ok=True, mode=0o700)
@@ -168,7 +201,10 @@ def main():
     except BlockingIOError: p.error('A server already owns this data directory')
     try:
         demo = Demo(args.data_dir, read(args.live_config) if args.live_config else None)
-        server = make_server(demo, args.port, args.commerce_data,args.workspace_model_proposals,args.workspace_questions)
+        server = make_server(demo, args.port, args.commerce_data,args.workspace_model_proposals,args.workspace_questions,
+                             workspace_reasoner_binary=args.workspace_reasoner_binary,
+                             workspace_database_registry=args.workspace_database_registry,
+                             workspace_document_registry=args.workspace_document_registry)
         server.workspace.store.recover_interrupted()
     except (ValueError, OSError) as exc: p.error(str(exc))
     print(f'Factory Lab: http://localhost:{server.server_port}/ | '+('LIVE BYOK enabled' if demo.gateway else 'Saved examples only; no API calls'), flush=True)

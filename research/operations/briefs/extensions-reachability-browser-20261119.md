@@ -1,0 +1,7 @@
+# Actual directed reachability browser verification
+
+Review ONLY new _workspace/extensions-20261119/query-contracts/browser_reachability_acceptance.py and current workspace.js controls needed to assess it. Product frozen under completed gate20261119T170859Z-extensions-reachability-ce1720:139pytest+ops pass, actual original organization-medium4 full17250 source returns complete four candidates with witnesses; not benchmark or business accuracy.
+
+Harness uses independent tiny authored7node9edge fixture, six field and two relation approvals through real UI, retained family drafts, original forward complete, separately approved depth1 copy incomplete, separately approved reverse copy complete, absentseed failure.1440/375. Reopens savedapproval, saves raw operations before assertions. SQL/source and independent BFS only after all four runtime results; no gold repair. Exact source fingerprint, result rows, witness paths and excluded edges. Four explicitcalls perwidth noautoretry. Display truncation expectedfalse; NOT >200row UI coverage. Isolation/localserver/cleanup/traces/failures preserved. No paid or AWS. Use uv --locked --with playwright python with review-gate-passed and gate-record only after bothready and registeredopscheck. Gate record is operatorannotation. Fullgoal remains incomplete.
+
+Read only own packet/source; do not inspect other reviewer outputs or expected/posthoc files. No test execution or source changes by reviewers. Coordinator will inspect actual outcomes.

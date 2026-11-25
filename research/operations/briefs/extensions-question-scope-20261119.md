@@ -1,0 +1,12 @@
+# Reviewed unresolved question scope records
+Implement generic durable operator assessment, not semantic absence detector. User supplies original question, unmet requirements, reason(source_not_supplied/retrieval_not_performed/unsupported_operation/needs_external_verification), note,explicit confirmation, optional completed currentworkspace query/docread references. Server restores registered snapshot schema andselected evidence provenance, no answerSQL/model. Absence/requirementinterpretation/businesscompleteness unverified. Newoperation begin beforevalidation; replaybeforedependencies. Historical records retained. UI cached dirtyform,summaryfirst,source/evidence disclosure and noautomaticabsenceclaim.
+Review listed frozen source/runner and relevant helpers independently; nootherreviews/gold/secrets. Read question-scope/brief.md foracceptance constraints. Actualrunner copies5originalworkspaces/registries,reads1previouslyapprovedparagraph each,records5originalquestions' explicit investigatorassessments; replaywithdependenciesdisabled; rawresultsbeforeassertions/sourcehashesunchanged. Original25denominator and17+3typedqueries retained;5records are not5answers oraccuracy. No gold/paid/AWS. Aftermethods+implementationready+synthesis runregistered workspace-extension-pytest and research-ops-tests thenactualrunner gateflag. Browsernewflow unverified/separategate later. Fullgoalactive.
+- apps/factory_lab/workspace_question_scope.py SHA256 fdfb066f02b13e2adb91e5067e4a3619747627b7f57e27d0c6e88ea3781e8d9e
+- tests/test_workspace_question_scope.py SHA256 60990e9659e6909e7ee8b9049fae40a42ae9d46c08c2768d0b2876745dcc88d1
+- apps/factory_lab/workspace_service.py SHA256 aec0ef179db8c870c5fb4504572e6e0a9cbf167a2ae27759d50b4fe0f35ea3a9
+- apps/factory_lab/public_static/workspace.js SHA256 31440d43a003a1af3664dddd0f06e2e726c6cb14daefc5c2b1dbfea19de2cb70
+- apps/factory_lab/public_static/workspace.css SHA256 a0a8e185d6e2ec25c1fe978860956bdac0796a67498d935f9a1fd4451d034cef
+- scripts/research_ops.py SHA256 c439a30f10a95528c2a34482e9cf4ca7c811fcd48096e7abee3c7f9558ce2aa6
+- tests/test_research_ops.py SHA256 9b9776a3630c88d18e03ecdd8d4d30aa82c261c31cb007f7eb7df6cde9bf18e6
+- _workspace/extensions-20261119/question-scope/run_actual_scope.py SHA256 c5c8df307211a52bdb683764a385dd3254fda4eae3a2d1627c627a070bf5223b
+- _workspace/extensions-20261119/question-scope/input-plan.json SHA256 0ce12a663a253be3cdc36ad2784e7ce318552cba05e1f987ce7cf52a63d2943a

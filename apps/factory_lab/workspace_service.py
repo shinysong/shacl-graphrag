@@ -16,13 +16,120 @@ class OperationCancelled(RuntimeError):
 
 
 class WorkspaceService:
-    def __init__(self, path, proposal_gateway=None, question_gateway=None):
+    def __init__(self, path, proposal_gateway=None, question_gateway=None, local_reasoner=None,
+                 database_registry=None, source_documents=None):
         self.store = WorkspaceStore(path)
         self.proposal_gateway=proposal_gateway
         self.question_gateway=question_gateway
+        self.local_reasoner=local_reasoner
+        self.source_documents=source_documents
+        from .workspace_database_adapter import DatabaseWorkspaceAdapter
+        self.database_adapter=(DatabaseWorkspaceAdapter(database_registry)
+                               if database_registry is not None else None)
+
+    def _database(self):
+        if self.database_adapter is None:
+            raise ValueError('Registered database adapter is not configured')
+        return self.database_adapter
+
+    def _restore(self, draft):
+        if isinstance(draft,dict) and draft.get('adapter')=='registered-database-1':
+            return self._database().restore(draft)
+        return p.restore_draft(draft)
+
+    def _database_view(self, row):
+        from .workspace_reasoning import capability
+        draft=self._database().restore(row['draft'])
+        catalog=self._database().row_catalog(draft)
+        unsupported='Unsupported for database source-row workspaces'
+        from .workspace_database_example import describe
+        from .workspace_extension_summary import latest
+        from .workspace_proposal_language import latest as localized
+        return {**row,'draft':draft,'database_capabilities':draft['capabilities'],
+                'latest_extension':latest(self.store,row['id'],row['revision']),
+                'proposal_korean':localized(self.store,row),
+                'proposal_translation_enabled':self.proposal_gateway is not None,
+                'database_example':describe(self._database().registry,draft),
+                'local_reasoning':capability(self.local_reasoner),
+                'task_readiness':{'capabilities':{'source_rows':len(catalog),
+                    'source_document':0,'relation_rows':0,'stock_check':0},
+                    'replacement':None,'notice':unsupported},
+                'policy_inputs':{},'contracts':{},'cases':[],
+                'readiness':{'ready':False,'reason':unsupported},
+                'review_buffer':self.store.review_buffer(row['id']),
+                'column_references':{},'policy_agreements':{},'policy_groups':{},
+                'policy_date_candidates':{},
+                'model_questions':{'enabled':self.question_gateway is not None,
+                    'model':self.question_gateway.config.get('model') if self.question_gateway else None,
+                    'route':'database-question-1',
+                    'reason':None if self.question_gateway else 'Question model is not enabled on this server'},
+                'model_proposals':{'enabled':False,'model':None,'reason':unsupported},
+                'source_documents_enabled':self.source_documents is not None,
+                'relation_catalog':[],'document_catalog':[],'lookup_catalog':[],
+                'row_lookup_catalog':catalog,'mapping_targets':['source_only'],
+                'versions':self.store.revisions(row['id']),**self.store.operation_page(row['id'])}
+
+    def _database_action(self, action, body, row):
+        """Separate generic source reuse from fixed-domain policy execution."""
+        adapter=self._database()
+        key,revision=row['id'],row['revision']
+        if action=='lookup':
+            operation,created=self.store.begin(key,revision,body['request_key'],
+                'source_lookup',{'selection':body['selection']})
+            if created:
+                try:
+                    result=workspace_lookup.execute(row['draft'],body['selection'],database_adapter=adapter)
+                    result['workspace']={'id':key,'revision':revision,'draft_digest':row['digest']}
+                    self.store.finish(operation['id'],'completed',result=result)
+                except (ValueError,KeyError,TypeError) as exc:
+                    self.store.finish(operation['id'],'failed',error=str(exc)[:1000])
+                except Exception:
+                    self.store.finish(operation['id'],'failed',error='Local database execution failed; inspect before retry')
+                    raise
+            return {'operation':self.store.operation(key,operation['id']),'reused':not created}
+        draft=adapter.restore(row['draft'])
+        if action=='export':
+            return {'format':'workspace-draft-1','workspace_id':key,'revision':revision,
+                    'draft':draft,'digest':row['digest'],
+                    'review_resolved':all(e['status'] in ('approved','excluded') for e in draft['entries'])}
+        if action=='change':
+            decisions=body['decisions']
+            fields={'entry_id','status','target','note','interpretation'}
+            if (not isinstance(decisions,list) or not 1<=len(decisions)<=p.MAX_ENTRIES or
+                    any(not isinstance(d,dict) or set(d)!=fields or not isinstance(d['entry_id'],str)
+                        for d in decisions) or len({d['entry_id'] for d in decisions})!=len(decisions)):
+                raise ValueError('Provide distinct bounded database review decisions')
+            for decision in decisions:
+                draft=adapter.change(draft,**decision)
+            self.store.save(key,draft,revision)
+            return self.view(key)
+        if action=='save_review_buffer':
+            content=body['content']
+            if (not isinstance(content,dict) or set(content)-{'comparisons'}!={'entries','policies'}
+                    or content['policies']!=[] or content.get('comparisons',[])!=[]):
+                raise ValueError('Database review buffers support field decisions only')
+            entries=content['entries']
+            fields={'entry_id','status','target','note','interpretation'}
+            known={e['id'] for e in draft['entries']}
+            if (not isinstance(entries,list) or len(entries)>len(known) or
+                    any(not isinstance(e,dict) or set(e)!=fields or not isinstance(e['entry_id'],str)
+                        or e['entry_id'] not in known for e in entries) or
+                    len({e['entry_id'] for e in entries})!=len(entries)):
+                raise ValueError('Invalid database review buffer')
+            for entry in entries:
+                # Buffers may be incomplete; they cannot authorize a lookup.
+                if (entry['status'] not in ('pending','approved','excluded','insufficient') or
+                        entry['target']!='source_only' or any(not isinstance(entry[k],str) or len(entry[k])>4000
+                            for k in ('note','interpretation'))):
+                    raise ValueError('Invalid database review buffer decision')
+            return self.store.save_review_buffer(key,revision,body['generation'],content)
+        raise ValueError('Unsupported database workspace action; only field review and exact source-row reuse are enabled')
 
     def view(self, key, revision=None):
+        from .workspace_reasoning import capability
         row = self.store.get(key,revision)
+        if row['draft'].get('adapter')=='registered-database-1':
+            return self._database_view(row)
         specs,contracts=p.adapter_config(row['draft']['adapter'])
         try:
             workspace_policy.require_ready(row['draft'])
@@ -32,7 +139,7 @@ class WorkspaceService:
         except ValueError as exc:
             readiness={'ready':False,'reason':str(exc)[:1000]}
             cases=[]
-        return {**row,'task_readiness':workspace_readiness.describe(row['draft']),'policy_inputs':policy_inputs.describe(row['draft'],contracts),'contracts':contracts,'readiness':readiness,'cases':cases,
+        return {**row,'local_reasoning':capability(self.local_reasoner),'task_readiness':workspace_readiness.describe(row['draft']),'policy_inputs':policy_inputs.describe(row['draft'],contracts),'contracts':contracts,'readiness':readiness,'cases':cases,
                 'review_buffer':self.store.review_buffer(key),
                 'column_references':column_references(row['draft']),
                 'policy_agreements':{e['id']:policy_agreement.status(row['draft'],e['id']) for e in row['draft']['entries'] if e['kind']=='policy' and e['target'] in contracts},
@@ -52,10 +159,18 @@ class WorkspaceService:
     def handle(self, body):
         schemas = {
             'list':{'archived'}, 'create':{'title','files','metadata','domain'},
+            'create_database':{'title','source_id','metadata','domain'},
+            'database_sources':set(),
+            'example_database':set(),
             'example':{'domain'}, 'get':{'id','revision'},
             'cancel':{'id','request_key'},
             'progress':{'id','request_key'}, 'operation':{'id','operation_id'}, 'history':{'id','before'},
             'import':{'title','bundle'},
+            'local_reasoning':{'id','revision','request_key','asserted_base64','profile'},
+            'extension_import':{'id','revision','request_key','raw_base64'},
+            'extension_review_batch':{'id','revision','request_key','operation_id','decisions'},
+            'extension_review':{'id','revision','request_key','operation_id','candidate_id','entry_id',
+                                'target','interpretation','note','manual_binding'},
             'save_review_buffer':{'id','revision','generation','content'},
             'add_relation':{'id','revision','source','target','reason'},
             'change':{'id','revision','decisions'}, 'refresh':{'id','revision','files'},
@@ -71,6 +186,18 @@ class WorkspaceService:
             'compare_policy':{'id','revision','entry_id','binding','decision','basis','rationale'},
             'diff':{'id','before','after'},
         }
+        from .workspace_document_service import ACTIONS as DOCUMENT_ACTIONS
+        from .workspace_query_service import ACTIONS as QUERY_ACTIONS
+        from .workspace_query_reasoning_service import ACTIONS as REASONING_ACTIONS
+        from .workspace_question_scope import ACTIONS as SCOPE_ACTIONS
+        from .workspace_database_shapes_service import ACTIONS as SHAPES_ACTIONS
+        schemas.update(DOCUMENT_ACTIONS)
+        schemas.update(QUERY_ACTIONS)
+        schemas.update(REASONING_ACTIONS)
+        schemas.update(SCOPE_ACTIONS)
+        schemas.update(SHAPES_ACTIONS)
+        from .workspace_proposal_language import ACTION as LOCALIZE, FIELDS as LOCALIZE_FIELDS
+        schemas[LOCALIZE]=LOCALIZE_FIELDS
         action = body.get('action')
         # Older clients retain the recorded metadata; newer clients can provide
         # an explicit complete snapshot description with the same source files.
@@ -78,6 +205,14 @@ class WorkspaceService:
             schemas['refresh']=schemas['refresh']|{'metadata'}
         if not isinstance(action,str) or action not in schemas or set(body)!=schemas[action]|{'action'}:
             raise ValueError('Unknown workspace action or fields')
+        if action=='example_database':
+            from .workspace_database_example import create
+            draft=create(self._database())
+            row=self.store.create('쇼핑몰 SQLite 연결 예시',draft)
+            return self.view(row['id'])
+        if action=='database_sources':
+            return self.database_adapter.sources() if self.database_adapter else {
+                'enabled':False,'sources':[],'truncated':False}
         if action=='list':
             if type(body['archived']) is not bool: raise ValueError('Archive filter must be boolean')
             return {'workspaces':self.store.list(body['archived'])}
@@ -87,9 +222,13 @@ class WorkspaceService:
                 raise ValueError('Invalid working draft export')
             if p.digest(bundle['draft'])!=bundle['digest']:
                 raise ValueError('Working draft digest mismatch')
-            draft=p.restore_draft(bundle['draft'])
+            draft=self._restore(bundle['draft'])
             # Imported identity never overwrites a current workspace or copies
             # execution outcomes. Approval is replayed, not authenticated.
+            row=self.store.create(body['title'],draft)
+            return self.view(row['id'])
+        if action=='create_database':
+            draft=self._database().create(body['source_id'],body['metadata'],domain=body['domain'])
             row=self.store.create(body['title'],draft)
             return self.view(row['id'])
         if action in ('example','create'):
@@ -138,6 +277,84 @@ class WorkspaceService:
         revision=body['revision']
         if type(revision) is not int or revision<1:raise ValueError('Invalid revision')
         row=self.store.get(key,revision);draft=row['draft']
+        if action=='withdraw_pending':
+            kind=body['kind']
+            fields={'fixed_case':{'case_id'},'replacement_proposal':{'proposal'},
+                    'source_lookup':{'selection'},'model_suggestions':{'draft_digest'},'question':{'question'}}
+            if draft.get('adapter')=='registered-database-1':
+                fields.update({name:required-{'id','revision','request_key'}
+                               for name,required in {**DOCUMENT_ACTIONS,**QUERY_ACTIONS,**REASONING_ACTIONS,**SCOPE_ACTIONS}.items()
+                               if 'request_key' in required})
+            if not isinstance(kind,str) or kind not in fields or not isinstance(body['request'],dict) or set(body['request'])!=fields[kind]:
+                raise ValueError('Invalid pending request binding')
+            if kind=='model_suggestions' and body['request']['draft_digest']!=row['digest']:
+                raise ValueError('Pending generation must bind the original draft')
+            operation,created=self.store.begin(key,revision,body['request_key'],kind,body['request'],cancel_unstarted=True)
+            saved=self.store.operation(key,operation['id'])
+            return {'operation':saved,'withdrawn':created,'reused':not created}
+        if action=='local_reasoning':
+            from .workspace_reasoning import execute
+            return execute(self.store,self.local_reasoner,key,revision,body['request_key'],
+                           body['asserted_base64'],body['profile'])
+        if draft.get('adapter')=='registered-database-1':
+            if action == LOCALIZE:
+                from .workspace_proposal_language import handle as translate_action
+                return translate_action(self,body,row)
+            if action in SHAPES_ACTIONS:
+                from .workspace_database_shapes_service import handle as shapes_action
+                return shapes_action(self,action,body,row)
+            if action=='ask':
+                from .workspace_database_question_service import handle as question_action
+                return question_action(self,body,row)
+            if action in SCOPE_ACTIONS:
+                from .workspace_question_scope import handle as scope_action
+                return scope_action(self,action,body,row)
+            if action in REASONING_ACTIONS:
+                from .workspace_query_reasoning_service import handle as reasoning_action
+                return reasoning_action(self,action,body,row)
+            if action in QUERY_ACTIONS:
+                from .workspace_query_service import handle as query_action
+                return query_action(self,action,body,row)
+            if action in DOCUMENT_ACTIONS:
+                from .workspace_document_service import handle as document_action
+                return document_action(self.store,self.source_documents,self._database(),action,body,row)
+            if action=='extension_import':
+                # A retained proposal is not an adopted or executable mapping.
+                draft=self._database().restore(draft)
+            elif action in ('extension_review','extension_review_batch'):
+                # Validation occurs inside the reserved review attempt so a
+                # failed binding remains inspectable without a partial write.
+                pass
+            else:
+                return self._database_action(action,body,row)
+        if action=='extension_review_batch':
+            from .workspace_extension_review import review
+            return review(self.store,key,revision,body['request_key'],
+                          {'operation_id':body['operation_id'],'decisions':body['decisions']},
+                          database_adapter=self.database_adapter)
+        if action=='extension_review':
+            from .workspace_extension_review import review, REVIEW_FIELDS
+            return review(self.store,key,revision,body['request_key'],{k:body[k] for k in REVIEW_FIELDS},
+                          database_adapter=self.database_adapter)
+        if action=='extension_import':
+            import base64
+            import binascii
+            from .workspace_extensions import import_auto_ontology
+            encoded=body['raw_base64']
+            if not isinstance(encoded,str) or len(encoded)>1_333_336:
+                raise ValueError('External export exceeds the 1 MB input boundary')
+            operation,created=self.store.begin(key,revision,body['request_key'],
+                'extension_import',{'raw_base64':encoded,'base_digest':row['digest']})
+            if created:
+                try:
+                    raw=base64.b64decode(encoded,validate=True)
+                    result=import_auto_ontology(raw,base_workspace_digest=row['digest'],
+                        source_hashes={s['name']:s['sha256'] for s in draft['sources']})
+                    self.store.finish(operation['id'],'completed',result=result)
+                except (ValueError,TypeError,binascii.Error) as exc:
+                    self.store.finish(operation['id'],'failed',error=str(exc)[:1000])
+            # This is a saved proposal, not a restored or approved workspace.
+            return {'operation':self.store.operation(key,operation['id']),'reused':not created}
         if action=='save_review_buffer':
             content=body['content']
             if not isinstance(content,dict) or set(content)-{'comparisons'}!={'entries','policies'}:
@@ -189,17 +406,6 @@ class WorkspaceService:
                 if policy_agreement.status(draft,entry_id)['binding']!=record['binding']:
                     raise ValueError('Buffered comparison inputs changed; reopen the comparison')
             return self.store.save_review_buffer(key,revision,body['generation'],content)
-        if action=='withdraw_pending':
-            kind=body['kind']
-            fields={'fixed_case':{'case_id'},'replacement_proposal':{'proposal'},
-                    'source_lookup':{'selection'},'model_suggestions':{'draft_digest'},'question':{'question'}}
-            if not isinstance(kind,str) or kind not in fields or not isinstance(body['request'],dict) or set(body['request'])!=fields[kind]:
-                raise ValueError('Invalid pending request binding')
-            if kind=='model_suggestions' and body['request']['draft_digest']!=row['digest']:
-                raise ValueError('Pending generation must bind the original draft')
-            operation,created=self.store.begin(key,revision,body['request_key'],kind,body['request'],cancel_unstarted=True)
-            saved=self.store.operation(key,operation['id'])
-            return {'operation':saved,'withdrawn':created,'reused':not created}
         if action=='ask':
             question=body['question']
             if not isinstance(question,str) or not 1<=len(question.strip())<=6000:

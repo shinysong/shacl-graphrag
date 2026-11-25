@@ -43,6 +43,9 @@ POLICIES = {
 
 
 def adapter_config(adapter):
+    # Generic source reuse has no fixed business targets or executable policies.
+    if adapter == 'registered-database-1':
+        return {}, {}
     if adapter==ADAPTER:
         return commerce.SPECS, POLICIES
     if adapter==preparation_factory.ADAPTER:
@@ -493,6 +496,8 @@ def refresh(draft, files, generator=None, metadata=None):
             and (metadata is None or metadata==draft['metadata'])):
         return restore_draft(draft)
     history = _validated_history(draft)
+    from .workspace_extension_review import validated_records
+    extension_reviews = validated_records(draft)
     fresh = create(files,draft['metadata'] if metadata is None else metadata,
                    adapter=draft['adapter'],generator=generator)
     before = {s['name']:s['sha256'] for s in draft['sources']}
@@ -528,6 +533,8 @@ def refresh(draft, files, generator=None, metadata=None):
                 history.append(_history_record(old,'refresh'))
                 entry['reason'] += '; source bundle or metadata changed: review previous decision again'
     history.extend(_history_record(e,'retire') for e in draft['entries'] if e['id'] not in retained)
+    if extension_reviews:
+        fresh['extension_reviews'] = [{**r, 'invalidated': True} for r in extension_reviews]
     _set_history(fresh,history)
     return fresh
 
@@ -675,6 +682,9 @@ def _restore_draft(old):
             if entry['kind']!='policy':raise ValueError('Comparison requires policy source')
             policy_agreement.validate(entry['agreement'])
             next(e for e in fresh['entries'] if e['id']==entry['id'])['agreement']=deepcopy(entry['agreement'])
+    if 'extension_reviews' in old:
+        from .workspace_extension_review import validated_records
+        fresh['extension_reviews'] = validated_records(old)
     _set_history(fresh,history)
     return fresh
 

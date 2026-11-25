@@ -27,21 +27,22 @@ class ContextLimitTests(unittest.TestCase):
             self.assertTrue(reopened.handle(req)['reused']);self.assertEqual(len(gateway.calls),1)
             self.assertEqual(reopened.handle(req)['operation']['result'],trace)
 
-    def test_large_catalog_stops_before_planning_and_direct_rows_remain_usable(self):
+    def test_large_catalog_is_discovered_in_pages_and_direct_rows_remain_usable(self):
         with tempfile.TemporaryDirectory() as tmp:
-            gateway=Gateway([]);path=Path(tmp)/'db';service=WorkspaceService(path,question_gateway=gateway)
+            gateway=Gateway([{'calls':[{'tool':'explore_repository','arguments':{'action':'overview'}}],'unresolved':[]},{'answer':'Observed source schema','citations':['e1'],'unresolved':[]}]);path=Path(tmp)/'db';service=WorkspaceService(path,question_gateway=gateway)
             ids=[str(i)+'x'*900 for i in range(60)]
             row=service.handle({'action':'create','domain':'commerce','title':'Large catalog','metadata':{'snapshot_id':'catalog','as_of':'2026-11-17','currency':'GBP'},'files':[{'name':'rows.csv','content':'identifier\n'+'\n'.join(ids)+'\n'}]})
             row=service.handle({'action':'change','id':row['id'],'revision':1,'decisions':[{'entry_id':'map:rows.csv:identifier','target':'items.id','status':'approved','note':'Authored diagnostic','interpretation':''}]})
             req={'action':'ask','id':row['id'],'revision':2,'request_key':'large-catalog','question':'?'}
-            op=service.handle(req)['operation'];self.assertEqual(op['state'],'failed')
-            trace=op['result'];self.assertEqual(trace['failure']['phase'],'planning')
-            self.assertFalse(trace['failure']['call_sent']);self.assertGreater(trace['failure']['message_bytes'],38000)
-            self.assertEqual(trace['evidence'],[]);self.assertIsNone(trace['answer'])
+            op=service.handle(req)['operation'];self.assertEqual(op['state'],'completed')
+            trace=op['result'];self.assertNotIn('failure',trace)
+            packet=json.loads(gateway.calls[0][1][1]['content'])
+            self.assertEqual(packet['catalog']['source_lookup']['available_count'],1)
+            self.assertLess(len(json.dumps(gateway.calls[0][1]).encode()),38000)
             self.assertEqual(trace['catalog']['source_lookup'][0]['identifiers'],ids)
-            self.assertEqual(gateway.calls,[])
+            self.assertEqual(len(gateway.calls),2)
             reopened=WorkspaceService(path,question_gateway=gateway)
             replay=reopened.handle(req);self.assertTrue(replay['reused']);self.assertEqual(replay['operation']['result'],trace)
             from apps.factory_lab import workspace_lookup
             result=workspace_lookup.execute_rows(row['draft'],{'entry_id':'map:rows.csv:identifier','value':ids[0]})
-            self.assertEqual(len(result['records']),1);self.assertEqual(gateway.calls,[])
+            self.assertEqual(len(result['records']),1);self.assertEqual(len(gateway.calls),2)

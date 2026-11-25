@@ -1,0 +1,12 @@
+{
+  "pack":"manufacturing-small",
+  "policy_document":"note-01.txt",
+  "policy_paragraph_prefix":"Policy\nA BOM dependency applies on inclusive valid_from/valid_to dates.",
+  "questions":[
+    {"number":1,"status":"supported","root":"products","root_key":"id","parameters":{"state":["text","released"]},"filters":[["products.release_state","eq","state"]],"projection":[["products.id","product_id"]]},
+    {"number":2,"status":"supported","root":"bom","root_key":"id","joins":[["bom.product_id","products.id"]],"parameters":{"state":["text","released"],"as_of":["date","2026-11-19"]},"filters":[["products.release_state","eq","state"],["bom.valid_from","lte","as_of"],["bom.valid_to","gte","as_of"]],"projection":[["products.id","product_id"]],"group_by":["products.id"],"aggregates":[["sum","bom.quantity","total_units"]],"policy_required":true,"limitations":["Inclusive date interval; absent groups are omitted, not synthesized as zero. Units sum authored BOM quantities and do not predict physical requirements beyond this snapshot."]},
+    {"number":3,"status":"supported","root":"waivers","root_key":"id","parameters":{"approved":["integer",1],"scope":["text","cosmetic-only"],"as_of":["date","2026-11-19"]},"filters":[["waivers.approved","eq","approved"],["waivers.scope","eq","scope"],["waivers.expires_at","gte","as_of"]],"projection":[["waivers.id","waiver_id"],["waivers.part_id","part_id"]],"policy_required":true,"output_kind":"prerequisite_candidates","limitations":["Expiry date is treated as included through that date. Waiver listing never overrides functional inspection failure or certifies product release."]},
+    {"number":4,"status":"supported","root":"bom","root_key":"id","parameters":{"part_id":["integer",0],"as_of":["date","2026-11-19"]},"filters":[["bom.part_id","eq","part_id"],["bom.valid_from","lte","as_of"],["bom.valid_to","gte","as_of"]],"projection":[["bom.product_id","product_id"]],"distinct":true,"policy_required":true,"output_kind":"potential_impact_candidates","limitations":["Direct recorded dependency only; no transitive impact or physical failure prediction."]},
+    {"number":5,"status":"missing_evidence","missing":["measured fatigue life in hours","physical-life model or evidence"],"reason":"Inspection histories are not real-world fatigue life measurements."}
+  ]
+}

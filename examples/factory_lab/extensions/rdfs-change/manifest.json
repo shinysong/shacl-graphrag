@@ -1,0 +1,30 @@
+{
+  "format": "factory-extension-example-1",
+  "origin": "authored synthetic demonstration",
+  "license": "Apache-2.0",
+  "profile": "rdfs",
+  "files": [
+    {
+      "path": "before.ttl",
+      "bytes": 270,
+      "sha256": "ba6f38c1cb01844fabec0350d536a71e7b95dfc252542f460669c220fb1f8569"
+    },
+    {
+      "path": "after.ttl",
+      "bytes": 270,
+      "sha256": "5d030cc11dc09be7095e86dd834c7dfa9d1b4b294d852957ca411d857ea126a9"
+    }
+  ],
+  "purpose": "Compare the same uploaded RDF scope before and after one assignedTo object changes. Not an operational manufacturing model.",
+  "rules": "Inline rdfs:subClassOf, rdfs:domain and rdfs:range axioms; actual engine profile applies inference rules.",
+  "limits": [
+    "Uploaded scope only; not a complete workspace graph",
+    "No physical approval, SHACL validation or external truth assessment",
+    "RDFS classification is not a qualification or replacement eligibility decision"
+  ],
+  "upstream": {
+    "repository": "https://github.com/fabio-rovai/open-ontologies",
+    "commit": "1ed99ac1e20450faf5ad52c824232b054778e5e0",
+    "license": "MIT"
+  }
+}

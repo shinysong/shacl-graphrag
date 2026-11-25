@@ -1,0 +1,12 @@
+organization-small / reference note 04
+Authored synthetic fixture. Snapshot: 2026-11-19.
+
+Policy
+Current assignments use inclusive validity dates. Employee active status is separate from assignment validity. An approval is a recorded event, not proof of current authority. Exceptions require owner review and expire on their stated date; no salary information is supplied.
+
+Table role and record
+assignments contains 120 records with fields: id, employee_id, project_id, valid_from, valid_to, role.
+Example source record: {"employee_id": 21, "id": 21, "project_id": 1, "role": "reviewer", "valid_from": "2026-01-01", "valid_to": "2026-12-31"}
+
+Evidence limits
+Database rows are the full authored snapshot. This note explains one example, not a replacement for querying all rows. Missing fields are unknown; do not invent values from domain knowledge. Synthetic event order, dates and exceptions are designed for query preparation, not measured operational frequencies.

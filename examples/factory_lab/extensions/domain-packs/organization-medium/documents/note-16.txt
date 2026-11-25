@@ -1,0 +1,12 @@
+organization-medium / reference note 16
+Authored synthetic fixture. Snapshot: 2026-11-19.
+
+Policy
+Role eligibility requires an active employee, an approval-capable role, and an inclusive grant validity interval. Eligibility alone does not certify an approval event. Dependencies are directed finish-to-start edges. Transitive impact identifies review candidates, not automatic delay. Exceptions do not automatically grant authority. Audit events record workflow activity, not external legal validity.
+
+Table role and record
+role_grants contains 2000 records with fields: id, employee_id, role_id, valid_from, valid_to.
+Example source record: {"employee_id": 105, "id": 105, "role_id": 5, "valid_from": "2026-01-01", "valid_to": "2026-10-01"}
+
+Evidence limits
+Database rows are the full authored snapshot. This note explains one example, not a replacement for querying all rows. Missing fields are unknown; do not invent values from domain knowledge. Synthetic event order, dates and exceptions are designed for query preparation, not measured operational frequencies.

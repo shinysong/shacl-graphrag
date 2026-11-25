@@ -274,12 +274,14 @@ class NativeOpsTests(unittest.TestCase):
             self.assertNotIn(forbidden, source)
         self.assertNotEqual(ops.WORK, ROOT / '_workspace/research-ops')
         self.assertEqual(set(ops.CHECKS), {
-            'factory-lab-tests', 'factory-diagnostic-tests',
+            'source-query-tests', 'database-example-tests', 'workspace-exploration-tests', 'shared-workspace-tests', 'workspace-extension-pytest', 'factory-lab-tests', 'factory-diagnostic-tests',
             'factory-diagnostic-execution-tests', 'factory-branching-tests',
             'factory-planning-tests', 'factory-rdf-tests',
             'factory-complexity-tests', 'factory-campaign-tests',
             'unit-tests', 'e0-local', 'query-contract-tests', 'research-ops-tests', 'factory-public-tests', 'factory-explanation-tests', 'factory-commerce-tests', 'data-preparation-tests', 'workspace-tests',
         })
+
+        self.assertEqual(ops.CHECKS['workspace-extension-pytest'], ['uv','run','--locked','python','-m','pytest','-q','tests/test_workspace_semantic_operator.py','tests/test_extension_gateway.py','tests/test_extension_gateway_http.py','tests/test_workspace_auto_ontology_profile.py','tests/test_workspace_auto_ontology_bridge.py','tests/test_workspace_backup.py','tests/test_workspace_extension_receipt.py','tests/test_workspace_database_question.py','tests/test_workspace_database_question_service.py','tests/test_workspace_gateway_receipt.py','tests/test_factory_public.py','tests/test_workspace_execution_cancellation.py','tests/test_workspace_open_ontologies.py','tests/test_workspace_reasoning.py','tests/test_workspace_query_contracts.py','tests/test_workspace_question_scope.py','tests/test_workspace_query_projection.py','tests/test_workspace_query_reasoning_service.py','tests/test_workspace_query_reachability.py','tests/test_workspace_reachability_service.py','tests/test_workspace_query_service.py','tests/test_workspace_query_catalog.py','tests/test_workspace_extension_relations.py','tests/test_workspace_external_relation_service.py','tests/test_workspace_source_documents.py','tests/test_workspace_document_service.py','tests/test_workspace_database_adapter.py','tests/test_workspace_database_service.py'])
 
     def test_unknown_commands_and_legacy_live_are_not_available(self):
         with patch.object(sys, 'argv', ['research_ops.py', 'run', 'foo', '--live']), self.assertRaises(SystemExit):

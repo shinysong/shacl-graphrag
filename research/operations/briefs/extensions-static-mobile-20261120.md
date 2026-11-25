@@ -1,0 +1,4 @@
+# Static mobile title assertion correction
+Prior4d0642actualreceipt1440/375+MkDocs/Chirpy206passed, static1440passed,375failedbecause mainH1 hidden intentionally byChirpy onmobile where topbar displays title. No pageerrors and fullarticlepresent. Correct ONLYprivatebrowser_public_delivery.py to require visiblemainarticle plus visible topbartitle matchinghiddenH1on375; desktopH1visible remains. No product/docschange, no rebuildneeded, no recovery/receiptbrowserrerun. Review actualbuiltHTML/CSS+privateharness, no otherreview/secrets/gold. Ops then static2width once; screenshotinspection noappworkflow/QAclaim. Failedartifactretained.
+Prior9bd82dmethodsrevise: textnotvisibility. Nowexplicitvisible#topbar-title +exactheadingtext; sameproducts/docs, no priorcheck/execution.
+HarnessSHA256 fed952527ba8d7424b6f299632e789923549126ad04ae829a3f51552876ba3a8

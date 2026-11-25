@@ -1,0 +1,796 @@
+{
+  "format": "factory-lab-extension-coverage-1",
+  "observed_date": "2026-11-19",
+  "source_matrix_sha256": "587c6e545733f5099a1a7c18c0f7258f4315750e5cb85f6ba5528f4160037288",
+  "original_denominator": 25,
+  "original_executed": 17,
+  "later_operator_executions": 3,
+  "unresolved_operator_records": 5,
+  "model_calls_in_this_question_matrix": 0,
+  "packs": [
+    {
+      "name": "commerce-small",
+      "source_kind": "authored synthetic; existing commerce-small copied byte-for-byte",
+      "original_manifest_source_kind": "authored synthetic; existing commerce-small copied byte-for-byte",
+      "source_rows": 180,
+      "tables": 3,
+      "documents": 2,
+      "document_characters": 398,
+      "estimated_document_tokens": 100,
+      "estimated_document_pages": 1,
+      "measurement_methods": {
+        "document_characters": "Unicode code points including whitespace",
+        "estimated_tokens": "ceil(characters/4), heuristic, not tokenizer measurement",
+        "estimated_pages": "ceil(characters/3000), heuristic, not rendered pages",
+        "preparation_time": "perf_counter wall seconds for generation, SQL queries, checks, serialization; excludes human authoring"
+      },
+      "generation_seconds": 0.004061,
+      "registration_seconds": 0.010509089566767216,
+      "registered_snapshot_sha256": "5b6a8a8ab68d86d1155281175f170bbaf8c656927d678b38c59b4fc1cfba760c",
+      "manifest_sha256": "786b72d9678ffcabb97015f93762d52d4bb2dc3d6d305cba359de113158a4f9c",
+      "original_status_counts": {
+        "executed": 4,
+        "failed": 0,
+        "not_executed": 1,
+        "setup_failed": 0,
+        "not_started": 0
+      }
+    },
+    {
+      "name": "manufacturing-small",
+      "source_kind": "authored synthetic; deterministic generated SQLite rows",
+      "original_manifest_source_kind": "authored synthetic; existing commerce-small copied byte-for-byte",
+      "source_rows": 280,
+      "tables": 6,
+      "documents": 4,
+      "document_characters": 3694,
+      "estimated_document_tokens": 924,
+      "estimated_document_pages": 2,
+      "measurement_methods": {
+        "document_characters": "Unicode code points including whitespace",
+        "estimated_tokens": "ceil(characters/4), heuristic, not tokenizer measurement",
+        "estimated_pages": "ceil(characters/3000), heuristic, not rendered pages",
+        "preparation_time": "perf_counter wall seconds for generation, SQL queries, checks, serialization; excludes human authoring"
+      },
+      "generation_seconds": 0.020457,
+      "registration_seconds": 0.0092685017734766,
+      "registered_snapshot_sha256": "1d9a5999434b5a313e8b07dc5c54bcc3863b38472e8dcf3579a0cb23cb974fd1",
+      "manifest_sha256": "cddd2fa6661de16c6fae9d00495e81499795f2d011b9f63514e2a4fd9b8e4bc8",
+      "original_status_counts": {
+        "executed": 4,
+        "failed": 0,
+        "not_executed": 1,
+        "setup_failed": 0,
+        "not_started": 0
+      }
+    },
+    {
+      "name": "organization-small",
+      "source_kind": "authored synthetic; deterministic generated SQLite rows",
+      "original_manifest_source_kind": "authored synthetic; existing commerce-small copied byte-for-byte",
+      "source_rows": 280,
+      "tables": 6,
+      "documents": 4,
+      "document_characters": 3566,
+      "estimated_document_tokens": 892,
+      "estimated_document_pages": 2,
+      "measurement_methods": {
+        "document_characters": "Unicode code points including whitespace",
+        "estimated_tokens": "ceil(characters/4), heuristic, not tokenizer measurement",
+        "estimated_pages": "ceil(characters/3000), heuristic, not rendered pages",
+        "preparation_time": "perf_counter wall seconds for generation, SQL queries, checks, serialization; excludes human authoring"
+      },
+      "generation_seconds": 0.019768,
+      "registration_seconds": 0.009554621763527393,
+      "registered_snapshot_sha256": "dac0500b98a53eece769c1c96913e40255005edca2703db7a2110f1331897566",
+      "manifest_sha256": "fb6aff4d9121234b53e0bcc58e1a5d1598f72e8bd4a20fdcede054df1247ffb1",
+      "original_status_counts": {
+        "executed": 4,
+        "failed": 0,
+        "not_executed": 1,
+        "setup_failed": 0,
+        "not_started": 0
+      }
+    },
+    {
+      "name": "commerce-medium",
+      "source_kind": "authored synthetic; deterministic generated SQLite rows",
+      "original_manifest_source_kind": "authored synthetic; existing commerce-small copied byte-for-byte",
+      "source_rows": 15680,
+      "tables": 12,
+      "documents": 24,
+      "document_characters": 23512,
+      "estimated_document_tokens": 5878,
+      "estimated_document_pages": 8,
+      "measurement_methods": {
+        "document_characters": "Unicode code points including whitespace",
+        "estimated_tokens": "ceil(characters/4), heuristic, not tokenizer measurement",
+        "estimated_pages": "ceil(characters/3000), heuristic, not rendered pages",
+        "preparation_time": "perf_counter wall seconds for generation, SQL queries, checks, serialization; excludes human authoring"
+      },
+      "generation_seconds": 0.0633,
+      "registration_seconds": 0.01563613908365369,
+      "registered_snapshot_sha256": "d8e07ca987f1d491b41eb9475324397e694fb97de54e97cd5e43db702829f19e",
+      "manifest_sha256": "db3c94f6ef416bb6a44e7b0068a23fb99fd9f2eb8b65e1100da14e990db79b8e",
+      "original_status_counts": {
+        "executed": 2,
+        "failed": 0,
+        "not_executed": 3,
+        "setup_failed": 0,
+        "not_started": 0
+      }
+    },
+    {
+      "name": "organization-medium",
+      "source_kind": "authored synthetic; deterministic generated SQLite rows",
+      "original_manifest_source_kind": "authored synthetic; existing commerce-small copied byte-for-byte",
+      "source_rows": 17250,
+      "tables": 12,
+      "documents": 24,
+      "document_characters": 24713,
+      "estimated_document_tokens": 6179,
+      "estimated_document_pages": 9,
+      "measurement_methods": {
+        "document_characters": "Unicode code points including whitespace",
+        "estimated_tokens": "ceil(characters/4), heuristic, not tokenizer measurement",
+        "estimated_pages": "ceil(characters/3000), heuristic, not rendered pages",
+        "preparation_time": "perf_counter wall seconds for generation, SQL queries, checks, serialization; excludes human authoring"
+      },
+      "generation_seconds": 0.061541,
+      "registration_seconds": 0.014335444197058678,
+      "registered_snapshot_sha256": "085bb96592bc65e63fe09669fcb93f3d6c1e7a6a9053d61711a20a1d19964508",
+      "manifest_sha256": "f413f6d3d7d8880504730e65469e856b8f73caf8b64a08a676b5f51b1b28d16f",
+      "original_status_counts": {
+        "executed": 3,
+        "failed": 0,
+        "not_executed": 2,
+        "setup_failed": 0,
+        "not_started": 0
+      }
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "commerce-medium-1",
+      "question": "List non-suspended supplier IDs.",
+      "kind": "singlequery",
+      "prepared_status": "supported",
+      "status": "executed",
+      "original_operation_id": "dc7d30b1e11c5874b8cb58f042ad2856",
+      "executed_operation_id": "dc7d30b1e11c5874b8cb58f042ad2856",
+      "query_approval_operation_id": "72ba8c8eab4d0351087713987ed96228",
+      "truncated": false,
+      "returned_count": 35,
+      "total_output_rows": 35,
+      "closure_complete": null,
+      "current_scope": "typed_query_executed_not_accuracy",
+      "registered_source": {
+        "format": "sqlite-snapshot-v1",
+        "label": "commerce-medium",
+        "snapshot_bytes": 421888,
+        "snapshot_sha256": "d8e07ca987f1d491b41eb9475324397e694fb97de54e97cd5e43db702829f19e",
+        "source_id": "e94b838091b24e099da51fde44c4b1a4"
+      }
+    },
+    {
+      "question_id": "commerce-medium-2",
+      "question": "What is recorded line value in cents per customer for confirmed orders?",
+      "kind": "compound",
+      "prepared_status": "unsupported_operator",
+      "status": "not_executed",
+      "followup_status": "executed",
+      "original_operation_id": null,
+      "executed_operation_id": "298099e1e1eefd0aec92096aec92d035",
+      "query_approval_operation_id": "3037252a05c4734432e727813edebad2",
+      "truncated": true,
+      "returned_count": 200,
+      "total_output_rows": 900,
+      "closure_complete": null,
+      "current_scope": "typed_query_executed_not_accuracy",
+      "registered_source": {
+        "format": "sqlite-snapshot-v1",
+        "label": "commerce-medium",
+        "snapshot_bytes": 421888,
+        "snapshot_sha256": "d8e07ca987f1d491b41eb9475324397e694fb97de54e97cd5e43db702829f19e",
+        "source_id": "e94b838091b24e099da51fde44c4b1a4"
+      },
+      "followup_run_id": "product-case-20261119T164353.881752Z"
+    },
+    {
+      "question_id": "commerce-medium-3",
+      "question": "Which promotions apply to product 1 for customer 1 on 2026-11-19 under the published date and tier rule?",
+      "kind": "applicability",
+      "prepared_status": "unsupported_operator",
+      "status": "not_executed",
+      "followup_status": "executed",
+      "original_operation_id": null,
+      "executed_operation_id": "6dbb0a25752f1dd0766a4e0c3a2b50eb",
+      "query_approval_operation_id": "dc9e89b38fc3a6efeee10d9ceb17e54f",
+      "truncated": false,
+      "returned_count": 0,
+      "total_output_rows": 0,
+      "closure_complete": null,
+      "current_scope": "typed_query_executed_not_accuracy",
+      "registered_source": {
+        "format": "sqlite-snapshot-v1",
+        "label": "commerce-medium",
+        "snapshot_bytes": 421888,
+        "snapshot_sha256": "d8e07ca987f1d491b41eb9475324397e694fb97de54e97cd5e43db702829f19e",
+        "source_id": "e94b838091b24e099da51fde44c4b1a4"
+      },
+      "followup_run_id": "scalar-case-20261119T165409.435623Z"
+    },
+    {
+      "question_id": "commerce-medium-4",
+      "question": "Which confirmed orders contain products supplied by supplier 1 and need review if it is suspended?",
+      "kind": "changeimpact",
+      "prepared_status": "supported",
+      "status": "executed",
+      "original_operation_id": "2f0148285f3ed438a486995f275332a5",
+      "executed_operation_id": "2f0148285f3ed438a486995f275332a5",
+      "query_approval_operation_id": "02940ed979109edab885953cf920b139",
+      "truncated": false,
+      "returned_count": 150,
+      "total_output_rows": 150,
+      "closure_complete": null,
+      "current_scope": "typed_query_executed_not_accuracy",
+      "registered_source": {
+        "format": "sqlite-snapshot-v1",
+        "label": "commerce-medium",
+        "snapshot_bytes": 421888,
+        "snapshot_sha256": "d8e07ca987f1d491b41eb9475324397e694fb97de54e97cd5e43db702829f19e",
+        "source_id": "e94b838091b24e099da51fde44c4b1a4"
+      }
+    },
+    {
+      "question_id": "commerce-medium-5",
+      "question": "What was the actual carbon footprint of shipping order 1?",
+      "kind": "unanswerable",
+      "prepared_status": "missing_evidence",
+      "status": "not_executed",
+      "original_operation_id": null,
+      "current_scope": "reviewer_stated_unresolved_not_verified_absence",
+      "scope_record": {
+        "question_id": "commerce-medium-5",
+        "question": "What was the actual carbon footprint of shipping order 1?",
+        "status": "reviewed_unresolved_requirement_record",
+        "operation_id": "1d33c16b86fad93e5060410ffcdae2f4",
+        "evidence_operation_ids": [
+          "a424be074374d8170189018aea6c58b0"
+        ],
+        "replay_extensions_disabled": true,
+        "scope_verified": false,
+        "absence_verified": false
+      }
+    },
+    {
+      "question_id": "commerce-small-1",
+      "question": "List SKUs in the equipment category.",
+      "kind": "singlequery",
+      "prepared_status": "supported",
+      "status": "executed",
+      "original_operation_id": "acc0f7ffbc8a0bc95464fd173bb04fa7",
+      "executed_operation_id": "acc0f7ffbc8a0bc95464fd173bb04fa7",
+      "query_approval_operation_id": "f21fd75ac1d06ccdae7c746a4ab27756",
+      "truncated": false,
+      "returned_count": 10,
+      "total_output_rows": 10,
+      "closure_complete": null,
+      "current_scope": "typed_query_executed_not_accuracy",
+      "registered_source": {
+        "format": "sqlite-snapshot-v1",
+        "label": "commerce-small",
+        "snapshot_bytes": 28672,
+        "snapshot_sha256": "5b6a8a8ab68d86d1155281175f170bbaf8c656927d678b38c59b4fc1cfba760c",
+        "source_id": "0103b20cd431495ea95f9a01f8a56272"
+      }
+    },
+    {
+      "question_id": "commerce-small-2",
+      "question": "What total item quantity is recorded for each delivered order?",
+      "kind": "compound",
+      "prepared_status": "supported",
+      "status": "executed",
+      "original_operation_id": "c317d748fe4ebb96a66ba289b858a3ed",
+      "executed_operation_id": "c317d748fe4ebb96a66ba289b858a3ed",
+      "query_approval_operation_id": "6ea5ae6cb15856c1aad98e8b7e20129a",
+      "truncated": false,
+      "returned_count": 20,
+      "total_output_rows": 20,
+      "closure_complete": null,
+      "current_scope": "typed_query_executed_not_accuracy",
+      "registered_source": {
+        "format": "sqlite-snapshot-v1",
+        "label": "commerce-small",
+        "snapshot_bytes": 28672,
+        "snapshot_sha256": "5b6a8a8ab68d86d1155281175f170bbaf8c656927d678b38c59b4fc1cfba760c",
+        "source_id": "0103b20cd431495ea95f9a01f8a56272"
+      }
+    },
+    {
+      "question_id": "commerce-small-3",
+      "question": "Which orders have the delivered status required by the return policy? This is a status prerequisite only.",
+      "kind": "applicability",
+      "prepared_status": "supported",
+      "status": "executed",
+      "original_operation_id": "8d552c162371e0df20c501b630e4badf",
+      "executed_operation_id": "8d552c162371e0df20c501b630e4badf",
+      "query_approval_operation_id": "87636a6c7bfde23ceb8446ceaac76d8d",
+      "truncated": false,
+      "returned_count": 20,
+      "total_output_rows": 20,
+      "closure_complete": null,
+      "current_scope": "typed_query_executed_not_accuracy",
+      "registered_source": {
+        "format": "sqlite-snapshot-v1",
+        "label": "commerce-small",
+        "snapshot_bytes": 28672,
+        "snapshot_sha256": "5b6a8a8ab68d86d1155281175f170bbaf8c656927d678b38c59b4fc1cfba760c",
+        "source_id": "0103b20cd431495ea95f9a01f8a56272"
+      }
+    },
+    {
+      "question_id": "commerce-small-4",
+      "question": "Which orders contain SKU S000 and are candidates for review if that SKU is recalled?",
+      "kind": "changeimpact",
+      "prepared_status": "supported",
+      "status": "executed",
+      "original_operation_id": "06f8d1c65eb7d9c9dd28d2cdbe6ce7ff",
+      "executed_operation_id": "06f8d1c65eb7d9c9dd28d2cdbe6ce7ff",
+      "query_approval_operation_id": "2d29b4329b47193047e1ddb1b0adb4d4",
+      "truncated": false,
+      "returned_count": 2,
+      "total_output_rows": 2,
+      "closure_complete": null,
+      "current_scope": "typed_query_executed_not_accuracy",
+      "registered_source": {
+        "format": "sqlite-snapshot-v1",
+        "label": "commerce-small",
+        "snapshot_bytes": 28672,
+        "snapshot_sha256": "5b6a8a8ab68d86d1155281175f170bbaf8c656927d678b38c59b4fc1cfba760c",
+        "source_id": "0103b20cd431495ea95f9a01f8a56272"
+      }
+    },
+    {
+      "question_id": "commerce-small-5",
+      "question": "Which named customer owns order O000?",
+      "kind": "unanswerable",
+      "prepared_status": "missing_evidence",
+      "status": "not_executed",
+      "original_operation_id": null,
+      "current_scope": "reviewer_stated_unresolved_not_verified_absence",
+      "scope_record": {
+        "question_id": "commerce-small-5",
+        "question": "Which named customer owns order O000?",
+        "status": "reviewed_unresolved_requirement_record",
+        "operation_id": "7e48f91b8ef1a512dfb04948a0b505ec",
+        "evidence_operation_ids": [
+          "121d30a1a464ec382ae78442979a312f"
+        ],
+        "replay_extensions_disabled": true,
+        "scope_verified": false,
+        "absence_verified": false
+      }
+    },
+    {
+      "question_id": "manufacturing-small-1",
+      "question": "List released product IDs.",
+      "kind": "singlequery",
+      "prepared_status": "supported",
+      "status": "executed",
+      "original_operation_id": "19fae1e513b9a022dddb4069f77e0230",
+      "executed_operation_id": "19fae1e513b9a022dddb4069f77e0230",
+      "query_approval_operation_id": "f553c069fc26aa2d500f8e5ac61a02d9",
+      "truncated": false,
+      "returned_count": 13,
+      "total_output_rows": 13,
+      "closure_complete": null,
+      "current_scope": "typed_query_executed_not_accuracy",
+      "registered_source": {
+        "format": "sqlite-snapshot-v1",
+        "label": "manufacturing-small",
+        "snapshot_bytes": 28672,
+        "snapshot_sha256": "1d9a5999434b5a313e8b07dc5c54bcc3863b38472e8dcf3579a0cb23cb974fd1",
+        "source_id": "9982430fd64b4665a2e93ccf04e6e18f"
+      }
+    },
+    {
+      "question_id": "manufacturing-small-2",
+      "question": "How many active BOM units does each released product require on 2026-11-19?",
+      "kind": "compound",
+      "prepared_status": "supported",
+      "status": "executed",
+      "original_operation_id": "5ac3250574778753c77ffe07931bb3a4",
+      "executed_operation_id": "5ac3250574778753c77ffe07931bb3a4",
+      "query_approval_operation_id": "b90a93a70844f6b67e5ff6c8d0cdb551",
+      "truncated": false,
+      "returned_count": 13,
+      "total_output_rows": 13,
+      "closure_complete": null,
+      "current_scope": "typed_query_executed_not_accuracy",
+      "registered_source": {
+        "format": "sqlite-snapshot-v1",
+        "label": "manufacturing-small",
+        "snapshot_bytes": 28672,
+        "snapshot_sha256": "1d9a5999434b5a313e8b07dc5c54bcc3863b38472e8dcf3579a0cb23cb974fd1",
+        "source_id": "9982430fd64b4665a2e93ccf04e6e18f"
+      }
+    },
+    {
+      "question_id": "manufacturing-small-3",
+      "question": "Which approved cosmetic-only waivers remain unexpired on 2026-11-19?",
+      "kind": "applicability",
+      "prepared_status": "supported",
+      "status": "executed",
+      "original_operation_id": "136aba1ecb74a5718869b5e6cb4964a3",
+      "executed_operation_id": "136aba1ecb74a5718869b5e6cb4964a3",
+      "query_approval_operation_id": "deb0a37948e49c675af24778aece1dd9",
+      "truncated": false,
+      "returned_count": 5,
+      "total_output_rows": 5,
+      "closure_complete": null,
+      "current_scope": "typed_query_executed_not_accuracy",
+      "registered_source": {
+        "format": "sqlite-snapshot-v1",
+        "label": "manufacturing-small",
+        "snapshot_bytes": 28672,
+        "snapshot_sha256": "1d9a5999434b5a313e8b07dc5c54bcc3863b38472e8dcf3579a0cb23cb974fd1",
+        "source_id": "9982430fd64b4665a2e93ccf04e6e18f"
+      }
+    },
+    {
+      "question_id": "manufacturing-small-4",
+      "question": "Which products have an active direct dependency on part 0 on 2026-11-19?",
+      "kind": "changeimpact",
+      "prepared_status": "supported",
+      "status": "executed",
+      "original_operation_id": "3da8f0bd1462c417eb9248fb1ccdb9ec",
+      "executed_operation_id": "3da8f0bd1462c417eb9248fb1ccdb9ec",
+      "query_approval_operation_id": "f5358a462c66a4f5f3096f451702a013",
+      "truncated": false,
+      "returned_count": 2,
+      "total_output_rows": 2,
+      "closure_complete": null,
+      "current_scope": "typed_query_executed_not_accuracy",
+      "registered_source": {
+        "format": "sqlite-snapshot-v1",
+        "label": "manufacturing-small",
+        "snapshot_bytes": 28672,
+        "snapshot_sha256": "1d9a5999434b5a313e8b07dc5c54bcc3863b38472e8dcf3579a0cb23cb974fd1",
+        "source_id": "9982430fd64b4665a2e93ccf04e6e18f"
+      }
+    },
+    {
+      "question_id": "manufacturing-small-5",
+      "question": "What is the real-world fatigue life in hours of part 0?",
+      "kind": "unanswerable",
+      "prepared_status": "missing_evidence",
+      "status": "not_executed",
+      "original_operation_id": null,
+      "current_scope": "reviewer_stated_unresolved_not_verified_absence",
+      "scope_record": {
+        "question_id": "manufacturing-small-5",
+        "question": "What is the real-world fatigue life in hours of part 0?",
+        "status": "reviewed_unresolved_requirement_record",
+        "operation_id": "7c98af104761609527f8fc0140c5d05e",
+        "evidence_operation_ids": [
+          "e6c76cea1c11724b0c3d912918673dfd"
+        ],
+        "replay_extensions_disabled": true,
+        "scope_verified": false,
+        "absence_verified": false
+      }
+    },
+    {
+      "question_id": "organization-medium-1",
+      "question": "List open approval request IDs for project 1.",
+      "kind": "singlequery",
+      "prepared_status": "supported",
+      "status": "executed",
+      "original_operation_id": "c2ccbc10ff1ca510325634f6bd778821",
+      "executed_operation_id": "c2ccbc10ff1ca510325634f6bd778821",
+      "query_approval_operation_id": "dd8cdbb13d1f5a4d88bf783cf0875a68",
+      "truncated": false,
+      "returned_count": 7,
+      "total_output_rows": 7,
+      "closure_complete": null,
+      "current_scope": "typed_query_executed_not_accuracy",
+      "registered_source": {
+        "format": "sqlite-snapshot-v1",
+        "label": "organization-medium",
+        "snapshot_bytes": 524288,
+        "snapshot_sha256": "085bb96592bc65e63fe09669fcb93f3d6c1e7a6a9053d61711a20a1d19964508",
+        "source_id": "884790f05e3045dba1fa0d31f92606fd"
+      }
+    },
+    {
+      "question_id": "organization-medium-2",
+      "question": "Count recorded approval events per owner team.",
+      "kind": "compound",
+      "prepared_status": "supported",
+      "status": "executed",
+      "original_operation_id": "5f97a3c98aa009d6d88735cf3ae54054",
+      "executed_operation_id": "5f97a3c98aa009d6d88735cf3ae54054",
+      "query_approval_operation_id": "6a9b5dbd1e1a3feae58d30f07b5986b0",
+      "truncated": false,
+      "returned_count": 30,
+      "total_output_rows": 30,
+      "closure_complete": null,
+      "current_scope": "typed_query_executed_not_accuracy",
+      "registered_source": {
+        "format": "sqlite-snapshot-v1",
+        "label": "organization-medium",
+        "snapshot_bytes": 524288,
+        "snapshot_sha256": "085bb96592bc65e63fe09669fcb93f3d6c1e7a6a9053d61711a20a1d19964508",
+        "source_id": "884790f05e3045dba1fa0d31f92606fd"
+      }
+    },
+    {
+      "question_id": "organization-medium-3",
+      "question": "Which active employees have an unexpired approval-capable role on 2026-11-19? This is role eligibility only.",
+      "kind": "applicability",
+      "prepared_status": "supported",
+      "status": "executed",
+      "original_operation_id": "da61371b902af3c2974407f36c5b62cf",
+      "executed_operation_id": "da61371b902af3c2974407f36c5b62cf",
+      "query_approval_operation_id": "c8980c5b36fe280d2f78892565a6b48f",
+      "truncated": true,
+      "returned_count": 200,
+      "total_output_rows": 400,
+      "closure_complete": null,
+      "current_scope": "typed_query_executed_not_accuracy",
+      "registered_source": {
+        "format": "sqlite-snapshot-v1",
+        "label": "organization-medium",
+        "snapshot_bytes": 524288,
+        "snapshot_sha256": "085bb96592bc65e63fe09669fcb93f3d6c1e7a6a9053d61711a20a1d19964508",
+        "source_id": "884790f05e3045dba1fa0d31f92606fd"
+      }
+    },
+    {
+      "question_id": "organization-medium-4",
+      "question": "Which milestones are transitively downstream of milestone 0 and candidates for review if it slips?",
+      "kind": "changeimpact",
+      "prepared_status": "unsupported_operator",
+      "status": "not_executed",
+      "followup_status": "executed",
+      "original_operation_id": null,
+      "executed_operation_id": "45cef0400aba02cb972d851bf2939f6a",
+      "query_approval_operation_id": "934921d57ed998ad5a4f8f54b6fdba7d",
+      "truncated": false,
+      "returned_count": 4,
+      "total_output_rows": 4,
+      "closure_complete": true,
+      "current_scope": "typed_query_executed_not_accuracy",
+      "registered_source": {
+        "format": "sqlite-snapshot-v1",
+        "label": "organization-medium",
+        "snapshot_bytes": 524288,
+        "snapshot_sha256": "085bb96592bc65e63fe09669fcb93f3d6c1e7a6a9053d61711a20a1d19964508",
+        "source_id": "884790f05e3045dba1fa0d31f92606fd"
+      },
+      "followup_run_id": "reachability-case-20261119T171102.212531Z"
+    },
+    {
+      "question_id": "organization-medium-5",
+      "question": "What is the external legal validity of approval request 1?",
+      "kind": "unanswerable",
+      "prepared_status": "missing_evidence",
+      "status": "not_executed",
+      "original_operation_id": null,
+      "current_scope": "reviewer_stated_unresolved_not_verified_absence",
+      "scope_record": {
+        "question_id": "organization-medium-5",
+        "question": "What is the external legal validity of approval request 1?",
+        "status": "reviewed_unresolved_requirement_record",
+        "operation_id": "1f73b61c3880e5f9aa03380b6af1e430",
+        "evidence_operation_ids": [
+          "01e7a7aff5626e967798f63794962471"
+        ],
+        "replay_extensions_disabled": true,
+        "scope_verified": false,
+        "absence_verified": false
+      }
+    },
+    {
+      "question_id": "organization-small-1",
+      "question": "List active employee IDs in team 1.",
+      "kind": "singlequery",
+      "prepared_status": "supported",
+      "status": "executed",
+      "original_operation_id": "490a136d291ff573c341567641bff05c",
+      "executed_operation_id": "490a136d291ff573c341567641bff05c",
+      "query_approval_operation_id": "c175906cef2002e2c19e203ab2b2fd88",
+      "truncated": false,
+      "returned_count": 5,
+      "total_output_rows": 5,
+      "closure_complete": null,
+      "current_scope": "typed_query_executed_not_accuracy",
+      "registered_source": {
+        "format": "sqlite-snapshot-v1",
+        "label": "organization-small",
+        "snapshot_bytes": 36864,
+        "snapshot_sha256": "dac0500b98a53eece769c1c96913e40255005edca2703db7a2110f1331897566",
+        "source_id": "0a1ffcf019ef4bdbab472f6dceb17940"
+      }
+    },
+    {
+      "question_id": "organization-small-2",
+      "question": "Count active employees with currently valid assignments per project on 2026-11-19.",
+      "kind": "compound",
+      "prepared_status": "supported",
+      "status": "executed",
+      "original_operation_id": "ae9047806c7aa5abc3fb3fa4b701df15",
+      "executed_operation_id": "ae9047806c7aa5abc3fb3fa4b701df15",
+      "query_approval_operation_id": "11df4e6efc39da4a3ef47696f31b028f",
+      "truncated": false,
+      "returned_count": 20,
+      "total_output_rows": 20,
+      "closure_complete": null,
+      "current_scope": "typed_query_executed_not_accuracy",
+      "registered_source": {
+        "format": "sqlite-snapshot-v1",
+        "label": "organization-small",
+        "snapshot_bytes": 36864,
+        "snapshot_sha256": "dac0500b98a53eece769c1c96913e40255005edca2703db7a2110f1331897566",
+        "source_id": "0a1ffcf019ef4bdbab472f6dceb17940"
+      }
+    },
+    {
+      "question_id": "organization-small-3",
+      "question": "Which project exceptions are unexpired on 2026-11-19?",
+      "kind": "applicability",
+      "prepared_status": "supported",
+      "status": "executed",
+      "original_operation_id": "2b91e8250b3a49b49724d477e4c0b65e",
+      "executed_operation_id": "2b91e8250b3a49b49724d477e4c0b65e",
+      "query_approval_operation_id": "182654f517bc31b1efe582ea1fab8a3a",
+      "truncated": false,
+      "returned_count": 5,
+      "total_output_rows": 5,
+      "closure_complete": null,
+      "current_scope": "typed_query_executed_not_accuracy",
+      "registered_source": {
+        "format": "sqlite-snapshot-v1",
+        "label": "organization-small",
+        "snapshot_bytes": 36864,
+        "snapshot_sha256": "dac0500b98a53eece769c1c96913e40255005edca2703db7a2110f1331897566",
+        "source_id": "0a1ffcf019ef4bdbab472f6dceb17940"
+      }
+    },
+    {
+      "question_id": "organization-small-4",
+      "question": "Which projects have a current assignment for employee 1 and need review if that employee leaves?",
+      "kind": "changeimpact",
+      "prepared_status": "supported",
+      "status": "executed",
+      "original_operation_id": "8b5ee6c2523a20d8f933c520c2b95b6c",
+      "executed_operation_id": "8b5ee6c2523a20d8f933c520c2b95b6c",
+      "query_approval_operation_id": "ddbe0ed59191c82c00241dc788ff80c6",
+      "truncated": false,
+      "returned_count": 2,
+      "total_output_rows": 2,
+      "closure_complete": null,
+      "current_scope": "typed_query_executed_not_accuracy",
+      "registered_source": {
+        "format": "sqlite-snapshot-v1",
+        "label": "organization-small",
+        "snapshot_bytes": 36864,
+        "snapshot_sha256": "dac0500b98a53eece769c1c96913e40255005edca2703db7a2110f1331897566",
+        "source_id": "0a1ffcf019ef4bdbab472f6dceb17940"
+      }
+    },
+    {
+      "question_id": "organization-small-5",
+      "question": "What is employee 1 annual salary?",
+      "kind": "unanswerable",
+      "prepared_status": "missing_evidence",
+      "status": "not_executed",
+      "original_operation_id": null,
+      "current_scope": "reviewer_stated_unresolved_not_verified_absence",
+      "scope_record": {
+        "question_id": "organization-small-5",
+        "question": "What is employee 1 annual salary?",
+        "status": "reviewed_unresolved_requirement_record",
+        "operation_id": "94c76ef8e9d0248167c6262756c9d8bd",
+        "evidence_operation_ids": [
+          "1b96e8af5661af986b69265454a343f8"
+        ],
+        "replay_extensions_disabled": true,
+        "scope_verified": false,
+        "absence_verified": false
+      }
+    }
+  ],
+  "limits": [
+    "Authored consumed development fixtures; scripted operator approvals, not independent human validation.",
+    "Twenty typed executions are not twenty accurate LLM answers. Five scope records do not verify absence.",
+    "Document counts do not establish whole-document policy understanding; selected paragraph reference only.",
+    "Medium whole-source queries are separate from bounded upstream semantic generation.",
+    "No repeated latency benchmark, maintenance labor or expert semantic quality measurement.",
+    "Original failures and unsupported statuses retained; later followups do not overwrite them."
+  ],
+  "followup_native_catalog": {
+    "scope": "complete-source metadata only; not semantic generation",
+    "model_calls": 0,
+    "source_unchanged": true,
+    "service_final_state": "exited",
+    "cases": [
+      {
+        "pack": "commerce-medium",
+        "rows": 15680,
+        "tables": 12,
+        "columns": 46,
+        "foreign_keys": 12
+      },
+      {
+        "pack": "organization-medium",
+        "rows": 17250,
+        "tables": 12,
+        "columns": 47,
+        "foreign_keys": 15
+      }
+    ],
+    "review_job": "20261119T194342Z-extensions-medium-catalog-8dda7e"
+  },
+  "followup_selected_output_reasoning": {
+    "scope": "authored RDFS classification of saved selected observations; source and original answers unchanged; no full-source scale or efficacy claim",
+    "native_calls": 4,
+    "model_calls": 0,
+    "query_reruns": 0,
+    "cases": [
+      {
+        "pack": "commerce-medium",
+        "selected_rows": 35,
+        "derived_before": 35,
+        "derived_after": 71,
+        "added_schema_inclusive": 36,
+        "disabled_replays": 8
+      },
+      {
+        "pack": "organization-medium",
+        "selected_rows": 30,
+        "derived_before": 30,
+        "derived_after": 61,
+        "added_schema_inclusive": 31,
+        "disabled_replays": 8
+      }
+    ],
+    "review_job": "20261119T235041Z-extensions-medium-reasoning-9de7cb"
+  },
+  "public_semantic_operator_followup": {
+    "observed_date": "2026-11-20",
+    "gate": "20261120T002418Z-extensions-semantic-operator-01d327",
+    "software_tests": {
+      "passed": 430,
+      "skipped": 1,
+      "subtests_passed": 68
+    },
+    "actual_provider_invocations": 0,
+    "scope": "offline budget, input-binding, credential-pipe, fake transport accounting and actual local detached-session process cleanup; not semantic efficacy or complete paid orchestration",
+    "historical_actual_semantic_execution": "earlier research launcher, separately retained"
+  },
+  "restored_public_server_followup": {
+    "observed_date": "2026-11-20",
+    "cases": [
+      {
+        "pack": "manufacturing-small",
+        "workspaces": 1,
+        "saved_operations": 23,
+        "exact_operation_pairs_and_table_rows": true,
+        "server_exit_code": 0
+      },
+      {
+        "pack": "organization-small",
+        "workspaces": 1,
+        "saved_operations": 23,
+        "exact_operation_pairs_and_table_rows": true,
+        "server_exit_code": 0
+      }
+    ],
+    "model_calls": 0,
+    "native_calls": 0,
+    "query_reruns": 0,
+    "original_bundles_unchanged": true
+  }
+}

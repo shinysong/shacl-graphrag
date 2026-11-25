@@ -1,0 +1,11 @@
+# Deterministic bounded profiling artifact
+Review new auto_ontology_profile.py/CLI/tests, prior medium-profiling-plan.md and privateaccept_medium_profile.py. Offline user-usableoperator preparation of newprivate sampleSQLite + fullsource/sample manifest: declaredPKascending<=1000/table, exactschema/selectedtypedvalues/hash/sourceunchanged, sourcevs sampleFKwitnesscounts+hashes; noclosure repair/sourcecorruptionclaim. Reject unsupportedviews/triggers/virtual/generated/collation/index/nullablePK. Bound16MiB12tables40columns10s cooperative; nooverwrite, incompletefailedmanifest retained and noeligible sample onfailure; FKmetadata preserved, possibleomittedparents explicit. No upstream/model/paid/AWS/services. Catalogfullmetadata pathunchanged; semanticbridge does NOT acceptprofileyet/v2source-sample invocationassociation stillpending. Inspect failurebehavior, nullable/composite/typepreservation/deadline/sourcechange/symlinks. OnlyafterbothactualindependentreviewsREADY runregisteredworkspace-extension-pytest/research-ops-tests, thenactual2medium prepare1000/table fromverifiedregistered15680/17250sources; no sourcequeryreruns or benchmarkclaim. Publicoperator README correctedscope+receipt/backupprocedure; nofunctionalclaim fromdocs. Do not read otherreviewoutputs/secrets/gold. Sample prefix notrepresentative, upstreaminputnotyetverified.
+
+Prior5c862f implementationreview revise: swappedregistry identity bug. Rootchecks recordsourceid==requested initial andfinal, rejects swappedmetadata beforematerialization; regression samebytesdifferentregisteredidentity. Priorreviewoutputs preserved, no oldchecks executed.
+
+- apps/factory_lab/auto_ontology_profile.py SHA256 111b826c08ee7b5c805df38883e0f423ad631af3cae03950a9319ed4b473beff
+- apps/factory_lab/auto_ontology_profile_cli.py SHA256 fa0b3f15d65547f150270aee4ccf8aff04c055245c5ed20b01400d67223beb96
+- tests/test_workspace_auto_ontology_profile.py SHA256 fce694160b5ef0a77a4147b7c8fbcd5f81e67d979569906ded3f4f3c0558974c
+- _workspace/extensions-20261119/accept_medium_profile.py SHA256 86384549a2ba79c6c038e4b2740ea96570fad1bbb46e432f867b1f82a8e89141
+- scripts/research_ops.py SHA256 db7fd7287969262176e1f54a6043b1710163389c297b1f11704d9fd54b9cf283
+- tests/test_research_ops.py SHA256 053d32366b50dd9ce72683f399a998e2c266a82ae36db24b536eabe33ff6d490
